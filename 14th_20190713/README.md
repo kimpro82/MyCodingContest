@@ -295,5 +295,6 @@ test2.solution(888788,888788)
 > 2  
 > 4  
 > 5
+
 The submission was late, but I've got correct answer code for the first time.  
 Don't give it up and challenge the next test!

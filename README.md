@@ -1,16 +1,18 @@
 ## My Coding Test
 
 ### Google Code Jam
+https://codingcompetitions.withgoogle.com/codejam
 - Qualification Round 2020 (2020.04.04 08:00~, GMT+9) (Comming)
 
 ### CodeForces
+https://codeforces.com/contests
 - Codeforces Round #628 (Div. 2) (2020.03.14 23:35)
 
 ### AtCoder
+https://atcoder.jp/
 - AtCoder Grand Contest 043 (2020.03.21 21:00, GMT+9) (Comming)
 
 ### Oncoder Official Coding Test
-Monthly Online Coding Test Site  
 https://www.oncoder.com/
 
 - Challenge  

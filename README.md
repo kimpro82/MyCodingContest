@@ -6,20 +6,24 @@ https://codingcompetitions.withgoogle.com/codejam
 
 ### CodeForces
 https://codeforces.com/contests
-- Codeforces Round #628 (Div. 2) (2020.03.14 23:35)
+- Codeforces Round #630 (Div. 2) (2020.04.03 23:35, 2hr) (Comming)
+- Codeforces Round #630 (Div. 1) (2020.04.03 23:35, 2hr) (Comming)
+- Codeforces Round #629 (Div. 3) (2020.03.26 23:35, 2hr) (Comming)
+- Codeforces Round #628 (Div. 2) (2020.03.14 23:35, 2hr)
 
 ### AtCoder
 https://atcoder.jp/
-- AtCoder Grand Contest 043 (2020.03.21 21:00, GMT+9) (Comming)
+- AtCoder Beginner Contest 160 (2020.03.28 21:00, GMT+9, 100 minutes) (Comming)
+- ~~AtCoder Grand Contest 043 (2020.03.21 21:00, GMT+9, 150 minutes)~~ (Skip)
 
 ### Oncoder Official Coding Test
 https://www.oncoder.com/
 
-- Challenge  
-provided sample questions
+- Challenge : provided sample questions
 
-- The 16th Oncoder Official Coding Test (2020.12.05) (Comming)
-- The 14th Oncoder Official Coding Test (2019.07.13)
-- The 13th Oncoder Official Coding Test (2019.05.18)
-- The 12th Oncoder Official Coding Test (2019.04.13)
-- The 11th Oncoder Official Coding Test (2019.03.16)
+- The 16th Oncoder Official Coding Test (2020.12.05, 14:00) (Comming)
+- ~~The 15th Oncoder Official Coding Test (2019.12.17, 14:00)~~ (Skip)
+- The 14th Oncoder Official Coding Test (2019.07.13, 14:00)
+- The 13th Oncoder Official Coding Test (2019.05.18, 14:00)
+- The 12th Oncoder Official Coding Test (2019.04.13, 14:00)
+- The 11th Oncoder Official Coding Test (2019.03.16, 14:00)

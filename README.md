@@ -21,9 +21,9 @@ https://www.oncoder.com/
 
 - Challenge : provided sample questions
 
-- The 16th Oncoder Official Coding Test (2020.12.05, 14:00) (Comming)
-- ~~The 15th Oncoder Official Coding Test (2019.12.17, 14:00)~~ (Skip)
-- The 14th Oncoder Official Coding Test (2019.07.13, 14:00)
-- The 13th Oncoder Official Coding Test (2019.05.18, 14:00)
-- The 12th Oncoder Official Coding Test (2019.04.13, 14:00)
-- The 11th Oncoder Official Coding Test (2019.03.16, 14:00)
+- The 16th Oncoder Official Coding Test (2020.12.05 14:00, 2hr) (Comming)
+- ~~The 15th Oncoder Official Coding Test (2019.12.17 14:00, 2hr)~~ (Skip)
+- The 14th Oncoder Official Coding Test (2019.07.13 14:00, 2hr)
+- The 13th Oncoder Official Coding Test (2019.05.18 14:00, 2hr)
+- The 12th Oncoder Official Coding Test (2019.04.13 14:00, 2hr)
+- The 11th Oncoder Official Coding Test (2019.03.16 14:00, 2hr)

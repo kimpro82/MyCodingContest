@@ -1,4 +1,4 @@
-## My Coding Test
+## My Coding Contest
 
 ### Google Code Jam
 https://codingcompetitions.withgoogle.com/codejam

@@ -116,9 +116,6 @@ inputnum = 9900
 ```python
 inputnum = 100002
 ```
-> 0
+> 0  
 
-```python
-inputnum = 123456
-```
-> 171
+But I recognized belately that the problem requires a specific programming language 'UnknownX', not Python.

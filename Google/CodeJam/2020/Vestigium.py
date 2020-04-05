@@ -1,5 +1,5 @@
 """
-Qualification Round 2020 - Code Jam 2020
+Google Code Jam 2020 - Qualification Round
 2020.4.4 SAT
 """
 

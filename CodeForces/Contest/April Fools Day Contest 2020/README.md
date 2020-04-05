@@ -75,3 +75,50 @@ int('144045', 16)
 int(a[1:])
 int(a[1:]) % 2
 ```
+
+
+### H. It's showtime
+
+#### Solve
+
+```python
+inputnum = 123456
+# inputnum = input()
+
+mod = inputnum % 1000
+n = int((inputnum - mod)/1000)
+doubleFactorial = n
+
+while n > 2 :
+    if n >= mod and n % 2 == 0 : # guess something wrong
+        doubleFactorial = 0
+        break;
+    doubleFactorial = (doubleFactorial * (n-2)) % mod
+    # print(n, mod, doubleFactorial)
+    n = n -2
+   
+print(doubleFactorial)    
+```
+> 171
+
+#### Test
+
+```python
+inputnum = 6100
+```
+> 48
+
+```python
+inputnum = 9900
+```
+> 45
+
+```python
+inputnum = 100002
+```
+> 0
+
+```python
+inputnum = 123456
+```
+> 171

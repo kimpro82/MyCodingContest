@@ -9,7 +9,8 @@ https://codingcompetitions.withgoogle.com/codejam
 
 ### CodeForces
 https://codeforces.com/contests
-- Codeforces Round #632 (Div. 2) (2020.04.08 23:35, 2.5 hrs) (Comming)
+- Educational Codeforces Round 85 (Div. 2) (2020.04.10 23:35, 2 hrs) (Comming)
+- Codeforces Round #632 (Div. 2) (2020.04.08 23:35, 2.5 hrs)
 - April Fools Day Contest 2020 (2020.04.01 23:35, 2 hrs)
 - Codeforces Round #628 (Div. 2) (2020.03.14 23:35, 2 hrs)
 

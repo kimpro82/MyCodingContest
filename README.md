@@ -4,12 +4,12 @@
 
 ### Google Code Jam
 https://codingcompetitions.withgoogle.com/codejam
-- Qualification Round 2020 (2020.04.04 08:00 ~ 04.05 11:00, 27 hrs) (Comming)
+- Qualification Round 2020 (2020.04.04 08:00 ~ 04.05 11:00, 27 hrs)
 
 
 ### CodeForces
 https://codeforces.com/contests
-- Codeforces Round #632 (Div. 2) (2020.04.08 23:35, 2.5 hrs)  (Comming)
+- Codeforces Round #632 (Div. 2) (2020.04.08 23:35, 2.5 hrs) (Comming)
 - April Fools Day Contest 2020 (2020.04.01 23:35, 2 hrs)
 - Codeforces Round #628 (Div. 2) (2020.03.14 23:35, 2 hrs)
 

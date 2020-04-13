@@ -9,7 +9,9 @@ https://codingcompetitions.withgoogle.com/codejam
 
 ### CodeForces
 https://codeforces.com/contests
-- Codeforces Round #633 (Div. 3) (2020.04.13 23:35, 2 hrs) (Comming)
+- Codeforces Round #636 (Div. 1, 2) (2020.04.23 23:35, 2 hrs) (Comming)
+- Codeforces Round #635 (Div. 1, 2) (2020.04.15 23:35, 2 hrs) (Comming)
+- Codeforces Round #634 (Div. 3) (2020.04.13 23:35, 2 hrs) (Comming)
 - Codeforces Round #632 (Div. 2) (2020.04.08 23:35, 2.5 hrs)
 - April Fools Day Contest 2020 (2020.04.01 23:35, 2 hrs)
 - Codeforces Round #628 (Div. 2) (2020.03.14 23:35, 2 hrs)
@@ -18,7 +20,7 @@ https://codeforces.com/contests
 ### AtCoder
 https://atcoder.jp/
 - AtCoder Beginner Contest 163 (2020.04.19 21:00, GMT+9, 100 minutes) (Comming)
-- AtCoder Beginner Contest 162 (2020.04.12 21:00, GMT+9, 100 minutes) (Comming)
+- AtCoder Beginner Contest 162 (2020.04.12 21:00, GMT+9, 100 minutes)
 - AtCoder Beginner Contest 161 (2020.04.04 21:00, GMT+9, 100 minutes)
 
 

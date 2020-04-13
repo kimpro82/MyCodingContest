@@ -21,4 +21,4 @@ for a in range(1, K+1) :
             c += c
             # print(a, b, c)
 
-print(c) # does't work well
+print(c) # doesn't work well

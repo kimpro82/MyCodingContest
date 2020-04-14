@@ -77,7 +77,6 @@ for i in range(0, t) :
     # n, a, b = list(map(int, "5 2 2".split()))
 
     left = ""
-
     for j in range(0, b) :
         left += letters[j]
 

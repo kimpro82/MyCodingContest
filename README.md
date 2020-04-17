@@ -9,10 +9,12 @@ https://codingcompetitions.withgoogle.com/codejam
 
 ### CodeForces
 https://codeforces.com/contests
-- Codeforces Round #636 (Div. 1, 2) (2020.04.23 23:35, 2 hrs) (Comming)
-- Codeforces Round #635 (Div. 1, 2) (2020.04.15 23:35, 2 hrs) (Comming)
+- Educational Codeforces Round 86 (Rated for Div. 2) (2020.04.26 23:35, 2 hrs) (Comming)
+- Codeforces Round #637 (Div. 2) (2020.04.23 23:35, 2.5 hrs) (Comming)
+- Codeforces Round #636 (Div. 2) (2020.04.21 23:35, 2 hrs) (Comming)
+- Codeforces Round #635 (Div. 2) (2020.04.15 23:35, 2.5 hrs)
 - Codeforces Round #634 (Div. 3) (2020.04.13 23:35, 2 hrs)
-- Codeforces Round #632 (Div. 2) (2020.04.08 23:35, 2.5 hrs)
+- Codeforces Round #632 (Div. 2) (2020.04.08 23:35, 2 hrs)
 - April Fools Day Contest 2020 (2020.04.01 23:35, 2 hrs)
 - Codeforces Round #628 (Div. 2) (2020.03.14 23:35, 2 hrs)
 
@@ -26,9 +28,7 @@ https://atcoder.jp/
 
 ### Oncoder Official Coding Test
 https://www.oncoder.com/
-
 - Challenge : provided sample questions
-
 - The 16th Oncoder Official Coding Test (2020.12.05 14:00, 2 hrs) (Comming)
 - The 14th Oncoder Official Coding Test (2019.07.13 14:00, 2 hrs)
 - The 13th Oncoder Official Coding Test (2019.05.18 14:00, 2 hrs)

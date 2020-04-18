@@ -80,6 +80,6 @@ for i in range(0, t) :
     # get x, y, z
     x = num[1]
     z = num[2]
-    y = max(z-x+1, num[1])
+    y = max(z-x+1, x)
 
     print(x, y, z)

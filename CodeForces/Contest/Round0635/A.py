@@ -20,8 +20,8 @@ t = int(input())
 for i in range(0, t) :
 
     # convert all string to integer in list
-    # num = input().split()
-    num = "1 3 5 7".split()
+    num = input().split()
+    # num = "1 3 5 7".split()
     num = [int(j) for j in num] 
     # print(num)
 
@@ -80,6 +80,6 @@ for i in range(0, t) :
     # get x, y, z
     x = num[1]
     z = num[2]
-    y = max(z-x+1, num[1])
+    y = max(z-x+1, x)
 
     print(x, y, z)

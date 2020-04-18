@@ -1,6 +1,6 @@
 ### Codeforces Round #635 (Div. 2)
 Apr/15/2020 23:35 (UTC+9)  
-https://codeforces.com/contest/1336
+https://codeforces.com/contest/1337
 
 
 #### A. Ichihime and Triangle - First Trial
@@ -17,8 +17,8 @@ https://codeforces.com/contest/1336
 ```
 
 ```python
-t = int(input())
-# t = 1
+# t = int(input())
+t = 1
 
 for i in range(0, t) :
 
@@ -39,13 +39,14 @@ for i in range(0, t) :
 
     print(x, y, z)
 ```
+> 3 5 5
 
 
 #### A. Ichihime and Triangle - Second Trial
 
 ```python
-t = int(input())
-# t = 1
+# t = int(input())
+t = 1
 
 for i in range(0, t) :
 
@@ -71,8 +72,8 @@ Time limit exceeded on pretest 1 : "1 1 977539810 977539810"
 #### A. Ichihime and Triangle - Third Trial
 
 ```python
-t = int(input())
-# t = 1
+# t = int(input())
+t = 1
 
 for i in range(0, t) :
 
@@ -85,10 +86,12 @@ for i in range(0, t) :
     # get x, y, z
     x = num[1]
     z = num[2]
-    y = max(z-x+1, num[1])
+    y = max(z-x+1, x)
 
     print(x, y, z)
 ```
+> 1 977539810 977539810
+
 Accepted
 
 
@@ -110,14 +113,14 @@ Accepted
 ```python
 import math
 
-t = int(input())
-# t = 1
+# t = int(input())
+t = 1
 
 for i in range(0, t) :
 
     # convert all string to integer in list
-    num = input().split()
-    # num = "100 3 4".split()
+    # num = input().split()
+    num = "100 3 4".split()
     num = [int(j) for j in num]
 
     hp = num[0] # dragon's hit point
@@ -143,6 +146,8 @@ for i in range(0, t) :
     else :
         print("NO")
 ```
+> YES
+
 Accepted
 
 
@@ -176,21 +181,21 @@ Accepted
 ```
 
 ```python
-t = int(input())
-# t = 1
+# t = int(input())
+t = 1
 
 for i in range(0, t) :
 
-    num = input().split() # don't need
-    # num = "2 2 3".split()
+    # num = input().split() # don't need
+    num = "2 2 3".split()
 
-    r = list(map(int, input().split()))
-    g = list(map(int, input().split()))
-    b = list(map(int, input().split()))
+#    r = list(map(int, input().split()))
+#    g = list(map(int, input().split()))
+#    b = list(map(int, input().split()))
 
-#    r = list(map(int, "7 8".split()))
-#    g = list(map(int, "6 3".split()))
-#    b = list(map(int, "3 1 4".split()))
+    r = list(map(int, "7 8".split()))
+    g = list(map(int, "6 3".split()))
+    b = list(map(int, "3 1 4".split()))
 
     balance = []
     
@@ -205,4 +210,6 @@ for i in range(0, t) :
 
     print(balance)
 ```
+> 14
+
 Time limit exceeded on pretest 4

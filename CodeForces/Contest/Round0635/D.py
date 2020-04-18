@@ -32,21 +32,21 @@ Apr/15/2020 23:35 (UTC+9)
 '''
 
 
-t = int(input())
-# t = 1
+# t = int(input())
+t = 1
 
 for i in range(0, t) :
 
-    num = input().split() # don't need
-    # num = "2 2 3".split()
+    # num = input().split() # don't need
+    num = "2 2 3".split()
 
-    r = list(map(int, input().split()))
-    g = list(map(int, input().split()))
-    b = list(map(int, input().split()))
+#    r = list(map(int, input().split()))
+#    g = list(map(int, input().split()))
+#    b = list(map(int, input().split()))
 
-#    r = list(map(int, "7 8".split()))
-#    g = list(map(int, "6 3".split()))
-#    b = list(map(int, "3 1 4".split()))
+    r = list(map(int, "7 8".split()))
+    g = list(map(int, "6 3".split()))
+    b = list(map(int, "3 1 4".split()))
 
     balance = []
     

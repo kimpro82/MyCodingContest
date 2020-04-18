@@ -20,14 +20,14 @@ Apr/15/2020 23:35 (UTC+9)
 
 import math
 
-t = int(input())
-# t = 1
+# t = int(input())
+t = 1
 
 for i in range(0, t) :
 
     # convert all string to integer in list
-    num = input().split()
-    # num = "100 3 4".split()
+    # num = input().split()
+    num = "100 3 4".split()
     num = [int(j) for j in num]
 
     hp = num[0] # dragon's hit point

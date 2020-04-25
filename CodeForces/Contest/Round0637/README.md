@@ -1,6 +1,6 @@
 ### Codeforces Round #637 (Div. 2)
 2020-04-23(Thu) 23:35 (UTC+9)  
-https://codeforces.com/contest/1337
+https://codeforces.com/contest/1341
 
 
 #### A. Nastya and Rice

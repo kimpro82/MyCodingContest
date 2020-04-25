@@ -9,9 +9,9 @@ https://codingcompetitions.withgoogle.com/codejam
 
 ### CodeForces
 https://codeforces.com/contests
+- Codeforces Round #638 (Div. 2) (2020.05.03 23:35, 2.25 hrs) (Comming)
 - Educational Codeforces Round 86 (Rated for Div. 2) (2020.04.26 23:35, 2 hrs) (Comming)
-- Codeforces Round #637 (Div. 2) (2020.04.23 23:35, 2.5 hrs) (Comming)
-- Codeforces Round #636 (Div. 2) (2020.04.21 23:35, 2 hrs) (Comming)
+- Codeforces Round #637 (Div. 2) (2020.04.23 23:35, 2.5 hrs)
 - Codeforces Round #635 (Div. 2) (2020.04.15 23:35, 2.5 hrs)
 - Codeforces Round #634 (Div. 3) (2020.04.13 23:35, 2 hrs)
 - Codeforces Round #632 (Div. 2) (2020.04.08 23:35, 2 hrs)

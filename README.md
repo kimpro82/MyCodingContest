@@ -22,7 +22,7 @@ https://codeforces.com/contests
 ### AtCoder
 https://atcoder.jp/
 - NOMURA Programming Competition 2020 (2020.05.30 21:00, GMT+9, 120 minutes) (Comming)
-- AtCoder Beginner Contest 164 (2020.04.26 21:00, GMT+9, 100 minutes) (Comming)
+- AtCoder Beginner Contest 164 (2020.04.26 21:00, GMT+9, 100 minutes)
 - AtCoder Beginner Contest 163 (2020.04.19 21:00, GMT+9, 100 minutes)
 - AtCoder Beginner Contest 162 (2020.04.12 21:00, GMT+9, 100 minutes)
 - AtCoder Beginner Contest 161 (2020.04.04 21:00, GMT+9, 100 minutes)

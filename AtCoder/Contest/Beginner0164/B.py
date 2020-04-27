@@ -21,13 +21,13 @@ A, B, C, D = list(map(int, input().split()))
 
 while True :
 
-    # Takahashi's trun
+    # Takahashi's turn
     C -= B
     if C <= 0 :
         print("Yes")
         break
 
-    # Aoki's trun
+    # Aoki's turn
     A -= D
     if A <= 0 :
         print("No")

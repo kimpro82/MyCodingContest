@@ -24,13 +24,13 @@ https://codeforces.com/contests
 
 ### AtCoder
 https://atcoder.jp/
-- AtCoder Grand Contest 049 (2020.11.14 21:00, GMT+9, 150 minutes)
-- AtCoder Beginner Contest 181 (2020.11.01 21:00, GMT+9, 100 minutes)
-- AtCoder Regular Contest 107 (2020.10.31 21:00, GMT+9, 100 minutes)
-- AtCoder Beginner Contest 164 (2020.04.26 21:00, GMT+9, 100 minutes)
-- AtCoder Beginner Contest 163 (2020.04.19 21:00, GMT+9, 100 minutes)
-- AtCoder Beginner Contest 162 (2020.04.12 21:00, GMT+9, 100 minutes)
-- AtCoder Beginner Contest 161 (2020.04.04 21:00, GMT+9, 100 minutes)
+- AtCoder Grand Contest 049 (2020.11.14 21:00, 150 minutes) (Comming)
+- AtCoder Beginner Contest 181 (2020.11.01 21:00, 100 minutes) (Comming)
+- AtCoder Regular Contest 107 (2020.10.31 21:00, 100 minutes) (Comming)
+- AtCoder Beginner Contest 164 (2020.04.26 21:00, 100 minutes)
+- AtCoder Beginner Contest 163 (2020.04.19 21:00, 100 minutes)
+- AtCoder Beginner Contest 162 (2020.04.12 21:00, 100 minutes)
+- AtCoder Beginner Contest 161 (2020.04.04 21:00, 100 minutes)
 
 
 ### Oncoder Official Coding Test

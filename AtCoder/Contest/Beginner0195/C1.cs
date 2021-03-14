@@ -12,7 +12,7 @@ class MainClass {
     int residual = (int)(N % 1000);
     int sum = 0;
 
-    Console.WriteLine(digit + " " + len3 + " " + residual);
+    //Console.WriteLine(digit + " " + len3 + " " + residual);
 
     switch (digit) {
       case 1: case 2: case 3:

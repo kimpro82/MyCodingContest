@@ -9,19 +9,23 @@ https://atcoder.jp/contests/abc195/
 using System;
 using System.Linq;
 
-class MainClass {
-  public static void Main (string[] args) {
 
-    var input = Console.ReadLine().Split().Select(int.Parse).ToArray();
-    var M = input[0];
-    var H = input[1];
+namespace ABC0195A
+{
+  class MainClass {
+    public static void Main (string[] args) {
 
-    if (H % M == 0) {
-      Console.WriteLine("Yes");
-    } else {
-      Console.WriteLine("No");
+      var input = Console.ReadLine().Split().Select(int.Parse).ToArray();
+      var M = input[0];
+      var H = input[1];
+
+      if (H % M == 0) {
+        Console.WriteLine("Yes");
+      } else {
+        Console.WriteLine("No");
+      }
+
     }
-
   }
 }
 ```
@@ -30,29 +34,36 @@ class MainClass {
 
 ### B - Many Oranges
 
+#### Trial 1
+
 ```cs
 using System;
 using System.Linq;
 
-class MainClass {
-  public static void Main (string[] args) {
+
+namespace ABC0195B
+{
+  class MainClass
+  {
+    public static void Main (string[] args)
+    {
 
     var input = Console.ReadLine().Split().Select(int.Parse).ToArray();
-
+ 
     int A = input[0];
     int B = input[1];
     int W = input[2] * 1000;
-
+ 
     int min = W / B;
     int max = W / A;
-
+ 
     int min2;
     if (W % B == 0) {
       min2 = min;    
     } else {
       min2 = min + 1;
     }
-
+ 
     if (W - A * min2 > B) {
       Console.WriteLine(min2 + " " + max);
     }
@@ -63,10 +74,57 @@ class MainClass {
       Console.WriteLine("UNSATISFIABLE");
     }
 
+    }
   }
 }
 ```
 > Partially wrong answers
+
+#### Trial 2
+
+```cs
+using System;
+using System.Linq;
+
+
+namespace ABC0195B2
+{
+  class MainClass
+  {
+    public static void Main (string[] args)
+    {
+
+      var input = Console.ReadLine().Split().Select(int.Parse).ToArray();
+
+      int A = input[0];
+      int B = input[1];
+      int W = input[2] * 1000;
+
+      int min = W / B;
+      int max = W / A;
+
+      int min2;                                     // min2 is not yet guaranteed if valid
+      if (W % B == 0) {
+        min2 = min;    
+      } else {
+        min2 = min + 1;
+      }
+
+      // if (W - A * min2 > B || W - B * max < 0)   // || : or, && : and
+      if (W - A * min2 >= A || W - B * max <= 0)
+      {
+        Console.WriteLine(min2 + " " + max);
+      }
+      else
+      {
+        Console.WriteLine("UNSATISFIABLE");
+      }
+
+    }
+  }
+}
+```
+> Accepted
 
 
 ### C - Comma

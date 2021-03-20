@@ -18,7 +18,7 @@ namespace ABC0195B2
       int min = W / B;
       int max = W / A;
 
-      int min2;                                  // min2 is not yet guaranteed if valid
+      int min2;                                     // min2 is not yet guaranteed if valid
       if (W % B == 0) {
         min2 = min;    
       } else {

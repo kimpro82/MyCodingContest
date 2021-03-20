@@ -7,7 +7,7 @@
 using System;
 using System.Linq;
 
-namespace ABC0196
+namespace ABC0196A
 {
   class MainClass
   {

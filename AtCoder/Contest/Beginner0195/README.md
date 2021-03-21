@@ -9,50 +9,61 @@ https://atcoder.jp/contests/abc195/
 using System;
 using System.Linq;
 
-class MainClass {
-  public static void Main (string[] args) {
 
-    var input = Console.ReadLine().Split().Select(int.Parse).ToArray();
-    var M = input[0];
-    var H = input[1];
+namespace ABC0195A
+{
+  class MainClass {
+    public static void Main (string[] args) {
 
-    if (H % M == 0) {
-      Console.WriteLine("Yes");
-    } else {
-      Console.WriteLine("No");
+      var input = Console.ReadLine().Split().Select(int.Parse).ToArray();
+      var M = input[0];
+      var H = input[1];
+
+      if (H % M == 0) {
+        Console.WriteLine("Yes");
+      } else {
+        Console.WriteLine("No");
+      }
+
     }
-
   }
 }
 ```
-Accepted
+> Accepted
 
 
 ### B - Many Oranges
+
+#### Trial 1
 
 ```cs
 using System;
 using System.Linq;
 
-class MainClass {
-  public static void Main (string[] args) {
+
+namespace ABC0195B
+{
+  class MainClass
+  {
+    public static void Main (string[] args)
+    {
 
     var input = Console.ReadLine().Split().Select(int.Parse).ToArray();
-
+ 
     int A = input[0];
     int B = input[1];
     int W = input[2] * 1000;
-
+ 
     int min = W / B;
     int max = W / A;
-
+ 
     int min2;
     if (W % B == 0) {
       min2 = min;    
     } else {
       min2 = min + 1;
     }
-
+ 
     if (W - A * min2 > B) {
       Console.WriteLine(min2 + " " + max);
     }
@@ -63,13 +74,61 @@ class MainClass {
       Console.WriteLine("UNSATISFIABLE");
     }
 
+    }
   }
 }
 ```
-Partially wrong answers
+> Partially wrong answers
+
+#### Trial 2
+
+```cs
+using System;
+using System.Linq;
+
+
+namespace ABC0195B2
+{
+  class MainClass
+  {
+    public static void Main (string[] args)
+    {
+
+      var input = Console.ReadLine().Split().Select(int.Parse).ToArray();
+
+      int A = input[0];
+      int B = input[1];
+      int W = input[2] * 1000;
+
+      int min = W / B;
+      int max = W / A;
+
+      int min2;
+      if (W % B == 0) {
+        min2 = min;    
+      } else {
+        min2 = min + 1;
+      }
+
+      if (W - A * min2 >= A || W - B * max <= 0)
+      {
+        Console.WriteLine(min2 + " " + max);
+      }
+      else
+      {
+        Console.WriteLine("UNSATISFIABLE");
+      }
+
+    }
+  }
+}
+```
+> Accepted
 
 
 ### C - Comma
+
+#### Trial 1
 
 ```cs
 using System;
@@ -128,4 +187,39 @@ class MainClass {
   }
 }
 ```
-Partially wrong answers
+> Partially wrong answers
+
+#### Trial 2
+
+```cs
+using System;
+using System.Linq;
+
+
+namespace ABC0195C2
+{
+  class MainClass {
+    public static void Main (string[] args) {
+
+      Int64 N = Int64.Parse(Console.ReadLine());                               // Int64 : 1 <= N <= 10^15
+
+      int digit = N.ToString().Length;
+      Int64 sum = 0;
+
+      for (int i = 15; i > 2; i -= 3)                                          // 15, 12, 9, 6, 3
+      {
+        if (digit > i)
+        {
+          sum += (N - (Int64)Math.Pow(10, i) + 1) * (i/3);
+          // Console.WriteLine(digit.ToString() + " " + N.ToString() + " " + i + " " + sum);           // Test
+          N = (Int64)Math.Pow(10, i) - 1;
+        }
+      }
+
+      Console.WriteLine(sum);
+
+    }
+  }
+}
+```
+> Accepted

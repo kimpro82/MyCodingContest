@@ -11,8 +11,6 @@ https://codingcompetitions.withgoogle.com/codejam
 ### CodeForces
 https://codeforces.com/contests
 - Codeforces Round #708 (Div. 2) (2021.03.22 23:35, 2 hrs) (Comming)
-- Educational Codeforces Round 106 (Rated for Div. 2) (2021.03.18 23:45, 2 hrs) (Comming)
-- Codeforces Round #707 (Div. 2) (2021.03.17 23:35, 2 hrs) (Comming)
 - Codeforces Round #638 (Div. 2) (2020.05.01 23:35, 2.5 hrs)
 - Codeforces Round #637 (Div. 2) (2020.04.23 23:35, 2.5 hrs)
 - Codeforces Round #635 (Div. 2) (2020.04.15 23:35, 2.5 hrs)
@@ -24,10 +22,8 @@ https://codeforces.com/contests
 
 ### AtCoder
 https://atcoder.jp/
-- AtCoder Regular Contest 116 (2021.03.28 21:00, 120 minutes) (Comming)
 - AtCoder Beginner Contest 197 (2021.03.27 21:00, 100 minutes) (Comming)
-- AtCoder Regular Contest 115 (2021.03.21 21:00, 120 minutes) (Comming)
-- AtCoder Beginner Contest 196 (2021.03.20 21:00, 100 minutes) (Comming)
+- AtCoder Beginner Contest 196 (2021.03.20 21:00, 100 minutes)
 - AtCoder Beginner Contest 195 (2021.03.13 21:00, 100 minutes)
 - AtCoder Regular Contest 107 (2020.10.31 21:00, 100 minutes)
 - AtCoder Beginner Contest 164 (2020.04.26 21:00, 100 minutes)

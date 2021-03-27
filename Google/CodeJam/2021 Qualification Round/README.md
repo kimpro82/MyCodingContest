@@ -1,5 +1,5 @@
 ## Google Code Jam 2021 - Qualification Round
-2021.3.26 FRI ~28 SUN
+2021.3.26 FRI ~28 SUN  
 https://codingcompetitions.withgoogle.com/codejam/round/000000000043580a
 
 

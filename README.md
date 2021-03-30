@@ -12,7 +12,7 @@ https://codingcompetitions.withgoogle.com/codejam
 https://codeforces.com/contests
 - Codeforces Round #712 (Div. 1) (2021.04.03 23:35, 2 hrs) (Comming)
 - April Fools Day Contest 2021 (2021.04.01 23:35, 2 hrs) (Comming)
-- CodeCraft-21 and Codeforces Round #711 (Div. 2) (2021.03.29 23:35, 2 hrs) (Comming)
+- CodeCraft-21 and Codeforces Round #711 (Div. 2) (2021.03.29 23:35, 2 hrs)
 - Codeforces Round #638 (Div. 2) (2020.05.01 23:35, 2.5 hrs)
 - Codeforces Round #637 (Div. 2) (2020.04.23 23:35, 2.5 hrs)
 - Codeforces Round #635 (Div. 2) (2020.04.15 23:35, 2.5 hrs)
@@ -24,7 +24,7 @@ https://codeforces.com/contests
 
 ### AtCoder
 https://atcoder.jp/
-- AtCoder Regular Contest 116 (2021.03.28 21:00, 120 minutes) (Comming)
+- AtCoder Regular Contest 117 (2021.04.18 21:00, 120 minutes) (Comming)
 - AtCoder Beginner Contest 196 (2021.03.20 21:00, 100 minutes)
 - AtCoder Beginner Contest 195 (2021.03.13 21:00, 100 minutes)
 - AtCoder Regular Contest 107 (2020.10.31 21:00, 100 minutes)

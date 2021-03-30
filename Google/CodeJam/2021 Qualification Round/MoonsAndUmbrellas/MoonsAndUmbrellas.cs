@@ -34,7 +34,11 @@ namespace MoonsAndUmbrellas
                 int first;
                 int C = s.IndexOf("C");
                 int J = s.IndexOf("J");
-                if (C < 0 || J < 0)
+                if (C < 0 && J < 0)                             // there's neither C nor J (??????)
+                {
+                    S[0] = 'C';
+                    first = 0;
+                } else if (C < 0 || J < 0)
                 {
                     first = Math.Max(C, J);
                 } else {

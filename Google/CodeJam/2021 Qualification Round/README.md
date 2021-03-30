@@ -155,7 +155,11 @@ namespace MoonsAndUmbrellas
                 int first;
                 int C = s.IndexOf("C");
                 int J = s.IndexOf("J");
-                if (C < 0 || J < 0)
+                if (C < 0 && J < 0)                             // there's neither C nor J (??????)
+                {
+                    S[0] = 'C';
+                    first = 0;
+                } else if (C < 0 || J < 0)
                 {
                     first = Math.Max(C, J);
                 } else {
@@ -213,4 +217,6 @@ namespace MoonsAndUmbrellas
 > Case #4: 0
 
 > Samples: Passed  
-> Test Set 1: Runtime Error
+> Test Set 1: Passed (5 pts)  
+> Test Set 2: Passed (11 pts)  
+> Test Set 3: Wrong Answer (1 pts)

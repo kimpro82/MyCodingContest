@@ -37,7 +37,7 @@ namespace A
                         Console.WriteLine("{0} {1} {2} ", n, i, sum);       // test
                     }
 
-                    // 3. gcd operation
+                    // 3. gcd operation (Euclidean algorithm)
                     Int64 max = Math.Max(n, sum);
                     min = Math.Min(n, sum);
                     Int64 mod = max;
@@ -47,7 +47,7 @@ namespace A
                         max = min;
                         min = mod;
                         Console.WriteLine("{0} {1} {2} ", max, min, mod);   // test
-                    }
+                    } // gcd = min when escape while loop
 
                     n += 1;
 

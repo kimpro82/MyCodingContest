@@ -31,6 +31,7 @@ for (int t = 1; t <= T; t++)
     // loop for finding next n (n++) until gcdsum > 1
     while (max < 2)
     {
+
         // 1. read n
         int len = (char)(n.ToString()).Length;
 
@@ -61,7 +62,6 @@ for (int t = 1; t <= T; t++)
     // 4. output
     // Console.WriteLine("case {0} : {1} {2} ", t, max, n - 1);   // test
     Console.WriteLine(n - 1);
-
 
 } // the end of t loop
 ```

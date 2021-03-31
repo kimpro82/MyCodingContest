@@ -7,7 +7,6 @@ https://codingcompetitions.withgoogle.com/codejam
 - Qualification Round 2021 (2021.03.26 22:00 ~ 03.28 04:00, 30 hrs)
 - Qualification Round 2020 (2020.04.04 08:00 ~ 04.05 11:00, 27 hrs)
 
-
 ### CodeForces
 https://codeforces.com/contests
 - Codeforces Round #712 (Div. 1) (2021.04.03 23:35, 2 hrs) (Comming)
@@ -21,7 +20,6 @@ https://codeforces.com/contests
 - April Fools Day Contest 2020 (2020.04.01 23:35, 2 hrs)
 - Codeforces Round #628 (Div. 2) (2020.03.14 23:35, 2 hrs)
 
-
 ### AtCoder
 https://atcoder.jp/
 - AtCoder Regular Contest 117 (2021.04.18 21:00, 120 minutes) (Comming)
@@ -32,7 +30,6 @@ https://atcoder.jp/
 - AtCoder Beginner Contest 163 (2020.04.19 21:00, 100 minutes)
 - AtCoder Beginner Contest 162 (2020.04.12 21:00, 100 minutes)
 - AtCoder Beginner Contest 161 (2020.04.04 21:00, 100 minutes)
-
 
 ### Oncoder Official Coding Test
 https://www.oncoder.com/

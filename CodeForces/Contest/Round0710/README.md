@@ -1,5 +1,5 @@
 ### Codeforces Round #710 (Div. 3)
-2021.04.04 23:35(UTC+9), 2 hrs (Virtual Participation)
+2021.04.04 23:35(UTC+9), 2 hrs (Virtual Participation)  
 https://codeforces.com/contest/1506
 
 

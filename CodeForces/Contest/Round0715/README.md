@@ -118,7 +118,7 @@ for (int t = 1; t <= T; t++)
             mCount++;
         }
 
-        if ( (tCount < mCount) || (tCount - mCount > (n/3)) )                 // "No" ex1) MTT, MMT ex2) TTTTMM
+        if ( (tCount < mCount) || (tCount - mCount > (n/3)) )           // "No" ex1) MTT, MMT ex2) TTTTMM
         {
             break;
         }

@@ -102,38 +102,38 @@ int T = int.Parse(Console.ReadLine());                                  // 5
 for (int t = 1; t <= T; t++)
 {
 
-int n = int.Parse(Console.ReadLine());                              // 3
-StringBuilder input = new StringBuilder(Console.ReadLine());        // TMT
+    int n = int.Parse(Console.ReadLine());                              // 3
+    StringBuilder input = new StringBuilder(Console.ReadLine());        // TMT
 
-// Count T and M
-double tCount = 0;
-double mCount = 0;
-for (int i = 0; i < n; i++)
-{
-
-    if (input[i] == 'T')
+    // Count T and M
+    double tCount = 0;
+    double mCount = 0;
+    for (int i = 0; i < n; i++)
     {
-        tCount++;
+
+        if (input[i] == 'T')
+        {
+            tCount++;
+        } else {
+            mCount++;
+        }
+
+        if ( (tCount < mCount) || (tCount - mCount > (n/3)) )                 // "No" ex1) MTT, MMT ex2) TTTTMM
+        {
+            break;
+        }
+
+    }
+
+    // Output
+    if ( (tCount < mCount) || (tCount - mCount > (n/3)) )
+    {
+        Console.WriteLine("NO");                    
+    } else if ((double)(n / tCount) == 1.5) {
+        Console.WriteLine("YES");
     } else {
-        mCount++;
+        Console.WriteLine("NO");
     }
-
-    if ( (tCount < mCount) || (tCount - mCount > (n/3)) )                 // "No" ex1) MTT, MMT ex2) TTTTMM
-    {
-        break;
-    }
-
-}
-
-// Output
-if ( (tCount < mCount) || (tCount - mCount > (n/3)) )
-{
-    Console.WriteLine("NO");                    
-} else if ((double)(n / tCount) == 1.5) {
-    Console.WriteLine("YES");
-} else {
-    Console.WriteLine("NO");
-}
 
 } // The end of t loop
 ```

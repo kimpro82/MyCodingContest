@@ -1,5 +1,5 @@
 ﻿// Codeforces Round #715 (Div. 2)
-// 2021.04.16(Fri) 23:35, 2 hrs
+// 2021.04.16(Fri) 23:35, 2.25 hrs
 
 // B. TMT Document
 
@@ -49,7 +49,7 @@ namespace CFR0715Div2B
                         mCount++;
                     }
 
-                    if ((tCount < mCount) || ((double)(tCount / mCount) > 2))       // "No"
+                    if ( (tCount < mCount) || (tCount - mCount > (n/3)) )                 // "No" ex1) MTT, MMT ex2) TTTTMM
                     {
                         break;
                     }
@@ -57,7 +57,7 @@ namespace CFR0715Div2B
                 }
 
                 // Output
-                if ((tCount < mCount) || ((double)(tCount / mCount) > 2))
+                if ( (tCount < mCount) || (tCount - mCount > (n/3)) )
                 {
                     Console.WriteLine("NO");                    
                 } else if ((double)(n / tCount) == 1.5) {

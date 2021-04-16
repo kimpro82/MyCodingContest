@@ -1,5 +1,5 @@
 ﻿// Codeforces Round #715 (Div. 2)
-// 2021.04.16(Fri) 23:35, 2 hrs
+// 2021.04.16(Fri) 23:35, 2.25 hrs
 
 // A. Average Height
 

@@ -35,6 +35,7 @@ int T = int.Parse(Console.ReadLine());                                  // 4
 // Read each case and print its output
 for (int t = 1; t <= T; t++)
 {
+
     int n = int.Parse(Console.ReadLine());                              // 8
     var input = Console.ReadLine().Split().Select(int.Parse).ToArray(); // 10 9 13 15 3 16 9 13
 

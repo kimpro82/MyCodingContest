@@ -6,12 +6,14 @@ https://atcoder.jp/contests/arc117/
 ### A - God Sequence
 
 ```cs
+/* Sample Input & Output
 1 1
 1001 -1001
 1 4
 -8 -6 -9 120 -97
 7 5
 323 -320 411 206 -259 298 -177 -564 167 392 -628 151
+*/
 ```
 
 ```cs

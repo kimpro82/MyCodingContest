@@ -11,7 +11,7 @@ https://codingcompetitions.withgoogle.com/codejam
 https://codeforces.com/contests
 - Codeforces Round #718 (Div. 2) (2021.04.23 23:35, 2.25 hrs) (Comming)
 - Codeforces Round #717 (Div. 2) (2021.04.21 22:35, 2 hrs) (Comming)
-- Codeforces Round #716 (Div. 2) (2021.04.19 22:35, 2.25 hrs) (Comming)
+- Codeforces Round #716 (Div. 2) (2021.04.19 22:35, 2.25 hrs)
 - Codeforces Round #715 (Div. 2) (2021.04.16 23:35, 2.25 hrs)
 - CodeCraft-21 and Codeforces Round #711 (Div. 2) (2021.03.29 23:35, 2 hrs)
 - Codeforces Round #710 (Div. 3) (2021.03.25 23:35, 2 hrs)

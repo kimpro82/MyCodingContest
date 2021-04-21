@@ -34,15 +34,90 @@ namespace CFR717Div2B
                 int n = int.Parse(Console.ReadLine());                                  // 3
                 List<int> a = Console.ReadLine().Split().Select(int.Parse).ToList();    // 0 2 2
 
-                // Bitwise XOR operation
-                while (n > 2)
+
+                // Trial 1
+
+                // // Bitwise XOR operation
+                // while (n > 2)                                                           // can't use a.Length
+                // {
+                //     a[1] = a[0]^a[1];
+                //     a.RemoveAt(0);
+                //     n--;
+                // }
+
+                // // Output when list a's length = 2
+                // if (a[0] == a[1])
+                // {
+                //     Console.WriteLine("YES");
+                // } else {
+                //     Console.WriteLine("NO");
+                // }
+
+
+                // Trial 2
+
+                // while (n > 2)                                                           // can't use a.Length
+                // {
+
+                //     // Bitwise XOR operation
+                //     a[1] = a[0]^a[1];
+                //     a.RemoveAt(0);
+                //     n--;
+
+                //     // Check if all elements of a are equal
+                //     int max = 0;
+                //     int min = (int) Math.Pow(2, 30);                                    // should be converted to integer type
+                //     for (int i=0; i < n; i++)
+                //     {
+                //         max = Math.Max(a[i], max);
+                //         min = Math.Min(a[i], min);
+                //     }
+                //     Console.WriteLine("({0}) max : {1}, min : {2}", n, max, min);       // test
+                //     if (max == min)
+                //     {
+                //         break;
+                //     }
+
+                // }
+
+                // // Output
+                // Console.WriteLine("a[0] : {0}, a[1] : {1}", a[0], a[1]);                // test
+                // if (a[0] == a[1])
+                // {
+                //     Console.WriteLine("YES");
+                // } else {
+                //     Console.WriteLine("NO");
+                // }
+
+
+                // Trial 3
+
+                while (n > 2)                                                           // can't use a.Length
                 {
+
+                    // Check if all elements of a are equal
+                    int max = 0;
+                    int min = (int) Math.Pow(2, 30);                                    // should be converted to integer type
+                    for (int i=0; i < n; i++)
+                    {
+                        max = Math.Max(a[i], max);
+                        min = Math.Min(a[i], min);
+                    }
+                    // Console.WriteLine("({0}) max : {1}, min : {2}", n, max, min);       // test
+                    if (max == min)
+                    {
+                        break;
+                    }
+
+                    // Bitwise XOR operation
                     a[1] = a[0]^a[1];
                     a.RemoveAt(0);
                     n--;
+
                 }
 
-                // Output when list a's lenth = 2
+                // Output
+                // Console.WriteLine("({0}) a[0] : {1}, a[1] : {2}", n, a[0], a[1]);       // test
                 if (a[0] == a[1])
                 {
                     Console.WriteLine("YES");

@@ -29,13 +29,13 @@ namespace CFR718A
                 36
             */
 
-            int T = int.Parse(Console.ReadLine());          // 6
+            int T = int.Parse(Console.ReadLine());          // 2
 
             // Read each case and print its output
             for (int t = 1; t <= T; t++)
             {
                 
-                Int64 n = Int64.Parse(Console.ReadLine());  // 205
+                Int64 n = Int64.Parse(Console.ReadLine());  // 22550, 22551
 
                 // Find n's length
                 int k = (int) Math.Log10(n);

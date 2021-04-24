@@ -8,7 +8,7 @@
 Yes
 
 10 10 10
-No No
+No
 
 3 4 5
 No

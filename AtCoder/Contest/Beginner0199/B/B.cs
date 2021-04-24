@@ -32,9 +32,9 @@ namespace ABC0199B
         {
 
             // Read data - A, B who are sequences of length N
-            int n = int.Parse(Console.ReadLine());
-            List<int> a = Console.ReadLine().Split().Select(int.Parse).ToList();
-            List<int> b = Console.ReadLine().Split().Select(int.Parse).ToList();
+            int n = int.Parse(Console.ReadLine());                                  // 3
+            List<int> a = Console.ReadLine().Split().Select(int.Parse).ToList();    // 3 2 5
+            List<int> b = Console.ReadLine().Split().Select(int.Parse).ToList();    // 6 9 8
 
             // Find max and min values from A and B
             int max = 1000, min = 0;

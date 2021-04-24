@@ -25,7 +25,7 @@ https://codeforces.com/contests
 
 ### AtCoder
 https://atcoder.jp/
-- AtCoder Beginner Contest 199 (2021.04.24 21:00, 100 minutes) (Comming)
+- AtCoder Beginner Contest 199 (2021.04.24 21:00, 100 minutes)
 - AtCoder Regular Contest 117 (2021.04.18 21:00, 120 minutes)
 - AtCoder Beginner Contest 196 (2021.03.20 21:00, 100 minutes)
 - AtCoder Beginner Contest 195 (2021.03.13 21:00, 100 minutes)

@@ -9,10 +9,8 @@ https://codingcompetitions.withgoogle.com/codejam
 
 ### CodeForces
 https://codeforces.com/contests
-- Codeforces Round #720 (Div. 2) (2021.05.07 23:35, 2 hrs) (Comming)
-- Codeforces Round #719 (Div. 3) (2021.05.04 23:35, 2 hrs) (Comming)
-- Codeforces Global Round 14 (2021.05.02 23:35, 2.5 hrs) (Comming)
-- Educational Codeforces Round 108 (Rated for Div. 2) (2021.04.29 23:35, 2 hrs) (Comming)
+- Deltix Round, Spring 2021 (Div. 1 + Div. 2) (2021.05.30 23:35, 2.25 hrs) (Comming)
+- ICPC Challenge 2021: Marathon (powered by Huawei) (2021.05.26 13:00, 4 hrs) (Comming)
 - Contest 2050 and Codeforces Round #718 (Div. 1, 2) (2021.04.23 23:35, 2.75 hrs)
 - Codeforces Round #717 (Div. 2) (2021.04.21 22:35, 2 hrs)
 - Codeforces Round #716 (Div. 2) (2021.04.19 22:35, 2.25 hrs)
@@ -29,9 +27,10 @@ https://codeforces.com/contests
 
 ### AtCoder
 https://atcoder.jp/
-- AtCoder Regular Contest 119 (2021.05.23 21:00, 120 minutes) (Comming)
+- AtCoder Regular Contest 120 (2021.05.23 21:00, 120 minutes) (Comming)
+- AtCoder Beginner Contest 202 (2021.05.22 21:00, 100 minutes) (Comming)
+- AtCoder Regular Contest 119 (2021.05.16 21:00, 120 minutes) (Comming)
 - AtCoder Beginner Contest 201 (2021.05.15 21:00, 100 minutes) (Comming)
-- AtCoder Regular Contest 118 (2021.05.09 21:00, 120 minutes) (Comming)
 - AtCoder Beginner Contest 199 (2021.04.24 21:00, 100 minutes)
 - AtCoder Regular Contest 117 (2021.04.18 21:00, 120 minutes)
 - AtCoder Beginner Contest 196 (2021.03.20 21:00, 100 minutes)
@@ -41,6 +40,10 @@ https://atcoder.jp/
 - AtCoder Beginner Contest 163 (2020.04.19 21:00, 100 minutes)
 - AtCoder Beginner Contest 162 (2020.04.12 21:00, 100 minutes)
 - AtCoder Beginner Contest 161 (2020.04.04 21:00, 100 minutes)
+
+### BAEKJOON Online Judge
+https://www.acmicpc.net/
+- 2021 연세대학교 신입생 프로그래밍 경진대회 Open (2021.05.30 14:00, 3 hrs) (Comming)
 
 ### Oncoder Official Coding Test
 https://www.oncoder.com/

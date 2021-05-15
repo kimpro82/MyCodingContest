@@ -1,5 +1,5 @@
 ﻿// AtCoder Beginner Contest 201
-// 2021-05-15(Sat) 21:00 - 2021-05-15(Sat) 22:40, 100 minutes
+// 2021-05-15(Sat) 21:00 - 22:40, 100 minutes
 
 // A - Tiny Arithmetic Sequence
 

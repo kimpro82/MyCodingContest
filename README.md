@@ -11,6 +11,8 @@ https://codingcompetitions.withgoogle.com/codejam
 https://codeforces.com/contests
 - Deltix Round, Spring 2021 (Div. 1 + Div. 2) (2021.05.30 23:35, 2.25 hrs) (Comming)
 - ICPC Challenge 2021: Marathon (powered by Huawei) (2021.05.26 13:00, 4 hrs) (Comming)
+- Codeforces Round #TBA (Div. 2) (2021.05.24 23:35, 2 hrs)
+- Codeforces Round #721 (Div. 2) (2021.05.20 23:35, 2 hrs)
 - Contest 2050 and Codeforces Round #718 (Div. 1, 2) (2021.04.23 23:35, 2.75 hrs)
 - Codeforces Round #717 (Div. 2) (2021.04.21 22:35, 2 hrs)
 - Codeforces Round #716 (Div. 2) (2021.04.19 22:35, 2.25 hrs)
@@ -27,10 +29,12 @@ https://codeforces.com/contests
 
 ### AtCoder
 https://atcoder.jp/
-- AtCoder Regular Contest 120 (2021.05.23 21:00, 120 minutes) (Comming)
+- AtCoder Beginner Contest 203 (2021.05.30 21:00, 100 minutes) (Comming)
+- AtCoder Regular Contest 121 (2021.05.29 21:00, 120 minutes) (Comming)
+- AtCoder Regular Contest 120 (2021.05.23 22:00, 120 minutes) (Comming)
 - AtCoder Beginner Contest 202 (2021.05.22 21:00, 100 minutes) (Comming)
-- AtCoder Regular Contest 119 (2021.05.16 21:00, 120 minutes) (Comming)
-- Mynavi Programming Contest 2021（AtCoder Beginner Contest 201）(2021.05.15 21:00, 100 minutes)
+- AtCoder Regular Contest 119 (2021.05.16 21:00, 120 minutes)
+- AtCoder Beginner Contest 201 (2021.05.15 21:00, 100 minutes)
 - AtCoder Beginner Contest 199 (2021.04.24 21:00, 100 minutes)
 - AtCoder Regular Contest 117 (2021.04.18 21:00, 120 minutes)
 - AtCoder Beginner Contest 196 (2021.03.20 21:00, 100 minutes)

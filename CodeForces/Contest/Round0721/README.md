@@ -60,6 +60,8 @@ for (int t = 1; t <= T; t++)
 > 15 : 0  
 > 15
 
+> Accepted
+
 
 #### B1, B2. Palindrome Game (easy/hard version)
 

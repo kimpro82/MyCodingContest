@@ -23,7 +23,28 @@ namespace CFR721A
                 15
             */
 
-            Console.WriteLine("Hello World!");
+            int T = int.Parse(Console.ReadLine());      // 3
+
+            // Read each case t times
+            for (int t = 1; t <= T; t++)
+            {
+               
+                int n = int.Parse(Console.ReadLine());  // 2, 5, 17
+
+                // Bitwise & operation
+                int k = n;
+                while (n != 0)
+                {
+                    k = n - 1;
+                    n = n & k;
+                    // Console.WriteLine("{0} : {1}", k, n);   // test
+                }
+
+                // Output
+                Console.WriteLine(k);
+
+            }
+
         }
     }
 }

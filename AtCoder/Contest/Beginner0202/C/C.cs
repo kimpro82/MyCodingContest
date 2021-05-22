@@ -33,7 +33,7 @@ namespace ABC0202C
     {
         public static void Main (string[] args) 
         {
-            ushort n = int.Parse(Console.ReadLine());                                  // 3
+            int n = int.Parse(Console.ReadLine());                                  // 3
 
             // Read A, B, C
             List<int> a = Console.ReadLine().Split().Select(int.Parse).ToList();    // A

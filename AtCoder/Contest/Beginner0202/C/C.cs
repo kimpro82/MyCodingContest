@@ -27,7 +27,7 @@ using System;
 using System.Linq;                  // for .Select()
 using System.Collections.Generic;   // for List<>
 
-namespace ABC0202C1
+namespace ABC0202C
 {
     class MainClass
     {
@@ -36,9 +36,12 @@ namespace ABC0202C1
             int n = int.Parse(Console.ReadLine());                                  // 3
 
             // Read A, B, C
-            List<int> a = Console.ReadLine().Split().Select(int.Parse).ToList();    // A
-            List<int> b = Console.ReadLine().Split().Select(int.Parse).ToList();    // B
-            List<int> c = Console.ReadLine().Split().Select(int.Parse).ToList();    // C
+            // List<int> a = Console.ReadLine().Split().Select(int.Parse).ToList();
+            // List<int> b = Console.ReadLine().Split().Select(int.Parse).ToList();
+            // List<int> c = Console.ReadLine().Split().Select(int.Parse).ToList();
+            int[] a = Console.ReadLine().Split().Select(int.Parse).ToArray();       // A
+            int[] b = Console.ReadLine().Split().Select(int.Parse).ToArray();       // B
+            int[] c = Console.ReadLine().Split().Select(int.Parse).ToArray();       // C
 
             // Count the number of pairs such that A_i = B_(C_j)
             int sum = 0;
@@ -50,8 +53,8 @@ namespace ABC0202C1
                     {
                         sum++;
                     }
-                    Console.WriteLine("({0}, {1}) a[{2}] : {3}, b[{4}] : {5}, count : {6}",
-                        i, j, i-1, a[i-1], c[j-1]-1, b[c[j-1]-1], sum);             // test
+                    // Console.WriteLine("({0}, {1}) a[{2}] : {3}, b[{4}] : {5}, count : {6}",
+                    //     i, j, i-1, a[i-1], c[j-1]-1, b[c[j-1]-1], sum);         // test
                 }
             }
 

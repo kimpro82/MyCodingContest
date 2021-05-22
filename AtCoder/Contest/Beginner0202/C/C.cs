@@ -14,7 +14,7 @@
 1 1 1 1
 1 1 1 1
 1 2 3 4
-16 ?
+16
 
 3
 2 3 3
@@ -49,8 +49,9 @@ namespace ABC0202C
                     if (a[i-1] == b[c[j-1]-1])
                     {
                         sum++;
-                        // Console.WriteLine("({0}, {1}) {2} {3} {4}", i, j, a[i-1], b[c[j-1]-1], sum);    // test
                     }
+                    Console.WriteLine("({0}, {1}) a[{2}] : {3}, b[{4}] : {5}, count : {6}",
+                        i, j, i-1, a[i-1], c[j-1]-1, b[c[j-1]-1], sum);             // test
                 }
             }
 

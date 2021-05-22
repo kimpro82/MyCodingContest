@@ -42,16 +42,16 @@ namespace ABC0202C2
 
             // Count the number of pairs such that A_i = B_(C_j)
             int sum = 0;
-            for (int i = 1; i <= n; i++)                                            // only 3 rows of A, B, C
+            for (int i = 1; i <= n; i++)                                        // only 3 rows of A, B, C
             {
-                for (int j = 1; j <= n; j++)                                        // A1, A2, ..., An
+                for (int j = 1; j <= n; j++)                                    // A1, A2, ..., An
                 {
                     if (a[i-1] == b[c[j-1]-1])
                     {
                         sum++;
                     }
                     // Console.WriteLine("({0}, {1}) a[{2}] : {3}, b[{4}] : {5}, count : {6}",
-                    //     i, j, i-1, a[i-1], c[j-1]-1, b[c[j-1]-1], sum);             // test
+                    //     i, j, i-1, a[i-1], c[j-1]-1, b[c[j-1]-1], sum);         // test
                 }
             }
 

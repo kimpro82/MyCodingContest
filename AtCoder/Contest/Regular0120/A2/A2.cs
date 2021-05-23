@@ -13,9 +13,9 @@
 */
 
 using System;
-using System.Linq;  // for .Select()
+using System.Linq;  // for .Select(), Max()
 
-namespace ARC120A1
+namespace ARC120A2
 {
     class MainClass
     {
@@ -23,30 +23,23 @@ namespace ARC120A1
         {
 
             // Read data
-            int n = int.Parse(Console.ReadLine());
-            int[] a = Console.ReadLine().Split().Select(int.Parse).ToArray();
+            int n = int.Parse(Console.ReadLine());                                  // 3
+            long[] a = Console.ReadLine().Split().Select(long.Parse).ToArray();     // 1 2 3
 
             // f(a) operation of a_0 ~ a_k
             for (int i = 0; i < n; i++)
             {
-                int[] aSub = new int[i+1];              // Initialize for f(a)
-                int max = 0, sum = 0;
+                long[] aSub = a[0..(i+1)];                   // Initialize a[]'s subset : [1], [1, 2], [1, 2, 3]
+
+                long sum = 0;
                 for (int j = 0; j <= i; j++)
                 {
-                    max = sum = 0;                      // Initialize for each j-th loop
-                    for (int k = 0; k <= i; k++)
-                    {
-                        if (j == 0)                     // Copy a[] to aSub[] only when j == 0
-                        {
-                            aSub[k] = a[k];
-                        }
-                        sum += aSub[k];
-                        max = Math.Max(max, aSub[k]);   // Get max
-                    }
+                    long max = aSub.Max();                   // Get max of i-th aSub[]
+                    sum = 0;
 
                     // Get sum and update aSub[]
-                    sum += max;                         // for saving additional loop to calculate sum
                     aSub[j] += max;
+                    sum = aSub.Sum();
 
                     // Test
                     Console.Write("(k = {0}) max : {1}, aSub : ", i, max);

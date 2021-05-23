@@ -72,3 +72,5 @@ for (int i = 0; i < n; i++)
 > (k = 2) max : 4, aSub : 463, sum : 13  
 > (k = 2) max : 6, aSub : 469, sum : 19  
 > 19
+
+> Time Limit Exceeded

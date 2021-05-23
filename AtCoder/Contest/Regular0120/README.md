@@ -77,7 +77,7 @@ for (int i = 0; i < n; i++)
 
 > Time Limit Exceeded
 
-#### Trial 1
+#### Trial 2
 
 ```cs
 using System;

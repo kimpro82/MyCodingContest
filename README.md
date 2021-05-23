@@ -32,7 +32,7 @@ https://atcoder.jp/
 - AtCoder Beginner Contest 203 (2021.05.30 21:00, 100 minutes) (Comming)
 - AtCoder Regular Contest 121 (2021.05.29 21:00, 120 minutes) (Comming)
 - AtCoder Regular Contest 120 (2021.05.23 22:00, 120 minutes) (Comming)
-- AtCoder Beginner Contest 202 (2021.05.22 21:00, 100 minutes) (Comming)
+- AtCoder Beginner Contest 202 (2021.05.22 21:00, 100 minutes)
 - AtCoder Regular Contest 119 (2021.05.16 21:00, 120 minutes)
 - AtCoder Beginner Contest 201 (2021.05.15 21:00, 100 minutes)
 - AtCoder Beginner Contest 199 (2021.04.24 21:00, 100 minutes)

@@ -5,7 +5,7 @@ using namespace std;
 int main()
 {
     int a;
-    cin >> a;                   // 82
+    cin >> a;                   // 99, 82, 79, 60, 37
 
     if (a >= 90)
     {

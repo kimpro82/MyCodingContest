@@ -287,47 +287,23 @@ char b[3];                      // trial 1-1 : a = 256 when declare char b[3]
 cin >> a;                       // 472
 cin >> b;                       // 385
 cout << a << " " << b << endl;  // test
-
-return 0;
 ```
 > 256 385
 
 #### C++ - trial 1-2
 ```cpp
-int a;
-// char b[3];                   // trial 1-1 : a = 256 when declare char b[3]
 char b[4];                      // trial 1-2 
-cin >> a;                       // 472
-cin >> b;                       // 385
-cout << a << " " << b << endl;  // test
-
-return 0;
 ```
 > 472 385
 
 #### C++ - trial 1-3
 ```cpp
-int a;
-// char b[3];                   // trial 1-1 : a = 256 when declare char b[3]
-// char b[4];                   // trial 1-2 
 string b;                       // trial 1-3 : change char[] to string
-cin >> a;                       // 472
-cin >> b;                       // 385
-cout << a << " " << b << endl;  // test
-
-return 0;
 ```
 > 472 385
 
 #### C++ - trial 2
 ```cpp
-int a;
-// char b[3];                       // trial 1-1 : a = 256 when declare char b[3]
-// char b[4];                       // trial 1-2 
-string b;                           // trial 1-3 : change char[] to string
-cin >> a;                           // 472
-cin >> b;                           // 385
-// cout << a << " " << b << endl;   // test
 int len = b.length();
 
 int sum = 0;
@@ -338,8 +314,6 @@ for (int i = 0; i < len; i++)
     cout << "convert to int 1 : " << (int) b.at(len-i-1) << endl;            // trial 2-1 : failure because output its ascii code
     cout << "convert to int 2 : " << (int) (b.at(len-i-1) - '0') << endl;    // trial 2-2 : success
 }
-
-return 0;
 ```
 > b[2] : 5  
 > convert to int 1 : 53  
@@ -354,19 +328,9 @@ return 0;
 #### C++ - trial 3-1
 ```cpp
 #include <iostream>
-#include <cmath>
+#include <cmath>    // for using pow()
 ```
 ```cpp
-int a;
-// char b[3];                       // trial 1-1 : a = 256 when declare char b[3]
-// char b[4];                       // trial 1-2 
-string b;                           // trial 1-3 : change char[] to string
-cin >> a;                           // 472
-cin >> b;                           // 385
-// cout << a << " " << b << endl;   // test
-int len = b.length();
-
-int sum = 0;
 for (int i = 0; i < len; i++)
 {
     short digit = (int) (b[3-i-1] - '0');
@@ -383,8 +347,6 @@ for (int i = 0; i < len; i++)
     cout << prod << " " << sum - prod << " " << sum << endl;    // test
     // cout << prod << endl;
 }
-
-return 0;
 ```
 > 472 5 1  
 > 2360 0 2360  

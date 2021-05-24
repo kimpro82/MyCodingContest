@@ -362,7 +362,7 @@ int cipher = pow(10.0, i);      // trial 3-4 : use 10.0 - 99 - 180304
 ```cpp
 int cipher = pow(10, i);        // trial 3-5 : the same with 1 but run by C++17(Clang) - Correct
 ```
-> Accept
+> Accepted
 
 #### C++ - trial 6 (final)
 ```cpp
@@ -415,6 +415,8 @@ return 0;
 > 472 3 100  
 > 1416 180304 181720  
 > 181720
+
+> Accepted
 
 #### Bonus.
 ```cpp

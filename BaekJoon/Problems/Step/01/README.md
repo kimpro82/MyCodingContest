@@ -1,6 +1,8 @@
 ## BAEKJOON Online Judge
 문제 > 단계별로 풀어보기 > 1. 입출력과 사칙연산  
-https://www.acmicpc.net/step/1
+https://www.acmicpc.net/step/1  
+※ The codes of `Python` and `C++` has the same result  
+※ C++ codes : Skipped main() function's brace and its outside
 
 
 ### 2557. Hello World
@@ -15,6 +17,8 @@ print("Hello World!")
 cout << "Hello World!" << endl;
 return 0;
 ```
+
+> Hello World!
 
 
 ### 10718. We love kriii
@@ -35,6 +39,9 @@ for (int i = 0; i < 2; i++)
 return 0;
 ```
 
+> 강한친구 대한육군  
+> 강한친구 대한육군
+
 
 ### 10171. Cats
 
@@ -48,13 +55,19 @@ print(" \\(__)|")
 
 #### C++
 ```cpp
-    cout << "\\    /\\" << endl;
-    cout << " )  ( ')" << endl;
-    cout << "(  /  ) " << endl;
-    cout << " \\(__)|" << endl;
+cout << "\\    /\\" << endl;
+cout << " )  ( ')" << endl;
+cout << "(  /  ) " << endl;
+cout << " \\(__)|" << endl;
 
-    return 0;
+return 0;
 ```
+
+> \    /\  
+> \    /\  
+>  )  ( ')  
+> (  /  )   
+>  \(__)|  
 
 
 ### 10172. Dogs
@@ -83,14 +96,6 @@ return 0;
 
 #### C++ - trial 2
 ```cpp
-//     cout << R"(
-// |\_/|
-// |q p|   /}
-// ( 0 )"""\
-// |"^"`    |
-// ||_/=\\__|
-// )" << endl;
-
 cout << "|\\_/|" << endl;
 cout << "|q p|   /}" << endl;
 cout << "( 0 )\"\"\"\\" << endl;
@@ -99,6 +104,12 @@ cout << "||_/=\\\\__|" << endl;
 
 return 0;
 ```
+
+> |\_/|  
+> |q p|   /}  
+> ( 0 )"""\  
+> |"^"`    |  
+> ||_/=\\__|  
 
 
 ### 1000. A+B
@@ -112,11 +123,13 @@ print(a+b)
 #### C++
 ```cpp
 int a, b;
-cin >> a >> b;
+cin >> a >> b;          // 1 2
 cout << a + b << endl;
 
 return 0;
 ```
+
+> 3
 
 
 ### 1001. A-B
@@ -130,11 +143,13 @@ print(a-b)
 #### C++
 ```cpp
 int a, b;
-cin >> a >> b;
+cin >> a >> b;          // 3 2
 cout << a - b << endl;
 
 return 0;
 ```
+
+> 1
 
 
 ### 10998. A*B
@@ -148,11 +163,13 @@ print(a*b)
 #### C++
 ```cpp
 int a, b;
-cin >> a >> b;
+cin >> a >> b;          // 3 4
 cout << a * b << endl;
 
 return 0;
 ```
+
+> 12
 
 
 ### 1008. A/B
@@ -166,12 +183,14 @@ print(a/b)
 #### C++
 ```cpp
 int a, b;
-cin >> a >> b;
+cin >> a >> b;                  // 1 3
 cout.precision(10);             // for reducing error < 10^(-9)
 cout << (double)a / b << endl;
 
 return 0;
 ```
+
+> 0.3333333333
 
 
 ### 10869. 사칙연산
@@ -190,7 +209,7 @@ print(a%b)
 #### C++
 ```cpp
 int a, b;
-cin >> a >> b;
+cin >> a >> b;          // 7 3
 
 cout << a + b << endl;
 cout << a - b << endl;
@@ -200,6 +219,8 @@ cout << a % b << endl;
 
 return 0;
 ```
+
+> 10 4 21 2 1 (vertically)
 
 
 ### 10430. 나머지
@@ -217,7 +238,7 @@ print(((A%C)*(B%C))%C)
 #### C++
 ```cpp
 int A, B, C;
-cin >> A >> B >> C;
+cin >> A >> B >> C;             // 5 8 4
 
 cout << (A+B)%C << endl;
 cout << ((A%C)+(B%C))%C << endl;
@@ -226,6 +247,8 @@ cout << ((A%C)*(B%C))%C << endl;
 
 return 0;
 ```
+
+> 1 1 0 0 (vertically)
 
 
 ### 2588. 곱셈
@@ -255,7 +278,22 @@ for i in range(0,len(b)) :
 print(sum)
 ```
 
-#### C++
+#### C++ - trial 1
+```cpp
+#include <iostream>
+#include <math.h>
+```
+```cpp
+int a;
+char b[3];                       // trial 1-1 : a = 256 when declare char b[3]
+cin >> a;                           // 472
+cin >> b;                           // 385
+cout << a << " " << b << endl;   // test
+
+return 0;
+```
+
+#### C++ - final
 ```cpp
 #include <iostream>
 #include <math.h>

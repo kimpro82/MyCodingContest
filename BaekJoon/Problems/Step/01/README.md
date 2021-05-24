@@ -2,7 +2,7 @@
 문제 > 단계별로 풀어보기 > 1. 입출력과 사칙연산  
 https://www.acmicpc.net/step/1  
 ※ The codes of `Python` and `C++` has the same result  
-※ C++ codes : skipped main() function's brace and its outside
+※ C++ codes : **skipped** `main()` function's brace(`{}`) and its outside
 
 
 ### 2557. Hello World

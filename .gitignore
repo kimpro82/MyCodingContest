@@ -1,4 +1,7 @@
-bin/
-obj/
+/.vscode
+
+*.exe
 
 *.csproj
+bin/
+obj/

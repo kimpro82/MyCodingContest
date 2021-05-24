@@ -64,10 +64,9 @@ return 0;
 ```
 
 > \    /\  
-> \    /\  
 >  )  ( ')  
 > (  /  )   
->  \(__)|  
+>  \\(__)|  
 
 
 ### 10172. Dogs
@@ -105,11 +104,11 @@ cout << "||_/=\\\\__|" << endl;
 return 0;
 ```
 
-> |\_/|  
+> |\\_/|  
 > |q p|   /}  
 > ( 0 )"""\  
 > |"^"`    |  
-> ||_/=\\__|  
+> ||_/=\\\\__|  
 
 
 ### 1000. A+B
@@ -278,26 +277,137 @@ for i in range(0,len(b)) :
 print(sum)
 ```
 
-#### C++ - trial 1
+#### C++ - trial 1-1
 ```cpp
 #include <iostream>
-#include <math.h>
 ```
 ```cpp
 int a;
-char b[3];                       // trial 1-1 : a = 256 when declare char b[3]
-cin >> a;                           // 472
-cin >> b;                           // 385
-cout << a << " " << b << endl;   // test
+char b[3];                      // trial 1-1 : a = 256 when declare char b[3]
+cin >> a;                       // 472
+cin >> b;                       // 385
+cout << a << " " << b << endl;  // test
 
 return 0;
 ```
+> 256 385
 
-#### C++ - final
+#### C++ - trial 1-2
+```cpp
+int a;
+// char b[3];                   // trial 1-1 : a = 256 when declare char b[3]
+char b[4];                      // trial 1-2 
+cin >> a;                       // 472
+cin >> b;                       // 385
+cout << a << " " << b << endl;  // test
+
+return 0;
+```
+> 472 385
+
+#### C++ - trial 1-3
+```cpp
+int a;
+// char b[3];                   // trial 1-1 : a = 256 when declare char b[3]
+// char b[4];                   // trial 1-2 
+string b;                       // trial 1-3 : change char[] to string
+cin >> a;                       // 472
+cin >> b;                       // 385
+cout << a << " " << b << endl;  // test
+
+return 0;
+```
+> 472 385
+
+#### C++ - trial 2
+```cpp
+int a;
+// char b[3];                       // trial 1-1 : a = 256 when declare char b[3]
+// char b[4];                       // trial 1-2 
+string b;                           // trial 1-3 : change char[] to string
+cin >> a;                           // 472
+cin >> b;                           // 385
+// cout << a << " " << b << endl;   // test
+int len = b.length();
+
+int sum = 0;
+for (int i = 0; i < len; i++)
+{
+    // Test : get each cipher's integer number, not ascii code
+    cout << "b[" << len-i-1 << "] : " << b.at(len-i-1) << endl;              // b[2], b[1], b[0] / OK
+    cout << "convert to int 1 : " << (int) b.at(len-i-1) << endl;            // trial 2-1 : failure because output its ascii code
+    cout << "convert to int 2 : " << (int) (b.at(len-i-1) - '0') << endl;    // trial 2-2 : success
+}
+
+return 0;
+```
+> b[2] : 5  
+> convert to int 1 : 53  
+> convert to int 2 : 5  
+> b[1] : 8  
+> convert to int 1 : 56  
+> convert to int 2 : 8  
+> b[0] : 3  
+> convert to int 1 : 51  
+> convert to int 2 : 3
+
+#### C++ - trial 3-1
 ```cpp
 #include <iostream>
-#include <math.h>
+#include <cmath>
 ```
+```cpp
+int a;
+// char b[3];                       // trial 1-1 : a = 256 when declare char b[3]
+// char b[4];                       // trial 1-2 
+string b;                           // trial 1-3 : change char[] to string
+cin >> a;                           // 472
+cin >> b;                           // 385
+// cout << a << " " << b << endl;   // test
+int len = b.length();
+
+int sum = 0;
+for (int i = 0; i < len; i++)
+{
+    short digit = (int) (b[3-i-1] - '0');
+
+    // The ways to get 100 by pow(10, 3) (Remove // from only one line)
+    int cipher = pow(10, i);                                                 // trial 3-1 : vanilla double pow() - 99- 180304
+    cout << a << " " << (int) digit << " " << cipher << endl;                // test
+
+    // Operation for each cipher
+    int prod = a * (int) digit;                                              // get difference between ascii codes of (b[3-i-1]) and '0'
+    sum += prod * cipher;
+
+    // Output
+    cout << prod << " " << sum - prod << " " << sum << endl;    // test
+    // cout << prod << endl;
+}
+
+return 0;
+```
+> 472 5 1  
+> 2360 0 2360  
+> 472 8 10  
+> 3776 36344 40120  
+> 472 3 99  
+> 1416 178888 180304  
+
+#### C++ - trial 3-2~4
+```cpp
+int cipher = (int) pow(10, i);  // trial 3-2 : (int) double pow() - 99 - 180304
+int cipher = (int) powl(10, i); // trial 3-3 : (int) long double powl() - 99 - 180304
+int cipher = pow(10.0, i);      // trial 3-4 : use 10.0 - 99 - 180304
+```
+> The same result with trial 3-1
+
+#### C++ - trial 5
+```cpp
+int cipher = pow(10, i);        // trial 3-5 : the same with 1 but run by C++17(Clang) - Correct
+```
+> Accept
+
+#### C++ - trial 6 (final)
 ```cpp
 int a;
 // char b[3];                       // trial 1-1 : a = 256 when declare char b[3]
@@ -313,17 +423,17 @@ for (int i = 0; i < len; i++)
 {
     // Test : get each cipher's integer number, not ascii code
     // cout << "b[" << len-i-1 << "] : " << b.at(len-i-1) << endl;              // b[2], b[1], b[0] / OK
-    // cout << "convert to int 1 : " << (int) b.at(len-i-1) << endl;            // failure because output its ascii code
-    // cout << "convert to int 2 : " << (int) (b.at(len-i-1) - '0') << endl;    // success
+    // cout << "convert to int 1 : " << (int) b.at(len-i-1) << endl;            // trial 2-1 : failure because output its ascii code
+    // cout << "convert to int 2 : " << (int) (b.at(len-i-1) - '0') << endl;    // trial 2-2 : success
     short digit = (int) (b[3-i-1] - '0');
 
     // The ways to get 100 by pow(10, 3) (Remove // from only one line)
-    // int cipher = pow(10, i);                                                 // trial 2-1 : vanilla double pow() - 99- 180304
-    // int cipher = (int) pow(10, i);                                           // trial 2-2 : (int) double pow() - 99 - 180304
-    // int cipher = (int) powl(10, i);                                          // trial 2-3 : (int) long double powl() - 99 - 180304
-    // int cipher = pow(10, i);                                                 // trial 2-4 : the same with 1 but run by C++17(Clang) - Correct
-    // int cipher = pow(10.0, i);                                               // trial 2-5 : use 10.0 - 99 - 180304
-    int cipher = round(pow(10, i));                                          // trial 2-6 : round(pow()) - Correct
+    // int cipher = pow(10, i);                                                 // trial 3-1 : vanilla double pow() - 99- 180304
+    // int cipher = (int) pow(10, i);                                           // trial 3-2 : (int) double pow() - 99 - 180304
+    // int cipher = (int) powl(10, i);                                          // trial 3-3 : (int) long double powl() - 99 - 180304
+    // int cipher = pow(10.0, i);                                               // trial 3-4 : use 10.0 - 99 - 180304
+    // int cipher = pow(10, i);                                                 // trial 3-5 : the same with 1 but run by C++17(Clang) - Correct
+    int cipher = round(pow(10, i));                                          // trial -6 : round(pow()) - Correct
     // cout << a << " " << (int) digit << " " << cipher << endl;                // test
 
     // Operation for each cipher
@@ -341,3 +451,17 @@ cout << sum << endl;        // go honest
 
 return 0;
 ```
+> 472 5 1  
+> 2360 0 2360  
+> 472 8 10  
+> 3776 36344 40120  
+> 472 3 100  
+> 1416 180304 181720  
+> 181720
+
+#### Bonus.
+```cpp
+// Output
+cout << sum + 1 << endl; // can't find why lack of 1 - crazy!
+```
+> ㅋㅋ

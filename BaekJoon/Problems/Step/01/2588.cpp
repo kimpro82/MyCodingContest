@@ -27,18 +27,18 @@ int main()
         // int cipher = pow(10, i);                                                 // trial 2-1 : vanilla double pow() - 99- 180304
         // int cipher = (int) pow(10, i);                                           // trial 2-2 : (int) double pow() - 99 - 180304
         // int cipher = (int) powl(10, i);                                          // trial 2-3 : (int) long double powl() - 99 - 180304
-        // int cipher = pow(10, i);                                                 // trial 2-4 : the same with 1 but run by C++17(Clang) - Correct
-        // int cipher = pow(10.0, i);                                               // trial 2-5 : use 10.0 - 99 - 180304
+        // int cipher = pow(10.0, i);                                               // trial 2-4 : use 10.0 - 99 - 180304
+        // int cipher = pow(10, i);                                                 // trial 2-5 : the same with 1 but run by C++17(Clang) - Correct
         int cipher = round(pow(10, i));                                          // trial 2-6 : round(pow()) - Correct
-        // cout << a << " " << (int) digit << " " << cipher << endl;                // test
+        cout << a << " " << (int) digit << " " << cipher << endl;                // test
 
         // Operation for each cipher
         int prod = a * (int) digit;                                                 // get difference between ascii codes of (b[3-i-1]) and '0'
         sum += prod * cipher;
 
         // Output
-        // cout << prod << " " << sum - prod << " " << sum << endl;    // test
-        cout << prod << endl;
+        cout << prod << " " << sum - prod << " " << sum << endl;    // test
+        // cout << prod << endl;
     }
 
     // Output

@@ -19,8 +19,8 @@ int main()
     {
         // Test : get each cipher's integer number, not ascii code
         // cout << "b[" << len-i-1 << "] : " << b.at(len-i-1) << endl;              // b[2], b[1], b[0] / OK
-        // cout << "convert to int 1 : " << (int) b.at(len-i-1) << endl;            // failure because output its ascii code
-        // cout << "convert to int 2 : " << (int) (b.at(len-i-1) - '0') << endl;    // success
+        // cout << "convert to int 1 : " << (int) b.at(len-i-1) << endl;            // trial 2-1 : failure because output its ascii code
+        // cout << "convert to int 2 : " << (int) (b.at(len-i-1) - '0') << endl;    // trial 2-2 : success
         short digit = (int) (b[3-i-1] - '0');
 
         // The ways to get 100 by pow(10, 3) (Remove // from only one line)

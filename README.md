@@ -48,7 +48,7 @@ https://www.acmicpc.net/
 
 ### Oncoder Official Coding Test
 https://www.oncoder.com/
-- Challenge : provided sample questions
+- Challenge : Provided sample questions
 - The 16th Oncoder Official Coding Test (2021.12.11 12:00, 2 hrs) (Comming)
 - The 14th Oncoder Official Coding Test (2019.07.13 14:00, 2 hrs)
 - The 13th Oncoder Official Coding Test (2019.05.18 14:00, 2 hrs)

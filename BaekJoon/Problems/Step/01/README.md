@@ -5,10 +5,12 @@ https://www.acmicpc.net/step/1
 
 ### 2557. Hello World
 
+#### Python
 ```python
 print("Hello World!")
 ```
 
+#### C++
 ```cpp
 cout << "Hello World!" << endl;
 return 0;
@@ -17,11 +19,13 @@ return 0;
 
 ### 10718. We love kriii
 
+#### Python
 ```python
 for i in range(0, 2) :
     print("강한친구 대한육군")
 ```
 
+#### C++
 ```cpp
 for (int i = 0; i < 2; i++)
 {
@@ -34,6 +38,7 @@ return 0;
 
 ### 10171. Cats
 
+#### Python
 ```python
 print("\    /\\")
 print(" )  ( ')")
@@ -41,6 +46,7 @@ print("(  /  )")
 print(" \\(__)|")
 ```
 
+#### C++
 ```cpp
     cout << "\\    /\\" << endl;
     cout << " )  ( ')" << endl;
@@ -53,6 +59,7 @@ print(" \\(__)|")
 
 ### 10172. Dogs
 
+#### Python
 ```python
 print("""|\\_/|
 |q p|   /}
@@ -61,6 +68,20 @@ print("""|\\_/|
 ||_/=\\\\__|""")
 ```
 
+#### C++ - trial 1
+```cpp
+cout << R"(
+|\_/|
+|q p|   /}
+( 0 )"""\
+|"^"`    |
+||_/=\\__|
+)" << endl;
+
+return 0;
+```
+
+#### C++ - trial 2
 ```cpp
 //     cout << R"(
 // |\_/|
@@ -82,11 +103,13 @@ return 0;
 
 ### 1000. A+B
 
+#### Python
 ```python
 a, b = map(int, input().split())
 print(a+b)
 ```
 
+#### C++
 ```cpp
 int a, b;
 cin >> a >> b;
@@ -98,11 +121,13 @@ return 0;
 
 ### 1001. A-B
 
+#### Python
 ```python
 a, b = map(int, input().split())
 print(a-b)
 ```
 
+#### C++
 ```cpp
 int a, b;
 cin >> a >> b;
@@ -114,11 +139,13 @@ return 0;
 
 ### 10998. A*B
 
+#### Python
 ```python
 a, b = map(int, input().split())
 print(a*b)
 ```
 
+#### C++
 ```cpp
 int a, b;
 cin >> a >> b;
@@ -130,11 +157,13 @@ return 0;
 
 ### 1008. A/B
 
+#### Python
 ```python
 a, b = map(float, input().split())
 print(a/b)
 ```
 
+#### C++
 ```cpp
 int a, b;
 cin >> a >> b;
@@ -147,6 +176,7 @@ return 0;
 
 ### 10869. 사칙연산
 
+#### Python
 ```python
 a, b = map(int, input().split())
 
@@ -157,6 +187,7 @@ print(int(a/b))
 print(a%b)
 ```
 
+#### C++
 ```cpp
 int a, b;
 cin >> a >> b;
@@ -173,6 +204,7 @@ return 0;
 
 ### 10430. 나머지
 
+#### Python
 ```python
 A, B, C = map(int, input().split())
 
@@ -182,6 +214,7 @@ print((A*B)%C)
 print(((A%C)*(B%C))%C)
 ```
 
+#### C++
 ```cpp
 int A, B, C;
 cin >> A >> B >> C;
@@ -195,8 +228,9 @@ return 0;
 ```
 
 
-### 
+### 2588. 곱셈
 
+#### Python - trial 1
 ```python
 a = int(input())
 b = str(input())
@@ -207,6 +241,7 @@ for i in range(0,len(b)) :
 print(a*int(b))
 ```
 
+#### Python - trial 2
 ```python
 a = int(input())
 b = str(input())
@@ -220,6 +255,7 @@ for i in range(0,len(b)) :
 print(sum)
 ```
 
+#### C++
 ```cpp
 #include <iostream>
 #include <math.h>

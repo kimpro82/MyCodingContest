@@ -290,14 +290,9 @@ cout << a << " " << b << endl;  // test
 ```
 > 256 385
 
-#### C++ - trial 1-2
+#### C++ - trial 1-2~3
 ```cpp
 char b[4];                      // trial 1-2 
-```
-> 472 385
-
-#### C++ - trial 1-3
-```cpp
 string b;                       // trial 1-3 : change char[] to string
 ```
 > 472 385

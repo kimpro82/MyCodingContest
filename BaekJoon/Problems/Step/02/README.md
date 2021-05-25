@@ -1,5 +1,7 @@
 ## BAEKJOON Online Judge
-문제 > 단계별로 풀어보기 > 2. if문  
+
+### 문제 > 단계별로 풀어보기 > 2. if문
+(2021.05.24)
 https://www.acmicpc.net/step/4  
 ※ C++ codes : **skipped** `main()` function's brace(`{}`) and its outside
 

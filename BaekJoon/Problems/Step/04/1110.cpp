@@ -14,14 +14,14 @@ using namespace std;
 int main()
 {
     int n, a, b, ab, t = 0;         // 0 <= n <= 99, n = a * 10 + b, ab = a + b
-    cin >> n ;                      // n = 26
+    cin >> n ;                      // n  = 26
 
     ab = n;                         // ab = 26
 
     while (true)
     {
-        a = ab / 10;                // a  = 2    6
-        b = ab % 10;                // b  = 6    8
+        a = ab / 10;                // a  = 2   6
+        b = ab % 10;                // b  = 6   8
         ab = a + b;                 // ab = 8   14
 
         if (ab < 10)

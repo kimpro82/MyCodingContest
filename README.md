@@ -47,11 +47,12 @@ https://atcoder.jp/
 
 ### BAEKJOON Online Judge
 https://www.acmicpc.net/
+- 문제 > 단계별로 풀어보기
 - 2021 연세대학교 신입생 프로그래밍 경진대회 Open (2021.05.30 14:00, 3 hrs) (Comming)
 
 ### Oncoder Official Coding Test
 https://www.oncoder.com/
-- Challenge : provided sample questions
+- Challenge : Provided sample questions
 - The 16th Oncoder Official Coding Test (2021.12.11 12:00, 2 hrs) (Comming)
 - The 14th Oncoder Official Coding Test (2019.07.13 14:00, 2 hrs)
 - The 13th Oncoder Official Coding Test (2019.05.18 14:00, 2 hrs)

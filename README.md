@@ -11,7 +11,6 @@ https://codingcompetitions.withgoogle.com/codejam
 https://codeforces.com/contests
 - Deltix Round, Spring 2021 (Div. 1 + Div. 2) (2021.05.30 23:35, 2.25 hrs) (Comming)
 - ICPC Challenge 2021: Marathon (powered by Huawei) (2021.05.26 13:00, 4 hrs) (Comming)
-- Codeforces Round #TBA (Div. 2) (2021.05.24 23:35, 2 hrs) (Comming)
 - Codeforces Round #721 (Div. 2) (2021.05.20 23:35, 2 hrs)
 - Contest 2050 and Codeforces Round #718 (Div. 1, 2) (2021.04.23 23:35, 2.75 hrs)
 - Codeforces Round #717 (Div. 2) (2021.04.21 22:35, 2 hrs)
@@ -47,7 +46,10 @@ https://atcoder.jp/
 
 ### BAEKJOON Online Judge
 https://www.acmicpc.net/
-- 문제 > 단계별로 풀어보기
+- 문제 > 단계별로 풀어보기  
+&nbsp;1. 입출력과 사칙연산 (2021.05.13)  
+&nbsp;2. if문 (2021.05.24)  
+&nbsp;3. for문 (2021.05.25)
 - 2021 연세대학교 신입생 프로그래밍 경진대회 Open (2021.05.30 14:00, 3 hrs) (Comming)
 
 ### Oncoder Official Coding Test

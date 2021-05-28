@@ -1,5 +1,7 @@
 ## BAEKJOON Online Judge
-문제 > 단계별로 풀어보기 > 1. 입출력과 사칙연산  
+
+### 문제 > 단계별로 풀어보기 > 1. 입출력과 사칙연산
+(2015.05.13)  
 https://www.acmicpc.net/step/1  
 ※ The codes of `Python` and `C++` has the same result  
 ※ C++ codes : **skipped** `main()` function's brace(`{}`) and its outside
@@ -365,6 +367,7 @@ int cipher = pow(10, i);        // trial 3-5 : the same with 1 but run by C++17(
 > Accepted
 
 #### C++ - trial 6 (final)
+(2015.05.24)
 ```cpp
 int a;
 // char b[3];                       // trial 1-1 : a = 256 when declare char b[3]

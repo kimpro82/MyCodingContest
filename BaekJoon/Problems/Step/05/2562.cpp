@@ -19,11 +19,7 @@ using namespace std;
 
 int main()
 {
-    // make it faster
-    cin.tie(NULL);
-    ios_base::sync_with_stdio(false);
-
-    const int length = 9;   // the length of arr[] is fixed as 9
+    const int length = 9;       // the length of arr[] is fixed as 9
     int arr[length];
     int maxValue = 0, temp, loc = 0;
 
@@ -39,7 +35,7 @@ int main()
         }
     }
 
-    cout << maxValue << "\n" << loc << "\n";
+    cout << maxValue << "\n" << loc << endl;
 
     return 0;
 }

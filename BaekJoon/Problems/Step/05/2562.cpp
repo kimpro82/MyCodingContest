@@ -14,7 +14,6 @@
 */
 
 #include <iostream>
-#include <cmath>            // for using min() & max(), but I really hate it
 
 using namespace std;
 

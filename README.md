@@ -9,8 +9,8 @@ https://codingcompetitions.withgoogle.com/codejam
 
 ### CodeForces
 https://codeforces.com/contests
-- Deltix Round, Spring 2021 (Div. 1 + Div. 2) (2021.05.30 23:35, 2.25 hrs) (Comming)
-- ICPC Challenge 2021: Marathon (powered by Huawei) (2021.05.26 13:00, 4 hrs) (Comming)
+- Kotlin Heroes: Episode 7 (2021.06.29 23:35, 2.5 hrs) (Comming)
+- Kotlin Heroes: Practice 7 (2021.06.22 22:35, 7 days) (Comming)
 - Codeforces Round #721 (Div. 2) (2021.05.20 23:35, 2 hrs)
 - Contest 2050 and Codeforces Round #718 (Div. 1, 2) (2021.04.23 23:35, 2.75 hrs)
 - Codeforces Round #717 (Div. 2) (2021.04.21 22:35, 2 hrs)
@@ -28,8 +28,7 @@ https://codeforces.com/contests
 
 ### AtCoder
 https://atcoder.jp/
-- AtCoder Beginner Contest 203 (2021.05.30 21:00, 100 minutes) (Comming)
-- AtCoder Regular Contest 121 (2021.05.29 21:00, 120 minutes) (Comming)
+- AtCoder Beginner Contest 206 (2021.06.19 21:00, 100 minutes) (Comming)
 - AtCoder Regular Contest 120 (2021.05.23 20:00, 120 minutes)
 - AtCoder Beginner Contest 202 (2021.05.22 21:00, 100 minutes)
 - AtCoder Regular Contest 119 (2021.05.16 21:00, 120 minutes)
@@ -50,8 +49,9 @@ https://www.acmicpc.net/
 &nbsp;1. 입출력과 사칙연산 (2021.05.13)  
 &nbsp;2. if문 (2021.05.24)  
 &nbsp;3. for문 (2021.05.25)  
-&nbsp;4. while문 (2021.05.26)
-- 2021 연세대학교 신입생 프로그래밍 경진대회 Open (2021.05.30 14:00, 3 hrs) (Comming)
+&nbsp;4. while문 (2021.05.26)  
+&nbsp;5. 1차원 배열 (2021.05.29)
+- 제5회 천하제일 코딩대회 예선 Open Contest (2021.06.16 16:30, 2.5 hrs) (Comming)
 
 ### Oncoder Official Coding Test
 https://www.oncoder.com/

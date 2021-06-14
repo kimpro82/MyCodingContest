@@ -42,8 +42,8 @@ int main()
             }
 
             // test
-            // cout << "(" << i << ", " << j << ") " 
-            //    << input[i][j] << " " << combo << " " << score << endl;
+            cout << "(" << i << ", " << j << ") " 
+               << input[i][j] << " " << combo << " " << score << endl;
         }
 
         cout << score << endl;

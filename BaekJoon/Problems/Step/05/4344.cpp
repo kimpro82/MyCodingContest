@@ -47,7 +47,7 @@ int main()
         }
 
         // test
-        // cout << n << " " << sum << " " << average << " " << aboveAverage << endl;
+        cout << n << " " << sum << " " << average << " " << aboveAverage << endl;
 
         // ouput
         double aboveAverageRatio = (double) (aboveAverage / n) * 100;

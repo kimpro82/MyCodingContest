@@ -5,10 +5,8 @@
 https://www.acmicpc.net/step/6  
 
 ※ C++ codes : **skipped** `main()` function's brace(`{}`) and its outside  
-    - Basically, all the codes has the following header and namespace even if there's no mention.  
-    `#include <iostream>`  
-    `using namespace std;`  
-    - When any additional header is used, header block is also noted seperately.
+    - Basically, all the codes has the `<iostream>` header and namespace `std` even if there's no mention.  
+    - When any additional header is used, the header block is also noted seperately.
 
 
 ### 10818. 최소, 최대

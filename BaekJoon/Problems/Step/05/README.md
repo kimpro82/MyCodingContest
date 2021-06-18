@@ -1,7 +1,7 @@
 ## BAEKJOON Online Judge
 
 ## 문제 > 단계별로 풀어보기 > 5. 1차원 배열
-(2021.05.29)  
+(2021.06.14)  
 https://www.acmicpc.net/step/6  
 
 ※ C++ codes : **skipped** `main()` function's brace(`{}`) and its outside  

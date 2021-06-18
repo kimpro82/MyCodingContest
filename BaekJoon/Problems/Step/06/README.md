@@ -10,9 +10,9 @@ https://www.acmicpc.net/step/5
 
 
 ### 15596. 정수 N개의 합
-- I guessed it as a question related with using pointer(because of "&a") at first, but it was not.
-- Hell easy one to ask about `vector` very simply
-- It's been a few days with pointer, I hate myself
+I guessed it as a question related with using pointer(because of "&a") at first, but it was not.  
+Hell easy one to ask about `vector` very simply.  
+It's been a few days with pointer, I hate myself
 
 #### C++ 
 ```cpp
@@ -51,7 +51,7 @@ int main()
 
 
 ### 4673. Self Numbers
-- Deja vu? ☞ [Oncoder Challenge Lv.6](..//Oncoder/Challenge/Q06/README.md)
+Deja vu? ☞ [Oncoder Challenge Lv.6](..//Oncoder/Challenge/Q06/README.md)
 
 #### C++ 
 ```cpp

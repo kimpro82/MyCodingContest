@@ -22,8 +22,8 @@ It's been a few days with pointer, I hate myself
 ```cpp
 long long sum(vector<int> &a)
 {
-    int n = a.size();               // not sizeof(a) : get length of the memory space
-    cout << "n   : " << n << endl;    // test
+    int n = a.size();                   // not sizeof(a) : get length of the memory space
+    cout << "n   : " << n << endl;      // test
 
     long long ans = 0;
     for (int i = 0; i < n; i++)
@@ -31,7 +31,7 @@ long long sum(vector<int> &a)
         ans += a[i];
     }
 
-    cout << "ans : " << ans << endl;        // test
+    cout << "ans : " << ans << endl;    // test
     return ans;
 }
 ```

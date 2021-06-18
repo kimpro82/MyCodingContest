@@ -42,7 +42,7 @@ int main()
             {
                 count++;
             }
-            // cout << a << " " << b << " " << c << " " << count << endl;  // test
+            cout << a << " " << b << " " << c << " " << count << endl;  // test
         }
     }
     // else             // n == 1000

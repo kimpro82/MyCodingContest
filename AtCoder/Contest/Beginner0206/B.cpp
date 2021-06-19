@@ -1,3 +1,11 @@
+/* Sample input & output
+12
+5
+
+100128
+447 
+*/
+
 #include <iostream>
  
 using namespace std;

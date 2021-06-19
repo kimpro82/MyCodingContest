@@ -1,3 +1,14 @@
+/* Sample input & output
+180
+Yay!
+
+200
+:(
+
+191
+so-so   
+*/
+
 #include <iostream>
 
 using namespace std;

@@ -1,3 +1,8 @@
+// AtCoder Beginner Contest 206
+// 2021-06-19(Sat) 21:00 - 22:40, 100 minutes
+
+// C - Swappable
+
 /* Sample input & output
 3
 1 7 1
@@ -27,7 +32,7 @@ int main()
         cin >> a[k];
     }
 
-    int count = 0;
+    long long count = 0;
     for (int i = 1; i <= n-1; i++)
     {
         for (int j = i+1; j <= n; j++)

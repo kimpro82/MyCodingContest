@@ -17,7 +17,7 @@ using namespace std;
  
 int main()
 {
-    int n;      // 1 <= n <= 10^9
+    int n;              // 1 <= n <= 10^9
     cin >> n;
  
     int x = 0, sum = 0;

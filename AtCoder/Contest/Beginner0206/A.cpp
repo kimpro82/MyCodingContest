@@ -1,3 +1,8 @@
+// AtCoder Beginner Contest 206
+// 2021-06-19(Sat) 21:00 - 22:40, 100 minutes
+
+// A - Maxi-Buying
+
 /* Sample input & output
 180
 Yay!

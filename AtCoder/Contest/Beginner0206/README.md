@@ -1,4 +1,5 @@
 ## AtCoder Beginner Contest 206
+
 2021-06-19(Sat) 21:00 - 22:40, 100 minutes  
 https://atcoder.jp/contests/abc206
 
@@ -6,6 +7,7 @@ https://atcoder.jp/contests/abc206
     - **skipped** `main()` function's brace(`{}`) and its outside  
     - Basically, all the codes has the `<iostream>` header and namespace `std` even if there's no mention.  
     - When any additional header is used, the header block is also noted seperately.
+
 
 
 ### A - Maxi-Buying
@@ -39,6 +41,7 @@ return 0;
 > Accepted
 
 
+
 ### B - Savings
 
 ```cpp
@@ -64,7 +67,9 @@ return 0;
 > Accepted
 
 
+
 ### C - Swappable
+
 
 #### Trial 1
 
@@ -151,9 +156,13 @@ return 0;
 
 > Accepted (Exec Time : 109 ms, Memory : 4204 KB)
 
+
 #### Trial 2-1
 
-Refer to : https://atcoder.jp/contests/abc206/submissions/23630035
+Refer to :  
+https://atcoder.jp/contests/abc206/submissions/23630035  
+https://justicehui.github.io/etc/2019/08/29/Optimization/  
+https://namu.wiki/w/고급%20벡터%20확장
 
 Added codes :
 
@@ -170,6 +179,7 @@ ios::sync_with_stdio(false);
 > Accepted (Exec Time : 53 ms, Memory : 4440 KB)
 
 Amazing!
+
 
 
 ### D - KAIBUNsyo

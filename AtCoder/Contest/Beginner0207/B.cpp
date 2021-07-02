@@ -40,7 +40,7 @@ int main()
         }
 
         // test
-        // cout << n << " " << cyan << " " << red * d << " " << cyan - red * d << endl;
+        cout << n << " " << cyan << " " << red * d << " " << cyan - red * d << endl;
     }
 
     cout << n << endl;

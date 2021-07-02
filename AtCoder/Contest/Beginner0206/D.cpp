@@ -1,3 +1,22 @@
+// AtCoder Beginner Contest 206
+// 2021-06-19(Sat) 21:00 - 22:40, 100 minutes
+
+// D - KAIBUNsyo
+
+/* Sample input & output
+8
+1 5 3 2 5 2 3 1
+2
+
+7
+1 2 3 4 1 2 3
+1
+
+1
+200000
+0
+*/
+
 #include <iostream>
 #include <set>
 
@@ -21,8 +40,8 @@ int main()
         {
             numToChange.insert(a[i-1]);
             numToChange.insert(a[n-i]); 
-            // cout << i-1 << " " << a[i-1] << " " << n-i << " " << a[n-i]
-            //     << " " << numToChange.size() << endl;                   // test 
+            cout << i-1 << " " << a[i-1] << " " << n-i << " " << a[n-i]
+                << " " << numToChange.size() << endl;                   // test 
         }
     }
     if (numToChange.empty())

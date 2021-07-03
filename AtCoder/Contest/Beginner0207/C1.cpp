@@ -62,8 +62,8 @@ int main()
             }
 
             // test
-            // cout << interval[j][1] << " " << interval[j][2] << " "
-            //     << interval[k][1] << " " << interval[k][2] << " " << count << endl;
+            cout << interval[j][1] << " " << interval[j][2] << " "
+                << interval[k][1] << " " << interval[k][2] << " " << count << endl;
         }
     }
 

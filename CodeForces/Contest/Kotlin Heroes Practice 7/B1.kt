@@ -39,6 +39,9 @@ fun main(args: Array<String>)
             {
                 pos -= b
             }
+
+            // test
+            println("$a $b $k $i $j $pos")
         }
 
         println(pos)

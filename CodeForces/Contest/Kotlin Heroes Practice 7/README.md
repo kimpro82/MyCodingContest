@@ -178,7 +178,7 @@ for (i in 0..n-2 step 2)   // n-2 → finish with a[n-1] - a[n-2]
 println(sum)
 ```
 
-> 6
+> 6  
 > 5 10 2 3 14 5
 
 > 5
@@ -225,7 +225,7 @@ println()
 > 5  
 > 2 5 1 2 2
 
-> 3
+> 3  
 > 1 4 5 
 
 > Time limit exceeded on test 4

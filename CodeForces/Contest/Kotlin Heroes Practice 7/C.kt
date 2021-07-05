@@ -24,7 +24,6 @@ fun main(args: Array<String>)
         // n : the length of the string in the i-th query
         // k : the number of characters in the i-th query
         var letter : Char = 'a'
-        var letterRepeat : Int = n / k
 
         for (j in 0 until n)
         {

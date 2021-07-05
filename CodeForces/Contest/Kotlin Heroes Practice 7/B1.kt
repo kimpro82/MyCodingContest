@@ -41,7 +41,7 @@ fun main(args: Array<String>)
             }
 
             // test
-            println("$a $b $k $i $j $pos")
+            // println("$a $b $k $i $j $pos")
         }
 
         println(pos)

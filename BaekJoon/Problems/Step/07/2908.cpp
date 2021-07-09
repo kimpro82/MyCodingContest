@@ -29,7 +29,7 @@ int main()
         aReverse[3 - i - 1] = a[i];
         bReverse[3 - i - 1] = b[i];
     }
-    // cout << aReverse << " " << bReverse << endl; // test
+    cout << aReverse << " " << bReverse << endl;    // test
 
     // Comepare aReverse with bReverse as int and find the larger
     if (stoi(aReverse) > stoi(bReverse))            // A and B will not be equal

@@ -30,11 +30,11 @@ int main()
     }
 
     // Output
-    for (int j = 0; j < 25; j++) // a ~ y
+    for (int j = 0; j < 25; j++)    // a ~ y
     {
         cout << alphabet[j] << " ";
     }
-    cout << alphabet[25] << endl;
+    cout << alphabet[25] << endl;   // z
 
     return 0;
 }

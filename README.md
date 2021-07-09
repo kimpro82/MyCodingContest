@@ -9,8 +9,9 @@ https://codingcompetitions.withgoogle.com/codejam
 
 ### CodeForces
 https://codeforces.com/contests
-- Kotlin Heroes: Episode 7 (2021.06.29 23:35, 2.5 hrs) (Comming)
-- Kotlin Heroes: Practice 7 (2021.06.22 22:35, 7 days) (Comming)
+- Codeforces Round #731 (Div. 3) (2021.07.10 23:35, 2 hrs) (Comming)
+- Kotlin Heroes: Episode 7 (2021.06.29 23:35, 2.5 hrs)
+- Kotlin Heroes: Practice 7 (2021.06.22 22:35, 7 days)
 - Codeforces Round #721 (Div. 2) (2021.05.20 23:35, 2 hrs)
 - Contest 2050 and Codeforces Round #718 (Div. 1, 2) (2021.04.23 23:35, 2.75 hrs)
 - Codeforces Round #717 (Div. 2) (2021.04.21 22:35, 2 hrs)
@@ -28,7 +29,11 @@ https://codeforces.com/contests
 
 ### AtCoder
 https://atcoder.jp/
-- AtCoder Beginner Contest 206 (2021.06.19 21:00, 100 minutes) (Comming)
+- AtCoder Beginner Contest 211 (2021.07.24 21:00, 100 minutes) (Comming)
+- AtCoder Beginner Contest 210 (2021.07.17 21:00, 100 minutes) (Comming)
+- AtCoder Beginner Contest 209 (2021.07.10 21:00, 100 minutes) (Comming)
+- AtCoder Beginner Contest 208 (2021.07.04 21:00, 100 minutes) (Comming)
+- AtCoder Beginner Contest 207 (2021.06.26 21:00, 100 minutes)
 - AtCoder Regular Contest 120 (2021.05.23 20:00, 120 minutes)
 - AtCoder Beginner Contest 202 (2021.05.22 21:00, 100 minutes)
 - AtCoder Regular Contest 119 (2021.05.16 21:00, 120 minutes)

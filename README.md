@@ -52,7 +52,7 @@ https://atcoder.jp/
 ### BAEKJOON Online Judge
 https://www.acmicpc.net/
 - 문제 > 단계별로 풀어보기  
-&nbsp; 7. 문자열  
+&nbsp; 7. 문자열 (2021.07.10)  
 &nbsp; 6. 함수 (2021.06.18)  
 &nbsp; 5. 1차원 배열 (2021.06.14)  
 &nbsp; 4. while문 (2021.05.26)  

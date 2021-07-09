@@ -11,7 +11,7 @@ UNUCIC
 #include <string>
 
 using namespace std;
-#define endl "\n"
+#define endl '\n'
 
 int main()
 {

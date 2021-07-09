@@ -4,7 +4,7 @@
 https://codeforces.com/contest/1533  
 
 ※ All the codes are written in `Kotlin`  
-&nbsp;- **skipped** `main()` function's brace(`{}`) and its outside
+    - **skipped** `main()` function's brace(`{}`) and its outside
 
 
 ### A. Travel to Bertown

@@ -26,7 +26,7 @@ int main()
     string s;
     cin >> s;
 
-    // Change all letter to upper class
+    // Change all letter to upper case
     const int sLength = s.length();
     for (int i = 0; i < sLength; i++)
     {

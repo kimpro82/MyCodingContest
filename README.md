@@ -52,13 +52,13 @@ https://atcoder.jp/
 ### BAEKJOON Online Judge
 https://www.acmicpc.net/
 - 문제 > 단계별로 풀어보기  
-&nbsp;1. 입출력과 사칙연산 (2021.05.13)  
-&nbsp;2. if문 (2021.05.24)  
-&nbsp;3. for문 (2021.05.25)  
-&nbsp;4. while문 (2021.05.26)  
-&nbsp;5. 1차원 배열 (2021.06.14)  
-&nbsp;6. 함수 (2021.06.18)
-- 제5회 천하제일 코딩대회 예선 Open Contest (2021.06.16 16:30, 2.5 hrs) (Comming)
+&nbsp; 7. 문자열  
+&nbsp; 6. 함수 (2021.06.18)  
+&nbsp; 5. 1차원 배열 (2021.06.14)  
+&nbsp; 4. while문 (2021.05.26)  
+&nbsp; 3. for문 (2021.05.25)  
+&nbsp; 2. if문 (2021.05.24)  
+&nbsp; 1. 입출력과 사칙연산 (2021.05.13)
 
 ### Oncoder Official Coding Test
 https://www.oncoder.com/

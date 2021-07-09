@@ -74,7 +74,7 @@ fun main(args: Array<String>)
             if (s[h] in tSubSet)
             {
                 count++
-                // println("$k ${t[k]} $tSubSet $h ${s[h]} $count")    // test
+                println("$k ${t[k]} $tSubSet $h ${s[h]} $count")    // test
             }
         }
 

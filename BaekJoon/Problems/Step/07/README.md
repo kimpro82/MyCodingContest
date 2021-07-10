@@ -72,7 +72,7 @@ return 0;
 string s;
 cin >> s;
 
-// Declare an array for counting a~z
+// Declare an array for counting a ~ z
 vector<int> alphabet (26, -1);
 
 // Count
@@ -150,7 +150,7 @@ return 0;
 string s;
 cin >> s;
 
-// Change all letter to upper case
+// Change all letters to upper case
 const int sLength = s.length();
 for (int i = 0; i < sLength; i++)
 {
@@ -186,7 +186,7 @@ for (int l = 0; l < 26; l++)
     }
 }
 
-// test
+// Test
 cout << maxValue << " " << maxIndex << " " << ifUnique << endl;
 
 // Output

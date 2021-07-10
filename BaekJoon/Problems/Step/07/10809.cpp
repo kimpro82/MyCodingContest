@@ -17,7 +17,7 @@ int main()
     string s;
     cin >> s;
 
-    // Declare an array for counting a~z
+    // Declare an array for counting a ~ z
     vector<int> alphabet (26, -1);
 
     // Count

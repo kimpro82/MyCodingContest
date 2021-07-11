@@ -80,7 +80,7 @@ int main()
         // Operate
         if (sum != 0)
         {
-            cout << -1 << '\n';
+            cout << -1 << endl;
         } else
         {
             // Output m : the number of operations
@@ -89,7 +89,7 @@ int main()
             {
                 m += abs(diff[o]);
             }
-            cout << m / 2 << '\n';
+            cout << m / 2 << endl;
 
             // Find max & min / operate max - 1 & min + 1  
             int posIdx, negIdx, isRemained = 0;

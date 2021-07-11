@@ -1,8 +1,8 @@
 ﻿// Codeforces Round #732 (Div. 2)
 // 2021.07.11 23:05, 2.5 hrs
-
+ 
 // A. AquaMoon and Two Arrays
-
+ 
 /* Sample Input & Output
 4
 4
@@ -17,7 +17,7 @@
 5
 4 3 2 1 0
 0 1 2 3 4
-
+ 
 2
 2 1
 3 1
@@ -31,30 +31,30 @@
 2 5
 2 5
 */
-
-
+ 
+ 
 #include <iostream>
 #include <array>
-
+ 
 using namespace std;
 #define endl '\n'
-
+ 
 int main()
 {
     cin.tie(0);
     ios::sync_with_stdio(false);
-
+ 
     int t;
     cin >> t;
-
+ 
     for (int i = 0; i < t; i++)
     {
         // Input data
         int n;
         cin >> n;
-
+ 
         array<int, 100> a = {0, };  // the arrays' sizes are tricky
-        array<int, 100> b = {0, };  // the arrays' sizes are tricky
+        array<int, 100> b = {0, };
         int temp;
         for (int j = 0; j < n; j++)
         {
@@ -66,7 +66,7 @@ int main()
             cin >> temp;
             b[k] = temp;
         }
-
+ 
         // Make a vector of differences between a and b
         // Find if a and b can be equal to each other by the operation
         array<int, 100> diff = {0, };
@@ -76,7 +76,7 @@ int main()
             diff[l] = a[l] - b[l];
             sum += diff[l];
         }
-
+ 
         // Operate
         if (sum != 0)
         {
@@ -90,8 +90,8 @@ int main()
                 m += abs(diff[o]);
             }
             cout << m / 2 << endl;
-
-            // Find max & min / operate max - 1 & min + 1  
+ 
+            // Find non-zero numbers / operate positive - 1 & negative + 1  
             int posIdx, negIdx, isRemained = 0;
             while (true)
             {
@@ -113,11 +113,11 @@ int main()
                         break;
                     }
                 }
-
-                if (isRemained == 0) break;
-
+ 
+                if (isRemained == 0) break;         // Operations are done
+    
                 cout << posIdx + 1 << " " << negIdx + 1 << endl;
-
+ 
                 diff[posIdx]--;
                 diff[negIdx]++;
                 

@@ -12,7 +12,7 @@ https://codeforces.com/contests
 - Codeforces Round #734 (Div. 2) (2021.08.01 23:35, 2 hrs) (Comming)
 - Codeforces Round #733 (Div. 1, 2) (2021.07.17 23:35, 3 hrs) (Comming)
 - Educational Codeforces Round 111 (Div. 2) (2021.07.14 23:35, 2 hrs) (Comming)
-- Codeforces Round #732 (Div. 2) (2021.07.11 23:05, 2.5 hrs) (Comming)
+- Codeforces Round #732 (Div. 2) (2021.07.11 23:05, 2.5 hrs) - C++
 - Kotlin Heroes: Episode 7 (2021.06.29 23:35, 2.5 hrs) - Kotlin
 - Kotlin Heroes: Practice 7 (2021.06.22 22:35, 7 days) - Kotlin
 - Codeforces Round #721 (Div. 2) (2021.05.20 23:35, 2 hrs) - C#

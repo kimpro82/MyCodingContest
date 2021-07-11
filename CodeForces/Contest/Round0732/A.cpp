@@ -68,7 +68,6 @@ int main()
         }
  
         // Make a vector of differences between a and b
-        // Find if a and b can be equal to each other by the operation
         array<int, 100> diff = {0, };
         int sum = 0;
         for (int l = 0; l < n; l++)
@@ -76,53 +75,53 @@ int main()
             diff[l] = a[l] - b[l];
             sum += diff[l];
         }
- 
-        // Operate
+
+        // Stop if a and b can't be equal to each other
         if (sum != 0)
         {
             cout << -1 << endl;
-        } else
+            continue;
+        }
+
+        // Output m : the number of operations
+        int m = 0;
+        for (int o = 0; o < n; o++)
         {
-            // Output m : the number of operations
-            int m = 0;
-            for (int o = 0; o < n; o++)
+            m += abs(diff[o]);
+        }
+        cout << m / 2 << endl;
+
+        // Find non-zero numbers / operate positive - 1 & negative + 1  
+        int posIdx, negIdx, isRemained = 0;
+        while (true)
+        {
+            for (int idx1 = 0; idx1 < n; idx1++)
             {
-                m += abs(diff[o]);
+                if (diff[idx1] > 0)
+                {
+                    posIdx = idx1;
+                    isRemained++;
+                    break;
+                }
             }
-            cout << m / 2 << endl;
- 
-            // Find non-zero numbers / operate positive - 1 & negative + 1  
-            int posIdx, negIdx, isRemained = 0;
-            while (true)
+            for (int idx2 = 0; idx2 < n; idx2++)
             {
-                for (int idx1 = 0; idx1 < n; idx1++)
+                if (diff[idx2] < 0)
                 {
-                    if (diff[idx1] > 0)
-                    {
-                        posIdx = idx1;
-                        isRemained++;
-                        break;
-                    }
+                    negIdx = idx2;
+                    isRemained++;
+                    break;
                 }
-                for (int idx2 = 0; idx2 < n; idx2++)
-                {
-                    if (diff[idx2] < 0)
-                    {
-                        negIdx = idx2;
-                        isRemained++;
-                        break;
-                    }
-                }
- 
-                if (isRemained == 0) break;         // Operations are done
-    
-                cout << posIdx + 1 << " " << negIdx + 1 << endl;
- 
-                diff[posIdx]--;
-                diff[negIdx]++;
-                
-                isRemained = 0;
-            } // The end of while loop
-        } // The end of Operation bracket
+            }
+
+            if (isRemained == 0) break;         // Operations are done
+
+            cout << posIdx + 1 << " " << negIdx + 1 << endl;
+
+            diff[posIdx]--;
+            diff[negIdx]++;
+            
+            isRemained = 0;
+        } // The end of while loop
     } // The end of t loop
 } // The end of main()

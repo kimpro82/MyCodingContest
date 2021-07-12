@@ -9,7 +9,7 @@ https://codingcompetitions.withgoogle.com/codejam
 
 ### CodeForces
 https://codeforces.com/contests
-- Codeforces Round #731 (Div. 3) (2021.07.10 23:35, 2 hrs) (Comming)
+- Codeforces Round #732 (Div. 2) (2021.07.11 23:05, 2.5 hrs) - C++
 - Kotlin Heroes: Episode 7 (2021.06.29 23:35, 2.5 hrs) - Kotlin
 - Kotlin Heroes: Practice 7 (2021.06.22 22:35, 7 days) - Kotlin
 - Codeforces Round #721 (Div. 2) (2021.05.20 23:35, 2 hrs) - C#
@@ -31,7 +31,6 @@ https://codeforces.com/contests
 https://atcoder.jp/
 - AtCoder Beginner Contest 211 (2021.07.24 21:00, 100 minutes) (Comming)
 - AtCoder Beginner Contest 210 (2021.07.17 21:00, 100 minutes) (Comming)
-- AtCoder Beginner Contest 209 (2021.07.10 21:00, 100 minutes) (Comming)
 - AtCoder Beginner Contest 208 (2021.07.04 21:00, 100 minutes) (Comming)
 - AtCoder Beginner Contest 207 (2021.06.26 21:00, 100 minutes) - C++
 - AtCoder Beginner Contest 206 (2021.06.19 21:00, 100 minutes) - C++
@@ -58,7 +57,8 @@ https://www.acmicpc.net/
 &nbsp; 4. while문 (2021.05.26) - C++  
 &nbsp; 3. for문 (2021.05.25) - C++  
 &nbsp; 2. if문 (2021.05.24) - C++  
-&nbsp; 1. 입출력과 사칙연산 (2021.05.13) - Python, C++
+&nbsp; 1. 입출력과 사칙연산 (2021.05.13) - Python, C++ / (2021.07.11) - R
+
 
 ### Oncoder Official Coding Test
 https://www.oncoder.com/

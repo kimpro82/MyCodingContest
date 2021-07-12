@@ -1,2 +1,2 @@
-# print("Hello World!") # TLE
-cat("Hello World!") 
+# print("Hello World!") # Runtime Error
+cat("Hello World!")

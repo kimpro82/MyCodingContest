@@ -3,8 +3,8 @@ n <- scan("stdin")
 
 if (n %% 4 == 0 && (n %% 100 != 0 || n %% 400 == 0))    # not %
 {
-    cat(1, "\n")
+    cat("1\n")
 } else
 {
-    cat(0, "\n")
+    cat("0\n")
 }

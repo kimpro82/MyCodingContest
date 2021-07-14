@@ -1,5 +1,5 @@
-# data <- scan("stdin")
-data <- c(1,2)
+data <- scan("stdin")
+# data <- c(1,2)        # test
 
 a <- data[1]
 b <- data[2]

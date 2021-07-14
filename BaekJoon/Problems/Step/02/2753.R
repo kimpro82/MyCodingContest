@@ -1,10 +1,10 @@
-year <- scan("stdin")
-# year <- 2000          # test
+n <- scan("stdin")
+# n <- 2000                                             # test
 
-if (year %% 4 == 0 && (year %% 100 != 0 || year %% 400 == 0))   # not %
+if (n %% 4 == 0 && (n %% 100 != 0 || n %% 400 == 0))    # not %
 {
-    cat(1)
+    cat(1, "\n")
 } else
 {
-    cat(0)
+    cat(0, "\n")
 }

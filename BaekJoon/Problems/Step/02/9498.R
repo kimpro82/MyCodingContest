@@ -1,19 +1,19 @@
-score <- scan("stdin")
-# score <- 100          # test
+a <- scan("stdin")
+# a <- 100          # test
 
-if (score >= 90)
+if (a >= 90)
 {
-    cat("A")
-} else if (score >= 80)
+    cat("A\n")
+} else if (a >= 80)
 {
-    cat("B")
-} else if (score >= 70)
+    cat("B\n")
+} else if (a >= 70)
 {
-    cat("C")
-} else if (score >= 60)
+    cat("C\n")
+} else if (a >= 60)
 {
-    cat("D")
+    cat("D\n")
 } else 
 {
-    cat("F")
+    cat("F\n")
 }

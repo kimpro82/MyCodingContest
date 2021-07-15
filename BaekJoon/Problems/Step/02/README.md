@@ -50,8 +50,10 @@ if (a > b)
 }
 ```
 
+> 1 2, 10 2, 5 5 (independently)
+
 > <  
-> >  
+> \>  
 > ==
 
 
@@ -104,6 +106,8 @@ if (a >= 90)
     cat("F\n")
 }
 ```
+
+> 99, 82, 79, 60, 37 (independently)
 
 > A B C D F (vertically)
 
@@ -191,6 +195,8 @@ if (x > 0 && y > 0)
 }
 ```
 
+> 12 5, 9 -13 (independently)
+
 > 1  
 > 4
 
@@ -216,6 +222,8 @@ cout << a << " " << b - 45 << endl;
 
 return 0;
 ```
+> 10 10, 0 30, 23 40 (independently)
+
 > 9 25  
 > 23 45  
 > 22 55

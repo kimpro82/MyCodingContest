@@ -20,7 +20,9 @@
 #include<bits/stdc++.h>
 
 using namespace std;
+using ll = long long;
 #define endl '\n'
+
 
 int main()
 {
@@ -33,10 +35,10 @@ int main()
     // Test T times
     for (int t = 0; t < T; t++)
     {
-        int x, y;
+        ll x, y;                            // int x, y : causes SOF!
         cin >> x >> y;
 
-        int distance = y - x, move = 0;
+        ll distance = y - x, move = 0;
         int turn = 2 * sqrt(distance) - 2;
         
         while (true)

@@ -59,7 +59,7 @@ https://www.acmicpc.net/
 &nbsp; 4. while문 (2021.05.26) - C++  
 &nbsp; 3. for문 (2021.05.25) - C++  
 &nbsp; 2. if문 (2021.05.24) - C++ / (2021.07.14) - R  
-&nbsp; 1. 입출력과 사칙연산 (2021.05.13) - Python, C++
+&nbsp; 1. 입출력과 사칙연산 (2021.05.13) - Python, C++ / (2021.07.11) - R
 
 ### Oncoder Official Coding Test
 https://www.oncoder.com/

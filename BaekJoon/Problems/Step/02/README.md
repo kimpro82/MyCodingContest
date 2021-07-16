@@ -1,8 +1,11 @@
 ## BAEKJOON Online Judge
 
 ### 문제 > 단계별로 풀어보기 > 2. if문
-(2021.05.24)  
+(2021.05.24) - Python, C++  
+(2021.07.14) - R  
 https://www.acmicpc.net/step/4  
+
+※ The codes of `Python`, `C++` and `R` has the same result  
 ※ C++ codes : **skipped** `main()` function's brace(`{}`) and its outside
 
 

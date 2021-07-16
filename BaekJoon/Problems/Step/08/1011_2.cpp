@@ -49,7 +49,7 @@ int main()
             else move = (pow(turn + 1, 2) - 1)/4;
 
             // test
-            // cout << turn << " " << move << " " << distance << " " << move - distance << endl;
+            cout << turn << " " << move << " " << distance << " " << move - distance << endl;
 
             if (move >= distance) break;
         }

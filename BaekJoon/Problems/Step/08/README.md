@@ -363,7 +363,7 @@ return 0;
 
 ### 1011. Fly me to the Alpha Centauri
 
-#### C++ - Tral 1
+#### C++ - Trial 1
 ```cpp
 /*
 (ex) n = 3
@@ -438,7 +438,7 @@ return 0;
 
 > Time Litmit Exceeded?
 
-#### C++ - Tral 2
+#### C++ - Trial 2
 ```cpp
 // n is even : distance = {(n + 1)/2}^2
 // → n = 2 * sqrt(distance) - 1
@@ -490,7 +490,7 @@ return 0;
 
 > Time Litmit Exceeded?
 
-#### C++ - Tral 3
+#### C++ - Trial 3
 ```cpp
 using ll = long long;
 ```

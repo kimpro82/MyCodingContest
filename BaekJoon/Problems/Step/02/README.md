@@ -30,9 +30,31 @@ if (a > b)
 return 0;
 ```
 
-> <  
-> >  
-> ==
+#### R
+```R
+data <- scan("stdin")
+# data <- c(1,2)        # test
+
+a <- data[1]
+b <- data[2]
+
+if (a > b)
+{
+    cat(">")
+} else if (a < b)
+{
+    cat("<")
+} else 
+{
+    cat("==")
+}
+```
+
+> 1 2, 10 2, 5 5 (independently)
+
+> \<  
+> \>  
+> \=\=
 
 
 ### 9498. 시험 성적
@@ -62,6 +84,31 @@ if (a >= 90)
 return 0;
 ```
 
+#### R
+```R
+a <- scan("stdin")
+# a <- 100          # test
+
+if (a >= 90)
+{
+    cat("A\n")
+} else if (a >= 80)
+{
+    cat("B\n")
+} else if (a >= 70)
+{
+    cat("C\n")
+} else if (a >= 60)
+{
+    cat("D\n")
+} else 
+{
+    cat("F\n")
+}
+```
+
+> 99, 82, 79, 60, 37 (independently)
+
 > A B C D F (vertically)
 
 
@@ -82,8 +129,22 @@ if (a % 4 == 0 && (a % 100 != 0 || a % 400 == 0))
 
 return 0;
 ```
-
 > 0 1 0 (vertically)
+
+#### R
+```R
+n <- scan("stdin")
+# n <- 2000                                             # test
+
+if (n %% 4 == 0 && (n %% 100 != 0 || n %% 400 == 0))    # not %
+{
+    cat("1\n")
+} else
+{
+    cat("0\n")
+}
+```
+> Runtime Error???
 
 
 ### 14681. Quadrant Selection
@@ -111,6 +172,31 @@ if (a > 0 && b > 0)
 return 0;
 ```
 
+#### R
+```R
+data <- scan("stdin")
+# data <- c(12, 5)          # test
+
+x <- data[1]
+y <- data[2]
+
+if (x > 0 && y > 0)
+{
+    cat("1\n")
+} else if (x < 0 && y > 0)
+{
+    cat("2\n")
+} else if (x < 0 && y < 0)
+{
+    cat("3\n")
+} else 
+{
+    cat("4\n")
+}
+```
+
+> 12 5, 9 -13 (independently)
+
 > 1  
 > 4
 
@@ -136,7 +222,30 @@ cout << a << " " << b - 45 << endl;
 
 return 0;
 ```
+> 10 10, 0 30, 23 40 (independently)
 
 > 9 25  
 > 23 45  
 > 22 55
+
+#### R
+```R
+data <- scan("stdin")
+# data <- c(10, 10)          # test
+
+a <- data[1]
+b <- data[2]
+
+if (b < 45)
+{
+    a = a - 1
+    b = b + 60
+}
+if (a < 0)
+{
+    a = a + 24
+}
+
+cat(a, b - 45, "\n")
+```
+> Runtime Error???????

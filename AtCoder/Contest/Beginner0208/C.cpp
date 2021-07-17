@@ -41,7 +41,7 @@ int main()
     ll k;
     cin >> n >> k;
 
-    vector<int> a;
+    vector<int> a;                  // a : ID number
     int temp;
     for (int i = 0; i < n; i++)
     {

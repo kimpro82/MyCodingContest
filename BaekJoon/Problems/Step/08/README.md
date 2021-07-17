@@ -365,6 +365,26 @@ return 0;
 
 #### C++ - Tral 1
 ```cpp
+/*
+(ex) n = 3
+    1 + 2 + 1
+    = (1 + 2) * 2 - 2
+    = {(n + 1)/2 * [{(n + 1)/2 + 1}/2] * 2 - (n + 1)/2
+    * t = (n + 1)/2
+    = t * (t + 1) - t
+    = t^2
+    = {(n + 1)/2}^2
+
+(ex) n = 4
+    1 + 2 + 2 + 1
+    = (1 + 2) * 2
+    = {(n/2) * (n/2 + 1)}/2 * 2
+    = (n/2) * (n/2 + 1)
+    = (n^2 + 2n + 1 - 1)/4
+    = {(n + 1)^2 - 1}/4
+*/
+```
+```cpp
 #pragma GCC optimize ("O2")
 #pragma GCC target ("avx")
 
@@ -405,27 +425,6 @@ for (int t = 0; t < T; t++)
 
 return 0;
 ```
-```cpp
-/*
-(ex) n = 3
-    1 + 2 + 1
-    = (1 + 2) * 2 - 2
-    = {(n + 1)/2 * [{(n + 1)/2 + 1}/2] * 2 - (n + 1)/2
-    * t = (n + 1)/2
-    = t * (t + 1) - t
-    = t^2
-    = {(n + 1)/2}^2
-
-(ex) n = 4
-    1 + 2 + 2 + 1
-    = (1 + 2) * 2
-    = {(n/2) * (n/2 + 1)}/2 * 2
-    = (n/2) * (n/2 + 1)
-    = (n^2 + 2n + 1 - 1)/4
-    = {(n + 1)^2 - 1}/4
-*/
-```
-
 > 3  
 > 0 3  
 > 1 5  
@@ -441,16 +440,9 @@ return 0;
 
 #### C++ - Tral 2
 ```cpp
-#pragma GCC optimize ("Ofast")
-#pragma GCC target ("avx")
-
-#include <iostream>
-#include <cmath>
-#include<bits/stdc++.h>
-
-using namespace std;
-using ll = long long;
-#define endl '\n'
+// n is even : distance = {(n + 1)/2}^2
+// → n = 2 * sqrt(distance) - 1
+// n is odd  : distance = {(n + 1)^2 - 1}/4
 ```
 ```cpp
 cin.tie(0);
@@ -462,10 +454,10 @@ cin >> T;
 // Test T times
 for (int t = 0; t < T; t++)
 {
-    ll x, y;                            // int x, y : causes SOF!
+    int x, y;                            // int x, y : causes SOF!
     cin >> x >> y;
 
-    ll distance = y - x, move = 0;
+    int distance = y - x, move = 0;
     int turn = 2 * sqrt(distance) - 2;
     
     while (true)
@@ -487,12 +479,6 @@ for (int t = 0; t < T; t++)
 
 return 0;
 ```
-```cpp
-// n is even : distance = {(n + 1)/2}^2
-// → n = 2 * sqrt(distance) - 1
-// n is odd  : distance = {(n + 1)^2 - 1}/4
-```
-
 > 2 2 3 -1  
 > 3 4 3 1  
 > 3  
@@ -502,4 +488,17 @@ return 0;
 > 4 6 5 1  
 > 4
 
+> Time Litmit Exceeded?
+
+#### C++ - Tral 3
+```cpp
+using ll = long long;
+```
+```cpp
+    ll x, y;                            // int x, y : causes SOF!
+    cin >> x >> y;
+
+    ll distance = y - x, move = 0;
+    int turn = 2 * sqrt(distance) - 2;
+```
 > Accepted

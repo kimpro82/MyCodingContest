@@ -29,24 +29,38 @@
 #include <vector>
 #include <algorithm>    // for sort()
 
+#define endl '\n'
+
 using namespace std;
+using ll = long long;
 
 int main()
 {
-    int n, k, temp;
-    vector<int> a;
+    // Input data
+    int n;
+    ll k;
     cin >> n >> k;
+
+    vector<int> a;
+    int temp;
     for (int i = 0; i < n; i++)
     {
         cin >> temp;
         a.push_back(temp);
     }
 
-    // when sweets more than n
+    // When sweets are more than n
+    ll base = k / n;
+    vector<ll> allocation (n, base);
 
-    // when allocate sweets from citizens with the smaller ID number
+    // When allocate sweets from citizens with the smaller ID number
 
-    // output
+
+    // Output
+    for (int l = 0; l < n; l++)
+    {
+        cout << allocation[l] << endl;
+    }
 
     return 0;
 }

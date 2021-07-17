@@ -19,11 +19,11 @@
 
 using namespace std;
 
-int factorial(int num)
+int factorial(int n)
 {
-    if (num <= 1) return 1;
+    if (n <= 1) return 1;
  
-    return num * factorial(num - 1);
+    return n * factorial(n - 1);
 }
 
 int main()
@@ -31,7 +31,7 @@ int main()
     int p;
     cin >> p;
 
-    // fine the largest coin
+    // Find the largest coin
     int pTemp = p, largest = 1;
     for (int i = 1; i <= 10; i++)
     {
@@ -39,34 +39,29 @@ int main()
         {
             pTemp /= i;
             largest = i;
-        } else
-        {
-            break;
-        }
-        // test
-        // cout << p << " " << i << " " << pTemp << " " << largest << '\n';
-    }
 
-    // count the number of coins needed
-    int count = 0, coin;
-    if (p == 1)
-    {
-        count++;
-    } else
-    {
-        for (int j = largest; j > 0; j--)
-        {
-            if (p >= factorial(j))
-            {
-                count += p / factorial(j);
-                p %= factorial(j);
-            }
             // test
-            // cout << j << " " << p << " " << count << '\n';
+            cout << i << " " << pTemp << '\n';
+        } 
+        else break;
+    }
+
+    // Count the number of coins needed
+    int count = 0, coin;
+    for (int j = largest; j > 0; j--)
+    {
+        if (p >= factorial(j))
+        {
+            count += p / factorial(j);
+        
+            // test
+            cout << j << " " << p << " " << count << '\n';
+
+            p %= factorial(j);
         }
     }
 
-    // output
+    // Output
     cout << count << '\n';
 
     return 0;

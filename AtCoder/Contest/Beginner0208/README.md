@@ -166,3 +166,8 @@ return 0;
 > 142857142857
 
 > Time Limit Exceeded
+
+**※ Editorial** ☞ https://atcoder.jp/contests/abc208/editorial/2214
+```cpp
+sort(begin(order), end(order), [&](int i, int j) { return a[i] < a[j]; });
+```

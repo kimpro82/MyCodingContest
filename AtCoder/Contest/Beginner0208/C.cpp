@@ -49,18 +49,29 @@ int main()
         a.push_back(temp);
     }
 
-    // When sweets are more than n
+    // Allocation 1 : When sweets are more than n
     ll base = k / n;
     vector<ll> allocation (n, base);
 
-    // When allocate sweets from citizens with the smaller ID number
-
+    // Allocation 2 : When allocate sweets to citizens from the smaller ID number
+    // 2-1 : Rank ID numbers from smaller
+    vector<int> rank (n, 1);
+    for (int j = 0; j < n; j++)
+    {
+        for (int l = 0; l < n; l++)
+        {
+            if (a[j] > a[l]) rank[j]++;
+        }
+    }
+    // 2-2 : Give one candy more to the higher ranker (<= k & n)
+    int residual = k % n; 
+    for (int m = 0; m < n; m++)
+    {
+        if (rank[m] <= residual) allocation[m]++;
+    }
 
     // Output
-    for (int l = 0; l < n; l++)
-    {
-        cout << allocation[l] << endl;
-    }
+    for (int o = 0; o < n; o++) cout << allocation[o] << endl;
 
     return 0;
 }

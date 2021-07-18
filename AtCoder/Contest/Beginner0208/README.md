@@ -103,7 +103,7 @@ return 0;
 ```cpp
 #include <iostream>
 #include <vector>
-#include <algorithm>    // for sort()
+#include <algorithm>            // for sort()
 
 #define endl '\n'
 

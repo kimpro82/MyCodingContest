@@ -36,7 +36,6 @@ int main()
         if (v[j] == 1) continue;
 
         prime = 1;
-
         for (int k = 2; k < v[j]/2 + 1; k++)
         {
             if (v[j] % k  == 0)

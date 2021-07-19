@@ -7,6 +7,9 @@ https://codingcompetitions.withgoogle.com/codejam
 - Qualification Round 2021 (2021.03.26 22:00 ~ 03.28 04:00, 30 hrs) - C#
 - Qualification Round 2020 (2020.04.04 08:00 ~ 04.05 11:00, 27 hrs) - Python
 
+### Facebook Hacker Cup
+- 2021 Qualification Round (2021.08.28 02:00 ~09.01 02:00, 72 hrs) (Comming)
+
 ### CodeForces
 https://codeforces.com/contests
 - Codeforces Round #734 (Div. 3) (2021.07.23 23:05, 2 hrs) (Comming)
@@ -52,6 +55,7 @@ https://atcoder.jp/
 ### BAEKJOON Online Judge
 https://www.acmicpc.net/
 - 문제 > 단계별로 풀어보기  
+&nbsp; 9. 기본 수학 2  
 &nbsp; 8. 기본 수학 1 (2021.07.12) - C++  
 &nbsp; 7. 문자열 (2021.07.10) - C++  
 &nbsp; 6. 함수 (2021.06.18) - C++  

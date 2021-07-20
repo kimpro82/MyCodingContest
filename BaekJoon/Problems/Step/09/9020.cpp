@@ -1,6 +1,6 @@
 // [BOJ] 단계별로 풀어보기 > 9. 기본 수학 2
 
-// 9020. 골드바흐의 추측
+// 9020. Goldbach’s Conjecture (골드바흐의 추측)
 
 /* Sample input & output data
 3

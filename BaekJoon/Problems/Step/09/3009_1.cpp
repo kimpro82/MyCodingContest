@@ -1,6 +1,6 @@
 // [BOJ] 단계별로 풀어보기 > 9. 기본 수학 2
 
-// 3009. 네 번째 점
+// 3009. CETVRTA (네 번째 점)
 
 /* Sample input & output data
 5 5

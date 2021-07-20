@@ -1,6 +1,6 @@
 // [BOJ] 단계별로 풀어보기 > 9. 기본 수학 2
 
-// 4948. 베트르랑 공준
+// 4948. Chebyshev's Theorem (베트르랑 공준)
 
 /* Sample input & output data
 1

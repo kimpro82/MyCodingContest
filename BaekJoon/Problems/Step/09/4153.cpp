@@ -15,7 +15,7 @@ right
 
 
 #include <iostream>
-#include <array>
+// #include <array>     // not used, but use legacy array
 #include <algorithm>    // sort()
 #include <cmath>        // pow()
 

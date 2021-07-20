@@ -18,7 +18,6 @@
 
 
 #include <iostream>
-#include <vector>
 #include <map>
 
 using namespace std;
@@ -36,27 +35,12 @@ int main()
         y.insert(pair<int, int> (temp2, 1));
     }
 
-    // Find the 4th point : hope to find more efficient way, but ……
-    int x4, y4;
-    for (auto it = x.begin(); it != x.end(); it++)
+    // test
+    map<int, int>::iterator it;
+    for (it = x.begin(); it != x.end(); it++)
     {
-        if (x.count(it->second) == 1)
-        {
-            x4 = it->first;
-            break;
-        }
+        cout << it->first << ' ' << it->second << endl;
     }
-    for (auto it = y.begin(); it != y.end(); it++)
-    {
-        if (y.count(it->second) == 1)
-        {
-            y4 = it->first;
-            break;
-        }
-    }
-
-    // Output
-    cout << x4 << ' ' << y4 << endl;
-
+    
     return 0;
 }

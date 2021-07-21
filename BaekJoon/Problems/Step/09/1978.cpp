@@ -47,7 +47,7 @@ int main()
         if (prime == 1) count++;
 
         // test
-        // cout << j << " " << v[j] << " " << count << endl;
+        cout << j << " " << v[j] << " " << count << endl;
     }
 
     // Output

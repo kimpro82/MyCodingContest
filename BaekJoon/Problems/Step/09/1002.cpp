@@ -37,7 +37,7 @@ int main()
         int rangeSquare1 = (int) pow(r1 + r2, 2), rangeSquare2 = (int) pow(r2 - r1, 2);
 
         // test
-        // cout << distanceSquare << ' ' << rangeSquare1 << ' ' << rangeSquare2 << endl;
+        cout << distanceSquare << ' ' << rangeSquare1 << ' ' << rangeSquare2 << endl;
 
         // Output
         if (distanceSquare == 0 && rangeSquare2 == 0) cout << -1 << endl;   // infinitely cross

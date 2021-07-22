@@ -1,9 +1,11 @@
 ## BAEKJOON Online Judge
 
 ### 문제 > 단계별로 풀어보기 > 1. 입출력과 사칙연산
-(2015.05.13)  
+(2021.05.13) - Python, C++  
+(2021.07.11) - R  
 https://www.acmicpc.net/step/1  
-※ The codes of `Python` and `C++` has the same result  
+
+※ The codes of `Python`, `C++` and `R` has the same result  
 ※ C++ codes : **skipped** `main()` function's brace(`{}`) and its outside
 
 
@@ -18,6 +20,12 @@ print("Hello World!")
 ```cpp
 cout << "Hello World!" << endl;
 return 0;
+```
+
+#### R
+```R
+# print("Hello World!") # Runtime Error
+cat("Hello World!")
 ```
 
 > Hello World!
@@ -39,6 +47,14 @@ for (int i = 0; i < 2; i++)
 }
 
 return 0;
+```
+
+#### R
+```R
+for (i in c(0, 1))
+{
+    cat("강한친구 대한육군\n")
+}
 ```
 
 > 강한친구 대한육군  
@@ -63,6 +79,14 @@ cout << "(  /  ) " << endl;
 cout << " \\(__)|" << endl;
 
 return 0;
+```
+
+#### R
+```R
+cat("\\    /\\
+ )  ( \')
+(  /  )
+ \\(__)|")
 ```
 
 > \    /\  
@@ -106,6 +130,15 @@ cout << "||_/=\\\\__|" << endl;
 return 0;
 ```
 
+#### R
+```R
+cat("|\\_/|
+|q p|   /}
+( 0 )\"\"\"\\
+|\"^\"`    |
+||_/=\\\\__|")
+```
+
 > |\\_/|  
 > |q p|   /}  
 > ( 0 )"""\  
@@ -130,6 +163,12 @@ cout << a + b << endl;
 return 0;
 ```
 
+#### R
+```R
+num <- scan("stdin")    # recieve num[1], num[2], …… as numeric
+cat(num[1] + num[2])
+```
+
 > 3
 
 
@@ -148,6 +187,12 @@ cin >> a >> b;          // 3 2
 cout << a - b << endl;
 
 return 0;
+```
+
+#### R
+```R
+num <- scan("stdin")    # recieve num[1], num[2], …… as numeric
+cat(num[1] - num[2])
 ```
 
 > 1
@@ -170,6 +215,12 @@ cout << a * b << endl;
 return 0;
 ```
 
+#### R
+```R
+num <- scan("stdin")    # recieve num[1], num[2], …… as numeric
+cat(num[1] * num[2])
+```
+
 > 12
 
 
@@ -189,6 +240,13 @@ cout.precision(10);             // for reducing error < 10^(-9)
 cout << (double)a / b << endl;
 
 return 0;
+```
+
+#### R
+```R
+num <- scan("stdin")    # recieve num[1], num[2], …… as numeric
+options(digits = 10)
+cat(num[1] / num[2])
 ```
 
 > 0.3333333333
@@ -221,6 +279,16 @@ cout << a % b << endl;
 return 0;
 ```
 
+#### R
+```R
+num <- scan("stdin")                # recieve num[1], num[2], …… as numeric
+cat(num[1] + num[2], "\n")
+cat(num[1] - num[2], "\n")
+cat(num[1] * num[2], "\n")
+cat(floor(num[1] / num[2]), "\n")
+cat(num[1] %% num[2], "\n")
+```
+
 > 10 4 21 2 1 (vertically)
 
 
@@ -247,6 +315,21 @@ cout << (A*B)%C << endl;
 cout << ((A%C)*(B%C))%C << endl;
 
 return 0;
+```
+
+#### R
+```R
+num <- scan("stdin")                # recieve num[1], num[2], …… as numeric
+# num <- c(5, 8, 4)                 # test
+
+a <- num[1]
+b <- num[2]
+c <- num[3]
+
+cat((a + b) %% c, "\n")
+cat(((a %% c) + (b %% c)) %% c, "\n")
+cat((a * b) %% c, "\n")
+cat(((a %% c) * (b %% c)) %% c, "\n")
 ```
 
 > 1 1 0 0 (vertically)
@@ -278,6 +361,12 @@ for i in range(0,len(b)) :
 
 print(sum)
 ```
+> 2360  
+> 3776  
+> 1416  
+> 181720
+
+> Accepted
 
 #### C++ - trial 1-1
 ```cpp
@@ -421,9 +510,35 @@ return 0;
 
 > Accepted
 
-#### Bonus.
+#### C++ - Bonus
 ```cpp
 // Output
 cout << sum + 1 << endl; // can't find why lack of 1 - crazy!
 ```
 > ㅋㅋ
+
+#### R
+```R
+num <- scan("stdin")                            # recieve num[1], num[2], …… as numeric
+# num <- c(472, 385)                            # test
+
+a <- num[1]
+b <- num[2]
+
+sum = 0
+for (i in 1:3)
+{
+    # cat(floor((b %% 10^i) / 10^(i-1)), "\n")  # test
+    ans = a * floor((b %% 10^i) / 10^(i-1))
+    cat(ans, "\n")
+    sum = sum + ans * 10^(i - 1) 
+}
+
+cat(sum, "\n")
+```
+> 2360  
+> 3776  
+> 1416  
+> 181720
+
+> Accepted

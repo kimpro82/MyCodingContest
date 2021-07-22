@@ -19,6 +19,8 @@ for (int i = 0; i < t; i++)
 {
     // following codes
 }
+
+return 0;
 ```
 
 ```cpp

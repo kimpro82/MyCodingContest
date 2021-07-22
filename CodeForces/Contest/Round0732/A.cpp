@@ -124,4 +124,6 @@ int main()
             isRemained = 0;
         } // The end of while loop
     } // The end of t loop
-} // The end of main()
+
+    return 0;
+}

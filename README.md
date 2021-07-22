@@ -13,7 +13,7 @@ https://codingcompetitions.withgoogle.com/codejam
 ### CodeForces
 https://codeforces.com/contests
 - Codeforces Round #734 (Div. 3) (2021.07.23 23:05, 2 hrs) (Comming)
-- Codeforces Round #732 (Div. 2) (2021.07.11 23:05, 2.5 hrs) (Comming)
+- Codeforces Round #732 (Div. 2) (2021.07.11 23:05, 2.5 hrs) - C++
 - Kotlin Heroes: Episode 7 (2021.06.29 23:35, 2.5 hrs) - Kotlin
 - Kotlin Heroes: Practice 7 (2021.06.22 22:35, 7 days) - Kotlin
 - Codeforces Round #721 (Div. 2) (2021.05.20 23:35, 2 hrs) - C#

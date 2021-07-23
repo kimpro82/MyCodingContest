@@ -1,8 +1,8 @@
 ﻿// Codeforces Round #734 (Div. 3)
 // 2021.07.23 23:35, 2 hrs
- 
+
 // B1. Wonderful Coloring - 1
- 
+
 /* Sample Input & Output
 5
 kzaaa
@@ -10,15 +10,15 @@ codeforces
 archive
 y
 xxxxxx
- 
+
 2
 5
 3
 0
 1
 */
- 
- 
+
+
 #include <iostream>
 #include <string>
 #include <vector>

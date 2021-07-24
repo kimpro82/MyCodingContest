@@ -45,7 +45,7 @@ int main()
     // Find the max number of colors in vector c's subsets of length k
     set<int> s;
     int max = 0, sSize;
-    int index;                                          // test
+    int index;                      // test
     for (int j = 0; j < n - k + 1; j++)
     {
         s = {};
@@ -54,12 +54,12 @@ int main()
         if (sSize == k)
         {
             max = sSize;
-            index = j;                                  // test
+            index = j;              // test
             break;
         } else if (sSize > max)
         {
             max = sSize;
-            index = j;                                  // test
+            index = j;              // test
         }
     }
 

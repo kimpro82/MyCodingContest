@@ -67,10 +67,7 @@ int main()
     cout << max << endl;
 
     // test
-    for (int m = index; m < index + max; m++)
-    {
-        cout << c[m] << " ";
-    }
+    for (int l = index; l < index + max; l++) cout << c[l] << " ";
     cout << endl;
 
     return 0;

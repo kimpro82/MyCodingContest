@@ -42,18 +42,19 @@ int main()
         c.push_back(temp);
     }
 
-    // Find the most various subset's starting index of length k
+    // Find the max number of colors in vector c's subsets of length k
     set<int> s;
     int max = 0, sSize;
-    int index = 1;                                      // test
+    int index;                                          // test
     for (int j = 0; j < n - k + 1; j++)
     {
         s = {};
-        for (int l = 0; l < k; l++) s.insert(c[j+l]);
+        for (int l = j; l < j + k; l++) s.insert(c[l]);
         sSize = s.size();
         if (sSize == k)
         {
             max = sSize;
+            index = j;                                  // test
             break;
         } else if (sSize > max)
         {
@@ -66,7 +67,7 @@ int main()
     cout << max << endl;
 
     // test
-    for (int m = index; m < index + k; m++)
+    for (int m = index; m < index + max; m++)
     {
         cout << c[m] << " ";
     }

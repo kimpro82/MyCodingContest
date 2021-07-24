@@ -12,6 +12,7 @@ https://atcoder.jp/contests/abc210
 
 ### A - Cabbages
 
+#### C++
 ```cpp
 int n, a, x, y, sum;
 cin >> n >> a >> x >> y;
@@ -33,6 +34,7 @@ return 0;
 
 ### B - Bouzu Mekuri
 
+#### C++
 ```cpp
 int n;
 string s;
@@ -62,6 +64,7 @@ return 0;
 
 ### C - Colorful Candies
 
+#### C++ - Trial 1
 ```cpp
 #pragma GCC optimize ("O2")
 #pragma GCC target ("avx")
@@ -86,23 +89,24 @@ for (int i = 0; i < n; i++)
     c.push_back(temp);
 }
 
-// Find the most various subset's starting index of length k
+// Find the max number of colors in vector c's subsets of length k
 set<int> s;
 int max = 0, sSize;
-int index = 1;                                      // test
+int index;                      // test
 for (int j = 0; j < n - k + 1; j++)
 {
     s = {};
-    for (int l = 0; l < k; l++) s.insert(c[j+l]);
+    for (int l = j; l < j + k; l++) s.insert(c[l]);
     sSize = s.size();
     if (sSize == k)
     {
         max = sSize;
+        index = j;              // test
         break;
     } else if (sSize > max)
     {
         max = sSize;
-        index = j;                                  // test
+        index = j;              // test
     }
 }
 
@@ -110,10 +114,7 @@ for (int j = 0; j < n - k + 1; j++)
 cout << max << endl;
 
 // test
-for (int m = index; m < index + k; m++)
-{
-    cout << c[m] << " ";
-}
+for (int l = index; l < index + max; l++) cout << c[l] << " ";
 cout << endl;
 
 return 0;
@@ -124,3 +125,58 @@ return 0;
 > 3
 
 > Time Limit Exceeded
+
+#### C++ - Trial 2
+```cpp
+#include <map>                      // instead of <set>
+```
+```cpp
+// Find the max number of colors in vector c's subsets of length k
+map<int, int> m;
+int max = 0, mSize = 0;
+int index = n;                  // test
+for (int j = 0; j < n; j++)
+{
+    // remove the oldest element
+    if (j >= k - 1)
+    {
+        if (m.find(c[j-k])->second > 1) m.find(c[j-k])->second--;
+        else m.erase(c[j-k]);
+    }
+
+    // insert a new element
+    if (m.find(c[j]) == m.end()) m.insert(pair<int, int> (c[j], 1));
+    else m.find(c[j])->second++;
+
+    // test
+    for (auto it = m.begin(); it != m.end(); it++) cout << it->first << ' ';
+    cout << endl;
+
+    // judge if max
+    mSize = m.size();
+    if (mSize == k)
+    {
+        max = mSize;
+        index = j;              // test
+        break;
+    } else if (mSize >= max)
+    {
+        max = mSize;
+        index = j;              // test
+    }
+}
+```
+```cpp
+// test
+for (int l = index - k + 1; l < index + 1; l++) cout << c[l] << " ";
+cout << endl;
+```
+> 1  
+> 1 2  
+> 1 2  
+> 1 2  
+> 1 2 3  
+> 3  
+> 1 2 3
+
+> Accepted

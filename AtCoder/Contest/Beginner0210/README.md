@@ -180,3 +180,10 @@ cout << endl;
 > 1 2 3
 
 > Accepted
+
+
+### D - National Railway
+
+Editorial ☞ https://atcoder.jp/contests/abc210/editorial/2305
+
+????

@@ -4,9 +4,9 @@
 https://codeforces.com/contest/1551
 
 ※ All the codes are written in C++  
- &nbsp; - **skipped** `main()` function or test case loop statement's brace(`{}`) and its outside  
- &nbsp; - Basically, all the codes has the `<iostream>` header and namespace `std` even if there's no mention.  
- &nbsp; - When any additional header is used, the header block is also noted seperately.
+&nbsp;&nbsp;&nbsp;- **skipped** `main()` function or test case loop statement's brace(`{}`) and its outside  
+&nbsp;&nbsp;&nbsp;- Basically, all the codes has the `<iostream>` header and namespace `std` even if there's no mention.  
+&nbsp;&nbsp;&nbsp;- When any additional header is used, the header block is also noted seperately.
 
 
 #### A. Polycarp and Coins

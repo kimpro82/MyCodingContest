@@ -133,3 +133,8 @@ cout << distance << endl;
 > ……
 
 > Accepted
+
+
+#### C. Coin Rows
+
+It seems to be rather easier than B to other people, but ……

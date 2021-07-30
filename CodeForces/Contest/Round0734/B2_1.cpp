@@ -42,8 +42,8 @@ int main()
     for (int i = 0; i < t; i++)
     {
         // Input data
-        int n, k;               // n : the length of a given sequence
-        cin >> n >> k;          // k : the number of colors
+        int n, k;                       // n : the length of a given sequence
+        cin >> n >> k;                  // k : the number of colors
 
         // Make map m
         map<int, int> m;
@@ -57,23 +57,20 @@ int main()
 
         // test : ok
         map<int, int>::iterator it;
-        for (it = m.begin(); it != m.end(); it++)
-        {
-            cout << it->first << ' ' << it->second << " / ";
-        }
-        cout << "\b\b\b" << endl;                               // '\b' doesn't work
+        for (it = m.begin(); it != m.end(); it++) cout << it->first << ' ' << it->second << " / ";
+        cout << "\b\b\b" << endl;       // '\b' doesn't work
 
         // Convert map m to vector v;
         vector<pair<int, int>> v(m.begin(), m.end());
 
         // test : ok
-        for (int l1 = 0; l1 < v.size(); l1++) cout << v[l1].first << ' ';
+        for (int l = 0; l < v.size(); l++) cout << v[l].first << ' ';
         cout << endl;        
-        for (int l2 = 0; l2 < v.size(); l2++) cout << v[l2].second << ' ';
+        for (int l = 0; l < v.size(); l++) cout << v[l].second << ' ';
         cout << endl;
 
         // need more codes ……
-;
+
     } // The end of t loop
 
     return 0;

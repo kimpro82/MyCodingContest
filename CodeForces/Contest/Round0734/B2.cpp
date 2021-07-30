@@ -60,7 +60,7 @@ int main()
         for (it = m.begin(); it != m.end(); it++) cout << it->first << ' ' << it->second << " / ";
         cout << "\b\b\b" << endl;       // '\b' doesn't work
 
-        // Convert map m to vector v;
+        // Convert map m to vector v
         vector<pair<int, int>> v(m.begin(), m.end());
 
         // test : ok

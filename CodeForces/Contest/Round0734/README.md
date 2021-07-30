@@ -166,7 +166,7 @@ cout << "\b\b\b" << endl;       // '\b' doesn't work
 ```
 
 ```cpp
-// Convert map m to vector v;
+// Convert map m to vector v
 vector<pair<int, int>> v(m.begin(), m.end());
 
 // test : ok

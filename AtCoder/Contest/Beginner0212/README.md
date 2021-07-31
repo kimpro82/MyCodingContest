@@ -245,7 +245,7 @@ for (int q = 0; q < Q; q++)
     // test
     cout << "[q : " << q + 1 << ", p : " << p << ']' << endl;
 
-    // The below codes are contained here
+    // The below codes are located here
 }
 
 return 0;

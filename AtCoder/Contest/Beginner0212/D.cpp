@@ -36,7 +36,6 @@ using ll = long long;
 
 int main()
 {
-    // Input data
     int Q, p, x;
     ll temp, min;
     cin >> Q;

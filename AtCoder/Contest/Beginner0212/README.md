@@ -168,9 +168,6 @@ for (auto it1 = A.begin(); it1 != A.end(); it1++)
     if (min == 0) break;
 }
 ```
-```cpp
-
-```
 
 > 70 2 68 68  
 > 70 17 53 53  

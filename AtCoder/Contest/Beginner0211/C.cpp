@@ -17,6 +17,7 @@ chokudaichokudaichokudai
 
 #include <iostream>
 #include <string>
+#include <vector>
 
 using namespace std;
 #define endl '\n'
@@ -24,20 +25,53 @@ using namespace std;
 int main()
 {
     // Indput data
-    string chokudai = "chokudai", s;
-    // cout << chokudai[1] << endl;         // test : ok
+    string c = "chokudai", s;
+    // cout << c[1] << endl;            // test : ok
     cin >> s;
+    int cSize = c.size(), sSize = s.size();
+    int mod = 1e9 + 7;
 
-    int count = 0;
-    for (int i = 0; i < s.size() - 8; i++)
+    // test
+    cout << "  ";
+    for (int k = 0; k < sSize; k++) cout << s[k] << ' ';
+    cout << endl;
+
+    // Count : Dynamic Programming
+    vector<vector<int>> dp(cSize, vector<int> (sSize, 0));
+    for (int i = 0; i < cSize; i++)
     {
-        string sub;
-        for (int j = i; j < s.size(); j++)
+        // test
+        cout << c[i] << ' ';
+
+        for (int j = 0; j < sSize; j++)
         {
-            cout << s[j];
+            if (i == 0)
+            {
+                if (j == 0)
+                {
+                    if (c[i] == s[j]) dp[i][j] = 1;
+                    else dp[i][j] = 0;
+                }
+                else
+                {
+                    if (c[i] == s[j]) dp[i][j] = (dp[i][j-1] + 1) % mod;
+                    else dp[i][j] = dp[i][j-1] % mod;
+                }
+            }
+            else if (j == 0) dp[i][j] = 0;
+            else if (c[i] == s[j]) dp[i][j] = (dp[i-1][j] + dp[i][j-1]) % mod;
+            else dp[i][j] = dp[i][j-1] % mod;
+
+            // test
+            cout << dp[i][j] << ' ';
         }
+
+        // test
         cout << endl;
     }
+
+    // Output
+    cout << dp[cSize - 1][sSize - 1] << endl;
 
     return 0;
 }

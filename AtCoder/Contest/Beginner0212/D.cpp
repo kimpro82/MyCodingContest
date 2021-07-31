@@ -61,9 +61,9 @@ int main()
             map<ll, int> m2;
             for (auto it = m.begin(); it != m.end(); it++)
             {
-                // 이러한 피연산자와 일치하는 "+" 연산자가 없습니다. -- 피연산자 형식이 std::pair<const ll, int> + int입니다.
                 // if (m.find(*it + x)->second == 0) m.insert(pair<ll, int> (*it + x, 1));
                 // else m.find(*it + x)->second++;
+                // 이러한 피연산자와 일치하는 "+" 연산자가 없습니다. -- 피연산자 형식이 std::pair<const ll, int> + int입니다.
 
                 temp = it->first + x;
                 m2.insert(pair<ll, int> (temp, it->second));

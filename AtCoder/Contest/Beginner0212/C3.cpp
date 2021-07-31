@@ -56,9 +56,9 @@ int main()
         if (diff < min) min = diff;
 
         // test
-        // cout << *it1 << ' ' << *it2 << ' ' << diff << ' ' << min << ' ' << endl;
+        cout << *it1 << ' ' << *it2 << ' ' << diff << ' ' << min << ' ' << endl;
 
-        if (min == 0) break;                            // *it1 == *it2
+        if (min == 0) break;            // *it1 == *it2
         else if (*it1 > *it2)
         {
             if (it2 == B.end()) break;

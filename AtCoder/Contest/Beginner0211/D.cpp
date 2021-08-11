@@ -45,12 +45,10 @@ int main()
     int count = 0, start = 1;
     while (true)
     {
-
-
+        // need more codes ……
     }
 
-
-
+    // I can't postpone anymore to say good game ……
 
     return 0;
 }

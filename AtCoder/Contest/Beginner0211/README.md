@@ -134,7 +134,7 @@ return 0;
 
 > chokudaichokudaichokudai
 
-> &nbsp;&nbsp;c h o k u d a i c h o k u d a i c h o k u d a i  
+> &nbsp;&nbsp;&nbsp;c h o k u d a i c h o k u d a i c h o k u d a i  
 > c 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 3 3 3 3 3 3 3 3  
 > h 0 1 1 1 1 1 1 1 1 3 3 3 3 3 3 3 3 6 6 6 6 6 6 6  
 > o 0 0 1 1 1 1 1 1 1 1 4 4 4 4 4 4 4 4 10 10 10 10 10 10  

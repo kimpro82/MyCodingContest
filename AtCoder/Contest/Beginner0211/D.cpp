@@ -1,7 +1,7 @@
 ﻿// AtCoder Beginner Contest 211
 // 2021-07-24(Satn) 21:00 - 22:40, 100 minutes
 
-//  - Number of Shortest paths
+// D - Number of Shortest paths
 
 /* Sample Input & Output
 4 5

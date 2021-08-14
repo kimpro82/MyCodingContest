@@ -12,6 +12,7 @@ https://codingcompetitions.withgoogle.com/codejam
 
 ### CodeForces
 https://codeforces.com/contests
+- Codeforces Round #739 (Div. 3) (2021.08.18 23:35, 2 hrs) (Comming)
 - Educational Codeforces Round 112 (Div. 2) (2021.07.30 23:35, 2 hrs) - C++
 - Codeforces Round #734 (Div. 3) (2021.07.23 23:35, 2 hrs) - C++
 - Codeforces Round #732 (Div. 2) (2021.07.11 23:05, 2.5 hrs) - C++
@@ -35,7 +36,7 @@ https://codeforces.com/contests
 ### AtCoder
 https://atcoder.jp/
 - AtCoder Beginner Contest 215 (2021.08.21 21:00, 100 minutes) (Comming)
-- AtCoder Beginner Contest 214 (2021.08.14 21:00, 100 minutes) (Comming)
+- AtCoder Beginner Contest 214 (2021.08.14 21:00, 100 minutes) - C++
 - AtCoder Beginner Contest 213 (2021.08.08 21:00, 100 minutes) (Comming)
 - AtCoder Beginner Contest 212 (2021.07.31 21:00, 100 minutes) - C++
 - AtCoder Beginner Contest 211 (2021.07.24 21:00, 100 minutes) - C++

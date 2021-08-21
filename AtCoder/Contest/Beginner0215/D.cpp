@@ -35,26 +35,28 @@ int main()
 
     vector<int> prime;
     int Max, Min, mod;
-    for (int n = 0; n <= n; n++)
+    for (int m = 1; m <= M; m++)
     {
-        for (int m = 1; m <= M; m++)
+        for (int n = 0; n < N; n++)
         {
-            Max = max(A[n], m);
-            Min = min(A[n], m);
+            Max = max(m, A[n]);
+            Min = min(m, A[n]);
             mod = Max;
 
-            while (mod != 0)
+            while (mod > 0)
             {
                 mod = Max % Min;
                 Max = Min;
                 Min = mod;
             }
-        
+
             // test
-            cout << A[n] << ' ' << m << ' ' << Max << endl;
+            cout << m << ' ' << A[n] << ' ' << Max << endl;
+
+            if (Max > 1) break;
         }
 
-        if (Max = 1) prime.push_back(Max);
+        if (Max == 1) prime.push_back(m);
     }
 
     // Output

@@ -8,7 +8,7 @@ https://codingcompetitions.withgoogle.com/codejam
 - Qualification Round 2020 (2020.04.04 08:00 ~ 04.05 11:00, 27 hrs) - Python
 
 ### Facebook Hacker Cup
-- 2021 Qualification Round (2021.08.28 02:00 ~09.01 02:00, 72 hrs) (Comming)
+- 2021 Qualification Round (2021.08.28 02:00 ~ 09.01 02:00, 72 hrs) (Comming)
 
 ### CodeForces
 https://codeforces.com/contests

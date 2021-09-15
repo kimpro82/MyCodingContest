@@ -27,8 +27,10 @@ char star(int r, int c, int n)
         if (r % 3 == 1 && c % 3 == 1) return ' ';
         else return '*';
     }
-    else if (r / (n / 3) == 1 && c / (n / 3) == 1) return ' ';
-    else return star(r % (n / 3), c % (n / 3), n / 3);
+
+    if (r / (n / 3) == 1 && c / (n / 3) == 1) return ' ';
+
+    return star(r % (n / 3), c % (n / 3), n / 3);
 }
 
 int main()

@@ -41,6 +41,7 @@
 #define endl '\n'
 
 using namespace std;
+using ll = long long;
 
 int main()
 {
@@ -56,42 +57,36 @@ int main()
     int mod = 998244353;
 
     // Count : Dynamic Programming
-    vector<vector<int>> dp(N, vector<int> (10, 0));
+    vector<vector<ll>> dp(N, vector<ll> (10, 0));
     for (int n = 0; n < N; n++)
     {
         // test
         cout << A[n] << ' ';
 
         // n == 0
-        if (n == 0)
-        {
-            for (int i = 0; i < 2; i++) dp[0][A[i]]++;
-        }
+        if (n == 0) dp[0][A[0]]++;
         // n >= 1
         else
         {
             for (int r = 0; r < 10; r++)
             {
-                if (dp[n-1][r] != 0)
+                if (dp[n - 1][r] != 0)
                 {
-                    dp[n][(dp[n-1][r] + A[n]) % 10]++;
-                    dp[n][(dp[n-1][r] * A[n]) % 10]++;
-                    dp[n][r] %= mod;
+                    dp[n][(r + A[n]) % 10] += dp[n - 1][r];
+                    dp[n][(r + A[n]) % 10] %= mod;
+                    dp[n][(r * A[n]) % 10] += dp[n - 1][r];
+                    dp[n][(r * A[n]) % 10] %= mod;
                 }
             }
         }
 
         // test
-        for (int r = 0; r < 10; r++)
-        {
-            cout << dp[n][r] << ' ';
-        }
+        for (int r = 0; r < 10; r++) cout << dp[n][r] << ' ';
         cout << endl;
     }
 
     // Output
-    for (int r = 0; r < 10; r++) cout << dp[N-1][r] << ' ';
-    cout << endl;
+    for (int r = 0; r < 10; r++) cout << dp[N - 1][r] << endl;
 
     return 0;
 }

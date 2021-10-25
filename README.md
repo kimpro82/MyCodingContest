@@ -12,6 +12,10 @@ https://codingcompetitions.withgoogle.com/codejam
 
 ### CodeForces
 https://codeforces.com/contests
+- Kotlin Heroes: Practice 8 (2021.10.01 22:35, 7 days) - Kotlin (Comming)
+- Codeforces Round #744 (Div. 3) (2021.09.28 23:35, 2.25 hrs) (Comming)
+- Educational Codeforces Round 113 (Div. 2) (2021.09.08 23:35, 2 hrs) (Comming)
+- Educational Codeforces Round 112 (Div. 2) (2021.07.30 23:35, 2 hrs) (Comming)
 - Codeforces Round #734 (Div. 3) (2021.07.23 23:05, 2 hrs) (Comming)
 - Codeforces Round #732 (Div. 2) (2021.07.11 23:05, 2.5 hrs) - C++
 - Kotlin Heroes: Episode 7 (2021.06.29 23:35, 2.5 hrs) - Kotlin
@@ -33,7 +37,23 @@ https://codeforces.com/contests
 
 ### AtCoder
 https://atcoder.jp/
-- AtCoder Beginner Contest 211 (2021.07.24 21:00, 100 minutes) (Comming)
+- AtCoder Beginner Contest 228 (2021.11.20 21:00, 100 minutes) (Comming)
+- AtCoder Beginner Contest 227 (2021.11.13 21:00, 100 minutes) (Comming)
+- AtCoder Beginner Contest 226 (2021.11.07 21:00, 100 minutes) (Comming)
+- AtCoder Beginner Contest 225 (2021.10.30 21:00, 100 minutes) (Comming)
+- AtCoder Beginner Contest 224 (2021.10.23 21:00, 100 minutes) (Comming)
+- AtCoder Beginner Contest 223 (2021.10.17 21:00, 100 minutes) (Comming)
+- AtCoder Beginner Contest 222 (2021.10.09 21:00, 100 minutes) (Comming)
+- AtCoder Beginner Contest 221 (2021.10.02 21:00, 100 minutes) (Comming)
+- AtCoder Beginner Contest 220 (2021.09.26 21:00, 100 minutes) (Comming)
+- AtCoder Beginner Contest 219 (2021.09.18 21:00, 100 minutes) (Comming)
+- AtCoder Beginner Contest 218 (2021.09.11 21:00, 100 minutes) (Comming)
+- AtCoder Beginner Contest 216 (2021.08.29 21:00, 100 minutes) (Comming)
+- AtCoder Beginner Contest 215 (2021.08.21 21:00, 100 minutes) (Comming)
+- AtCoder Beginner Contest 214 (2021.08.14 21:00, 100 minutes) (Comming)
+- AtCoder Beginner Contest 213 (2021.08.08 21:00, 100 minutes) (Comming)
+- AtCoder Beginner Contest 212 (2021.07.31 21:00, 100 minutes) - C++
+- AtCoder Beginner Contest 211 (2021.07.24 21:00, 100 minutes) - C++
 - AtCoder Beginner Contest 210 (2021.07.17 21:00, 100 minutes) - C++
 - AtCoder Beginner Contest 208 (2021.07.04 21:00, 100 minutes) - C++
 - AtCoder Beginner Contest 207 (2021.06.26 21:00, 100 minutes) - C++
@@ -55,7 +75,7 @@ https://atcoder.jp/
 ### BAEKJOON Online Judge
 https://www.acmicpc.net/
 - 문제 > 단계별로 풀어보기  
-&nbsp;10. 재귀 - C++  
+&nbsp;10. 재귀 - (2021.09.15) - C++ (not completed)
 &nbsp; 9. 기본 수학 2 (2021.07.20) - C++  
 &nbsp; 8. 기본 수학 1 (2021.07.12) - C++  
 &nbsp; 7. 문자열 (2021.07.10) - C++  

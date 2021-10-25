@@ -1,6 +1,6 @@
 ## BAEKJOON Online Judge
 
-## 문제 > 단계별로 풀어보기 > 10. 재귀 - (2021.09.15) - C++ (not completed)
+# 문제 > 단계별로 풀어보기 > 10. 재귀 - (2021.09.15) - C++ (not completed)
 (2021.09.15)  
 https://www.acmicpc.net/step/19
 
@@ -15,7 +15,7 @@ using namespace std;
 &nbsp;&nbsp;&nbsp;When any additional header is used, the header block is also noted seperately.
 
 
-### 10872. 팩토리얼
+## 10872. 팩토리얼
 
 #### C++
 (2021.07.27)
@@ -44,7 +44,7 @@ int main()
 > 3628800
 
 
-### 10870. 피보나치 수 5
+## 10870. 피보나치 수 5
 
 #### C++
 (2021.07.27)
@@ -74,7 +74,7 @@ int main()
 > 55
 
 
-### 2447. 별 찍기 - 10
+## 2447. 별 찍기 - 10
 
 #### C++
 (2021.09.15)

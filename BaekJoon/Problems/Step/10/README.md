@@ -4,14 +4,21 @@
 (2021.09.15)  
 https://www.acmicpc.net/step/19
 
-※ C++ codes : **skipped** `main()` function's brace(`{}`) and its outside  
-&nbsp; - Basically, all the codes has the `<iostream>` header and namespace `std` even if there's no mention.  
-&nbsp; - When any additional header is used, the header block is also noted seperately.  
+※ All the `C++` codes **skipped** the below lines. :
+```cpp
+#include <iostream>
+
+using namespace std;
+
+#define endl '\n'
+```
+&nbsp;&nbsp;&nbsp;When any additional header is used, the header block is also noted seperately.
 
 
 ### 10872. 팩토리얼
 
-#### C++ 
+#### C++
+(2021.07.27)
 ```cpp
 int factorial(int n)
 {
@@ -39,7 +46,8 @@ int main()
 
 ### 10870. 피보나치 수 5
 
-#### C++ 
+#### C++
+(2021.07.27)
 ```cpp
 int fibonacci(int n)
 {
@@ -68,7 +76,8 @@ int main()
 
 ### 2447. 별 찍기 - 10
 
-#### C++ 
+#### C++
+(2021.09.15)
 ```cpp
 char star(int r, int c, int n)
 {
@@ -101,22 +110,22 @@ int main()
 
 > 27
 
-> ***************************  
-> * ** ** ** ** ** ** ** ** *  
-> ***************************  
-> ***   ******   ******   ***  
-> * *   * ** *   * ** *   * *  
-> ***   ******   ******   ***  
-> ***************************  
-> * ** ** ** ** ** ** ** ** *  
-> ***************************  
-> ……
+>&nbsp;***************************  
+>&nbsp;* ** ** ** ** ** ** ** ** *  
+>&nbsp;***************************  
+>&nbsp;***   ******   ******   ***  
+>&nbsp;* *   * ** *   * ** *   * *  
+>&nbsp;***   ******   ******   ***  
+>&nbsp;***************************  
+>&nbsp;* ** ** ** ** ** ** ** ** *  
+>&nbsp;***************************  
+>&nbsp;……
 
 
 ### 11729. 하노이 탑 이동 순서
 not completed
 
-#### C++ 
+#### C++
 ```cpp
 int hanoi()
 {

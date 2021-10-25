@@ -12,7 +12,7 @@ https://codingcompetitions.withgoogle.com/codejam
 
 ### BAEKJOON Online Judge
 https://www.acmicpc.net/
-- 문제 > 단계별로 풀어보기  
+- [문제 > 단계별로 풀어보기](/BaekJoon/Problems/Step)  
 &nbsp;[10. 재귀 (2021.09.15) - C++ (not completed)](/BaekJoon/Problems/Step/10#baekjoon-online-judge)  
 &nbsp;&nbsp;&nbsp;[9. 기본 수학 2 (2021.07.20) - C++](/BaekJoon/Problems/Step/09#baekjoon-online-judge)  
 &nbsp;&nbsp;&nbsp;[8. 기본 수학 1 (2021.07.12) - C++](/BaekJoon/Problems/Step/08#baekjoon-online-judge)  
@@ -24,7 +24,7 @@ https://www.acmicpc.net/
 &nbsp;&nbsp;&nbsp;[2. if문 (2021.05.24) - C++ / (2021.07.14) - R](/BaekJoon/Problems/Step/02#baekjoon-online-judge)  
 &nbsp;&nbsp;&nbsp;[1. 입출력과 사칙연산 (2021.05.13) - Python, C++ / (2021.07.11) - R](/BaekJoon/Problems/Step/01#baekjoon-online-judge)
 
-### AtCoder
+### [AtCoder](/AtCoder/Contest)
 https://atcoder.jp/
 - AtCoder Beginner Contest 228 (2021.11.20 21:00, 100 minutes) (Comming)
 - AtCoder Beginner Contest 227 (2021.11.13 21:00, 100 minutes) (Comming)
@@ -61,7 +61,7 @@ https://atcoder.jp/
 - AtCoder Beginner Contest 162 (2020.04.12 21:00, 100 minutes) - Python
 - AtCoder Beginner Contest 161 (2020.04.04 21:00, 100 minutes) - Python
 
-### CodeForces
+### [CodeForces](/CodeForces/Contest)
 https://codeforces.com/contests
 - Kotlin Heroes: Practice 8 (2021.10.01 22:35, 7 days) - Kotlin (Comming)
 - Codeforces Round #744 (Div. 3) (2021.09.28 23:35, 2.25 hrs) (Comming)
@@ -86,7 +86,7 @@ https://codeforces.com/contests
 - April Fools Day Contest 2020 (2020.04.01 23:35, 2 hrs) - Python
 - Codeforces Round #628 (Div. 2) (2020.03.14 23:35, 2 hrs) - Python
 
-### Oncoder Official Coding Test
+### [Oncoder Official Coding Test](/Oncoder)
 https://www.oncoder.com/
 - Challenge : Provided sample questions - Python
 - The 16th Oncoder Official Coding Test (2021.12.11 12:00, 2 hrs) (Comming)

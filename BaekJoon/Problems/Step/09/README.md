@@ -1,6 +1,6 @@
 ## BAEKJOON Online Judge
 
-## 문제 > 단계별로 풀어보기 > 8. 기본 수학 2
+## 문제 > 단계별로 풀어보기 > 9. 기본 수학 2
 (2021.07.20)  
 https://www.acmicpc.net/step/10
 

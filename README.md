@@ -15,8 +15,8 @@ https://codeforces.com/contests
 - Kotlin Heroes: Practice 8 (2021.10.01 22:35, 7 days) - Kotlin (Comming)
 - Codeforces Round #744 (Div. 3) (2021.09.28 23:35, 2.25 hrs) (Comming)
 - Educational Codeforces Round 113 (Div. 2) (2021.09.08 23:35, 2 hrs) (Comming)
-- Educational Codeforces Round 112 (Div. 2) (2021.07.30 23:35, 2 hrs) (Comming)
-- Codeforces Round #734 (Div. 3) (2021.07.23 23:05, 2 hrs) (Comming)
+- Educational Codeforces Round 112 (Div. 2) (2021.07.30 23:35, 2 hrs) - C++
+- Codeforces Round #734 (Div. 3) (2021.07.23 23:05, 2 hrs) - C++
 - Codeforces Round #732 (Div. 2) (2021.07.11 23:05, 2.5 hrs) - C++
 - Kotlin Heroes: Episode 7 (2021.06.29 23:35, 2.5 hrs) - Kotlin
 - Kotlin Heroes: Practice 7 (2021.06.22 22:35, 7 days) - Kotlin
@@ -75,7 +75,7 @@ https://atcoder.jp/
 ### BAEKJOON Online Judge
 https://www.acmicpc.net/
 - 문제 > 단계별로 풀어보기  
-&nbsp;10. 재귀 - (2021.09.15) - C++ (not completed)
+&nbsp;10. 재귀 - (2021.09.15) - C++ (not completed)  
 &nbsp; 9. 기본 수학 2 (2021.07.20) - C++  
 &nbsp; 8. 기본 수학 1 (2021.07.12) - C++  
 &nbsp; 7. 문자열 (2021.07.10) - C++  

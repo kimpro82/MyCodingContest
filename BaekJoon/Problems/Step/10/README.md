@@ -111,13 +111,13 @@ int main()
 > 27
 
 >&nbsp;***************************  
->&nbsp;* ** ** ** ** ** ** ** ** *  
+>&nbsp;* ** &nbsp;** ** &nbsp;** &nbsp;** &nbsp;** ** &nbsp;** *  
 >&nbsp;***************************  
->&nbsp;***&nbsp;&nbsp; ******&nbsp;&nbsp; ******&nbsp;&nbsp; ***  
->&nbsp;* *&nbsp;&nbsp; * ** *&nbsp;&nbsp; * ** *&nbsp;&nbsp; * *  
->&nbsp;***&nbsp;&nbsp; ******&nbsp;&nbsp; ******&nbsp;&nbsp; ***  
+>&nbsp;*** &nbsp;&nbsp;&nbsp; ****** &nbsp;&nbsp; ****** &nbsp;&nbsp;&nbsp; ***  
+>&nbsp;* &nbsp;* &nbsp;&nbsp;&nbsp;* &nbsp;** &nbsp;* &nbsp;&nbsp; * ** * &nbsp;&nbsp;&nbsp; * &nbsp;*  
+>&nbsp;*** &nbsp;&nbsp;&nbsp; ****** &nbsp;&nbsp; ****** &nbsp;&nbsp;&nbsp; ***  
 >&nbsp;***************************  
->&nbsp;* ** ** ** ** ** ** ** ** *  
+>&nbsp;* ** &nbsp;** ** &nbsp;** &nbsp;** &nbsp;** ** &nbsp;** *  
 >&nbsp;***************************  
 >&nbsp;……
 

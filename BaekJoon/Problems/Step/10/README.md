@@ -1,6 +1,6 @@
-## BAEKJOON Online Judge
+## BAEKJOON Online Judge : 문제 > 단계별로 풀어보기
 
-# 문제 > 단계별로 풀어보기 > 10. 재귀 - (2021.09.15) - C++ (not completed)
+# 10. 재귀 - (2021.09.15) - C++ (not completed)
 (2021.09.15)  
 https://www.acmicpc.net/step/19
 

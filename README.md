@@ -13,7 +13,7 @@ https://codingcompetitions.withgoogle.com/codejam
 ### BAEKJOON Online Judge
 https://www.acmicpc.net/
 - 문제 > 단계별로 풀어보기  
-&nbsp;10. 재귀 - (2021.09.15) - C++ (not completed)  
+&nbsp;10. 재귀 (2021.09.15) - C++ (not completed)  
 &nbsp;&nbsp;&nbsp;9. 기본 수학 2 (2021.07.20) - C++  
 &nbsp;&nbsp;&nbsp;8. 기본 수학 1 (2021.07.12) - C++  
 &nbsp;&nbsp;&nbsp;7. 문자열 (2021.07.10) - C++  

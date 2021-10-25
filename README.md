@@ -2,10 +2,10 @@
 (Time Zone : Seoul, GMT+9)
 
 
-### Google Code Jam
+### [Google Code Jam](/Google/CodeJam)
 https://codingcompetitions.withgoogle.com/codejam
-- Qualification Round 2021 (2021.03.26 22:00 ~ 03.28 04:00, 30 hrs) - C#
-- Qualification Round 2020 (2020.04.04 08:00 ~ 04.05 11:00, 27 hrs) - Python
+- [Qualification Round 2021 (2021.03.26 22:00 ~ 03.28 04:00, 30 hrs) - C#](/Google/CodeJam/2021%20Qualification%20Round#google-code-jam-2021---qualification-round)
+- [Qualification Round 2020 (2020.04.04 08:00 ~ 04.05 11:00, 27 hrs) - Python](/Google/CodeJam/2020%20Qualification%20Round#google-code-jam-2020---qualification-round)
 
 ### Facebook Hacker Cup
 - 2021 Qualification Round (2021.08.28 02:00 ~09.01 02:00, 72 hrs) (Comming)
@@ -13,16 +13,16 @@ https://codingcompetitions.withgoogle.com/codejam
 ### BAEKJOON Online Judge
 https://www.acmicpc.net/
 - 문제 > 단계별로 풀어보기  
-&nbsp;10. 재귀 (2021.09.15) - C++ (not completed)  
-&nbsp;&nbsp;&nbsp;9. 기본 수학 2 (2021.07.20) - C++  
-&nbsp;&nbsp;&nbsp;8. 기본 수학 1 (2021.07.12) - C++  
-&nbsp;&nbsp;&nbsp;7. 문자열 (2021.07.10) - C++  
-&nbsp;&nbsp;&nbsp;6. 함수 (2021.06.18) - C++  
-&nbsp;&nbsp;&nbsp;5. 1차원 배열 (2021.06.14) - C++  
-&nbsp;&nbsp;&nbsp;4. while문 (2021.05.26) - C++  
-&nbsp;&nbsp;&nbsp;3. for문 (2021.05.25) - C++  
-&nbsp;&nbsp;&nbsp;2. if문 (2021.05.24) - C++ / (2021.07.14) - R  
-&nbsp;&nbsp;&nbsp;1. 입출력과 사칙연산 (2021.05.13) - Python, C++ / (2021.07.11) - R
+&nbsp;[10. 재귀 (2021.09.15) - C++ (not completed)](/BaekJoon/Problems/Step/10#baekjoon-online-judge)  
+&nbsp;&nbsp;&nbsp;[9. 기본 수학 2 (2021.07.20) - C++](/BaekJoon/Problems/Step/09#baekjoon-online-judge)  
+&nbsp;&nbsp;&nbsp;[8. 기본 수학 1 (2021.07.12) - C++](/BaekJoon/Problems/Step/08#baekjoon-online-judge)  
+&nbsp;&nbsp;&nbsp;[7. 문자열 (2021.07.10) - C++](/BaekJoon/Problems/Step/07#baekjoon-online-judge)  
+&nbsp;&nbsp;&nbsp;[6. 함수 (2021.06.18) - C++](/BaekJoon/Problems/Step/06#baekjoon-online-judge)  
+&nbsp;&nbsp;&nbsp;[5. 1차원 배열 (2021.06.14) - C++](/BaekJoon/Problems/Step/05#baekjoon-online-judge)  
+&nbsp;&nbsp;&nbsp;[4. while문 (2021.05.26) - C++](/BaekJoon/Problems/Step/04#baekjoon-online-judge)  
+&nbsp;&nbsp;&nbsp;[3. for문 (2021.05.25) - C++](/BaekJoon/Problems/Step/03#baekjoon-online-judge)  
+&nbsp;&nbsp;&nbsp;[2. if문 (2021.05.24) - C++ / (2021.07.14) - R](/BaekJoon/Problems/Step/02#baekjoon-online-judge)  
+&nbsp;&nbsp;&nbsp;[1. 입출력과 사칙연산 (2021.05.13) - Python, C++ / (2021.07.11) - R](/BaekJoon/Problems/Step/01#baekjoon-online-judge)
 
 ### AtCoder
 https://atcoder.jp/

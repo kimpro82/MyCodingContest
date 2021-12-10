@@ -33,20 +33,20 @@ int main()
     int min = max(0, N - 9 * digits);
 
     // Find the minimum generator
-    int disitSum;
+    int digitSum;
     string candidate;
     bool ok = false;
     for (int i = min; i < N; i++)
     {
-        disitSum = i;
+        digitSum = i;
         candidate = to_string(i);
 
-        for (int j = 0; j < candidate.size(); j++) disitSum += candidate[j] - '0';
+        for (int j = 0; j < candidate.size(); j++) digitSum += candidate[j] - '0';
 
         // test
-        // cout << N << ' ' << digits << ' ' << candidate << ' ' << disitSum << endl;
+        // cout << N << ' ' << digits << ' ' << candidate << ' ' << digitSum << endl;
 
-        if (disitSum == N)
+        if (digitSum == N)
         {
             ok = true;
             break;

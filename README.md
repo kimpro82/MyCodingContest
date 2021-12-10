@@ -13,7 +13,7 @@ https://codingcompetitions.withgoogle.com/codejam
 ## [BAEKJOON Online Judge](/BaekJoon/Problems/Step)
 https://www.acmicpc.net/
 - [문제 > 단계별로 풀어보기](/BaekJoon/Problems/Step)  
-&nbsp;11. 브루트 포스 - C++  
+&nbsp;[11. 브루트 포스 (2021.12.10) - C++](/BaekJoon/Problems/Step/11#baekjoon-online-judge--문제--단계별로-풀어보기)  
 &nbsp;[10. 재귀 (2021.09.15) - C++ (not completed)](/BaekJoon/Problems/Step/10#baekjoon-online-judge--문제--단계별로-풀어보기)  
 &nbsp;&nbsp;&nbsp;[9. 기본 수학 2 (2021.07.20) - C++](/BaekJoon/Problems/Step/09#baekjoon-online-judge)  
 &nbsp;&nbsp;&nbsp;[8. 기본 수학 1 (2021.07.12) - C++](/BaekJoon/Problems/Step/08#baekjoon-online-judge)  
@@ -27,10 +27,6 @@ https://www.acmicpc.net/
 
 ## [AtCoder](/AtCoder/Contest)
 https://atcoder.jp/
-- AtCoder Beginner Contest 228 (2021.11.20 21:00, 100 minutes) (Comming)
-- AtCoder Beginner Contest 227 (2021.11.13 21:00, 100 minutes) (Comming)
-- AtCoder Beginner Contest 226 (2021.11.07 21:00, 100 minutes) (Comming)
-- AtCoder Beginner Contest 225 (2021.10.30 21:00, 100 minutes) (Comming)
 - AtCoder Beginner Contest 224 (2021.10.23 21:00, 100 minutes) (Comming)
 - AtCoder Beginner Contest 223 (2021.10.17 21:00, 100 minutes) (Comming)
 - AtCoder Beginner Contest 222 (2021.10.09 21:00, 100 minutes) (Comming)

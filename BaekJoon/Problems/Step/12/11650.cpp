@@ -54,7 +54,7 @@ int main()
     // Sort
     sort(v.begin(), v.end(), comp);
 
-    // Output (in a row)
+    // Output
     for (int i = 0; i < N; i++) cout << v[i].first << ' ' << v[i].second << endl;
 
     return 0;

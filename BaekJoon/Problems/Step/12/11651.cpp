@@ -26,10 +26,10 @@ using namespace std;
 
 #define endl '\n'
 
-bool comp(pair<int, int> v1, pair<int, int> v2)             // only different part from Q.11650
+bool comp(pair<int, int> p1, pair<int, int> p2)             // only different part from Q.11650
 {
-    if (v1.second == v2.second) return v1.first < v2.first;
-    else return v1.second < v2.second;
+    if (p1.second == p2.second) return p1.first < p2.first;
+    else return p1.second < p2.second;
 }
 
 

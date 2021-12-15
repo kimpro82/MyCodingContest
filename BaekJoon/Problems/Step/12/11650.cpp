@@ -26,10 +26,10 @@ using namespace std;
 
 #define endl '\n'
 
-bool comp(pair<int, int> v1, pair<int, int> v2)             // I've just learned a new skill!
+bool comp(pair<int, int> p1, pair<int, int> p2)             // I've just learned a new skill!
 {
-    if (v1.first == v2.first) return v1.second < v2.second;
-    else return v1.first < v2.first;
+    if (p1.first == p2.first) return p1.second < p2.second;
+    else return p1.first < p2.first;
 }
 
 

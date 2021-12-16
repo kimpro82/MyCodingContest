@@ -1,4 +1,4 @@
-## BAEKJOON Online Judge : 문제 > 단계별로 풀어보기
+## BAEKJOON Online Judge
 
 # # 문제 > 단계별로 풀어보기 > 12. 정렬
 (2021.12.16)  

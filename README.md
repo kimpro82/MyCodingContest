@@ -13,6 +13,7 @@ https://codingcompetitions.withgoogle.com/codejam
 ## [BAEKJOON Online Judge](/BaekJoon/Problems/Step)
 https://www.acmicpc.net/
 - [문제 > 단계별로 풀어보기](/BaekJoon/Problems/Step)  
+&nbsp;[12. 정렬 (2021.12.16) - C++]()  
 &nbsp;[11. 브루트 포스 (2021.12.10) - C++](/BaekJoon/Problems/Step/11#baekjoon-online-judge--문제--단계별로-풀어보기)  
 &nbsp;[10. 재귀 (2021.09.15) - C++ (not completed)](/BaekJoon/Problems/Step/10#baekjoon-online-judge--문제--단계별로-풀어보기)  
 &nbsp;&nbsp;&nbsp;[9. 기본 수학 2 (2021.07.20) - C++](/BaekJoon/Problems/Step/09#baekjoon-online-judge)  
@@ -86,7 +87,6 @@ https://codeforces.com/contests
 ## [Oncoder Official Coding Test](/Oncoder)
 https://www.oncoder.com/
 - [Challenge : Provided sample questions - Python](/Oncoder/Challenge)
-- The 16th Oncoder Official Coding Test (2021.12.11 12:00, 2 hrs) (Comming)
 - [The 14th Oncoder Official Coding Test (2019.07.13 14:00, 2 hrs) - Python](/Oncoder/14th_20190713#oncoder-official-coding-test)
 - [The 13th Oncoder Official Coding Test (2019.05.18 14:00, 2 hrs) - Python](/Oncoder/13th_20190518#oncoder-official-coding-test)
 - [The 12th Oncoder Official Coding Test (2019.04.13 14:00, 2 hrs) - Python](/Oncoder/12th_20190413#oncoder-official-coding-test)

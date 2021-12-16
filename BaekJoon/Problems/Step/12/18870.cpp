@@ -9,6 +9,9 @@
 2 3 0 3 1
 */
 
+// rather worse performance
+// #pragma GCC optimize ("O2")
+// #pragma GCC target ("avx")
 
 #include <iostream>
 #include <vector>

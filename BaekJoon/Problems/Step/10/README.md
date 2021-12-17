@@ -1,4 +1,4 @@
-## BAEKJOON Online Judge : 문제 > 단계별로 풀어보기
+## BAEKJOON Online Judge
 
 # 문제 > 단계별로 풀어보기 > 10. 재귀 - (not completed)
 (2021.09.15)  

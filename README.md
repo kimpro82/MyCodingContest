@@ -10,9 +10,9 @@ https://codingcompetitions.withgoogle.com/codejam
 ## Facebook Hacker Cup
 - 2021 Qualification Round (2021.08.28 02:00 ~09.01 02:00, 72 hrs) (Comming)
 
-## [BAEKJOON Online Judge](/BaekJoon/Problems/Step)
+## BAEKJOON Online Judge
 https://www.acmicpc.net/
-- [문제 > 단계별로 풀어보기](/BaekJoon/Problems/Step)  
+- 문제 > 단계별로 풀어보기  
 &nbsp;[12. 정렬 (2021.12.16) - C++](/BaekJoon/Problems/Step/12#baekjoon-online-judge)  
 &nbsp;[11. 브루트 포스 (2021.12.10) - C++](/BaekJoon/Problems/Step/11#baekjoon-online-judge)  
 &nbsp;[10. 재귀 (2021.09.15) - C++ (not completed)](/BaekJoon/Problems/Step/10#baekjoon-online-judge)  
@@ -25,6 +25,11 @@ https://www.acmicpc.net/
 &nbsp;&nbsp;&nbsp;[3. for문 (2021.05.25) - C++](/BaekJoon/Problems/Step/03#baekjoon-online-judge)  
 &nbsp;&nbsp;&nbsp;[2. if문 (2021.05.24) - C++ / (2021.07.14) - R](/BaekJoon/Problems/Step/02#baekjoon-online-judge)  
 &nbsp;&nbsp;&nbsp;[1. 입출력과 사칙연산 (2021.05.13) - Python, C++ / (2021.07.11) - R](/BaekJoon/Problems/Step/01#baekjoon-online-judge)
+
+## Elice
+https://elice.io/
+- Elice School > 파이썬 레벨 테스트
+&nbsp;[01 도전! 파이썬 동화 10제 (2022.01.05) - Python](/Elice/School/PythonLevelTest/01#elice-school)
 
 ## [AtCoder](/AtCoder/Contest)
 https://atcoder.jp/

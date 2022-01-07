@@ -29,6 +29,7 @@ https://www.acmicpc.net/
 ## Elice
 https://elice.io/
 - Elice School > 파이썬 레벨 테스트  
+&nbsp;[02 도전! 파이썬 동화 10제 2 (2022.01.05) - Python](/Elice/School/PythonLevelTest/02#elice-school)  
 &nbsp;[01 도전! 파이썬 동화 10제 (2022.01.05) - Python](/Elice/School/PythonLevelTest/01#elice-school)
 
 ## [AtCoder](/AtCoder/Contest)

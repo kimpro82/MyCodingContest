@@ -1,15 +1,35 @@
 ## BAEKJOON Online Judge
 
-### 문제 > 단계별로 풀어보기 > 1. 입출력과 사칙연산
-(2021.05.13) - Python, C++  
-(2021.07.11) - R  
-https://www.acmicpc.net/step/1  
+# 문제 > 단계별로 풀어보기 > 1. 입출력과 사칙연산
 
-※ The codes of `Python`, `C++` and `R` has the same result  
+(2021.05.13) - `Python`, `C++`  
+(2021.07.11) - `R`  
+(2022.01.26) - `Bash`, `Text` (only possible)
+
+https://www.acmicpc.net/step/1
+
+※ All the codes of any language for the same problem have the same result.  
 ※ C++ codes : **skipped** `main()` function's brace(`{}`) and its outside
 
 
-### 2557. Hello World
+### List
+
+- [2557. Hello World](#2557-hello-world)
+- [10718. We love kriii](#10718-we-love-kriii)
+- [10171. Cats](#10171-cats)
+- [10172. Dogs](#10172-dogs)
+- [1000. A+B](#1000-ab)
+- [1001. A-B](#1001-a-b)
+- [10998. A*B](#10998-ab)
+- [1008. A/B](#1008-ab)
+- [10869. 사칙연산](#10869-사칙연산)
+- [10926. ??!](#10926-)
+- [18108. 1998년생인 내가 태국에서는 2541년생?!](#18108-1998년생인-내가-태국에서는-2541년생)
+- [10430. 나머지](#10430-나머지)
+- [2588. 곱셈](#2588-곱셈)
+
+
+## [2557. Hello World](#List)
 
 #### Python
 ```python
@@ -28,10 +48,20 @@ return 0;
 cat("Hello World!")
 ```
 
+#### Bash
+```Bash
+echo "Hello World!"
+```
+
+#### Text
+```txt
+Hello World!
+```
+
 > Hello World!
 
 
-### 10718. We love kriii
+## [10718. We love kriii](#List)
 
 #### Python
 ```python
@@ -57,11 +87,25 @@ for (i in c(0, 1))
 }
 ```
 
+#### Bash
+```Bash
+for i in {0..1}
+do
+    echo "강한친구 대한육군"
+done
+```
+
+#### Text
+```txt
+강한친구 대한육군
+강한친구 대한육군
+```
+
 > 강한친구 대한육군  
 > 강한친구 대한육군
 
 
-### 10171. Cats
+## [10171. Cats](#List)
 
 #### Python
 ```python
@@ -89,13 +133,31 @@ cat("\\    /\\
  \\(__)|")
 ```
 
+#### Bash
+```Bash
+echo "\\    /\\"
+echo " )  ( ')"
+echo "(  /  )"
+echo " \\(__)|"
+
+# read
+```
+
+#### Text
+```txt
+\    /\
+ )  ( ')
+(  /  )
+ \(__)|
+```
+
 > \    /\  
 >  )  ( ')  
 > (  /  )   
 >  \\(__)|  
 
 
-### 10172. Dogs
+## [10172. Dogs](#List)
 
 #### Python
 ```python
@@ -139,6 +201,26 @@ cat("|\\_/|
 ||_/=\\\\__|")
 ```
 
+#### Bash
+```Bash
+echo "|\_/|"
+echo "|q p|   /}"
+echo "( 0 )\"\"\"\\"
+echo "|\"^\"\`    |"
+echo "||_/=\\\\__|"
+
+# read
+```
+
+#### Text
+```txt
+|\_/|
+|q p|   /}
+( 0 )"""\
+|"^"`    |
+||_/=\\__|
+```
+
 > |\\_/|  
 > |q p|   /}  
 > ( 0 )"""\  
@@ -146,7 +228,7 @@ cat("|\\_/|
 > ||_/=\\\\__|  
 
 
-### 1000. A+B
+## [1000. A+B](#List)
 
 #### Python
 ```python
@@ -169,10 +251,20 @@ num <- scan("stdin")    # recieve num[1], num[2], …… as numeric
 cat(num[1] + num[2])
 ```
 
+#### Bash
+```Bash
+read a b
+echo $((a + b))
+
+# read
+```
+
+> 1 2
+
 > 3
 
 
-### 1001. A-B
+## [1001. A-B](#List)
 
 #### Python
 ```python
@@ -195,10 +287,20 @@ num <- scan("stdin")    # recieve num[1], num[2], …… as numeric
 cat(num[1] - num[2])
 ```
 
+#### Bash
+```Bash
+read a b
+echo $((a - b))
+
+# read
+```
+
+> 3 2
+
 > 1
 
 
-### 10998. A*B
+## [10998. A*B](#List)
 
 #### Python
 ```python
@@ -221,10 +323,20 @@ num <- scan("stdin")    # recieve num[1], num[2], …… as numeric
 cat(num[1] * num[2])
 ```
 
+#### Bash
+```Bash
+read a b
+echo $((a * b))
+
+# read
+```
+
+> 3 4
+
 > 12
 
 
-### 1008. A/B
+## [1008. A/B](#List)
 
 #### Python
 ```python
@@ -249,10 +361,25 @@ options(digits = 10)
 cat(num[1] / num[2])
 ```
 
+#### Bash
+```Bash
+read a b
+
+# printf "%.9f\n", $a / $b                      # doesn't work
+# echo $a $b | awk '{printf "%.9f\n", $1 / $2}' # not adopted at BOJ
+# printf "%.9f\n" $(((a * 10**9 / b) / 10**9))  # 1 / 3 = 0.000000000
+# printf "%.9f\n" $((a * e+9 / b))e-9           # e-9 works but e+9 doesn't work
+printf "%.9f\n" $((a * 10**9 / b))e-9
+
+# read
+```
+
+> 1 3
+
 > 0.3333333333
 
 
-### 10869. 사칙연산
+## [10869. 사칙연산](#List)
 
 #### Python
 ```python
@@ -289,10 +416,59 @@ cat(floor(num[1] / num[2]), "\n")
 cat(num[1] %% num[2], "\n")
 ```
 
+#### Bash
+```Bash
+read a b
+
+echo $((a + b))
+echo $((a - b))
+echo $((a * b))
+echo $((a / b))
+echo $((a % b))
+
+# read
+```
+
+> 7 3
+
 > 10 4 21 2 1 (vertically)
 
 
-### 10430. 나머지
+## [10926. ??!](#List)
+
+#### Bash
+```Bash
+read id
+echo "$id??!"   # How does Bash classify $id and ??! ?
+
+# read
+```
+
+> joonas
+
+> joonas??!
+
+
+## [18108. 1998년생인 내가 태국에서는 2541년생?!](#List)
+
+#### Bash
+```Bash
+read by
+
+# diff = 2541 - 1998    # doesn't work : should be no space
+let "diff = 2541 - 1998"
+
+echo $((by - diff))
+
+# read
+```
+
+> 2541
+
+> 1998
+
+
+## [10430. 나머지](#List)
 
 #### Python
 ```python
@@ -332,10 +508,24 @@ cat((a * b) %% c, "\n")
 cat(((a %% c) * (b %% c)) %% c, "\n")
 ```
 
+#### Bash
+```Bash
+read A B C
+
+echo $(((A + B) % C))
+echo $((((A % C) + (B % C)) % C))
+echo $(((A * B) % C))
+echo $((((A % C) * (B % C)) % C))
+
+# read
+```
+
+> 5 8 4
+
 > 1 1 0 0 (vertically)
 
 
-### 2588. 곱셈
+## [2588. 곱셈](#List)
 
 #### Python - trial 1
 ```python
@@ -536,6 +726,29 @@ for (i in 1:3)
 
 cat(sum, "\n")
 ```
+
+#### Bash
+```Bash
+read a
+read b
+# guaranteed that 100 <= a, b  <= 999
+
+let "sum = 0"
+for i in {2..0..-1}
+do
+    let "prod = $a * ${b:i:1}"          # ${b : i : 1} doesn't work
+    echo $prod
+    let "sum += $prod * (10 ** (2 - $i))"
+done
+
+echo $sum
+
+# read
+```
+
+> 472  
+> 385
+
 > 2360  
 > 3776  
 > 1416  

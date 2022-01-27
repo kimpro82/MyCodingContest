@@ -24,7 +24,7 @@ https://www.acmicpc.net/
 &nbsp;&nbsp;&nbsp;[4. while문 (2021.05.26) - C++](/BaekJoon/Problems/Step/04#baekjoon-online-judge)  
 &nbsp;&nbsp;&nbsp;[3. for문 (2021.05.25) - C++](/BaekJoon/Problems/Step/03#baekjoon-online-judge)  
 &nbsp;&nbsp;&nbsp;[2. if문 (2021.05.24) - C++ / (2021.07.14) - R](/BaekJoon/Problems/Step/02#baekjoon-online-judge)  
-&nbsp;&nbsp;&nbsp;[1. 입출력과 사칙연산 (2021.05.13) - Python, C++ / (2021.07.11) - R](/BaekJoon/Problems/Step/01#baekjoon-online-judge)
+&nbsp;&nbsp;&nbsp;[1. 입출력과 사칙연산 (2021.05.13) - Python, C++ / (2021.07.11) - R / (2022.01.26) - Bash, Text](/BaekJoon/Problems/Step/01#baekjoon-online-judge)
 
 ## Elice
 https://elice.io/

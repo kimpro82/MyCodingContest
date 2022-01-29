@@ -8,19 +8,20 @@
 
 https://www.acmicpc.net/step/4
 
-※ All the codes of any language for the same problem have basically the same result.  
-※ `C++` : skipped `main()` function's brace(`{}`) and its outside  
-※ `R` : Some answers occur runtime errors with unknowable reason in BOJ grading machine  
-※ `Bash` : skipped the first lines `#!/bin/bash`
+**※ Note**  
+&nbsp;&nbsp; - All the codes of any language for the same problem have basically the same result.  
+&nbsp;&nbsp; - `C++` : skipped `main()` function's brace(`{}`) and its outside  
+&nbsp;&nbsp; - `R` : Some answers occur runtime errors with unknowable reason in BOJ grading machine  
+&nbsp;&nbsp; - `Bash` : skipped the first lines `#!/bin/bash`
 
 
 ### List
 
-- [1330. 두 수 비교하기](#list)
-- [9498. 시험 성적](#list)
-- [2753. 윤년](#list)
-- [14681. Quadrant Selection](#list)
-- [2884. SPAVANAC](#list)
+- [1330. 두 수 비교하기](#1330-두-수-비교하기)
+- [9498. 시험 성적](#9498-시험-성적)
+- [2753. 윤년](#2753-윤년)
+- [14681. Quadrant Selection](#14681-quadrant-selection)
+- [2884. SPAVANAC](#2884-spavanac)
 
 
 ## [1330. 두 수 비교하기](#list)

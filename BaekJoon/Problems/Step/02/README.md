@@ -8,14 +8,8 @@
 
 https://www.acmicpc.net/step/4
 
-**※ Note**  
-&nbsp;&nbsp; - All the codes of any language for the same problem have basically the same result.  
-&nbsp;&nbsp; - `C++` : skipped `main()` function's brace(`{}`) and its outside  
-&nbsp;&nbsp; - `R` : Some answers occur runtime errors with unknowable reason in BOJ grading machine  
-&nbsp;&nbsp; - `Bash` : skipped the first lines `#!/bin/bash`
 
-
-### List
+### **List**
 
 - [1330. 두 수 비교하기](#1330-두-수-비교하기)
 - [9498. 시험 성적](#9498-시험-성적)
@@ -24,7 +18,32 @@ https://www.acmicpc.net/step/4
 - [2884. SPAVANAC](#2884-spavanac)
 
 
+**※ Note**  
+&nbsp;&nbsp; - All the codes of any language for the same problem have basically the same result.  
+&nbsp;&nbsp; - `Bash` : skipped the first lines `#!/bin/bash`  
+&nbsp;&nbsp; - `C++` : skipped `main()` function's brace(`{}`) and its outside  
+&nbsp;&nbsp; - `R` : Some answers occur runtime errors with unknowable reason in BOJ grading machine
+
+
 ## [1330. 두 수 비교하기](#list)
+
+> 1 2, 10 2, 5 5 (independently)
+
+> \<  
+> \>  
+> \=\=
+
+#### Bash
+```bash
+read a b
+
+if [ $a -gt $b ] ; then echo ">"        # gt : >, ge : >=
+elif [ $a -lt $b ] ; then echo "<"      # lt : <, le : <=
+else echo "=="
+fi                                      # fi : (maybe) finish if …… or simply reversed "if"?
+
+# read
+```
 
 #### C++
 ```cpp
@@ -65,26 +84,33 @@ if (a > b)
 }
 ```
 
+
+## [9498. 시험 성적](#list)
+
+> 99, 82, 79, 60, 37 (independently)
+
+> A B C D F (vertically)
+
 #### Bash
 ```bash
-read a b
+# test
+# echo [ 3 -gt 2 ]                      # doesn't work
+# echo [ 3 -lt 2 ]                      # doesn't work
+# echo $((3 > 2))                       # 1
+# echo $((3 < 2))                       # 0
 
-if [ $a -gt $b ] ; then echo ">"        # gt : >, ge : >=
-elif [ $a -lt $b ] ; then echo "<"      # lt : <, le : <=
-else echo "=="
-fi                                      # fi : (maybe) finish if …… or simply reversed "if"?
+read n
+
+# if $(($n >= 90)) ; then echo 'A'      # doesn't work
+if [ $n -ge 90 ] ; then echo 'A'
+elif [ $n -ge 80 ] ; then echo 'B'
+elif [ $n -ge 70 ] ; then echo 'C'
+elif [ $n -ge 60 ] ; then echo 'D'
+else echo 'F'
+fi
 
 # read
 ```
-
-> 1 2, 10 2, 5 5 (independently)
-
-> \<  
-> \>  
-> \=\=
-
-
-## [9498. 시험 성적](#list)
 
 #### C++
 ```cpp
@@ -134,33 +160,40 @@ if (a >= 90)
 }
 ```
 
+
+## [2753. 윤년](#list)
+
+> 2000 1999 (independently)
+
+> 0 1 0 (vertically)
+
 #### Bash
 ```bash
-# test
-# echo [ 3 -gt 2 ]                      # doesn't work
-# echo [ 3 -lt 2 ]                      # doesn't work
-# echo $((3 > 2))                       # 1
-# echo $((3 < 2))                       # 0
-
 read n
 
-# if $(($n >= 90)) ; then echo 'A'      # doesn't work
-if [ $n -ge 90 ] ; then echo 'A'
-elif [ $n -ge 80 ] ; then echo 'B'
-elif [ $n -ge 70 ] ; then echo 'C'
-elif [ $n -ge 60 ] ; then echo 'D'
-else echo 'F'
+# Test : all cases works
+# if [ $(($n % 4)) == 0 ] ; then
+#     echo "success 1"
+# fi
+# if [ $(($n%100)) == 0 ] ; then
+#     echo "success 2"
+# fi
+# if [ $(($n % 400)) == 0 ] ; then
+#     echo "success 3"
+# fi
+
+if [ $(($n % 4)) == 0 ] ; then
+    if [ $(($n%100)) != 0 ] || [ $(($n % 400)) == 0 ] ; then    # failed to write 3 conditions in a line
+        echo 1
+    else
+        echo 0
+    fi
+else
+    echo 0
 fi
 
 # read
 ```
-
-> 99, 82, 79, 60, 37 (independently)
-
-> A B C D F (vertically)
-
-
-## [2753. 윤년](#list)
 
 #### C++
 ```cpp
@@ -193,40 +226,29 @@ if (n %% 4 == 0 && (n %% 100 != 0 || n %% 400 == 0))    # not %
 ```
 > Runtime Error???
 
-#### Bash
-```bash
-read n
-
-# Test : all cases works
-# if [ $(($n % 4)) == 0 ] ; then
-#     echo "success 1"
-# fi
-# if [ $(($n%100)) == 0 ] ; then
-#     echo "success 2"
-# fi
-# if [ $(($n % 400)) == 0 ] ; then
-#     echo "success 3"
-# fi
-
-if [ $(($n % 4)) == 0 ] ; then
-    if [ $(($n%100)) != 0 ] || [ $(($n % 400)) == 0 ] ; then    # failed to write 3 conditions in a line
-        echo 1
-    else
-        echo 0
-    fi
-else
-    echo 0
-fi
-
-# read
-```
-
-> 2000 1999 (independently)
-
-> 0 1 0 (vertically)
-
 
 ## [14681. Quadrant Selection](#list)
+
+> 12 5, 9 -13 (independently)
+
+> 1  
+> 4
+
+#### Bash
+```bash
+read x
+read y
+
+if [ $x -gt 0 ] && [ $y -gt 0 ] ; then
+    echo 1
+elif [ $x -lt 0 ] && [ $y -gt 0 ] ; then
+    echo 2
+elif [ $x -lt 0 ] && [ $y -lt 0 ] ; then
+    echo 3
+else
+    echo 4
+fi
+```
 
 #### C++
 ```cpp
@@ -274,29 +296,30 @@ if (x > 0 && y > 0)
 }
 ```
 
-#### Bash
-```bash
-read x
-read y
-
-if [ $x -gt 0 ] && [ $y -gt 0 ] ; then
-    echo 1
-elif [ $x -lt 0 ] && [ $y -gt 0 ] ; then
-    echo 2
-elif [ $x -lt 0 ] && [ $y -lt 0 ] ; then
-    echo 3
-else
-    echo 4
-fi
-```
-
-> 12 5, 9 -13 (independently)
-
-> 1  
-> 4
-
 
 ## [2884. SPAVANAC](#list)
+
+> 10 10, 0 30, 23 40 (independently)
+
+> 9 25  
+> 23 45  
+> 22 55
+
+#### Bash
+```bash
+read h m
+
+if [ $m -lt 45 ] ; then
+    let "h -= 1"
+    let "m += 60"
+fi
+
+if [ $h -lt 0 ] ; then
+    let "h += 24"
+fi
+
+echo $h $(($m - 45))
+```
 
 #### C++
 ```cpp
@@ -339,25 +362,3 @@ if (a < 0)
 cat(a, b - 45, "\n")
 ```
 > Runtime Error???????
-
-#### Bash
-```bash
-read h m
-
-if [ $m -lt 45 ] ; then
-    let "h -= 1"
-    let "m += 60"
-fi
-
-if [ $h -lt 0 ] ; then
-    let "h += 24"
-fi
-
-echo $h $(($m - 45))
-```
-
-> 10 10, 0 30, 23 40 (independently)
-
-> 9 25  
-> 23 45  
-> 22 55

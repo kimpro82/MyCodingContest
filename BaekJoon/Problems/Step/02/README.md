@@ -20,7 +20,7 @@ https://www.acmicpc.net/step/4
 
 **※ Note**  
 &nbsp;&nbsp; - All the codes of any language for the same problem have basically the same result.  
-&nbsp;&nbsp; - `Bash` : skipped the first lines `#!/bin/bash`  
+&nbsp;&nbsp; - `Bash` : skipped the first lines; `#!/bin/bash`  
 &nbsp;&nbsp; - `C++` : skipped `main()` function's brace(`{}`) and its outside  
 &nbsp;&nbsp; - `R` : Some answers occur runtime errors with unknowable reason in BOJ grading machine
 

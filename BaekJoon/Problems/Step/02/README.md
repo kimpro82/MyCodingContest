@@ -89,7 +89,7 @@ if (a > b)
 
 > 99, 82, 79, 60, 37 (independently)
 
-> A B C D F (vertically)
+> A B C D F
 
 #### Bash
 ```bash
@@ -163,9 +163,9 @@ if (a >= 90)
 
 ## [2753. 윤년](#list)
 
-> 2000 1999 (independently)
+> 2021 2000 1999 (independently)
 
-> 0 1 0 (vertically)
+> 0 1 0
 
 #### Bash
 ```bash

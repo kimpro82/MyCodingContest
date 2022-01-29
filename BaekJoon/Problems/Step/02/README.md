@@ -1,15 +1,29 @@
 ## BAEKJOON Online Judge
 
-### 문제 > 단계별로 풀어보기 > 2. if문
-(2021.05.24) - Python, C++  
-(2021.07.14) - R  
-https://www.acmicpc.net/step/4  
+# 문제 > 단계별로 풀어보기 > 2. if문
 
-※ The codes of `Python`, `C++` and `R` has the same result  
-※ C++ codes : **skipped** `main()` function's brace(`{}`) and its outside
+(2021.05.24) - `C++`  
+(2021.07.14) - `R`  
+(2022.01.29) - `Bash`
+
+https://www.acmicpc.net/step/4
+
+※ All the codes of any language for the same problem have basically the same result.  
+※ `C++` : skipped `main()` function's brace(`{}`) and its outside  
+※ `R` : Some answers occur runtime errors with unknowable reason in BOJ grading machine  
+※ `Bash` : skipped the first lines `#!/bin/bash`
 
 
-### 1330. 두 수 비교하기
+### List
+
+- [1330. 두 수 비교하기](#list)
+- [9498. 시험 성적](#list)
+- [2753. 윤년](#list)
+- [14681. Quadrant Selection](#list)
+- [2884. SPAVANAC](#list)
+
+
+## [1330. 두 수 비교하기](#list)
 
 #### C++
 ```cpp
@@ -50,6 +64,18 @@ if (a > b)
 }
 ```
 
+#### Bash
+```bash
+read a b
+
+if [ $a -gt $b ] ; then echo ">"        # gt : >, ge : >=
+elif [ $a -lt $b ] ; then echo "<"      # lt : <, le : <=
+else echo "=="
+fi                                      # fi : (maybe) finish if …… or simply reversed "if"?
+
+# read
+```
+
 > 1 2, 10 2, 5 5 (independently)
 
 > \<  
@@ -57,7 +83,7 @@ if (a > b)
 > \=\=
 
 
-### 9498. 시험 성적
+## [9498. 시험 성적](#list)
 
 #### C++
 ```cpp
@@ -107,12 +133,33 @@ if (a >= 90)
 }
 ```
 
+#### Bash
+```bash
+# test
+# echo [ 3 -gt 2 ]                      # doesn't work
+# echo [ 3 -lt 2 ]                      # doesn't work
+# echo $((3 > 2))                       # 1
+# echo $((3 < 2))                       # 0
+
+read n
+
+# if $(($n >= 90)) ; then echo 'A'      # doesn't work
+if [ $n -ge 90 ] ; then echo 'A'
+elif [ $n -ge 80 ] ; then echo 'B'
+elif [ $n -ge 70 ] ; then echo 'C'
+elif [ $n -ge 60 ] ; then echo 'D'
+else echo 'F'
+fi
+
+# read
+```
+
 > 99, 82, 79, 60, 37 (independently)
 
 > A B C D F (vertically)
 
 
-### 2753. 윤년
+## [2753. 윤년](#list)
 
 #### C++
 ```cpp
@@ -129,7 +176,6 @@ if (a % 4 == 0 && (a % 100 != 0 || a % 400 == 0))
 
 return 0;
 ```
-> 0 1 0 (vertically)
 
 #### R
 ```R
@@ -146,8 +192,40 @@ if (n %% 4 == 0 && (n %% 100 != 0 || n %% 400 == 0))    # not %
 ```
 > Runtime Error???
 
+#### Bash
+```bash
+read n
 
-### 14681. Quadrant Selection
+# Test : all cases works
+# if [ $(($n % 4)) == 0 ] ; then
+#     echo "success 1"
+# fi
+# if [ $(($n%100)) == 0 ] ; then
+#     echo "success 2"
+# fi
+# if [ $(($n % 400)) == 0 ] ; then
+#     echo "success 3"
+# fi
+
+if [ $(($n % 4)) == 0 ] ; then
+    if [ $(($n%100)) != 0 ] || [ $(($n % 400)) == 0 ] ; then    # failed to write 3 conditions in a line
+        echo 1
+    else
+        echo 0
+    fi
+else
+    echo 0
+fi
+
+# read
+```
+
+> 2000 1999 (independently)
+
+> 0 1 0 (vertically)
+
+
+## [14681. Quadrant Selection](#list)
 
 #### C++
 ```cpp
@@ -195,13 +273,29 @@ if (x > 0 && y > 0)
 }
 ```
 
+#### Bash
+```bash
+read x
+read y
+
+if [ $x -gt 0 ] && [ $y -gt 0 ] ; then
+    echo 1
+elif [ $x -lt 0 ] && [ $y -gt 0 ] ; then
+    echo 2
+elif [ $x -lt 0 ] && [ $y -lt 0 ] ; then
+    echo 3
+else
+    echo 4
+fi
+```
+
 > 12 5, 9 -13 (independently)
 
 > 1  
 > 4
 
 
-### 2884. SPAVANAC
+## [2884. SPAVANAC](#list)
 
 #### C++
 ```cpp
@@ -222,11 +316,6 @@ cout << a << " " << b - 45 << endl;
 
 return 0;
 ```
-> 10 10, 0 30, 23 40 (independently)
-
-> 9 25  
-> 23 45  
-> 22 55
 
 #### R
 ```R
@@ -249,3 +338,25 @@ if (a < 0)
 cat(a, b - 45, "\n")
 ```
 > Runtime Error???????
+
+#### Bash
+```bash
+read h m
+
+if [ $m -lt 45 ] ; then
+    let "h -= 1"
+    let "m += 60"
+fi
+
+if [ $h -lt 0 ] ; then
+    let "h += 24"
+fi
+
+echo $h $(($m - 45))
+```
+
+> 10 10, 0 30, 23 40 (independently)
+
+> 9 25  
+> 23 45  
+> 22 55

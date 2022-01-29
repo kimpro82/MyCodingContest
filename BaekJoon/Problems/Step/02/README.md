@@ -20,9 +20,9 @@ https://www.acmicpc.net/step/4
 
 **※ Note**  
 &nbsp;&nbsp; - All the codes of any language for the same problem have basically the same result.  
-&nbsp;&nbsp; - `Bash` : skipped the first lines; `#!/bin/bash`  
+&nbsp;&nbsp; - `Bash` : skipped the first line; `#!/bin/bash`  
 &nbsp;&nbsp; - `C++` : skipped `main()` function's brace(`{}`) and its outside  
-&nbsp;&nbsp; - `R` : Some answers occur runtime errors with unknowable reason in BOJ grading machine
+&nbsp;&nbsp; - `R` : Some answers occur runtime errors with unknowable reason in the BOJ grading machine
 
 
 ## [1330. 두 수 비교하기](#list)

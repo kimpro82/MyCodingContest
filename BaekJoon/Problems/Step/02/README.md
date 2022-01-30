@@ -171,7 +171,7 @@ if (a >= 90)
 ```bash
 read n
 
-# Test : all cases works
+# Test : all cases work
 # if [ $(($n % 4)) == 0 ] ; then
 #     echo "success 1"
 # fi

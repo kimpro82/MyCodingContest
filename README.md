@@ -13,18 +13,18 @@ https://codingcompetitions.withgoogle.com/codejam
 ## BAEKJOON Online Judge
 https://www.acmicpc.net/
 - 문제 > 단계별로 풀어보기  
-&nbsp;[12. 정렬 (2021.12.16) - C++](/BaekJoon/Problems/Step/12#baekjoon-online-judge)  
-&nbsp;[11. 브루트 포스 (2021.12.10) - C++](/BaekJoon/Problems/Step/11#baekjoon-online-judge)  
-&nbsp;[10. 재귀 (2021.09.15) - C++ (not completed)](/BaekJoon/Problems/Step/10#baekjoon-online-judge)  
-&nbsp;&nbsp;&nbsp;[9. 기본 수학 2 (2021.07.20) - C++](/BaekJoon/Problems/Step/09#baekjoon-online-judge)  
-&nbsp;&nbsp;&nbsp;[8. 기본 수학 1 (2021.07.12) - C++](/BaekJoon/Problems/Step/08#baekjoon-online-judge)  
-&nbsp;&nbsp;&nbsp;[7. 문자열 (2021.07.10) - C++](/BaekJoon/Problems/Step/07#baekjoon-online-judge)  
-&nbsp;&nbsp;&nbsp;[6. 함수 (2021.06.18) - C++](/BaekJoon/Problems/Step/06#baekjoon-online-judge)  
-&nbsp;&nbsp;&nbsp;[5. 1차원 배열 (2021.06.14) - C++](/BaekJoon/Problems/Step/05#baekjoon-online-judge)  
-&nbsp;&nbsp;&nbsp;[4. while문 (2021.05.26) - C++](/BaekJoon/Problems/Step/04#baekjoon-online-judge)  
-&nbsp;&nbsp;&nbsp;[3. for문 (2021.05.25) - C++](/BaekJoon/Problems/Step/03#baekjoon-online-judge)  
-&nbsp;&nbsp;&nbsp;[2. if문 (2021.05.24) - C++ / (2021.07.14) - R](/BaekJoon/Problems/Step/02#baekjoon-online-judge)  
-&nbsp;&nbsp;&nbsp;[1. 입출력과 사칙연산 (2021.05.13) - Python, C++ / (2021.07.11) - R / (2022.01.26) - Bash, Text](/BaekJoon/Problems/Step/01#baekjoon-online-judge)
+&nbsp;[12. 정렬 - C++ (2021.12.16)](/BaekJoon/Problems/Step/12#baekjoon-online-judge)  
+&nbsp;[11. 브루트 포스 - C++ (2021.12.10)](/BaekJoon/Problems/Step/11#baekjoon-online-judge)  
+&nbsp;[10. 재귀 - C++ (2021.09.15, not completed)](/BaekJoon/Problems/Step/10#baekjoon-online-judge)  
+&nbsp;&nbsp;&nbsp;[9. 기본 수학 2 - C++ (2021.07.20)](/BaekJoon/Problems/Step/09#baekjoon-online-judge)  
+&nbsp;&nbsp;&nbsp;[8. 기본 수학 1 - C++ (2021.07.12)](/BaekJoon/Problems/Step/08#baekjoon-online-judge)  
+&nbsp;&nbsp;&nbsp;[7. 문자열 - C++ (2021.07.10)](/BaekJoon/Problems/Step/07#baekjoon-online-judge)  
+&nbsp;&nbsp;&nbsp;[6. 함수 - C++ (2021.06.18)](/BaekJoon/Problems/Step/06#baekjoon-online-judge)  
+&nbsp;&nbsp;&nbsp;[5. 1차원 배열 - C++ (2021.06.14)](/BaekJoon/Problems/Step/05#baekjoon-online-judge)  
+&nbsp;&nbsp;&nbsp;[4. while문 - C++ (2021.05.26)](/BaekJoon/Problems/Step/04#baekjoon-online-judge)  
+&nbsp;&nbsp;&nbsp;[3. for문 - C++ (2021.05.25)](/BaekJoon/Problems/Step/03#baekjoon-online-judge)  
+&nbsp;&nbsp;&nbsp;[2. if문 - C++ (2021.05.24) / R (2021.07.14) / Bash (2022.01.29)](/BaekJoon/Problems/Step/02#baekjoon-online-judge)  
+&nbsp;&nbsp;&nbsp;[1. 입출력과 사칙연산 - Python, C++ (2021.05.13) / R (2021.07.11) / Bash, Text (2022.01.26)](/BaekJoon/Problems/Step/01#baekjoon-online-judge)
 
 ## Elice
 https://elice.io/

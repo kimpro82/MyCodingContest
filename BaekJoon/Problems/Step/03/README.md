@@ -1,12 +1,55 @@
 ## BAEKJOON Online Judge
 
-### 문제 > 단계별로 풀어보기 > 3. for문
-(2021.05.25)  
+# 문제 > 단계별로 풀어보기 > 3. for문
+
+(2021.05.25) - `C++`  
+(2022.01.31) - `Bash`
+
 https://www.acmicpc.net/step/3  
-※ C++ codes : **skipped** `main()` function's brace(`{}`) and its outside
 
 
-### 2739. 구구단
+### **List**
+
+- [2739. 구구단]()
+- [10950. A+B - 3]()
+- [8393. Sum]()
+- [15552. 빠른 A+B]()
+- [2741. N 찍기]()
+- [2742. 기찍 N]()
+- [11021. A+B - 7]()
+- [11022. A+B - 8]()
+- [2438. 별 찍기 - 1]()
+- [2439. 별 찍기 - 2]()
+- [10871. X보다 작은 수]()
+
+
+**※ Note**  
+
+&nbsp;&nbsp; - All the codes of any language for the same problem have basically the same result.  
+&nbsp;&nbsp; - `Bash` : skipped the first line; `#!/bin/bash`  
+&nbsp;&nbsp; - `C++` : skipped `main()` function's brace(`{}`) and its outside
+
+
+## [2739. 구구단](#list)
+
+> 2
+
+> 2 * 1 = 2  
+> 2 * 2 = 4  
+> ……  
+> 2 * 9 = 18
+
+#### Bash
+```bash
+read n
+
+for i in {1..9}
+do
+    echo $n "*" $i "=" $((n * i))
+done
+
+# read
+```
 
 #### C++
 ```cpp
@@ -20,15 +63,32 @@ for (int i = 1; i <= 9; i++)
 
 return 0;
 ```
-> 2
-
-> 2 * 1 = 2  
-> 2 * 2 = 4  
-> ……  
-> 2 * 9 = 18
 
 
-### 10950. A+B - 3
+## [10950. A+B - 3](#list)
+
+> 5  
+> 1 1  
+> 2 3  
+> 3 4  
+> 9 8  
+> 5 2
+
+> 2 5 7 17 7 (vertically)
+
+#### Bash
+```bash
+read t
+
+for ((i = 0; i < t; i++))
+# for i in {1..$t}          # something wrong
+do
+    read a b
+    echo $((a + b))
+done
+
+# read
+```
 
 #### C++
 ```cpp
@@ -44,17 +104,27 @@ for (int i = 1; i <= t; i++)
 return 0;
 ```
 
-> 5  
-> 1 1  
-> 2 3  
-> 3 4  
-> 9 8  
-> 5 2
 
-> 2 5 7 17 7 (vertically)
+## [8393. Sum](#list)
 
+> 10
 
-### 8393. Sum
+> 55
+
+#### Bash
+```bash
+read n
+let "sum = 0"
+
+for ((i = 1; i <= n; i++))
+do
+    let "sum += i"
+done
+
+echo $sum
+
+# read
+```
 
 #### C++
 ```cpp
@@ -71,12 +141,53 @@ cout << sum << endl;
 return 0;
 ```
 
-> 10
 
-> 55
+## [15552. 빠른 A+B](#list)
 
+> 5  
+> 1 1  
+> 12 34  
+> 5 500  
+> 40 60  
+> 1000 1000
 
-### 15552. 빠른 A+B
+> 2 46 505 100 2000 (vertically)
+
+#### Bash - trial 1
+```bash
+read t
+
+for ((i = 0; i < t; i++))
+do
+    read a b
+    echo $((a + b))
+done
+
+# read
+```
+> 시간 초과
+
+#### Bash - trial 2
+```bash
+# t test cases
+read t
+
+# Initialize file.txt that has 0 bytes
+cat /dev/null > file.txt                # /dev/null : null device
+
+# Operation
+for ((i = 0; i < t; i++))
+do
+    read a b
+    echo $((a + b)) >> file.txt
+done
+
+# Standard output through a file
+awk '{ print }' ./file.txt
+
+# read
+```
+> 런타임 에러
 
 #### C++
 ```cpp
@@ -96,17 +207,25 @@ for (int i = 1; i <= t; i++)
 return 0;
 ```
 
-> 5  
-> 1 1  
-> 12 34  
-> 5 500  
-> 40 60  
-> 1000 1000
 
-> 2 46 505 100 2000 (vertically)
+## [2741. N 찍기](#list)
 
+> 5
 
-### 2741. N 찍기
+> 1 2 3 4 5 (vertically)
+
+#### Bash
+```bash
+read n
+
+for ((i = 1; i <= n; i++))
+do
+    echo $i
+done
+
+# read
+```
+> 시간 초과
 
 #### C++
 ```cpp
@@ -125,12 +244,25 @@ for (int i = 1; i <= a; i++)
 return 0;
 ```
 
+
+## [2742. 기찍 N](#list)
+
 > 5
 
-> 1 2 3 4 5 (vertically)
+> 5 4 3 2 1 (vertically)
 
+#### Bash
+```bash
+read n
 
-### 2742. 기찍 N
+for ((i = n; i > 0; i--))
+do
+    echo $i
+done
+
+# read
+```
+> 시간 초과
 
 #### C++
 ```cpp
@@ -149,12 +281,33 @@ for (int i = a; i >= 1; i--)
 return 0;
 ```
 
-> 5
 
-> 5 4 3 2 1 (vertically)
+## [11021. A+B - 7](#list)
 
+> 5  
+> 1 1  
+> 2 3  
+> 3 4  
+> 9 8  
+> 5 2  
 
-### 11021. A+B - 7
+> Case #1: 2  
+> Case #2: 5  
+> ……  
+> Case #5: 7
+
+#### Bash
+```bash
+read t
+
+for ((i = 1; i <= t; i++))
+do
+    read a b
+    echo "Case #$i: $((a + b))"
+done
+
+# read
+```
 
 #### C++
 ```cpp
@@ -170,6 +323,9 @@ for (int i = 1; i <= t; i++)
 return 0;
 ```
 
+
+## [11022. A+B - 8](#list)
+
 > 5  
 > 1 1  
 > 2 3  
@@ -177,13 +333,23 @@ return 0;
 > 9 8  
 > 5 2  
 
-> Case #1: 2  
-> Case #2: 5  
+> Case #1: 1 + 1 = 2  
+> Case #2: 2 + 3 = 5  
 > ……  
-> Case #5: 7
+> Case #5: 5 + 2 = 7
 
+#### Bash
+```bash
+read t
 
-### 11022. A+B - 8
+for ((i = 1; i <= t; i++))
+do
+    read a b
+    echo "Case #$i: $a + $b = $((a + b))"
+done
+
+# read
+```
 
 #### C++
 ```cpp
@@ -199,20 +365,33 @@ for (int i = 1; i <= t; i++)
 return 0;
 ```
 
-> 5  
-> 1 1  
-> 2 3  
-> 3 4  
-> 9 8  
-> 5 2  
 
-> Case #1: 1 + 1 = 2  
-> Case #2: 2 + 3 = 5  
-> ……  
-> Case #5: 5 + 2 = 7
+## [2438. 별 찍기 - 1](#list)
 
+> 5
 
-### 2438. 별 찍기 - 1
+> \*  
+> \*\*  
+> \*\*\*  
+> \*\*\*\*  
+> \*\*\*\*\*
+
+#### Bash
+```bash
+read n
+
+for ((i = 1; i <= n; i++))
+do
+    for ((j = 1; j <= i; j++))
+    do
+        echo -n '*'
+    done
+
+    echo ''
+done
+
+# read
+```
 
 #### C++
 ```cpp
@@ -232,16 +411,37 @@ for (int i = 1; i <= a; i++)
 return 0;
 ```
 
+
+## [2439. 별 찍기 - 2](#list)
+
 > 5
 
-> \*  
-> \*\*  
-> \*\*\*  
-> \*\*\*\*  
+> &nbsp;&nbsp;&nbsp;&nbsp;\*  
+> &nbsp;&nbsp;&nbsp;\*\*  
+> &nbsp;&nbsp;\*\*\*  
+> &nbsp;\*\*\*\*  
 > \*\*\*\*\*
 
+#### Bash
+```bash
+read n
 
-### 2439. 별 찍기 - 2
+for ((i = 1; i <= n; i++))
+do
+    for ((j = 0; j < n; j++))
+    do
+        if [ $j -lt $((n - i)) ]; then
+            echo -n ' '
+        else
+            echo -n '*'
+        fi
+    done
+
+    echo ''
+done
+
+# read
+```
 
 #### C++
 ```cpp
@@ -265,16 +465,30 @@ for (int i = 1; i <= a; i++)
 return 0;
 ```
 
-> 5
 
-> &nbsp;&nbsp;&nbsp;&nbsp;\*  
-> &nbsp;&nbsp;&nbsp;\*\*  
-> &nbsp;&nbsp;\*\*\*  
-> &nbsp;\*\*\*\*  
-> \*\*\*\*\*
+## [10871. X보다 작은 수](#list)
 
+> 10 5  
+> 1 10 4 9 2 3 8 5 7 6
 
-### 10871. X보다 작은 수
+> 1 4 2 3
+
+#### Bash
+```bash
+read n x
+read list
+
+for num in $list
+do
+    if [ $num -lt $x ]; then
+        echo -n "$num "
+    fi
+done
+
+echo ' '
+
+# read
+```
 
 #### C++
 ```cpp
@@ -294,8 +508,3 @@ cout << '\n';
 
 return 0;
 ```
-
-> 10 5  
-> 1 10 4 9 2 3 8 5 7 6
-
-> 1 4 2 3

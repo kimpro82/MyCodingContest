@@ -28,7 +28,7 @@ https://codingcompetitions.withgoogle.com/codejam
 - 2021 Qualification Round (2021.08.28 02:00 ~09.01 02:00, 72 hrs) (Comming)
 
 
-## BAEKJOON Online Judge
+## [BAEKJOON Online Judge](/BaekJoon/Problems/Step)
 
 https://www.acmicpc.net/
 
@@ -54,7 +54,7 @@ https://www.acmicpc.net/
 
 https://elice.io/
 
-- Elice School > 파이썬 레벨 테스트  
+- [Elice School > 파이썬 레벨 테스트](/Elice/School/PythonLevelTest)  
 &nbsp;[03 도전! 파이썬 생활코딩 10제 (2022.01.07) - Python](/Elice/School/PythonLevelTest/03#elice-school)  
 &nbsp;[02 도전! 파이썬 동화 10제 2 (2022.01.05) - Python](/Elice/School/PythonLevelTest/02#elice-school)  
 &nbsp;[01 도전! 파이썬 동화 10제 (2022.01.05) - Python](/Elice/School/PythonLevelTest/01#elice-school)

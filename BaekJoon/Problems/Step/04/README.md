@@ -7,14 +7,12 @@
 
 https://www.acmicpc.net/step/2
 
-※ C++ codes : **skipped** `main()` function's brace(`{}`) and its outside
-
 
 ### **List**
 
-- [10952. A+B - 5](#list)
-- [10951. A+B - 4](#list)
-- [1110. 더하기 사이클](#list)
+- [10952. A+B - 5](#10952-ab---5)
+- [10951. A+B - 4](#10951-ab---4)
+- [1110. 더하기 사이클](#1110-더하기-사이클)
 
 **※ Note**  
 

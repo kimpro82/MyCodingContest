@@ -21,7 +21,7 @@ https://www.acmicpc.net/
 &nbsp;&nbsp;&nbsp;[7. 문자열 - C++ (2021.07.10)](/BaekJoon/Problems/Step/07#baekjoon-online-judge)  
 &nbsp;&nbsp;&nbsp;[6. 함수 - C++ (2021.06.18)](/BaekJoon/Problems/Step/06#baekjoon-online-judge)  
 &nbsp;&nbsp;&nbsp;[5. 1차원 배열 - C++ (2021.06.14)](/BaekJoon/Problems/Step/05#baekjoon-online-judge)  
-&nbsp;&nbsp;&nbsp;[4. while문 - C++ (2021.05.26)](/BaekJoon/Problems/Step/04#baekjoon-online-judge)  
+&nbsp;&nbsp;&nbsp;[4. while문 - C++ (2021.05.26) / Bash (2022.02.02)](/BaekJoon/Problems/Step/04#baekjoon-online-judge)  
 &nbsp;&nbsp;&nbsp;[3. for문 - C++ (2021.05.25) / Bash (2022.01.31)](/BaekJoon/Problems/Step/03#baekjoon-online-judge)  
 &nbsp;&nbsp;&nbsp;[2. if문 - C++ (2021.05.24) / R (2021.07.14) / Bash (2022.01.29)](/BaekJoon/Problems/Step/02#baekjoon-online-judge)  
 &nbsp;&nbsp;&nbsp;[1. 입출력과 사칙연산 - Python, C++ (2021.05.13) / R (2021.07.11) / Bash, Text (2022.01.26)](/BaekJoon/Problems/Step/01#baekjoon-online-judge)

@@ -115,9 +115,9 @@ return 0;
 
 ## [1110. 더하기 사이클](#list)
 
-> 26 55 1 0 (vertically)
+> 26 55 1 0 (independently)
 
-> 4 3 60 1 (vertically)
+> 4 3 60 1
 
 #### Bash
 ```bash

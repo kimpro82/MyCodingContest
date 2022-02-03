@@ -1,12 +1,51 @@
 ## BAEKJOON Online Judge
 
-## 문제 > 단계별로 풀어보기 > 4. while문
-(2021.05.26)  
-https://www.acmicpc.net/step/2  
-※ C++ codes : **skipped** `main()` function's brace(`{}`) and its outside
+# 문제 > 단계별로 풀어보기 > 4. while문
+
+(2021.05.26) - `C++`  
+(2022.02.02) - `Bash`
+
+https://www.acmicpc.net/step/2
 
 
-### 10952. A+B - 5
+### **List**
+
+- [10952. A+B - 5](#10952-ab---5)
+- [10951. A+B - 4](#10951-ab---4)
+- [1110. 더하기 사이클](#1110-더하기-사이클)
+
+**※ Note**  
+
+&nbsp;&nbsp; - All the codes of any language for the same problem have basically the same result.  
+&nbsp;&nbsp; - `Bash` : skipped the first line; `#!/bin/bash`  
+&nbsp;&nbsp; - `C++` : skipped `main()` function's brace(`{}`) and its outside
+
+
+## [10952. A+B - 5](#list)
+
+> 1 1  
+> 2 3  
+> 3 4  
+> 9 8  
+> 5 2  
+> 0 0
+
+> 2 5 7 17 7 (vertically)
+
+#### Bash
+```bash
+while true
+do
+    read a b
+    let "sum = a + b"
+
+    if [ $sum -gt 0 ] ; then
+        echo $sum
+    else
+        break
+    fi
+done
+```
 
 #### C++
 ```cpp
@@ -27,17 +66,31 @@ while (true)
 return 0;
 ```
 
+
+## [10951. A+B - 4](#list)
+
 > 1 1  
 > 2 3  
 > 3 4  
 > 9 8  
-> 5 2  
-> 0 0
+> 5 2
 
 > 2 5 7 17 7 (vertically)
 
+#### Bash
+```bash
+while true
+do
+    read a b
 
-### 10951. A+B - 4
+    if [ $a -ne $? ] ; then     # it works but return this message > [: -ne: unary operator expected
+        let "sum = a + b"
+        echo $sum
+    else
+        break
+    fi
+done
+```
 
 #### C++
 ```cpp
@@ -59,16 +112,44 @@ while (true)
 return 0;
 ```
 
-> 1 1  
-> 2 3  
-> 3 4  
-> 9 8  
-> 5 2
 
-> 2 5 7 17 7 (vertically)
+## [1110. 더하기 사이클](#list)
 
+> 26 55 1 0 (independently)
 
-### 1110. 더하기 사이클
+> 4 3 60 1
+
+#### Bash
+```bash
+read n
+
+let "ab = n"
+let "t = 0"
+
+while true
+do
+    let "a = ab / 10"
+    let "b = ab % 10"
+    let "ab = a + b"
+
+    if [ $ab -lt 10 ]; then
+        let "ab += b * 10"
+    else
+        let "ab = b * 10 + ab % 10"
+    fi
+
+    let "t += 1"
+
+    # test
+    # echo "t: $t, a: $a, b: $b, ab: $ab"
+
+    if [ $ab -eq $n ]; then
+        break
+    fi
+done
+
+echo $t
+```
 
 #### C++
 ```cpp
@@ -107,7 +188,3 @@ cout << t << '\n';
 
 return 0;
 ```
-
-> 26 55 1 0 (vertically)
-
-> 4 3 60 1 (vertically)

@@ -1,10 +1,17 @@
 #!/bin/bash
 
+# ulimit -q 64
+# -d : The maximum size of a process’s data segment (kbytes)
+# -p : The pipe buffer size
+# Error message > ulimit: pipe size: cannot modify limit: Invalid argument
+# -q : The maximum number of bytes in POSIX message queues
+# Error message > -q: invalid option
+
 read n
 
 # Set min, max
 let "min = 10 ** 6"
-let "max = 0"
+let "max = -(10 ** 6)"
 
 # Read data as an array
 read -a arr

@@ -10,13 +10,13 @@ https://www.acmicpc.net/step/6
 
 ## **List**
 
-- [10818. 최소, 최대](#list)
-- [2562. 최댓값](#list)
-- [2577. 숫자의 개수](#list)
-- [3052. MODULO](#list)
-- [1546. 평균](#list)
-- [8958. Score](#list)
-- [4344. Above Average](#list)
+- [10818. 최소, 최대](#10818-최소-최대)
+- [2562. 최댓값](#2562-최댓값)
+- [2577. 숫자의 개수](#2577-숫자의-개수)
+- [3052. MODULO](#3052-modulo)
+- [1546. 평균](#1546-평균)
+- [8958. Score](#8958-score)
+- [4344. Above Average](#4344-above-average)
 
 
 **※ Note**  

@@ -1,15 +1,76 @@
 ## BAEKJOON Online Judge
 
-## 문제 > 단계별로 풀어보기 > 5. 1차원 배열
-(2021.06.14)  
+# 문제 > 단계별로 풀어보기 > 5. 1차원 배열
+
+(2021.06.14) - `C++`
+(2022.02.03) - `Bash`
+
 https://www.acmicpc.net/step/6  
 
-※ C++ codes : **skipped** `main()` function's brace(`{}`) and its outside  
-    - Basically, all the codes has the `<iostream>` header and namespace `std` even if there's no mention.  
-    - When any additional header is used, the header block is also noted seperately.
+
+## **List**
+
+- [10818. 최소, 최대](#list)
+- [2562. 최댓값](#list)
+- [2577. 숫자의 개수](#list)
+- [3052. MODULO](#list)
+- [1546. 평균](#list)
+- [8958. Score](#list)
+- [4344. Above Average](#list)
 
 
-### 10818. 최소, 최대
+**※ Note**  
+
+&nbsp;&nbsp; - All the codes of any language for the same problem have basically the same result.  
+&nbsp;&nbsp; - `Bash` : skipped the first line; `#!/bin/bash`  
+&nbsp;&nbsp; - `C++` : skipped `main()` function's brace(`{}`) and its outside. Basically, all the codes has the `<iostream>` header and namespace `std` even if there's no mention. When any additional header is used, the header block is also noted seperately.
+
+
+## [10818. 최소, 최대](#list)
+
+> 5  
+> 20 10 35 30 7
+
+> 7 35
+
+#### Bash
+```bash
+#!/bin/bash
+
+# ulimit -q 64
+# -d : The maximum size of a process’s data segment (kbytes)
+# -p : The pipe buffer size
+# Error message > ulimit: pipe size: cannot modify limit: Invalid argument
+# -q : The maximum number of bytes in POSIX message queues
+# Error message > -q: invalid option
+
+read n
+
+# Set min, max
+let "min = 10 ** 6"
+let "max = -(10 ** 6)"
+
+# Read data as an array
+read -a arr
+
+# Find the min and max values
+for i in ${arr[@]}
+do
+    if [ $i -lt $min ]; then
+        let "min = i"
+    fi
+
+    if [ $i -gt $max ]; then
+        let "max = i"
+    fi
+done
+
+# Output
+echo $min $max
+
+
+# 메모리 초과???
+```
 
 #### C++ (Trial 1)
 ```cpp
@@ -35,11 +96,6 @@ cout << minValue << " " << maxValue << endl;
 
 return 0;
 ```
-
-> 5  
-> 20 10 35 30 7
-
-> 7 35
 
 #### C++ (Trial 2)
 ```cpp
@@ -74,13 +130,56 @@ cout << minValue << " " << maxValue << endl;    // inefficient, crazy
 return 0;
 ```
 
-> 5  
-> 20 10 35 30 7
 
-> 7 35
+## [2562. 최댓값](#list)
 
+> 3  
+> 29  
+> 38  
+> 12  
+> 57  
+> 74  
+> 40  
+> 85  
+> 61
 
-### 2562. 최댓값
+> 85  
+> 8
+
+#### Bash
+```bash
+#!/bin/bash
+
+# Set max
+let "max = 0"
+
+# Read data as an array
+for i in {0..8}                             # Its length is fixed as 9.
+do
+    read temp
+    let "arr[i] = temp"
+done
+
+:<<'Comment'
+    It's not necessary to use an array,
+    but this is the chapter to learn array
+Comment
+
+# Find the max value
+for i in {0..8} 
+do
+    if [ ${arr[$i]} -gt $max ]; then
+        let "max = arr[i]"
+        let "order = i + 1"
+    fi
+
+    # test
+    # echo $i ${arr[$i]} $max $order
+done
+
+# Output
+echo -e "${max}\n${order}"
+```
 
 #### C++
 ```cpp
@@ -105,21 +204,55 @@ cout << maxValue << "\n" << loc << endl;
 return 0;
 ```
 
-> 3  
-> 29  
-> 38  
-> 12  
-> 57  
-> 74  
-> 40  
-> 85  
-> 61
 
-> 85  
-> 8
+## [2577. 숫자의 개수](#list)
 
+> 150  
+> 266  
+> 427
 
-### 2577. 숫자의 개수
+> 3 1 0 2 0 0 0 2 0 0 (vertically)
+
+#### Bash
+```bash
+#!/bin/bash
+
+# Input data
+read a
+read b
+read c
+
+# Get the product and its length as a string
+let "prod = a * b * c"
+let "len = ${#prod}"
+# echo $prod $len                               # test
+
+# Initialize arr
+for i in {0..9}
+do
+    let "arr[$i] = 0"
+done
+
+:<<"Comment"
+    It's not neccesary to initialize an array basically in Bash,
+    but empty indices should have their value '0' for solving this problem.
+Comment
+
+# Operation to count each digit
+for ((i = 0; i < len; i++))
+do
+    let "arr[${prod:i:1}] += 1"
+
+    # test
+    # echo $i ${prod:i:1} ${arr[${prod:i:1}]}
+done
+
+# Output
+for i in {0..9}
+do
+    echo ${arr[$i]}
+done
+```
 
 #### C++
 ```cpp
@@ -143,14 +276,42 @@ for (int j = 0; j < 10; j++)
 return 0;
 ```
 
-> 150  
-> 266  
-> 427
 
-> 3 1 0 2 0 0 0 2 0 0 (vertically)
+## [3052. MODULO](#list)
 
+> 39  
+> 40  
+> 41  
+> 42  
+> 43  
+> 44  
+> 82  
+> 83  
+> 84  
+> 85
 
-### 3052. MODULO
+> 6
+
+#### Bash
+```bash
+#!/bin/bash
+
+# Input data
+for i in {0..9}         # the size 10 is fixed
+do
+    read n
+    let "modulo = n % 42"
+    let "arr[$modulo]++"
+done
+
+:<<"Comment"
+    The array in bash doesn't need to have strictly continuous indices.
+    So we can use array like <set> by this feature 
+Comment
+
+# Output
+echo ${#arr[@]}
+```
 
 #### C++
 ```cpp
@@ -177,21 +338,44 @@ cout << modulo.size() << endl;
 return 0;
 ```
 
-> 39  
-> 40  
-> 41  
-> 42  
-> 43  
-> 44  
-> 82  
-> 83  
-> 84  
-> 85
 
-> 6
+## [1546. 평균](#list)
 
+> 3  
+> 40 80 60
 
-### 1546. 평균
+> 75
+
+#### Bash
+```bash
+#!/bin/bash
+
+# Input data
+read n
+read -a arr
+
+# Find the max score
+let "max = 0"
+for i in ${arr[@]}
+do
+    if [ $i -gt $max ]; then
+        let "max = i"
+    fi
+done
+# echo $max                                     # test
+
+# Operation to fake scores
+let "sum = 0"
+for ((i = 0; i < n; i++))
+do
+    let "sum += (arr[i] * 100 * 1000 / max)"    # don't forget "* 1000"
+done
+# echo $sum                                     # test
+
+# Output
+let "average = sum / n"
+printf "%.2f\n" $((average))e-3                 # MAGIC!!
+```
 
 #### C++
 ```cpp
@@ -216,13 +400,50 @@ cout << sum / t << endl;
 return 0;
 ```
 
-> 3  
-> 40 80 60
 
-> 75
+## [8958. Score](#list)
 
+> 5  
+> OOXXOXXOOO  
+> OOXXOOXXOO  
+> OXOXOXOXOXOXOX  
+> OOOOOOOOOO  
+> OOOOXOOOOXOOOOX  
 
-### 8958. Score
+> 10  
+> ……
+
+#### Bash
+```bash
+#!/bin/bash
+
+read t
+
+# Operation to grade and output
+for ((i = 0; i < t; i++))
+do
+    read ox
+
+    let "len = ${#ox}"
+    let "score = 0"
+    let "combo = 0"
+
+    for ((j = 0; j < len; j++))
+    do
+        if [ "${ox:j:1}" = "O" ]; then
+            let "combo += 1"
+            let "score += combo"
+        else
+            let "combo = 0"
+        fi
+
+        # test
+        # echo $i $j ${ox:j:1} $combo $score
+    done
+
+    echo $score
+done
+```
 
 #### C++
 ```cpp
@@ -260,30 +481,60 @@ for (int i = 0; i < t; i++)
 return 0;
 ```
 
+
+## [4344. Above Average](#list)
+
 > 5  
-> OOXXOXXOOO  
-> OOXXOOXXOO  
-> OXOXOXOXOXOXOX  
-> OOOOOOOOOO  
-> OOOOXOOOOXOOOOX  
+> 5 50 50 70 80 100  
+> 7 100 95 90 80 70 60 50  
+> 3 70 90 80  
+> 3 70 90 81  
+> 9 100 99 98 97 96 95 94 93 91
 
-> (0, 0) O 1 1  
-> (0, 1) O 2 3  
-> (0, 2) X 0 3  
-> (0, 3) X 0 3  
-> (0, 4) O 1 4  
-> (0, 5) X 0 4  
-> (0, 6) X 0 4  
-> (0, 7) O 1 5  
-> (0, 8) O 2 7  
-> (0, 9) O 3 10  
+> 40.000%  
+> 57.143%  
 > ……
 
-> 10  
-> ……
+#### Bash
+```bash
+#!/bin/bash
 
+read c
 
-### 4344. Above Average
+# Operation to grade and output
+for ((i = 0; i < c; i++))
+do
+    # Read an array
+    read -a arr
+
+    let "len = arr[0]"
+    let "sum = 0"
+
+    # Get the array's sum and average
+    for ((j = 1; j < len + 1; j++))
+    do
+        let "sum += ${arr[j]}"
+    done
+    let "average = sum * 10 / len"                      # don't forget sum * 10
+
+    # test
+    # echo $i $sum $len $average
+
+    # Count freshmen over the average score
+    let "count = 0"
+    for ((j = 1; j < len + 1; j++))
+    do
+        let "score = ${arr[j]} * 10"
+        if [ $score -gt $average ]; then
+            let "count += 1"
+        fi
+    done
+
+    # Output
+    printf "%.3f%%\n" $((count * 10 ** 8 / len))e-6
+    # * 10 ** 6 & e-4 : fail (maybe concerned with rounding ……)
+done
+```
 
 #### C++
 ```cpp
@@ -326,18 +577,3 @@ for (int i = 0; i < c; i++)
 
 return 0;
 ```
-
-> 5  
-> 5 50 50 70 80 100  
-> 7 100 95 90 80 70 60 50  
-> 3 70 90 80  
-> 3 70 90 81  
-> 9 100 99 98 97 96 95 94 93 91
-
-> 5 350 70 2  
-> 7 545 77 4.000  
-> ……
-
-> 40.000%  
-> 57.143%  
-> ……

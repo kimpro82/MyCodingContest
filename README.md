@@ -43,7 +43,7 @@ https://www.acmicpc.net/
 | 02 | if문 | 2022.01.29 | 2021.05.24 | 2021.07.14 | | [Link](/BaekJoon/Problems/Step/02#baekjoon-online-judge) |
 | 03 | for문 | 2022.01.31 | 2021.05.25 | | | [Link](/BaekJoon/Problems/Step/03#baekjoon-online-judge) |
 | 04 | while문 | 2022.02.02 | 2021.05.26 | | | [Link](/BaekJoon/Problems/Step/04#baekjoon-online-judge) |
-| 05 | 1차원 배열 | | 2021.06.14 | | | [Link](/BaekJoon/Problems/Step/05#baekjoon-online-judge) |
+| 05 | 1차원 배열 | 2022.02.03 | 2021.06.14 | | | [Link](/BaekJoon/Problems/Step/05#baekjoon-online-judge) |
 | 06 | 함수 | | 2021.06.18 | | | [Link](/BaekJoon/Problems/Step/06#baekjoon-online-judge) |
 | 07 | 문자열 | | 2021.07.10 | | | [Link](/BaekJoon/Problems/Step/07#baekjoon-online-judge) |
 | 08 | 기본 수학 1 | | 2021.07.12 | | | [Link](/BaekJoon/Problems/Step/08#baekjoon-online-judge) |

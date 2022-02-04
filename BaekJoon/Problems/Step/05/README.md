@@ -23,7 +23,9 @@ https://www.acmicpc.net/step/6
 
 &nbsp;&nbsp; - All the codes of any language for the same problem have basically the same result.  
 &nbsp;&nbsp; - `Bash` : skipped the first line; `#!/bin/bash`  
-&nbsp;&nbsp; - `C++` : skipped `main()` function's brace(`{}`) and its outside. Basically, all the codes has the `<iostream>` header and namespace `std` even if there's no mention. When any additional header is used, the header block is also noted seperately.
+&nbsp;&nbsp; - `C++` : skipped `main()` function's brace(`{}`) and its outside(`<iostream>` header and namespace `std`).  
+&nbsp;&nbsp;&nbsp;&nbsp; · Basically, all the codes has the `<iostream>` header and namespace `std` even if there's no mention.  
+&nbsp;&nbsp;&nbsp;&nbsp; · When any additional header is used, the header block is also noted seperately.
 
 
 ## [10818. 최소, 최대](#list)
@@ -35,8 +37,6 @@ https://www.acmicpc.net/step/6
 
 #### Bash
 ```bash
-#!/bin/bash
-
 # ulimit -q 64
 # -d : The maximum size of a process’s data segment (kbytes)
 # -p : The pipe buffer size
@@ -67,10 +67,8 @@ done
 
 # Output
 echo $min $max
-
-
-# 메모리 초과???
 ```
+> 메모리 초과
 
 #### C++ (Trial 1)
 ```cpp
@@ -148,8 +146,6 @@ return 0;
 
 #### Bash
 ```bash
-#!/bin/bash
-
 # Set max
 let "max = 0"
 
@@ -215,8 +211,6 @@ return 0;
 
 #### Bash
 ```bash
-#!/bin/bash
-
 # Input data
 read a
 read b
@@ -294,8 +288,6 @@ return 0;
 
 #### Bash
 ```bash
-#!/bin/bash
-
 # Input data
 for i in {0..9}         # the size 10 is fixed
 do
@@ -348,8 +340,6 @@ return 0;
 
 #### Bash
 ```bash
-#!/bin/bash
-
 # Input data
 read n
 read -a arr
@@ -415,8 +405,6 @@ return 0;
 
 #### Bash
 ```bash
-#!/bin/bash
-
 read t
 
 # Operation to grade and output
@@ -497,8 +485,6 @@ return 0;
 
 #### Bash
 ```bash
-#!/bin/bash
-
 read c
 
 # Operation to grade and output

@@ -16,10 +16,10 @@ do
     do
         let "sum += ${arr[j]}"
     done
-    let "average = sum * 10 / len"          # don't forget sum * 10
+    let "average = sum * 10 / len"                      # don't forget sum * 10
 
     # test
-    echo $i $sum $len $average
+    # echo $i $sum $len $average
 
     # Count freshmen over the average score
     let "count = 0"
@@ -32,8 +32,6 @@ do
     done
 
     # Output
-    printf "%.3f%%\n" $((count * 10 ** 6 / len))e-4
+    printf "%.3f%%\n" $((count * 10 ** 8 / len))e-6
+    # * 10 ** 6 & e-4 : fail (maybe concerned with rounding ……)
 done
-
-
-# 틀렸습니다?

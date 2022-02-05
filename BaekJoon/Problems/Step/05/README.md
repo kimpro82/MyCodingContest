@@ -43,7 +43,8 @@ https://www.acmicpc.net/step/6
 # Error message > ulimit: pipe size: cannot modify limit: Invalid argument
 # -q : The maximum number of bytes in POSIX message queues
 # Error message > -q: invalid option
-
+```
+```bash
 read n
 
 # Set min, max

@@ -11,7 +11,7 @@ do
     # echo ${arr[$i]}                       # test : ok
 done
 
-# Count each alphabet
+# Search each alphabet's first location
 for ((i = 0; i < len; i++))
 do
     c=$(printf "%d" "'${s:i:1}'")           # I don't want to lose my precious 'let' but ……

@@ -10,16 +10,16 @@ https://www.acmicpc.net/step/7
 
 ## **List**
 
-- [11654. 아스키 코드]()
-- [11720. 숫자의 합]()
-- [10809. 알파벳 찾기]()
-- [2675. Repeating Characters]()
-- [1157. 단어 공부]()
-- [1152. 단어의 개수]()
-- [2908. FILIP]()
-- [5622. BAKA]()
-- [2941. LJESNJAK]()
-- [1316. 그룹 단어 체커]()
+- [11654. 아스키 코드](#11654-아스키-코드)
+- [11720. 숫자의 합](#11720-숫자의-합)
+- [10809. 알파벳 찾기](#10809-알파벳-찾기)
+- [2675. Repeating Characters](#2675-repeating-characters)
+- [1157. 단어 공부](#1157-단어-공부)
+- [1152. 단어의 개수](#1152-단어의-개수)
+- [2908. FILIP](#2908-filip)
+- [5622. BAKA](#5622-baka)
+- [2941. LJESNJAK](#2941-ljesnjak)
+- [1316. 그룹 단어 체커](#1316-그룹-단어-체커)
 
 
 **※ Note**  
@@ -29,7 +29,7 @@ https://www.acmicpc.net/step/7
 &nbsp;&nbsp; - `C++` : skipped `main()` function's brace(`{}`) and its outside(`<iostream>` header and namespace `std`).  
 &nbsp;&nbsp;&nbsp;&nbsp; · Basically, all the codes has the `<iostream>` header and namespace `std` even if there's no mention.  
 &nbsp;&nbsp;&nbsp;&nbsp; · When any additional header is used, the header block is also noted seperately.  
-&nbsp;&nbsp;&nbsp;&nbsp; · <u>Very meaningful time to familiarize with `array` `vector` and `string`!</u>
+&nbsp;&nbsp;&nbsp;&nbsp; ※ Very meaningful time to familiarize with `array` `vector` and `string`!
 
 
 ## [11654. 아스키 코드](#list)
@@ -647,12 +647,14 @@ return 0;
 
 ## [1316. 그룹 단어 체커](#list)
 
-> 3  
-> happy  
-> new  
-> year
+> 5  
+> ab  
+> aa  
+> aca  
+> ba  
+> bb
 
-> 3
+> 4
 
 #### Bash
 ```Bash

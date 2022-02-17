@@ -1,17 +1,54 @@
 ## BAEKJOON Online Judge
 
-## 문제 > 단계별로 풀어보기 > 7. 문자열
-(2021.07.10)  
-https://www.acmicpc.net/step/7  
+# 문제 > 단계별로 풀어보기 > 7. 문자열
 
-※ C++ codes : **skipped** `main()` function's brace(`{}`) and its outside  
-    - Basically, all the codes has the `<iostream>` header and namespace `std` even if there's no mention.  
-    - When any additional header is used, the header block is also noted seperately.  
+https://www.acmicpc.net/step/7
 
-Very meaningful time to familiarize with `array` `vector` and `string`!
+(2021.07.10) - `C++`  
+(2022.02.16) - `Bash`
 
 
-### 11654. 아스키 코드
+## **List**
+
+- [11654. 아스키 코드]()
+- [11720. 숫자의 합]()
+- [10809. 알파벳 찾기]()
+- [2675. Repeating Characters]()
+- [1157. 단어 공부]()
+- [1152. 단어의 개수]()
+- [2908. FILIP]()
+- [5622. BAKA]()
+- [2941. LJESNJAK]()
+- [1316. 그룹 단어 체커]()
+
+
+**※ Note**  
+
+&nbsp;&nbsp; - All the codes of any language for the same problem have basically the same result.  
+&nbsp;&nbsp; - `Bash` : skipped the first line; `#!/bin/bash`  
+&nbsp;&nbsp; - `C++` : skipped `main()` function's brace(`{}`) and its outside(`<iostream>` header and namespace `std`).  
+&nbsp;&nbsp;&nbsp;&nbsp; · Basically, all the codes has the `<iostream>` header and namespace `std` even if there's no mention.  
+&nbsp;&nbsp;&nbsp;&nbsp; · When any additional header is used, the header block is also noted seperately.  
+&nbsp;&nbsp;&nbsp;&nbsp; · <u>Very meaningful time to familiarize with `array` `vector` and `string`!</u>
+
+
+## [11654. 아스키 코드](#list)
+
+> A
+
+> 65
+
+#### Bash
+```Bash
+read char                   # ex) a
+
+# printf "%d\n" $char       # printf: a: invalid number
+# printf "%d\n" "$char"     # printf: a: invalid number; it doesn't matter if use "" or not
+# printf "%d\n" '$char'     # printf: $char: invalid number; regard $char itself as a string
+
+printf "%d\n" "'$char'"     # 97; regard a as a string
+# printf "%d\n" "'$char"    # 97; the closing quotes(') may be omitted
+```
 
 #### C++ 
 ```cpp
@@ -23,12 +60,31 @@ cout << (int) x << endl;
 return 0;
 ```
 
-> A
 
-> 65
+## [11720. 숫자의 합](#list)
 
+> 11  
+> 10987654321
 
-### 11720. 숫자의 합
+> 46 
+
+#### Bash
+```Bash
+read n
+read num
+
+let "sum = 0"
+
+for ((i = 0; i < n; i++))
+do
+    let "sum += ${num:i:1}"
+
+    # test : ok
+    # echo ${num:i:1}
+done
+
+echo $sum
+```
 
 #### C++ 
 ```cpp
@@ -53,13 +109,42 @@ cout << sum << endl;
 return 0;
 ```
 
-> 11  
-> 10987654321
 
-> 46 
+## [10809. 알파벳 찾기](#list)
 
+> baekjoon
 
-### 10809. 알파벳 찾기
+> 1 0 -1 -1 2 -1 -1 -1 -1 4 3 -1 -1 7 5 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+
+#### Bash
+```Bash
+# Input string
+read s
+let "len = ${#s}"
+
+# Initialize arr
+for i in {0..25}
+do
+    let "arr[$i] = -1"
+    # echo ${arr[$i]}                       # test : ok
+done
+
+# Search each alphabet's first location
+for ((i = 0; i < len; i++))
+do
+    c=$(printf "%d" "'${s:i:1}'")           # I don't want to lose my precious 'let' but ……
+    if [ ${arr[$((c-97))]} -lt 0 ]; then
+        let "arr[$((c-97))] = $i"
+    fi
+done
+
+# Output
+for i in {0..25}
+do
+    echo -n "${arr[$i]} "                   # -n : without line replacement
+done
+echo
+```
 
 #### C++ 
 ```cpp
@@ -94,12 +179,37 @@ cout << alphabet[25] << endl;   // z
 return 0;
 ```
 
-> baekjoon
 
-> 1 0 -1 -1 2 -1 -1 -1 -1 4 3 -1 -1 7 5 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+## [2675. Repeating Characters](#list)
 
+> 2  
+> 3 ABC  
+> 5 /HTP
 
-### 2675. Repeating Characters
+> AAABBBCCC  
+> /////HHHHHTTTTTPPPPP
+
+#### Bash
+```Bash
+read t
+
+for ((i = 0; i < t; i++))
+do
+    # Read each data
+    read r s
+    let "len = ${#s}"
+
+    # Repeat each char r times
+    for ((j = 0; j < len; j++))
+    do
+        for ((k = 0; k < r; k++))
+        do
+            echo -n "${s:j:1}"
+        done
+    done
+    echo
+done
+```
 
 #### C++ 
 ```cpp
@@ -129,15 +239,77 @@ for (int i = 0; i < p; i++)
 return 0;
 ```
 
-> 2  
-> 3 ABC  
-> 5 /HTP
 
-> AAABBBCCC  
-> /////HHHHHTTTTTPPPPP
+## [1157. 단어 공부](#list)
 
+> Mississipi
 
-### 1157. 단어 공부
+> 4 8 2  
+> ?
+
+#### Bash
+```Bash
+# Read a string and get its length
+read s
+let "len = ${#s}"
+
+# Change all letters to uppercase
+S=${s^^}                                # ^^ : uppercase, ,, : lowercase
+# let "S = ${s^^}"                      # doesn't work
+
+# Initialize arr
+for i in {0..25}
+do
+    let "arr[$i] = 0"
+done
+
+# Count each alphabet
+for ((i = 0; i < len; i++))
+do
+    c=$(printf "%d" "'${S:$i:1}'")
+    let "arr[$((c-65))] += 1"
+
+    # test : ok
+    # echo $i ${S:$i:1} $(($c-65)) ${arr[$(($c-65))]}
+done
+
+# Find the max value
+let "max = 0"
+for i in {0..25}
+do
+    let "num = ${arr[$i]}"
+    if [ $num -gt $max ]; then
+        let "max = $num"
+        let "maxIndex = $i"
+    fi
+done
+
+# Determine if the max value is plural
+let "isPlural = 0"
+for i in {0..25}
+do
+    if [ ${arr[$i]} -eq $max ]; then
+        ((isPlural++))
+        if [ $isPlural -gt 1 ]; then
+            break
+        fi
+    fi
+
+    # test : ok
+    # echo $i ${arr[$i]} $isPlural
+done
+
+# test : ok
+# echo $maxIndex $max $isPlural
+
+# Output
+if [ $isPlural -gt 1 ]; then
+    echo '?'
+else
+    printf $(printf '\%o' "$(($maxIndex + 65))")    # crazy; bash requires only \octal(\%o), not \decimal(\%d)
+fi
+```
+> 시간 초과 : The maximum length of the word is 1,000,000
 
 #### C++ 
 ```cpp
@@ -201,13 +373,19 @@ if (ifUnique > 1)
 return 0;
 ```
 
-> Mississipi
 
-> 4 8 2  
-> ?
+## [1152. 단어의 개수](#list)
 
+> The Curious Case of Benjamin Button
 
-### 1152. 단어의 개수
+> 6 (Maybe, difficult to operate `cin.eof()` directly in **C++**)
+
+#### Bash
+```Bash
+read -a s
+
+echo ${#s[@]}
+```
 
 #### C++ 
 ```cpp
@@ -236,12 +414,32 @@ cout << s.size() << endl;
 return 0;
 ```
 
-> The Curious Case of Benjamin Button
 
-> 6 (Maybe, difficult to operate cin.eof() directly)
+## [2908. FILIP](#list)
 
+> 734 893
 
-### 2908. FILIP
+> 437
+
+#### Bash
+```Bash
+# Input
+read a b
+
+# Reverse digits of a and b
+for i in {2..0..-1}
+do
+    a2+="${a:i:1}"
+    b2+="${b:i:1}"
+done
+
+# Output
+if [ $a2 -gt $b2 ]; then
+    echo $a2
+else
+    echo $b2
+fi
+```
 
 #### C++ 
 ```cpp
@@ -274,12 +472,35 @@ if (stoi(aReverse) > stoi(bReverse))            // A and B will not be equal
 return 0;
 ```
 
-> 734 893
 
-> 437
+## [5622. BAKA](#list)
 
+> UNUCIC
 
-### 5622. BAKA
+> 36
+
+#### Bash
+```Bash
+# Input
+read s
+let "len = ${#s}"
+
+# Count time to turn the dial
+let "sum = 0"
+for ((i = 0; i < len; i++))
+do
+    letter=$(printf "%d" "'${s:i:1}'")
+    if [ $letter -le $(printf "%d" "'R'") ]; then
+        let "sum += $(($(($letter - 65)) / 3 + 2 + 1))"
+    elif [ $letter -le $(printf "%d" "'X'") ]; then
+        let "sum += $(($(($letter - 65 - 1)) / 3 + 2 + 1))"
+    else
+        let "sum += $(($(($letter - 65 - 2)) / 3 + 2 + 1))"
+    fi
+done
+
+echo $sum
+```
 
 #### C++ 
 ```cpp
@@ -318,18 +539,52 @@ cout << sum << endl;
 return 0;
 ```
 
-> UNUCIC
 
-> U 8 9 9  
-> N 6 7 16  
-> U 8 9 25  
-> C 2 3 28  
-> I 4 5 33  
-> C 2 3 36  
-> 36
+## [2941. LJESNJAK](#list)
 
+> ljes=njak
 
-### 2941. LJESNJAK
+> 6
+
+#### Bash
+```Bash
+# Input
+read s
+let "len = ${#s}"
+
+# Make an array of specific Croatian alphabets
+specific1=("c=" "c-" "d-" "lj" "nj" "s=" "z=")
+specific2="dz="
+
+# Count if the string includes specific letters
+let "count = 0"
+# 1) two letters : specific[0, 6]
+for ((i = 0; i < ((len - 1)); i++))
+do
+    for j in {0..6}
+    do
+        if [[ ${specific1[j]} =~ ${s:i:2} ]]; then
+            ((count++))
+        fi
+
+        # test : ok
+        # echo $i ${s:i:2} ${specific1[j]} $count
+    done
+done
+# 2) three letters : specific[7]
+for ((i = 0; i < ((len - 2)); i++))
+do
+    if [[ $specific2 == ${s:i:3} ]]; then
+        ((count++))                                # don't add 2; to avoid double count 'z=' and 'dz='
+    fi
+
+    # test : ok
+    # echo $i ${s:i:3} $specific2 $count
+done
+
+# Output
+echo $((len - count))
+```
 
 #### C++ 
 ```cpp
@@ -389,12 +644,63 @@ cout << sLength - count << endl;
 return 0;
 ```
 
-> ljes=njak
 
-> 6
+## [1316. 그룹 단어 체커](#list)
 
+> 3  
+> happy  
+> new  
+> year
 
-### 1316. 그룹 단어 체커
+> 3
+
+#### Bash
+```Bash
+read n
+
+let "count = 0"
+for ((i = 0; i < n; i++))
+do
+    # Input
+    read s
+    let "len = ${#s}"
+
+    # Initialize arr for counting each alphabet
+    for j in {0..25}
+    do
+        let "alphabet[$j] = 0"
+    done
+
+    # Find if there are seperated same idxs
+    let "isSeperated = 0"
+    for ((k = 0; k < len; k++))
+    do
+        idx=$(($(printf "%d" "'${s:k:1}'")-97))
+
+        if [[ ${alphabet[$idx]} == 0 ]]; then
+            ((alphabet[idx]++))
+        elif [[ ${s:k:1} != ${s:$((k-1)):1} ]]; then    # not $s[$k] !!!
+            ((isSeperated++))
+            break
+        fi
+
+        # test : ok
+        # echo $i $s $k ${s:k:1} $idx ${alphabet[$idx]} $isSeperated
+    done
+
+    # Count
+    if [[ $isSeperated == 0 ]]; then
+        ((count++))
+    fi
+
+    # test : ok
+    # echo "isSeperated : ${isSeperated}, count : ${count}"
+done
+
+# Output
+echo $count
+```
+> 런타임 에러
 
 #### C++ 
 ```cpp
@@ -447,13 +753,3 @@ cout << count << endl;
 
 return 0;
 ```
-
-> 3  
-> happy  
-> new  
-> year
-
-> happy 0 1  
-> new 0 2  
-> year 0 3  
-> 3

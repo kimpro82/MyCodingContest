@@ -1,6 +1,6 @@
 ## BAEKJOON Online Judge
 
-# 문제 > 단계별로 풀어보기 > 6. 함수 (2021.06.18)
+# 문제 > 단계별로 풀어보기 > 6. 함수
 
 https://www.acmicpc.net/step/5
 

@@ -56,13 +56,10 @@ long long sum(vector<int> &a)
 ```
 ```cpp
 // test
-int main()
-{
-    vector<int> a = {1, 2, 3, 4, 5};
-    sum(a);
+vector<int> a = {1, 2, 3, 4, 5};
+sum(a);
 
-    return 0;
-}
+return 0;
 ```
 
 
@@ -83,65 +80,62 @@ Deja vu? ☞ [Oncoder Challenge Lv.6](..//Oncoder/Challenge/Q06/README.md)
 #include <algorithm>
 ```
 ```cpp
-int main()
+// make a set {1, 2, ……, 9999}
+set<int> mySet;
+for (int i = 1; i < 10000; i++)
 {
-    // make a set {1, 2, ……, 9999}
-    set<int> mySet;
-    for (int i = 1; i < 10000; i++)
-    {
-        mySet.insert(i);
-    }
-
-    // erase digitaditions from mySet{}
-    for (int j = 1; j < 10000; j++)
-    {
-        int digitadition = j;
-        if (j > 999)
-        {
-            digitadition += j / 1000;
-        }
-        if (j > 99)
-        {
-            digitadition += (j % 1000) / 100;
-        }
-        if (j > 9)
-        {
-            digitadition += (j % 100) / 10;
-        }
-        digitadition += j % 10;
-
-        mySet.erase(digitadition);
-    }
-
-    // output self-numbers
-    // make cin/cout faster
-    cin.tie(NULL);
-    ios_base::sync_with_stdio(false);
-    for_each (mySet.begin(), mySet.end(), [](int n)
-    {
-        cout << n << '\n';
-    });
-
-    return 0;
+    mySet.insert(i);
 }
+
+// erase digitaditions from mySet{}
+for (int j = 1; j < 10000; j++)
+{
+    int digitadition = j;
+    if (j > 999)
+    {
+        digitadition += j / 1000;
+    }
+    if (j > 99)
+    {
+        digitadition += (j % 1000) / 100;
+    }
+    if (j > 9)
+    {
+        digitadition += (j % 100) / 10;
+    }
+    digitadition += j % 10;
+
+    mySet.erase(digitadition);
+}
+
+// output self-numbers
+// make cin/cout faster
+cin.tie(NULL);
+ios_base::sync_with_stdio(false);
+for_each (mySet.begin(), mySet.end(), [](int n)
+{
+    cout << n << '\n';
+});
+
+return 0;
 ```
 ```cpp
-        // better code?
-        int digitadition = j;
-        if (j > 999)
-        {
-            digitadition += j / 1000;
-            digitadition += (j % 1000) / 100;
-            digitadition += (j % 100) / 10;
-        } else if (j > 99)
-        {
-            digitadition += (j % 1000) / 100;
-            digitadition += (j % 100) / 10;
-        } else if (j > 9)
-        {
-            digitadition += (j % 100) / 10;
-        }
-        digitadition += j % 10;
+    // better code?
+    int digitadition = j;
+    if (j > 999)
+    {
+        digitadition += j / 1000;
+        digitadition += (j % 1000) / 100;
+        digitadition += (j % 100) / 10;
+    } else if (j > 99)
+    {
+        digitadition += (j % 1000) / 100;
+        digitadition += (j % 100) / 10;
+    } else if (j > 9)
+    {
+        digitadition += (j % 100) / 10;
+    }
+    digitadition += j % 10;
 ```
 
 #### Text
@@ -171,44 +165,41 @@ int main()
 
 #### C++
 ```cpp
-int main()
+int n;      // n <= 1000
+cin >> n;
+
+int count = 0;
+if (n < 100)
 {
-    int n;      // n <= 1000
-    cin >> n;
-
-    int count = 0;
-    if (n < 100)
+    count = n;
+} else
+{
+    int a, b, c;
+    count = 99;
+    if (n == 1000)      // can determine 1000 is not
     {
-        count = n;
-    } else
-    {
-        int a, b, c;
-        count = 99;
-        if (n == 1000)      // can determine 1000 is not
-        {
-            n = 999;
-        }
-        for (int i = 100; i <= n; i++)
-        {
-            a = i / 100;
-            b = (i % 100) / 10;
-            c = i % 10;
-            if ((b - a) == (c - b))
-            {
-                count++;
-            }
-            cout << a << " " << b << " " << c << " " << count << endl;  // test
-        }
+        n = 999;
     }
-
-    cout << count << endl;
-
-    return 0;
+    for (int i = 100; i <= n; i++)
+    {
+        a = i / 100;
+        b = (i % 100) / 10;
+        c = i % 10;
+        if ((b - a) == (c - b))
+        {
+            count++;
+        }
+        cout << a << " " << b << " " << c << " " << count << endl;  // test
+    }
 }
+
+cout << count << endl;
+
+return 0;
 ```
 ```cpp
-    // else             // n == 1000
-    // {
-    //     count = 144; // given as a sample output …… crazy
-    // }
+// else             // n == 1000
+// {
+//     count = 144; // given as a sample output …… crazy
+// }
 ```

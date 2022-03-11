@@ -49,7 +49,7 @@ can't escape this endless valley of despair ……
 | 05 | 1차원 배열 | 2022.02.03 | 2021.06.14 | | | [Link](/BaekJoon/Problems/Step/05#baekjoon-online-judge) |
 | 06 | 함수 | | 2021.06.18 | | | [Link](/BaekJoon/Problems/Step/06#baekjoon-online-judge) |
 | 07 | 문자열 | 2022.02.16 | 2021.07.10 | | | [Link](/BaekJoon/Problems/Step/07#baekjoon-online-judge) |
-| 08 | 기본 수학 1 | | 2021.07.12 | | | [Link](/BaekJoon/Problems/Step/08#baekjoon-online-judge) |
+| 08 | 기본 수학 1 | 2022.03.11 | 2021.07.12 | | | [Link](/BaekJoon/Problems/Step/08#baekjoon-online-judge) |
 | 09 | 기본 수학 2 | | 2021.07.20 | | | [Link](/BaekJoon/Problems/Step/09#baekjoon-online-judge) |
 | 10 | 재귀 | | 2021.09.15<br>(not completed) | | | [Link](/BaekJoon/Problems/Step/10#baekjoon-online-judge) |
 | 11 | 브루트 포스 | | 2021.12.10 | | | [Link](/BaekJoon/Problems/Step/11#baekjoon-online-judge) |

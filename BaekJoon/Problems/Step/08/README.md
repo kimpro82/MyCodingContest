@@ -4,21 +4,21 @@
 
 https://www.acmicpc.net/step/8
 
-(2021.07.12) - `C++`
+(2021.07.12) - `C++`  
 (2022.03.11) - `Bash`
 
 
 ## **List**
 
-- [1712. 손익분기점]()
-- [2292. 벌집]()
-- [1193. 분수찾기]()
-- [2869. PUŽ]()
-- [10250. ACM Hotel]()
-- [2775. 부녀회장이 될테야]()
-- [2839. ŠEĆER]()
-- [10757. 큰 수 A+B]()
-- [1011. Fly me to the Alpha Centauri]() - *excluded*
+- [1712. 손익분기점](#1712-손익분기점)
+- [2292. 벌집](#2292-벌집)
+- [1193. 분수찾기](#1193-분수찾기)
+- [2869. PUŽ](#2869-puž)
+- [10250. ACM Hotel](#10250-acm-hotel)
+- [2775. 부녀회장이 될테야](#2775-부녀회장이-될테야)
+- [2839. ŠEĆER](#2839-šećer)
+- [10757. 큰 수 A+B](#10757-큰-수-ab)
+- [1011. Fly me to the Alpha Centauri](#1011-fly-me-to-the-alpha-centauri---excluded) - *excluded*
 
 
 **※ Note** 
@@ -333,7 +333,7 @@ return 0;
 > 10
 
 #### Bash
-Rumor has it that there's a tricky way to use 2d array in Bash although isn't supplied regularly, but I feel quite annoyed today ……
+Rumor has it that there's a tricky way to use **2d array** in Bash although isn't supplied regularly, but I feel quite annoyed today ……
 
 #### C++ 
 ```cpp
@@ -459,7 +459,8 @@ let "buffer = 0"
 
 # test
 # echo $maxSize $minSize
-
+```
+```bash
 # Sum each digit (1) : 0 ~ minSize - 1
 for ((i = 0; i < minSize; i++))
 do
@@ -475,7 +476,8 @@ do
     # test
     # echo $i $buffer ${sum[$i]}
 done
-
+```
+```bash
 # Sum each digit (2) : minSize ~ maxSize - 1
 for ((j = minSize; j < maxSize; j++))
 do
@@ -496,7 +498,8 @@ do
     # test
     # echo $i $buffer ${sum[$i]}
 done
-
+```
+```bash
 # Sum each digit (3) : maxSize
 if [ $buffer -eq 1 ]; then
     let "sum[maxSize] = 1"
@@ -504,7 +507,8 @@ if [ $buffer -eq 1 ]; then
 fi
 # test
 # echo $((maxSize-1)) $buffer ${sum[$((maxSize-1))]}
-
+```
+```bash
 # Output
 for ((k = 0; k < maxSize; k++))
 do

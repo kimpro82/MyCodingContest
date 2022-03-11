@@ -1,20 +1,39 @@
 ## BAEKJOON Online Judge
 
-## 문제 > 단계별로 풀어보기 > 6. 함수 (2021.06.18)
-(2021.06.18)  
-https://www.acmicpc.net/step/5  
+# 문제 > 단계별로 풀어보기 > 6. 함수 (2021.06.18)
 
-※ C++ codes : **skipped** `main()` function's brace(`{}`) and its outside  
-    - Basically, all the codes has the `<iostream>` header and namespace `std` even if there's no mention.  
-    - When any additional header is used, the header block is also noted seperately.
+https://www.acmicpc.net/step/5
+
+(2021.06.18) - `C++`  
+(2022.03.11) - `Text`
 
 
-### 15596. 정수 N개의 합
+## **List**
+
+- [15596. 정수 N개의 합]()
+- [4673. Self Numbers]()
+- [1065. 한수]()
+
+
+**※ Note**
+
+&nbsp;&nbsp; - All the codes of any language for the same problem have basically the same result.  
+&nbsp;&nbsp; - `C++` : skipped `main()` function's brace(`{}`) and its outside(`<iostream>` header and namespace `std`).  
+&nbsp;&nbsp;&nbsp;&nbsp; · Basically, all the codes has the `<iostream>` header and namespace `std` even if there's no mention.  
+&nbsp;&nbsp;&nbsp;&nbsp; · When any additional header is used, the header block is also noted seperately.  
+
+
+## [15596. 정수 N개의 합](#list)
+
+> n   : 5  
+> ans : 15
+
+#### C++
+
 I guessed it as a question related with using pointer(because of "&a") at first, but it was not.  
 Hell easy one to ask about `vector` very simply.  
 It's been a few days with pointer, I hate myself
 
-#### C++ 
 ```cpp
 #include <iostream>
 #include <vector>
@@ -46,14 +65,18 @@ int main()
 }
 ```
 
-> n   : 5  
-> ans : 15
 
+## [4673. Self Numbers](#list)
 
-### 4673. Self Numbers
 Deja vu? ☞ [Oncoder Challenge Lv.6](..//Oncoder/Challenge/Q06/README.md)
 
-#### C++ 
+> 1  
+> 3  
+> 5  
+> ……  
+> 9993
+
+#### C++
 ```cpp
 #include <iostream>
 #include <set>
@@ -121,17 +144,32 @@ int main()
         digitadition += j % 10;
 ```
 
-> 1  
-> 3  
-> 5  
-> ……  
-> 9993
+#### Text
+```txt
+1
+3
+5
+……
+9993
+```
+ㅋㅋㅋ
 
 
-### 1065. 한수
+## [1065. 한수](#list)
+
 [한수](https://namu.wiki/w/%ED%95%9C%EC%88%98(%EC%82%BC%EA%B5%AD%EC%A7%80))라면 ……
 
-#### C++ 
+> 777
+
+> 1 0 0 99  
+> 1 0 1 99  
+> 1 0 2 99  
+> ……  
+> 7 7 7 133
+
+> 133
+
+#### C++
 ```cpp
 int main()
 {
@@ -174,13 +212,3 @@ int main()
     //     count = 144; // given as a sample output …… crazy
     // }
 ```
-
-> 777
-
-> 1 0 0 99  
-> 1 0 1 99  
-> 1 0 2 99  
-> ……  
-> 7 7 7 133
-
-> 133

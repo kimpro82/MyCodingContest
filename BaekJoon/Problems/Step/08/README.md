@@ -608,11 +608,6 @@ return 0;
 > 3  
 > 4
 
-#### Bash
-```bash
-
-```
-
 #### C++ - Trial 1
 ```cpp
 /*

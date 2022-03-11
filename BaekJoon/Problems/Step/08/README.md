@@ -21,7 +21,7 @@ https://www.acmicpc.net/step/8
 - [1011. Fly me to the Alpha Centauri](#1011-fly-me-to-the-alpha-centauri---excluded) - *excluded*
 
 
-**※ Note** 
+**※ Note**
 
 &nbsp;&nbsp; - All the codes of any language for the same problem have basically the same result.  
 &nbsp;&nbsp; - `Bash` : skipped the first line; `#!/bin/bash`  

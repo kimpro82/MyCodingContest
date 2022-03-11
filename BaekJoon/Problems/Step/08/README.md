@@ -367,6 +367,10 @@ return 0;
 
 ## [2839. ŠEĆER](#list)
 
+> 18
+
+> 4
+
 #### Bash
 ```bash
 read n
@@ -428,10 +432,6 @@ if (rest == false)
 
 return 0;
 ```
-
-> 18
-
-> 4
 
 
 ## [10757. 큰 수 A+B](#list)

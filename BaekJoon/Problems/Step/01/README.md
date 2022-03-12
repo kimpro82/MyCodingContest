@@ -4,7 +4,7 @@
 
 (2021.05.13) - `Python`, `C++`  
 (2021.07.11) - `R`  
-(2022.01.26) - `Bash`, `Text` (only possible)
+(2022.01.26) - `Bash`, `Text` (only possible)  
 (2022.03.02) - `Golang`
 
 https://www.acmicpc.net/step/1
@@ -30,7 +30,6 @@ https://www.acmicpc.net/step/1
 **※ Note**  
 
 &nbsp;&nbsp; - All the codes of any language for the same problem have basically the same result.  
-&nbsp;&nbsp; - `Bash` : skipped the first line; `#!/bin/bash`  
 &nbsp;&nbsp; - `C++` : skipped `main()` function's brace(`{}`) and its outside(`<iostream>` header and namespace `std`).  
 &nbsp;&nbsp;&nbsp;&nbsp; · Basically, all the codes has the `<iostream>` header and namespace `std` even if there's no mention.  
 &nbsp;&nbsp;&nbsp;&nbsp; · When any additional header is used, the header block is also noted seperately.  
@@ -40,15 +39,22 @@ https://www.acmicpc.net/step/1
 
 ## [2557. Hello World](#List)
 
-#### Python
-```python
-print("Hello World!")
-```
+> Hello World!
 
 #### C++
 ```cpp
 cout << "Hello World!" << endl;
 return 0;
+```
+
+#### Bash
+```Bash
+echo "Hello World!"
+```
+
+#### Python
+```python
+print("Hello World!")
 ```
 
 #### R
@@ -57,26 +63,16 @@ return 0;
 cat("Hello World!")
 ```
 
-#### Bash
-```Bash
-echo "Hello World!"
-```
-
 #### Text
 ```txt
 Hello World!
 ```
 
-> Hello World!
-
 
 ## [10718. We love kriii](#List)
 
-#### Python
-```python
-for i in range(0, 2) :
-    print("강한친구 대한육군")
-```
+> 강한친구 대한육군  
+> 강한친구 대한육군
 
 #### C++
 ```cpp
@@ -88,14 +84,6 @@ for (int i = 0; i < 2; i++)
 return 0;
 ```
 
-#### R
-```R
-for (i in c(0, 1))
-{
-    cat("강한친구 대한육군\n")
-}
-```
-
 #### Bash
 ```Bash
 for i in {0..1}
@@ -104,25 +92,33 @@ do
 done
 ```
 
+#### Python
+```python
+for i in range(0, 2) :
+    print("강한친구 대한육군")
+```
+
+#### R
+```R
+for (i in c(0, 1))
+{
+    cat("강한친구 대한육군\n")
+}
+```
+
 #### Text
 ```txt
 강한친구 대한육군
 강한친구 대한육군
 ```
 
-> 강한친구 대한육군  
-> 강한친구 대한육군
-
 
 ## [10171. Cats](#List)
 
-#### Python
-```python
-print("\    /\\")
-print(" )  ( ')")
-print("(  /  )")
-print(" \\(__)|")
-```
+> \    /\  
+>  )  ( ')  
+> (  /  )   
+>  \\(__)|  
 
 #### C++
 ```cpp
@@ -132,14 +128,6 @@ cout << "(  /  ) " << endl;
 cout << " \\(__)|" << endl;
 
 return 0;
-```
-
-#### R
-```R
-cat("\\    /\\
- )  ( \')
-(  /  )
- \\(__)|")
 ```
 
 #### Bash
@@ -152,6 +140,22 @@ echo " \\(__)|"
 # read
 ```
 
+#### Python
+```python
+print("\    /\\")
+print(" )  ( ')")
+print("(  /  )")
+print(" \\(__)|")
+```
+
+#### R
+```R
+cat("\\    /\\
+ )  ( \')
+(  /  )
+ \\(__)|")
+```
+
 #### Text
 ```txt
 \    /\
@@ -160,22 +164,14 @@ echo " \\(__)|"
  \(__)|
 ```
 
-> \    /\  
->  )  ( ')  
-> (  /  )   
->  \\(__)|  
-
 
 ## [10172. Dogs](#List)
 
-#### Python
-```python
-print("""|\\_/|
-|q p|   /}
-( 0 )\"\"\"\\
-|"^"`    |
-||_/=\\\\__|""")
-```
+> |\\_/|  
+> |q p|   /}  
+> ( 0 )"""\  
+> |"^"`    |  
+> ||_/=\\\\__|  
 
 #### C++ - trial 1
 ```cpp
@@ -201,15 +197,6 @@ cout << "||_/=\\\\__|" << endl;
 return 0;
 ```
 
-#### R
-```R
-cat("|\\_/|
-|q p|   /}
-( 0 )\"\"\"\\
-|\"^\"`    |
-||_/=\\\\__|")
-```
-
 #### Bash
 ```Bash
 echo "|\_/|"
@@ -221,6 +208,24 @@ echo "||_/=\\\\__|"
 # read
 ```
 
+#### Python
+```python
+print("""|\\_/|
+|q p|   /}
+( 0 )\"\"\"\\
+|"^"`    |
+||_/=\\\\__|""")
+```
+
+#### R
+```R
+cat("|\\_/|
+|q p|   /}
+( 0 )\"\"\"\\
+|\"^\"`    |
+||_/=\\\\__|")
+```
+
 #### Text
 ```txt
 |\_/|
@@ -230,20 +235,12 @@ echo "||_/=\\\\__|"
 ||_/=\\__|
 ```
 
-> |\\_/|  
-> |q p|   /}  
-> ( 0 )"""\  
-> |"^"`    |  
-> ||_/=\\\\__|  
-
 
 ## [1000. A+B](#List)
 
-#### Python
-```python
-a, b = map(int, input().split())
-print(a+b)
-```
+> 1 2
+
+> 3
 
 #### C++
 ```cpp
@@ -254,12 +251,6 @@ cout << a + b << endl;
 return 0;
 ```
 
-#### R
-```R
-num <- scan("stdin")    # recieve num[1], num[2], …… as numeric
-cat(num[1] + num[2])
-```
-
 #### Bash
 ```Bash
 read a b
@@ -268,18 +259,24 @@ echo $((a + b))
 # read
 ```
 
-> 1 2
+#### Python
+```python
+a, b = map(int, input().split())
+print(a+b)
+```
 
-> 3
+#### R
+```R
+num <- scan("stdin")    # recieve num[1], num[2], …… as numeric
+cat(num[1] + num[2])
+```
 
 
 ## [1001. A-B](#List)
 
-#### Python
-```python
-a, b = map(int, input().split())
-print(a-b)
-```
+> 3 2
+
+> 1
 
 #### C++
 ```cpp
@@ -290,12 +287,6 @@ cout << a - b << endl;
 return 0;
 ```
 
-#### R
-```R
-num <- scan("stdin")    # recieve num[1], num[2], …… as numeric
-cat(num[1] - num[2])
-```
-
 #### Bash
 ```Bash
 read a b
@@ -304,18 +295,24 @@ echo $((a - b))
 # read
 ```
 
-> 3 2
+#### Python
+```python
+a, b = map(int, input().split())
+print(a-b)
+```
 
-> 1
+#### R
+```R
+num <- scan("stdin")    # recieve num[1], num[2], …… as numeric
+cat(num[1] - num[2])
+```
 
 
 ## [10998. A*B](#List)
 
-#### Python
-```python
-a, b = map(int, input().split())
-print(a*b)
-```
+> 3 4
+
+> 12
 
 #### C++
 ```cpp
@@ -326,12 +323,6 @@ cout << a * b << endl;
 return 0;
 ```
 
-#### R
-```R
-num <- scan("stdin")    # recieve num[1], num[2], …… as numeric
-cat(num[1] * num[2])
-```
-
 #### Bash
 ```Bash
 read a b
@@ -340,18 +331,24 @@ echo $((a * b))
 # read
 ```
 
-> 3 4
+#### Python
+```python
+a, b = map(int, input().split())
+print(a*b)
+```
 
-> 12
+#### R
+```R
+num <- scan("stdin")    # recieve num[1], num[2], …… as numeric
+cat(num[1] * num[2])
+```
 
 
 ## [1008. A/B](#List)
 
-#### Python
-```python
-a, b = map(float, input().split())
-print(a/b)
-```
+> 1 3
+
+> 0.3333333333
 
 #### C++
 ```cpp
@@ -361,13 +358,6 @@ cout.precision(10);             // for reducing error < 10^(-9)
 cout << (double)a / b << endl;
 
 return 0;
-```
-
-#### R
-```R
-num <- scan("stdin")    # recieve num[1], num[2], …… as numeric
-options(digits = 10)
-cat(num[1] / num[2])
 ```
 
 #### Bash
@@ -383,23 +373,25 @@ printf "%.9f\n" $((a * 10**9 / b))e-9
 # read
 ```
 
-> 1 3
+#### Python
+```python
+a, b = map(float, input().split())
+print(a/b)
+```
 
-> 0.3333333333
+#### R
+```R
+num <- scan("stdin")    # recieve num[1], num[2], …… as numeric
+options(digits = 10)
+cat(num[1] / num[2])
+```
 
 
 ## [10869. 사칙연산](#List)
 
-#### Python
-```python
-a, b = map(int, input().split())
+> 7 3
 
-print(a+b)
-print(a-b)
-print(a*b)
-print(int(a/b))
-print(a%b)
-```
+> 10 4 21 2 1 (vertically)
 
 #### C++
 ```cpp
@@ -415,16 +407,6 @@ cout << a % b << endl;
 return 0;
 ```
 
-#### R
-```R
-num <- scan("stdin")                # recieve num[1], num[2], …… as numeric
-cat(num[1] + num[2], "\n")
-cat(num[1] - num[2], "\n")
-cat(num[1] * num[2], "\n")
-cat(floor(num[1] / num[2]), "\n")
-cat(num[1] %% num[2], "\n")
-```
-
 #### Bash
 ```Bash
 read a b
@@ -438,12 +420,33 @@ echo $((a % b))
 # read
 ```
 
-> 7 3
+#### Python
+```python
+a, b = map(int, input().split())
 
-> 10 4 21 2 1 (vertically)
+print(a+b)
+print(a-b)
+print(a*b)
+print(int(a/b))
+print(a%b)
+```
+
+#### R
+```R
+num <- scan("stdin")                # recieve num[1], num[2], …… as numeric
+cat(num[1] + num[2], "\n")
+cat(num[1] - num[2], "\n")
+cat(num[1] * num[2], "\n")
+cat(floor(num[1] / num[2]), "\n")
+cat(num[1] %% num[2], "\n")
+```
 
 
 ## [10926. ??!](#List)
+
+> joonas
+
+> joonas??!
 
 #### Bash
 ```Bash
@@ -453,12 +456,12 @@ echo "$id??!"   # How does Bash classify $id and ??! ?
 # read
 ```
 
-> joonas
-
-> joonas??!
-
 
 ## [18108. 1998년생인 내가 태국에서는 2541년생?!](#List)
+
+> 2541
+
+> 1998
 
 #### Bash
 ```Bash
@@ -472,22 +475,12 @@ echo $((by - diff))
 # read
 ```
 
-> 2541
-
-> 1998
-
 
 ## [10430. 나머지](#List)
 
-#### Python
-```python
-A, B, C = map(int, input().split())
+> 5 8 4
 
-print((A+B)%C)
-print(((A%C) + (B%C))%C)
-print((A*B)%C)
-print(((A%C)*(B%C))%C)
-```
+> 1 1 0 0 (vertically)
 
 #### C++
 ```cpp
@@ -500,6 +493,28 @@ cout << (A*B)%C << endl;
 cout << ((A%C)*(B%C))%C << endl;
 
 return 0;
+```
+
+#### Bash
+```Bash
+read A B C
+
+echo $(((A + B) % C))
+echo $((((A % C) + (B % C)) % C))
+echo $(((A * B) % C))
+echo $((((A % C) * (B % C)) % C))
+
+# read
+```
+
+#### Python
+```python
+A, B, C = map(int, input().split())
+
+print((A+B)%C)
+print(((A%C) + (B%C))%C)
+print((A*B)%C)
+print(((A%C)*(B%C))%C)
 ```
 
 #### R
@@ -517,55 +532,16 @@ cat((a * b) %% c, "\n")
 cat(((a %% c) * (b %% c)) %% c, "\n")
 ```
 
-#### Bash
-```Bash
-read A B C
-
-echo $(((A + B) % C))
-echo $((((A % C) + (B % C)) % C))
-echo $(((A * B) % C))
-echo $((((A % C) * (B % C)) % C))
-
-# read
-```
-
-> 5 8 4
-
-> 1 1 0 0 (vertically)
-
 
 ## [2588. 곱셈](#List)
 
-#### Python - trial 1
-```python
-a = int(input())
-b = str(input())
+> 472  
+> 385
 
-for i in range(0,len(b)) :
-    print(a*int(b[-i-1]))
-
-print(a*int(b))             // crazy
-```
-
-#### Python - trial 2
-```python
-a = int(input())
-b = str(input())
-
-sum = 0
-for i in range(0,len(b)) :
-    answer = a * int(b[-i-1])
-    print(answer)
-    sum += answer * pow(10, i)
-
-print(sum)
-```
 > 2360  
 > 3776  
 > 1416  
 > 181720
-
-> Accepted
 
 #### C++ - trial 1-1
 ```cpp
@@ -716,6 +692,53 @@ cout << sum + 1 << endl; // can't find why lack of 1 - crazy!
 ```
 > ㅋㅋ
 
+#### Bash
+```Bash
+read a
+read b
+# guaranteed that 100 <= a, b  <= 999
+
+let "sum = 0"
+for i in {2..0..-1}
+do
+    let "prod = $a * ${b:i:1}"          # ${b : i : 1} doesn't work
+    echo $prod
+    let "sum += $prod * (10 ** (2 - $i))"
+done
+
+echo $sum
+
+# read
+```
+> Accepted
+
+#### Python - trial 1
+```python
+a = int(input())
+b = str(input())
+
+for i in range(0,len(b)) :
+    print(a*int(b[-i-1]))
+
+print(a*int(b))             // crazy
+```
+> Accepted
+
+#### Python - trial 2
+```python
+a = int(input())
+b = str(input())
+
+sum = 0
+for i in range(0,len(b)) :
+    answer = a * int(b[-i-1])
+    print(answer)
+    sum += answer * pow(10, i)
+
+print(sum)
+```
+> Accepted
+
 #### R
 ```R
 num <- scan("stdin")                            # recieve num[1], num[2], …… as numeric
@@ -735,32 +758,4 @@ for (i in 1:3)
 
 cat(sum, "\n")
 ```
-
-#### Bash
-```Bash
-read a
-read b
-# guaranteed that 100 <= a, b  <= 999
-
-let "sum = 0"
-for i in {2..0..-1}
-do
-    let "prod = $a * ${b:i:1}"          # ${b : i : 1} doesn't work
-    echo $prod
-    let "sum += $prod * (10 ** (2 - $i))"
-done
-
-echo $sum
-
-# read
-```
-
-> 472  
-> 385
-
-> 2360  
-> 3776  
-> 1416  
-> 181720
-
 > Accepted

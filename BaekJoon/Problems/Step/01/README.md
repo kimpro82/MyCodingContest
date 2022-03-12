@@ -651,7 +651,7 @@ int cipher = pow(10, i);        // trial 3-5 : the same with 1 but run by C++17(
 > Accepted
 
 #### C++ - trial 6 (final)
-(2015.05.24)
+(2021.05.24)
 ```cpp
 int a;
 // char b[3];                       // trial 1-1 : a = 256 when declare char b[3]

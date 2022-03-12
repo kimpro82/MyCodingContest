@@ -54,7 +54,7 @@ return 0;
 
 #### Golang
 ```go
-
+fmt.Println("Hello World!")
 ```
 
 #### Python
@@ -97,9 +97,19 @@ for (int i = 0; i < 2; i++)
 return 0;
 ```
 
-#### Golang
+#### Golang - trial 1
 ```go
+var s string = "강한친구 대한육군"
+fmt.Println(s)
+fmt.Println(s)
+```
 
+#### Golang - trial 2
+```go
+var s string = "강한친구 대한육군"
+for i := 0; i < 2; i++ {
+        fmt.Println(s)
+}
 ```
 
 #### Python
@@ -152,7 +162,12 @@ return 0;
 
 #### Golang
 ```go
+    var s string = `\    /\
+ )  ( ')
+(  /  )
+ \(__)|`
 
+    fmt.Println(s)
 ```
 
 #### Python
@@ -225,7 +240,11 @@ return 0;
 
 #### Golang
 ```go
-
+fmt.Println("|\\_/|")
+fmt.Println("|q p|   /}")
+fmt.Println("( 0 )\"\"\"\\")
+fmt.Println("|\"^\"`    |")
+fmt.Println("||_/=\\\\__|")
 ```
 
 #### Python
@@ -281,7 +300,10 @@ return 0;
 
 #### Golang
 ```go
+var a, b int
+fmt.Scanln(&a, &b)
 
+fmt.Println(a + b)
 ```
 
 #### Python
@@ -322,7 +344,10 @@ return 0;
 
 #### Golang
 ```go
+var a, b int
+fmt.Scanln(&a, &b)
 
+fmt.Println(a - b)
 ```
 
 #### Python
@@ -363,7 +388,10 @@ return 0;
 
 #### Golang
 ```go
+var a, b int
+fmt.Scanln(&a, &b)
 
+fmt.Println(a * b)
 ```
 
 #### Python
@@ -410,8 +438,12 @@ return 0;
 
 #### Golang
 ```go
+var a, b float64
+fmt.Scanln(&a, &b)
 
+fmt.Printf("%.10f\n", a / b)
 ```
+> always marks 10 decimal places
 
 #### Python
 ```python
@@ -462,7 +494,14 @@ return 0;
 
 #### Golang
 ```go
+var a, b int
+fmt.Scanln(&a, &b)
 
+fmt.Println(a + b)
+fmt.Println(a - b)
+fmt.Println(a * b)
+fmt.Println(a / b)
+fmt.Println(a % b)
 ```
 
 #### Python
@@ -503,7 +542,10 @@ echo "$id??!"   # How does Bash classify $id and ??! ?
 
 #### Golang
 ```go
+var s string
+fmt.Scanln(&s)
 
+fmt.Println(s + "??!")
 ```
 
 
@@ -527,7 +569,11 @@ echo $((by - diff))
 
 #### Golang
 ```go
+var by int
+fmt.Scanln(&by)
 
+const diff int = 2541 - 1998
+fmt.Println(by - diff)
 ```
 
 
@@ -564,7 +610,13 @@ return 0;
 
 #### Golang
 ```go
+var A, B, C int
+fmt.Scanln(&A, &B, &C)
 
+fmt.Println((A + B) % C)
+fmt.Println(((A % C) + (B % C)) % C)
+fmt.Println((A * B) % C)
+fmt.Println(((A % C) * (B % C)) % C)
 ```
 
 #### Python
@@ -774,7 +826,29 @@ cout << sum + 1 << endl; // can't find why lack of 1 - crazy!
 
 #### Golang
 ```go
+package main
+import (
+    "fmt"
+    "math"
+)
+```
+```go
+var a int
+var b string
+fmt.Scanln(&a)
+fmt.Scanln(&b)
 
+var sum int = 0
+var answer int
+for i := 0; i < 3; i++ {
+    // test : ok
+    // fmt.Println(b[3-i-1] - '0')
+    answer = a * int(b[3-i-1] - '0')
+    fmt.Println(answer)
+    sum += answer * int(math.Pow(10., float64(i)))
+}
+
+fmt.Println(sum)
 ```
 
 #### Python - trial 1

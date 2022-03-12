@@ -33,6 +33,8 @@ https://www.acmicpc.net/step/1
 &nbsp;&nbsp; - `C++` : skipped `main()` function's brace(`{}`) and its outside(`<iostream>` header and namespace `std`).  
 &nbsp;&nbsp;&nbsp;&nbsp; · Basically, all the codes has the `<iostream>` header and namespace `std` even if there's no mention.  
 &nbsp;&nbsp;&nbsp;&nbsp; · When any additional header is used, the header block is also noted seperately.  
+&nbsp;&nbsp; - `Golang` : Basically, all the codes has the following two header lines even if there's no mention.; `package main` `import "fmt"`  
+&nbsp;&nbsp;&nbsp;&nbsp; · When any additional header is used, the header block is also noted seperately.  
 &nbsp;&nbsp; - `R` : Some answers occur runtime errors with unknowable reason in the BOJ grading machine.  
 &nbsp;&nbsp; - `Text` : Only possible problems that do not require input values are solved.  
 
@@ -50,6 +52,11 @@ echo "Hello World!"
 ```cpp
 cout << "Hello World!" << endl;
 return 0;
+```
+
+#### Golang
+```go
+
 ```
 
 #### Python
@@ -90,6 +97,11 @@ for (int i = 0; i < 2; i++)
 }
 
 return 0;
+```
+
+#### Golang
+```go
+
 ```
 
 #### Python
@@ -138,6 +150,11 @@ cout << "(  /  ) " << endl;
 cout << " \\(__)|" << endl;
 
 return 0;
+```
+
+#### Golang
+```go
+
 ```
 
 #### Python
@@ -208,6 +225,11 @@ cout << "||_/=\\\\__|" << endl;
 return 0;
 ```
 
+#### Golang
+```go
+
+```
+
 #### Python
 ```python
 print("""|\\_/|
@@ -259,6 +281,11 @@ cout << a + b << endl;
 return 0;
 ```
 
+#### Golang
+```go
+
+```
+
 #### Python
 ```python
 a, b = map(int, input().split())
@@ -295,6 +322,11 @@ cout << a - b << endl;
 return 0;
 ```
 
+#### Golang
+```go
+
+```
+
 #### Python
 ```python
 a, b = map(int, input().split())
@@ -329,6 +361,11 @@ cin >> a >> b;          // 3 4
 cout << a * b << endl;
 
 return 0;
+```
+
+#### Golang
+```go
+
 ```
 
 #### Python
@@ -371,6 +408,11 @@ cout.precision(10);             // for reducing error < 10^(-9)
 cout << (double)a / b << endl;
 
 return 0;
+```
+
+#### Golang
+```go
+
 ```
 
 #### Python
@@ -420,6 +462,11 @@ cout << a % b << endl;
 return 0;
 ```
 
+#### Golang
+```go
+
+```
+
 #### Python
 ```python
 a, b = map(int, input().split())
@@ -456,6 +503,11 @@ echo "$id??!"   # How does Bash classify $id and ??! ?
 # read
 ```
 
+#### Golang
+```go
+
+```
+
 
 ## [18108. 1998년생인 내가 태국에서는 2541년생?!](#List)
 
@@ -473,6 +525,11 @@ let "diff = 2541 - 1998"
 echo $((by - diff))
 
 # read
+```
+
+#### Golang
+```go
+
 ```
 
 
@@ -505,6 +562,11 @@ cout << (A*B)%C << endl;
 cout << ((A%C)*(B%C))%C << endl;
 
 return 0;
+```
+
+#### Golang
+```go
+
 ```
 
 #### Python
@@ -711,6 +773,11 @@ return 0;
 cout << sum + 1 << endl; // can't find why lack of 1 - crazy!
 ```
 > ㅋㅋ
+
+#### Golang
+```go
+
+```
 
 #### Python - trial 1
 ```python

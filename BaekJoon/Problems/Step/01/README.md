@@ -5,11 +5,9 @@
 (2021.05.13) - `Python`, `C++`  
 (2021.07.11) - `R`  
 (2022.01.26) - `Bash`, `Text` (only possible)
+(2022.03.02) - `Golang`
 
 https://www.acmicpc.net/step/1
-
-※ All the codes of any language for the same problem have the same result.  
-※ C++ codes : **skipped** `main()` function's brace(`{}`) and its outside
 
 
 ### List
@@ -27,6 +25,17 @@ https://www.acmicpc.net/step/1
 - [18108. 1998년생인 내가 태국에서는 2541년생?!](#18108-1998년생인-내가-태국에서는-2541년생)
 - [10430. 나머지](#10430-나머지)
 - [2588. 곱셈](#2588-곱셈)
+
+
+**※ Note**  
+
+&nbsp;&nbsp; - All the codes of any language for the same problem have basically the same result.  
+&nbsp;&nbsp; - `Bash` : skipped the first line; `#!/bin/bash`  
+&nbsp;&nbsp; - `C++` : skipped `main()` function's brace(`{}`) and its outside(`<iostream>` header and namespace `std`).  
+&nbsp;&nbsp;&nbsp;&nbsp; · Basically, all the codes has the `<iostream>` header and namespace `std` even if there's no mention.  
+&nbsp;&nbsp;&nbsp;&nbsp; · When any additional header is used, the header block is also noted seperately.  
+&nbsp;&nbsp; - `R` : Some answers occur runtime errors with unknowable reason in the BOJ grading machine.  
+&nbsp;&nbsp; - `Text` : Only possible problems that do not require input values are solved.  
 
 
 ## [2557. Hello World](#List)

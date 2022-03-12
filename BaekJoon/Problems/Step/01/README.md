@@ -5,7 +5,7 @@
 (2021.05.13) - `Python`, `C++`  
 (2021.07.11) - `R`  
 (2022.01.26) - `Bash`, `Text` (only possible)  
-(2022.03.02) - `Golang`
+(2022.03.12) - `Golang`
 
 https://www.acmicpc.net/step/1
 
@@ -41,15 +41,15 @@ https://www.acmicpc.net/step/1
 
 > Hello World!
 
+#### Bash
+```Bash
+echo "Hello World!"
+```
+
 #### C++
 ```cpp
 cout << "Hello World!" << endl;
 return 0;
-```
-
-#### Bash
-```Bash
-echo "Hello World!"
 ```
 
 #### Python
@@ -74,6 +74,14 @@ Hello World!
 > 강한친구 대한육군  
 > 강한친구 대한육군
 
+#### Bash
+```Bash
+for i in {0..1}
+do
+    echo "강한친구 대한육군"
+done
+```
+
 #### C++
 ```cpp
 for (int i = 0; i < 2; i++)
@@ -82,14 +90,6 @@ for (int i = 0; i < 2; i++)
 }
 
 return 0;
-```
-
-#### Bash
-```Bash
-for i in {0..1}
-do
-    echo "강한친구 대한육군"
-done
 ```
 
 #### Python
@@ -120,16 +120,6 @@ for (i in c(0, 1))
 > (  /  )   
 >  \\(__)|  
 
-#### C++
-```cpp
-cout << "\\    /\\" << endl;
-cout << " )  ( ')" << endl;
-cout << "(  /  ) " << endl;
-cout << " \\(__)|" << endl;
-
-return 0;
-```
-
 #### Bash
 ```Bash
 echo "\\    /\\"
@@ -138,6 +128,16 @@ echo "(  /  )"
 echo " \\(__)|"
 
 # read
+```
+
+#### C++
+```cpp
+cout << "\\    /\\" << endl;
+cout << " )  ( ')" << endl;
+cout << "(  /  ) " << endl;
+cout << " \\(__)|" << endl;
+
+return 0;
 ```
 
 #### Python
@@ -173,6 +173,17 @@ cat("\\    /\\
 > |"^"`    |  
 > ||_/=\\\\__|  
 
+#### Bash
+```Bash
+echo "|\_/|"
+echo "|q p|   /}"
+echo "( 0 )\"\"\"\\"
+echo "|\"^\"\`    |"
+echo "||_/=\\\\__|"
+
+# read
+```
+
 #### C++ - trial 1
 ```cpp
 cout << R"(
@@ -195,17 +206,6 @@ cout << "|\"^\"`    |" << endl;
 cout << "||_/=\\\\__|" << endl;
 
 return 0;
-```
-
-#### Bash
-```Bash
-echo "|\_/|"
-echo "|q p|   /}"
-echo "( 0 )\"\"\"\\"
-echo "|\"^\"\`    |"
-echo "||_/=\\\\__|"
-
-# read
 ```
 
 #### Python
@@ -242,6 +242,14 @@ cat("|\\_/|
 
 > 3
 
+#### Bash
+```Bash
+read a b
+echo $((a + b))
+
+# read
+```
+
 #### C++
 ```cpp
 int a, b;
@@ -249,14 +257,6 @@ cin >> a >> b;          // 1 2
 cout << a + b << endl;
 
 return 0;
-```
-
-#### Bash
-```Bash
-read a b
-echo $((a + b))
-
-# read
 ```
 
 #### Python
@@ -278,6 +278,14 @@ cat(num[1] + num[2])
 
 > 1
 
+#### Bash
+```Bash
+read a b
+echo $((a - b))
+
+# read
+```
+
 #### C++
 ```cpp
 int a, b;
@@ -285,14 +293,6 @@ cin >> a >> b;          // 3 2
 cout << a - b << endl;
 
 return 0;
-```
-
-#### Bash
-```Bash
-read a b
-echo $((a - b))
-
-# read
 ```
 
 #### Python
@@ -314,6 +314,14 @@ cat(num[1] - num[2])
 
 > 12
 
+#### Bash
+```Bash
+read a b
+echo $((a * b))
+
+# read
+```
+
 #### C++
 ```cpp
 int a, b;
@@ -321,14 +329,6 @@ cin >> a >> b;          // 3 4
 cout << a * b << endl;
 
 return 0;
-```
-
-#### Bash
-```Bash
-read a b
-echo $((a * b))
-
-# read
 ```
 
 #### Python
@@ -350,16 +350,6 @@ cat(num[1] * num[2])
 
 > 0.3333333333
 
-#### C++
-```cpp
-int a, b;
-cin >> a >> b;                  // 1 3
-cout.precision(10);             // for reducing error < 10^(-9)
-cout << (double)a / b << endl;
-
-return 0;
-```
-
 #### Bash
 ```Bash
 read a b
@@ -371,6 +361,16 @@ read a b
 printf "%.9f\n" $((a * 10**9 / b))e-9
 
 # read
+```
+
+#### C++
+```cpp
+int a, b;
+cin >> a >> b;                  // 1 3
+cout.precision(10);             // for reducing error < 10^(-9)
+cout << (double)a / b << endl;
+
+return 0;
 ```
 
 #### Python
@@ -393,6 +393,19 @@ cat(num[1] / num[2])
 
 > 10 4 21 2 1 (vertically)
 
+#### Bash
+```Bash
+read a b
+
+echo $((a + b))
+echo $((a - b))
+echo $((a * b))
+echo $((a / b))
+echo $((a % b))
+
+# read
+```
+
 #### C++
 ```cpp
 int a, b;
@@ -405,19 +418,6 @@ cout << a / b << endl;
 cout << a % b << endl;
 
 return 0;
-```
-
-#### Bash
-```Bash
-read a b
-
-echo $((a + b))
-echo $((a - b))
-echo $((a * b))
-echo $((a / b))
-echo $((a % b))
-
-# read
 ```
 
 #### Python
@@ -482,6 +482,18 @@ echo $((by - diff))
 
 > 1 1 0 0 (vertically)
 
+#### Bash
+```Bash
+read A B C
+
+echo $(((A + B) % C))
+echo $((((A % C) + (B % C)) % C))
+echo $(((A * B) % C))
+echo $((((A % C) * (B % C)) % C))
+
+# read
+```
+
 #### C++
 ```cpp
 int A, B, C;
@@ -493,18 +505,6 @@ cout << (A*B)%C << endl;
 cout << ((A%C)*(B%C))%C << endl;
 
 return 0;
-```
-
-#### Bash
-```Bash
-read A B C
-
-echo $(((A + B) % C))
-echo $((((A % C) + (B % C)) % C))
-echo $(((A * B) % C))
-echo $((((A % C) * (B % C)) % C))
-
-# read
 ```
 
 #### Python
@@ -542,6 +542,26 @@ cat(((a %% c) * (b %% c)) %% c, "\n")
 > 3776  
 > 1416  
 > 181720
+
+#### Bash
+```Bash
+read a
+read b
+# guaranteed that 100 <= a, b  <= 999
+
+let "sum = 0"
+for i in {2..0..-1}
+do
+    let "prod = $a * ${b:i:1}"          # ${b : i : 1} doesn't work
+    echo $prod
+    let "sum += $prod * (10 ** (2 - $i))"
+done
+
+echo $sum
+
+# read
+```
+> Accepted
 
 #### C++ - trial 1-1
 ```cpp
@@ -691,26 +711,6 @@ return 0;
 cout << sum + 1 << endl; // can't find why lack of 1 - crazy!
 ```
 > ㅋㅋ
-
-#### Bash
-```Bash
-read a
-read b
-# guaranteed that 100 <= a, b  <= 999
-
-let "sum = 0"
-for i in {2..0..-1}
-do
-    let "prod = $a * ${b:i:1}"          # ${b : i : 1} doesn't work
-    echo $prod
-    let "sum += $prod * (10 ** (2 - $i))"
-done
-
-echo $sum
-
-# read
-```
-> Accepted
 
 #### Python - trial 1
 ```python

@@ -1,15 +1,53 @@
 ## BAEKJOON Online Judge
 
-## 문제 > 단계별로 풀어보기 > 8. 기본 수학 1
-(2021.07.12)  
+# 문제 > 단계별로 풀어보기 > 8. 기본 수학 1
+
 https://www.acmicpc.net/step/8
 
-※ C++ codes : **skipped** `main()` function's brace(`{}`) and its outside  
-&nbsp; - Basically, all the codes has the `<iostream>` header and namespace `std` even if there's no mention.  
-&nbsp; - When any additional header is used, the header block is also noted seperately.  
+(2021.07.12) - `C++`  
+(2022.03.11) - `Bash`
 
 
-### 1712. 손익분기점
+## **List**
+
+- [1712. 손익분기점](#1712-손익분기점)
+- [2292. 벌집](#2292-벌집)
+- [1193. 분수찾기](#1193-분수찾기)
+- [2869. PUŽ](#2869-puž)
+- [10250. ACM Hotel](#10250-acm-hotel)
+- [2775. 부녀회장이 될테야](#2775-부녀회장이-될테야)
+- [2839. ŠEĆER](#2839-šećer)
+- [10757. 큰 수 A+B](#10757-큰-수-ab)
+- [1011. Fly me to the Alpha Centauri](#1011-fly-me-to-the-alpha-centauri---excluded) - *excluded*
+
+
+**※ Note**
+
+&nbsp;&nbsp; - All the codes of any language for the same problem have basically the same result.  
+&nbsp;&nbsp; - `Bash` : skipped the first line; `#!/bin/bash`  
+&nbsp;&nbsp; - `C++` : skipped `main()` function's brace(`{}`) and its outside(`<iostream>` header and namespace `std`).  
+&nbsp;&nbsp;&nbsp;&nbsp; · Basically, all the codes has the `<iostream>` header and namespace `std` even if there's no mention.  
+&nbsp;&nbsp;&nbsp;&nbsp; · When any additional header is used, the header block is also noted seperately.  
+
+
+## [1712. 손익분기점](#list)
+
+> 1000 70 170
+
+> 11
+
+#### Bash
+```bash
+read a b c
+
+let "margin = c - b"
+
+if [ $margin -gt 0 ]; then
+    echo $((a / margin + 1))
+else
+    echo -1
+fi
+```
 
 #### C++ 
 ```cpp
@@ -28,12 +66,30 @@ if (c - b > 0)                      // Find if price(c) - variable cost(b) > 0
 return 0;
 ```
 
-> 1000 70 170
 
-> 11
+## [2292. 벌집](#list)
 
+> 13
 
-### 2292. 벌집
+> 3
+
+#### Bash
+```bash
+read n
+
+let "move = 0"
+
+while [ $n -gt 1 ]
+do
+    ((move++))
+    let "n -= 6 * move"
+
+    # test
+    # echo $n $move
+done
+
+echo $((move + 1))
+```
 
 #### C++ 
 ```cpp
@@ -55,12 +111,47 @@ cout << move + 1 << endl;
 return 0;
 ```
 
-> 13
 
-> 3
+## [1193. 분수찾기](#list)
 
+> 14
 
-### 1193. 분수찾기
+> 14 1 1  
+> 14 2 3  
+> 14 3 6  
+> 14 4 10  
+> 14 5 15  
+> 2/4
+
+#### Bash
+```bash
+read x
+
+let "zigzag = 0"
+let "sum = 0"
+
+while [ $x -gt $sum ]
+do
+    ((zigzag++))
+    let "sum += zigzag"
+
+    # test
+    # echo $x $zigzag $sum
+done
+
+let "numerator = 0"
+let "denominator = 0"
+
+if [[ $((zigzag % 2)) == 0 ]]; then
+    let "denominator = sum - x + 1"
+    let "numerator = zigzag - denominator + 1"
+else
+    let "numerator = sum - x + 1"
+    let "denominator = zigzag - numerator + 1"
+fi
+
+echo ${numerator}/${denominator}
+```
 
 #### C++ 
 ```cpp
@@ -93,17 +184,39 @@ cout << numerator << '/' << denominator << endl;
 return 0;
 ```
 
-> 14
 
-> 14 1 1  
-> 14 2 3  
-> 14 3 6  
-> 14 4 10  
-> 14 5 15  
-> 2/4
+## [2869. PUŽ](#list)
 
+> 5 1 6
 
-### 2869. PUŽ
+> 1 5 -1  
+> 2 9 3  
+> 2
+
+#### Bash
+```bash
+read a b v
+
+let "day = (v - b) / (a - b) - 1"
+let "location = (a - b) * day"
+
+while true
+do
+    ((day++))
+    let "location += a"
+
+    # test
+    # echo $day $location $((location - v))
+
+    if [ $location -ge $v ]; then
+        break
+    else
+        let "location -= b"
+    fi
+done
+
+echo $day
+```
 
 #### C++ 
 ```cpp
@@ -139,14 +252,38 @@ cout << day << endl;
 return 0;
 ```
 
-> 5 1 6
 
-> 1 5 -1  
-> 2 9 3  
-> 2
+## [10250. ACM Hotel](#list)
 
+> 2  
+> 6 12 10  
+> 30 50 72
 
-### 10250. ACM Hotel
+> 402  
+> 1203
+
+#### Bash
+```bash
+read t
+
+for ((i = 0; i < t; i++))
+do
+    read h w n
+
+    let "room = (n - 1) / h + 1"
+    let "floor = n % h"
+
+    if [ $floor -eq 0 ]; then
+        let "floor = h"
+    fi
+
+    if [ $room -lt 10 ]; then
+        echo ${floor}0${room}
+    else
+        echo ${floor}${room}
+    fi
+done
+```
 
 #### C++ 
 ```cpp
@@ -183,15 +320,20 @@ for (int t = 0; t < T; t++)
 return 0;
 ```
 
+
+## [2775. 부녀회장이 될테야](#list)
+
 > 2  
-> 6 12 10  
-> 30 50 72
+> 1  
+> 3  
+> 2  
+> 3
 
-> 402  
-> 1203
+> 6  
+> 10
 
-
-### 2775. 부녀회장이 될테야
+#### Bash
+Rumor has it that there's a tricky way to use **2d array** in Bash although isn't supplied regularly, but I feel quite annoyed today ……
 
 #### C++ 
 ```cpp
@@ -222,17 +364,42 @@ for (int t = 0; t < T; t++)
 return 0;
 ```
 
-> 2  
-> 1  
-> 3  
-> 2  
-> 3
 
-> 6  
-> 10
+## [2839. ŠEĆER](#list)
+
+> 18
+
+> 4
+
+#### Bash
+```bash
+read n
+
+let "bag3 = 0"
+let "rest = 1"
+
+for ((i = 0; i <= $((n / 3)); i++))
+do
+    # if [[ $(($((n - i * 3)) % 5)) == 0 ]]; then       # worse readability
+    let "criteria = (n - i * 3) % 5"
+    if [ $criteria -eq 0 ]; then
+        let "bag3 = i"
+        let "rest = 0"
+        break
+    fi
+
+    # test
+    # echo ${bag3} $((bag3 * 3)) $((n - bag3 * 3))
+done
 
 
-### 2839. ŠEĆER
+
+if [ $rest -eq 0 ]; then
+    echo $((bag3 + (n - bag3 * 3) /  5))
+else
+    echo -1
+fi
+```
 
 #### C++ 
 ```cpp
@@ -266,12 +433,90 @@ if (rest == false)
 return 0;
 ```
 
-> 18
 
-> 4
+## [10757. 큰 수 A+B](#list)
 
+> 9223372036854775807 9223372036854775808
 
-### 10757. 큰 수 A+B
+> 51615590737044764481  
+> 18446744073709551615
+
+#### Bash
+```bash
+read a b
+let "aLen = ${#a}"
+let "bLen = ${#b}"
+
+if [ $aLen -ge $bLen ]; then
+    let "maxSize = aLen"
+    let "minSize = bLen"
+else
+    let "maxSize = bLen"
+    let "minSize = aLen"
+fi
+
+let "buffer = 0"
+
+# test
+# echo $maxSize $minSize
+```
+```bash
+# Sum each digit (1) : 0 ~ minSize - 1
+for ((i = 0; i < minSize; i++))
+do
+    let "buffer += ${a:$((aLen-1-i)):1} + ${b:$((bLen-1-i)):1}"     # it works!
+    if [ $buffer -lt 10 ]; then
+        let "sum[i] = buffer"
+        let "buffer = 0"
+    else
+        let "sum[i] = buffer - 10"
+        let "buffer = 1"
+    fi
+
+    # test
+    # echo $i $buffer ${sum[$i]}
+done
+```
+```bash
+# Sum each digit (2) : minSize ~ maxSize - 1
+for ((j = minSize; j < maxSize; j++))
+do
+    if [ $aLen -gt $bLen ]; then
+        let "buffer += ${a:$((aLen-1-j)):1}"
+    else
+        let "buffer += ${b:$((bLen-1-j)):1}"
+    fi
+
+    if [ $buffer -lt 10 ]; then
+        let "sum[j] = buffer"
+        let "buffer = 0"
+    else
+        let "sum[j] = buffer - 10"
+        let "buffer = 1"
+    fi
+
+    # test
+    # echo $i $buffer ${sum[$i]}
+done
+```
+```bash
+# Sum each digit (3) : maxSize
+if [ $buffer -eq 1 ]; then
+    let "sum[maxSize] = 1"
+    let "maxSize++"
+fi
+# test
+# echo $((maxSize-1)) $buffer ${sum[$((maxSize-1))]}
+```
+```bash
+# Output
+for ((k = 0; k < maxSize; k++))
+do
+    echo -n "${sum[$((maxSize-1-k))]}"                              # don't confuse the indexing syntax between array and string!
+done
+echo
+```
+> Time Litmit Exceeded
 
 #### C++ 
 ```cpp
@@ -351,17 +596,17 @@ cout << endl;
 return 0;
 ```
 
-> 9223372036854775807 9223372036854775808
 
-> 0 7 8 1 5  
-> 1 0 0 0 1  
-> ……  
-> 18 9 9 1 8  
-> 51615590737044764481  
-> 18446744073709551615
+## [1011. Fly me to the Alpha Centauri](#list) - *excluded*
 
+> 3  
+> 0 3  
+> 1 5  
+> 45 50
 
-### 1011. Fly me to the Alpha Centauri
+> 3  
+> 3  
+> 4
 
 #### C++ - Trial 1
 ```cpp
@@ -425,11 +670,6 @@ for (int t = 0; t < T; t++)
 
 return 0;
 ```
-> 3  
-> 0 3  
-> 1 5  
-> 45 50
-
 > 1 1 3 -2  
 > 2 2 3 -1  
 > 3 4 3 1  

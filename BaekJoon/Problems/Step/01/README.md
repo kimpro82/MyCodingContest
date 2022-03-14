@@ -4,12 +4,10 @@
 
 (2021.05.13) - `Python`, `C++`  
 (2021.07.11) - `R`  
-(2022.01.26) - `Bash`, `Text` (only possible)
+(2022.01.26) - `Bash`, `Text` (only possible)  
+(2022.03.12) - `Golang`
 
 https://www.acmicpc.net/step/1
-
-※ All the codes of any language for the same problem have the same result.  
-※ C++ codes : **skipped** `main()` function's brace(`{}`) and its outside
 
 
 ### List
@@ -23,17 +21,29 @@ https://www.acmicpc.net/step/1
 - [10998. A*B](#10998-ab)
 - [1008. A/B](#1008-ab)
 - [10869. 사칙연산](#10869-사칙연산)
-- [10926. ??!](#10926-)
-- [18108. 1998년생인 내가 태국에서는 2541년생?!](#18108-1998년생인-내가-태국에서는-2541년생)
+- [10926. ??!](#10926-) *(new)*
+- [18108. 1998년생인 내가 태국에서는 2541년생?!](#18108-1998년생인-내가-태국에서는-2541년생) *(new)*
 - [10430. 나머지](#10430-나머지)
 - [2588. 곱셈](#2588-곱셈)
 
 
+**※ Note**  
+
+&nbsp;&nbsp; - All the codes of any language for the same problem have basically the same result.  
+&nbsp;&nbsp; - `C++`* : skipped `main()` function's brace(`{}`) and its outside including two header lines; `#include <iostream>` `using namespace std;`  
+&nbsp;&nbsp; - `Golang`* : skipped `main()` function's brace(`{}`) and its outside including two header lines; `package main` `import "fmt"`  
+&nbsp;&nbsp; - `R` : Some answers occur runtime errors with unknowable reason in the BOJ grading machine.  
+&nbsp;&nbsp; - `Text` : Only possible problems that do not require input values are solved.  
+&nbsp;&nbsp; * When any additional header is used, the header block is also noted seperately.
+
+
 ## [2557. Hello World](#List)
 
-#### Python
-```python
-print("Hello World!")
+> Hello World!
+
+#### Bash
+```Bash
+echo "Hello World!"
 ```
 
 #### C++
@@ -42,15 +52,20 @@ cout << "Hello World!" << endl;
 return 0;
 ```
 
+#### Golang
+```go
+fmt.Println("Hello World!")
+```
+
+#### Python
+```python
+print("Hello World!")
+```
+
 #### R
 ```R
 # print("Hello World!") # Runtime Error
 cat("Hello World!")
-```
-
-#### Bash
-```Bash
-echo "Hello World!"
 ```
 
 #### Text
@@ -58,15 +73,18 @@ echo "Hello World!"
 Hello World!
 ```
 
-> Hello World!
-
 
 ## [10718. We love kriii](#List)
 
-#### Python
-```python
-for i in range(0, 2) :
-    print("강한친구 대한육군")
+> 강한친구 대한육군  
+> 강한친구 대한육군
+
+#### Bash
+```Bash
+for i in {0..1}
+do
+    echo "강한친구 대한육군"
+done
 ```
 
 #### C++
@@ -79,6 +97,27 @@ for (int i = 0; i < 2; i++)
 return 0;
 ```
 
+#### Golang - trial 1
+```go
+var s string = "강한친구 대한육군"
+fmt.Println(s)
+fmt.Println(s)
+```
+
+#### Golang - trial 2
+```go
+var s string = "강한친구 대한육군"
+for i := 0; i < 2; i++ {
+        fmt.Println(s)
+}
+```
+
+#### Python
+```python
+for i in range(0, 2) :
+    print("강한친구 대한육군")
+```
+
 #### R
 ```R
 for (i in c(0, 1))
@@ -87,32 +126,28 @@ for (i in c(0, 1))
 }
 ```
 
-#### Bash
-```Bash
-for i in {0..1}
-do
-    echo "강한친구 대한육군"
-done
-```
-
 #### Text
 ```txt
 강한친구 대한육군
 강한친구 대한육군
 ```
 
-> 강한친구 대한육군  
-> 강한친구 대한육군
-
 
 ## [10171. Cats](#List)
 
-#### Python
-```python
-print("\    /\\")
-print(" )  ( ')")
-print("(  /  )")
-print(" \\(__)|")
+> \    /\  
+>  )  ( ')  
+> (  /  )   
+>  \\(__)|  
+
+#### Bash
+```Bash
+echo "\\    /\\"
+echo " )  ( ')"
+echo "(  /  )"
+echo " \\(__)|"
+
+# read
 ```
 
 #### C++
@@ -125,22 +160,30 @@ cout << " \\(__)|" << endl;
 return 0;
 ```
 
+#### Golang
+```go
+var s string = `\    /\
+)  ( ')
+(  /  )
+\(__)|`
+
+fmt.Println(s)
+```
+
+#### Python
+```python
+print("\    /\\")
+print(" )  ( ')")
+print("(  /  )")
+print(" \\(__)|")
+```
+
 #### R
 ```R
 cat("\\    /\\
  )  ( \')
 (  /  )
  \\(__)|")
-```
-
-#### Bash
-```Bash
-echo "\\    /\\"
-echo " )  ( ')"
-echo "(  /  )"
-echo " \\(__)|"
-
-# read
 ```
 
 #### Text
@@ -151,21 +194,24 @@ echo " \\(__)|"
  \(__)|
 ```
 
-> \    /\  
->  )  ( ')  
-> (  /  )   
->  \\(__)|  
-
 
 ## [10172. Dogs](#List)
 
-#### Python
-```python
-print("""|\\_/|
-|q p|   /}
-( 0 )\"\"\"\\
-|"^"`    |
-||_/=\\\\__|""")
+> |\\_/|  
+> |q p|   /}  
+> ( 0 )"""\  
+> |"^"`    |  
+> ||_/=\\\\__|  
+
+#### Bash
+```Bash
+echo "|\_/|"
+echo "|q p|   /}"
+echo "( 0 )\"\"\"\\"
+echo "|\"^\"\`    |"
+echo "||_/=\\\\__|"
+
+# read
 ```
 
 #### C++ - trial 1
@@ -192,6 +238,24 @@ cout << "||_/=\\\\__|" << endl;
 return 0;
 ```
 
+#### Golang
+```go
+fmt.Println("|\\_/|")
+fmt.Println("|q p|   /}")
+fmt.Println("( 0 )\"\"\"\\")
+fmt.Println("|\"^\"`    |")
+fmt.Println("||_/=\\\\__|")
+```
+
+#### Python
+```python
+print("""|\\_/|
+|q p|   /}
+( 0 )\"\"\"\\
+|"^"`    |
+||_/=\\\\__|""")
+```
+
 #### R
 ```R
 cat("|\\_/|
@@ -199,17 +263,6 @@ cat("|\\_/|
 ( 0 )\"\"\"\\
 |\"^\"`    |
 ||_/=\\\\__|")
-```
-
-#### Bash
-```Bash
-echo "|\_/|"
-echo "|q p|   /}"
-echo "( 0 )\"\"\"\\"
-echo "|\"^\"\`    |"
-echo "||_/=\\\\__|"
-
-# read
 ```
 
 #### Text
@@ -221,19 +274,19 @@ echo "||_/=\\\\__|"
 ||_/=\\__|
 ```
 
-> |\\_/|  
-> |q p|   /}  
-> ( 0 )"""\  
-> |"^"`    |  
-> ||_/=\\\\__|  
-
 
 ## [1000. A+B](#List)
 
-#### Python
-```python
-a, b = map(int, input().split())
-print(a+b)
+> 1 2
+
+> 3
+
+#### Bash
+```Bash
+read a b
+echo $((a + b))
+
+# read
 ```
 
 #### C++
@@ -245,31 +298,39 @@ cout << a + b << endl;
 return 0;
 ```
 
+#### Golang
+```go
+var a, b int
+fmt.Scanln(&a, &b)
+
+fmt.Println(a + b)
+```
+
+#### Python
+```python
+a, b = map(int, input().split())
+print(a+b)
+```
+
 #### R
 ```R
 num <- scan("stdin")    # recieve num[1], num[2], …… as numeric
 cat(num[1] + num[2])
 ```
 
-#### Bash
-```Bash
-read a b
-echo $((a + b))
-
-# read
-```
-
-> 1 2
-
-> 3
-
 
 ## [1001. A-B](#List)
 
-#### Python
-```python
-a, b = map(int, input().split())
-print(a-b)
+> 3 2
+
+> 1
+
+#### Bash
+```Bash
+read a b
+echo $((a - b))
+
+# read
 ```
 
 #### C++
@@ -281,31 +342,39 @@ cout << a - b << endl;
 return 0;
 ```
 
+#### Golang
+```go
+var a, b int
+fmt.Scanln(&a, &b)
+
+fmt.Println(a - b)
+```
+
+#### Python
+```python
+a, b = map(int, input().split())
+print(a-b)
+```
+
 #### R
 ```R
 num <- scan("stdin")    # recieve num[1], num[2], …… as numeric
 cat(num[1] - num[2])
 ```
 
-#### Bash
-```Bash
-read a b
-echo $((a - b))
-
-# read
-```
-
-> 3 2
-
-> 1
-
 
 ## [10998. A*B](#List)
 
-#### Python
-```python
-a, b = map(int, input().split())
-print(a*b)
+> 3 4
+
+> 12
+
+#### Bash
+```Bash
+read a b
+echo $((a * b))
+
+# read
 ```
 
 #### C++
@@ -317,49 +386,32 @@ cout << a * b << endl;
 return 0;
 ```
 
+#### Golang
+```go
+var a, b int
+fmt.Scanln(&a, &b)
+
+fmt.Println(a * b)
+```
+
+#### Python
+```python
+a, b = map(int, input().split())
+print(a*b)
+```
+
 #### R
 ```R
 num <- scan("stdin")    # recieve num[1], num[2], …… as numeric
 cat(num[1] * num[2])
 ```
 
-#### Bash
-```Bash
-read a b
-echo $((a * b))
-
-# read
-```
-
-> 3 4
-
-> 12
-
 
 ## [1008. A/B](#List)
 
-#### Python
-```python
-a, b = map(float, input().split())
-print(a/b)
-```
+> 1 3
 
-#### C++
-```cpp
-int a, b;
-cin >> a >> b;                  // 1 3
-cout.precision(10);             // for reducing error < 10^(-9)
-cout << (double)a / b << endl;
-
-return 0;
-```
-
-#### R
-```R
-num <- scan("stdin")    # recieve num[1], num[2], …… as numeric
-options(digits = 10)
-cat(num[1] / num[2])
-```
+> 0.3333333333
 
 #### Bash
 ```Bash
@@ -374,22 +426,56 @@ printf "%.9f\n" $((a * 10**9 / b))e-9
 # read
 ```
 
-> 1 3
+#### C++
+```cpp
+int a, b;
+cin >> a >> b;                  // 1 3
+cout.precision(10);             // for reducing error < 10^(-9)
+cout << (double)a / b << endl;
 
-> 0.3333333333
+return 0;
+```
+
+#### Golang
+```go
+var a, b float64
+fmt.Scanln(&a, &b)
+
+fmt.Printf("%.10f\n", a / b)
+```
+> always marks 10 decimal places
+
+#### Python
+```python
+a, b = map(float, input().split())
+print(a/b)
+```
+
+#### R
+```R
+num <- scan("stdin")    # recieve num[1], num[2], …… as numeric
+options(digits = 10)
+cat(num[1] / num[2])
+```
 
 
 ## [10869. 사칙연산](#List)
 
-#### Python
-```python
-a, b = map(int, input().split())
+> 7 3
 
-print(a+b)
-print(a-b)
-print(a*b)
-print(int(a/b))
-print(a%b)
+> 10 4 21 2 1 (vertically)
+
+#### Bash
+```Bash
+read a b
+
+echo $((a + b))
+echo $((a - b))
+echo $((a * b))
+echo $((a / b))
+echo $((a % b))
+
+# read
 ```
 
 #### C++
@@ -406,6 +492,29 @@ cout << a % b << endl;
 return 0;
 ```
 
+#### Golang
+```go
+var a, b int
+fmt.Scanln(&a, &b)
+
+fmt.Println(a + b)
+fmt.Println(a - b)
+fmt.Println(a * b)
+fmt.Println(a / b)
+fmt.Println(a % b)
+```
+
+#### Python
+```python
+a, b = map(int, input().split())
+
+print(a+b)
+print(a-b)
+print(a*b)
+print(int(a/b))
+print(a%b)
+```
+
 #### R
 ```R
 num <- scan("stdin")                # recieve num[1], num[2], …… as numeric
@@ -416,25 +525,12 @@ cat(floor(num[1] / num[2]), "\n")
 cat(num[1] %% num[2], "\n")
 ```
 
-#### Bash
-```Bash
-read a b
-
-echo $((a + b))
-echo $((a - b))
-echo $((a * b))
-echo $((a / b))
-echo $((a % b))
-
-# read
-```
-
-> 7 3
-
-> 10 4 21 2 1 (vertically)
-
 
 ## [10926. ??!](#List)
+
+> joonas
+
+> joonas??!
 
 #### Bash
 ```Bash
@@ -444,12 +540,20 @@ echo "$id??!"   # How does Bash classify $id and ??! ?
 # read
 ```
 
-> joonas
+#### Golang
+```go
+var s string
+fmt.Scanln(&s)
 
-> joonas??!
+fmt.Println(s + "??!")
+```
 
 
 ## [18108. 1998년생인 내가 태국에서는 2541년생?!](#List)
+
+> 2541
+
+> 1998
 
 #### Bash
 ```Bash
@@ -463,21 +567,32 @@ echo $((by - diff))
 # read
 ```
 
-> 2541
+#### Golang
+```go
+var by int
+fmt.Scanln(&by)
 
-> 1998
+const diff int = 2541 - 1998
+fmt.Println(by - diff)
+```
 
 
 ## [10430. 나머지](#List)
 
-#### Python
-```python
-A, B, C = map(int, input().split())
+> 5 8 4
 
-print((A+B)%C)
-print(((A%C) + (B%C))%C)
-print((A*B)%C)
-print(((A%C)*(B%C))%C)
+> 1 1 0 0 (vertically)
+
+#### Bash
+```Bash
+read A B C
+
+echo $(((A + B) % C))
+echo $((((A % C) + (B % C)) % C))
+echo $(((A * B) % C))
+echo $((((A % C) * (B % C)) % C))
+
+# read
 ```
 
 #### C++
@@ -491,6 +606,27 @@ cout << (A*B)%C << endl;
 cout << ((A%C)*(B%C))%C << endl;
 
 return 0;
+```
+
+#### Golang
+```go
+var A, B, C int
+fmt.Scanln(&A, &B, &C)
+
+fmt.Println((A + B) % C)
+fmt.Println(((A % C) + (B % C)) % C)
+fmt.Println((A * B) % C)
+fmt.Println(((A % C) * (B % C)) % C)
+```
+
+#### Python
+```python
+A, B, C = map(int, input().split())
+
+print((A+B)%C)
+print(((A%C) + (B%C))%C)
+print((A*B)%C)
+print(((A%C)*(B%C))%C)
 ```
 
 #### R
@@ -508,54 +644,35 @@ cat((a * b) %% c, "\n")
 cat(((a %% c) * (b %% c)) %% c, "\n")
 ```
 
-#### Bash
-```Bash
-read A B C
-
-echo $(((A + B) % C))
-echo $((((A % C) + (B % C)) % C))
-echo $(((A * B) % C))
-echo $((((A % C) * (B % C)) % C))
-
-# read
-```
-
-> 5 8 4
-
-> 1 1 0 0 (vertically)
-
 
 ## [2588. 곱셈](#List)
 
-#### Python - trial 1
-```python
-a = int(input())
-b = str(input())
+> 472  
+> 385
 
-for i in range(0,len(b)) :
-    print(a*int(b[-i-1]))
-
-print(a*int(b))             // crazy
-```
-
-#### Python - trial 2
-```python
-a = int(input())
-b = str(input())
-
-sum = 0
-for i in range(0,len(b)) :
-    answer = a * int(b[-i-1])
-    print(answer)
-    sum += answer * pow(10, i)
-
-print(sum)
-```
 > 2360  
 > 3776  
 > 1416  
 > 181720
 
+#### Bash
+```Bash
+read a
+read b
+# guaranteed that 100 <= a, b  <= 999
+
+let "sum = 0"
+for i in {2..0..-1}
+do
+    let "prod = $a * ${b:i:1}"          # ${b : i : 1} doesn't work
+    echo $prod
+    let "sum += $prod * (10 ** (2 - $i))"
+done
+
+echo $sum
+
+# read
+```
 > Accepted
 
 #### C++ - trial 1-1
@@ -646,7 +763,7 @@ int cipher = pow(10, i);        // trial 3-5 : the same with 1 but run by C++17(
 > Accepted
 
 #### C++ - trial 6 (final)
-(2015.05.24)
+(2021.05.24)
 ```cpp
 int a;
 // char b[3];                       // trial 1-1 : a = 256 when declare char b[3]
@@ -707,6 +824,61 @@ cout << sum + 1 << endl; // can't find why lack of 1 - crazy!
 ```
 > ㅋㅋ
 
+#### Golang
+```go
+package main
+import (
+    "fmt"
+    "math"
+)
+```
+```go
+var a int
+var b string
+fmt.Scanln(&a)
+fmt.Scanln(&b)
+
+var sum int = 0
+var answer int
+for i := 0; i < 3; i++ {
+    // test : ok
+    // fmt.Println(b[3-i-1] - '0')
+    answer = a * int(b[3-i-1] - '0')
+    fmt.Println(answer)
+    sum += answer * int(math.Pow(10., float64(i)))
+}
+
+fmt.Println(sum)
+```
+> Accepted
+
+#### Python - trial 1
+```python
+a = int(input())
+b = str(input())
+
+for i in range(0,len(b)) :
+    print(a*int(b[-i-1]))
+
+print(a*int(b))             // crazy
+```
+> Accepted
+
+#### Python - trial 2
+```python
+a = int(input())
+b = str(input())
+
+sum = 0
+for i in range(0,len(b)) :
+    answer = a * int(b[-i-1])
+    print(answer)
+    sum += answer * pow(10, i)
+
+print(sum)
+```
+> Accepted
+
 #### R
 ```R
 num <- scan("stdin")                            # recieve num[1], num[2], …… as numeric
@@ -726,32 +898,4 @@ for (i in 1:3)
 
 cat(sum, "\n")
 ```
-
-#### Bash
-```Bash
-read a
-read b
-# guaranteed that 100 <= a, b  <= 999
-
-let "sum = 0"
-for i in {2..0..-1}
-do
-    let "prod = $a * ${b:i:1}"          # ${b : i : 1} doesn't work
-    echo $prod
-    let "sum += $prod * (10 ** (2 - $i))"
-done
-
-echo $sum
-
-# read
-```
-
-> 472  
-> 385
-
-> 2360  
-> 3776  
-> 1416  
-> 181720
-
 > Accepted

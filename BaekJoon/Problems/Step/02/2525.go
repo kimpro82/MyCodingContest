@@ -7,10 +7,10 @@ func main() {
     fmt.Scanln(&c)
 
     b += c
-    for (b > 59) {        // Golang has no While statement!
+    for (b > 59) {      // Golang has no While statement!
         a++
         b -= 60        
-    }                     // actually not necessary to use loop
+    }                   // actually not necessary to use loop
 
     a %= 24
 

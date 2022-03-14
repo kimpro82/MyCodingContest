@@ -17,8 +17,8 @@ https://www.acmicpc.net/step/4
 - [2753. 윤년](#2753-윤년)
 - [14681. Quadrant Selection](#14681-quadrant-selection)
 - [2884. SPAVANAC](#2884-spavanac)
-- [2525. 오븐 시계]()
-- [2480. 주사위 세개]()
+- [2525. 오븐 시계](#2525-오븐-시계)
+- [2480. 주사위 세개](#2480-주사위-세개)
 
 **※ Note**  
 &nbsp;&nbsp; - All the codes of any language for the same problem have basically the same result.  

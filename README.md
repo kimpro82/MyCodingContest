@@ -44,7 +44,7 @@ can't escape this endless valley of despair ……
 | 단계 | 제목 | Bash | C++ | Golang | 기타 | 바로가기 |
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
 | 1 | 입출력과 사칙연산 | 2022.01.26 | 2021.05.13 | 2022.03.12 | Python - 2021.05.13<br>R - 2021.07.11<br>Text - 2022.01.26 | [Link](/BaekJoon/Problems/Step/01#baekjoon-online-judge) |
-| 2 | if문 | 2022.01.29 | 2021.05.24 | | R - 2021.07.14 | [Link](/BaekJoon/Problems/Step/02#baekjoon-online-judge) |
+| 2 | if문 | 2022.01.29 | 2021.05.24 | 2022.03.14 | R - 2021.07.14 | [Link](/BaekJoon/Problems/Step/02#baekjoon-online-judge) |
 | 3 | for문 | 2022.01.31 | 2021.05.25 | | | [Link](/BaekJoon/Problems/Step/03#baekjoon-online-judge) |
 | 4 | while문 | 2022.02.02 | 2021.05.26 | | | [Link](/BaekJoon/Problems/Step/04#baekjoon-online-judge) |
 | 5 | 1차원 배열 | 2022.02.03 | 2021.06.14 | | | [Link](/BaekJoon/Problems/Step/05#baekjoon-online-judge) |

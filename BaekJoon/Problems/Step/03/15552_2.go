@@ -10,8 +10,8 @@ func main() {
     var writer = bufio.NewWriter(os.Stdout)
     defer writer.Flush()
 
-	var t int
-	fmt.Scanln(&t)
+    var t int
+    fmt.Scanln(&t)
 
     var a, b int
     for i := 0; i < t; i++ {

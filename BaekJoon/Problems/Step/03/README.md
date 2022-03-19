@@ -189,7 +189,7 @@ var sum = n * (n + 1) / 2
 
 fmt.Println(sum)
 ```
-> expected to be faster, but not so different from trial 1  
+> expected to be faster, but not so different from ~~the~~ trial 1  
 > (※ my wife claimed "trial 1" doesn't require "the")
 
 ## [15552. 빠른 A+B](#list)

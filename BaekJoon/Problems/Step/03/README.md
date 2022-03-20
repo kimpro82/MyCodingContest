@@ -2,10 +2,11 @@
 
 # 문제 > 단계별로 풀어보기 > 3. for문
 
-(2021.05.25) - `C++`  
-(2022.01.31) - `Bash`
+https://www.acmicpc.net/step/3
 
-https://www.acmicpc.net/step/3  
+(2021.05.25) - `C++`  
+(2022.01.31) - `Bash`  
+(2022.03.18) - `Golang`  
 
 
 ### **List**
@@ -27,7 +28,9 @@ https://www.acmicpc.net/step/3
 
 &nbsp;&nbsp; - All the codes of any language for the same problem have basically the same result.  
 &nbsp;&nbsp; - `Bash` : skipped the first line; `#!/bin/bash`  
-&nbsp;&nbsp; - `C++` : skipped `main()` function's brace(`{}`) and its outside
+&nbsp;&nbsp; - `C++`* : skipped `main()` function's brace(`{}`) and its outside including two header lines; `#include <iostream>` `using namespace std;`  
+&nbsp;&nbsp; - `Golang`* : skipped `main()` function's brace(`{}`) and its outside including two header lines; `package main` `import "fmt"`  
+&nbsp;&nbsp; * When any additional header is used, the header block is also noted seperately.
 
 
 ## [2739. 구구단](#list)
@@ -62,6 +65,16 @@ for (int i = 1; i <= 9; i++)
 }
 
 return 0;
+```
+
+#### Golang
+```go
+var n int
+fmt.Scanln(&n)
+
+for i := 1; i <= 9; i++ {
+    fmt.Println(n, "*", i, "=", n * i)
+}
 ```
 
 
@@ -104,6 +117,19 @@ for (int i = 1; i <= t; i++)
 return 0;
 ```
 
+#### Golang
+```go
+var t int
+fmt.Scanln(&t)
+
+for i := 0; i < t; i++ {
+    var a, b int
+    fmt.Scanln(&a, &b)
+
+    fmt.Println(a + b)
+}
+```
+
 
 ## [8393. Sum](#list)
 
@@ -141,6 +167,30 @@ cout << sum << endl;
 return 0;
 ```
 
+#### Golang - trial 1
+```go
+var n int
+fmt.Scanln(&n)
+
+var sum int = 0
+for i := 1; i <= n; i++ {
+    sum += i
+}
+
+fmt.Println(sum)
+```
+
+#### Golang - trial 2
+```go
+var n int
+fmt.Scanln(&n)
+
+var sum = n * (n + 1) / 2
+
+fmt.Println(sum)
+```
+> expected to be faster, but not so different from ~~the~~ trial 1  
+> (※ my wife claimed "trial 1" doesn't require "the")
 
 ## [15552. 빠른 A+B](#list)
 
@@ -207,6 +257,42 @@ for (int i = 1; i <= t; i++)
 return 0;
 ```
 
+#### Golang - trial 1
+```go
+var t int
+fmt.Scanln(&t)
+
+for i := 0; i < t; i++ {
+    var a, b int
+    fmt.Scanln(&a, &b)
+    fmt.Println(a + b)
+}
+```
+> Timeout
+
+#### Golang - trial 2
+```go
+import (
+    "fmt"
+    "bufio"
+    "os"
+)
+```
+```go
+var reader = bufio.NewReader(os.Stdin)
+var writer = bufio.NewWriter(os.Stdout)
+defer writer.Flush()
+
+var t int
+fmt.Scanln(&t)
+
+var a, b int
+for i := 0; i < t; i++ {
+    fmt.Fscan(reader, &a, &b)
+    fmt.Fprintln(writer, a + b)
+}
+```
+
 
 ## [2741. N 찍기](#list)
 
@@ -244,6 +330,27 @@ for (int i = 1; i <= a; i++)
 return 0;
 ```
 
+#### Golang
+```go
+import (
+    "fmt"
+    "bufio"
+    "os"
+)
+```
+```go
+// var reader = bufio.NewReader(os.Stdin)      // do not need
+var writer = bufio.NewWriter(os.Stdout)
+defer writer.Flush()
+
+var n int
+fmt.Scanln(&n)
+
+for i := 1; i <= n; i++ {
+    fmt.Fprintln(writer, i)
+}
+```
+
 
 ## [2742. 기찍 N](#list)
 
@@ -279,6 +386,27 @@ for (int i = a; i >= 1; i--)
 }
 
 return 0;
+```
+
+#### Golang
+```go
+import (
+    "fmt"
+    "bufio"
+    "os"
+)
+```
+```go
+// var reader = bufio.NewReader(os.Stdin)      // do not need
+var writer = bufio.NewWriter(os.Stdout)
+defer writer.Flush()
+
+var n int
+fmt.Scanln(&n)
+
+for i := n; i > 0; i-- {
+    fmt.Fprintln(writer, i)
+}
 ```
 
 
@@ -323,6 +451,18 @@ for (int i = 1; i <= t; i++)
 return 0;
 ```
 
+#### Golang
+```go
+var t int
+fmt.Scanln(&t)
+
+for i := 1; i <= t; i++ {
+    var a, b int
+    fmt.Scanln(&a, &b)
+    fmt.Printf("Case #%d: %d\n", i, a + b)
+}
+```
+
 
 ## [11022. A+B - 8](#list)
 
@@ -363,6 +503,18 @@ for (int i = 1; i <= t; i++)
 }
 
 return 0;
+```
+
+#### Golang
+```go
+var t int
+fmt.Scanln(&t)
+
+for i := 1; i <= t; i++ {
+    var a, b int
+    fmt.Scanln(&a, &b)
+    fmt.Printf("Case #%d: %d + %d = %d\n", i, a, b, a + b)
+}
 ```
 
 
@@ -410,6 +562,36 @@ for (int i = 1; i <= a; i++)
 
 return 0;
 ```
+
+#### Golang - trial 1
+```go
+import (
+    "fmt"
+    "strings"
+)
+```
+```go
+var n int
+fmt.Scanln(&n)
+
+var star string = "*"
+for i := 1; i <= n; i++ {
+    fmt.Println(strings.Repeat(star, i ))
+}
+```
+
+#### Golang - trial 2
+```go
+var n int
+fmt.Scanln(&n)
+
+var star string = ""
+for i := 1; i <= n; i++ {
+    star += "*"
+    fmt.Println(star)
+}
+```
+> rather slower??
 
 
 ## [2439. 별 찍기 - 2](#list)
@@ -465,6 +647,22 @@ for (int i = 1; i <= a; i++)
 return 0;
 ```
 
+#### Golang
+```go
+import (
+    "fmt"
+    "strings"
+)
+```
+```go
+var n int
+fmt.Scanln(&n)
+
+for i := 1; i <= n; i++ {
+    fmt.Println(strings.Repeat(" ", n - i) + strings.Repeat("*", i ))   // not , but +
+}
+```
+
 
 ## [10871. X보다 작은 수](#list)
 
@@ -507,4 +705,20 @@ for (int i = 0; i < n; i++)
 cout << '\n';
 
 return 0;
+```
+
+
+#### Golang
+```go
+var n, x int
+fmt.Scanln(&n, &x)
+
+for i := 0; i < n; i++ {
+    var num int
+    fmt.Scanf("%d", &num)
+    if num < x {
+        fmt.Printf("%d ", num)
+    }
+}
+// fmt.Println("\b")            // causes wrong?
 ```

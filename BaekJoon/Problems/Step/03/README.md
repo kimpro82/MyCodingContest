@@ -1,6 +1,6 @@
 ## BAEKJOON Online Judge
 
-# 문제 > 단계별로 풀어보기 > 3. for문
+# 문제 > 단계별로 풀어보기 > 3. 반복문 - 1) for문
 
 https://www.acmicpc.net/step/3
 

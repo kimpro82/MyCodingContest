@@ -1,11 +1,12 @@
 ## BAEKJOON Online Judge
 
-# 문제 > 단계별로 풀어보기 > 4. while문
+# 문제 > 단계별로 풀어보기 > 3. 반복문 - 2) while문
+
+https://www.acmicpc.net/step/3 ~https://www.acmicpc.net/step/2~
 
 (2021.05.26) - `C++`  
-(2022.02.02) - `Bash`
-
-https://www.acmicpc.net/step/2
+(2022.02.02) - `Bash`  
+(2022.03.29) - `Golang`
 
 
 ### **List**
@@ -14,11 +15,14 @@ https://www.acmicpc.net/step/2
 - [10951. A+B - 4](#10951-ab---4)
 - [1110. 더하기 사이클](#1110-더하기-사이클)
 
+
 **※ Note**  
 
 &nbsp;&nbsp; - All the codes of any language for the same problem have basically the same result.  
 &nbsp;&nbsp; - `Bash` : skipped the first line; `#!/bin/bash`  
-&nbsp;&nbsp; - `C++` : skipped `main()` function's brace(`{}`) and its outside
+&nbsp;&nbsp; - `C++`* : skipped `main()` function's brace(`{}`) and its outside including two header lines; `#include <iostream>` `using namespace std;`  
+&nbsp;&nbsp; - `Golang`* : skipped `main()` function's brace(`{}`) and its outside including two header lines; `package main` `import "fmt"`  
+&nbsp;&nbsp; * When any additional header is used, the header block is also noted seperately.
 
 
 ## [10952. A+B - 5](#list)
@@ -66,6 +70,21 @@ while (true)
 return 0;
 ```
 
+#### Golang
+```golang
+var a, b int
+
+for true {
+    fmt.Scanln(&a, &b)
+
+    if a == 0 && b == 0 {
+        break
+    }
+
+    fmt.Println(a + b)
+}
+```
+
 
 ## [10951. A+B - 4](#list)
 
@@ -110,6 +129,29 @@ while (true)
 }
 
 return 0;
+```
+
+#### Golang
+```golang
+import (
+    "fmt"
+    "strconv"
+)
+```
+```golang
+for true {
+    var a, b string
+    var aInt, bInt int
+
+    fmt.Scanln(&a, &b)
+    if a == "" {
+        break
+    }
+
+    aInt, _ = strconv.Atoi(a)
+    bInt, _ = strconv.Atoi(b)
+    fmt.Println(aInt + bInt)
+}
 ```
 
 
@@ -187,4 +229,33 @@ while (true)
 cout << t << '\n';
 
 return 0;
+```
+
+#### Golang
+```golang
+var n, a, b int                    // n < 100
+fmt.Scanln(&n)    
+
+var t int = 0
+var ab = n
+
+for true {
+    a = ab / 10
+    b = ab % 10
+    ab = a + b
+
+    if (ab < 10) {
+        ab += b * 10
+    } else {
+        ab = b * 10 + ab % 10
+    }
+
+    t++
+
+    if (n == ab){
+    break;
+    }
+}
+
+fmt.Println(t)
 ```

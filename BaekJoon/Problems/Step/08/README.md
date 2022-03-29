@@ -1,744 +1,535 @@
 ## BAEKJOON Online Judge
 
-# 문제 > 단계별로 풀어보기 > 8. 기본 수학 1
+## 문제 > 단계별로 풀어보기 > 8. 기본 수학 2
+(2021.07.20)  
+https://www.acmicpc.net/step/10
 
-https://www.acmicpc.net/step/8
-
-(2021.07.12) - `C++`  
-(2022.03.11) - `Bash`
-
-
-## **List**
-
-- [1712. 손익분기점](#1712-손익분기점)
-- [2292. 벌집](#2292-벌집)
-- [1193. 분수찾기](#1193-분수찾기)
-- [2869. PUŽ](#2869-puž)
-- [10250. ACM Hotel](#10250-acm-hotel)
-- [2775. 부녀회장이 될테야](#2775-부녀회장이-될테야)
-- [2839. ŠEĆER](#2839-šećer)
-- [10757. 큰 수 A+B](#10757-큰-수-ab)
-- [1011. Fly me to the Alpha Centauri](#1011-fly-me-to-the-alpha-centauri---excluded) - *excluded*
+※ C++ codes : **skipped** `main()` function's brace(`{}`) and its outside  
+&nbsp; - Basically, all the codes has the `<iostream>` header and namespace `std` even if there's no mention.  
+&nbsp; - When any additional header is used, the header block is also noted seperately.  
 
 
-**※ Note**
-
-&nbsp;&nbsp; - All the codes of any language for the same problem have basically the same result.  
-&nbsp;&nbsp; - `Bash` : skipped the first line; `#!/bin/bash`  
-&nbsp;&nbsp; - `C++` : skipped `main()` function's brace(`{}`) and its outside(`<iostream>` header and namespace `std`).  
-&nbsp;&nbsp;&nbsp;&nbsp; · Basically, all the codes has the `<iostream>` header and namespace `std` even if there's no mention.  
-&nbsp;&nbsp;&nbsp;&nbsp; · When any additional header is used, the header block is also noted seperately.  
-
-
-## [1712. 손익분기점](#list)
-
-> 1000 70 170
-
-> 11
-
-#### Bash
-```bash
-read a b c
-
-let "margin = c - b"
-
-if [ $margin -gt 0 ]; then
-    echo $((a / margin + 1))
-else
-    echo -1
-fi
-```
+### 1978. 소수 찾기
 
 #### C++ 
 ```cpp
-int a, b, c;
-cin >> a >> b >> c;
-
-int margin = c - b;
-if (c - b > 0)                      // Find if price(c) - variable cost(b) > 0
-{
-    cout << a / margin + 1 << endl;
-} else                              // Never can reach BEP
-{
-    cout << -1 << endl;
-}
-
-return 0;
+#include <iostream>
+#include <vector>
 ```
-
-
-## [2292. 벌집](#list)
-
-> 13
-
-> 3
-
-#### Bash
-```bash
-read n
-
-let "move = 0"
-
-while [ $n -gt 1 ]
-do
-    ((move++))
-    let "n -= 6 * move"
-
-    # test
-    # echo $n $move
-done
-
-echo $((move + 1))
-```
-
-#### C++ 
 ```cpp
-int a;
-cin >> a;
-
-int move = 0;
-while (a > 1)
+// Input data
+int n;          // n <= 100
+cin >> n;
+vector<int> v;  // v_i <= 1000
+int temp;
+for (int i = 0; i < n; i++)
 {
-    move++;
-    a -= 6 * move;
-
-    // test
-    // cout << a << " " << move << endl;
+    cin >> temp;
+    v.push_back(temp);
 }
 
-cout << move + 1 << endl;
-
-return 0;
-```
-
-
-## [1193. 분수찾기](#list)
-
-> 14
-
-> 14 1 1  
-> 14 2 3  
-> 14 3 6  
-> 14 4 10  
-> 14 5 15  
-> 2/4
-
-#### Bash
-```bash
-read x
-
-let "zigzag = 0"
-let "sum = 0"
-
-while [ $x -gt $sum ]
-do
-    ((zigzag++))
-    let "sum += zigzag"
-
-    # test
-    # echo $x $zigzag $sum
-done
-
-let "numerator = 0"
-let "denominator = 0"
-
-if [[ $((zigzag % 2)) == 0 ]]; then
-    let "denominator = sum - x + 1"
-    let "numerator = zigzag - denominator + 1"
-else
-    let "numerator = sum - x + 1"
-    let "denominator = zigzag - numerator + 1"
-fi
-
-echo ${numerator}/${denominator}
-```
-
-#### C++ 
-```cpp
-int x;
-cin >> x;
-
-int zigzag = 0, sum = 0;
-while (x > sum)
+// Determine if each number of v is a prime number
+int count = 0, prime;
+for (int j = 0; j < n; j++)
 {
-    zigzag++;
-    sum += zigzag;
+    if (v[j] == 1) continue;
 
-    // test
-    cout << x << " " << zigzag << " " << sum << endl;
-}
-
-int numerator, denominator;
-if (zigzag % 2 == 0)
-{
-    denominator = sum - x + 1;
-    numerator = zigzag - denominator + 1;         
-} else
-{
-    numerator = sum - x + 1;
-    denominator = zigzag - numerator + 1;
-}
-
-cout << numerator << '/' << denominator << endl;
-
-return 0;
-```
-
-
-## [2869. PUŽ](#list)
-
-> 5 1 6
-
-> 1 5 -1  
-> 2 9 3  
-> 2
-
-#### Bash
-```bash
-read a b v
-
-let "day = (v - b) / (a - b) - 1"
-let "location = (a - b) * day"
-
-while true
-do
-    ((day++))
-    let "location += a"
-
-    # test
-    # echo $day $location $((location - v))
-
-    if [ $location -ge $v ]; then
-        break
-    else
-        let "location -= b"
-    fi
-done
-
-echo $day
-```
-
-#### C++ 
-```cpp
-int a, b, v;
-// a : climb upwards in a day
-// b : back down each night, always a > b
-// v : wooden pole's height
-cin >> a >> b >> v;
-
-// Find the minimum day
-int day = (v - b) / (a - b) - 1;
-int location = (a - b) * day;
-
-// Climb
-while (true)
-{
-    day++;
-    location += a;
-    
-    // test
-    cout << day << " " << location << " " << location - v << endl;
-
-    if (location >= v)
+    prime = 1;
+    for (int k = 2; k < v[j]/2 + 1; k++)
     {
-        break;
+        if (v[j] % k  == 0)
+        {
+            prime = 0;
+            break;
+        }
     }
-    location -= b;
+    if (prime == 1) count++;
+
+    // test
+    cout << j << " " << v[j] << " " << count << endl;
 }
 
 // Output
-cout << day << endl;
+cout << count << endl;
 
 return 0;
 ```
 
+> 4  
+> 1 3 5 7
 
-## [10250. ACM Hotel](#list)
-
-> 2  
-> 6 12 10  
-> 30 50 72
-
-> 402  
-> 1203
-
-#### Bash
-```bash
-read t
-
-for ((i = 0; i < t; i++))
-do
-    read h w n
-
-    let "room = (n - 1) / h + 1"
-    let "floor = n % h"
-
-    if [ $floor -eq 0 ]; then
-        let "floor = h"
-    fi
-
-    if [ $room -lt 10 ]; then
-        echo ${floor}0${room}
-    else
-        echo ${floor}${room}
-    fi
-done
-```
-
-#### C++ 
-```cpp
-int T, H, W, N;
-// T : the number of test cases
-// H : the number of floors, < 99
-// W : the number of rooms on each floor, < 99
-// N : the index of the arrival time of the guest, < H * W 
-cin >> T;
-
-// Test T times
-for (int t = 0; t < T; t++)
-{
-    cin >> H >> W >> N;
-
-    // Operation
-    int room = (N - 1) / H + 1; // room is prior to floor
-    int floor = N % H;          // the first floor's room number is 1XX
-    if (floor == 0)
-    {
-        floor = H;
-    }
-
-    // Output
-    if (room < 10)
-    {
-        cout << floor << 0 << room << endl;
-    } else
-    {
-        cout << floor << room << endl;
-    }
-}
-
-return 0;
-```
-
-
-## [2775. 부녀회장이 될테야](#list)
-
-> 2  
-> 1  
-> 3  
-> 2  
+> 1 3 1  
+> 2 5 2  
+> 3 7 3  
 > 3
 
-> 6  
-> 10
 
-#### Bash
-Rumor has it that there's a tricky way to use **2d array** in Bash although isn't supplied regularly, but I feel quite annoyed today ……
+### 2581. 소수
 
 #### C++ 
 ```cpp
-int T;
-cin >> T;
+// Input data
+int m, n;                           // 1 <= m <= n <= 10,000
+cin >> m >> n;
 
-// Test T times
-for (int t = 0; t < T; t++)
+// Determine if each number between m and n is a prime number
+int sum = 0, min = 10000, prime;
+if (m == 1) m++;                    // don't need to consider 1
+for (int i = m; i <= n; i++)
 {
-    int K, N;
-    cin >> K >> N;
+    prime = 1;
 
-    int resident[15][15] = {};      // assumed 0-th floor and 0-th room
-    for (int k = 0; k <= K; k++)
+    for (int j = 2; j <= i/2; j++)
     {
-        for (int n = 0; n <= N; n++)
+        if (i % j  == 0)
         {
-            if (k == 0) resident[k][n] = n;
-            else if (n <= 1) resident[k][n] = n;
-            else resident[k][n] = resident[k-1][n] + resident[k][n-1];
+            prime = 0;
+            break;
         }
     }
 
+    if (prime == 1)
+    {
+        sum += i;
+        if (i < min) min = i;       // enough to operate just once first but ……
+
+        // test
+        cout << i << " " << sum << " " << min << endl;
+    }
+}
+
+// Output
+if (sum > 0) cout << sum << '\n' << min << endl;
+else cout << -1 << endl;
+
+return 0;
+```
+
+> 60  
+> 100
+
+> 61 61 61  
+> 67 128 61  
+> ……  
+> 97 620 61  
+> 620  
+> 61
+
+
+### 11653. 소인수분해
+
+#### C++ 
+```cpp
+// Input data
+int n;                           // 1 <= n <= 10,000,000
+cin >> n;
+
+// Prime factorization
+int divisor = 2;
+while (n > 1)
+{
+    if (n % divisor == 0)
+    {
+        cout << divisor << endl;
+        n /= divisor;
+    }
+    else divisor++;
+}
+
+return 0;
+```
+
+> 72
+
+> 2  
+> 2  
+> 2  
+> 3  
+> 3
+
+
+### 1929. 소수 구하기
+
+#### C++ 
+```cpp
+// seems to be needed ……
+ios_base::sync_with_stdio(false);
+cout.tie(NULL);
+
+// Input data
+int m, n;       // 1 <= m <= n <= 1,000,000, guarantee at least one prime number
+cin >> m >> n;
+
+// Determine if each number between m and n is a prime number
+int prime;
+if (m == 1) m++;                    // don't need to consider 1
+for (int i = m; i <= n; i++)
+{
+    prime = 1;
+
+    for (int j = 2; j <= i/j; j++)  // magic to avoid TLE! 
+    {
+        if (i % j  == 0)
+        {
+            prime = 0;
+            break;
+        }
+    }
+
+    if (prime == 1) cout << i << endl;
+}
+
+return 0;
+```
+
+> 3 16
+
+> 3  
+> 5  
+> 7  
+> 11  
+> 13
+
+
+### 4948. Chebyshev's Theorem (베트르랑 공준)
+
+#### C++ 
+```cpp
+// maybe better than nothing?
+ios_base::sync_with_stdio(false);
+cout.tie(NULL);
+
+int n;
+while (true)
+{
+    // Input data
+    cin >> n;
+    if (n == 0) break;
+
+    // Determine if each number between n and 2n is a prime one
+    int m = 2 * n, prime, count = 0;
+    for (int i = n + 1; i <= m; i++)    // "greater than n and less than or equal to 2n"
+    {
+        prime = 1;
+        for (int j = 2; j <= i/j; j++)  // magic to avoid TLE! 
+        {
+            if (i % j  == 0)
+            {
+                prime = 0;
+                break;
+            }
+        }
+        if (prime == 1) count++;
+    }
+
     // Output
-    cout << resident[K][N] << endl;
+    cout << count << endl;
 }
 
 return 0;
 ```
 
+> 1  
+> 10  
+> 13  
+> 100  
+> 1000  
+> 10000  
+> 100000  
+> 0
 
-## [2839. ŠEĆER](#list)
-
-> 18
-
-> 4
-
-#### Bash
-```bash
-read n
-
-let "bag3 = 0"
-let "rest = 1"
-
-for ((i = 0; i <= $((n / 3)); i++))
-do
-    # if [[ $(($((n - i * 3)) % 5)) == 0 ]]; then       # worse readability
-    let "criteria = (n - i * 3) % 5"
-    if [ $criteria -eq 0 ]; then
-        let "bag3 = i"
-        let "rest = 0"
-        break
-    fi
-
-    # test
-    # echo ${bag3} $((bag3 * 3)) $((n - bag3 * 3))
-done
+> 1  
+> 4  
+> 3  
+> 21  
+> 135  
+> 1033  
+> 8392
 
 
-
-if [ $rest -eq 0 ]; then
-    echo $((bag3 + (n - bag3 * 3) /  5))
-else
-    echo -1
-fi
-```
+### 9020. Goldbach’s Conjecture (골드바흐의 추측)
 
 #### C++ 
 ```cpp
-int N;
-cin >> N;       // 3 <= n <= 5000
+// maybe better than nothing?
+ios_base::sync_with_stdio(false);
+cin.tie(NULL);
+cout.tie(NULL);
 
-int bag3 = 0;
-bool rest = true;
-for (int i = 0; i <= N / 3; i++)
+int T;
+cin >> T;
+
+// T test cases
+for (int t = 0; t < T; t++)
 {
-    if ((N - i * 3) % 5 == 0)
+    int n, m, prime;
+    cin >> n;
+
+    for (int i = n/2; i > 1; i--)
     {
-        bag3 = i;
-        rest = false;
-        break;
-    }
-}
+        prime = 1;
 
-// Test
-// cout << bag3 << " " << bag3 * 3 << " " << (N - bag3 * 3) << endl;
+        // Find the first prime number
+        for (int j = 2; j <= i/j; j++)      // magic to avoid TLE! 
+        {
+            if (i % j  == 0)
+            {
+                prime = 0;
+                break;
+            }
+        }
 
-// Output
-if (rest == false)
-{
-    cout << bag3 + (N - bag3 * 3) / 5 << endl;
-} else
-{
-    cout << -1 << endl;
-}
+        // Find if (n - i) is also a prime number
+        if (prime == 1)
+        {
+            m = n - i;
+            for (int k = 2; k <= m/k; k++)
+            {
+                if (m % k  == 0)
+                {
+                    prime = 0;
+                    break;
+                }
+            }
+        }
+
+        // When both of the numbers are prime ones
+        if (prime == 1)
+        {
+            cout << i << ' ' << m << endl;
+            break;                          // need only once
+        }
+    } // The end of i loop
+} // The end of t loop
 
 return 0;
 ```
 
+> 3  
+> 8  
+> 10  
+> 16
 
-## [10757. 큰 수 A+B](#list)
+> 3 5  
+> 5 5  
+> 5 11
 
-> 9223372036854775807 9223372036854775808
 
-> 51615590737044764481  
-> 18446744073709551615
-
-#### Bash
-```bash
-read a b
-let "aLen = ${#a}"
-let "bLen = ${#b}"
-
-if [ $aLen -ge $bLen ]; then
-    let "maxSize = aLen"
-    let "minSize = bLen"
-else
-    let "maxSize = bLen"
-    let "minSize = aLen"
-fi
-
-let "buffer = 0"
-
-# test
-# echo $maxSize $minSize
-```
-```bash
-# Sum each digit (1) : 0 ~ minSize - 1
-for ((i = 0; i < minSize; i++))
-do
-    let "buffer += ${a:$((aLen-1-i)):1} + ${b:$((bLen-1-i)):1}"     # it works!
-    if [ $buffer -lt 10 ]; then
-        let "sum[i] = buffer"
-        let "buffer = 0"
-    else
-        let "sum[i] = buffer - 10"
-        let "buffer = 1"
-    fi
-
-    # test
-    # echo $i $buffer ${sum[$i]}
-done
-```
-```bash
-# Sum each digit (2) : minSize ~ maxSize - 1
-for ((j = minSize; j < maxSize; j++))
-do
-    if [ $aLen -gt $bLen ]; then
-        let "buffer += ${a:$((aLen-1-j)):1}"
-    else
-        let "buffer += ${b:$((bLen-1-j)):1}"
-    fi
-
-    if [ $buffer -lt 10 ]; then
-        let "sum[j] = buffer"
-        let "buffer = 0"
-    else
-        let "sum[j] = buffer - 10"
-        let "buffer = 1"
-    fi
-
-    # test
-    # echo $i $buffer ${sum[$i]}
-done
-```
-```bash
-# Sum each digit (3) : maxSize
-if [ $buffer -eq 1 ]; then
-    let "sum[maxSize] = 1"
-    let "maxSize++"
-fi
-# test
-# echo $((maxSize-1)) $buffer ${sum[$((maxSize-1))]}
-```
-```bash
-# Output
-for ((k = 0; k < maxSize; k++))
-do
-    echo -n "${sum[$((maxSize-1-k))]}"                              # don't confuse the indexing syntax between array and string!
-done
-echo
-```
-> Time Litmit Exceeded
+### 1085. 직사각형에서 탈출
 
 #### C++ 
 ```cpp
-#include <iostream>
-#include <string>
-```
-```cpp
-string a, b;
-char sum[10002];
-cin >> a >> b;
+int x, y, w, h;
+cin >> x >> y >> w >> h;
 
-int aSize = a.size(), bSize = b.size();
-int minSize = min(aSize, bSize);
-int maxSize = max(aSize, bSize);
-int buffer = 0;
+int minValue;
+minValue = min(min(x, w-x), min(y, h-y));
 
-// test
-// cout << minSize << " " << maxSize << endl;   // 19 19 - OK
-```
-```cpp
-// Sum each digit : 0 ~ minSize - 1
-// sum contains numbers in reverse order
-for (int i = 0; i < minSize; i++)
-{
-    buffer += (a[aSize - 1 - i] - '0') + (b[bSize - 1 - i] - '0');
-    if (buffer < 10)
-    {
-        sum[i] = (char) (buffer + '0');
-        buffer = 0;
-    } else
-    {
-        sum[i] = (char) (buffer - 10 + '0');
-        buffer = 1;
-    }
-
-    // test
-    cout << i << " " << a[aSize - 1 - i] << " " << b[bSize - 1 - i] << " " << buffer << " " << sum[i] << endl; 
-}
-```
-```cpp
-// Residual digit : minSize ~ maxSize - 1
-for (int j = minSize; j < maxSize; j++)
-{
-    if (aSize > bSize) buffer += a[aSize - 1 - j] - '0';
-    else buffer += b[bSize - 1 - j] - '0';   
-
-    if (buffer < 10)
-    {
-        sum[j] = (char) (buffer + '0');
-        buffer = 0;
-    } else
-    {
-        sum[j] = (char) (buffer - 10 + '0');
-        buffer = 1;
-    }
-}
-```
-```cpp
-// Residual digit : maxSize
-if (buffer == 1)
-{
-    sum[maxSize] = '1';
-    maxSize++;
-}
-
-// test
-cout << sum << endl;
-```
-```cpp
-// Output
-for (int l = 0; l < maxSize; l++)
-{
-    cout << sum[maxSize - 1 - l];
-}
-cout << endl;
+cout << minValue << endl;
 
 return 0;
 ```
 
+> 6 2 10 3
 
-## [1011. Fly me to the Alpha Centauri](#list) - *excluded*
+> 1
 
-> 3  
-> 0 3  
-> 1 5  
-> 45 50
 
-> 3  
-> 3  
-> 4
+### 3009. CETVRTA (네 번째 점)
 
 #### C++ - Trial 1
 ```cpp
-/*
-(ex) n = 3
-    1 + 2 + 1
-    = (1 + 2) * 2 - 2
-    = {(n + 1)/2 * [{(n + 1)/2 + 1}/2] * 2 - (n + 1)/2
-    * t = (n + 1)/2
-    = t * (t + 1) - t
-    = t^2
-    = {(n + 1)/2}^2
-
-(ex) n = 4
-    1 + 2 + 2 + 1
-    = (1 + 2) * 2
-    = {(n/2) * (n/2 + 1)}/2 * 2
-    = (n/2) * (n/2 + 1)
-    = (n^2 + 2n + 1 - 1)/4
-    = {(n + 1)^2 - 1}/4
-*/
-```
-```cpp
-#pragma GCC optimize ("O2")
-#pragma GCC target ("avx")
-
 #include <iostream>
-#include <cmath>
-#include<bits/stdc++.h>
+#include <map>
 ```
 ```cpp
-cin.tie(0);
-ios::sync_with_stdio(false);
-
-int T;
-cin >> T;
-
-// Test T times
-for (int t = 0; t < T; t++)
+// Input data
+map<int, int> x, y;
+int temp1, temp2;
+for (int i = 0; i < 3; i++)
 {
-    int x, y;
-    cin >> x >> y;
+    cin >> temp1 >> temp2;
+    x.insert(pair<int, int> (temp1, 1));
+    y.insert(pair<int, int> (temp2, 1));
+}
 
-    int distance = y - x, move = 0, turn = 0;
-    while (true)
-    {
-        turn++;
-        
-        if (turn % 2 == 1) move = pow((turn + 1)/2, 2);
-        else move = (pow(turn + 1, 2) - 1)/4;
-
-        // test
-        cout << turn << " " << move << " " << distance << " " << move - distance << endl;
-
-        if (move >= distance) break;
-    }
-
-    // Output
-    cout << turn << endl;
+// test
+map<int, int>::iterator it;
+for (it = x.begin(); it != x.end(); it++)
+{
+    cout << it->first << ' ' << it->second << endl;
 }
 
 return 0;
 ```
-> 1 1 3 -2  
-> 2 2 3 -1  
-> 3 4 3 1  
-> 3  
-> ……
+> 5 5  
+> 5 7  
+> 7 5
 
-> Time Litmit Exceeded?
+> 5 1  
+> 7 1
 
 #### C++ - Trial 2
 ```cpp
-// n is even : distance = {(n + 1)/2}^2
-// → n = 2 * sqrt(distance) - 1
-// n is odd  : distance = {(n + 1)^2 - 1}/4
+#include <iostream>
+#include <array>
 ```
 ```cpp
-cin.tie(0);
-ios::sync_with_stdio(false);
-
-int T;
-cin >> T;
-
-// Test T times
-for (int t = 0; t < T; t++)
+// Input data
+array<int, 1001> x = {0, }, y = {0, };
+int temp1, temp2;
+for (int i = 0; i < 3; i++)
 {
-    int x, y;                            // int x, y : causes SOF!
-    cin >> x >> y;
+    cin >> temp1 >> temp2;
+    x[temp1]++;
+    y[temp2]++;
+}
 
-    int distance = y - x, move = 0;
-    int turn = 2 * sqrt(distance) - 2;
-    
-    while (true)
-    {
-        turn++;
-        
-        if (turn % 2 == 1) move = pow((turn + 1)/2, 2);
-        else move = (pow(turn + 1, 2) - 1)/4;
+// test
+for (int j = 1; j <= 1000; j++)
+{
+    if (x[j] != 0) cout << "x : " << j << ' ' << x[j] << endl;
+    if (y[j] != 0) cout << "y : " << j << ' ' << y[j] << endl;
+}     
 
-        // test
-        cout << turn << " " << move << " " << distance << " " << move - distance << endl;
+// Find the 4th point
+int x4 = 0, y4 = 0;
+for (int k = 1; k <= 1000; k++)
+{
+    if (x[k] == 1) x4 = k;
+    if (y[k] == 1) y4 = k;
+    if (x4 != 0 && y4 != 0) break;  // a little sincere attitude, not much
+}   
 
-        if (move >= distance) break;
-    }
+// // Output
+cout << x4 << ' ' << y4 << endl;
+
+return 0;
+```
+
+> x : 5 2  
+> y : 5 2  
+> x : 7 1  
+> y : 7 1  
+> 7 7
+
+
+### 4153. Egypt (직각삼각형)
+
+#### C++ 
+```cpp
+#include <iostream>
+// #include <array>     // not used, but use legacy array
+#include <algorithm>    // sort()
+#include <cmath>        // pow()
+```
+```cpp
+int arr[3];
+// array<int, 3> arr                            // causes crazy compile time error when apply to sort()
+while (true)
+{
+    // Input data
+    for (int i = 0; i < 3; i++) cin >> arr[i];
+    if (arr[0] == 0) break;                     // enough to check just one line segment
+
+    // Sort : not sure if data will be sorted
+    sort(arr, arr + 3);                         // not sort(arr[0], arr[3])
 
     // Output
-    cout << turn << endl;
+    if ((int) pow(arr[0], 2) + (int) pow(arr[1], 2) == (int) pow(arr[2], 2))
+    {
+        cout << "right" << endl;
+    } else
+    {
+        cout << "wrong" << endl;
+    }
 }
 
 return 0;
 ```
-> 2 2 3 -1  
-> 3 4 3 1  
-> 3  
-> 3 4 4 0  
-> 3  
-> 3 4 5 -1  
-> 4 6 5 1  
-> 4
 
-> Time Litmit Exceeded?
+> 6 8 10  
+> 25 52 60  
+> 5 12 13  
+> 0 0 0
 
-#### C++ - Trial 3
+> right  
+> wrong  
+> right
+
+
+### 3053. HERMAN(택시 기하학)
+
+#### C++ 
 ```cpp
-using ll = long long;
+#define _USE_MATH_DEFINES   // for using the exact pi value(M_PI)
+
+#include <iostream>
+#include <cmath>            // pow(), M_PI
 ```
 ```cpp
-    ll x, y;                            // int x, y : causes SOF!
-    cin >> x >> y;
+int r;
+cin >> r;
 
-    ll distance = y - x, move = 0;
-    int turn = 2 * sqrt(distance) - 2;
+double euclidian = M_PI * pow(r, 2);            // find the exact value of M_PI : F12 (VS Code)
+double taxicab = 2 * pow(r, 2);
+
+cout << fixed;
+cout.precision(6);
+cout << euclidian << '\n' << taxicab << endl;
+
+return 0;
 ```
-> Accepted
+
+> 21
+
+> 1385.442360  
+> 882.000000
+
+
+### 1002. 터렛
+
+#### C++ 
+```cpp
+#include <iostream>
+#include <cmath>        // pow()
+```
+```cpp
+int T;
+cin >> T;
+
+// T Test cases
+for (int t = 0; t < T; t++)
+{
+    // Input data
+    int x1, y1, r1, x2, y2, r2;
+    cin >> x1 >> y1 >> r1 >> x2 >> y2 >> r2;
+
+    // Find square of distance : sqrt() can cause error
+    int distanceSquare = (int) (pow(x2 - x1, 2) + pow(y2 - y1, 2));
+    int rangeSquare1 = (int) pow(r1 + r2, 2), rangeSquare2 = (int) pow(r2 - r1, 2);
+
+    // test
+    cout << distanceSquare << ' ' << rangeSquare1 << ' ' << rangeSquare2 << endl;
+
+    // Output
+    if (distanceSquare == 0 && rangeSquare2 == 0) cout << -1 << endl;   // infinitely cross
+    else if (distanceSquare > rangeSquare1 || distanceSquare < rangeSquare2) cout << 0 << endl;
+    else if (distanceSquare == rangeSquare1 || distanceSquare == rangeSquare2 ) cout << 1 << endl;
+    else cout << 2 << endl;
+}
+
+return 0;
+```
+
+> 3  
+> 0 0 13 40 0 37  
+> 0 0 3 0 7 4  
+> 1 1 1 1 1 5
+
+> 1600 2500 576  
+> 2  
+> 49 49 1  
+> 1  
+> 0 36 16  
+> 0

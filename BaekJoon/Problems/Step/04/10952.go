@@ -2,13 +2,12 @@ package main
 import "fmt"
 
 func main() {
-    var t int
-    fmt.Scanln(&t)
-
-    for i := 0; i < t; i++ {
-        var a, b int
+    var a, b int
+    for true {
         fmt.Scanln(&a, &b)
-
+        if a == 0 && b == 0 {
+            break
+        }
         fmt.Println(a + b)
     }
 }

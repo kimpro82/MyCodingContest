@@ -21,7 +21,7 @@ func main() {
 
         t++
 
-        if (n == ab){
+        if (n == ab) {
         break;
         }
     }

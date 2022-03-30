@@ -22,7 +22,7 @@ func main() {
         t++
 
         if (n == ab) {
-        break;
+            break;
         }
     }
 

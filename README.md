@@ -45,16 +45,16 @@ can't escape this endless valley of despair ……
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
 | 1 | 입출력과 사칙연산 | 2022.01.26 | 2021.05.13 | 2022.03.12 | Python - 2021.05.13<br>R - 2021.07.11<br>Text - 2022.01.26 | [Link](/BaekJoon/Problems/Step/01#baekjoon-online-judge) |
 | 2 | if문 | 2022.01.29 | 2021.05.24 | 2022.03.14 | R - 2021.07.14 | [Link](/BaekJoon/Problems/Step/02#baekjoon-online-judge) |
-| 3 | for문 | 2022.01.31 | 2021.05.25 | 2022.03.18 | | [Link](/BaekJoon/Problems/Step/03#baekjoon-online-judge) |
-| 4 | while문 | 2022.02.02 | 2021.05.26 | | | [Link](/BaekJoon/Problems/Step/04#baekjoon-online-judge) |
-| 5 | 1차원 배열 | 2022.02.03 | 2021.06.14 | | | [Link](/BaekJoon/Problems/Step/05#baekjoon-online-judge) |
-| 6 | 함수 | | 2021.06.18 | | Text - 2022.03.11 | [Link](/BaekJoon/Problems/Step/06#baekjoon-online-judge) |
-| 7 | 문자열 | 2022.02.16 | 2021.07.10 | | | [Link](/BaekJoon/Problems/Step/07#baekjoon-online-judge) |
-| 8 | 기본 수학 1 | 2022.03.11 | 2021.07.12 | | | [Link](/BaekJoon/Problems/Step/08#baekjoon-online-judge) |
-| 9 | 기본 수학 2 | | 2021.07.20 | | | [Link](/BaekJoon/Problems/Step/09#baekjoon-online-judge) |
-| 10 | 재귀 | | 2021.09.15<br>(not completed) | | | [Link](/BaekJoon/Problems/Step/10#baekjoon-online-judge) |
-| 11 | 브루트 포스 | | 2021.12.10 | | | [Link](/BaekJoon/Problems/Step/11#baekjoon-online-judge) |
-| 12 | 정렬 | | 2021.12.16 | | | [Link](/BaekJoon/Problems/Step/12#baekjoon-online-judge) |
+| 3-1 | for문 | 2022.01.31 | 2021.05.25 | 2022.03.18 | | [Link](/BaekJoon/Problems/Step/03-1#baekjoon-online-judge) |
+| 3-2 | while문 | 2022.02.02 | 2021.05.26 | 2022.03.29 | | [Link](/BaekJoon/Problems/Step/03-2#baekjoon-online-judge) |
+| 4 | 1차원 배열 | 2022.02.03 | 2021.06.14 | | | [Link](/BaekJoon/Problems/Step/04#baekjoon-online-judge) |
+| 5 | 함수 | | 2021.06.18 | | Text - 2022.03.11 | [Link](/BaekJoon/Problems/Step/05#baekjoon-online-judge) |
+| 6 | 문자열 | 2022.02.16 | 2021.07.10 | | | [Link](/BaekJoon/Problems/Step/06#baekjoon-online-judge) |
+| 7 | 기본 수학 1 | 2022.03.11 | 2021.07.12 | | | [Link](/BaekJoon/Problems/Step/07#baekjoon-online-judge) |
+| 8 | 기본 수학 2 | | 2021.07.20 | | | [Link](/BaekJoon/Problems/Step/08#baekjoon-online-judge) |
+| 9 | 재귀 | | 2021.09.15<br>(not completed) | | | [Link](/BaekJoon/Problems/Step/09#baekjoon-online-judge) |
+| 10 | 브루트 포스 | | 2021.12.10 | | | [Link](/BaekJoon/Problems/Step/10#baekjoon-online-judge) |
+| 11 | 정렬 | | 2021.12.16 | | | [Link](/BaekJoon/Problems/Step/11#baekjoon-online-judge) |
 
 
 ## Elice

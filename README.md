@@ -47,7 +47,7 @@ can't escape this endless valley of despair ……
 | 2 | if문 | 2022.01.29 | 2021.05.24 | 2022.03.14 | R - 2021.07.14 | [Link](/BaekJoon/Problems/Step/02#baekjoon-online-judge) |
 | 3-1 | for문 | 2022.01.31 | 2021.05.25 | 2022.03.18 | | [Link](/BaekJoon/Problems/Step/03-1#baekjoon-online-judge) |
 | 3-2 | while문 | 2022.02.02 | 2021.05.26 | 2022.03.29 | | [Link](/BaekJoon/Problems/Step/03-2#baekjoon-online-judge) |
-| 4 | 1차원 배열 | 2022.02.03 | 2021.06.14 | | | [Link](/BaekJoon/Problems/Step/04#baekjoon-online-judge) |
+| 4 | 1차원 배열 | 2022.02.03 | 2021.06.14 | 2022.04.13 | | [Link](/BaekJoon/Problems/Step/04#baekjoon-online-judge) |
 | 5 | 함수 | | 2021.06.18 | | Text - 2022.03.11 | [Link](/BaekJoon/Problems/Step/05#baekjoon-online-judge) |
 | 6 | 문자열 | 2022.02.16 | 2021.07.10 | | | [Link](/BaekJoon/Problems/Step/06#baekjoon-online-judge) |
 | 7 | 기본 수학 1 | 2022.03.11 | 2021.07.12 | | | [Link](/BaekJoon/Problems/Step/07#baekjoon-online-judge) |

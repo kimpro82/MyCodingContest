@@ -3,7 +3,8 @@
 # 문제 > 단계별로 풀어보기 > 4. 1차원 배열
 
 (2021.06.14) - `C++`  
-(2022.02.03) - `Bash`
+(2022.02.03) - `Bash`  
+(2022.04.12) - `Golang`
 
 https://www.acmicpc.net/step/6  
 
@@ -23,9 +24,9 @@ https://www.acmicpc.net/step/6
 
 &nbsp;&nbsp; - All the codes of any language for the same problem have basically the same result.  
 &nbsp;&nbsp; - `Bash` : skipped the first line; `#!/bin/bash`  
-&nbsp;&nbsp; - `C++` : skipped `main()` function's brace(`{}`) and its outside(`<iostream>` header and namespace `std`).  
-&nbsp;&nbsp;&nbsp;&nbsp; · Basically, all the codes has the `<iostream>` header and namespace `std` even if there's no mention.  
-&nbsp;&nbsp;&nbsp;&nbsp; · When any additional header is used, the header block is also noted seperately.
+&nbsp;&nbsp; - `C++`* : skipped `main()` function's brace(`{}`) and its outside including two header lines; `#include <iostream>` `using namespace std;`  
+&nbsp;&nbsp; - `Golang`* : skipped `main()` function's brace(`{}`) and its outside including two header lines; `package main` `import "fmt"`  
+&nbsp;&nbsp; * When any additional header is used, the header block is also noted seperately.
 
 
 ## [10818. 최소, 최대](#list)
@@ -71,7 +72,7 @@ echo $min $max
 ```
 > 메모리 초과
 
-#### C++ (Trial 1)
+#### C++ - Trial 1
 ```cpp
 #include <iostream>
 #include <cmath>    // for using min() & max(), but I really hate it
@@ -96,7 +97,7 @@ cout << minValue << " " << maxValue << endl;
 return 0;
 ```
 
-#### C++ (Trial 2)
+#### C++ - Trial 2
 ```cpp
 // I really don't want to use for loop with math.max(), math.min().  
 // But, consequantially, it was a kind of the lesser evil.
@@ -127,6 +128,92 @@ int maxValue = *max_element(vec.begin(), vec.end());
 cout << minValue << " " << maxValue << endl;    // inefficient, crazy
 
 return 0;
+```
+
+#### Golang - Trial 1
+```golang
+var n int
+fmt.Scanln(&n)
+
+var arr []int = make([]int, n)
+
+var max int = -1000000
+var min int = 1000000
+for i := 0; i < n; i++ {
+    fmt.Scanf("%d", &arr[i])
+    
+    if arr[i] > max {
+        max = arr[i]
+    }
+    if arr[i] < min {
+        min = arr[i]
+    }
+}
+
+fmt.Println(min, max)
+```
+> 시간 초과
+
+#### Golang - Trial 2
+```golang
+import (
+    "fmt"
+    "bufio"
+    "os"
+)
+```
+```golang
+var reader = bufio.NewReader(os.Stdin)
+var writer = bufio.NewWriter(os.Stdout)
+defer writer.Flush()
+
+var n int
+fmt.Scanln(&n)
+
+var arr []int = make([]int, n)
+
+var max int = -1000000
+var min int = 1000000
+for i := 0; i < n; i++ {
+    fmt.Fscan(reader, &arr[i])
+
+    if arr[i] > max {
+        max = arr[i]
+    }
+    if arr[i] < min {
+        min = arr[i]
+    }
+}
+
+fmt.Println(min, max)
+```
+
+#### Golang - Trial 3
+```golang
+import (
+    "fmt"
+    "bufio"
+    "os"
+    "sort"
+)
+```
+```golang
+var reader = bufio.NewReader(os.Stdin)
+var writer = bufio.NewWriter(os.Stdout)
+defer writer.Flush()
+
+var n int
+fmt.Scanln(&n)
+
+var arr []int = make([]int, n)
+
+for i := 0; i < n; i++ {
+    fmt.Fscan(reader, &arr[i])
+}
+
+// using sort.Sort()
+sort.Sort(sort.IntSlice(arr))
+fmt.Println(arr[0], arr[n - 1])
 ```
 
 
@@ -201,6 +288,24 @@ cout << maxValue << "\n" << loc << endl;
 return 0;
 ```
 
+#### Golang
+```golang
+var n int
+var max int = 0
+var maxIdx int
+
+for i := 0; i < 9; i++ {
+    fmt.Scanf("%d", &n)
+    
+    if n > max {
+        max = n
+        maxIdx = i
+    }
+}
+
+fmt.Println(max, maxIdx + 1)
+```
+
 
 ## [2577. 숫자의 개수](#list)
 
@@ -271,6 +376,32 @@ for (int j = 0; j < 10; j++)
 return 0;
 ```
 
+#### Golang
+```golang
+import (
+    "fmt"
+    "strconv"
+)
+```
+```golang
+var a, b, c int
+fmt.Scanln(&a)
+fmt.Scanln(&b)
+fmt.Scanln(&c)
+
+var prod string = strconv.Itoa(a * b * c)
+var length int = len(prod)
+
+var arr [10]int
+for i := 0; i < length; i++ {
+    arr[prod[i] - '0']++
+}
+
+for j := 0; j < 10; j++ {
+    fmt.Println(arr[j])
+}
+```
+
 
 ## [3052. MODULO](#list)
 
@@ -331,6 +462,35 @@ cout << modulo.size() << endl;
 return 0;
 ```
 
+#### Golang
+```golang
+var n, mod int
+var modulo map[int]int
+modulo = make(map[int]int)
+
+for i := 0; i < 10; i++ {
+    fmt.Scanln(&n)
+
+    mod = n % 42
+    _, exists := modulo[mod]
+    if !exists {
+        modulo[mod] = 1
+    } else {
+        modulo[mod]++            // not necessary but I dream better code
+    }
+}
+
+// test
+// for j := 0; j < 42; j++ {
+//     val, exists := modulo[j]
+//     if exists {
+//         fmt.Println(j, val)
+//     }
+// }
+
+fmt.Println(len(modulo))
+```
+
 
 ## [1546. 평균](#list)
 
@@ -389,6 +549,36 @@ for (int j = 0; j < t; j++)
 cout << sum / t << endl;
 
 return 0;
+```
+
+#### Golang
+```golang
+var n int
+fmt.Scanln(&n)
+
+var score []float32 = make([]float32, n)
+var max float32 = 0
+for i := 0; i < n; i++ {
+    fmt.Scan(&score[i])
+
+    if score[i] > max {
+        max = score[i]
+    }
+}
+
+// test
+// fmt.Println(score, max)
+
+var sum float32 = 0
+for i := 0; i < n; i++ {
+    score[i] *= float32(1 / max) * 100
+    sum += score[i]
+
+    // test
+    // fmt.Println(score, sum)
+}
+
+fmt.Printf("%.3f\n", sum / float32(n))
 ```
 
 
@@ -468,6 +658,32 @@ for (int i = 0; i < t; i++)
 }
 
 return 0;
+```
+
+#### Golang
+```golang
+var n, score, combo, length int
+var ox string
+fmt.Scanln(&n)
+
+for i := 0; i < n; i++ {
+    score = 0
+    combo = 0
+
+    fmt.Scan(&ox)
+    length = len(ox)
+
+    for j := 0; j < length; j++ {
+        if (ox[j] == 'O') {
+            combo += 1
+            score += combo
+        } else {
+            combo = 0
+        }
+    }
+
+    fmt.Println(score)
+}
 ```
 
 
@@ -563,4 +779,43 @@ for (int i = 0; i < c; i++)
 }
 
 return 0;
+```
+
+#### Golang
+```golang
+var c, n int
+fmt.Scanln(&c)
+
+for i := 0; i < c; i++ {
+    fmt.Scan(&n)
+
+    var score []float32 = make([]float32, n)                            // don't forget make()!
+    var sum, average float32
+    var aboveAverage int
+
+    // Get sum and average
+    sum = 0
+    for j := 0; j < n; j++ {
+        fmt.Scan(&score[j])
+        sum += score[j]
+    }
+    average = sum / float32(n)
+
+    // test : ok
+    // fmt.Println(score, sum, average)
+
+    // Get percentage of students whose grades are above average
+    aboveAverage = 0
+    for j := 0; j < n; j++ {
+        if score[j] > average {
+            aboveAverage++
+        }
+    }
+
+    // test : ok
+    // fmt.Println(n, aboveAverage)
+
+    // Output
+    fmt.Printf("%.3f%%\n", float32(aboveAverage) / float32(n) * 100)    // not \%, but %%
+}
 ```

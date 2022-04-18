@@ -169,6 +169,7 @@ int main()
 ```
 
 #### Golang
+Hmm it would be better to use *nested If statement* with the order of `num > 9` `num > 99` `num > 999`.
 ```golang
 func digitadition(num int) int {
 

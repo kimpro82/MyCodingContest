@@ -162,16 +162,6 @@ return 0;
     digitadition += j % 10;
 ```
 
-#### Text
-```txt
-1
-3
-5
-……
-9993
-```
-ㅋㅋㅋ
-
 #### Golang
 ```golang
 func digitadition(num int) int {
@@ -220,6 +210,16 @@ func main() {
     }
 }
 ```
+
+#### Text
+```txt
+1
+3
+5
+……
+9993
+```
+ㅋㅋㅋ
 
 
 ## [1065. 한수](#list)

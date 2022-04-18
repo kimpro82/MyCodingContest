@@ -63,7 +63,7 @@ sum(a);
 return 0;
 ```
 
-## Golang
+#### Golang
 ```golang
 // import "fmt"
 ```
@@ -172,7 +172,7 @@ return 0;
 ```
 ㅋㅋㅋ
 
-## Golang
+#### Golang
 ```golang
 func digitadition(num int) int {
 
@@ -277,7 +277,7 @@ return 0;
 // }
 ```
 
-## Golang
+#### Golang
 ```golang
 func count(n int) int {
     var ans int = 0;

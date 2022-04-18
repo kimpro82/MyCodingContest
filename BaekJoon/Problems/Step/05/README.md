@@ -5,22 +5,23 @@
 https://www.acmicpc.net/step/5
 
 (2021.06.18) - `C++`  
-(2022.03.11) - `Text`
+(2022.03.11) - `Text`  
+(2022.04.17) - `Golang`
 
 
 ## **List**
 
-- [15596. 정수 N개의 합]()
-- [4673. Self Numbers]()
-- [1065. 한수]()
+- [15596. 정수 N개의 합](#15596-정수-n개의-합)
+- [4673. Self Numbers](#4673-self-numbers)
+- [1065. 한수](#1065-한수)
 
 
 **※ Note**
 
 &nbsp;&nbsp; - All the codes of any language for the same problem have basically the same result.  
-&nbsp;&nbsp; - `C++` : skipped `main()` function's brace(`{}`) and its outside(`<iostream>` header and namespace `std`).  
-&nbsp;&nbsp;&nbsp;&nbsp; · Basically, all the codes has the `<iostream>` header and namespace `std` even if there's no mention.  
-&nbsp;&nbsp;&nbsp;&nbsp; · When any additional header is used, the header block is also noted seperately.  
+&nbsp;&nbsp; - `C++`* : skipped `main()` function's brace(`{}`) and its outside including two header lines; `#include <iostream>` `using namespace std;`  
+&nbsp;&nbsp; - `Golang`* : skipped `main()` function's brace(`{}`) and its outside including two header lines; `package main` `import "fmt"`  
+&nbsp;&nbsp; * When any additional header is used, the header block is also noted seperately.
 
 
 ## [15596. 정수 N개의 합](#list)
@@ -60,6 +61,29 @@ vector<int> a = {1, 2, 3, 4, 5};
 sum(a);
 
 return 0;
+```
+
+## Golang
+```golang
+// import "fmt"
+```
+```golang
+func sum(a []int) int {            // int == int64 in 64 bit env.
+    var ans int = 0
+
+    for _, el := range a {
+        ans += el                  // not a[i] !!!
+    }
+
+    return ans
+}
+```
+```golang
+// Test
+// func main() {
+//     a := []int{1, 2, 3, 4, 5}
+//     fmt.Println(sum(a))
+// }
 ```
 
 
@@ -148,6 +172,55 @@ return 0;
 ```
 ㅋㅋㅋ
 
+## Golang
+```golang
+func digitadition(num int) int {
+
+    var d int = num
+
+    if num > 999 {
+        d += num / 1000
+    }
+    if num > 99 {
+        d += (num % 1000) / 100
+    }
+    if num > 9 {
+        d += (num % 100) / 10
+    }
+    d += num % 10
+
+    return d
+}
+```
+```golang
+func main() {
+
+    var n int = 10001                            // n = 101 for test
+    
+    // Generate an array {1, 2, ……, 9999}
+    var arr []int = make([]int, n)
+    for i := 1; i < n; i++ {
+        arr[i] = 1
+    }
+
+    // Remove non-self numbers from the array
+    var temp int
+    for i := 1; i < n; i++ {
+        temp = digitadition(i)
+        if temp < n {
+            arr[temp] = 0
+        }
+    }
+
+    // Output
+    for i := 1; i < n; i++ {
+        if arr[i] == 1 {
+            fmt.Println(i)
+        }
+    }
+}
+```
+
 
 ## [1065. 한수](#list)
 
@@ -202,4 +275,39 @@ return 0;
 // {
 //     count = 144; // given as a sample output …… crazy
 // }
+```
+
+## Golang
+```golang
+func count(n int) int {
+    var ans int = 0;
+    var a, b, c int
+    if n < 100 {
+        ans = n
+    } else if n < 1000 {
+        ans = 99
+
+        for i := 100; i <= n; i++ {
+            a = i / 100
+            b = (i % 100) / 10
+            c = i % 10
+
+            if b - a == c - b {
+                ans++
+            }
+        }
+    } else {                            // n == 1000
+        ans = 144                       // crazy~ (given as a sample output)
+    }
+
+    return ans
+}
+```
+```golang
+func main() {
+    var n int;
+    fmt.Scanln(&n)
+
+    fmt.Println(count(n))
+}
 ```

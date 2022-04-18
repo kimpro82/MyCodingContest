@@ -19,7 +19,7 @@ https://www.acmicpc.net/step/5
 **※ Note**
 
 &nbsp;&nbsp; - All the codes of any language for the same problem have basically the same result.  
-&nbsp;&nbsp; - `C++`* : skipped `main()` function's brace(`{}`) and its outside including two header lines; `#include <iostream>` `using namespace std;`  
+&nbsp;&nbsp; - `C++`* : skipped the below two header lines; `#include <iostream>` `using namespace std;`  
 &nbsp;&nbsp; - `Golang`* : skipped `main()` function's brace(`{}`) and its outside including two header lines; `package main` `import "fmt"`  
 &nbsp;&nbsp; * When any additional header is used, the header block is also noted seperately.
 
@@ -57,10 +57,13 @@ long long sum(vector<int> &a)
 ```
 ```cpp
 // test
-vector<int> a = {1, 2, 3, 4, 5};
-sum(a);
+// int main()
+// {
+//     vector<int> a = {1, 2, 3, 4, 5};
+//     sum(a);
 
-return 0;
+//     return 0;
+// }
 ```
 
 #### Golang
@@ -104,44 +107,47 @@ Deja vu? ☞ [Oncoder Challenge Lv.6](..//Oncoder/Challenge/Q06/README.md)
 #include <algorithm>
 ```
 ```cpp
-// make a set {1, 2, ……, 9999}
-set<int> mySet;
-for (int i = 1; i < 10000; i++)
+int main()
 {
-    mySet.insert(i);
+    // make a set {1, 2, ……, 9999}
+    set<int> mySet;
+    for (int i = 1; i < 10000; i++)
+    {
+        mySet.insert(i);
+    }
+
+    // erase digitaditions from mySet{}
+    for (int j = 1; j < 10000; j++)
+    {
+        int digitadition = j;
+        if (j > 999)
+        {
+            digitadition += j / 1000;
+        }
+        if (j > 99)
+        {
+            digitadition += (j % 1000) / 100;
+        }
+        if (j > 9)
+        {
+            digitadition += (j % 100) / 10;
+        }
+        digitadition += j % 10;
+
+        mySet.erase(digitadition);
+    }
+
+    // output self-numbers
+    // make cin/cout faster
+    cin.tie(NULL);
+    ios_base::sync_with_stdio(false);
+    for_each (mySet.begin(), mySet.end(), [](int n)
+    {
+        cout << n << '\n';
+    });
+
+    return 0;
 }
-
-// erase digitaditions from mySet{}
-for (int j = 1; j < 10000; j++)
-{
-    int digitadition = j;
-    if (j > 999)
-    {
-        digitadition += j / 1000;
-    }
-    if (j > 99)
-    {
-        digitadition += (j % 1000) / 100;
-    }
-    if (j > 9)
-    {
-        digitadition += (j % 100) / 10;
-    }
-    digitadition += j % 10;
-
-    mySet.erase(digitadition);
-}
-
-// output self-numbers
-// make cin/cout faster
-cin.tie(NULL);
-ios_base::sync_with_stdio(false);
-for_each (mySet.begin(), mySet.end(), [](int n)
-{
-    cout << n << '\n';
-});
-
-return 0;
 ```
 ```cpp
     // better code?
@@ -238,43 +244,46 @@ func main() {
 
 #### C++
 ```cpp
-int n;      // n <= 1000
-cin >> n;
+int main()
+{
+    int n;      // n <= 1000
+    cin >> n;
 
-int count = 0;
-if (n < 100)
-{
-    count = n;
-} else
-{
-    int a, b, c;
-    count = 99;
-    if (n == 1000)      // can determine 1000 is not
+    int count = 0;
+    if (n < 100)
     {
-        n = 999;
-    }
-    for (int i = 100; i <= n; i++)
+        count = n;
+    } else
     {
-        a = i / 100;
-        b = (i % 100) / 10;
-        c = i % 10;
-        if ((b - a) == (c - b))
+        int a, b, c;
+        count = 99;
+        if (n == 1000)      // can determine 1000 is not
         {
-            count++;
+            n = 999;
         }
-        cout << a << " " << b << " " << c << " " << count << endl;  // test
+        for (int i = 100; i <= n; i++)
+        {
+            a = i / 100;
+            b = (i % 100) / 10;
+            c = i % 10;
+            if ((b - a) == (c - b))
+            {
+                count++;
+            }
+            cout << a << " " << b << " " << c << " " << count << endl;  // test
+        }
     }
+
+    cout << count << endl;
+
+    return 0;
 }
-
-cout << count << endl;
-
-return 0;
 ```
 ```cpp
-// else             // n == 1000
-// {
-//     count = 144; // given as a sample output …… crazy
-// }
+    // else             // n == 1000
+    // {
+    //     count = 144; // given as a sample output …… crazy
+    // }
 ```
 
 #### Golang

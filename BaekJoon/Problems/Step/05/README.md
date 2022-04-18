@@ -20,7 +20,8 @@ https://www.acmicpc.net/step/5
 
 &nbsp;&nbsp; - All the codes of any language for the same problem have basically the same result.  
 &nbsp;&nbsp; - `C++`* : skipped the below two header lines; `#include <iostream>` `using namespace std;`  
-&nbsp;&nbsp; - `Golang`* : skipped `main()` function's brace(`{}`) and its outside including two header lines; `package main` `import "fmt"`  
+&nbsp;&nbsp; - `Golang`* : skipped the below two header lines; `package main` `import "fmt"`  
+&nbsp;&nbsp; - `Text` : Only possible problems that do not require input values are solved.  
 &nbsp;&nbsp; * When any additional header is used, the header block is also noted seperately.
 
 

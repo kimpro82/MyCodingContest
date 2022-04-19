@@ -260,6 +260,8 @@ return 0;
 
 ### [Chain Reactions (10 / 12 / 5 pts)](#list)
 
+It should be solved through `DFS` × `Greedy` but ……
+
 #### C++
 ```cpp
 #include <iostream>

@@ -1,11 +1,11 @@
-## Google Code Jam 2022 - Qualification Round
+# Google Code Jam 2022 - Qualification Round
 
 2022.04.02 08:00 ~ 04.03 11:00, 27 hrs
 
 https://codingcompetitions.withgoogle.com/codejam/round/0000000000876ff1
 
 
-### \<List>
+## \<List>
 
 - [Punched Cards (11 pts)](#punched-cards-11-pts)
 - [3D Printing (13 pts)](#3d-printing-13-pts)
@@ -27,7 +27,7 @@ using namespace std;
 - When any additional header is used, the header block is also noted seperately.
 
 
-### [Punched Cards (11 pts)](#list)
+## [Punched Cards (11 pts)](#list)
 
 #### C++
 ```cpp
@@ -120,7 +120,7 @@ return 0;
 > Test Set 1: Passed (11 pts)
 
 
-### [3D Printing (13 pts)](#list)
+## [3D Printing (13 pts)](#list)
 
 #### C++
 ```cpp
@@ -184,7 +184,7 @@ return 0;
 > Test Set 1: Passed (13 pts)
 
 
-### [d1000000 (9 / 11 pts)](#list)
+## [d1000000 (9 / 11 pts)](#list)
 
 #### C++
 ```cpp
@@ -258,7 +258,7 @@ return 0;
 > Test Set 2: Passed (11 pts)
 
 
-### [Chain Reactions (10 / 12 / 5 pts)](#list)
+## [Chain Reactions (10 / 12 / 5 pts)](#list)
 
 It should be solved through `DFS` × `Greedy` but ……
 
@@ -360,5 +360,5 @@ wrong
 not attempted
 
 
-### [Twisty Little Passages (29 pts)](#list)
+## [Twisty Little Passages (29 pts)](#list)
 not attempted

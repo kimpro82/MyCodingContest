@@ -19,10 +19,10 @@ long long sum(vector<int> &a)
 }
 
 // test
-int main()
-{
-    vector<int> a = {1, 2, 3, 4, 5};
-    sum(a);
+// int main()
+// {
+//     vector<int> a = {1, 2, 3, 4, 5};
+//     sum(a);
 
-    return 0;
-}
+//     return 0;
+// }

@@ -7,11 +7,11 @@ https://codingcompetitions.withgoogle.com/codejam/round/0000000000876ff1
 
 ### \<List>
 
-- [Punched Cards (11 pts)]()
-- [3D Printing (13 pts)]()
-- [d1000000 (9 / 11 pts)]()
-- [Chain Reactions (10 / 12 / 5 pts)]()
-- [Twisty Little Passages (29 pts)]()
+- [Punched Cards (11 pts)](#punched-cards-11-pts)
+- [3D Printing (13 pts)](#3d-printing-13-pts)
+- [d1000000 (9 / 11 pts)](#d1000000-9--11-pts)
+- [Chain Reactions (10 / 12 / 5 pts)](#chain-reactions-10--12--5-pts)
+- [Twisty Little Passages (29 pts)](#twisty-little-passages-29-pts)
 
 
 ### ※ Notes
@@ -348,13 +348,13 @@ return 0;
 > 0 1 2 1 2 3 1 3
 
 #### Test Output
-> Case #1: 0
-> Case #2: 0
-> Case #3: 0
-(Wrong)
+wrong
+> Case #1: 0  
+> Case #2: 0  
+> Case #3: 0  
 
 #### Submissions
-> not attempted
+not attempted
 
 
 ### [Twisty Little Passages (29 pts)](#list)

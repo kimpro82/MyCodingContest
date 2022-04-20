@@ -16,7 +16,7 @@ https://codingcompetitions.withgoogle.com/codejam/round/0000000000876ff1
 
 ### ※ Notes
 
-- `C++`* : skipped `main()` function's brace(`{}`) and its outside including the following header lines
+- `C++` : skipped `main()` function's brace(`{}`) and its outside including the following header lines
 ```cpp
 #include <iostream>
 

@@ -9,27 +9,19 @@ https://www.acmicpc.net/step/33
 
 ## **List**
 
-- [11047. 동전 0]()
-- [1931. 회의실 배정]()
-- [11399. ATM]()
-- [1541. 잃어버린 괄호]()
-- [13305. 주유소]()
+- [11047. 동전 0](#11047-동전-0)
+- [1931. 회의실 배정](#1931-회의실-배정)
+- [11399. ATM](#11399-atm)
+- [1541. 잃어버린 괄호](#1541-잃어버린-괄호)
+- [13305. 주유소](#13305-주유소)
 
 
 **※ Note**
 
 &nbsp;&nbsp; - All the codes of any language for the same problem have basically the same result.  
-&nbsp;&nbsp; - `C++`* : skipped the below three header lines;  
-```c++
-#include <iostream>
-#define endl '\n'
-
-using namespace std;
-```
-&nbsp;&nbsp; * When any additional header is used, the header block is also noted seperately.
 
 
-## [11047. 동전 0](#list)
+## [11047. 동전 0](#list)
 
 #### Input Data
 ```
@@ -91,7 +83,7 @@ int main()
 ```
 
 
-## [1931. 회의실 배정](#list)
+## [1931. 회의실 배정](#list)
 
 #### Input Data
 ```
@@ -171,7 +163,7 @@ int main()
 ```
 
 
-## [11399. ATM](#list)
+## [11399. ATM](#list)
 
 #### Input Data
 ```
@@ -223,7 +215,7 @@ int main()
 ```
 
 
-## [1541. 잃어버린 괄호](#list)
+## [1541. 잃어버린 괄호](#list)
 
 #### Input Data
 ```
@@ -236,6 +228,12 @@ int main()
 ```
 
 #### C++
+```c++
+#include <iostream>
+#define endl '\n'
+
+using namespace std;
+```
 ```cpp
 int main()
 {
@@ -268,7 +266,7 @@ int main()
 ```
 
 
-## [13305. 주유소](#list)
+## [13305. 주유소](#list)
 
 #### Input Data
 ```

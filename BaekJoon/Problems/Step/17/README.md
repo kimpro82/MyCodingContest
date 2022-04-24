@@ -16,11 +16,6 @@ https://www.acmicpc.net/step/33
 - [13305. 주유소](#13305-주유소)
 
 
-**※ Note**
-
-&nbsp;&nbsp; - All the codes of any language for the same problem have basically the same result.  
-
-
 ## [11047. 동전 0](#list)
 
 #### Input Data

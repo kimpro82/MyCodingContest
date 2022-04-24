@@ -1,4 +1,4 @@
-// 9184. 신나는 함수 실행
+// 9184. Function Run Fun
 
 /* Sample input & output data
 1 1 1

@@ -1,4 +1,4 @@
-// 9461. Padovan Sequence
+// 9461. 파도반 수열 (Padovan Sequence)
 
 /* Sample input & output data
 2

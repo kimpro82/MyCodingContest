@@ -225,7 +225,7 @@ int main()
 > Test Set 1: Passed (14 pts)  
 > Test Set 2: Passed (21 pts)
 
-I faced some struggle with dealing `printf()`'s integer format `%d` `%ld` `%lld` in this problem, so that I investigated it seperately at *[printf() format test (2022.04.25)]*(https://github.com/kimpro82/MyPractice/tree/master/C&Cpp#printf-format-test-20220425) in the other repository *[MyPractice]*(https://github.com/kimpro82/MyPractice/).
+I faced some struggle with dealing `printf()`'s integer format `%d` `%ld` `%lld` in this problem, so that I investigated it seperately at [*printf() format test (2022.04.25)*](https://github.com/kimpro82/MyPractice/tree/master/C&Cpp#printf-format-test-20220425) in the other repository [*MyPractice*](https://github.com/kimpro82/MyPractice/).
 
 
 ## [ASeDatAb (25pts, 15pts)](#list)

@@ -16,7 +16,7 @@ using namespace std;
 int main()
 {
     // Input data
-    int x = 0;
+    int x;
     cin >> x;
 
     // Dynamic Programming

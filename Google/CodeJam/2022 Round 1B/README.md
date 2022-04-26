@@ -7,9 +7,9 @@ https://codingcompetitions.withgoogle.com/codejam/round/000000000087711b
 
 ## \<List>
 
-- [Pancake Deque (7pts, 8pts, 10pts)]()
-- [Controlled Inflation (14pts, 21pts)]()
-- [ASeDatAb (25pts, 15pts)]()
+- [Pancake Deque (7pts, 8pts, 10pts)](#pancake-deque-7pts-8pts-10pts)
+- [Controlled Inflation (14pts, 21pts)](#controlled-inflation-14pts-21pts)
+- [ASeDatAb (25pts, 15pts)](#asedatab-25pts-15pts)
 
 
 ## [Pancake Deque (7pts, 8pts, 10pts)](#list)

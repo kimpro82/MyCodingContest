@@ -59,7 +59,7 @@ int main()
         }
 
         // Solve
-        array<int, 20001> arr = {0, };
+        array<int, 200001> arr = {0, };         // 2 * 10^5 is not 20,000!
         int ans = -1;
         for (int j = 0; j < n; j++)
         {

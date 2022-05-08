@@ -49,10 +49,16 @@ int main()
 
         // Solve
         int alice = 0, bob = 0, count = 0;
+        // 1) suppose Alice eat all the candies
+        for (int j = 0; j < n; j++) alice += w[j];
+        // 2) give Alice's candies one by one to Bob
         for (int j = 0; j < n; j++)
         {
-            if (alice < bob) alice++;
-            if (alice > bob) bob += w[n-j-1];
+            if (alice > bob)
+            {
+                alice -= w[j-n-1];
+                bob += w[j-n-1];
+            }
         }
 
         // Output

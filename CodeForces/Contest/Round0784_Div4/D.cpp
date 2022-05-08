@@ -90,7 +90,7 @@ int main()
                 continuous++;
             }
         }
-        if (continuous == 1) ans = "NO";
+        if (continuous == 1 || (continuous > 1 && min(rb.first, rb.second) == 0)) ans = "NO";
 
         // Output
         cout << ans << endl;

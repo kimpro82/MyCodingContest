@@ -40,6 +40,7 @@ int main()
         int rating;
         cin >> rating;
 
+        // Solve
         int division;
         if (rating >= 1900) division = 1;
         else if (rating >= 1600) division = 2;

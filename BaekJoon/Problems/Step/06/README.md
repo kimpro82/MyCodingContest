@@ -26,7 +26,7 @@ https://www.acmicpc.net/step/7
 **※ Note**  
 
 &nbsp;&nbsp; - All the codes of any language for the same problem have basically the same result.  
-&nbsp;&nbsp; - Typical headers are basically skipped like the below, but they are noted seperately when any additional one is used.  
+&nbsp;&nbsp; - Typical headers like the below are basically skipped, but they are noted seperately when theere are any additional line.  
 &nbsp;&nbsp;&nbsp;&nbsp; · `Bash` : `#!/bin/bash`  
 &nbsp;&nbsp;&nbsp;&nbsp; · `C++` : `#include <iostream>` `using namespace std;` `#define endl '\n';`  
 &nbsp;&nbsp;&nbsp;&nbsp; · `Golang` : `package main` `import "fmt"`  
@@ -910,6 +910,7 @@ int main()
 ```
 
 #### Golang
+Use different algorithm from other solvings of `Bash` `C++`
 ```golang
 import (
     "fmt"

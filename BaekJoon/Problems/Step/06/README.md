@@ -5,7 +5,8 @@
 https://www.acmicpc.net/step/7
 
 (2021.07.10) - `C++`  
-(2022.02.16) - `Bash`
+(2022.02.16) - `Bash`  
+(2022.06.20) - `Golang`
 
 
 ## **List**
@@ -25,11 +26,11 @@ https://www.acmicpc.net/step/7
 **※ Note**  
 
 &nbsp;&nbsp; - All the codes of any language for the same problem have basically the same result.  
-&nbsp;&nbsp; - `Bash` : skipped the first line; `#!/bin/bash`  
-&nbsp;&nbsp; - `C++` : skipped `main()` function's brace(`{}`) and its outside(`<iostream>` header and namespace `std`).  
-&nbsp;&nbsp;&nbsp;&nbsp; · Basically, all the codes has the `<iostream>` header and namespace `std` even if there's no mention.  
-&nbsp;&nbsp;&nbsp;&nbsp; · When any additional header is used, the header block is also noted seperately.  
-&nbsp;&nbsp;&nbsp;&nbsp; ※ Very meaningful time to familiarize with `array` `vector` and `string`!
+&nbsp;&nbsp; - Typical headers are basically skipped like the below, but they are noted seperately when any additional one is used.  
+&nbsp;&nbsp;&nbsp;&nbsp; · `Bash` : `#!/bin/bash`  
+&nbsp;&nbsp;&nbsp;&nbsp; · `C++` : `#include <iostream>` `using namespace std;` `#define endl '\n';`  
+&nbsp;&nbsp;&nbsp;&nbsp; · `Golang` : `package main` `import "fmt"`  
+&nbsp;&nbsp; ※ `C++` : Very meaningful time to familiarize with `array` `vector` and `string`!  
 
 
 ## [11654. 아스키 코드](#list)
@@ -52,12 +53,25 @@ printf "%d\n" "'$char'"     # 97; regard a as a string
 
 #### C++ 
 ```cpp
-char x;
-cin >> x;
+int main()
+{
+    char x;
+    cin >> x;
 
-cout << (int) x << endl;
+    cout << (int) x << endl;
 
-return 0;
+    return 0;
+}
+```
+
+#### Golang
+```golang
+func main() {
+    var x string
+    fmt.Scanln(&x)
+
+    fmt.Println(x[0])
+}
 ```
 
 
@@ -92,21 +106,46 @@ echo $sum
 #include <string>
 ```
 ```cpp
-// Input
-int n;
-string x;
-cin >> n >> x;
-
-// Operate and output
-int sum = 0;
-for (int i = 0; i < n; i++)
+int main()
 {
-    sum += (int) x[i] - '0';
-    // cout << x[i] << " " << sum << endl;  // test
-}
-cout << sum << endl;
+    // Input
+    int n;
+    string x;
+    cin >> n >> x;
 
-return 0;
+    // Operate and output
+    int sum = 0;
+    for (int i = 0; i < n; i++)
+    {
+        sum += (int) x[i] - '0';
+        // cout << x[i] << " " << sum << endl;  // test
+    }
+    cout << sum << endl;
+
+    return 0;
+}
+```
+
+#### Golang
+```golang
+func main() {
+
+    // Input
+    var n int
+    var num string
+    fmt.Scanln(&n)
+    fmt.Scanln(&num)
+
+    // Calculate sum
+    var sum int = 0
+    var digit rune
+    for _, digit = range num {
+        sum += int(digit - '0')
+    }
+
+    // Output
+    fmt.Println(sum)
+}
 ```
 
 
@@ -153,30 +192,66 @@ echo
 #include <vector>
 ```
 ```cpp
-// Input
-string s;
-cin >> s;
-
-// Declare an array for counting a ~ z
-vector<int> alphabet (26, -1);
-
-// Count
-for (int i = 0; i < s.length(); i++)
+int main()
 {
-    if (alphabet[s[i] - 'a'] == -1)
+    // Input
+    string s;
+    cin >> s;
+
+    // Declare an array for counting a ~ z
+    vector<int> alphabet (26, -1);
+
+    // Count
+    for (int i = 0; i < s.length(); i++)
     {
-        alphabet[s[i] - 'a'] = i;
+        if (alphabet[s[i] - 'a'] == -1)
+        {
+            alphabet[s[i] - 'a'] = i;
+        }
     }
-}
 
-// Output
-for (int j = 0; j < 25; j++)    // a ~ y
-{
-    cout << alphabet[j] << " ";
-}
-cout << alphabet[25] << endl;   // z
+    // Output
+    for (int j = 0; j < 25; j++)    // a ~ y
+    {
+        cout << alphabet[j] << " ";
+    }
+    cout << alphabet[25] << endl;   // z
 
-return 0;
+    return 0;
+}
+```
+
+#### Golang
+```golang
+func main() {
+
+    // Input
+    var s string
+    fmt.Scanln(&s)
+
+    // Declare an array for alphabet
+    var alphabet []int
+    for i := 0; i < 26; i++ {
+        alphabet = append(alphabet, -1)
+    }
+    // fmt.Println(alphabet)                     // test : ok
+
+    // Find the location
+    for i := 0; i < len(s); i++ {
+        // fmt.Print(s[i] - 'a')                 // test : ok
+
+        if alphabet[s[i] - 'a'] == -1 {
+            alphabet[s[i] - 'a'] = i
+        }
+    }
+
+    // Output
+    // fmt.Println(alphabet)                     // test : [……]
+    for i := 0; i < 25; i++ {                    // a ~ y
+        fmt.Print(alphabet[i], " ")
+    }
+    fmt.Println(alphabet[25])                    // z
+}
 ```
 
 
@@ -217,26 +292,50 @@ done
 #include <string>
 ```
 ```cpp
-int p;
-cin >> p;
-
-int n;
-string s;
-for (int i = 0; i < p; i++)
+int main()
 {
-    cin >> n >> s;
+    int p;
+    cin >> p;
 
-    for (int j = 0; j < s.length(); j++)
+    int n;
+    string s;
+    for (int i = 0; i < p; i++)
     {
-        for (int k = 0; k < n; k++)
-        {
-            cout << s[j];
-        }
-    }
-    cout << endl;
-}
+        cin >> n >> s;
 
-return 0;
+        for (int j = 0; j < s.length(); j++)
+        {
+            for (int k = 0; k < n; k++)
+            {
+                cout << s[j];
+            }
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
+```
+
+#### Golang
+```golang
+func main() {
+
+    var t, r int
+    var s string
+    fmt.Scanln(&t)
+
+    for i := 0; i < t; i++ {
+        fmt.Scanln(&r, &s)
+
+        for j := 0; j < len(s); j++ {
+            for k := 0; k < r; k++ {
+                fmt.Print(string(s[j]))
+            }
+        }
+        fmt.Println()
+    }
+}
 ```
 
 
@@ -318,59 +417,123 @@ fi
 #include <array>
 ```
 ```cpp
-// Input
-string s;
-cin >> s;
-
-// Change all letters to upper case
-const int sLength = s.length();
-for (int i = 0; i < sLength; i++)
+int main()
 {
-    s[i] = toupper(s[i]);
-}
-// cout << s << endl;                   // test
+    // Input
+    string s;
+    cin >> s;
 
-// Count each alphabet
-array<int, 26> alphabet = {0, };
-for (int j = 0; j < sLength; j++)
-{
-    alphabet[s[j]-'A']++;
-}
-
-// Find the max value
-int maxValue = 0, maxIndex;
-for (int k = 0; k < 26; k++)
-{
-    if (alphabet[k] > maxValue)
+    // Change all letters to upper case
+    const int sLength = s.length();
+    for (int i = 0; i < sLength; i++)
     {
-        maxValue = alphabet[k];
-        maxIndex = k;
+        s[i] = toupper(s[i]);
+    }
+    // cout << s << endl;                   // test
+
+    // Count each alphabet
+    array<int, 26> alphabet = {0, };
+    for (int j = 0; j < sLength; j++)
+    {
+        alphabet[s[j]-'A']++;
+    }
+
+    // Find the max value
+    int maxValue = 0, maxIndex;
+    for (int k = 0; k < 26; k++)
+    {
+        if (alphabet[k] > maxValue)
+        {
+            maxValue = alphabet[k];
+            maxIndex = k;
+        }
+    }
+
+    // Determine if the max value is unique
+    int ifUnique = 0; 
+    for (int l = 0; l < 26; l++)
+    {
+        if (alphabet[l] == maxValue)
+        {
+            ifUnique++;
+        }
+    }
+
+    // Test
+    cout << maxValue << " " << maxIndex << " " << ifUnique << endl;
+
+    // Output
+    if (ifUnique > 1)
+    {
+        cout << '?' << endl;
+    } else
+    {
+        cout << char ('A' + maxIndex) << endl;
+    }
+
+    return 0;
+}
+```
+
+#### Golang
+```golang
+import (
+	"fmt"
+    "bufio"
+    "os"
+	"strings"
+)
+```
+```golang
+func main() {
+
+    // Input data (faster)
+    var reader = bufio.NewReader(os.Stdin)
+    var s string                                // length : < 1,000,000
+    fmt.Fscan(reader, &s)
+
+    // Change all letters to upper case
+    var length int = len(s)
+    // var s2 string = ""                       // string in Golang is immutable
+    // for i := 0; i < length; i++ {
+    //     s2 += strings.ToUpper(string(s[i]))
+    // }
+    var s2 string = strings.ToUpper(s)          // can convert just at once
+
+    // Count each alphabet
+    var alphabet []int = make([]int, 26)        // [0, 0, ……, 0]
+    for j := 0; j < length; j++ {
+        alphabet[s2[j]-'A']++
+    }
+
+    // Find the max value
+    var max int = 0
+    var maxIdx int
+    for k := 0; k < 26; k++ {
+        if alphabet[k] > max {
+            max = alphabet[k]
+            maxIdx = k
+        }
+    }
+
+    // Determine if the max value is unique
+    var ifUnique int = 0
+    for l := 0; l < 26; l++ {
+        if alphabet[l] == max {
+            ifUnique++
+        }
+    }
+
+    // test
+    // fmt.Println(max, maxIdx, ifUnique)
+
+    // Output
+    if ifUnique > 1 {
+        fmt.Println("?")                        // not '?'
+    } else {
+        fmt.Println(string(maxIdx + 'A'))
     }
 }
-
-// Determine if the max value is unique
-int ifUnique = 0; 
-for (int l = 0; l < 26; l++)
-{
-    if (alphabet[l] == maxValue)
-    {
-        ifUnique++;
-    }
-}
-
-// Test
-cout << maxValue << " " << maxIndex << " " << ifUnique << endl;
-
-// Output
-if (ifUnique > 1)
-{
-    cout << '?' << endl;
-} else
-{
-    cout << char ('A' + maxIndex) << endl;
-}
-
-return 0;
 ```
 
 
@@ -394,24 +557,54 @@ echo ${#s[@]}
 #include <vector>
 ```
 ```cpp
-// Input
-vector<string> s;
-string temp;
-while (true)
+int main()
 {
-    cin >> temp;
-    if (cin.eof() == true)
+    // Input
+    vector<string> s;
+    string temp;
+    while (true)
     {
-        break;
-    } else
-    {
-        s.push_back(temp);
+        cin >> temp;
+        if (cin.eof() == true)
+        {
+            break;
+        } else
+        {
+            s.push_back(temp);
+        }
     }
+
+    cout << s.size() << endl;
+
+    return 0;
 }
+```
 
-cout << s.size() << endl;
+#### Golang
+```golang
+import (
+	"fmt"
+    "bufio"
+    "os"
+    "strings"
+)
+```
+```golang
+func main() {
 
-return 0;
+    // Input data (faster)
+    var reader = bufio.NewReader(os.Stdin)
+
+    var s string
+    s, _ = reader.ReadString('\n')                    // not "\n"
+
+    // Split the string and count
+    words := strings.Fields(s)
+    // reference ☞ https://pkg.go.dev/strings#Fields
+    
+    // Output
+    fmt.Println(len(words))
+}
 ```
 
 
@@ -447,29 +640,65 @@ fi
 #include <string>
 ```
 ```cpp
-// Input a, b : two three digit numbers
-string a, b;
-cin >> a >> b;
-
-// Reverse a, b
-char aReverse[4], bReverse[4];
-for (int i = 0; i < 3; i++)
+int main()
 {
-    aReverse[3 - i - 1] = a[i];
-    bReverse[3 - i - 1] = b[i];
+    // Input a, b : two three digit numbers
+    string a, b;
+    cin >> a >> b;
+
+    // Reverse a, b
+    char aReverse[4], bReverse[4];
+    for (int i = 0; i < 3; i++)
+    {
+        aReverse[3 - i - 1] = a[i];
+        bReverse[3 - i - 1] = b[i];
+    }
+    // cout << aReverse << " " << bReverse << endl; // test
+
+    // Comepare aReverse with bReverse as int and find the larger
+    if (stoi(aReverse) > stoi(bReverse))            // A and B will not be equal
+    {
+        cout << aReverse << endl;
+    } else
+    {
+        cout << bReverse << endl;
+    }
+
+    return 0;
 }
-// cout << aReverse << " " << bReverse << endl; // test
+```
 
-// Comepare aReverse with bReverse as int and find the larger
-if (stoi(aReverse) > stoi(bReverse))            // A and B will not be equal
-{
-    cout << aReverse << endl;
-} else
-{
-    cout << bReverse << endl;
+#### Golang
+```golang
+import (
+    "fmt"
+    "strconv"
+)
+```
+```golang
+func main() {
+
+    // Input a, b as string
+    var a, b string
+    fmt.Scanln(&a, &b)
+
+    // Reverse a, b
+    var aRev, bRev string = "", ""
+    for i:= 0; i < 3; i++ {
+        aRev += string([]rune(a)[3 - i - 1])    // crazy
+        bRev += string([]rune(b)[3 - i - 1])
+    }
+
+    // Output
+    var aInt, bInt int
+    aInt, _ = strconv.Atoi(aRev)
+    bInt, _ = strconv.Atoi(bRev)
+    if aInt > bInt {                            // a != b
+        fmt.Println(aInt)
+    } else {
+        fmt.Println(bInt)
+    }
 }
-
-return 0;
 ```
 
 
@@ -508,35 +737,68 @@ echo $sum
 #include <string>
 ```
 ```cpp
-// Input
-string s;
-cin >> s;
-
-// Operate
-int sLength = s.size();
-int dial, time, sum = 0;
-for (int i = 0; i < sLength; i++)
+int main()
 {
-    if (s[i] <= 'R')
+    // Input
+    string s;
+    cin >> s;
+
+    // Operate
+    int sLength = s.size();
+    int dial, time, sum = 0;
+    for (int i = 0; i < sLength; i++)
     {
-        dial = (s[i] - 'A') / 3 + 2;
-    } else if (s[i] >= 'S' && s[i] <= 'X')
-    {
-        dial = (s[i] - 'A' - 1) / 3 + 2;
-    } else
-    {
-        dial = (s[i] - 'A' - 2) / 3 + 2;
+        if (s[i] <= 'R')
+        {
+            dial = (s[i] - 'A') / 3 + 2;
+        } else if (s[i] >= 'S' && s[i] <= 'X')
+        {
+            dial = (s[i] - 'A' - 1) / 3 + 2;
+        } else
+        {
+            dial = (s[i] - 'A' - 2) / 3 + 2;
+        }
+
+        time = dial + 1;
+        sum += time;
+        cout << s[i] << " " << dial << " " << time << " " << sum << endl;   // test
     }
 
-    time = dial + 1;
-    sum += time;
-    cout << s[i] << " " << dial << " " << time << " " << sum << endl;   // test
+    // Output
+    cout << sum << endl;
+
+    return 0;
 }
+```
 
-// Output
-cout << sum << endl;
+#### Golang
+```golang
+func main() {
 
-return 0;
+    // Input string s
+    var s string
+    fmt.Scanln(&s)
+    var sRune []rune = []rune(s)
+
+    // Operate
+    var sLen int = len(s)
+    var dial, time, sum int = 0, 0, 0
+    for i := 0; i < sLen; i++ {
+        if sRune[i] <= 'R' {
+            dial = int(sRune[i] - 'A') / 3 + 2
+        } else if sRune[i] >= 'S' && sRune[i] <= 'X' {
+            dial = int(sRune[i] - 'A' - 1) / 3 + 2
+        } else {
+            dial = int(sRune[i] - 'A' - 2) / 3 + 2
+        }
+
+        time = dial + 1
+        sum += time
+    }
+
+    // Output
+    fmt.Println(sum)
+}
 ```
 
 
@@ -594,54 +856,88 @@ echo $((len - count))
 #include <vector>
 ```
 ```cpp
-// Input
-string s;
-cin >> s;
-
-// Make an array of specific Croatian alphabets
-array<string, 8> specific = {"c=", "c-", "d-", "lj", "nj", "s=", "z=", "dz="};
-
-// Make substrings from s
-int sLength = s.size();
-// 1) two letters
-vector<string> sSub1;
-for (int i = 0; i < sLength - 1; i++)
+int main()
 {
-    sSub1.push_back(s.substr(i, 2));
-}
-// 2) three letters
-vector<string> sSub2;
-for (int j = 0; j < sLength - 2; j++)
-{
-    sSub2.push_back(s.substr(j, 3));
-}
+    // Input
+    string s;
+    cin >> s;
 
-// Count specific Croatian alphabets
-int count = 0;
-// 1) two letters : specific[0, 6]
-for (int k = 0; k < sLength - 1; k++)
-{
-    for (int l = 0; l < 7; l++)
+    // Make an array of specific Croatian alphabets
+    array<string, 8> specific = {"c=", "c-", "d-", "lj", "nj", "s=", "z=", "dz="};
+
+    // Make substrings from s
+    int sLength = s.size();
+    // 1) two letters
+    vector<string> sSub1;
+    for (int i = 0; i < sLength - 1; i++)
     {
-        if (s.substr(k, 2) == specific[l])
+        sSub1.push_back(s.substr(i, 2));
+    }
+    // 2) three letters
+    vector<string> sSub2;
+    for (int j = 0; j < sLength - 2; j++)
+    {
+        sSub2.push_back(s.substr(j, 3));
+    }
+
+    // Count specific Croatian alphabets
+    int count = 0;
+    // 1) two letters : specific[0, 6]
+    for (int k = 0; k < sLength - 1; k++)
+    {
+        for (int l = 0; l < 7; l++)
+        {
+            if (s.substr(k, 2) == specific[l])
+            {
+                count++;
+            }
+        }
+    }
+    // 2) three letters : specific[7]
+    for (int m = 0; m < sLength - 2; m++)
+    {
+        if (s.substr(m, 3) == specific[7])
         {
             count++;
         }
     }
+
+    // Output
+    cout << sLength - count << endl;
+
+    return 0;
 }
-// 2) three letters : specific[7]
-for (int m = 0; m < sLength - 2; m++)
-{
-    if (s.substr(m, 3) == specific[7])
-    {
-        count++;
+```
+
+#### Golang
+```golang
+import (
+    "fmt"
+    "strings"
+)
+```
+```golang
+func main() {
+
+    // Input
+    var s string
+    var sp2 = [7]string {"c=", "c-", "d-", "lj", "nj", "s=", "z="}
+    var sp3 = [1]string {"dz="}
+    fmt.Scanln(&s)
+
+    // Count substrings
+    var letter string
+    var count int = len(s)
+    for _, letter = range sp2 {
+        count -= strings.Count(s, letter)
     }
+    for _, letter = range sp3 {
+        count -= strings.Count(s, letter)        // not * 2 because "z-" are already counted
+    }
+    
+    // Output
+    fmt.Println(count)
 }
-
-// Output
-cout << sLength - count << endl;
-
-return 0;
 ```
 
 
@@ -711,47 +1007,92 @@ echo $count
 #include <array>
 ```
 ```cpp
-// Input
-int n;
-cin >> n;
-
-string s;
-int sLength, count = 0;
-for (int i = 0; i < n; i++)
+int main()
 {
-    cin >> s;
-    sLength = s.size();
+    // Input
+    int n;
+    cin >> n;
 
-    // Find if there are seperated same letters
-    array<int, 26> alphabet = {0, };
-    bool isSeperated = false;
-    for (int j = 0; j < sLength; j++)
+    string s;
+    int sLength, count = 0;
+    for (int i = 0; i < n; i++)
     {
-        if (alphabet[s[j] - 'a'] == 0)
+        cin >> s;
+        sLength = s.size();
+
+        // Find if there are seperated same letters
+        array<int, 26> alphabet = {0, };
+        bool isSeperated = false;
+        for (int j = 0; j < sLength; j++)
         {
-            alphabet[s[j] - 'a']++;
-        } else
-        {
-            if (s[j] != s[j-1])
+            if (alphabet[s[j] - 'a'] == 0)
             {
-                isSeperated = true;
-                break;
+                alphabet[s[j] - 'a']++;
+            } else
+            {
+                if (s[j] != s[j-1])
+                {
+                    isSeperated = true;
+                    break;
+                }
             }
+        }
+
+        // Count
+        if (isSeperated == false)
+        {
+            count++;
+        }
+
+        // test
+        cout << s << " " << isSeperated << " " << count << endl;
+    }
+
+    // Output
+    cout << count << endl;
+
+    return 0;
+}
+```
+
+#### Golang
+```golang
+func main() {
+
+    var n int
+    fmt.Scanln(&n)
+
+    // Determine n times
+    var count int = 0
+    for i := 0; i < n; i++ {
+
+        // Input
+        var s string
+        fmt.Scanln(&s)
+        var sLen int = len(s)
+        var sRune = []rune(s)
+
+        // Find if there are seperated same letters
+        var alphabet [26]int                        // initialize as {0, ……, 0}
+        var isSeperated bool = false
+        for j := 0; j < sLen; j++ {
+            if alphabet[sRune[j] - 'a'] == 0 {
+                alphabet[sRune[j] - 'a']++
+            } else {
+                if sRune[j] != sRune[j-1] {
+                    isSeperated = true
+                    break
+                }
+            }
+        }
+
+        // Count
+        if (isSeperated == false) {
+            count++
         }
     }
 
-    // Count
-    if (isSeperated == false)
-    {
-        count++;
-    }
-
-    // test
-    cout << s << " " << isSeperated << " " << count << endl;
+    // Output
+    fmt.Println(count)
 }
-
-// Output
-cout << count << endl;
-
-return 0;
 ```

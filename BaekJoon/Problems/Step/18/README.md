@@ -1,6 +1,6 @@
 ## BAEKJOON Online Judge
 
-# 문제 > 단계별로 풀어보기 > 17. 그리디 알고리즘
+# 문제 > 단계별로 풀어보기 > 18. 그리디 알고리즘
 
 https://www.acmicpc.net/step/33
 

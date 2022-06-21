@@ -18,7 +18,7 @@ func main() {
     // Split the string and count
     words := strings.Fields(s)
     // reference ☞ https://pkg.go.dev/strings#Fields
-    
+
     // Output
     fmt.Println(len(words))
 }

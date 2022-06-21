@@ -21,7 +21,7 @@ func main() {
     for _, letter = range sp3 {
         count -= strings.Count(s, letter)        // not * 2 because "z-" are already counted
     }
-    
+
     // Output
     fmt.Println(count)
 }

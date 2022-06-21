@@ -601,7 +601,7 @@ func main() {
     // Split the string and count
     words := strings.Fields(s)
     // reference ☞ https://pkg.go.dev/strings#Fields
-    
+
     // Output
     fmt.Println(len(words))
 }
@@ -934,7 +934,7 @@ func main() {
     for _, letter = range sp3 {
         count -= strings.Count(s, letter)        // not * 2 because "z-" are already counted
     }
-    
+
     // Output
     fmt.Println(count)
 }

@@ -478,10 +478,10 @@ int main()
 #### Golang
 ```golang
 import (
-	"fmt"
+    "fmt"
     "bufio"
     "os"
-	"strings"
+    "strings"
 )
 ```
 ```golang
@@ -583,7 +583,7 @@ int main()
 #### Golang
 ```golang
 import (
-	"fmt"
+    "fmt"
     "bufio"
     "os"
     "strings"

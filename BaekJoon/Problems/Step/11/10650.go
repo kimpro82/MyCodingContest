@@ -18,7 +18,7 @@ func main() {
     var writer = bufio.NewWriter(os.Stdout)
     defer writer.Flush()
 
-    var n int                                        // n <= 100,000
+    var n int                                               // n <= 100,000
     fmt.Scanln(&n)
     var points []point
 

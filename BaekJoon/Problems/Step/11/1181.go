@@ -13,7 +13,7 @@ func main() {
     var writer = bufio.NewWriter(os.Stdout)
     defer writer.Flush()
 
-    var n int                                        // n <= 20,000
+    var n int                                               // n <= 20,000
     fmt.Scanln(&n)
     var words []string
 
@@ -37,9 +37,9 @@ func main() {
     for i := 0; i < n; i++ {
         // It would be better to use set but …… (Golang has not set)
         if i == 0 {
-            fmt.Fprintln(writer, words[i])            
+            fmt.Fprintln(writer, words[i])
         } else if words[i] != words[i-1] {
-            fmt.Fprintln(writer, words[i])            
+            fmt.Fprintln(writer, words[i])
         }
     }
 }

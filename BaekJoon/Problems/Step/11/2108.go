@@ -12,7 +12,7 @@ func main() {
     // Make it faster
     var reader = bufio.NewReader(os.Stdin)
 
-    var n int                                    // n <= 500,000
+    var n int                                   // n <= 500,000
     fmt.Scanln(&n)
 
     // Input
@@ -24,7 +24,7 @@ func main() {
     }
 
     // 1. Mean
-    var sum int = 0                              // sum <= 4,000 * 500,000 < int max
+    var sum int = 0                             // sum <= 4,000 * 500,000 < int max
     for i := 0; i < n; i++ {
         sum += num[i]
     }
@@ -32,7 +32,7 @@ func main() {
 
     // 2. Median
     sort.Ints(num)
-    var median int = num[(n-1)/2]                // n is aways odd
+    var median int = num[(n-1)/2]               // n is aways odd
 
     // 3. Mode : crazy~~~
     // 3.1 Get a map consists of num and freq.
@@ -69,12 +69,12 @@ func main() {
     } else {
         mode = modes[0]
     }
-    
+
     // 4. Range
     var Range int = num[n-1] - num[0]
 
     // Output
-    fmt.Println(mean)            // math.Round() requires float64
+    fmt.Println(mean)                           // math.Round() requires float64
     fmt.Println(median)
     fmt.Println(mode)
     fmt.Println(Range)

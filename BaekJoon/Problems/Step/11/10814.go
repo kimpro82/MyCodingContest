@@ -19,7 +19,7 @@ func main() {
     var writer = bufio.NewWriter(os.Stdout)
     defer writer.Flush()
 
-    var n int                                        // n <= 100,000
+    var n int                                               // n <= 100,000
     fmt.Scanln(&n)
     var members []member
 
@@ -36,7 +36,7 @@ func main() {
         if members[i].age != members[j].age {
             return members[i].age < members[j].age
         } else {
-            return members[i].no < members[j].no    // maintain the existing order
+            return members[i].no < members[j].no            // maintain the existing order
         }
     })
 

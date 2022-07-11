@@ -6,7 +6,7 @@ import (
 
 func main() {
 
-    var n int                                        // n <= 1,000
+    var n int                                   // n <= 1,000
     fmt.Scanln(&n)
     var num []int
 
@@ -14,7 +14,7 @@ func main() {
         // Input
         var temp int
         fmt.Scanln(&temp)
-        num = append(num, temp)                      // not slow?
+        num = append(num, temp)                 // not slow?
     }
 
     // Sort

@@ -12,7 +12,7 @@ func main() {
     var writer = bufio.NewWriter(os.Stdout)
     defer writer.Flush()
 
-    var n int                                        // n <= 1,000,000
+    var n int                                   // n <= 1,000,000
     fmt.Scanln(&n)
     var num [10001]int
 

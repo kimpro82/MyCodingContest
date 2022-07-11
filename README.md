@@ -56,7 +56,7 @@ can't escape this endless valley of despair ……
 | 8 | 기본 수학 2 | | 2021.07.20 | | | [Link](/BaekJoon/Problems/Step/08#baekjoon-online-judge) |
 | 9 | 재귀 | | 2021.09.15<br>(not completed) | | | [Link](/BaekJoon/Problems/Step/09#baekjoon-online-judge) |
 | 10 | 브루트 포스 | | 2021.12.10 | | | [Link](/BaekJoon/Problems/Step/10#baekjoon-online-judge) |
-| 11 | 정렬 | | 2021.12.16 | | | [Link](/BaekJoon/Problems/Step/11#baekjoon-online-judge) |
+| 11 | 정렬 | | 2021.12.16 | 2022.07.11 | | [Link](/BaekJoon/Problems/Step/11#baekjoon-online-judge) |
 | 18 | 그리디 알고리즘 | | 2022.04.21 | | | [Link](/BaekJoon/Problems/Step/18#baekjoon-online-judge) |
 
 

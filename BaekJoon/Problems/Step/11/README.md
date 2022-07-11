@@ -4,7 +4,7 @@
 
 https://www.acmicpc.net/step/9
 
-(2021.12.16) - `C++`
+(2021.12.16) - `C++`  
 (2022.07.11) - `Golang`
 
 
@@ -83,6 +83,7 @@ int main()
 ```
 
 #### Golang
+(2022.06.23)
 ```go
 package main
 import (
@@ -117,6 +118,8 @@ func main() {
 
 ## [2751. 수 정렬하기 2](#list)
 
+> The same sample with Q.2750
+
 #### C++
 (2021.12.11)
 ```cpp
@@ -124,6 +127,7 @@ func main() {
 ```
 
 #### Golang
+(2022.06.23)
 ```go
 package main
 import (
@@ -228,6 +232,7 @@ int main()
 ```
 
 #### Golang
+(2022.06.23)
 ```go
 package main
 import (
@@ -351,8 +356,10 @@ int main()
     return 0;
 }
 ```
+> 틀렸습니다 (2022.02.21 재채점)
 
 #### Golang
+(2022.07.11)
 ```go
 package main
 import (
@@ -480,6 +487,7 @@ int main()
 ```
 
 #### Golang
+(2022.06.23)
 ```go
 package main
 import (
@@ -575,6 +583,7 @@ int main()
 ```
 
 #### Golang
+(2022.07.11)
 ```go
 package main
 import (
@@ -652,6 +661,7 @@ bool comp(pair<int, int> p1, pair<int, int> p2)             // only different pa
 ```
 
 #### Golang
+(2022.07.11)
 ```go
 func main() {
 
@@ -773,6 +783,7 @@ int main()
 ```
 
 #### Golang
+(2022.07.11)
 ```go
 package main
 import (
@@ -883,6 +894,7 @@ int main()
 ```
 
 #### Golang
+(2022.07.11)
 ```go
 package main
 import (
@@ -1004,6 +1016,7 @@ int main()
 ```
 
 #### Golang
+(2022.07.11)
 ```go
 package main
 import (

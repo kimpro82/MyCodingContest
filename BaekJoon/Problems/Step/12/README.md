@@ -9,18 +9,20 @@ https://www.acmicpc.net/step/49
 
 ## **List**
 
-- [10815. 숫자 카드]()
-- [14425. 문자열 집합]()
-- [1620. 나는야 포켓몬 마스터 이다솜]()
-- [10816. 숫자 카드 2]()
-- [1764. 듣보잡]()
-- [1269. 대칭 차집합]()
-- [11478. 서로 다른 부분 문자열의 개수]()
+- [10815. 숫자 카드](#10815숫자-카드)
+- [14425. 문자열 집합](#14425문자열-집합)
+- [1620. 나는야 포켓몬 마스터 이다솜](#1620나는야-포켓몬-마스터-이다솜)
+- [10816. 숫자 카드 2](#10816숫자-카드-2)
+- [1764. 듣보잡](#1764듣보잡)
+- [1269. 대칭 차집합](#1269대칭-차집합)
+- [11478. 서로 다른 부분 문자열의 개수](#11478서로-다른-부분-문자열의-개수)
 
 
 **※ Note**  
 
 &nbsp;&nbsp; - All the codes of any language for the same problem have basically the same result.
+&nbsp;&nbsp; - Typical headers like the below are basically skipped, but they are noted seperately when theere are any additional line.  
+&nbsp;&nbsp;&nbsp;&nbsp; · `Golang` : `package main` `import "fmt"`  
 
 
 ## [10815. 숫자 카드](#list)

@@ -6,7 +6,7 @@ can't escape this endless valley of despair ……
 ### **List**
 
 - [Google Code Jam](#google-code-jam)
-- [Facebook Hacker Cup](#facebook-hacker-cup)<p>
+- [Meta(Facebook) Hacker Cup](#metafacebook-hacker-cup)<p>
 - [BAEKJOON Online Judge](#baekjoon-online-judge)
 - [Elice](#elice)<p>
 - [AtCoder](#atcoder)

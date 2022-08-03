@@ -20,7 +20,7 @@ https://www.acmicpc.net/step/49
 
 **※ Note**  
 
-&nbsp;&nbsp; - All the codes of any language for the same problem have basically the same result.
+&nbsp;&nbsp; - All the codes of any language for the same problem have basically the same result.  
 &nbsp;&nbsp; - Typical headers like the below are basically skipped, but they are noted seperately when theere are any additional line.  
 &nbsp;&nbsp;&nbsp;&nbsp; · `Golang` : `package main` `import "fmt"`  
 
@@ -152,6 +152,8 @@ func main() {
 #### Golang - Trial 3 (advanced from Trial 1)
 (2022.07.15)
 ```go
+……
+
 func main() {
 
     // Make it faster

@@ -255,8 +255,7 @@ func main() {
         }
     }
 
-    // Output
-    fmt.Fprintln(writer, count)
+    ……
 }
 ```
 > 맞았습니다!!

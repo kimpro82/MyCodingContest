@@ -1,5 +1,4 @@
 package main
-
 import (
 	"bufio"
 	"fmt"
@@ -42,7 +41,7 @@ func main() {
         if nsIdx < n {
         // nsIdx == n means not present
             if ns[nsIdx] == ms {
-            count++
+                count++
             }
         }
     }

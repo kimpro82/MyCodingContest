@@ -1,7 +1,7 @@
 package main
 import (
     "fmt"
-    "bufio"                                                // default size : 4096 byte
+    "bufio"                                                 // default size : 4096 byte
     "os"
     // "time"
 )
@@ -31,7 +31,7 @@ func main() {
         // time.Sleep(time.Millisecond)
         // fmt.Println(reader.Buffered())
     }
-    
+
     var m int                                               // m <= 500,000
     fmt.Scanln(&m)
 

@@ -1,7 +1,7 @@
 package main
 import (
     "fmt"
-    "bufio"                                                // default size : 4096 byte
+    "bufio"                                                 // default size : 4096 byte
     "os"
     // "time"
 )
@@ -25,7 +25,7 @@ func main() {
         fmt.Fscan(reader, &temp)
         card[10000000+temp] = true
     }
-    
+
     var m int                                               // m <= 500,000
     fmt.Scanln(&m)
 

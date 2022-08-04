@@ -6,7 +6,7 @@ can't escape this endless valley of despair ……
 ### **List**
 
 - [Google Code Jam](#google-code-jam)
-- [Facebook Hacker Cup](#facebook-hacker-cup)<p>
+- [Meta(Facebook) Hacker Cup](#metafacebook-hacker-cup)<p>
 - [BAEKJOON Online Judge](#baekjoon-online-judge)
 - [Elice](#elice)<p>
 - [AtCoder](#atcoder)
@@ -30,11 +30,12 @@ can't escape this endless valley of despair ……
 - [Qualification Round 2020 (2020.04.04 08:00 ~ 04.05 11:00, 27 hrs) - Python](/Google/CodeJam/2020%20Qualification%20Round#google-code-jam-2020---qualification-round)
 
 
-## Facebook Hacker Cup
+## Meta(Facebook) Hacker Cup
 
 &nbsp;&nbsp;https://www.facebook.com/codingcompetitions/hacker-cup/
 
-- 2021 Qualification Round (2021.08.28 02:00 ~09.01 02:00, 72 hrs) (Comming)
+- 2022 Qualification Round (2022.08.27 02:00 ~ 08.30 02:00, 72 hrs) (Comming)
+- 2021 Qualification Round (2021.08.28 02:00 ~ 09.01 02:00, 72 hrs) (Comming)
 
 
 ## [BAEKJOON Online Judge](/BaekJoon/Problems/Step)
@@ -57,6 +58,7 @@ can't escape this endless valley of despair ……
 | 9 | 재귀 | | 2021.09.15<br>(not completed) | | | [Link](/BaekJoon/Problems/Step/09#baekjoon-online-judge) |
 | 10 | 브루트 포스 | | 2021.12.10 | | | [Link](/BaekJoon/Problems/Step/10#baekjoon-online-judge) |
 | 11 | 정렬 | | 2021.12.16 | 2022.07.11 | | [Link](/BaekJoon/Problems/Step/11#baekjoon-online-judge) |
+| 12 | 집합과 맵 | | | 2022.08.03 | | [Link](/BaekJoon/Problems/Step/12#baekjoon-online-judge) |
 | 18 | 그리디 알고리즘 | | 2022.04.21 | | | [Link](/BaekJoon/Problems/Step/18#baekjoon-online-judge) |
 
 
@@ -110,6 +112,8 @@ can't escape this endless valley of despair ……
 
 &nbsp;&nbsp;https://codeforces.com/contests
 
+- Codeforces Round #790 (Div. 4) (2022.05.10 23:45, 2 hrs) (Comming)
+- Codeforces Round #784 (Div. 4) (2022.04.21 23:35, 2 hrs) (Comming)
 - Kotlin Heroes: Practice 8 (2021.10.01 22:35, 7 days) - Kotlin (Comming)
 - Codeforces Round #744 (Div. 3) (2021.09.28 23:35, 2.25 hrs) (Comming)
 - Educational Codeforces Round 113 (Div. 2) (2021.09.08 23:35, 2 hrs) (Comming)

@@ -1,15 +1,53 @@
 ## BAEKJOON Online Judge
 
-### 문제 > 단계별로 풀어보기 > 2. if문
-(2021.05.24) - Python, C++  
-(2021.07.14) - R  
-https://www.acmicpc.net/step/4  
+# 문제 > 단계별로 풀어보기 > 2. if문
 
-※ The codes of `Python`, `C++` and `R` has the same result  
-※ C++ codes : **skipped** `main()` function's brace(`{}`) and its outside
+(2021.05.24) - `C++`  
+(2021.07.14) - `R`  
+(2022.01.29) - `Bash`  
+(2022.03.14) - `Golang`  
+
+https://www.acmicpc.net/step/4
 
 
-### 1330. 두 수 비교하기
+### **List**
+
+- [1330. 두 수 비교하기](#1330-두-수-비교하기)
+- [9498. 시험 성적](#9498-시험-성적)
+- [2753. 윤년](#2753-윤년)
+- [14681. Quadrant Selection](#14681-quadrant-selection)
+- [2884. SPAVANAC](#2884-spavanac)
+- [2525. 오븐 시계](#2525-오븐-시계)
+- [2480. 주사위 세개](#2480-주사위-세개)
+
+**※ Note**  
+&nbsp;&nbsp; - All the codes of any language for the same problem have basically the same result.  
+&nbsp;&nbsp; - `Bash` : skipped the first line; `#!/bin/bash`  
+&nbsp;&nbsp; - `C++`* : skipped `main()` function's brace(`{}`) and its outside including two header lines; `#include <iostream>` `using namespace std;`  
+&nbsp;&nbsp; - `Golang`* : skipped `main()` function's brace(`{}`) and its outside including two header lines; `package main` `import "fmt"`  
+&nbsp;&nbsp; - `R` : Some answers occur runtime errors with unknowable reason in the BOJ grading machine.  
+&nbsp;&nbsp; * When any additional header is used, the header block is also noted seperately.
+
+
+## [1330. 두 수 비교하기](#list)
+
+> 1 2, 10 2, 5 5 (independently)
+
+> \<  
+> \>  
+> \=\=
+
+#### Bash
+```bash
+read a b
+
+if [ $a -gt $b ] ; then echo ">"        # gt : >, ge : >=
+elif [ $a -lt $b ] ; then echo "<"      # lt : <, le : <=
+else echo "=="
+fi                                      # fi : (maybe) finish if …… or simply reversed "if"?
+
+# read
+```
 
 #### C++
 ```cpp
@@ -28,6 +66,20 @@ if (a > b)
 }
 
 return 0;
+```
+
+#### Golang
+```go
+var a, b int
+fmt.Scanln(&a, &b)
+
+if (a > b) {
+    fmt.Println(">")
+} else if (a < b) {
+    fmt.Println("<")
+} else {
+    fmt.Println("==")
+}
 ```
 
 #### R
@@ -50,14 +102,33 @@ if (a > b)
 }
 ```
 
-> 1 2, 10 2, 5 5 (independently)
 
-> \<  
-> \>  
-> \=\=
+## [9498. 시험 성적](#list)
 
+> 99, 82, 79, 60, 37 (independently)
 
-### 9498. 시험 성적
+> A B C D F
+
+#### Bash
+```bash
+# test
+# echo [ 3 -gt 2 ]                      # doesn't work
+# echo [ 3 -lt 2 ]                      # doesn't work
+# echo $((3 > 2))                       # 1
+# echo $((3 < 2))                       # 0
+
+read n
+
+# if $(($n >= 90)) ; then echo 'A'      # doesn't work
+if [ $n -ge 90 ] ; then echo 'A'
+elif [ $n -ge 80 ] ; then echo 'B'
+elif [ $n -ge 70 ] ; then echo 'C'
+elif [ $n -ge 60 ] ; then echo 'D'
+else echo 'F'
+fi
+
+# read
+```
 
 #### C++
 ```cpp
@@ -84,6 +155,64 @@ if (a >= 90)
 return 0;
 ```
 
+#### Golang - trial 1
+use `if ~ else if ~ else` statement
+```go
+var input int
+fmt.Scanln(&input)
+
+var grade string
+if (input >= 90) {
+    grade = "A"
+} else if (input >= 80) {
+    grade = "B"
+} else if (input >= 70) {
+    grade = "C"
+} else if (input >= 60) {
+    grade = "D"
+} else {
+    grade ="F"
+}
+
+fmt.Println(grade)
+```
+
+#### Golang - trial 2
+use `switch ~ case` statement
+```go
+var input int
+fmt.Scanln(&input)
+
+var tenth int = input / 10;
+var grade string
+switch tenth {
+    case 10 :
+        fallthrough
+    case 9 :
+        grade = "A"
+    case 8 :
+        grade = "B"
+    case 7 :
+        grade = "C"
+    case 6 :
+        grade = "D"
+    default :
+        grade ="F"
+}
+
+fmt.Println(grade)
+```
+
+#### Golang - trial 3
+use `array` trickily
+```go
+var input int
+fmt.Scanln(&input)
+
+grade := [11]string{"F", "F", "F", "F", "F", "F", "D", "C", "B", "A", "A"}
+fmt.Println(grade[input / 10])
+```
+
 #### R
 ```R
 a <- scan("stdin")
@@ -107,12 +236,40 @@ if (a >= 90)
 }
 ```
 
-> 99, 82, 79, 60, 37 (independently)
 
-> A B C D F (vertically)
+## [2753. 윤년](#list)
 
+> 2021 2000 1999 (independently)
 
-### 2753. 윤년
+> 0 1 0
+
+#### Bash
+```bash
+read n
+
+# Test : all cases work
+# if [ $(($n % 4)) == 0 ] ; then
+#     echo "success 1"
+# fi
+# if [ $(($n%100)) == 0 ] ; then
+#     echo "success 2"
+# fi
+# if [ $(($n % 400)) == 0 ] ; then
+#     echo "success 3"
+# fi
+
+if [ $(($n % 4)) == 0 ] ; then
+    if [ $(($n%100)) != 0 ] || [ $(($n % 400)) == 0 ] ; then    # failed to write 3 conditions in a line
+        echo 1
+    else
+        echo 0
+    fi
+else
+    echo 0
+fi
+
+# read
+```
 
 #### C++
 ```cpp
@@ -129,7 +286,21 @@ if (a % 4 == 0 && (a % 100 != 0 || a % 400 == 0))
 
 return 0;
 ```
-> 0 1 0 (vertically)
+
+#### Golang
+```go
+var n int
+fmt.Scanln(&n)
+
+var answer int
+if (n % 4 == 0 && (n % 100 != 0 || n % 400 == 0)) {
+    answer = 1
+} else {
+    answer = 0
+}
+
+fmt.Println(answer)
+```
 
 #### R
 ```R
@@ -147,7 +318,28 @@ if (n %% 4 == 0 && (n %% 100 != 0 || n %% 400 == 0))    # not %
 > Runtime Error???
 
 
-### 14681. Quadrant Selection
+## [14681. Quadrant Selection](#list)
+
+> 12 5, 9 -13 (independently)
+
+> 1  
+> 4
+
+#### Bash
+```bash
+read x
+read y
+
+if [ $x -gt 0 ] && [ $y -gt 0 ] ; then
+    echo 1
+elif [ $x -lt 0 ] && [ $y -gt 0 ] ; then
+    echo 2
+elif [ $x -lt 0 ] && [ $y -lt 0 ] ; then
+    echo 3
+else
+    echo 4
+fi
+```
 
 #### C++
 ```cpp
@@ -170,6 +362,26 @@ if (a > 0 && b > 0)
 }
 
 return 0;
+```
+
+#### Golang
+```go
+var x, y int
+fmt.Scanln(&x)
+fmt.Scanln(&y)
+
+var dim int
+if (x > 0 && y > 0) {
+    dim = 1
+} else if (x < 0 && y > 0) {
+    dim = 2
+} else if (x < 0 && y < 0) {
+    dim = 3
+} else {
+    dim = 4
+}
+
+fmt.Println(dim)
 ```
 
 #### R
@@ -195,13 +407,30 @@ if (x > 0 && y > 0)
 }
 ```
 
-> 12 5, 9 -13 (independently)
 
-> 1  
-> 4
+## [2884. SPAVANAC](#list)
 
+> 10 10, 0 30, 23 40 (independently)
 
-### 2884. SPAVANAC
+> 9 25  
+> 23 45  
+> 22 55
+
+#### Bash
+```bash
+read h m
+
+if [ $m -lt 45 ] ; then
+    let "h -= 1"
+    let "m += 60"
+fi
+
+if [ $h -lt 0 ] ; then
+    let "h += 24"
+fi
+
+echo $h $(($m - 45))
+```
 
 #### C++
 ```cpp
@@ -222,11 +451,22 @@ cout << a << " " << b - 45 << endl;
 
 return 0;
 ```
-> 10 10, 0 30, 23 40 (independently)
 
-> 9 25  
-> 23 45  
-> 22 55
+#### Golang
+```go
+var h, m int
+fmt.Scanln(&h, &m)
+
+if (m < 45) {
+    h--
+    m += 60
+}
+if (h < 0) {
+    h += 24
+}
+
+fmt.Println(h, m - 45)
+```
 
 #### R
 ```R
@@ -249,3 +489,90 @@ if (a < 0)
 cat(a, b - 45, "\n")
 ```
 > Runtime Error???????
+
+
+## [2525. 오븐 시계](#list)
+
+> 23 48  
+> 25
+
+> 0 13
+
+#### Golang
+```go
+var a, b, c int
+fmt.Scanln(&a, &b)
+fmt.Scanln(&c)
+
+b += c
+for (b > 59) {      // Golang has no While statement!
+    a++
+    b -= 60        
+}                   // actually not necessary to use loop
+
+a %= 24
+
+fmt.Println(a, b)
+```
+
+
+## [2480. 주사위 세개](#list)
+
+> 3 3 6, 2 2 2, 6 2 5 (independently)
+
+> 1300  
+> 12000  
+> 600
+
+#### Golang - trial 1
+```go
+package main
+import (
+    "fmt"
+    "math"
+)
+```
+```go
+var a, b, c int
+fmt.Scanln(&a, &b, &c)
+
+var prize int
+if (a == b && b == c) {
+    prize = 10000 + a * 1000
+} else if (a == b) {
+    prize = 1000 + a * 100
+} else if (b == c) {
+    prize = 1000 + b * 100
+} else {
+    // trial 1 : false
+    var max int = int(math.Max(math.Max(float64(a), float64(b)), float64(c)))
+
+    prize = max * 100
+}
+
+fmt.Println(prize)
+```
+
+#### Golang - trial 2
+```go
+    ……
+    // trial 2 : false
+    var max int = a
+    if (max < b) {
+        max = b
+    }
+    if (max < c) {
+        max = c
+    }
+    ……
+```
+
+#### Golang - trial 3
+```go
+    ……
+    } else if (c == a) {
+        // trial 3
+        prize = 1000 + c * 100        // I missed it!
+    } else {
+    ……
+```

@@ -110,6 +110,21 @@ int main()
         else if (vw - vwMax >= cs - csMax) answer = vw + (cs - csMax) * 2;
         else answer = cs + (vw - vwMax) * 2;
 
+        // Determine where operate A and B - Trial 3 (Upsolving)
+        int answer;
+        if (vw == 0)
+        {
+            if (cs - csMax == 0) answer = 0;
+            else answer = min(cs, (cs - csMax) * 2);
+        }
+        else if (cs == 0)
+        {
+            if (vw - vwMax == 0) answer = 0;
+            else answer = min(vw, (vw - vwMax) * 2);
+        }
+        else if (vw - vwMax >= cs - csMax) answer = vw + (cs - csMax) * 2;
+        else answer = cs + (vw - vwMax) * 2;
+
         // Output
         cout << "Case #" << t + 1 << ": " << answer << endl;
     }

@@ -90,12 +90,12 @@ int main()
         // test
         // cout << "vw : " << vw << ", vwMax : " << vwMax << ", cs : " << cs << ", csMax : " << csMax << endl;
 
-        // Determine where operate A and B
+        // Determine where operate A and B - Trial 1
         // int answer;
         // if (vw - vwMax >= cs - csMax) answer = vw + (cs - csMax) * 2;
         // else answer = cs + (vw - vwMax) * 2;
 
-        // Determine where operate A and B 2 (Upsolving)
+        // Determine where operate A and B - Trial 2 (Upsolving)
         int answer;
         if (vw == 0)
         {
@@ -116,3 +116,16 @@ int main()
 
     return 0;
 }
+
+
+/* Wrong Case - Trial 1
+UFOVKZEOUTPUJSWEITEUAIYDRIBGUIUIOEII
+43
+*/
+
+/* Wrong Case - Trial 2
+OXEOURJOEUEJUUTUEIEQORXSBGLUIIARAVUBPUICEIJAIILEQDBIIQONE
+72
+UFOVKZEOUTPUJSWEITEUAIYDRIBGUIUIOEII
+43
+*/

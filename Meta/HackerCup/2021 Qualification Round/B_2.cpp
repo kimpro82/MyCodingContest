@@ -142,3 +142,27 @@ int main()
 
     return 0;
 }
+
+
+/* Wrong Case
+13
+OX..O.XXOX..X
+O.OO..XX....X
+...OO.XX.O..X
+...O..XX..OOX
+..O...XXOOOOX
+XXXXXXX.XXXXX
+.X..O.XXOOOOX
+.OO..OXX..OX.
+...OO.XX.OO.X
+.O.O..XX..O.X
+OO..XOOX...OX
+..X..OOX..O.X
+OOOOOO.XO.OOX
+
+My Output :
+1 3
+
+Correct Output :
+1 2
+*/

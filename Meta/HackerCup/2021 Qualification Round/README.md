@@ -173,7 +173,7 @@ Correct Output :
 */
 ```
 
-#### C++ - Trial 3
+#### C++ - Trial 3 (2022.08.22)
 ```cpp
 int main()
 {
@@ -225,7 +225,7 @@ Case #7: 2 2
 Case #8: 1 2
 ```
 
-#### C++ - Trial 1
+#### C++ - Trial 1 (2021.08.30)
 ```cpp
 #include <iostream>
 #include <vector>
@@ -319,7 +319,7 @@ int main()
 ```
 > Wrong Answer
 
-#### C++ - Trial 2
+#### C++ - Trial 2 (2021.08.30)
 ```cpp
     ……
     // Operate T times
@@ -371,7 +371,7 @@ Correct Output :
 */
 ```
 
-#### C++ - Trial 3
+#### C++ - Trial 3 (2022.08.22)
 ```cpp
     ……
     // Operate T times

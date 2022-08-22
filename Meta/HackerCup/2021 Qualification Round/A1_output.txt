@@ -35,8 +35,8 @@ Case #34: 99
 Case #35: 106
 Case #36: 37
 Case #37: 102
-Case #38: 75
-Case #39: 47
+Case #38: 72
+Case #39: 43
 Case #40: 114
 Case #41: 86
 Case #42: 25

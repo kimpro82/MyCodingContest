@@ -38,7 +38,7 @@ int main()
         temp = AEIOU[i]-'A';
         vowel.push_back(temp);
     }
-    // test
+    // // test
     // for (int i = 0; i < 5; i++) cout << vowel[i] << endl;
 
     int T;
@@ -87,15 +87,28 @@ int main()
             }
             ifVw = false;
         }
-        // test
-        // cout << "vw : " << vw << ", vwMax : " << vwMax << ", cs : " << cs << ", csMax : " << csMax << endl;
 
-        // Determine where operate A and B - Trial 1
+        // // Determine where operate A and B - Trial 1
         // int answer;
         // if (vw - vwMax >= cs - csMax) answer = vw + (cs - csMax) * 2;
         // else answer = cs + (vw - vwMax) * 2;
 
-        // Determine where operate A and B - Trial 2 (Upsolving)
+        // // Determine where operate A and B - Trial 2 (Upsolving)
+        // int answer;
+        // if (vw == 0)
+        // {
+        //     if (cs - csMax == 0) answer = 0;
+        //     else answer = min(cs, (cs - csMax) * 2);
+        // }
+        // else if (cs == 0)
+        // {
+        //     if (vw - vwMax == 0) answer = 0;
+        //     else answer = min(vw, (vw - vwMax) * 2);
+        // }
+        // else if (vw - vwMax >= cs - csMax) answer = vw + (cs - csMax) * 2;
+        // else answer = cs + (vw - vwMax) * 2;
+
+        // Determine where operate A and B - Trial 3 (Upsolving)
         int answer;
         if (vw == 0)
         {
@@ -107,15 +120,11 @@ int main()
             if (vw - vwMax == 0) answer = 0;
             else answer = min(vw, (vw - vwMax) * 2);
         }
-        else if (vw - vwMax >= cs - csMax) answer = vw + (cs - csMax) * 2;
-        else answer = cs + (vw - vwMax) * 2;
+        else if ((vw - vwMax) * 2 + cs <= (cs - csMax) * 2 + vw) answer = (vw - vwMax) * 2 + cs;
+        else answer = (cs - csMax) * 2 + vw;
 
-        // Determine where operate A and B - Trial 3 (Upsolving)
-        int answer;
-        if (vw == 0) answer = min(cs, (cs - csMax) * 2);
-        else if (cs == 0) answer = min(vw, (vw - vwMax) * 2);
-        else if (vw - vwMax >= cs - csMax) answer = vw + (cs - csMax) * 2;
-        else answer = cs + (vw - vwMax) * 2;
+        // test
+        // cout << "len : : " << len << ", vw : " << vw << ", vwMax : " << vwMax << ", cs : " << cs << ", csMax : " << csMax << endl;
 
         // Output
         cout << "Case #" << t + 1 << ": " << answer << endl;
@@ -127,12 +136,23 @@ int main()
 
 /* Wrong Case - Trial 1
 UFOVKZEOUTPUJSWEITEUAIYDRIBGUIUIOEII
+
+My Output :
+47
+
+Correct Output :
 43
 */
 
 /* Wrong Case - Trial 2
 OXEOURJOEUEJUUTUEIEQORXSBGLUIIARAVUBPUICEIJAIILEQDBIIQONE
-72
 UFOVKZEOUTPUJSWEITEUAIYDRIBGUIUIOEII
+
+My Output :
+75
+47
+
+Correct Output :
+72
 43
 */

@@ -7,11 +7,11 @@ https://www.facebook.com/codingcompetitions/hacker-cup/2021/qualification-round
 
 ## \<List>
 
-- [Problem A1: Consistency - Chapter 1 (11pt)](#)
-- [Problem A2: Consistency - Chapter 2 (17pt)](#)
-- [Problem B: Xs and Os (15pt)](#)
-- [Problem C1: Gold Mine - Chapter 1 (21pt)](#)
-- [Problem C2: Gold Mine - Chapter 2 (36pt)](#)
+- [Problem A1: Consistency - Chapter 1 (11pt)](#problem-a1-consistency---chapter-1-11pt)
+- Problem A2: Consistency - Chapter 2 (17pt)
+- [Problem B: Xs and Os (15pt)](#problem-b-xs-and-os-15pt)
+- Problem C1: Gold Mine - Chapter 1 (21pt)
+- Problem C2: Gold Mine - Chapter 2 (36pt)
 
 
 ## [Problem A1: Consistency - Chapter 1 (11pt)](#list)
@@ -179,17 +179,7 @@ int main()
 {
     ……
         // Determine where operate A and B - Trial 3 (Upsolving)
-        int answer;
-        if (vw == 0)
-        {
-            if (cs - csMax == 0) answer = 0;
-            else answer = min(cs, (cs - csMax) * 2);
-        }
-        else if (cs == 0)
-        {
-            if (vw - vwMax == 0) answer = 0;
-            else answer = min(vw, (vw - vwMax) * 2);
-        }
+        ……
         else if ((vw - vwMax) * 2 + cs <= (cs - csMax) * 2 + vw) answer = (vw - vwMax) * 2 + cs;
         else answer = (cs - csMax) * 2 + vw;
     ……

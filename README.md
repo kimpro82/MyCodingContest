@@ -35,7 +35,7 @@ can't escape this endless valley of despair ……
 &nbsp;&nbsp;https://www.facebook.com/codingcompetitions/hacker-cup/
 
 - 2022 Qualification Round (2022.08.27 02:00 ~ 08.30 02:00, 72 hrs) (Comming)
-- 2021 Qualification Round (2021.08.28 02:00 ~ 09.01 02:00, 72 hrs) (Comming)
+- [2021 Qualification Round (2021.08.28 02:00 ~ 09.01 02:00, 72 hrs) - C++](/Meta/HackerCup/2021%20Qualification%20Round#metafacebook-hacker-cup---2022-qualification-round)
 
 
 ## [BAEKJOON Online Judge](/BaekJoon/Problems/Step)

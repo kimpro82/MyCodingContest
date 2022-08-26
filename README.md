@@ -6,7 +6,7 @@ can't escape this endless valley of despair ……
 ### **List**
 
 - [Google Code Jam](#google-code-jam)
-- [Facebook Hacker Cup](#facebook-hacker-cup)<p>
+- [Meta(Facebook) Hacker Cup](#metafacebook-hacker-cup)<p>
 - [BAEKJOON Online Judge](#baekjoon-online-judge)
 - [Elice](#elice)<p>
 - [AtCoder](#atcoder)
@@ -22,19 +22,20 @@ can't escape this endless valley of despair ……
 ## [Google Code Jam](/Google/CodeJam)
 
 &nbsp;&nbsp;https://codingcompetitions.withgoogle.com/codejam
-- [Round 1C 2022 - (Comming)]()
-- [Round 1B 2022 - (Comming)]()
-- [Round 1A 2022 - (Comming)]()
+- [Round 1C 2022 (2022.04.30 18:00 ~ 20:30:00, 2.5 hrs) - (Comming)]()
+- [Round 1B 2022 (2022.04.25 01:00 ~ 03:30:00, 2.5 hrs) - C++](/Google/CodeJam/2022%20Round%201B#google-code-jam-2022---round-1b)
+- [Round 1A 2022 (2022.04.09 10:00 ~ 12:30:00, 2.5 hrs) - (Comming)]()
 - [Qualification Round 2022 (2022.04.02 08:00 ~ 04.03 11:00, 27 hrs) - C++](/Google/CodeJam/2022%20Qualification%20Round#google-code-jam-2022---qualification-round)
 - [Qualification Round 2021 (2021.03.26 22:00 ~ 03.28 04:00, 30 hrs) - C#](/Google/CodeJam/2021%20Qualification%20Round#google-code-jam-2021---qualification-round)
 - [Qualification Round 2020 (2020.04.04 08:00 ~ 04.05 11:00, 27 hrs) - Python](/Google/CodeJam/2020%20Qualification%20Round#google-code-jam-2020---qualification-round)
 
 
-## Facebook Hacker Cup
+## Meta(Facebook) Hacker Cup
 
 &nbsp;&nbsp;https://www.facebook.com/codingcompetitions/hacker-cup/
 
-- 2021 Qualification Round (2021.08.28 02:00 ~09.01 02:00, 72 hrs) (Comming)
+- 2022 Qualification Round (2022.08.27 02:00 ~ 08.30 02:00, 72 hrs) (Comming)
+- [2021 Qualification Round (2021.08.28 02:00 ~ 09.01 02:00, 72 hrs) - C++](/Meta/HackerCup/2021%20Qualification%20Round#metafacebook-hacker-cup---2022-qualification-round)
 
 
 ## [BAEKJOON Online Judge](/BaekJoon/Problems/Step)
@@ -112,6 +113,8 @@ can't escape this endless valley of despair ……
 
 &nbsp;&nbsp;https://codeforces.com/contests
 
+- Codeforces Round #790 (Div. 4) (2022.05.10 23:45, 2 hrs) (Comming)
+- Codeforces Round #784 (Div. 4) (2022.04.21 23:35, 2 hrs) (Comming)
 - Kotlin Heroes: Practice 8 (2021.10.01 22:35, 7 days) - Kotlin (Comming)
 - Codeforces Round #744 (Div. 3) (2021.09.28 23:35, 2.25 hrs) (Comming)
 - Educational Codeforces Round 113 (Div. 2) (2021.09.08 23:35, 2 hrs) (Comming)

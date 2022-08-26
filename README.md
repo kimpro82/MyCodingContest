@@ -22,9 +22,9 @@ can't escape this endless valley of despair ……
 ## [Google Code Jam](/Google/CodeJam)
 
 &nbsp;&nbsp;https://codingcompetitions.withgoogle.com/codejam
-- [Round 1C 2022 (2022.04.30 18:00 ~ 20:30:00, 2.5 hrs) - (Comming)]()
+- Round 1C 2022 (2022.04.30 18:00 ~ 20:30:00, 2.5 hrs) - (Comming)
 - [Round 1B 2022 (2022.04.25 01:00 ~ 03:30:00, 2.5 hrs) - C++](/Google/CodeJam/2022%20Round%201B#google-code-jam-2022---round-1b)
-- [Round 1A 2022 (2022.04.09 10:00 ~ 12:30:00, 2.5 hrs) - (Comming)]()
+- Round 1A 2022 (2022.04.09 10:00 ~ 12:30:00, 2.5 hrs) - (Comming)
 - [Qualification Round 2022 (2022.04.02 08:00 ~ 04.03 11:00, 27 hrs) - C++](/Google/CodeJam/2022%20Qualification%20Round#google-code-jam-2022---qualification-round)
 - [Qualification Round 2021 (2021.03.26 22:00 ~ 03.28 04:00, 30 hrs) - C#](/Google/CodeJam/2021%20Qualification%20Round#google-code-jam-2021---qualification-round)
 - [Qualification Round 2020 (2020.04.04 08:00 ~ 04.05 11:00, 27 hrs) - Python](/Google/CodeJam/2020%20Qualification%20Round#google-code-jam-2020---qualification-round)
@@ -59,6 +59,7 @@ can't escape this endless valley of despair ……
 | 10 | 브루트 포스 | | 2021.12.10 | | | [Link](/BaekJoon/Problems/Step/10#baekjoon-online-judge) |
 | 11 | 정렬 | | 2021.12.16 | 2022.07.11 | | [Link](/BaekJoon/Problems/Step/11#baekjoon-online-judge) |
 | 12 | 집합과 맵 | | | 2022.08.03 | | [Link](/BaekJoon/Problems/Step/12#baekjoon-online-judge) |
+| 16 | 동적 계획법 1 | | 2022.04.24<br>(not completed) | | | [Link](/BaekJoon/Problems/Step/16#baekjoon-online-judge) |
 | 18 | 그리디 알고리즘 | | 2022.04.21 | | | [Link](/BaekJoon/Problems/Step/18#baekjoon-online-judge) |
 
 

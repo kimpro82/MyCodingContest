@@ -1,6 +1,7 @@
 // [BOJ] 단계별로 풀어보기 > 16. 동적 계획법 1 (Excluded)
 
 // 1003. 피보나치 함수
+// 2022.04.24
 
 /* Sample input & output data
 2

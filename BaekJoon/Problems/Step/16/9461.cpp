@@ -1,4 +1,7 @@
+// [BOJ] 단계별로 풀어보기 > 16. 동적 계획법 1
+
 // 9461. 파도반 수열 (Padovan Sequence)
+// 2022.04.24
 
 /* Sample input & output data
 2

@@ -1,4 +1,7 @@
+// [BOJ] 단계별로 풀어보기 > 16. 동적 계획법 1
+
 // 1932. 정수 삼각형 (The Triangle)
+// 2022.04.24
 
 /* Sample input & output data
 5

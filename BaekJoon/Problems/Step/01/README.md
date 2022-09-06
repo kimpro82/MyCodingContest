@@ -5,7 +5,8 @@
 (2021.05.13) - `Python`, `C++`  
 (2021.07.11) - `R`  
 (2022.01.26) - `Bash`, `Text` (only possible)  
-(2022.03.12) - `Golang`
+(2022.03.12) - `Golang`  
+(2022.09.05) - `SystemVerilog`
 
 https://www.acmicpc.net/step/1
 
@@ -14,8 +15,6 @@ https://www.acmicpc.net/step/1
 
 - [2557. Hello World](#2557-hello-world)
 - [10718. We love kriii](#10718-we-love-kriii)
-- [10171. Cats](#10171-cats)
-- [10172. Dogs](#10172-dogs)
 - [1000. A+B](#1000-ab)
 - [1001. A-B](#1001-a-b)
 - [10998. A*B](#10998-ab)
@@ -23,8 +22,12 @@ https://www.acmicpc.net/step/1
 - [10869. 사칙연산](#10869-사칙연산)
 - [10926. ??!](#10926-) *(new)*
 - [18108. 1998년생인 내가 태국에서는 2541년생?!](#18108-1998년생인-내가-태국에서는-2541년생) *(new)*
+- [3003. BIJELE](#3003-bijele) *(new)*
 - [10430. 나머지](#10430-나머지)
 - [2588. 곱셈](#2588-곱셈)
+- [10171. Cats](#10171-cats)
+- [10172. Dogs](#10172-dogs)
+- [25083. 새싹](#25083-새싹) *(new)*
 
 
 **※ Note**  
@@ -33,11 +36,12 @@ https://www.acmicpc.net/step/1
 &nbsp;&nbsp; - `C++`* : skipped `main()` function's brace(`{}`) and its outside including two header lines; `#include <iostream>` `using namespace std;`  
 &nbsp;&nbsp; - `Golang`* : skipped `main()` function's brace(`{}`) and its outside including two header lines; `package main` `import "fmt"`  
 &nbsp;&nbsp; - `R` : Some answers occur runtime errors with unknowable reason in the BOJ grading machine.  
+&nbsp;&nbsp; - `SystemVerilog` : skipped the most outside line `module` ~ `endmodule`. All the codes run on [JDoodle Online VERILOG Compiler IDE](https://www.jdoodle.com/execute-verilog-online/) as `Verilog` before submitted to [BOJ](https://www.acmicpc.net/) as `SystemVerilog`.  
 &nbsp;&nbsp; - `Text` : Only possible problems that do not require input values are solved.  
 &nbsp;&nbsp; * When any additional header is used, the header block is also noted seperately.
 
 
-## [2557. Hello World](#List)
+## [2557. Hello World](#list)
 
 > Hello World!
 
@@ -68,13 +72,21 @@ print("Hello World!")
 cat("Hello World!")
 ```
 
+#### SystemVerilog
+```sv
+initial begin
+    $display("Hello World!");
+    $finish;
+end
+```
+
 #### Text
 ```txt
 Hello World!
 ```
 
 
-## [10718. We love kriii](#List)
+## [10718. We love kriii](#list)
 
 > 강한친구 대한육군  
 > 강한친구 대한육군
@@ -126,6 +138,16 @@ for (i in c(0, 1))
 }
 ```
 
+#### SystemVerilog
+```sv
+initial begin
+    repeat (2) begin
+        $display("강한친구 대한육군");
+    end
+    $finish;
+end
+```
+
 #### Text
 ```txt
 강한친구 대한육군
@@ -133,149 +155,7 @@ for (i in c(0, 1))
 ```
 
 
-## [10171. Cats](#List)
-
-> \    /\  
->  )  ( ')  
-> (  /  )   
->  \\(__)|  
-
-#### Bash
-```Bash
-echo "\\    /\\"
-echo " )  ( ')"
-echo "(  /  )"
-echo " \\(__)|"
-
-# read
-```
-
-#### C++
-```cpp
-cout << "\\    /\\" << endl;
-cout << " )  ( ')" << endl;
-cout << "(  /  ) " << endl;
-cout << " \\(__)|" << endl;
-
-return 0;
-```
-
-#### Golang
-```go
-var s string = `\    /\
-)  ( ')
-(  /  )
-\(__)|`
-
-fmt.Println(s)
-```
-
-#### Python
-```python
-print("\    /\\")
-print(" )  ( ')")
-print("(  /  )")
-print(" \\(__)|")
-```
-
-#### R
-```R
-cat("\\    /\\
- )  ( \')
-(  /  )
- \\(__)|")
-```
-
-#### Text
-```txt
-\    /\
- )  ( ')
-(  /  )
- \(__)|
-```
-
-
-## [10172. Dogs](#List)
-
-> |\\_/|  
-> |q p|   /}  
-> ( 0 )"""\  
-> |"^"`    |  
-> ||_/=\\\\__|  
-
-#### Bash
-```Bash
-echo "|\_/|"
-echo "|q p|   /}"
-echo "( 0 )\"\"\"\\"
-echo "|\"^\"\`    |"
-echo "||_/=\\\\__|"
-
-# read
-```
-
-#### C++ - trial 1
-```cpp
-cout << R"(
-|\_/|
-|q p|   /}
-( 0 )"""\
-|"^"`    |
-||_/=\\__|
-)" << endl;
-
-return 0;
-```
-
-#### C++ - trial 2
-```cpp
-cout << "|\\_/|" << endl;
-cout << "|q p|   /}" << endl;
-cout << "( 0 )\"\"\"\\" << endl;
-cout << "|\"^\"`    |" << endl;
-cout << "||_/=\\\\__|" << endl;
-
-return 0;
-```
-
-#### Golang
-```go
-fmt.Println("|\\_/|")
-fmt.Println("|q p|   /}")
-fmt.Println("( 0 )\"\"\"\\")
-fmt.Println("|\"^\"`    |")
-fmt.Println("||_/=\\\\__|")
-```
-
-#### Python
-```python
-print("""|\\_/|
-|q p|   /}
-( 0 )\"\"\"\\
-|"^"`    |
-||_/=\\\\__|""")
-```
-
-#### R
-```R
-cat("|\\_/|
-|q p|   /}
-( 0 )\"\"\"\\
-|\"^\"`    |
-||_/=\\\\__|")
-```
-
-#### Text
-```txt
-|\_/|
-|q p|   /}
-( 0 )"""\
-|"^"`    |
-||_/=\\__|
-```
-
-
-## [1000. A+B](#List)
+## [1000. A+B](#list)
 
 > 1 2
 
@@ -318,8 +198,21 @@ num <- scan("stdin")    # recieve num[1], num[2], …… as numeric
 cat(num[1] + num[2])
 ```
 
+#### SystemVerilog
+```sv
+integer a, b, temp;
 
-## [1001. A-B](#List)
+initial begin
+    temp = $fscanf(32'h8000_0000, "%d %d", a, b);
+    // 32'h8000_0000 : descriptor that indicates STDIN
+    // $fscanf() (maybe) returns EOF
+    $display("%0d", a + b);
+    $finish;
+end
+```
+
+
+## [1001. A-B](#list)
 
 > 3 2
 
@@ -362,8 +255,21 @@ num <- scan("stdin")    # recieve num[1], num[2], …… as numeric
 cat(num[1] - num[2])
 ```
 
+#### SystemVerilog
+```sv
+integer a, b, temp;
 
-## [10998. A*B](#List)
+initial begin
+    temp = $fscanf(32'h8000_0000, "%d %d", a, b);
+    // 32'h8000_0000 : descriptor that indicates STDIN
+    // $fscanf() (maybe) returns EOF
+    $display("%0d", a - b);
+    $finish;
+end
+```
+
+
+## [10998. A*B](#list)
 
 > 3 4
 
@@ -406,8 +312,21 @@ num <- scan("stdin")    # recieve num[1], num[2], …… as numeric
 cat(num[1] * num[2])
 ```
 
+#### SystemVerilog
+```sv
+integer a, b, temp;
 
-## [1008. A/B](#List)
+initial begin
+    temp = $fscanf(32'h8000_0000, "%d %d", a, b);
+    // 32'h8000_0000 : descriptor that indicates STDIN
+    // $fscanf() (maybe) returns EOF
+    $display("%0d", a * b);
+    $finish;
+end
+```
+
+
+## [1008. A/B](#list)
 
 > 1 3
 
@@ -458,8 +377,21 @@ options(digits = 10)
 cat(num[1] / num[2])
 ```
 
+#### SystemVerilog
+```sv
+real a, b, temp;
 
-## [10869. 사칙연산](#List)
+initial begin
+    temp = $fscanf(32'h8000_0000, "%d %d", a, b);
+    // 32'h8000_0000 : descriptor that indicates STDIN
+    // $fscanf() (maybe) returns EOF
+    $display("%0.10f", a / b);
+    $finish;
+end
+```
+
+
+## [10869. 사칙연산](#list)
 
 > 7 3
 
@@ -525,8 +457,24 @@ cat(floor(num[1] / num[2]), "\n")
 cat(num[1] %% num[2], "\n")
 ```
 
+#### SystemVerilog
+```sv
+integer a, b, temp;
 
-## [10926. ??!](#List)
+initial begin
+    temp = $fscanf(32'h8000_0000, "%d %d", a, b);
+    // 32'h8000_0000 : descriptor that indicates STDIN
+    // $fscanf() (maybe) returns EOF
+    $display("%0d", a + b);
+    $display("%0d", a - b);
+    $display("%0d", a * b);
+    $display("%0d", a / b);
+    $finish;
+end
+```
+
+
+## [10926. ??!](#list)
 
 > joonas
 
@@ -548,8 +496,22 @@ fmt.Scanln(&s)
 fmt.Println(s + "??!")
 ```
 
+#### SystemVerilog
+```sv
+reg [50*8:0] s;
+integer temp;
 
-## [18108. 1998년생인 내가 태국에서는 2541년생?!](#List)
+initial begin
+    temp = $fscanf(32'h8000_0000, "%s", s);
+    // 32'h8000_0000 : descriptor that indicates STDIN
+    // $fscanf() (maybe) returns EOF
+    $display("%0s??!", s);
+    $finish;
+end
+```
+
+
+## [18108. 1998년생인 내가 태국에서는 2541년생?!](#list)
 
 > 2541
 
@@ -576,8 +538,50 @@ const diff int = 2541 - 1998
 fmt.Println(by - diff)
 ```
 
+#### SystemVerilog
+```sv
+integer by, diff = 2541 - 1998, temp;
 
-## [10430. 나머지](#List)
+initial begin
+
+    temp = $fscanf(32'h8000_0000, "%d", by);
+    // 32'h8000_0000 : descriptor that indicates STDIN
+    // $fscanf() (maybe) returns EOF
+    $display("%0d", by - diff);
+    $finish;
+end
+```
+
+
+## [3003. BIJELE](#list)
+
+#### SystemVerilog
+```sv
+reg [6*8:0] pieces = "112228";                                              // Can I enter this as an integer array?
+integer signed data[6:0];
+integer temp, i;
+
+initial begin
+    // Input
+    for (i = 0; i < 6; i = i + 1) begin
+        temp = $fscanf(32'h8000_0000, "%d", data[i]);
+        // 32'h8000_0000 : descriptor that indicates STDIN
+        // $fscan() (maybe) returns EOF
+    end
+
+    for (i = 0; i < 6; i = i + 1) begin
+        // test
+        // $display("%0d %0d", pieces[(6-i)*8 - 8 +: 8] - 48, data[i]);
+
+        $write("%0d ", $signed(pieces[(6-i)*8 - 8 +: 8] - 48) - data[i]);
+    end
+    $display();
+    $finish;
+end
+```
+
+
+## [10430. 나머지](#list)
 
 > 5 8 4
 
@@ -644,8 +648,24 @@ cat((a * b) %% c, "\n")
 cat(((a %% c) * (b %% c)) %% c, "\n")
 ```
 
+#### SystemVerilog
+```sv
+integer a, b, c, temp;
 
-## [2588. 곱셈](#List)
+initial begin
+    temp = $fscanf(32'h8000_0000, "%d %d %d", a, b, c);
+    // 32'h8000_0000 : descriptor that indicates STDIN
+    // $fscanf() (maybe) returns EOF
+    $display("%0d", (a + b) % c);
+    $display("%0d", ((a % c) + (b % c)) % c);
+    $display("%0d", (a * b) % c);
+    $display("%0d", ((a % c) * (b % c)) % c);
+    $finish;
+end
+```
+
+
+## [2588. 곱셈](#list)
 
 > 472  
 > 385
@@ -899,3 +919,210 @@ for (i in 1:3)
 cat(sum, "\n")
 ```
 > Accepted
+
+#### SystemVerilog
+```sv
+integer a;
+reg [3*8:0] b;
+integer i, prod, sum = 0, temp;
+
+initial begin
+    temp = $fscanf(32'h8000_0000, "%d", a);
+    temp = $fscanf(32'h8000_0000, "%s", b);
+    // 32'h8000_0000 : descriptor that indicates STDIN
+    // $fscanf() (maybe) returns EOF
+
+    for (i = 0; i < 3; i = i + 1) begin
+        prod = a * (b[i*8 +: 8] - 48);
+        sum = sum + prod * (10**i);
+
+        // test
+        // $display("%0d %0d %0d %0d %0d", i, a, b[i*8 +: 8] - 48, prod, sum);
+
+        $display("%0d", prod);
+    end
+    $display("%0d", sum);
+    $finish;
+end
+```
+
+
+## [10171. Cats](#list)
+
+> \    /\  
+>  )  ( ')  
+> (  /  )   
+>  \\(__)|  
+
+#### Bash
+```Bash
+echo "\\    /\\"
+echo " )  ( ')"
+echo "(  /  )"
+echo " \\(__)|"
+
+# read
+```
+
+#### C++
+```cpp
+cout << "\\    /\\" << endl;
+cout << " )  ( ')" << endl;
+cout << "(  /  ) " << endl;
+cout << " \\(__)|" << endl;
+
+return 0;
+```
+
+#### Golang
+```go
+var s string = `\    /\
+)  ( ')
+(  /  )
+\(__)|`
+
+fmt.Println(s)
+```
+
+#### Python
+```python
+print("\    /\\")
+print(" )  ( ')")
+print("(  /  )")
+print(" \\(__)|")
+```
+
+#### R
+```R
+cat("\\    /\\
+ )  ( \')
+(  /  )
+ \\(__)|")
+```
+
+#### SystemVerilog
+```sv
+initial begin
+    $display("\\    /\\");
+    $display(" )  ( ')");
+    $display("(  /  )");
+    $display(" \\(__)|");
+    $finish;
+end
+```
+
+#### Text
+```txt
+\    /\
+ )  ( ')
+(  /  )
+ \(__)|
+```
+
+
+## [10172. Dogs](#list)
+
+> |\\_/|  
+> |q p|   /}  
+> ( 0 )"""\  
+> |"^"`    |  
+> ||_/=\\\\__|  
+
+#### Bash
+```Bash
+echo "|\_/|"
+echo "|q p|   /}"
+echo "( 0 )\"\"\"\\"
+echo "|\"^\"\`    |"
+echo "||_/=\\\\__|"
+
+# read
+```
+
+#### C++ - trial 1
+```cpp
+cout << R"(
+|\_/|
+|q p|   /}
+( 0 )"""\
+|"^"`    |
+||_/=\\__|
+)" << endl;
+
+return 0;
+```
+
+#### C++ - trial 2
+```cpp
+cout << "|\\_/|" << endl;
+cout << "|q p|   /}" << endl;
+cout << "( 0 )\"\"\"\\" << endl;
+cout << "|\"^\"`    |" << endl;
+cout << "||_/=\\\\__|" << endl;
+
+return 0;
+```
+
+#### Golang
+```go
+fmt.Println("|\\_/|")
+fmt.Println("|q p|   /}")
+fmt.Println("( 0 )\"\"\"\\")
+fmt.Println("|\"^\"`    |")
+fmt.Println("||_/=\\\\__|")
+```
+
+#### Python
+```python
+print("""|\\_/|
+|q p|   /}
+( 0 )\"\"\"\\
+|"^"`    |
+||_/=\\\\__|""")
+```
+
+#### R
+```R
+cat("|\\_/|
+|q p|   /}
+( 0 )\"\"\"\\
+|\"^\"`    |
+||_/=\\\\__|")
+```
+
+#### SystemVerilog
+```sv
+initial begin
+    $display("|\\_/|");
+    $display("|q p|   /}");
+    $display("( 0 )\"\"\"\\");
+    $display("|\"^\"`    |");
+    $display("||_/=\\\\__|");
+    $finish;
+end
+```
+
+#### Text
+```txt
+|\_/|
+|q p|   /}
+( 0 )"""\
+|"^"`    |
+||_/=\\__|
+```
+
+
+## [25083. 새싹](#list)
+
+#### SystemVerilog
+```sv
+    initial begin
+        $display("         ,r'\"7");
+        $display("r`-_   ,'  ,/");
+        $display(" \\. \". L_r'");
+        $display("   `~\\/");
+        $display("      |");
+        $display("      |");
+        $finish;
+    end
+```

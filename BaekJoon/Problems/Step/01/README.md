@@ -33,10 +33,11 @@ https://www.acmicpc.net/step/1
 **※ Note**  
 
 &nbsp;&nbsp; - All the codes of any language for the same problem have basically the same result.  
-&nbsp;&nbsp; - `C++`* : skipped `main()` function's brace(`{}`) and its outside including two header lines; `#include <iostream>` `using namespace std;`  
-&nbsp;&nbsp; - `Golang`* : skipped `main()` function's brace(`{}`) and its outside including two header lines; `package main` `import "fmt"`  
+&nbsp;&nbsp; - `C++` : skipped `main()` function's brace(`{}`) and its outside including two header lines; `#include <iostream>` `using namespace std;`  
+&nbsp;&nbsp; - `Golang` : skipped `main()` function's brace(`{}`) and its outside including two header lines; `package main` `import "fmt"`  
 &nbsp;&nbsp; - `R` : Some answers occur runtime errors with unknowable reason in the BOJ grading machine.  
-&nbsp;&nbsp; - `SystemVerilog` : skipped the most outside line `module` ~ `endmodule`. All the codes run on [JDoodle Online VERILOG Compiler IDE](https://www.jdoodle.com/execute-verilog-online/) as `Verilog` before submitted to [BOJ](https://www.acmicpc.net/) as `SystemVerilog`.  
+&nbsp;&nbsp; - `SystemVerilog` : skipped the top and bottom lines; `module` `endmodule`.  
+&nbsp;&nbsp;&nbsp;&nbsp; · All the codes run on [JDoodle Online VERILOG Compiler IDE](https://www.jdoodle.com/execute-verilog-online/) as `Verilog` before submitted to [BOJ](https://www.acmicpc.net/) as `SystemVerilog`.  
 &nbsp;&nbsp; - `Text` : Only possible problems that do not require input values are solved.  
 &nbsp;&nbsp; * When any additional header is used, the header block is also noted seperately.
 
@@ -555,6 +556,10 @@ end
 
 ## [3003. BIJELE](#list)
 
+> 2 1 2 1 2 1
+
+> -1 0 0 1 0 7
+
 #### SystemVerilog
 ```sv
 reg [6*8:0] pieces = "112228";                                              // Can I enter this as an integer array?
@@ -945,14 +950,17 @@ initial begin
     $finish;
 end
 ```
+> Accepted
 
 
 ## [10171. Cats](#list)
 
-> \    /\  
->  )  ( ')  
-> (  /  )   
->  \\(__)|  
+```txt
+\    /\
+ )  ( ')
+(  /  )
+ \(__)|
+```
 
 #### Bash
 ```Bash
@@ -1022,11 +1030,13 @@ end
 
 ## [10172. Dogs](#list)
 
-> |\\_/|  
-> |q p|   /}  
-> ( 0 )"""\  
-> |"^"`    |  
-> ||_/=\\\\__|  
+```txt
+|\_/|
+|q p|   /}
+( 0 )"""\
+|"^"`    |
+||_/=\\__|
+```
 
 #### Bash
 ```Bash
@@ -1113,6 +1123,15 @@ end
 
 
 ## [25083. 새싹](#list)
+
+```txt
+         ,r'"7
+r`-_   ,'  ,/
+ \. ". L_r'
+   `~\/
+      |
+      |
+```
 
 #### SystemVerilog
 ```sv

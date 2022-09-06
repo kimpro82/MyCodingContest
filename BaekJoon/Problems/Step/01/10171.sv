@@ -1,6 +1,7 @@
 // 2022.09.05
 
 module Q10171();
+
     initial begin
         $display("\\    /\\");
         $display(" )  ( ')");
@@ -8,4 +9,5 @@ module Q10171();
         $display(" \\(__)|");
         $finish;
     end
+
 endmodule

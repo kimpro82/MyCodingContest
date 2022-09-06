@@ -1,6 +1,7 @@
 // 2022.09.05
 
 module Q10172();
+
     initial begin
         $display("|\\_/|");
         $display("|q p|   /}");
@@ -9,4 +10,5 @@ module Q10172();
         $display("||_/=\\\\__|");
         $finish;
     end
+
 endmodule

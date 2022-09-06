@@ -1,7 +1,7 @@
 // 2022.09.05
 
 module Q10869();
-    
+
     integer a, b, temp;
 
     initial begin

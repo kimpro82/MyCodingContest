@@ -1,7 +1,7 @@
 // 2022.09.06
 
 module Q3003();
-    
+
     reg [6*8:0] pieces = "112228";                                              // Can I enter this as an integer array?
     integer signed data[6:0];
     integer temp, i;

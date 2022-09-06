@@ -1,7 +1,7 @@
 // 2022.09.05
 
 module Q10926();
-    
+
     reg [50*8:0] s;
     integer temp;
 

@@ -1,7 +1,7 @@
 // 2022.09.06
 
 module Q2588();
-    
+
     integer a;
     reg [3*8:0] b;
     integer i, prod, sum = 0, temp;

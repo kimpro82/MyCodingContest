@@ -192,7 +192,7 @@ def solution(num_list):
 ```py
 def solution(text, anagram, sw):
     answer = ''
-    temp = [[]] * len(text)                     # no [] but [[]]
+    temp = [[]] * len(text)                     # not [] but [[]]
     if sw == True:
         for i in range(len(text)):
             temp[anagram[i]] = text[i]

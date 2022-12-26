@@ -1,343 +1,324 @@
 ## BAEKJOON Online Judge
 
-## 문제 > 단계별로 풀어보기 > 5. 1차원 배열
-(2021.06.14)  
-https://www.acmicpc.net/step/6  
+# 문제 > 단계별로 풀어보기 > 5. 함수
 
-※ C++ codes : **skipped** `main()` function's brace(`{}`) and its outside  
-    - Basically, all the codes has the `<iostream>` header and namespace `std` even if there's no mention.  
-    - When any additional header is used, the header block is also noted seperately.
+https://www.acmicpc.net/step/5
 
-
-### 10818. 최소, 최대
-
-#### C++ (Trial 1)
-```cpp
-#include <iostream>
-#include <cmath>    // for using min() & max(), but I really hate it
-```
-```cpp
-int t;
-cin >> t;
-
-int arr[t];
-int minValue = 1000000, maxValue = -1000000, temp;
-
-for (int i = 0; i < t; i++)
-{
-    cin >> temp;
-    arr[i] = temp;
-    maxValue = max(maxValue, arr[i]);
-    minValue = min(minValue, arr[i]);        
-}
-
-cout << minValue << " " << maxValue << endl;
-
-return 0;
-```
-
-> 5  
-> 20 10 35 30 7
-
-> 7 35
-
-#### C++ (Trial 2)
-```cpp
-// I really don't want to use for loop with math.max(), math.min().  
-// But, consequantially, it was a kind of the lesser evil.
-```
-```cpp
-#include <iostream>
-// #include <cstdarg>   // for using va_list, but it can't adopt minmax()
-// #include <utility>   // likewise, for using pair<> related with minmax()
-#include <vector>       // need to understand by comparing with other similar containers
-#include <algorithm>    // for using min_element() and max_element()
-```
-```cpp
-int t;
-cin >> t;
-
-vector<int> vec;            // not arr[], because vector<> has variable size
-int temp;
-for (int i = 0; i < t; i++)
-{
-    cin >> temp;
-    vec.push_back(temp);
-}
-
-// pair <int, int> answer;  // for getting output from minmax()
-// minmax() requires list<>, not va_list
-int minValue = *min_element(vec.begin(), vec.end());    
-int maxValue = *max_element(vec.begin(), vec.end());
-cout << minValue << " " << maxValue << endl;    // inefficient, crazy
-
-return 0;
-```
-
-> 5  
-> 20 10 35 30 7
-
-> 7 35
+(2021.06.18) - `C++`  
+(2022.03.11) - `Text`  
+(2022.04.17) - `Golang`
 
 
-### 2562. 최댓값
+## **List**
+
+- [15596. 정수 N개의 합](#15596-정수-n개의-합)
+- [4673. Self Numbers](#4673-self-numbers)
+- [1065. 한수](#1065-한수)
+
+
+**※ Note**
+
+&nbsp;&nbsp; - All the codes of any language for the same problem have basically the same result.  
+&nbsp;&nbsp; - `C++`* : skipped the below two header lines; `#include <iostream>` `using namespace std;`  
+&nbsp;&nbsp; - `Golang`* : skipped the below two header lines; `package main` `import "fmt"`  
+&nbsp;&nbsp; - `Text` : Only possible problems that do not require input values are solved.  
+&nbsp;&nbsp; * When any additional header is used, the header block is also noted seperately.
+
+
+## [15596. 정수 N개의 합](#list)
+
+> n   : 5  
+> ans : 15
 
 #### C++
+
+I guessed it as a question related with using pointer(because of "&a") at first, but it was not.  
+Hell easy one to ask about `vector` very simply.  
+It's been a few days with pointer, I hate myself
+
 ```cpp
-const int length = 9;       // the length of arr[] is fixed as 9
-int arr[length];
-int maxValue = 0, temp, loc = 0;
-
-for (int i = 0; i < length; i++)
+#include <iostream>
+#include <vector>
+```
+```cpp
+long long sum(vector<int> &a)
 {
-    cin >> temp;
-    arr[i] = temp;
+    int n = a.size();                   // not sizeof(a) : get length of the memory space
+    cout << "n   : " << n << endl;      // test
 
-    if (arr[i] > maxValue)  // all elements of arr[] are different from each other
+    long long ans = 0;
+    for (int i = 0; i < n; i++)
     {
-        maxValue = arr[i];
-        loc = i + 1;
+        ans += a[i];
     }
+
+    cout << "ans : " << ans << endl;    // test
+    return ans;
 }
+```
+```cpp
+// test
+// int main()
+// {
+//     vector<int> a = {1, 2, 3, 4, 5};
+//     sum(a);
 
-cout << maxValue << "\n" << loc << endl;
-
-return 0;
+//     return 0;
+// }
 ```
 
+#### Golang
+```golang
+// import "fmt"
+```
+```golang
+func sum(a []int) int {            // int == int64 in 64 bit env.
+    var ans int = 0
+
+    for _, el := range a {
+        ans += el                  // not a[i] !!!
+    }
+
+    return ans
+}
+```
+```golang
+// Test
+// func main() {
+//     a := []int{1, 2, 3, 4, 5}
+//     fmt.Println(sum(a))
+// }
+```
+
+
+## [4673. Self Numbers](#list)
+
+Deja vu? ☞ [Oncoder Challenge Lv.6](..//Oncoder/Challenge/Q06/README.md)
+
+> 1  
 > 3  
-> 29  
-> 38  
-> 12  
-> 57  
-> 74  
-> 40  
-> 85  
-> 61
-
-> 85  
-> 8
-
-
-### 2577. 숫자의 개수
+> 5  
+> ……  
+> 9993
 
 #### C++
-```cpp
-int a, b, c;                        // 100 <= a, b, c < 1000
-cin >> a >> b >> c;
-
-string prod = to_string(a * b * c); 
-int length = sizeof(prod);
-int arr[length] = {};               // initialize arr[] as {0, 0, ……, 0}
-
-for (int i = 0; i < length; i++)
-{
-    arr[prod[i]-'0']++;             // I did this amazing code! 
-}
-
-for (int j = 0; j < 10; j++)
-{
-    cout << arr[j] << endl;
-}
-
-return 0;
-```
-
-> 150  
-> 266  
-> 427
-
-> 3 1 0 2 0 0 0 2 0 0 (vertically)
-
-
-### 3052. MODULO
-
-#### C++
-```cpp
-// modulo : 나머지
-// distinct number : 서로 다른 숫자 ≒ 중복되지 않는 숫자
-```
 ```cpp
 #include <iostream>
 #include <set>
+#include <algorithm>
 ```
 ```cpp
-const int length = 10;
-int input[length];
-set<int> modulo;
-
-for (int i = 0; i < length; i++)
+int main()
 {
-    cin >> input[i];
-    modulo.insert(input[i] % 42);
-}
-
-cout << modulo.size() << endl;
-
-return 0;
-```
-
-> 39  
-> 40  
-> 41  
-> 42  
-> 43  
-> 44  
-> 82  
-> 83  
-> 84  
-> 85
-
-> 6
-
-
-### 1546. 평균
-
-#### C++
-```cpp
-int t;
-cin >> t;
-
-double score[t], maxValue = 0, sum = 0;
-for (int i = 0; i < t; i++)
-{
-    cin >> score[i];
-    maxValue = max(maxValue, score[i]);
-}
-
-for (int j = 0; j < t; j++)
-{
-    score[j] *= (1 / maxValue) * 100;
-    sum += score[j];
-}
-
-cout << sum / t << endl;
-
-return 0;
-```
-
-> 3  
-> 40 80 60
-
-> 75
-
-
-### 8958. Score
-
-#### C++
-```cpp
-int t;
-cin >> t;
-
-string input[t];
-
-for (int i = 0; i < t; i++)
-{
-    cin >> input[i];
-
-    int score = 0, combo = 0;
-    for (int j = 0; j < input[i].length(); j++)
-    // sizeof() : get memory size of array, not length that I mean
+    // make a set {1, 2, ……, 9999}
+    set<int> mySet;
+    for (int i = 1; i < 10000; i++)
     {
-        if (input[i][j] == 'O')
-        {
-            combo += 1;
-            score += combo;
-        } else
-        {
-            combo = 0;
-        }
-
-        // test
-        cout << "(" << i << ", " << j << ") " 
-            << input[i][j] << " " << combo << " " << score << endl;
+        mySet.insert(i);
     }
 
-    cout << score << endl;
+    // erase digitaditions from mySet{}
+    for (int j = 1; j < 10000; j++)
+    {
+        int digitadition = j;
+        if (j > 999)
+        {
+            digitadition += j / 1000;
+        }
+        if (j > 99)
+        {
+            digitadition += (j % 1000) / 100;
+        }
+        if (j > 9)
+        {
+            digitadition += (j % 100) / 10;
+        }
+        digitadition += j % 10;
 
+        mySet.erase(digitadition);
+    }
+
+    // output self-numbers
+    // make cin/cout faster
+    cin.tie(NULL);
+    ios_base::sync_with_stdio(false);
+    for_each (mySet.begin(), mySet.end(), [](int n)
+    {
+        cout << n << '\n';
+    });
+
+    return 0;
 }
-
-return 0;
+```
+```cpp
+    // better code?
+    int digitadition = j;
+    if (j > 999)
+    {
+        digitadition += j / 1000;
+        digitadition += (j % 1000) / 100;
+        digitadition += (j % 100) / 10;
+    } else if (j > 99)
+    {
+        digitadition += (j % 1000) / 100;
+        digitadition += (j % 100) / 10;
+    } else if (j > 9)
+    {
+        digitadition += (j % 100) / 10;
+    }
+    digitadition += j % 10;
 ```
 
-> 5  
-> OOXXOXXOOO  
-> OOXXOOXXOO  
-> OXOXOXOXOXOXOX  
-> OOOOOOOOOO  
-> OOOOXOOOOXOOOOX  
+#### Golang
+Hmm it would be better to use *nested If statement* with the order of `num > 9` `num > 99` `num > 999`.
+```golang
+func digitadition(num int) int {
 
-> (0, 0) O 1 1  
-> (0, 1) O 2 3  
-> (0, 2) X 0 3  
-> (0, 3) X 0 3  
-> (0, 4) O 1 4  
-> (0, 5) X 0 4  
-> (0, 6) X 0 4  
-> (0, 7) O 1 5  
-> (0, 8) O 2 7  
-> (0, 9) O 3 10  
-> ……
+    var d int = num
 
-> 10  
-> ……
+    if num > 999 {
+        d += num / 1000
+    }
+    if num > 99 {
+        d += (num % 1000) / 100
+    }
+    if num > 9 {
+        d += (num % 100) / 10
+    }
+    d += num % 10
+
+    return d
+}
+```
+```golang
+func main() {
+
+    var n int = 10001                            // n = 101 for test
+    
+    // Generate an array {1, 2, ……, 9999}
+    var arr []int = make([]int, n)
+    for i := 1; i < n; i++ {
+        arr[i] = 1
+    }
+
+    // Remove non-self numbers from the array
+    var temp int
+    for i := 1; i < n; i++ {
+        temp = digitadition(i)
+        if temp < n {
+            arr[temp] = 0
+        }
+    }
+
+    // Output
+    for i := 1; i < n; i++ {
+        if arr[i] == 1 {
+            fmt.Println(i)
+        }
+    }
+}
+```
+
+#### Text
+```txt
+1
+3
+5
+……
+9993
+```
+ㅋㅋㅋ
 
 
-### 4344. Above Average
+## [1065. 한수](#list)
+
+[한수](https://namu.wiki/w/%ED%95%9C%EC%88%98(%EC%82%BC%EA%B5%AD%EC%A7%80))라면 ……
+
+> 777
+
+> 1 0 0 99  
+> 1 0 1 99  
+> 1 0 2 99  
+> ……  
+> 7 7 7 133
+
+> 133
 
 #### C++
 ```cpp
-int c;
-cin >> c;
-
-for (int i = 0; i < c; i++)
+int main()
 {
-    int n;
+    int n;      // n <= 1000
     cin >> n;
 
-    // get sum and average
-    int scores[n], sum = 0, average;
-    for (int j = 0; j < n; j++)
+    int count = 0;
+    if (n < 100)
     {
-        cin >> scores[j];
-        sum += scores[j];
-    }
-    average = sum / n;
-
-    // get percentage of students whose grade is above average
-    double aboveAverage = 0;
-    for (int k = 0; k < n; k++)
+        count = n;
+    } else
     {
-        if (scores[k] > average)
+        int a, b, c;
+        count = 99;
+        if (n == 1000)      // can determine 1000 is not
         {
-            aboveAverage += 1;
+            n = 999;
+        }
+        for (int i = 100; i <= n; i++)
+        {
+            a = i / 100;
+            b = (i % 100) / 10;
+            c = i % 10;
+            if ((b - a) == (c - b))
+            {
+                count++;
+            }
+            cout << a << " " << b << " " << c << " " << count << endl;  // test
         }
     }
 
-    // test
-    cout << n << " " << sum << " " << average << " " << aboveAverage << endl;
+    cout << count << endl;
 
-    // ouput
-    double aboveAverageRatio = (double) (aboveAverage / n) * 100;
-    cout << fixed;      // output 40.000, not 40
-    cout.precision(3);  // 3 : 3 ciphers under decimal point
-    cout << aboveAverageRatio << '%' << endl;
+    return 0;
 }
-
-return 0;
+```
+```cpp
+    // else             // n == 1000
+    // {
+    //     count = 144; // given as a sample output …… crazy
+    // }
 ```
 
-> 5  
-> 5 50 50 70 80 100  
-> 7 100 95 90 80 70 60 50  
-> 3 70 90 80  
-> 3 70 90 81  
-> 9 100 99 98 97 96 95 94 93 91
+#### Golang
+```golang
+func count(n int) int {
+    var ans int = 0;
+    var a, b, c int
+    if n < 100 {
+        ans = n
+    } else if n < 1000 {
+        ans = 99
 
-> 5 350 70 2  
-> 7 545 77 4.000  
-> ……
+        for i := 100; i <= n; i++ {
+            a = i / 100
+            b = (i % 100) / 10
+            c = i % 10
 
-> 40.000%  
-> 57.143%  
-> ……
+            if b - a == c - b {
+                ans++
+            }
+        }
+    } else {                            // n == 1000
+        ans = 144                       // crazy~ (given as a sample output)
+    }
+
+    return ans
+}
+```
+```golang
+func main() {
+    var n int;
+    fmt.Scanln(&n)
+
+    fmt.Println(count(n))
+}
+```

@@ -23,6 +23,8 @@ can't escape this endless valley of despair ……
 ## [Google Code Jam](#list)
 
 &nbsp;&nbsp;https://codingcompetitions.withgoogle.com/codejam
+
+- [Farewell Round A 2023 (2023.04.15 23:00 ~ 04.16 03:00, 4 hrs) - C++](./Google/CodeJam/2023%20Round%20A)
 - Round 1C 2022 (2022.04.30 18:00 ~ 20:30:00, 2.5 hrs) - (Comming)
 - [Round 1B 2022 (2022.04.25 01:00 ~ 03:30:00, 2.5 hrs) - C++](/Google/CodeJam/2022%20Round%201B#google-code-jam-2022---round-1b)
 - Round 1A 2022 (2022.04.09 10:00 ~ 12:30:00, 2.5 hrs) - (Comming)
@@ -68,6 +70,8 @@ can't escape this endless valley of despair ……
 ## [Programmers](#list)
 
 &nbsp;&nbsp;https://programmers.co.kr/
+
+- PCCP 모의고사 1회 (Comming)
 - [PCCE 모의고사 2회 (2022.12.25) - Python](./Programmers/PCCE/02/)
 - [PCCE 모의고사 1회 (2022.12.24) - Python](./Programmers/PCCE/01/)
 

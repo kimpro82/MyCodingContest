@@ -16,7 +16,7 @@ https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95b94
 
 ## [Colliding Encoding (4 / 10 pts)](#list)
 
-<details open>
+<details>
     <summary>Test Input & Output</summary>
 
 #### Input
@@ -42,7 +42,7 @@ Case #2: YES
 ```
 </details>
 
-<details open>
+<details>
     <summary>Codes</summary>
 
 #### C++
@@ -143,7 +143,7 @@ not attempted
 
 ## [Rainbow Sort (4 / 10 pts)](#list)
 
-<details open>
+<details>
     <summary>Test Input & Output</summary>
 
 #### Input
@@ -162,7 +162,7 @@ Case #2: IMPOSSIBLE
 ```
 </details>
 
-<details open>
+<details>
     <summary>Codes</summary>
 
 #### C++
@@ -260,7 +260,7 @@ int main()
 
 ## [ASCII Art (9 / 20 pts)](#list)
 
-<details open>
+<details>
     <summary>Test Input & Output</summary>
 
 #### Input
@@ -277,7 +277,7 @@ Case #2: C
 ```
 </details>
 
-<details open>
+<details>
     <summary>Codes</summary>
 
 #### C++
@@ -342,7 +342,7 @@ int main()
 
 ## [Untie (9 / 20 pts)](#list)
 
-<details open>
+<details>
     <summary>Test Input & Output</summary>
 
 #### Input
@@ -361,7 +361,7 @@ Case #3: 0
 ```
 </details>
 
-<details open>
+<details>
     <summary>Codes : Trial 1</summary>
 
 #### C++

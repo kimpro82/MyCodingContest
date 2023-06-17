@@ -14,7 +14,6 @@ https://www.acmicpc.net/step/1
 ### List
 
 - [2557. Hello World](#2557-hello-world)
-- [10718. We love kriii](#10718-we-love-kriii)
 - [1000. A+B](#1000-ab)
 - [1001. A-B](#1001-a-b)
 - [10998. A*B](#10998-ab)
@@ -22,11 +21,15 @@ https://www.acmicpc.net/step/1
 - [10869. 사칙연산](#10869-사칙연산)
 - [10926. ??!](#10926-) *(new)*
 - [18108. 1998년생인 내가 태국에서는 2541년생?!](#18108-1998년생인-내가-태국에서는-2541년생) *(new)*
-- [3003. BIJELE](#3003-bijele) *(new)*
 - [10430. 나머지](#10430-나머지)
+- [11382. 꼬마 정민](#11382-꼬마-정민)
 - [2588. 곱셈](#2588-곱셈)
 - [10171. Cats](#10171-cats)
 - [10172. Dogs](#10172-dogs)
+
+#### (Depreciated)
+- [3003. BIJELE](#3003-bijele) *(new)*
+- [10718. We love kriii](#10718-we-love-kriii)
 - [25083. 새싹](#25083-새싹) *(new)*
 
 
@@ -667,6 +670,25 @@ initial begin
     $display("%0d", ((a % c) * (b % c)) % c);
     $finish;
 end
+```
+
+
+## [11382. 꼬마 정민](#list)
+
+> 77 77 7777
+
+> 7931
+
+#### C++
+```cpp
+using ll = long long;
+```
+```cpp
+ll a, b, c;                                             // 1 ≤ A, B, C ≤ 10^12
+cin >> a >> b >> c;
+cout << a + b + c << endl;
+
+return 0;
 ```
 
 

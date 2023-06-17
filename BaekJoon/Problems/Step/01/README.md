@@ -47,115 +47,46 @@ https://www.acmicpc.net/step/1
 
 ## [2557. Hello World](#list)
 
-  > Hello World!
-
-  #### Bash
-  ```Bash
-  echo "Hello World!"
-  ```
-
-  #### C++
-  ```cpp
-  cout << "Hello World!" << endl;
-  return 0;
-  ```
-
-  #### Golang
-  ```go
-  fmt.Println("Hello World!")
-  ```
-
-  #### Python
-  ```python
-  print("Hello World!")
-  ```
-
-  #### R
-  ```R
-  # print("Hello World!") # Runtime Error
-  cat("Hello World!")
-  ```
-
-  #### SystemVerilog
-  ```sv
-  initial begin
-      $display("Hello World!");
-      $finish;
-  end
-  ```
-
-  #### Text
-  ```txt
-  Hello World!
-  ```
-
-
-## [10718. We love kriii](#list)
-
-> 강한친구 대한육군  
-> 강한친구 대한육군
+> Hello World!
 
 #### Bash
 ```Bash
-for i in {0..1}
-do
-    echo "강한친구 대한육군"
-done
+echo "Hello World!"
 ```
 
 #### C++
 ```cpp
-for (int i = 0; i < 2; i++)
-{
-    cout << "강한친구 대한육군" << endl;
-}
-
+cout << "Hello World!" << endl;
 return 0;
 ```
 
-#### Golang - trial 1
+#### Golang
 ```go
-var s string = "강한친구 대한육군"
-fmt.Println(s)
-fmt.Println(s)
-```
-
-#### Golang - trial 2
-```go
-var s string = "강한친구 대한육군"
-for i := 0; i < 2; i++ {
-        fmt.Println(s)
-}
+fmt.Println("Hello World!")
 ```
 
 #### Python
 ```python
-for i in range(0, 2) :
-    print("강한친구 대한육군")
+print("Hello World!")
 ```
 
 #### R
 ```R
-for (i in c(0, 1))
-{
-    cat("강한친구 대한육군\n")
-}
+# print("Hello World!") # Runtime Error
+cat("Hello World!")
 ```
 
 #### SystemVerilog
 ```sv
 initial begin
-    repeat (2) begin
-        $display("강한친구 대한육군");
-    end
+    $display("Hello World!");
     $finish;
 end
 ```
 
 #### Text
 ```txt
-강한친구 대한육군
-강한친구 대한육군
+Hello World!
 ```
 
 
@@ -552,38 +483,6 @@ initial begin
     // 32'h8000_0000 : descriptor that indicates STDIN
     // $fscanf() (maybe) returns EOF
     $display("%0d", by - diff);
-    $finish;
-end
-```
-
-
-## [3003. BIJELE](#list)
-
-> 2 1 2 1 2 1
-
-> -1 0 0 1 0 7
-
-#### SystemVerilog
-```sv
-reg [6*8:0] pieces = "112228";                                              // Can I enter this as an integer array?
-integer signed data[6:0];
-integer temp, i;
-
-initial begin
-    // Input
-    for (i = 0; i < 6; i = i + 1) begin
-        temp = $fscanf(32'h8000_0000, "%d", data[i]);
-        // 32'h8000_0000 : descriptor that indicates STDIN
-        // $fscan() (maybe) returns EOF
-    end
-
-    for (i = 0; i < 6; i = i + 1) begin
-        // test
-        // $display("%0d %0d", pieces[(6-i)*8 - 8 +: 8] - 48, data[i]);
-
-        $write("%0d ", $signed(pieces[(6-i)*8 - 8 +: 8] - 48) - data[i]);
-    end
-    $display();
     $finish;
 end
 ```
@@ -1141,6 +1040,107 @@ end
 ( 0 )"""\
 |"^"`    |
 ||_/=\\__|
+```
+
+
+## [3003. BIJELE](#list)
+
+> 2 1 2 1 2 1
+
+> -1 0 0 1 0 7
+
+#### SystemVerilog
+```sv
+reg [6*8:0] pieces = "112228";                                              // Can I enter this as an integer array?
+integer signed data[6:0];
+integer temp, i;
+
+initial begin
+    // Input
+    for (i = 0; i < 6; i = i + 1) begin
+        temp = $fscanf(32'h8000_0000, "%d", data[i]);
+        // 32'h8000_0000 : descriptor that indicates STDIN
+        // $fscan() (maybe) returns EOF
+    end
+
+    for (i = 0; i < 6; i = i + 1) begin
+        // test
+        // $display("%0d %0d", pieces[(6-i)*8 - 8 +: 8] - 48, data[i]);
+
+        $write("%0d ", $signed(pieces[(6-i)*8 - 8 +: 8] - 48) - data[i]);
+    end
+    $display();
+    $finish;
+end
+```
+
+
+## [10718. We love kriii](#list)
+
+> 강한친구 대한육군  
+> 강한친구 대한육군
+
+#### Bash
+```Bash
+for i in {0..1}
+do
+    echo "강한친구 대한육군"
+done
+```
+
+#### C++
+```cpp
+for (int i = 0; i < 2; i++)
+{
+    cout << "강한친구 대한육군" << endl;
+}
+
+return 0;
+```
+
+#### Golang - trial 1
+```go
+var s string = "강한친구 대한육군"
+fmt.Println(s)
+fmt.Println(s)
+```
+
+#### Golang - trial 2
+```go
+var s string = "강한친구 대한육군"
+for i := 0; i < 2; i++ {
+        fmt.Println(s)
+}
+```
+
+#### Python
+```python
+for i in range(0, 2) :
+    print("강한친구 대한육군")
+```
+
+#### R
+```R
+for (i in c(0, 1))
+{
+    cat("강한친구 대한육군\n")
+}
+```
+
+#### SystemVerilog
+```sv
+initial begin
+    repeat (2) begin
+        $display("강한친구 대한육군");
+    end
+    $finish;
+end
+```
+
+#### Text
+```txt
+강한친구 대한육군
+강한친구 대한육군
 ```
 
 

@@ -1,24 +1,29 @@
-## BAEKJOON Online Judge
+## [BAEKJOON Online Judge](../../../../README.md#baekjoon-online-judge)
 
-# 문제 > 단계별로 풀어보기 > 6. 문자열
+# 문제 > 단계별로 풀어보기 > 5. 문자열
 
 https://www.acmicpc.net/step/7
 
-(2021.07.10) - `C++`  
+(2021.07.10, 2023.06.18) - `C++`  
 (2022.02.16) - `Bash`  
 (2022.06.20) - `Golang`
 
 
 ## **List**
-
+- [27866. 문자와 문자열](#27866-문자와-문자열) *(new)*
+- [2743. 단어 길이 재기](#2743-단어-길이-재기) *(new)*
+- [9086. 문자열](#9086-문자열) *(new)*
 - [11654. 아스키 코드](#11654-아스키-코드)
 - [11720. 숫자의 합](#11720-숫자의-합)
 - [10809. 알파벳 찾기](#10809-알파벳-찾기)
 - [2675. Repeating Characters](#2675-repeating-characters)
-- [1157. 단어 공부](#1157-단어-공부)
 - [1152. 단어의 개수](#1152-단어의-개수)
 - [2908. FILIP](#2908-filip)
 - [5622. BAKA](#5622-baka)
+- [11718. 그대로 출력하기](#11718-그대로-출력하기) *(new)*
+
+#### (Depreciated)
+- [1157. 단어 공부](#1157-단어-공부)
 - [2941. LJESNJAK](#2941-ljesnjak)
 - [1316. 그룹 단어 체커](#1316-그룹-단어-체커)
 
@@ -26,11 +31,89 @@ https://www.acmicpc.net/step/7
 **※ Note**  
 
 &nbsp;&nbsp; - All the codes of any language for the same problem have basically the same result.  
-&nbsp;&nbsp; - Typical headers like the below are basically skipped, but they are noted seperately when theere are any additional line.  
+&nbsp;&nbsp; - Typical headers like the below are basically skipped, but they are noted seperately when there are any additional line.  
 &nbsp;&nbsp;&nbsp;&nbsp; · `Bash` : `#!/bin/bash`  
-&nbsp;&nbsp;&nbsp;&nbsp; · `C++` : `#include <iostream>` `using namespace std;` `#define endl '\n';`  
+&nbsp;&nbsp;&nbsp;&nbsp; · `C++` : `#include <iostream>` `#define endl '\n';` `using namespace std;`  
 &nbsp;&nbsp;&nbsp;&nbsp; · `Golang` : `package main` `import "fmt"`  
 &nbsp;&nbsp; ※ `C++` : Very meaningful time to familiarize with `array` `vector` and `string`!  
+
+
+## [27866. 문자와 문자열](#list)
+
+> Sprout  
+> 3
+
+> r
+
+#### C++ (2023.06.18)
+```cpp
+int main()
+{
+    // Input
+    string s;
+    int idx;
+    std::cin >> s >> idx;
+
+    // Output
+    std::cout << s[idx-1] << endl;
+
+    return 0;
+}
+```
+
+
+## [2743. 단어 길이 재기](#list)
+
+> pulljima
+
+> 8
+
+#### C++ (2023.06.18)
+```cpp
+int main()
+{
+    // Input
+    string s;
+    std::cin >> s;
+
+    // Output
+    std::cout << s.size() << endl;
+
+    return 0;
+}
+```
+
+
+## [9086. 문자열](#list)
+
+> 3  
+> ACDKJFOWIEGHE  
+> O  
+> AB
+
+> AE  
+> OO  
+> AB
+
+#### C++ (2023.06.18)
+```cpp
+int main()
+{
+    // Input
+    int t;
+    string s;
+    std::cin >> t;
+
+    // Output
+    for (int i = 0; i < t; i++)
+    {
+        std::cin >> s;
+        std::cout << s[0] << s[s.size()-1] << endl;
+    }
+
+    return 0;
+}
+```
 
 
 ## [11654. 아스키 코드](#list)
@@ -339,204 +422,6 @@ func main() {
 ```
 
 
-## [1157. 단어 공부](#list)
-
-> Mississipi
-
-> 4 8 2  
-> ?
-
-#### Bash
-```Bash
-# Read a string and get its length
-read s
-let "len = ${#s}"
-
-# Change all letters to uppercase
-S=${s^^}                                # ^^ : uppercase, ,, : lowercase
-# let "S = ${s^^}"                      # doesn't work
-
-# Initialize arr
-for i in {0..25}
-do
-    let "arr[$i] = 0"
-done
-
-# Count each alphabet
-for ((i = 0; i < len; i++))
-do
-    c=$(printf "%d" "'${S:$i:1}'")
-    let "arr[$((c-65))] += 1"
-
-    # test : ok
-    # echo $i ${S:$i:1} $(($c-65)) ${arr[$(($c-65))]}
-done
-
-# Find the max value
-let "max = 0"
-for i in {0..25}
-do
-    let "num = ${arr[$i]}"
-    if [ $num -gt $max ]; then
-        let "max = $num"
-        let "maxIndex = $i"
-    fi
-done
-
-# Determine if the max value is plural
-let "isPlural = 0"
-for i in {0..25}
-do
-    if [ ${arr[$i]} -eq $max ]; then
-        ((isPlural++))
-        if [ $isPlural -gt 1 ]; then
-            break
-        fi
-    fi
-
-    # test : ok
-    # echo $i ${arr[$i]} $isPlural
-done
-
-# test : ok
-# echo $maxIndex $max $isPlural
-
-# Output
-if [ $isPlural -gt 1 ]; then
-    echo '?'
-else
-    printf $(printf '\%o' "$(($maxIndex + 65))")    # crazy; bash requires only \octal(\%o), not \decimal(\%d)
-fi
-```
-> 시간 초과 : The maximum length of the word is 1,000,000
-
-#### C++ 
-```cpp
-#include <iostream>
-#include <string>
-#include <array>
-```
-```cpp
-int main()
-{
-    // Input
-    string s;
-    cin >> s;
-
-    // Change all letters to upper case
-    const int sLength = s.length();
-    for (int i = 0; i < sLength; i++)
-    {
-        s[i] = toupper(s[i]);
-    }
-    // cout << s << endl;                   // test
-
-    // Count each alphabet
-    array<int, 26> alphabet = {0, };
-    for (int j = 0; j < sLength; j++)
-    {
-        alphabet[s[j]-'A']++;
-    }
-
-    // Find the max value
-    int maxValue = 0, maxIndex;
-    for (int k = 0; k < 26; k++)
-    {
-        if (alphabet[k] > maxValue)
-        {
-            maxValue = alphabet[k];
-            maxIndex = k;
-        }
-    }
-
-    // Determine if the max value is unique
-    int ifUnique = 0; 
-    for (int l = 0; l < 26; l++)
-    {
-        if (alphabet[l] == maxValue)
-        {
-            ifUnique++;
-        }
-    }
-
-    // Test
-    cout << maxValue << " " << maxIndex << " " << ifUnique << endl;
-
-    // Output
-    if (ifUnique > 1)
-    {
-        cout << '?' << endl;
-    } else
-    {
-        cout << char ('A' + maxIndex) << endl;
-    }
-
-    return 0;
-}
-```
-
-#### Golang
-```golang
-import (
-    "fmt"
-    "bufio"
-    "os"
-    "strings"
-)
-```
-```golang
-func main() {
-
-    // Input data (faster)
-    var reader = bufio.NewReader(os.Stdin)
-    var s string                                // length : < 1,000,000
-    fmt.Fscan(reader, &s)
-
-    // Change all letters to upper case
-    var length int = len(s)
-    // var s2 string = ""                       // string in Golang is immutable
-    // for i := 0; i < length; i++ {
-    //     s2 += strings.ToUpper(string(s[i]))
-    // }
-    var s2 string = strings.ToUpper(s)          // can convert just at once
-
-    // Count each alphabet
-    var alphabet []int = make([]int, 26)        // [0, 0, ……, 0]
-    for j := 0; j < length; j++ {
-        alphabet[s2[j]-'A']++
-    }
-
-    // Find the max value
-    var max int = 0
-    var maxIdx int
-    for k := 0; k < 26; k++ {
-        if alphabet[k] > max {
-            max = alphabet[k]
-            maxIdx = k
-        }
-    }
-
-    // Determine if the max value is unique
-    var ifUnique int = 0
-    for l := 0; l < 26; l++ {
-        if alphabet[l] == max {
-            ifUnique++
-        }
-    }
-
-    // test
-    // fmt.Println(max, maxIdx, ifUnique)
-
-    // Output
-    if ifUnique > 1 {
-        fmt.Println("?")                        // not '?'
-    } else {
-        fmt.Println(string(maxIdx + 'A'))
-    }
-}
-```
-
-
 ## [1152. 단어의 개수](#list)
 
 > The Curious Case of Benjamin Button
@@ -798,6 +683,231 @@ func main() {
 
     // Output
     fmt.Println(sum)
+}
+```
+
+
+## [11718. 그대로 출력하기](#list)
+
+> Hello  
+> Baekjoon  
+> Online Judge
+
+> Hello  
+> Baekjoon  
+> Online Judge
+
+#### C++ (2023.06.18)
+```cpp
+int main()
+{
+    string s;
+
+    while (true)
+    {
+        getline(std::cin, s);
+        if (std::cin.eof() == true) break;
+        else std::cout << s << endl;            
+    }
+    return 0;
+}
+```
+
+
+## [1157. 단어 공부](#list)
+
+> Mississipi
+
+> 4 8 2  
+> ?
+
+#### Bash
+```Bash
+# Read a string and get its length
+read s
+let "len = ${#s}"
+
+# Change all letters to uppercase
+S=${s^^}                                # ^^ : uppercase, ,, : lowercase
+# let "S = ${s^^}"                      # doesn't work
+
+# Initialize arr
+for i in {0..25}
+do
+    let "arr[$i] = 0"
+done
+
+# Count each alphabet
+for ((i = 0; i < len; i++))
+do
+    c=$(printf "%d" "'${S:$i:1}'")
+    let "arr[$((c-65))] += 1"
+
+    # test : ok
+    # echo $i ${S:$i:1} $(($c-65)) ${arr[$(($c-65))]}
+done
+
+# Find the max value
+let "max = 0"
+for i in {0..25}
+do
+    let "num = ${arr[$i]}"
+    if [ $num -gt $max ]; then
+        let "max = $num"
+        let "maxIndex = $i"
+    fi
+done
+
+# Determine if the max value is plural
+let "isPlural = 0"
+for i in {0..25}
+do
+    if [ ${arr[$i]} -eq $max ]; then
+        ((isPlural++))
+        if [ $isPlural -gt 1 ]; then
+            break
+        fi
+    fi
+
+    # test : ok
+    # echo $i ${arr[$i]} $isPlural
+done
+
+# test : ok
+# echo $maxIndex $max $isPlural
+
+# Output
+if [ $isPlural -gt 1 ]; then
+    echo '?'
+else
+    printf $(printf '\%o' "$(($maxIndex + 65))")    # crazy; bash requires only \octal(\%o), not \decimal(\%d)
+fi
+```
+> 시간 초과 : The maximum length of the word is 1,000,000
+
+#### C++ 
+```cpp
+#include <iostream>
+#include <string>
+#include <array>
+```
+```cpp
+int main()
+{
+    // Input
+    string s;
+    cin >> s;
+
+    // Change all letters to upper case
+    const int sLength = s.length();
+    for (int i = 0; i < sLength; i++)
+    {
+        s[i] = toupper(s[i]);
+    }
+    // cout << s << endl;                   // test
+
+    // Count each alphabet
+    array<int, 26> alphabet = {0, };
+    for (int j = 0; j < sLength; j++)
+    {
+        alphabet[s[j]-'A']++;
+    }
+
+    // Find the max value
+    int maxValue = 0, maxIndex;
+    for (int k = 0; k < 26; k++)
+    {
+        if (alphabet[k] > maxValue)
+        {
+            maxValue = alphabet[k];
+            maxIndex = k;
+        }
+    }
+
+    // Determine if the max value is unique
+    int ifUnique = 0; 
+    for (int l = 0; l < 26; l++)
+    {
+        if (alphabet[l] == maxValue)
+        {
+            ifUnique++;
+        }
+    }
+
+    // Test
+    cout << maxValue << " " << maxIndex << " " << ifUnique << endl;
+
+    // Output
+    if (ifUnique > 1)
+    {
+        cout << '?' << endl;
+    } else
+    {
+        cout << char ('A' + maxIndex) << endl;
+    }
+
+    return 0;
+}
+```
+
+#### Golang
+```golang
+import (
+    "fmt"
+    "bufio"
+    "os"
+    "strings"
+)
+```
+```golang
+func main() {
+
+    // Input data (faster)
+    var reader = bufio.NewReader(os.Stdin)
+    var s string                                // length : < 1,000,000
+    fmt.Fscan(reader, &s)
+
+    // Change all letters to upper case
+    var length int = len(s)
+    // var s2 string = ""                       // string in Golang is immutable
+    // for i := 0; i < length; i++ {
+    //     s2 += strings.ToUpper(string(s[i]))
+    // }
+    var s2 string = strings.ToUpper(s)          // can convert just at once
+
+    // Count each alphabet
+    var alphabet []int = make([]int, 26)        // [0, 0, ……, 0]
+    for j := 0; j < length; j++ {
+        alphabet[s2[j]-'A']++
+    }
+
+    // Find the max value
+    var max int = 0
+    var maxIdx int
+    for k := 0; k < 26; k++ {
+        if alphabet[k] > max {
+            max = alphabet[k]
+            maxIdx = k
+        }
+    }
+
+    // Determine if the max value is unique
+    var ifUnique int = 0
+    for l := 0; l < 26; l++ {
+        if alphabet[l] == max {
+            ifUnique++
+        }
+    }
+
+    // test
+    // fmt.Println(max, maxIdx, ifUnique)
+
+    // Output
+    if ifUnique > 1 {
+        fmt.Println("?")                        // not '?'
+    } else {
+        fmt.Println(string(maxIdx + 'A'))
+    }
 }
 ```
 

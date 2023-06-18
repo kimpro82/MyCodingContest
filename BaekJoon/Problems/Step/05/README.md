@@ -1,6 +1,6 @@
-## BAEKJOON Online Judge
+## [BAEKJOON Online Judge](../../../../README.md#baekjoon-online-judge)
 
-# 문제 > 단계별로 풀어보기 > 5. 함수
+# 문제 > 단계별로 풀어보기 > 5. 함수 (Depreciated)
 
 https://www.acmicpc.net/step/5
 

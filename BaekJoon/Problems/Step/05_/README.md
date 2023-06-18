@@ -2,7 +2,7 @@
 
 # 문제 > 단계별로 풀어보기 > 5. 함수 (Depreciated)
 
-https://www.acmicpc.net/step/5
+~https://www.acmicpc.net/step/5~
 
 (2021.06.18) - `C++`  
 (2022.03.11) - `Text`  

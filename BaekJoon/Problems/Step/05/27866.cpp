@@ -23,7 +23,7 @@ int main()
     std::cin >> s >> idx;
 
     // Output
-    cout << s[idx-1] << endl;
+    std::cout << s[idx-1] << endl;
 
     return 0;
 }

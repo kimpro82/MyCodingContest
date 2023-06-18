@@ -25,7 +25,6 @@ https://www.acmicpc.net/step/3
 #### (Depreciated)
 - [2741. N 찍기](#2741-n-찍기)
 - [2742. 기찍 N](#2742-기찍-n)
-- [10871. X보다 작은 수](#10871-x보다-작은-수)
 
 
 **※ Note**  
@@ -725,64 +724,4 @@ fmt.Scanln(&n)
 for i := n; i > 0; i-- {
     fmt.Fprintln(writer, i)
 }
-```
-
-
-## [10871. X보다 작은 수](#list)
-
-> 10 5  
-> 1 10 4 9 2 3 8 5 7 6
-
-> 1 4 2 3
-
-#### Bash
-```bash
-read n x
-read list
-
-for num in $list
-do
-    if [ $num -lt $x ]; then
-        echo -n "$num "
-    fi
-done
-
-echo ' '
-
-# read
-```
-
-#### C++
-```cpp
-int n, x;
-int arr[10000];                 // .exe file stops when int arr[n], although compilation succeeded
-cin >> n >> x;
-
-for (int i = 0; i < n; i++)
-{
-    cin >> arr[i];
-    if (arr[i] < x)
-    {
-        cout << arr[i] << ' ';
-    }
-}
-cout << '\n';
-
-return 0;
-```
-
-
-#### Golang
-```go
-var n, x int
-fmt.Scanln(&n, &x)
-
-for i := 0; i < n; i++ {
-    var num int
-    fmt.Scanf("%d", &num)
-    if num < x {
-        fmt.Printf("%d ", num)
-    }
-}
-// fmt.Println("\b")            // causes wrong?
 ```

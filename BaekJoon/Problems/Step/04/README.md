@@ -11,6 +11,7 @@ https://www.acmicpc.net/step/6
 
 ## **List**
 
+- [10871. X보다 작은 수](#10871-x보다-작은-수)
 - [10818. 최소, 최대](#10818-최소-최대)
 - [2562. 최댓값](#2562-최댓값)
 - [2577. 숫자의 개수](#2577-숫자의-개수)
@@ -27,6 +28,68 @@ https://www.acmicpc.net/step/6
 &nbsp;&nbsp; - `C++`* : skipped `main()` function's brace(`{}`) and its outside including two header lines; `#include <iostream>` `using namespace std;`  
 &nbsp;&nbsp; - `Golang`* : skipped `main()` function's brace(`{}`) and its outside including two header lines; `package main` `import "fmt"`  
 &nbsp;&nbsp; * When any additional header is used, the header block is also noted seperately.
+
+
+## [10871. X보다 작은 수](#list)
+
+(2021.05.25)
+
+> 10 5  
+> 1 10 4 9 2 3 8 5 7 6
+
+> 1 4 2 3
+
+#### Bash
+```bash
+read n x
+read list
+
+for num in $list
+do
+    if [ $num -lt $x ]; then
+        echo -n "$num "
+    fi
+done
+
+echo ' '
+
+# read
+```
+
+#### C++
+```cpp
+int n, x;
+int arr[10000];                 // .exe file stops when int arr[n], although compilation succeeded
+cin >> n >> x;
+
+for (int i = 0; i < n; i++)
+{
+    cin >> arr[i];
+    if (arr[i] < x)
+    {
+        cout << arr[i] << ' ';
+    }
+}
+cout << '\n';
+
+return 0;
+```
+
+
+#### Golang
+```go
+var n, x int
+fmt.Scanln(&n, &x)
+
+for i := 0; i < n; i++ {
+    var num int
+    fmt.Scanf("%d", &num)
+    if num < x {
+        fmt.Printf("%d ", num)
+    }
+}
+// fmt.Println("\b")            // causes wrong?
+```
 
 
 ## [10818. 최소, 최대](#list)

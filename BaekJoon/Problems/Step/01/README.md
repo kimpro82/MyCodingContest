@@ -30,19 +30,19 @@ https://www.acmicpc.net/step/1
 #### (Depreciated)
 - [3003. BIJELE](#3003-bijele) *(new)*
 - [10718. We love kriii](#10718-we-love-kriii)
-- [25083. 새싹](#25083-새싹) *(new)*
 
 
 **※ Note**  
 
 &nbsp;&nbsp; - All the codes of any language for the same problem have basically the same result.  
-&nbsp;&nbsp; - `C++` : skipped `main()` function's brace(`{}`) and its outside including two header lines; `#include <iostream>` `using namespace std;`  
-&nbsp;&nbsp; - `Golang` : skipped `main()` function's brace(`{}`) and its outside including two header lines; `package main` `import "fmt"`  
+&nbsp;&nbsp; - Typical headers like the below are basically skipped, but they are noted seperately when there are any additional line.  
+&nbsp;&nbsp;&nbsp;&nbsp; · `Bash` : `#!/bin/bash`  
+&nbsp;&nbsp;&nbsp;&nbsp; · `C++` : `#include <iostream>` `#define endl '\n';` `using namespace std;`  
+&nbsp;&nbsp;&nbsp;&nbsp; · `Golang` : `package main` `import "fmt"`  
+&nbsp;&nbsp;&nbsp;&nbsp; · `SystemVerilog` : `module` `endmodule`.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * All the codes run on [JDoodle Online VERILOG Compiler IDE](https://www.jdoodle.com/execute-verilog-online/) as `Verilog` before submitted to [BOJ](https://www.acmicpc.net/) as `SystemVerilog`.  
 &nbsp;&nbsp; - `R` : Some answers occur runtime errors with unknowable reason in the BOJ grading machine.  
-&nbsp;&nbsp; - `SystemVerilog` : skipped the top and bottom lines; `module` `endmodule`.  
-&nbsp;&nbsp;&nbsp;&nbsp; · All the codes run on [JDoodle Online VERILOG Compiler IDE](https://www.jdoodle.com/execute-verilog-online/) as `Verilog` before submitted to [BOJ](https://www.acmicpc.net/) as `SystemVerilog`.  
 &nbsp;&nbsp; - `Text` : Only possible problems that do not require input values are solved.  
-&nbsp;&nbsp; * When any additional header is used, the header block is also noted seperately.
 
 
 ## [2557. Hello World](#list)
@@ -1143,29 +1143,4 @@ end
 ```txt
 강한친구 대한육군
 강한친구 대한육군
-```
-
-
-## [25083. 새싹](#list)
-
-```txt
-         ,r'"7
-r`-_   ,'  ,/
- \. ". L_r'
-   `~\/
-      |
-      |
-```
-
-#### SystemVerilog
-```sv
-    initial begin
-        $display("         ,r'\"7");
-        $display("r`-_   ,'  ,/");
-        $display(" \\. \". L_r'");
-        $display("   `~\\/");
-        $display("      |");
-        $display("      |");
-        $finish;
-    end
 ```

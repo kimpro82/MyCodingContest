@@ -22,9 +22,6 @@ https://www.acmicpc.net/step/7
 - [5622. BAKA](#5622-baka)
 - [11718. 그대로 출력하기](#11718-그대로-출력하기) *(new)*
 
-#### (Depreciated)
-- [1316. 그룹 단어 체커](#1316-그룹-단어-체커)
-
 
 **※ Note**  
 
@@ -34,6 +31,7 @@ https://www.acmicpc.net/step/7
 &nbsp;&nbsp;&nbsp;&nbsp; · `C++` : `#include <iostream>` `#define endl '\n';` `using namespace std;`  
 &nbsp;&nbsp;&nbsp;&nbsp; · `Golang` : `package main` `import "fmt"`  
 &nbsp;&nbsp; ※ `C++` : Very meaningful time to familiarize with `array` `vector` and `string`!  
+
 
 
 ## [27866. 문자와 문자열](#list)
@@ -708,162 +706,5 @@ int main()
         else std::cout << s << endl;            
     }
     return 0;
-}
-```
-
-
-## [1316. 그룹 단어 체커](#list)
-
-> 5  
-> ab  
-> aa  
-> aca  
-> ba  
-> bb
-
-> 4
-
-#### Bash
-```Bash
-read n
-
-let "count = 0"
-for ((i = 0; i < n; i++))
-do
-    # Input
-    read s
-    let "len = ${#s}"
-
-    # Initialize arr for counting each alphabet
-    for j in {0..25}
-    do
-        let "alphabet[$j] = 0"
-    done
-
-    # Find if there are seperated same idxs
-    let "isSeperated = 0"
-    for ((k = 0; k < len; k++))
-    do
-        idx=$(($(printf "%d" "'${s:k:1}'")-97))
-
-        if [[ ${alphabet[$idx]} == 0 ]]; then
-            ((alphabet[idx]++))
-        elif [[ ${s:k:1} != ${s:$((k-1)):1} ]]; then    # not $s[$k] !!!
-            ((isSeperated++))
-            break
-        fi
-
-        # test : ok
-        # echo $i $s $k ${s:k:1} $idx ${alphabet[$idx]} $isSeperated
-    done
-
-    # Count
-    if [[ $isSeperated == 0 ]]; then
-        ((count++))
-    fi
-
-    # test : ok
-    # echo "isSeperated : ${isSeperated}, count : ${count}"
-done
-
-# Output
-echo $count
-```
-> 런타임 에러
-
-#### C++ 
-```cpp
-#include <iostream>
-#include <string>
-#include <array>
-```
-```cpp
-int main()
-{
-    // Input
-    int n;
-    cin >> n;
-
-    string s;
-    int sLength, count = 0;
-    for (int i = 0; i < n; i++)
-    {
-        cin >> s;
-        sLength = s.size();
-
-        // Find if there are seperated same letters
-        array<int, 26> alphabet = {0, };
-        bool isSeperated = false;
-        for (int j = 0; j < sLength; j++)
-        {
-            if (alphabet[s[j] - 'a'] == 0)
-            {
-                alphabet[s[j] - 'a']++;
-            } else
-            {
-                if (s[j] != s[j-1])
-                {
-                    isSeperated = true;
-                    break;
-                }
-            }
-        }
-
-        // Count
-        if (isSeperated == false)
-        {
-            count++;
-        }
-
-        // test
-        cout << s << " " << isSeperated << " " << count << endl;
-    }
-
-    // Output
-    cout << count << endl;
-
-    return 0;
-}
-```
-
-#### Golang
-```golang
-func main() {
-
-    var n int
-    fmt.Scanln(&n)
-
-    // Determine n times
-    var count int = 0
-    for i := 0; i < n; i++ {
-
-        // Input
-        var s string
-        fmt.Scanln(&s)
-        var sLen int = len(s)
-        var sRune = []rune(s)
-
-        // Find if there are seperated same letters
-        var alphabet [26]int                        // initialize as {0, ……, 0}
-        var isSeperated bool = false
-        for j := 0; j < sLen; j++ {
-            if alphabet[sRune[j] - 'a'] == 0 {
-                alphabet[sRune[j] - 'a']++
-            } else {
-                if sRune[j] != sRune[j-1] {
-                    isSeperated = true
-                    break
-                }
-            }
-        }
-
-        // Count
-        if (isSeperated == false) {
-            count++
-        }
-    }
-
-    // Output
-    fmt.Println(count)
 }
 ```

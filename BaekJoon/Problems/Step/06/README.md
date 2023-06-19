@@ -16,6 +16,7 @@ https://www.acmicpc.net/step/52
 - [10988. 팰린드롬인지 확인하기](#10988-팰린드롬인지-확인하기)
 - [1157. 단어 공부](#1157-단어-공부)
 - [4344. Above Average](#4344-above-average)
+- [2941. LJESNJAK](#2941-ljesnjak)
 - []()
 - []()
 
@@ -535,6 +536,149 @@ func main() {
         // Output
         fmt.Printf("%.3f%%\n", float32(aboveAverage) / float32(n) * 100)    // not \%, but %%
     }
+}
+```
+
+
+## [2941. LJESNJAK](#list)
+
+```txt
+ljes=njak
+```
+```txt
+6
+```
+
+#### Bash (2022.02.16)
+```Bash
+# Input
+read s
+let "len = ${#s}"
+
+# Make an array of specific Croatian alphabets
+specific1=("c=" "c-" "d-" "lj" "nj" "s=" "z=")
+specific2="dz="
+
+# Count if the string includes specific letters
+let "count = 0"
+# 1) two letters : specific[0, 6]
+for ((i = 0; i < ((len - 1)); i++))
+do
+    for j in {0..6}
+    do
+        if [[ ${specific1[j]} =~ ${s:i:2} ]]; then
+            ((count++))
+        fi
+
+        # test : ok
+        # echo $i ${s:i:2} ${specific1[j]} $count
+    done
+done
+# 2) three letters : specific[7]
+for ((i = 0; i < ((len - 2)); i++))
+do
+    if [[ $specific2 == ${s:i:3} ]]; then
+        ((count++))                                # don't add 2; to avoid double count 'z=' and 'dz='
+    fi
+
+    # test : ok
+    # echo $i ${s:i:3} $specific2 $count
+done
+
+# Output
+echo $((len - count))
+```
+
+#### C++ (2021.07.09)
+```cpp
+#include <iostream>
+#include <string>
+#include <array>
+#include <vector>
+```
+```cpp
+int main()
+{
+    // Input
+    string s;
+    cin >> s;
+
+    // Make an array of specific Croatian alphabets
+    array<string, 8> specific = {"c=", "c-", "d-", "lj", "nj", "s=", "z=", "dz="};
+
+    // Make substrings from s
+    int sLength = s.size();
+    // 1) two letters
+    vector<string> sSub1;
+    for (int i = 0; i < sLength - 1; i++)
+    {
+        sSub1.push_back(s.substr(i, 2));
+    }
+    // 2) three letters
+    vector<string> sSub2;
+    for (int j = 0; j < sLength - 2; j++)
+    {
+        sSub2.push_back(s.substr(j, 3));
+    }
+
+    // Count specific Croatian alphabets
+    int count = 0;
+    // 1) two letters : specific[0, 6]
+    for (int k = 0; k < sLength - 1; k++)
+    {
+        for (int l = 0; l < 7; l++)
+        {
+            if (s.substr(k, 2) == specific[l])
+            {
+                count++;
+            }
+        }
+    }
+    // 2) three letters : specific[7]
+    for (int m = 0; m < sLength - 2; m++)
+    {
+        if (s.substr(m, 3) == specific[7])
+        {
+            count++;
+        }
+    }
+
+    // Output
+    cout << sLength - count << endl;
+
+    return 0;
+}
+```
+
+#### Golang (2022.06.20)
+Use different algorithm from other solvings of `Bash` `C++`
+```golang
+import (
+    "fmt"
+    "strings"
+)
+```
+```golang
+func main() {
+
+    // Input
+    var s string
+    var sp2 = [7]string {"c=", "c-", "d-", "lj", "nj", "s=", "z="}
+    var sp3 = [1]string {"dz="}
+    fmt.Scanln(&s)
+
+    // Count substrings
+    var letter string
+    var count int = len(s)
+    for _, letter = range sp2 {
+        count -= strings.Count(s, letter)
+    }
+    for _, letter = range sp3 {
+        count -= strings.Count(s, letter)        // not * 2 because "z-" are already counted
+    }
+
+    // Output
+    fmt.Println(count)
 }
 ```
 

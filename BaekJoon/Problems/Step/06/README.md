@@ -5,7 +5,9 @@
 https://www.acmicpc.net/step/52
 
 (2023.06.19) - `C++`  
-(2022.09.06) - `SystemVerilog`
+(2022.09.06) - `SystemVerilog`  
+(2022.06.20) - `Golang`  
+(2022.02.16) - `Bash`  
 
 
 ### **List**

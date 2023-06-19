@@ -18,8 +18,7 @@ https://www.acmicpc.net/step/52
 - [4344. Above Average](#4344-above-average)
 - [2941. LJESNJAK](#2941-ljesnjak)
 - [1316. 그룹 단어 체커](#1316-그룹-단어-체커)
-- []()
-- []()
+- [25206. 너의 평점은](#25206-너의-평점은)
 
 #### (Depreciated)
 - []()
@@ -848,18 +847,77 @@ func main() {
 ```
 
 
-## [](#list)
+## [25206. 너의 평점은](#list)
 
 ```txt
-
+ObjectOrientedProgramming1 3.0 A+
+IntroductiontoComputerEngineering 3.0 A+
+ObjectOrientedProgramming2 3.0 A0
+……
+ProblemSolving 4.0 P
 ```
-
 ```txt
-
+3.284483
 ```
 
-#### C++
+#### C++ (2023.06.19)
 ```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
 
+// #define test
+#define endl '\n'
+
+using namespace std;
 ```
+```cpp
+double convertGrade(string grade)
+{
+    const vector<string> grades = {"F", "F", "D0", "D+", "C0", "C+", "B0", "B+", "A0", "A+"};
+    int idx;
+    for (int i = 0; i < grades.size(); i++)
+    {
+        if (grade == grades[i])
+        {
+            idx = i;
+            break;
+        }
+    }
+    double convertedGrade = double(idx) * 0.5;
 
+    return convertedGrade;
+}
+```
+```cpp
+int main()
+{
+    // Declare
+    string title, sWeight, grade;
+    double sum = 0, convertedGrade, ans;
+    int cnt = 0, nWeight;
+
+    // Input & Operate
+    for (int i = 0; i < 20; i++)
+    {
+        std::cin >> title >> sWeight >> grade;
+        if (grade != "P")
+        {
+            convertedGrade = convertGrade(grade);
+            nWeight = sWeight[0] - '0';
+            sum += double(nWeight) * convertedGrade;
+            cnt += nWeight;
+        }
+
+        #ifdef test
+            std::cout << cnt << ' ' << convertedGrade << ' ' << sum << endl;
+        #endif
+    }
+
+    // Output
+    ans = sum / cnt;
+    std::cout << ans << endl;
+
+    return 0;
+}
+```

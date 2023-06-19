@@ -25,6 +25,7 @@ https://www.acmicpc.net/step/6
 #### (Depreciated)
 - [2577. 숫자의 개수](#2577-숫자의-개수)
 - [8958. Score](#8958-score)
+- [4344. Above Average](#4344-above-average)
 
 
 **※ Note**  
@@ -977,5 +978,149 @@ for i := 0; i < n; i++ {
     }
 
     fmt.Println(score)
+}
+```
+
+
+## [4344. Above Average](#list)
+
+```txt
+5
+5 50 50 70 80 100
+7 100 95 90 80 70 60 50
+3 70 90 80
+3 70 90 81
+9 100 99 98 97 96 95 94 93 91
+```
+```txt
+40.000%
+57.143%
+33.333%
+66.667%
+55.556%
+```
+
+#### Bash (2022.02.04)
+```bash
+read c
+
+# Operation to grade and output
+for ((i = 0; i < c; i++))
+do
+    # Read an array
+    read -a arr
+
+    let "len = arr[0]"
+    let "sum = 0"
+
+    # Get the array's sum and average
+    for ((j = 1; j < len + 1; j++))
+    do
+        let "sum += ${arr[j]}"
+    done
+    let "average = sum * 10 / len"                      # don't forget sum * 10
+
+    # test
+    # echo $i $sum $len $average
+
+    # Count freshmen over the average score
+    let "count = 0"
+    for ((j = 1; j < len + 1; j++))
+    do
+        let "score = ${arr[j]} * 10"
+        if [ $score -gt $average ]; then
+            let "count += 1"
+        fi
+    done
+
+    # Output
+    printf "%.3f%%\n" $((count * 10 ** 8 / len))e-6
+    # * 10 ** 6 & e-4 : fail (maybe concerned with rounding ……)
+done
+```
+
+#### C++ (2021.06.13)
+```cpp
+int main()
+{
+    int c;
+    cin >> c;
+
+    for (int i = 0; i < c; i++)
+    {
+        int n;
+        cin >> n;
+
+        // get sum and average
+        int scores[n], sum = 0, average;
+        for (int j = 0; j < n; j++)
+        {
+            cin >> scores[j];
+            sum += scores[j];
+        }
+        average = sum / n;
+
+        // get percentage of students whose grade is above average
+        double aboveAverage = 0;
+        for (int k = 0; k < n; k++)
+        {
+            if (scores[k] > average)
+            {
+                aboveAverage += 1;
+            }
+        }
+
+        // test
+        cout << n << " " << sum << " " << average << " " << aboveAverage << endl;
+
+        // ouput
+        double aboveAverageRatio = (double) (aboveAverage / n) * 100;
+        cout << fixed;      // output 40.000, not 40
+        cout.precision(3);  // 3 : 3 ciphers under decimal point
+        cout << aboveAverageRatio << '%' << endl;
+    }
+
+    return 0;
+}
+```
+
+#### Golang (2022.04.12)
+```golang
+func main() {
+    var c, n int
+    fmt.Scanln(&c)
+
+    for i := 0; i < c; i++ {
+        fmt.Scan(&n)
+
+        var score []float32 = make([]float32, n)                            // don't forget make()!
+        var sum, average float32
+        var aboveAverage int
+
+        // Get sum and average
+        sum = 0
+        for j := 0; j < n; j++ {
+            fmt.Scan(&score[j])
+            sum += score[j]
+        }
+        average = sum / float32(n)
+
+        // test : ok
+        // fmt.Println(score, sum, average)
+
+        // Get percentage of students whose grades are above average
+        aboveAverage = 0
+        for j := 0; j < n; j++ {
+            if score[j] > average {
+                aboveAverage++
+            }
+        }
+
+        // test : ok
+        // fmt.Println(n, aboveAverage)
+
+        // Output
+        fmt.Printf("%.3f%%\n", float32(aboveAverage) / float32(n) * 100)    // not \%, but %%
+    }
 }
 ```

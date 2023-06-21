@@ -1,324 +1,710 @@
-## BAEKJOON Online Judge
+## [BAEKJOON Online Judge](../../../../README.md#baekjoon-online-judge)
 
-# 문제 > 단계별로 풀어보기 > 5. 함수
+# 문제 > 단계별로 풀어보기 > 5. 문자열
 
-https://www.acmicpc.net/step/5
+https://www.acmicpc.net/step/7
 
-(2021.06.18) - `C++`  
-(2022.03.11) - `Text`  
-(2022.04.17) - `Golang`
+(2021.07.10, 2023.06.18) - `C++`  
+(2022.02.16) - `Bash`  
+(2022.06.20) - `Golang`
 
 
 ## **List**
+- [27866. 문자와 문자열](#27866-문자와-문자열) *(new)*
+- [2743. 단어 길이 재기](#2743-단어-길이-재기) *(new)*
+- [9086. 문자열](#9086-문자열) *(new)*
+- [11654. 아스키 코드](#11654-아스키-코드)
+- [11720. 숫자의 합](#11720-숫자의-합)
+- [10809. 알파벳 찾기](#10809-알파벳-찾기)
+- [2675. Repeating Characters](#2675-repeating-characters)
+- [1152. 단어의 개수](#1152-단어의-개수)
+- [2908. FILIP](#2908-filip)
+- [5622. BAKA](#5622-baka)
+- [11718. 그대로 출력하기](#11718-그대로-출력하기) *(new)*
 
-- [15596. 정수 N개의 합](#15596-정수-n개의-합)
-- [4673. Self Numbers](#4673-self-numbers)
-- [1065. 한수](#1065-한수)
 
-
-**※ Note**
+**※ Note**  
 
 &nbsp;&nbsp; - All the codes of any language for the same problem have basically the same result.  
-&nbsp;&nbsp; - `C++`* : skipped the below two header lines; `#include <iostream>` `using namespace std;`  
-&nbsp;&nbsp; - `Golang`* : skipped the below two header lines; `package main` `import "fmt"`  
-&nbsp;&nbsp; - `Text` : Only possible problems that do not require input values are solved.  
-&nbsp;&nbsp; * When any additional header is used, the header block is also noted seperately.
+&nbsp;&nbsp; - Typical headers like the below are basically skipped, but they are noted seperately when there are any additional line.  
+&nbsp;&nbsp;&nbsp;&nbsp; · `Bash` : `#!/bin/bash`  
+&nbsp;&nbsp;&nbsp;&nbsp; · `C++` : `#include <iostream>` `#define endl '\n';` `using namespace std;`  
+&nbsp;&nbsp;&nbsp;&nbsp; · `Golang` : `package main` `import "fmt"`  
+&nbsp;&nbsp; ※ `C++` : Very meaningful time to familiarize with `array` `vector` and `string`!  
 
 
-## [15596. 정수 N개의 합](#list)
 
-> n   : 5  
-> ans : 15
+## [27866. 문자와 문자열](#list)
 
-#### C++
+> Sprout  
+> 3
 
-I guessed it as a question related with using pointer(because of "&a") at first, but it was not.  
-Hell easy one to ask about `vector` very simply.  
-It's been a few days with pointer, I hate myself
+> r
 
-```cpp
-#include <iostream>
-#include <vector>
-```
-```cpp
-long long sum(vector<int> &a)
-{
-    int n = a.size();                   // not sizeof(a) : get length of the memory space
-    cout << "n   : " << n << endl;      // test
-
-    long long ans = 0;
-    for (int i = 0; i < n; i++)
-    {
-        ans += a[i];
-    }
-
-    cout << "ans : " << ans << endl;    // test
-    return ans;
-}
-```
-```cpp
-// test
-// int main()
-// {
-//     vector<int> a = {1, 2, 3, 4, 5};
-//     sum(a);
-
-//     return 0;
-// }
-```
-
-#### Golang
-```golang
-// import "fmt"
-```
-```golang
-func sum(a []int) int {            // int == int64 in 64 bit env.
-    var ans int = 0
-
-    for _, el := range a {
-        ans += el                  // not a[i] !!!
-    }
-
-    return ans
-}
-```
-```golang
-// Test
-// func main() {
-//     a := []int{1, 2, 3, 4, 5}
-//     fmt.Println(sum(a))
-// }
-```
-
-
-## [4673. Self Numbers](#list)
-
-Deja vu? ☞ [Oncoder Challenge Lv.6](..//Oncoder/Challenge/Q06/README.md)
-
-> 1  
-> 3  
-> 5  
-> ……  
-> 9993
-
-#### C++
-```cpp
-#include <iostream>
-#include <set>
-#include <algorithm>
-```
+#### C++ (2023.06.18)
 ```cpp
 int main()
 {
-    // make a set {1, 2, ……, 9999}
-    set<int> mySet;
-    for (int i = 1; i < 10000; i++)
-    {
-        mySet.insert(i);
-    }
+    // Input
+    string s;
+    int idx;
+    std::cin >> s >> idx;
 
-    // erase digitaditions from mySet{}
-    for (int j = 1; j < 10000; j++)
-    {
-        int digitadition = j;
-        if (j > 999)
-        {
-            digitadition += j / 1000;
-        }
-        if (j > 99)
-        {
-            digitadition += (j % 1000) / 100;
-        }
-        if (j > 9)
-        {
-            digitadition += (j % 100) / 10;
-        }
-        digitadition += j % 10;
-
-        mySet.erase(digitadition);
-    }
-
-    // output self-numbers
-    // make cin/cout faster
-    cin.tie(NULL);
-    ios_base::sync_with_stdio(false);
-    for_each (mySet.begin(), mySet.end(), [](int n)
-    {
-        cout << n << '\n';
-    });
+    // Output
+    std::cout << s[idx-1] << endl;
 
     return 0;
 }
 ```
+
+
+## [2743. 단어 길이 재기](#list)
+
+> pulljima
+
+> 8
+
+#### C++ (2023.06.18)
 ```cpp
-    // better code?
-    int digitadition = j;
-    if (j > 999)
+int main()
+{
+    // Input
+    string s;
+    std::cin >> s;
+
+    // Output
+    std::cout << s.size() << endl;
+
+    return 0;
+}
+```
+
+
+## [9086. 문자열](#list)
+
+> 3  
+> ACDKJFOWIEGHE  
+> O  
+> AB
+
+> AE  
+> OO  
+> AB
+
+#### C++ (2023.06.18)
+```cpp
+int main()
+{
+    // Input
+    int t;
+    string s;
+    std::cin >> t;
+
+    // Output
+    for (int i = 0; i < t; i++)
     {
-        digitadition += j / 1000;
-        digitadition += (j % 1000) / 100;
-        digitadition += (j % 100) / 10;
-    } else if (j > 99)
-    {
-        digitadition += (j % 1000) / 100;
-        digitadition += (j % 100) / 10;
-    } else if (j > 9)
-    {
-        digitadition += (j % 100) / 10;
+        std::cin >> s;
+        std::cout << s[0] << s[s.size()-1] << endl;
     }
-    digitadition += j % 10;
+
+    return 0;
+}
+```
+
+
+## [11654. 아스키 코드](#list)
+
+> A
+
+> 65
+
+#### Bash
+```Bash
+read char                   # ex) a
+
+# printf "%d\n" $char       # printf: a: invalid number
+# printf "%d\n" "$char"     # printf: a: invalid number; it doesn't matter if use "" or not
+# printf "%d\n" '$char'     # printf: $char: invalid number; regard $char itself as a string
+
+printf "%d\n" "'$char'"     # 97; regard a as a string
+# printf "%d\n" "'$char"    # 97; the closing quotes(') may be omitted
+```
+
+#### C++ 
+```cpp
+int main()
+{
+    char x;
+    cin >> x;
+
+    cout << (int) x << endl;
+
+    return 0;
+}
 ```
 
 #### Golang
-Hmm it would be better to use *nested If statement* with the order of `num > 9` `num > 99` `num > 999`.
 ```golang
-func digitadition(num int) int {
+func main() {
+    var x string
+    fmt.Scanln(&x)
 
-    var d int = num
-
-    if num > 999 {
-        d += num / 1000
-    }
-    if num > 99 {
-        d += (num % 1000) / 100
-    }
-    if num > 9 {
-        d += (num % 100) / 10
-    }
-    d += num % 10
-
-    return d
+    fmt.Println(x[0])
 }
 ```
+
+
+## [11720. 숫자의 합](#list)
+
+> 11  
+> 10987654321
+
+> 46 
+
+#### Bash
+```Bash
+read n
+read num
+
+let "sum = 0"
+
+for ((i = 0; i < n; i++))
+do
+    let "sum += ${num:i:1}"
+
+    # test : ok
+    # echo ${num:i:1}
+done
+
+echo $sum
+```
+
+#### C++ 
+```cpp
+#include <iostream>
+#include <string>
+```
+```cpp
+int main()
+{
+    // Input
+    int n;
+    string x;
+    cin >> n >> x;
+
+    // Operate and output
+    int sum = 0;
+    for (int i = 0; i < n; i++)
+    {
+        sum += (int) x[i] - '0';
+        // cout << x[i] << " " << sum << endl;  // test
+    }
+    cout << sum << endl;
+
+    return 0;
+}
+```
+
+#### Golang
 ```golang
 func main() {
 
-    var n int = 10001                            // n = 101 for test
-    
-    // Generate an array {1, 2, ……, 9999}
-    var arr []int = make([]int, n)
-    for i := 1; i < n; i++ {
-        arr[i] = 1
+    // Input
+    var n int
+    var num string
+    fmt.Scanln(&n)
+    fmt.Scanln(&num)
+
+    // Calculate sum
+    var sum int = 0
+    var digit rune
+    for _, digit = range num {
+        sum += int(digit - '0')
     }
 
-    // Remove non-self numbers from the array
-    var temp int
-    for i := 1; i < n; i++ {
-        temp = digitadition(i)
-        if temp < n {
-            arr[temp] = 0
+    // Output
+    fmt.Println(sum)
+}
+```
+
+
+## [10809. 알파벳 찾기](#list)
+
+> baekjoon
+
+> 1 0 -1 -1 2 -1 -1 -1 -1 4 3 -1 -1 7 5 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+
+#### Bash
+```Bash
+# Input string
+read s
+let "len = ${#s}"
+
+# Initialize arr
+for i in {0..25}
+do
+    let "arr[$i] = -1"
+    # echo ${arr[$i]}                       # test : ok
+done
+
+# Search each alphabet's first location
+for ((i = 0; i < len; i++))
+do
+    c=$(printf "%d" "'${s:i:1}'")           # I don't want to lose my precious 'let' but ……
+    if [ ${arr[$((c-97))]} -lt 0 ]; then
+        let "arr[$((c-97))] = $i"
+    fi
+done
+
+# Output
+for i in {0..25}
+do
+    echo -n "${arr[$i]} "                   # -n : without line replacement
+done
+echo
+```
+
+#### C++ 
+```cpp
+#include <iostream>
+#include <string>
+#include <vector>
+```
+```cpp
+int main()
+{
+    // Input
+    string s;
+    cin >> s;
+
+    // Declare an array for counting a ~ z
+    vector<int> alphabet (26, -1);
+
+    // Count
+    for (int i = 0; i < s.length(); i++)
+    {
+        if (alphabet[s[i] - 'a'] == -1)
+        {
+            alphabet[s[i] - 'a'] = i;
         }
     }
 
     // Output
-    for i := 1; i < n; i++ {
-        if arr[i] == 1 {
-            fmt.Println(i)
-        }
-    }
-}
-```
-
-#### Text
-```txt
-1
-3
-5
-……
-9993
-```
-ㅋㅋㅋ
-
-
-## [1065. 한수](#list)
-
-[한수](https://namu.wiki/w/%ED%95%9C%EC%88%98(%EC%82%BC%EA%B5%AD%EC%A7%80))라면 ……
-
-> 777
-
-> 1 0 0 99  
-> 1 0 1 99  
-> 1 0 2 99  
-> ……  
-> 7 7 7 133
-
-> 133
-
-#### C++
-```cpp
-int main()
-{
-    int n;      // n <= 1000
-    cin >> n;
-
-    int count = 0;
-    if (n < 100)
+    for (int j = 0; j < 25; j++)    // a ~ y
     {
-        count = n;
-    } else
-    {
-        int a, b, c;
-        count = 99;
-        if (n == 1000)      // can determine 1000 is not
-        {
-            n = 999;
-        }
-        for (int i = 100; i <= n; i++)
-        {
-            a = i / 100;
-            b = (i % 100) / 10;
-            c = i % 10;
-            if ((b - a) == (c - b))
-            {
-                count++;
-            }
-            cout << a << " " << b << " " << c << " " << count << endl;  // test
-        }
+        cout << alphabet[j] << " ";
     }
-
-    cout << count << endl;
+    cout << alphabet[25] << endl;   // z
 
     return 0;
 }
 ```
+
+#### Golang
+```golang
+func main() {
+
+    // Input
+    var s string
+    fmt.Scanln(&s)
+
+    // Declare an array for alphabet
+    var alphabet []int
+    for i := 0; i < 26; i++ {
+        alphabet = append(alphabet, -1)
+    }
+    // fmt.Println(alphabet)                     // test : ok
+
+    // Find the location
+    for i := 0; i < len(s); i++ {
+        // fmt.Print(s[i] - 'a')                 // test : ok
+
+        if alphabet[s[i] - 'a'] == -1 {
+            alphabet[s[i] - 'a'] = i
+        }
+    }
+
+    // Output
+    // fmt.Println(alphabet)                     // test : [……]
+    for i := 0; i < 25; i++ {                    // a ~ y
+        fmt.Print(alphabet[i], " ")
+    }
+    fmt.Println(alphabet[25])                    // z
+}
+```
+
+
+## [2675. Repeating Characters](#list)
+
+> 2  
+> 3 ABC  
+> 5 /HTP
+
+> AAABBBCCC  
+> /////HHHHHTTTTTPPPPP
+
+#### Bash
+```Bash
+read t
+
+for ((i = 0; i < t; i++))
+do
+    # Read each data
+    read r s
+    let "len = ${#s}"
+
+    # Repeat each char r times
+    for ((j = 0; j < len; j++))
+    do
+        for ((k = 0; k < r; k++))
+        do
+            echo -n "${s:j:1}"
+        done
+    done
+    echo
+done
+```
+
+#### C++ 
 ```cpp
-    // else             // n == 1000
-    // {
-    //     count = 144; // given as a sample output …… crazy
-    // }
+#include <iostream>
+#include <string>
+```
+```cpp
+int main()
+{
+    int p;
+    cin >> p;
+
+    int n;
+    string s;
+    for (int i = 0; i < p; i++)
+    {
+        cin >> n >> s;
+
+        for (int j = 0; j < s.length(); j++)
+        {
+            for (int k = 0; k < n; k++)
+            {
+                cout << s[j];
+            }
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
 ```
 
 #### Golang
 ```golang
-func count(n int) int {
-    var ans int = 0;
-    var a, b, c int
-    if n < 100 {
-        ans = n
-    } else if n < 1000 {
-        ans = 99
+func main() {
 
-        for i := 100; i <= n; i++ {
-            a = i / 100
-            b = (i % 100) / 10
-            c = i % 10
+    var t, r int
+    var s string
+    fmt.Scanln(&t)
 
-            if b - a == c - b {
-                ans++
+    for i := 0; i < t; i++ {
+        fmt.Scanln(&r, &s)
+
+        for j := 0; j < len(s); j++ {
+            for k := 0; k < r; k++ {
+                fmt.Print(string(s[j]))
             }
         }
-    } else {                            // n == 1000
-        ans = 144                       // crazy~ (given as a sample output)
+        fmt.Println()
+    }
+}
+```
+
+
+## [1152. 단어의 개수](#list)
+
+> The Curious Case of Benjamin Button
+
+> 6 (Maybe, difficult to operate `cin.eof()` directly in **C++**)
+
+#### Bash
+```Bash
+read -a s
+
+echo ${#s[@]}
+```
+
+#### C++ 
+```cpp
+#include <iostream>
+#include <string>
+#include <vector>
+```
+```cpp
+int main()
+{
+    // Input
+    vector<string> s;
+    string temp;
+    while (true)
+    {
+        cin >> temp;
+        if (cin.eof() == true)
+        {
+            break;
+        } else
+        {
+            s.push_back(temp);
+        }
     }
 
-    return ans
+    cout << s.size() << endl;
+
+    return 0;
 }
+```
+
+#### Golang
+```golang
+import (
+    "fmt"
+    "bufio"
+    "os"
+    "strings"
+)
 ```
 ```golang
 func main() {
-    var n int;
-    fmt.Scanln(&n)
 
-    fmt.Println(count(n))
+    // Input data (faster)
+    var reader = bufio.NewReader(os.Stdin)
+
+    var s string
+    s, _ = reader.ReadString('\n')                    // not "\n"
+
+    // Split the string and count
+    words := strings.Fields(s)
+    // reference ☞ https://pkg.go.dev/strings#Fields
+
+    // Output
+    fmt.Println(len(words))
+}
+```
+
+
+## [2908. FILIP](#list)
+
+> 734 893
+
+> 437
+
+#### Bash
+```Bash
+# Input
+read a b
+
+# Reverse digits of a and b
+for i in {2..0..-1}
+do
+    a2+="${a:i:1}"
+    b2+="${b:i:1}"
+done
+
+# Output
+if [ $a2 -gt $b2 ]; then
+    echo $a2
+else
+    echo $b2
+fi
+```
+
+#### C++ 
+```cpp
+#include <iostream>
+#include <string>
+```
+```cpp
+int main()
+{
+    // Input a, b : two three digit numbers
+    string a, b;
+    cin >> a >> b;
+
+    // Reverse a, b
+    char aReverse[4], bReverse[4];
+    for (int i = 0; i < 3; i++)
+    {
+        aReverse[3 - i - 1] = a[i];
+        bReverse[3 - i - 1] = b[i];
+    }
+    // cout << aReverse << " " << bReverse << endl; // test
+
+    // Comepare aReverse with bReverse as int and find the larger
+    if (stoi(aReverse) > stoi(bReverse))            // A and B will not be equal
+    {
+        cout << aReverse << endl;
+    } else
+    {
+        cout << bReverse << endl;
+    }
+
+    return 0;
+}
+```
+
+#### Golang
+```golang
+import (
+    "fmt"
+    "strconv"
+)
+```
+```golang
+func main() {
+
+    // Input a, b as string
+    var a, b string
+    fmt.Scanln(&a, &b)
+
+    // Reverse a, b
+    var aRev, bRev string = "", ""
+    for i:= 0; i < 3; i++ {
+        aRev += string([]rune(a)[3 - i - 1])    // crazy
+        bRev += string([]rune(b)[3 - i - 1])
+    }
+
+    // Output
+    var aInt, bInt int
+    aInt, _ = strconv.Atoi(aRev)
+    bInt, _ = strconv.Atoi(bRev)
+    if aInt > bInt {                            // a != b
+        fmt.Println(aInt)
+    } else {
+        fmt.Println(bInt)
+    }
+}
+```
+
+
+## [5622. BAKA](#list)
+
+> UNUCIC
+
+> 36
+
+#### Bash
+```Bash
+# Input
+read s
+let "len = ${#s}"
+
+# Count time to turn the dial
+let "sum = 0"
+for ((i = 0; i < len; i++))
+do
+    letter=$(printf "%d" "'${s:i:1}'")
+    if [ $letter -le $(printf "%d" "'R'") ]; then
+        let "sum += $(($(($letter - 65)) / 3 + 2 + 1))"
+    elif [ $letter -le $(printf "%d" "'X'") ]; then
+        let "sum += $(($(($letter - 65 - 1)) / 3 + 2 + 1))"
+    else
+        let "sum += $(($(($letter - 65 - 2)) / 3 + 2 + 1))"
+    fi
+done
+
+echo $sum
+```
+
+#### C++ 
+```cpp
+#include <iostream>
+#include <string>
+```
+```cpp
+int main()
+{
+    // Input
+    string s;
+    cin >> s;
+
+    // Operate
+    int sLength = s.size();
+    int dial, time, sum = 0;
+    for (int i = 0; i < sLength; i++)
+    {
+        if (s[i] <= 'R')
+        {
+            dial = (s[i] - 'A') / 3 + 2;
+        } else if (s[i] >= 'S' && s[i] <= 'X')
+        {
+            dial = (s[i] - 'A' - 1) / 3 + 2;
+        } else
+        {
+            dial = (s[i] - 'A' - 2) / 3 + 2;
+        }
+
+        time = dial + 1;
+        sum += time;
+        cout << s[i] << " " << dial << " " << time << " " << sum << endl;   // test
+    }
+
+    // Output
+    cout << sum << endl;
+
+    return 0;
+}
+```
+
+#### Golang
+```golang
+func main() {
+
+    // Input string s
+    var s string
+    fmt.Scanln(&s)
+    var sRune []rune = []rune(s)
+
+    // Operate
+    var sLen int = len(s)
+    var dial, time, sum int = 0, 0, 0
+    for i := 0; i < sLen; i++ {
+        if sRune[i] <= 'R' {
+            dial = int(sRune[i] - 'A') / 3 + 2
+        } else if sRune[i] >= 'S' && sRune[i] <= 'X' {
+            dial = int(sRune[i] - 'A' - 1) / 3 + 2
+        } else {
+            dial = int(sRune[i] - 'A' - 2) / 3 + 2
+        }
+
+        time = dial + 1
+        sum += time
+    }
+
+    // Output
+    fmt.Println(sum)
+}
+```
+
+
+## [11718. 그대로 출력하기](#list)
+
+> Hello  
+> Baekjoon  
+> Online Judge
+
+> Hello  
+> Baekjoon  
+> Online Judge
+
+#### C++ (2023.06.18)
+```cpp
+int main()
+{
+    string s;
+
+    while (true)
+    {
+        getline(std::cin, s);
+        if (std::cin.eof() == true) break;
+        else std::cout << s << endl;            
+    }
+    return 0;
 }
 ```

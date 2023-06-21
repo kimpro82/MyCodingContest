@@ -1,4 +1,4 @@
-## BAEKJOON Online Judge
+## [BAEKJOON Online Judge](../../../../README.md#baekjoon-online-judge)
 
 # 문제 > 단계별로 풀어보기 > 3. 반복문 - 2) while문
 
@@ -13,6 +13,8 @@ https://www.acmicpc.net/step/3 ~https://www.acmicpc.net/step/2~
 
 - [10952. A+B - 5](#10952-ab---5)
 - [10951. A+B - 4](#10951-ab---4)
+
+#### (Depreciated)
 - [1110. 더하기 사이클](#1110-더하기-사이클)
 
 

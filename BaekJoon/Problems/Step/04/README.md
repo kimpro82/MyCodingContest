@@ -1,8 +1,8 @@
-## BAEKJOON Online Judge
+## [BAEKJOON Online Judge](../../../../README.md#baekjoon-online-judge)
 
 # 문제 > 단계별로 풀어보기 > 4. 1차원 배열
 
-(2021.06.14) - `C++`  
+(2021.06.14, 2023.06.18) - `C++`  
 (2022.02.03) - `Bash`  
 (2022.04.12) - `Golang`
 
@@ -11,11 +11,19 @@ https://www.acmicpc.net/step/6
 
 ## **List**
 
+- [10807. 개수 세기](#10807-개수-세기) *(new)*
+- [10871. X보다 작은 수](#10871-x보다-작은-수)
 - [10818. 최소, 최대](#10818-최소-최대)
 - [2562. 최댓값](#2562-최댓값)
-- [2577. 숫자의 개수](#2577-숫자의-개수)
+- [10810. 공 넣기](#10810-공-넣기) *(new)*
+- [10813. 공 바꾸기](#10813-공-바꾸기) *(new)*
+- [5597. 未提出者は誰だ (과제 안 내신 분..?)](#5597-未提出者は誰だ-과제-안-내신-분) *(new)*
 - [3052. MODULO](#3052-modulo)
+- [10811. 바구니 뒤집기](#10811-바구니-뒤집기) *(new)*
 - [1546. 평균](#1546-평균)
+
+#### (Depreciated)
+- [2577. 숫자의 개수](#2577-숫자의-개수)
 - [8958. Score](#8958-score)
 - [4344. Above Average](#4344-above-average)
 
@@ -23,10 +31,117 @@ https://www.acmicpc.net/step/6
 **※ Note**  
 
 &nbsp;&nbsp; - All the codes of any language for the same problem have basically the same result.  
-&nbsp;&nbsp; - `Bash` : skipped the first line; `#!/bin/bash`  
-&nbsp;&nbsp; - `C++`* : skipped `main()` function's brace(`{}`) and its outside including two header lines; `#include <iostream>` `using namespace std;`  
-&nbsp;&nbsp; - `Golang`* : skipped `main()` function's brace(`{}`) and its outside including two header lines; `package main` `import "fmt"`  
-&nbsp;&nbsp; * When any additional header is used, the header block is also noted seperately.
+&nbsp;&nbsp; - Typical headers like the below are basically skipped, but they are noted seperately when there are any additional line.  
+&nbsp;&nbsp;&nbsp;&nbsp; · `Bash` : `#!/bin/bash`  
+&nbsp;&nbsp;&nbsp;&nbsp; · `C++` : `#include <iostream>` `#define endl '\n';` `using namespace std;`  
+&nbsp;&nbsp;&nbsp;&nbsp; · `Golang` : `package main` `import "fmt"`  
+
+
+
+## [10807. 개수 세기](#list)
+
+(2023.06.18)
+
+> 11  
+> 1 4 1 2 4 2 4 2 3 4 4  
+> 2
+
+> 3
+
+#### C++
+```cpp
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+#define endl '\n'
+```
+```cpp
+// Declare
+int n, v, temp;
+vector<int> arr;
+
+// Input
+std::cin >> n;
+for (int i = 0; i < n; i++)
+{
+    std::cin >> temp;
+    arr.push_back(temp);
+}
+std::cin >> v;
+
+// Count
+int count = 0;
+for (int i = 0; i < n; i++) if (arr[i] == v) count++;
+
+// Output
+std::cout << count << endl;
+
+return 0;
+```
+
+
+## [10871. X보다 작은 수](#list)
+
+(2021.05.25)
+
+> 10 5  
+> 1 10 4 9 2 3 8 5 7 6
+
+> 1 4 2 3
+
+#### Bash
+```bash
+read n x
+read list
+
+for num in $list
+do
+    if [ $num -lt $x ]; then
+        echo -n "$num "
+    fi
+done
+
+echo ' '
+
+# read
+```
+
+#### C++
+```cpp
+int n, x;
+int arr[10000];                 // .exe file stops when int arr[n], although compilation succeeded
+cin >> n >> x;
+
+for (int i = 0; i < n; i++)
+{
+    cin >> arr[i];
+    if (arr[i] < x)
+    {
+        cout << arr[i] << ' ';
+    }
+}
+cout << '\n';
+
+return 0;
+```
+
+
+#### Golang
+```go
+var n, x int
+fmt.Scanln(&n, &x)
+
+for i := 0; i < n; i++ {
+    var num int
+    fmt.Scanf("%d", &num)
+    if num < x {
+        fmt.Printf("%d ", num)
+    }
+}
+// fmt.Println("\b")            // causes wrong?
+```
 
 
 ## [10818. 최소, 최대](#list)
@@ -307,6 +422,365 @@ fmt.Println(max, maxIdx + 1)
 ```
 
 
+## [10810. 공 넣기](#list)
+
+(2023.06.18)
+
+> 5 4  
+> 1 2 3  
+> 3 4 4  
+> 1 4 1  
+> 2 2 2
+
+> 1 2 1 1 0
+
+#### C++
+```cpp
+#include <iostream>
+#include <vector>
+
+#define endl '\n'
+
+using namespace std;
+```
+```cpp
+// Declare
+int n, m;
+int i, j, k;
+
+// Input
+std::cin >> n >> m;
+vector<int> arr(n + 1, 0);
+for (int a = 0; a < m; a++)
+{
+    std::cin >> i >> j >> k;
+    for (int b = i; b <= j; b++) arr[b] = k;
+}
+
+// Output
+for (int a = 1; a < n + 1; a++) std::cout << arr[a] << ' ';
+std::cout << endl;
+
+return 0;
+```
+
+
+## [10813. 공 바꾸기](#list)
+
+(2023.06.18)
+
+> 5 4  
+> 1 2  
+> 3 4  
+> 1 4  
+> 2 2
+
+> 3 1 4 2 5
+
+#### C++
+```cpp
+#include <iostream>
+#include <vector>
+
+#define endl '\n'
+
+using namespace std;
+```
+```cpp
+// Declare
+int n, m;
+int i, j;
+
+// Input & Swap
+std::cin >> n >> m;
+vector<int> arr(n + 1);
+for (int a = 0; a < n + 1; a++) arr[a] = a;
+for (int a = 0; a < m; a++)
+{
+    std::cin >> i >> j;
+    int temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
+}
+
+// Output
+for (int a = 1; a < n + 1; a++) std::cout << arr[a] << ' ';
+std::cout << endl;
+
+return 0;
+```
+
+
+## [5597. 未提出者は誰だ (과제 안 내신 분..?)](#list)
+
+(2023.06.18)
+
+> 3  
+> 1  
+> 4  
+> ……  
+> 30
+
+> 2  
+> 8
+
+#### C++
+```cpp
+#include <iostream>
+#include <vector>
+
+#define endl '\n'
+
+using namespace std;
+```
+```cpp
+// Declare & Input
+vector<int> arr(31, 0);
+int n;
+for (int i = 0; i < 28; i++)
+{
+    std::cin >> n;
+    arr[n] = 1;
+}
+
+// Output
+for (int i = 1; i < 31; i++) if (arr[i] == 0) std::cout << i << endl;
+
+return 0;
+```
+
+
+## [3052. MODULO](#list)
+
+> 39  
+> 40  
+> 41  
+> 42  
+> 43  
+> 44  
+> 82  
+> 83  
+> 84  
+> 85
+
+> 6
+
+#### Bash
+```bash
+# Input data
+for i in {0..9}         # the size 10 is fixed
+do
+    read n
+    let "modulo = n % 42"
+    let "arr[$modulo]++"
+done
+
+:<<"Comment"
+    The array in bash doesn't need to have strictly continuous indices.
+    So we can use array like <set> by this feature 
+Comment
+
+# Output
+echo ${#arr[@]}
+```
+
+#### C++
+```cpp
+// modulo : 나머지
+// distinct number : 서로 다른 숫자 ≒ 중복되지 않는 숫자
+```
+```cpp
+#include <iostream>
+#include <set>
+```
+```cpp
+const int length = 10;
+int input[length];
+set<int> modulo;
+
+for (int i = 0; i < length; i++)
+{
+    cin >> input[i];
+    modulo.insert(input[i] % 42);
+}
+
+cout << modulo.size() << endl;
+
+return 0;
+```
+
+#### Golang
+```golang
+var n, mod int
+var modulo map[int]int
+modulo = make(map[int]int)
+
+for i := 0; i < 10; i++ {
+    fmt.Scanln(&n)
+
+    mod = n % 42
+    _, exists := modulo[mod]
+    if !exists {
+        modulo[mod] = 1
+    } else {
+        modulo[mod]++            // not necessary but I dream better code
+    }
+}
+
+// test
+// for j := 0; j < 42; j++ {
+//     val, exists := modulo[j]
+//     if exists {
+//         fmt.Println(j, val)
+//     }
+// }
+
+fmt.Println(len(modulo))
+```
+
+
+## [10811. 바구니 뒤집기](#list)
+
+(2023.06.18)
+
+> 5 4  
+> 1 2  
+> 3 4  
+> 1 4  
+> 2 2
+
+> 3 4 1 2 5
+
+#### C++
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+// #define test
+#define endl '\n'
+
+using namespace std;
+```
+```cpp
+// Declare
+int n, m;
+int i, j;
+
+// Input & Reverse partially
+std::cin >> n >> m;
+vector<int> arr(n + 1);
+for (int a = 0; a < n + 1; a++) arr[a] = a;
+for (int b = 0; b < m; b++)
+{
+    std::cin >> i >> j;
+    std::reverse(arr.begin() + i, arr.begin() + j + 1);
+
+    // test
+    #ifdef test
+        for (int a = 1; a < n + 1; a++) std::cout << arr[a] << ' ';
+        std::cout << endl;
+    #endif
+}
+
+// Output
+for (int a = 1; a < n + 1; a++) std::cout << arr[a] << ' ';
+std::cout << endl;
+
+return 0;
+```
+
+
+## [1546. 평균](#list)
+
+> 3  
+> 40 80 60
+
+> 75
+
+#### Bash
+```bash
+# Input data
+read n
+read -a arr
+
+# Find the max score
+let "max = 0"
+for i in ${arr[@]}
+do
+    if [ $i -gt $max ]; then
+        let "max = i"
+    fi
+done
+# echo $max                                     # test
+
+# Operation to fake scores
+let "sum = 0"
+for ((i = 0; i < n; i++))
+do
+    let "sum += (arr[i] * 100 * 1000 / max)"    # don't forget "* 1000"
+done
+# echo $sum                                     # test
+
+# Output
+let "average = sum / n"
+printf "%.2f\n" $((average))e-3                 # MAGIC!!
+```
+
+#### C++
+```cpp
+int t;
+cin >> t;
+
+double score[t], maxValue = 0, sum = 0;
+for (int i = 0; i < t; i++)
+{
+    cin >> score[i];
+    maxValue = max(maxValue, score[i]);
+}
+
+for (int j = 0; j < t; j++)
+{
+    score[j] *= (1 / maxValue) * 100;
+    sum += score[j];
+}
+
+cout << sum / t << endl;
+
+return 0;
+```
+
+#### Golang
+```golang
+var n int
+fmt.Scanln(&n)
+
+var score []float32 = make([]float32, n)
+var max float32 = 0
+for i := 0; i < n; i++ {
+    fmt.Scan(&score[i])
+
+    if score[i] > max {
+        max = score[i]
+    }
+}
+
+// test
+// fmt.Println(score, max)
+
+var sum float32 = 0
+for i := 0; i < n; i++ {
+    score[i] *= float32(1 / max) * 100
+    sum += score[i]
+
+    // test
+    // fmt.Println(score, sum)
+}
+
+fmt.Printf("%.3f\n", sum / float32(n))
+```
+
+
 ## [2577. 숫자의 개수](#list)
 
 > 150  
@@ -400,185 +874,6 @@ for i := 0; i < length; i++ {
 for j := 0; j < 10; j++ {
     fmt.Println(arr[j])
 }
-```
-
-
-## [3052. MODULO](#list)
-
-> 39  
-> 40  
-> 41  
-> 42  
-> 43  
-> 44  
-> 82  
-> 83  
-> 84  
-> 85
-
-> 6
-
-#### Bash
-```bash
-# Input data
-for i in {0..9}         # the size 10 is fixed
-do
-    read n
-    let "modulo = n % 42"
-    let "arr[$modulo]++"
-done
-
-:<<"Comment"
-    The array in bash doesn't need to have strictly continuous indices.
-    So we can use array like <set> by this feature 
-Comment
-
-# Output
-echo ${#arr[@]}
-```
-
-#### C++
-```cpp
-// modulo : 나머지
-// distinct number : 서로 다른 숫자 ≒ 중복되지 않는 숫자
-```
-```cpp
-#include <iostream>
-#include <set>
-```
-```cpp
-const int length = 10;
-int input[length];
-set<int> modulo;
-
-for (int i = 0; i < length; i++)
-{
-    cin >> input[i];
-    modulo.insert(input[i] % 42);
-}
-
-cout << modulo.size() << endl;
-
-return 0;
-```
-
-#### Golang
-```golang
-var n, mod int
-var modulo map[int]int
-modulo = make(map[int]int)
-
-for i := 0; i < 10; i++ {
-    fmt.Scanln(&n)
-
-    mod = n % 42
-    _, exists := modulo[mod]
-    if !exists {
-        modulo[mod] = 1
-    } else {
-        modulo[mod]++            // not necessary but I dream better code
-    }
-}
-
-// test
-// for j := 0; j < 42; j++ {
-//     val, exists := modulo[j]
-//     if exists {
-//         fmt.Println(j, val)
-//     }
-// }
-
-fmt.Println(len(modulo))
-```
-
-
-## [1546. 평균](#list)
-
-> 3  
-> 40 80 60
-
-> 75
-
-#### Bash
-```bash
-# Input data
-read n
-read -a arr
-
-# Find the max score
-let "max = 0"
-for i in ${arr[@]}
-do
-    if [ $i -gt $max ]; then
-        let "max = i"
-    fi
-done
-# echo $max                                     # test
-
-# Operation to fake scores
-let "sum = 0"
-for ((i = 0; i < n; i++))
-do
-    let "sum += (arr[i] * 100 * 1000 / max)"    # don't forget "* 1000"
-done
-# echo $sum                                     # test
-
-# Output
-let "average = sum / n"
-printf "%.2f\n" $((average))e-3                 # MAGIC!!
-```
-
-#### C++
-```cpp
-int t;
-cin >> t;
-
-double score[t], maxValue = 0, sum = 0;
-for (int i = 0; i < t; i++)
-{
-    cin >> score[i];
-    maxValue = max(maxValue, score[i]);
-}
-
-for (int j = 0; j < t; j++)
-{
-    score[j] *= (1 / maxValue) * 100;
-    sum += score[j];
-}
-
-cout << sum / t << endl;
-
-return 0;
-```
-
-#### Golang
-```golang
-var n int
-fmt.Scanln(&n)
-
-var score []float32 = make([]float32, n)
-var max float32 = 0
-for i := 0; i < n; i++ {
-    fmt.Scan(&score[i])
-
-    if score[i] > max {
-        max = score[i]
-    }
-}
-
-// test
-// fmt.Println(score, max)
-
-var sum float32 = 0
-for i := 0; i < n; i++ {
-    score[i] *= float32(1 / max) * 100
-    sum += score[i]
-
-    // test
-    // fmt.Println(score, sum)
-}
-
-fmt.Printf("%.3f\n", sum / float32(n))
 ```
 
 
@@ -689,18 +984,23 @@ for i := 0; i < n; i++ {
 
 ## [4344. Above Average](#list)
 
-> 5  
-> 5 50 50 70 80 100  
-> 7 100 95 90 80 70 60 50  
-> 3 70 90 80  
-> 3 70 90 81  
-> 9 100 99 98 97 96 95 94 93 91
+```txt
+5
+5 50 50 70 80 100
+7 100 95 90 80 70 60 50
+3 70 90 80
+3 70 90 81
+9 100 99 98 97 96 95 94 93 91
+```
+```txt
+40.000%
+57.143%
+33.333%
+66.667%
+55.556%
+```
 
-> 40.000%  
-> 57.143%  
-> ……
-
-#### Bash
+#### Bash (2022.02.04)
 ```bash
 read c
 
@@ -739,83 +1039,88 @@ do
 done
 ```
 
-#### C++
+#### C++ (2021.06.13)
 ```cpp
-int c;
-cin >> c;
-
-for (int i = 0; i < c; i++)
+int main()
 {
-    int n;
-    cin >> n;
+    int c;
+    cin >> c;
 
-    // get sum and average
-    int scores[n], sum = 0, average;
-    for (int j = 0; j < n; j++)
+    for (int i = 0; i < c; i++)
     {
-        cin >> scores[j];
-        sum += scores[j];
-    }
-    average = sum / n;
+        int n;
+        cin >> n;
 
-    // get percentage of students whose grade is above average
-    double aboveAverage = 0;
-    for (int k = 0; k < n; k++)
-    {
-        if (scores[k] > average)
+        // get sum and average
+        int scores[n], sum = 0, average;
+        for (int j = 0; j < n; j++)
         {
-            aboveAverage += 1;
+            cin >> scores[j];
+            sum += scores[j];
         }
+        average = sum / n;
+
+        // get percentage of students whose grade is above average
+        double aboveAverage = 0;
+        for (int k = 0; k < n; k++)
+        {
+            if (scores[k] > average)
+            {
+                aboveAverage += 1;
+            }
+        }
+
+        // test
+        cout << n << " " << sum << " " << average << " " << aboveAverage << endl;
+
+        // ouput
+        double aboveAverageRatio = (double) (aboveAverage / n) * 100;
+        cout << fixed;      // output 40.000, not 40
+        cout.precision(3);  // 3 : 3 ciphers under decimal point
+        cout << aboveAverageRatio << '%' << endl;
     }
 
-    // test
-    cout << n << " " << sum << " " << average << " " << aboveAverage << endl;
-
-    // ouput
-    double aboveAverageRatio = (double) (aboveAverage / n) * 100;
-    cout << fixed;      // output 40.000, not 40
-    cout.precision(3);  // 3 : 3 ciphers under decimal point
-    cout << aboveAverageRatio << '%' << endl;
+    return 0;
 }
-
-return 0;
 ```
 
-#### Golang
+#### Golang (2022.04.12)
 ```golang
-var c, n int
-fmt.Scanln(&c)
+func main() {
+    var c, n int
+    fmt.Scanln(&c)
 
-for i := 0; i < c; i++ {
-    fmt.Scan(&n)
+    for i := 0; i < c; i++ {
+        fmt.Scan(&n)
 
-    var score []float32 = make([]float32, n)                            // don't forget make()!
-    var sum, average float32
-    var aboveAverage int
+        var score []float32 = make([]float32, n)                            // don't forget make()!
+        var sum, average float32
+        var aboveAverage int
 
-    // Get sum and average
-    sum = 0
-    for j := 0; j < n; j++ {
-        fmt.Scan(&score[j])
-        sum += score[j]
-    }
-    average = sum / float32(n)
-
-    // test : ok
-    // fmt.Println(score, sum, average)
-
-    // Get percentage of students whose grades are above average
-    aboveAverage = 0
-    for j := 0; j < n; j++ {
-        if score[j] > average {
-            aboveAverage++
+        // Get sum and average
+        sum = 0
+        for j := 0; j < n; j++ {
+            fmt.Scan(&score[j])
+            sum += score[j]
         }
+        average = sum / float32(n)
+
+        // test : ok
+        // fmt.Println(score, sum, average)
+
+        // Get percentage of students whose grades are above average
+        aboveAverage = 0
+        for j := 0; j < n; j++ {
+            if score[j] > average {
+                aboveAverage++
+            }
+        }
+
+        // test : ok
+        // fmt.Println(n, aboveAverage)
+
+        // Output
+        fmt.Printf("%.3f%%\n", float32(aboveAverage) / float32(n) * 100)    // not \%, but %%
     }
-
-    // test : ok
-    // fmt.Println(n, aboveAverage)
-
-    // Output
-    fmt.Printf("%.3f%%\n", float32(aboveAverage) / float32(n) * 100)    // not \%, but %%
 }
 ```

@@ -14,7 +14,6 @@ https://www.acmicpc.net/step/1
 ### List
 
 - [2557. Hello World](#2557-hello-world)
-- [10718. We love kriii](#10718-we-love-kriii)
 - [1000. A+B](#1000-ab)
 - [1001. A-B](#1001-a-b)
 - [10998. A*B](#10998-ab)
@@ -22,24 +21,27 @@ https://www.acmicpc.net/step/1
 - [10869. 사칙연산](#10869-사칙연산)
 - [10926. ??!](#10926-) *(new)*
 - [18108. 1998년생인 내가 태국에서는 2541년생?!](#18108-1998년생인-내가-태국에서는-2541년생) *(new)*
-- [3003. BIJELE](#3003-bijele) *(new)*
 - [10430. 나머지](#10430-나머지)
+- [11382. 꼬마 정민](#11382-꼬마-정민) *(new)*
 - [2588. 곱셈](#2588-곱셈)
 - [10171. Cats](#10171-cats)
 - [10172. Dogs](#10172-dogs)
-- [25083. 새싹](#25083-새싹) *(new)*
+
+#### (Depreciated)
+- [10718. We love kriii](#10718-we-love-kriii)
 
 
 **※ Note**  
 
 &nbsp;&nbsp; - All the codes of any language for the same problem have basically the same result.  
-&nbsp;&nbsp; - `C++` : skipped `main()` function's brace(`{}`) and its outside including two header lines; `#include <iostream>` `using namespace std;`  
-&nbsp;&nbsp; - `Golang` : skipped `main()` function's brace(`{}`) and its outside including two header lines; `package main` `import "fmt"`  
+&nbsp;&nbsp; - Typical headers like the below are basically skipped, but they are noted seperately when there are any additional line.  
+&nbsp;&nbsp;&nbsp;&nbsp; · `Bash` : `#!/bin/bash`  
+&nbsp;&nbsp;&nbsp;&nbsp; · `C++` : `#include <iostream>` `#define endl '\n';` `using namespace std;`  
+&nbsp;&nbsp;&nbsp;&nbsp; · `Golang` : `package main` `import "fmt"`  
+&nbsp;&nbsp;&nbsp;&nbsp; · `SystemVerilog` : `module` `endmodule`.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * All the codes run on [JDoodle Online VERILOG Compiler IDE](https://www.jdoodle.com/execute-verilog-online/) as `Verilog` before submitted to [BOJ](https://www.acmicpc.net/) as `SystemVerilog`.  
 &nbsp;&nbsp; - `R` : Some answers occur runtime errors with unknowable reason in the BOJ grading machine.  
-&nbsp;&nbsp; - `SystemVerilog` : skipped the top and bottom lines; `module` `endmodule`.  
-&nbsp;&nbsp;&nbsp;&nbsp; · All the codes run on [JDoodle Online VERILOG Compiler IDE](https://www.jdoodle.com/execute-verilog-online/) as `Verilog` before submitted to [BOJ](https://www.acmicpc.net/) as `SystemVerilog`.  
 &nbsp;&nbsp; - `Text` : Only possible problems that do not require input values are solved.  
-&nbsp;&nbsp; * When any additional header is used, the header block is also noted seperately.
 
 
 ## [2557. Hello World](#list)
@@ -84,75 +86,6 @@ end
 #### Text
 ```txt
 Hello World!
-```
-
-
-## [10718. We love kriii](#list)
-
-> 강한친구 대한육군  
-> 강한친구 대한육군
-
-#### Bash
-```Bash
-for i in {0..1}
-do
-    echo "강한친구 대한육군"
-done
-```
-
-#### C++
-```cpp
-for (int i = 0; i < 2; i++)
-{
-    cout << "강한친구 대한육군" << endl;
-}
-
-return 0;
-```
-
-#### Golang - trial 1
-```go
-var s string = "강한친구 대한육군"
-fmt.Println(s)
-fmt.Println(s)
-```
-
-#### Golang - trial 2
-```go
-var s string = "강한친구 대한육군"
-for i := 0; i < 2; i++ {
-        fmt.Println(s)
-}
-```
-
-#### Python
-```python
-for i in range(0, 2) :
-    print("강한친구 대한육군")
-```
-
-#### R
-```R
-for (i in c(0, 1))
-{
-    cat("강한친구 대한육군\n")
-}
-```
-
-#### SystemVerilog
-```sv
-initial begin
-    repeat (2) begin
-        $display("강한친구 대한육군");
-    end
-    $finish;
-end
-```
-
-#### Text
-```txt
-강한친구 대한육군
-강한친구 대한육군
 ```
 
 
@@ -554,38 +487,6 @@ end
 ```
 
 
-## [3003. BIJELE](#list)
-
-> 2 1 2 1 2 1
-
-> -1 0 0 1 0 7
-
-#### SystemVerilog
-```sv
-reg [6*8:0] pieces = "112228";                                              // Can I enter this as an integer array?
-integer signed data[6:0];
-integer temp, i;
-
-initial begin
-    // Input
-    for (i = 0; i < 6; i = i + 1) begin
-        temp = $fscanf(32'h8000_0000, "%d", data[i]);
-        // 32'h8000_0000 : descriptor that indicates STDIN
-        // $fscan() (maybe) returns EOF
-    end
-
-    for (i = 0; i < 6; i = i + 1) begin
-        // test
-        // $display("%0d %0d", pieces[(6-i)*8 - 8 +: 8] - 48, data[i]);
-
-        $write("%0d ", $signed(pieces[(6-i)*8 - 8 +: 8] - 48) - data[i]);
-    end
-    $display();
-    $finish;
-end
-```
-
-
 ## [10430. 나머지](#list)
 
 > 5 8 4
@@ -667,6 +568,27 @@ initial begin
     $display("%0d", ((a % c) * (b % c)) % c);
     $finish;
 end
+```
+
+
+## [11382. 꼬마 정민](#list)
+
+(2023.06.17)
+
+> 77 77 7777
+
+> 7931
+
+#### C++
+```cpp
+using ll = long long;
+```
+```cpp
+ll a, b, c;                                             // 1 ≤ A, B, C ≤ 10^12
+cin >> a >> b >> c;
+cout << a + b + c << endl;
+
+return 0;
 ```
 
 
@@ -1122,26 +1044,70 @@ end
 ```
 
 
-## [25083. 새싹](#list)
+## [10718. We love kriii](#list)
 
-```txt
-         ,r'"7
-r`-_   ,'  ,/
- \. ". L_r'
-   `~\/
-      |
-      |
+> 강한친구 대한육군  
+> 강한친구 대한육군
+
+#### Bash
+```Bash
+for i in {0..1}
+do
+    echo "강한친구 대한육군"
+done
+```
+
+#### C++
+```cpp
+for (int i = 0; i < 2; i++)
+{
+    cout << "강한친구 대한육군" << endl;
+}
+
+return 0;
+```
+
+#### Golang - trial 1
+```go
+var s string = "강한친구 대한육군"
+fmt.Println(s)
+fmt.Println(s)
+```
+
+#### Golang - trial 2
+```go
+var s string = "강한친구 대한육군"
+for i := 0; i < 2; i++ {
+        fmt.Println(s)
+}
+```
+
+#### Python
+```python
+for i in range(0, 2) :
+    print("강한친구 대한육군")
+```
+
+#### R
+```R
+for (i in c(0, 1))
+{
+    cat("강한친구 대한육군\n")
+}
 ```
 
 #### SystemVerilog
 ```sv
-    initial begin
-        $display("         ,r'\"7");
-        $display("r`-_   ,'  ,/");
-        $display(" \\. \". L_r'");
-        $display("   `~\\/");
-        $display("      |");
-        $display("      |");
-        $finish;
+initial begin
+    repeat (2) begin
+        $display("강한친구 대한육군");
     end
+    $finish;
+end
+```
+
+#### Text
+```txt
+강한친구 대한육군
+강한친구 대한육군
 ```

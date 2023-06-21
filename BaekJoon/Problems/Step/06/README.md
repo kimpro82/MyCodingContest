@@ -1,352 +1,209 @@
-## BAEKJOON Online Judge
+## [BAEKJOON Online Judge](../../../../README.md#baekjoon-online-judge)
 
-# 문제 > 단계별로 풀어보기 > 6. 문자열
+# 문제 > 단계별로 풀어보기 > 6. 심화 1
 
-https://www.acmicpc.net/step/7
+https://www.acmicpc.net/step/52
 
-(2021.07.10) - `C++`  
+(2023.06.19) - `C++`  
+(2022.09.06) - `SystemVerilog`  
+(2022.06.20) - `Golang`  
 (2022.02.16) - `Bash`  
-(2022.06.20) - `Golang`
 
 
-## **List**
+### **List**
 
-- [11654. 아스키 코드](#11654-아스키-코드)
-- [11720. 숫자의 합](#11720-숫자의-합)
-- [10809. 알파벳 찾기](#10809-알파벳-찾기)
-- [2675. Repeating Characters](#2675-repeating-characters)
+- [25083. 새싹](#25083-새싹)
+- [3003. BIJELE](#3003-bijele)
+- [2444. 별 찍기 - 7](#2444-별-찍기---7)
+- [10988. 팰린드롬인지 확인하기](#10988-팰린드롬인지-확인하기)
 - [1157. 단어 공부](#1157-단어-공부)
-- [1152. 단어의 개수](#1152-단어의-개수)
-- [2908. FILIP](#2908-filip)
-- [5622. BAKA](#5622-baka)
 - [2941. LJESNJAK](#2941-ljesnjak)
 - [1316. 그룹 단어 체커](#1316-그룹-단어-체커)
+- [25206. 너의 평점은](#25206-너의-평점은)
 
 
 **※ Note**  
 
 &nbsp;&nbsp; - All the codes of any language for the same problem have basically the same result.  
-&nbsp;&nbsp; - Typical headers like the below are basically skipped, but they are noted seperately when theere are any additional line.  
+&nbsp;&nbsp; - Typical headers like the below are basically skipped, but they are noted seperately when there are any additional line.  
 &nbsp;&nbsp;&nbsp;&nbsp; · `Bash` : `#!/bin/bash`  
-&nbsp;&nbsp;&nbsp;&nbsp; · `C++` : `#include <iostream>` `using namespace std;` `#define endl '\n';`  
+&nbsp;&nbsp;&nbsp;&nbsp; · `C++` : `#include <iostream>` `#define endl '\n';` `using namespace std;`  
 &nbsp;&nbsp;&nbsp;&nbsp; · `Golang` : `package main` `import "fmt"`  
-&nbsp;&nbsp; ※ `C++` : Very meaningful time to familiarize with `array` `vector` and `string`!  
+&nbsp;&nbsp;&nbsp;&nbsp; · `SystemVerilog` : `module` `endmodule`.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * All the codes run on [JDoodle Online VERILOG Compiler IDE](https://www.jdoodle.com/execute-verilog-online/) as `Verilog` before submitted to [BOJ](https://www.acmicpc.net/) as `SystemVerilog`.  
+&nbsp;&nbsp; - `R` : Some answers occur runtime errors with unknowable reason in the BOJ grading machine.  
+&nbsp;&nbsp; - `Text` : Only possible problems that do not require input values are solved.  
 
 
-## [11654. 아스키 코드](#list)
 
-> A
+## [25083. 새싹](#list)
 
-> 65
-
-#### Bash
-```Bash
-read char                   # ex) a
-
-# printf "%d\n" $char       # printf: a: invalid number
-# printf "%d\n" "$char"     # printf: a: invalid number; it doesn't matter if use "" or not
-# printf "%d\n" '$char'     # printf: $char: invalid number; regard $char itself as a string
-
-printf "%d\n" "'$char'"     # 97; regard a as a string
-# printf "%d\n" "'$char"    # 97; the closing quotes(') may be omitted
+```txt
+         ,r'"7
+r`-_   ,'  ,/
+ \. ". L_r'
+   `~\/
+      |
+      |
 ```
 
-#### C++ 
+#### SystemVerilog (2022.09.05)
+```sv
+module Q25083();
+
+    initial begin
+        $display("         ,r'\"7");
+        $display("r`-_   ,'  ,/");
+        $display(" \\. \". L_r'");
+        $display("   `~\\/");
+        $display("      |");
+        $display("      |");
+        $finish;
+    end
+
+endmodule
+```
+
+
+## [3003. BIJELE](#list)
+
+```txt
+2 1 2 1 2 1
+```
+```txt
+-1 0 0 1 0 7
+```
+
+#### SystemVerilog (2022.09.06)
+```sv
+module Q3003();
+
+    reg [6*8:0] pieces = "112228";                                              // Can I enter this as an integer array?
+    integer signed data[6:0];
+    integer temp, i;
+
+    initial begin
+        // Input
+        for (i = 0; i < 6; i = i + 1) begin
+            temp = $fscanf(32'h8000_0000, "%d", data[i]);
+            // 32'h8000_0000 : descriptor that indicates STDIN
+            // $fscan() (maybe) returns EOF
+        end
+
+        for (i = 0; i < 6; i = i + 1) begin
+            // test
+            // $display("%0d %0d", pieces[(6-i)*8 - 8 +: 8] - 48, data[i]);
+
+            $write("%0d ", $signed(pieces[(6-i)*8 - 8 +: 8] - 48) - data[i]);
+        end
+        $display();
+        $finish;
+    end
+
+endmodule
+```
+
+
+## [2444. 별 찍기 - 7](#list)
+
+```txt
+5
+```
+
+```txt
+    *
+   ***
+  *****
+ *******
+*********
+ *******
+  *****
+   ***
+    *
+```
+
+#### C++ (2023.06.19)
 ```cpp
 int main()
 {
-    char x;
-    cin >> x;
-
-    cout << (int) x << endl;
-
-    return 0;
-}
-```
-
-#### Golang
-```golang
-func main() {
-    var x string
-    fmt.Scanln(&x)
-
-    fmt.Println(x[0])
-}
-```
-
-
-## [11720. 숫자의 합](#list)
-
-> 11  
-> 10987654321
-
-> 46 
-
-#### Bash
-```Bash
-read n
-read num
-
-let "sum = 0"
-
-for ((i = 0; i < n; i++))
-do
-    let "sum += ${num:i:1}"
-
-    # test : ok
-    # echo ${num:i:1}
-done
-
-echo $sum
-```
-
-#### C++ 
-```cpp
-#include <iostream>
-#include <string>
-```
-```cpp
-int main()
-{
-    // Input
     int n;
-    string x;
-    cin >> n >> x;
+    std::cin >> n;
 
-    // Operate and output
-    int sum = 0;
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < 2*n-1; i++)
     {
-        sum += (int) x[i] - '0';
-        // cout << x[i] << " " << sum << endl;  // test
-    }
-    cout << sum << endl;
-
-    return 0;
-}
-```
-
-#### Golang
-```golang
-func main() {
-
-    // Input
-    var n int
-    var num string
-    fmt.Scanln(&n)
-    fmt.Scanln(&num)
-
-    // Calculate sum
-    var sum int = 0
-    var digit rune
-    for _, digit = range num {
-        sum += int(digit - '0')
-    }
-
-    // Output
-    fmt.Println(sum)
-}
-```
-
-
-## [10809. 알파벳 찾기](#list)
-
-> baekjoon
-
-> 1 0 -1 -1 2 -1 -1 -1 -1 4 3 -1 -1 7 5 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
-
-#### Bash
-```Bash
-# Input string
-read s
-let "len = ${#s}"
-
-# Initialize arr
-for i in {0..25}
-do
-    let "arr[$i] = -1"
-    # echo ${arr[$i]}                       # test : ok
-done
-
-# Search each alphabet's first location
-for ((i = 0; i < len; i++))
-do
-    c=$(printf "%d" "'${s:i:1}'")           # I don't want to lose my precious 'let' but ……
-    if [ ${arr[$((c-97))]} -lt 0 ]; then
-        let "arr[$((c-97))] = $i"
-    fi
-done
-
-# Output
-for i in {0..25}
-do
-    echo -n "${arr[$i]} "                   # -n : without line replacement
-done
-echo
-```
-
-#### C++ 
-```cpp
-#include <iostream>
-#include <string>
-#include <vector>
-```
-```cpp
-int main()
-{
-    // Input
-    string s;
-    cin >> s;
-
-    // Declare an array for counting a ~ z
-    vector<int> alphabet (26, -1);
-
-    // Count
-    for (int i = 0; i < s.length(); i++)
-    {
-        if (alphabet[s[i] - 'a'] == -1)
+        for (int j = 0; j < 2*n-1; j++)
         {
-            alphabet[s[i] - 'a'] = i;
-        }
-    }
-
-    // Output
-    for (int j = 0; j < 25; j++)    // a ~ y
-    {
-        cout << alphabet[j] << " ";
-    }
-    cout << alphabet[25] << endl;   // z
-
-    return 0;
-}
-```
-
-#### Golang
-```golang
-func main() {
-
-    // Input
-    var s string
-    fmt.Scanln(&s)
-
-    // Declare an array for alphabet
-    var alphabet []int
-    for i := 0; i < 26; i++ {
-        alphabet = append(alphabet, -1)
-    }
-    // fmt.Println(alphabet)                     // test : ok
-
-    // Find the location
-    for i := 0; i < len(s); i++ {
-        // fmt.Print(s[i] - 'a')                 // test : ok
-
-        if alphabet[s[i] - 'a'] == -1 {
-            alphabet[s[i] - 'a'] = i
-        }
-    }
-
-    // Output
-    // fmt.Println(alphabet)                     // test : [……]
-    for i := 0; i < 25; i++ {                    // a ~ y
-        fmt.Print(alphabet[i], " ")
-    }
-    fmt.Println(alphabet[25])                    // z
-}
-```
-
-
-## [2675. Repeating Characters](#list)
-
-> 2  
-> 3 ABC  
-> 5 /HTP
-
-> AAABBBCCC  
-> /////HHHHHTTTTTPPPPP
-
-#### Bash
-```Bash
-read t
-
-for ((i = 0; i < t; i++))
-do
-    # Read each data
-    read r s
-    let "len = ${#s}"
-
-    # Repeat each char r times
-    for ((j = 0; j < len; j++))
-    do
-        for ((k = 0; k < r; k++))
-        do
-            echo -n "${s:j:1}"
-        done
-    done
-    echo
-done
-```
-
-#### C++ 
-```cpp
-#include <iostream>
-#include <string>
-```
-```cpp
-int main()
-{
-    int p;
-    cin >> p;
-
-    int n;
-    string s;
-    for (int i = 0; i < p; i++)
-    {
-        cin >> n >> s;
-
-        for (int j = 0; j < s.length(); j++)
-        {
-            for (int k = 0; k < n; k++)
+            if (i < n)
             {
-                cout << s[j];
+                if (j < n-i-1) std::cout << ' ';
+                else if (j < n+i) std::cout << '*';
+                else continue;
+            }
+            else
+            {
+                if (j < i-n+1) std::cout << ' ';
+                else if (j < (2*n-1) -(i-n+1)) std::cout << '*';
+                else continue;
+                // 머리로 생각하지 말고, 손으로 그리고 식을 쓰고 계산하자.
             }
         }
-        cout << endl;
+        std::cout << '\n';
     }
 
     return 0;
 }
 ```
 
-#### Golang
-```golang
-func main() {
 
-    var t, r int
-    var s string
-    fmt.Scanln(&t)
+## [10988. 팰린드롬인지 확인하기](#list)
 
-    for i := 0; i < t; i++ {
-        fmt.Scanln(&r, &s)
+```txt
+level
+```
 
-        for j := 0; j < len(s); j++ {
-            for k := 0; k < r; k++ {
-                fmt.Print(string(s[j]))
-            }
+```txt
+1
+```
+
+#### C++ (2023.06.19)
+```cpp
+int main()
+{
+    // Input
+    string s;
+    std::cin >> s;
+    int len = s.size();
+    int isPalindrome = 1;
+
+    // Judge
+    for (int i = 0; i < len/2; i++)     // robust against if odd or even
+    {
+        if (s[i] != s[len-i-1])
+        {
+            isPalindrome = 0;
+            break;
         }
-        fmt.Println()
     }
+
+    // Output
+    std::cout << isPalindrome << endl;
+
+    return 0;
 }
 ```
 
 
 ## [1157. 단어 공부](#list)
 
-> Mississipi
+```txt
+Mississipi
+```
+```txt
+4 8 2
+?
+```
 
-> 4 8 2  
-> ?
-
-#### Bash
+#### Bash (2022.02.15)
 ```Bash
 # Read a string and get its length
 read s
@@ -410,7 +267,7 @@ fi
 ```
 > 시간 초과 : The maximum length of the word is 1,000,000
 
-#### C++ 
+#### C++ (2021.07.09)
 ```cpp
 #include <iostream>
 #include <string>
@@ -475,7 +332,7 @@ int main()
 }
 ```
 
-#### Golang
+#### Golang (2022.05.02)
 ```golang
 import (
     "fmt"
@@ -537,278 +394,16 @@ func main() {
 ```
 
 
-## [1152. 단어의 개수](#list)
-
-> The Curious Case of Benjamin Button
-
-> 6 (Maybe, difficult to operate `cin.eof()` directly in **C++**)
-
-#### Bash
-```Bash
-read -a s
-
-echo ${#s[@]}
-```
-
-#### C++ 
-```cpp
-#include <iostream>
-#include <string>
-#include <vector>
-```
-```cpp
-int main()
-{
-    // Input
-    vector<string> s;
-    string temp;
-    while (true)
-    {
-        cin >> temp;
-        if (cin.eof() == true)
-        {
-            break;
-        } else
-        {
-            s.push_back(temp);
-        }
-    }
-
-    cout << s.size() << endl;
-
-    return 0;
-}
-```
-
-#### Golang
-```golang
-import (
-    "fmt"
-    "bufio"
-    "os"
-    "strings"
-)
-```
-```golang
-func main() {
-
-    // Input data (faster)
-    var reader = bufio.NewReader(os.Stdin)
-
-    var s string
-    s, _ = reader.ReadString('\n')                    // not "\n"
-
-    // Split the string and count
-    words := strings.Fields(s)
-    // reference ☞ https://pkg.go.dev/strings#Fields
-
-    // Output
-    fmt.Println(len(words))
-}
-```
-
-
-## [2908. FILIP](#list)
-
-> 734 893
-
-> 437
-
-#### Bash
-```Bash
-# Input
-read a b
-
-# Reverse digits of a and b
-for i in {2..0..-1}
-do
-    a2+="${a:i:1}"
-    b2+="${b:i:1}"
-done
-
-# Output
-if [ $a2 -gt $b2 ]; then
-    echo $a2
-else
-    echo $b2
-fi
-```
-
-#### C++ 
-```cpp
-#include <iostream>
-#include <string>
-```
-```cpp
-int main()
-{
-    // Input a, b : two three digit numbers
-    string a, b;
-    cin >> a >> b;
-
-    // Reverse a, b
-    char aReverse[4], bReverse[4];
-    for (int i = 0; i < 3; i++)
-    {
-        aReverse[3 - i - 1] = a[i];
-        bReverse[3 - i - 1] = b[i];
-    }
-    // cout << aReverse << " " << bReverse << endl; // test
-
-    // Comepare aReverse with bReverse as int and find the larger
-    if (stoi(aReverse) > stoi(bReverse))            // A and B will not be equal
-    {
-        cout << aReverse << endl;
-    } else
-    {
-        cout << bReverse << endl;
-    }
-
-    return 0;
-}
-```
-
-#### Golang
-```golang
-import (
-    "fmt"
-    "strconv"
-)
-```
-```golang
-func main() {
-
-    // Input a, b as string
-    var a, b string
-    fmt.Scanln(&a, &b)
-
-    // Reverse a, b
-    var aRev, bRev string = "", ""
-    for i:= 0; i < 3; i++ {
-        aRev += string([]rune(a)[3 - i - 1])    // crazy
-        bRev += string([]rune(b)[3 - i - 1])
-    }
-
-    // Output
-    var aInt, bInt int
-    aInt, _ = strconv.Atoi(aRev)
-    bInt, _ = strconv.Atoi(bRev)
-    if aInt > bInt {                            // a != b
-        fmt.Println(aInt)
-    } else {
-        fmt.Println(bInt)
-    }
-}
-```
-
-
-## [5622. BAKA](#list)
-
-> UNUCIC
-
-> 36
-
-#### Bash
-```Bash
-# Input
-read s
-let "len = ${#s}"
-
-# Count time to turn the dial
-let "sum = 0"
-for ((i = 0; i < len; i++))
-do
-    letter=$(printf "%d" "'${s:i:1}'")
-    if [ $letter -le $(printf "%d" "'R'") ]; then
-        let "sum += $(($(($letter - 65)) / 3 + 2 + 1))"
-    elif [ $letter -le $(printf "%d" "'X'") ]; then
-        let "sum += $(($(($letter - 65 - 1)) / 3 + 2 + 1))"
-    else
-        let "sum += $(($(($letter - 65 - 2)) / 3 + 2 + 1))"
-    fi
-done
-
-echo $sum
-```
-
-#### C++ 
-```cpp
-#include <iostream>
-#include <string>
-```
-```cpp
-int main()
-{
-    // Input
-    string s;
-    cin >> s;
-
-    // Operate
-    int sLength = s.size();
-    int dial, time, sum = 0;
-    for (int i = 0; i < sLength; i++)
-    {
-        if (s[i] <= 'R')
-        {
-            dial = (s[i] - 'A') / 3 + 2;
-        } else if (s[i] >= 'S' && s[i] <= 'X')
-        {
-            dial = (s[i] - 'A' - 1) / 3 + 2;
-        } else
-        {
-            dial = (s[i] - 'A' - 2) / 3 + 2;
-        }
-
-        time = dial + 1;
-        sum += time;
-        cout << s[i] << " " << dial << " " << time << " " << sum << endl;   // test
-    }
-
-    // Output
-    cout << sum << endl;
-
-    return 0;
-}
-```
-
-#### Golang
-```golang
-func main() {
-
-    // Input string s
-    var s string
-    fmt.Scanln(&s)
-    var sRune []rune = []rune(s)
-
-    // Operate
-    var sLen int = len(s)
-    var dial, time, sum int = 0, 0, 0
-    for i := 0; i < sLen; i++ {
-        if sRune[i] <= 'R' {
-            dial = int(sRune[i] - 'A') / 3 + 2
-        } else if sRune[i] >= 'S' && sRune[i] <= 'X' {
-            dial = int(sRune[i] - 'A' - 1) / 3 + 2
-        } else {
-            dial = int(sRune[i] - 'A' - 2) / 3 + 2
-        }
-
-        time = dial + 1
-        sum += time
-    }
-
-    // Output
-    fmt.Println(sum)
-}
-```
-
-
 ## [2941. LJESNJAK](#list)
 
-> ljes=njak
+```txt
+ljes=njak
+```
+```txt
+6
+```
 
-> 6
-
-#### Bash
+#### Bash (2022.02.16)
 ```Bash
 # Input
 read s
@@ -848,7 +443,7 @@ done
 echo $((len - count))
 ```
 
-#### C++ 
+#### C++ (2021.07.09)
 ```cpp
 #include <iostream>
 #include <string>
@@ -909,7 +504,7 @@ int main()
 }
 ```
 
-#### Golang
+#### Golang (2022.06.20)
 Use different algorithm from other solvings of `Bash` `C++`
 ```golang
 import (
@@ -944,16 +539,23 @@ func main() {
 
 ## [1316. 그룹 단어 체커](#list)
 
-> 5  
-> ab  
-> aa  
-> aca  
-> ba  
-> bb
+```txt
+3
+happy
+new
+year
+3
+```
+```txt
+4
+aba
+abab
+abcabc
+a
+1
+```
 
-> 4
-
-#### Bash
+#### Bash (2022.02.16)
 ```Bash
 read n
 
@@ -1001,7 +603,7 @@ echo $count
 ```
 > 런타임 에러
 
-#### C++ 
+#### C++ (2021.07.09)
 ```cpp
 #include <iostream>
 #include <string>
@@ -1056,7 +658,7 @@ int main()
 }
 ```
 
-#### Golang
+#### Golang (2022.06.20)
 ```golang
 func main() {
 
@@ -1095,5 +697,81 @@ func main() {
 
     // Output
     fmt.Println(count)
+}
+```
+
+
+## [25206. 너의 평점은](#list)
+
+```txt
+ObjectOrientedProgramming1 3.0 A+
+IntroductiontoComputerEngineering 3.0 A+
+ObjectOrientedProgramming2 3.0 A0
+……
+ProblemSolving 4.0 P
+```
+```txt
+3.284483
+```
+
+#### C++ (2023.06.19)
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+// #define test
+#define endl '\n'
+
+using namespace std;
+```
+```cpp
+double convertGrade(string grade)
+{
+    const vector<string> grades = {"F", "F", "D0", "D+", "C0", "C+", "B0", "B+", "A0", "A+"};
+    int idx;
+    for (int i = 0; i < grades.size(); i++)
+    {
+        if (grade == grades[i])
+        {
+            idx = i;
+            break;
+        }
+    }
+    double convertedGrade = double(idx) * 0.5;
+
+    return convertedGrade;
+}
+```
+```cpp
+int main()
+{
+    // Declare
+    string title, sWeight, grade;
+    double sum = 0, convertedGrade, ans;
+    int cnt = 0, nWeight;
+
+    // Input & Operate
+    for (int i = 0; i < 20; i++)
+    {
+        std::cin >> title >> sWeight >> grade;
+        if (grade != "P")
+        {
+            convertedGrade = convertGrade(grade);
+            nWeight = sWeight[0] - '0';
+            sum += double(nWeight) * convertedGrade;
+            cnt += nWeight;
+        }
+
+        #ifdef test
+            std::cout << cnt << ' ' << convertedGrade << ' ' << sum << endl;
+        #endif
+    }
+
+    // Output
+    ans = sum / cnt;
+    std::cout << ans << endl;
+
+    return 0;
 }
 ```

@@ -1,4 +1,4 @@
-## BAEKJOON Online Judge
+## [BAEKJOON Online Judge](../../../../README.md#baekjoon-online-judge)
 
 # 문제 > 단계별로 풀어보기 > 3. 반복문 - 1) for문
 
@@ -14,14 +14,17 @@ https://www.acmicpc.net/step/3
 - [2739. 구구단](#2739-구구단)
 - [10950. A+B - 3](#10950-ab---3)
 - [8393. Sum](#8393-sum)
+- [25304. 영수증](#25304-영수증)
+- [25314. 코딩은 체육과목 입니다](#25314-코딩은-체육과목-입니다)
 - [15552. 빠른 A+B](#15552-빠른-ab)
-- [2741. N 찍기](#2741-n-찍기)
-- [2742. 기찍 N](#2742-기찍-n)
 - [11021. A+B - 7](#11021-ab---7)
 - [11022. A+B - 8](#11022-ab---8)
 - [2438. 별 찍기 - 1](#2438-별-찍기---1)
 - [2439. 별 찍기 - 2](#2439-별-찍기---2)
-- [10871. X보다 작은 수](#10871-x보다-작은-수)
+
+#### (Depreciated)
+- [2741. N 찍기](#2741-n-찍기)
+- [2742. 기찍 N](#2742-기찍-n)
 
 
 **※ Note**  
@@ -294,119 +297,63 @@ for i := 0; i < t; i++ {
 ```
 
 
-## [2741. N 찍기](#list)
 
-> 5
+## [25304. 영수증](#list)
 
-> 1 2 3 4 5 (vertically)
+(2023.06.17)
 
-#### Bash
-```bash
-read n
+> 260000  
+> 4  
+> 20000 5  
+> 30000 2  
+> 10000 6  
+> 5000 8
 
-for ((i = 1; i <= n; i++))
-do
-    echo $i
-done
-
-# read
-```
-> 시간 초과
+> Yes
 
 #### C++
 ```cpp
-// make cin/cout faster
-cin.tie(NULL);
-ios_base::sync_with_stdio(false);
+using ll = long long;
+```
+```cpp
+ll X;
+int N;
+std::cin >> X >> N;
 
-int a;
-cin >> a;
-
-for (int i = 1; i <= a; i++)
+ll sum = 0;
+int a, b;
+for (int n = 0; n < N; n++)
 {
-    cout << i << '\n';              // \n is faster than endl
+    std::cin >> a >> b;
+    sum += a * b;
 }
+
+if (X == sum) std::cout << "Yes" << '\n';
+else std::cout << "No" << '\n';
 
 return 0;
 ```
 
-#### Golang
-```go
-import (
-    "fmt"
-    "bufio"
-    "os"
-)
-```
-```go
-// var reader = bufio.NewReader(os.Stdin)      // do not need
-var writer = bufio.NewWriter(os.Stdout)
-defer writer.Flush()
 
-var n int
-fmt.Scanln(&n)
+## [25314. 코딩은 체육과목 입니다](#list)
 
-for i := 1; i <= n; i++ {
-    fmt.Fprintln(writer, i)
-}
-```
+(2023.06.17)
 
+> 20
 
-## [2742. 기찍 N](#list)
-
-> 5
-
-> 5 4 3 2 1 (vertically)
-
-#### Bash
-```bash
-read n
-
-for ((i = n; i > 0; i--))
-do
-    echo $i
-done
-
-# read
-```
-> 시간 초과
+> long long long long long int
 
 #### C++
 ```cpp
-// make cin/cout faster
-cin.tie(NULL);
-ios_base::sync_with_stdio(false);
+int N;
+cin >> N;
+N /= 4;                                                 // always N/4 > 0 and N%4 = 0
 
-int a;
-cin >> a;
-
-for (int i = a; i >= 1; i--)
-{
-    cout << i << '\n';              // \n is faster than endl
-}
+string str = "long";
+for (int n = 0; n < N; n++) std::cout << str << ' ';
+std::cout << "int" << '\n';
 
 return 0;
-```
-
-#### Golang
-```go
-import (
-    "fmt"
-    "bufio"
-    "os"
-)
-```
-```go
-// var reader = bufio.NewReader(os.Stdin)      // do not need
-var writer = bufio.NewWriter(os.Stdout)
-defer writer.Flush()
-
-var n int
-fmt.Scanln(&n)
-
-for i := n; i > 0; i-- {
-    fmt.Fprintln(writer, i)
-}
 ```
 
 
@@ -664,61 +611,117 @@ for i := 1; i <= n; i++ {
 ```
 
 
-## [10871. X보다 작은 수](#list)
+## [2741. N 찍기](#list)
 
-> 10 5  
-> 1 10 4 9 2 3 8 5 7 6
+> 5
 
-> 1 4 2 3
+> 1 2 3 4 5 (vertically)
 
 #### Bash
 ```bash
-read n x
-read list
+read n
 
-for num in $list
+for ((i = 1; i <= n; i++))
 do
-    if [ $num -lt $x ]; then
-        echo -n "$num "
-    fi
+    echo $i
 done
-
-echo ' '
 
 # read
 ```
+> 시간 초과
 
 #### C++
 ```cpp
-int n, x;
-int arr[10000];                 // .exe file stops when int arr[n], although compilation succeeded
-cin >> n >> x;
+// make cin/cout faster
+cin.tie(NULL);
+ios_base::sync_with_stdio(false);
 
-for (int i = 0; i < n; i++)
+int a;
+cin >> a;
+
+for (int i = 1; i <= a; i++)
 {
-    cin >> arr[i];
-    if (arr[i] < x)
-    {
-        cout << arr[i] << ' ';
-    }
+    cout << i << '\n';              // \n is faster than endl
 }
-cout << '\n';
 
 return 0;
 ```
 
+#### Golang
+```go
+import (
+    "fmt"
+    "bufio"
+    "os"
+)
+```
+```go
+// var reader = bufio.NewReader(os.Stdin)      // do not need
+var writer = bufio.NewWriter(os.Stdout)
+defer writer.Flush()
+
+var n int
+fmt.Scanln(&n)
+
+for i := 1; i <= n; i++ {
+    fmt.Fprintln(writer, i)
+}
+```
+
+
+## [2742. 기찍 N](#list)
+
+> 5
+
+> 5 4 3 2 1 (vertically)
+
+#### Bash
+```bash
+read n
+
+for ((i = n; i > 0; i--))
+do
+    echo $i
+done
+
+# read
+```
+> 시간 초과
+
+#### C++
+```cpp
+// make cin/cout faster
+cin.tie(NULL);
+ios_base::sync_with_stdio(false);
+
+int a;
+cin >> a;
+
+for (int i = a; i >= 1; i--)
+{
+    cout << i << '\n';              // \n is faster than endl
+}
+
+return 0;
+```
 
 #### Golang
 ```go
-var n, x int
-fmt.Scanln(&n, &x)
+import (
+    "fmt"
+    "bufio"
+    "os"
+)
+```
+```go
+// var reader = bufio.NewReader(os.Stdin)      // do not need
+var writer = bufio.NewWriter(os.Stdout)
+defer writer.Flush()
 
-for i := 0; i < n; i++ {
-    var num int
-    fmt.Scanf("%d", &num)
-    if num < x {
-        fmt.Printf("%d ", num)
-    }
+var n int
+fmt.Scanln(&n)
+
+for i := n; i > 0; i-- {
+    fmt.Fprintln(writer, i)
 }
-// fmt.Println("\b")            // causes wrong?
 ```

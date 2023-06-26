@@ -1,8 +1,11 @@
 ## BAEKJOON Online Judge
 
-# # 문제 > 단계별로 풀어보기 > 10. 브루트 포스
+# 문제 > 단계별로 풀어보기 > 12. 브루트 포스
+
 (2021.12.10)  
+
 https://www.acmicpc.net/step/22
+
 
 ※ All the `C++` codes **skipped** the below lines. :
 ```cpp

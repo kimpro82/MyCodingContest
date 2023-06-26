@@ -1,8 +1,11 @@
-## BAEKJOON Online Judge
+## [BAEKJOON Online Judge](/README.md#baekjoon-online-judge)
 
-## 문제 > 단계별로 풀어보기 > 8. 기본 수학 2
-(2021.07.20)  
+# 문제 > 단계별로 풀어보기 > 9. 일반 수학 2 : 약수, 배수와 소수
+
+(2021.07.20)
+
 https://www.acmicpc.net/step/10
+
 
 ※ C++ codes : **skipped** `main()` function's brace(`{}`) and its outside  
 &nbsp; - Basically, all the codes has the `<iostream>` header and namespace `std` even if there's no mention.  

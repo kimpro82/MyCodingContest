@@ -50,13 +50,13 @@ can't escape this endless valley of despair ……
 
 | 단계 | Bash | C++ | Golang | 기타 |
 |:--|:-:|:-:|:-:|:-:|
-| [1. 입출력과 사칙연산](/BaekJoon/Problems/Step/01#baekjoon-online-judge) | 22.01.26 | 21.05.13 | 22.03.12 | Python - '21.05.13<br>R - '21.07.11<br>Text - '22.01.26<br>SystemVerilog - '22.09.05 |
-| [2. 조건문](/BaekJoon/Problems/Step/02#baekjoon-online-judge) | 22.01.29 | 21.05.24 | 22.03.14 | R - '21.07.14 |
+| [1. 입출력과 사칙연산](/BaekJoon/Problems/Step/01#baekjoon-online-judge) | 22.01.26 | 21.05.13 | 22.03.12 | Python - 21.05.13<br>R - 21.07.11<br>Text - 22.01.26<br>SystemVerilog - 22.09.05 |
+| [2. 조건문](/BaekJoon/Problems/Step/02#baekjoon-online-judge) | 22.01.29 | 21.05.24 | 22.03.14 | R - 21.07.14 |
 | [3.1. 반복문 1. for문](/BaekJoon/Problems/Step/03-1#baekjoon-online-judge) | 22.01.31 | 21.05.25 | 22.03.18 | |
 | [3.2. 반복문 2. while문](/BaekJoon/Problems/Step/03-2#baekjoon-online-judge) | 22.02.02 | 21.05.26 | 22.03.29 | |
-| [4. 1차원 배열](/BaekJoon/Problems/Step/04#baekjoon-online-judge) | 22.02.03 | 21.06.14<br>'23.06.19 | 22.04.13 | |
-| [5. 문자열](/BaekJoon/Problems/Step/05#baekjoon-online-judge) | 22.02.16 | 21.07.10<br>'23.06.19 | 22.06.20 | |
-| [~5. 함수~](/BaekJoon/Problems/Step/05_#baekjoon-online-judge) | | 21.06.18 | 22.04.17 | Text - '22.03.11 |
+| [4. 1차원 배열](/BaekJoon/Problems/Step/04#baekjoon-online-judge) | 22.02.03 | 21.06.14<br>23.06.19 | 22.04.13 | |
+| [5. 문자열](/BaekJoon/Problems/Step/05#baekjoon-online-judge) | 22.02.16 | 21.07.10<br>23.06.19 | 22.06.20 | |
+| [~5. 함수~](/BaekJoon/Problems/Step/05_#baekjoon-online-judge) | | 21.06.18 | 22.04.17 | Text - 22.03.11 |
 | [6. 심화 1](/BaekJoon/Problems/Step/06#baekjoon-online-judge) | | 23.06.19 | | |
 | [8. 일반 수학 1](/BaekJoon/Problems/Step/08#baekjoon-online-judge) | 22.03.11 | 21.07.12<br>(under construction) | | |
 | [9. 약수, 배수와 소수](/BaekJoon/Problems/Step/09#baekjoon-online-judge) | | 21.07.20<br>(under construction) | | |

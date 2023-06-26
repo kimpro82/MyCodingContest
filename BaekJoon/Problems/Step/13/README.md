@@ -1,6 +1,6 @@
-## BAEKJOON Online Judge
+## [BAEKJOON Online Judge](/README.md#baekjoon-online-judge)
 
-# # 문제 > 단계별로 풀어보기 > 11. 정렬
+# 문제 > 단계별로 풀어보기 > 13. 정렬
 
 https://www.acmicpc.net/step/9
 

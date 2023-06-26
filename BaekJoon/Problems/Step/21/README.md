@@ -1,8 +1,11 @@
-## BAEKJOON Online Judge
+## [BAEKJOON Online Judge](/README.md#baekjoon-online-judge)
 
-# 문제 > 단계별로 풀어보기 > 9. 재귀 - (not completed)
+# 문제 > 단계별로 풀어보기 > 21. 재귀 - (not completed)
+
 (2021.09.15)  
+
 https://www.acmicpc.net/step/19
+
 
 ※ All the `C++` codes **skipped** the below lines. :
 ```cpp

@@ -1,6 +1,6 @@
-## BAEKJOON Online Judge
+## [BAEKJOON Online Judge](/README.md#baekjoon-online-judge)
 
-# # 문제 > 단계별로 풀어보기 > 12. 집합과 맵
+# 문제 > 단계별로 풀어보기 > 14. 집합과 맵
 
 https://www.acmicpc.net/step/49
 

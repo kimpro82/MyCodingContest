@@ -10,15 +10,17 @@ https://www.acmicpc.net/step/8
 
 ## **List**
 
-- [1712. 손익분기점](#1712-손익분기점)
 - [2292. 벌집](#2292-벌집)
 - [1193. 분수찾기](#1193-분수찾기)
 - [2869. PUŽ](#2869-puž)
+- [10757. 큰 수 A+B](#10757-큰-수-ab)
+
+#### (Depreciated)
+- [1712. 손익분기점](#1712-손익분기점)
 - [10250. ACM Hotel](#10250-acm-hotel)
 - [2775. 부녀회장이 될테야](#2775-부녀회장이-될테야)
 - [2839. ŠEĆER](#2839-šećer)
-- [10757. 큰 수 A+B](#10757-큰-수-ab)
-- [1011. Fly me to the Alpha Centauri](#1011-fly-me-to-the-alpha-centauri---excluded) - *excluded*
+- [1011. Fly me to the Alpha Centauri](#1011-fly-me-to-the-alpha-centauri---excluded)
 
 
 **※ Note**
@@ -28,43 +30,6 @@ https://www.acmicpc.net/step/8
 &nbsp;&nbsp; - `C++` : skipped `main()` function's brace(`{}`) and its outside(`<iostream>` header and namespace `std`).  
 &nbsp;&nbsp;&nbsp;&nbsp; · Basically, all the codes has the `<iostream>` header and namespace `std` even if there's no mention.  
 &nbsp;&nbsp;&nbsp;&nbsp; · When any additional header is used, the header block is also noted seperately.  
-
-
-## [1712. 손익분기점](#list)
-
-> 1000 70 170
-
-> 11
-
-#### Bash
-```bash
-read a b c
-
-let "margin = c - b"
-
-if [ $margin -gt 0 ]; then
-    echo $((a / margin + 1))
-else
-    echo -1
-fi
-```
-
-#### C++ 
-```cpp
-int a, b, c;
-cin >> a >> b >> c;
-
-int margin = c - b;
-if (c - b > 0)                      // Find if price(c) - variable cost(b) > 0
-{
-    cout << a / margin + 1 << endl;
-} else                              // Never can reach BEP
-{
-    cout << -1 << endl;
-}
-
-return 0;
-```
 
 
 ## [2292. 벌집](#list)
@@ -253,187 +218,6 @@ return 0;
 ```
 
 
-## [10250. ACM Hotel](#list)
-
-> 2  
-> 6 12 10  
-> 30 50 72
-
-> 402  
-> 1203
-
-#### Bash
-```bash
-read t
-
-for ((i = 0; i < t; i++))
-do
-    read h w n
-
-    let "room = (n - 1) / h + 1"
-    let "floor = n % h"
-
-    if [ $floor -eq 0 ]; then
-        let "floor = h"
-    fi
-
-    if [ $room -lt 10 ]; then
-        echo ${floor}0${room}
-    else
-        echo ${floor}${room}
-    fi
-done
-```
-
-#### C++ 
-```cpp
-int T, H, W, N;
-// T : the number of test cases
-// H : the number of floors, < 99
-// W : the number of rooms on each floor, < 99
-// N : the index of the arrival time of the guest, < H * W 
-cin >> T;
-
-// Test T times
-for (int t = 0; t < T; t++)
-{
-    cin >> H >> W >> N;
-
-    // Operation
-    int room = (N - 1) / H + 1; // room is prior to floor
-    int floor = N % H;          // the first floor's room number is 1XX
-    if (floor == 0)
-    {
-        floor = H;
-    }
-
-    // Output
-    if (room < 10)
-    {
-        cout << floor << 0 << room << endl;
-    } else
-    {
-        cout << floor << room << endl;
-    }
-}
-
-return 0;
-```
-
-
-## [2775. 부녀회장이 될테야](#list)
-
-> 2  
-> 1  
-> 3  
-> 2  
-> 3
-
-> 6  
-> 10
-
-#### Bash
-Rumor has it that there's a tricky way to use **2d array** in Bash although isn't supplied regularly, but I feel quite annoyed today ……
-
-#### C++ 
-```cpp
-int T;
-cin >> T;
-
-// Test T times
-for (int t = 0; t < T; t++)
-{
-    int K, N;
-    cin >> K >> N;
-
-    int resident[15][15] = {};      // assumed 0-th floor and 0-th room
-    for (int k = 0; k <= K; k++)
-    {
-        for (int n = 0; n <= N; n++)
-        {
-            if (k == 0) resident[k][n] = n;
-            else if (n <= 1) resident[k][n] = n;
-            else resident[k][n] = resident[k-1][n] + resident[k][n-1];
-        }
-    }
-
-    // Output
-    cout << resident[K][N] << endl;
-}
-
-return 0;
-```
-
-
-## [2839. ŠEĆER](#list)
-
-> 18
-
-> 4
-
-#### Bash
-```bash
-read n
-
-let "bag3 = 0"
-let "rest = 1"
-
-for ((i = 0; i <= $((n / 3)); i++))
-do
-    # if [[ $(($((n - i * 3)) % 5)) == 0 ]]; then       # worse readability
-    let "criteria = (n - i * 3) % 5"
-    if [ $criteria -eq 0 ]; then
-        let "bag3 = i"
-        let "rest = 0"
-        break
-    fi
-
-    # test
-    # echo ${bag3} $((bag3 * 3)) $((n - bag3 * 3))
-done
-
-
-
-if [ $rest -eq 0 ]; then
-    echo $((bag3 + (n - bag3 * 3) /  5))
-else
-    echo -1
-fi
-```
-
-#### C++ 
-```cpp
-int N;
-cin >> N;       // 3 <= n <= 5000
-
-int bag3 = 0;
-bool rest = true;
-for (int i = 0; i <= N / 3; i++)
-{
-    if ((N - i * 3) % 5 == 0)
-    {
-        bag3 = i;
-        rest = false;
-        break;
-    }
-}
-
-// Test
-// cout << bag3 << " " << bag3 * 3 << " " << (N - bag3 * 3) << endl;
-
-// Output
-if (rest == false)
-{
-    cout << bag3 + (N - bag3 * 3) / 5 << endl;
-} else
-{
-    cout << -1 << endl;
-}
-
-return 0;
-```
-
-
 ## [10757. 큰 수 A+B](#list)
 
 > 9223372036854775807 9223372036854775808
@@ -597,7 +381,225 @@ return 0;
 ```
 
 
-## [1011. Fly me to the Alpha Centauri](#list) - *excluded*
+## [1712. 손익분기점](#list) (Depreciated)
+
+> 1000 70 170
+
+> 11
+
+#### Bash
+```bash
+read a b c
+
+let "margin = c - b"
+
+if [ $margin -gt 0 ]; then
+    echo $((a / margin + 1))
+else
+    echo -1
+fi
+```
+
+#### C++ 
+```cpp
+int a, b, c;
+cin >> a >> b >> c;
+
+int margin = c - b;
+if (c - b > 0)                      // Find if price(c) - variable cost(b) > 0
+{
+    cout << a / margin + 1 << endl;
+} else                              // Never can reach BEP
+{
+    cout << -1 << endl;
+}
+
+return 0;
+```
+
+
+## [10250. ACM Hotel](#list) (Depreciated)
+
+> 2  
+> 6 12 10  
+> 30 50 72
+
+> 402  
+> 1203
+
+#### Bash
+```bash
+read t
+
+for ((i = 0; i < t; i++))
+do
+    read h w n
+
+    let "room = (n - 1) / h + 1"
+    let "floor = n % h"
+
+    if [ $floor -eq 0 ]; then
+        let "floor = h"
+    fi
+
+    if [ $room -lt 10 ]; then
+        echo ${floor}0${room}
+    else
+        echo ${floor}${room}
+    fi
+done
+```
+
+#### C++ 
+```cpp
+int T, H, W, N;
+// T : the number of test cases
+// H : the number of floors, < 99
+// W : the number of rooms on each floor, < 99
+// N : the index of the arrival time of the guest, < H * W 
+cin >> T;
+
+// Test T times
+for (int t = 0; t < T; t++)
+{
+    cin >> H >> W >> N;
+
+    // Operation
+    int room = (N - 1) / H + 1; // room is prior to floor
+    int floor = N % H;          // the first floor's room number is 1XX
+    if (floor == 0)
+    {
+        floor = H;
+    }
+
+    // Output
+    if (room < 10)
+    {
+        cout << floor << 0 << room << endl;
+    } else
+    {
+        cout << floor << room << endl;
+    }
+}
+
+return 0;
+```
+
+
+## [2775. 부녀회장이 될테야](#list) (Depreciated)
+
+> 2  
+> 1  
+> 3  
+> 2  
+> 3
+
+> 6  
+> 10
+
+#### Bash
+Rumor has it that there's a tricky way to use **2d array** in Bash although isn't supplied regularly, but I feel quite annoyed today ……
+
+#### C++ 
+```cpp
+int T;
+cin >> T;
+
+// Test T times
+for (int t = 0; t < T; t++)
+{
+    int K, N;
+    cin >> K >> N;
+
+    int resident[15][15] = {};      // assumed 0-th floor and 0-th room
+    for (int k = 0; k <= K; k++)
+    {
+        for (int n = 0; n <= N; n++)
+        {
+            if (k == 0) resident[k][n] = n;
+            else if (n <= 1) resident[k][n] = n;
+            else resident[k][n] = resident[k-1][n] + resident[k][n-1];
+        }
+    }
+
+    // Output
+    cout << resident[K][N] << endl;
+}
+
+return 0;
+```
+
+
+## [2839. ŠEĆER](#list) (Depreciated)
+
+> 18
+
+> 4
+
+#### Bash
+```bash
+read n
+
+let "bag3 = 0"
+let "rest = 1"
+
+for ((i = 0; i <= $((n / 3)); i++))
+do
+    # if [[ $(($((n - i * 3)) % 5)) == 0 ]]; then       # worse readability
+    let "criteria = (n - i * 3) % 5"
+    if [ $criteria -eq 0 ]; then
+        let "bag3 = i"
+        let "rest = 0"
+        break
+    fi
+
+    # test
+    # echo ${bag3} $((bag3 * 3)) $((n - bag3 * 3))
+done
+
+
+
+if [ $rest -eq 0 ]; then
+    echo $((bag3 + (n - bag3 * 3) /  5))
+else
+    echo -1
+fi
+```
+
+#### C++ 
+```cpp
+int N;
+cin >> N;       // 3 <= n <= 5000
+
+int bag3 = 0;
+bool rest = true;
+for (int i = 0; i <= N / 3; i++)
+{
+    if ((N - i * 3) % 5 == 0)
+    {
+        bag3 = i;
+        rest = false;
+        break;
+    }
+}
+
+// Test
+// cout << bag3 << " " << bag3 * 3 << " " << (N - bag3 * 3) << endl;
+
+// Output
+if (rest == false)
+{
+    cout << bag3 + (N - bag3 * 3) / 5 << endl;
+} else
+{
+    cout << -1 << endl;
+}
+
+return 0;
+```
+
+
+## [1011. Fly me to the Alpha Centauri](#list) (Depreciated)
 
 > 3  
 > 0 3  

@@ -16,7 +16,6 @@
 #include <iostream>
 #include <vector>
 
-#define test
 #define endl '\n'
 
 using namespace std;

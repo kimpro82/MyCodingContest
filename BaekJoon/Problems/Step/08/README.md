@@ -4,15 +4,19 @@
 
 https://www.acmicpc.net/step/8
 
-(2021.07.12) - `C++`  
+(2021.07.12, 2023.06.28) - `C++`  
 (2022.03.11) - `Bash`
 
 
 ## **List**
 
+- [2745. 진법 변환](#2745-진법-변환) *(new)*
+- [11005. 진법 변환 2](#11005-진법-변환-2) *(new)*
+- [2720. Quick Change(세탁소 사장 동혁)](#2720-quick-change세탁소-사장-동혁) *(new)*
+- [2903. PLANINA](#2903-planina) *(new)*
 - [2292. 벌집](#2292-벌집)
 - [1193. 분수찾기](#1193-분수찾기)
-- [2869. PUŽ](#2869-puž)
+- [2869. PUŽ(달팽이는 올라가고 싶다)](#2869-puž달팽이는-올라가고-싶다)
 - [10757. 큰 수 A+B](#10757-큰-수-ab)
 
 #### (Depreciated)
@@ -32,13 +36,203 @@ https://www.acmicpc.net/step/8
 &nbsp;&nbsp;&nbsp;&nbsp; · When any additional header is used, the header block is also noted seperately.  
 
 
+## [2745. 진법 변환](#list)
+
+```txt
+ZZZZZ 36
+```
+```txt
+60466175
+```
+
+#### C++ (2023.06.27)
+```cpp
+#include <iostream>
+#include <cmath>
+
+// #define test
+#define endl '\n'
+
+using namespace std;
+```
+```cpp
+int main()
+{
+    // Input : N <= 10^9, 2 <= B <= 36
+    string N;
+    int B;
+    cin >> N >> B;
+
+    // Operate
+    int len = N.size();
+    int sum = 0;
+    char c;
+    for (int i = 0; i < len; i++)
+    {
+        c = N[len-i-1];
+        if (c <= '9') sum += (c - '0')  * int(pow(B, i));
+        else sum += (c - 'A' + 10) * int(pow(B, i));
+
+        #ifdef test
+            printf("%d %c %d\n", i, c, sum);
+        #endif
+    }
+
+    // Output
+    cout << sum << endl;
+
+    return 0;
+}
+```
+
+
+## [11005. 진법 변환 2](#list)
+
+```txt
+60466175 36
+```
+```txt
+ZZZZZ
+```
+
+#### C++ (2023.06.28)
+```cpp
+#include <iostream>
+#include <vector>
+
+// #define test
+#define endl '\n'
+
+using namespace std;
+```
+```cpp
+int main()
+{
+    // Input : N <= 10^9, 2 <= B <= 36
+    int N, B;
+    cin >> N >> B;
+
+    // Operate
+    vector<char> v;
+    int temp;
+    char c;
+    while (N > 0)
+    {
+        temp = N % B;                                       // temp must be less than B
+        if (temp < 10) c = char(temp + '0');
+        else c = char(temp - 10 + 'A');
+        v.push_back(c);
+        N /= B;
+
+        #ifdef test
+            printf("N:%d temp:%d char:%c\n", N, temp, c);
+        #endif
+    }
+
+    // Output
+    int len = v.size();
+    for (int i = 0; i < len; i++) cout << v[len-i-1];
+    cout << endl;
+
+    return 0;
+}
+```
+
+
+## [2720. Quick Change(세탁소 사장 동혁)](#list)
+
+```txt
+3
+124
+25
+194
+```
+```txt
+4 2 0 4
+1 0 0 0
+7 1 1 4
+```
+
+#### C++ (2023.06.28)
+```cpp
+#include <iostream>
+#include <vector>
+
+#define endl '\n'
+
+using namespace std;
+```
+```cpp
+int main()
+{
+    // Input : 1 <= C <= 500
+    int T, c;
+    cin >> T;
+    vector<int> C;
+    for (int t = 0; t < T; t++)
+    {
+        cin >> c;
+        C.push_back(c);
+    }
+
+    // Operate & Output
+    vector<int> v = {25, 10, 5, 1};
+    int len = v.size();
+    for (int t = 0; t < T; t++)
+    {
+        vector<int> cnt(len, 0);
+        for (int i = 0; i < len; i++)
+        {
+            cnt[i] += C[t] / v[i];
+            C[t] -= cnt[i] * v[i];
+
+            cout << cnt[i] << ' ';
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
+```
+
+
+## [2903. PLANINA](#list)
+
+```txt
+5
+```
+```txt
+1089
+```
+
+#### C++ (2023.06.28)
+```cpp
+int main()
+{
+    // Input : 1 <= N <= 15
+    int N;
+    cin >> N;
+
+    // Operate : avoid pow() because it returns wrong values in MinGWs
+    int quad = 1;
+    for (int i = 0; i < N; i++) quad *= 2;
+    int ans = (quad + 1) *  (quad + 1);                     // max < 2.1b when N = 15
+
+    // Output
+    cout << ans << endl;
+
+    return 0;
+}
+```
+
+
 ## [2292. 벌집](#list)
 
 > 13
 
 > 3
 
-#### Bash
+#### Bash (2022.03.11)
 ```bash
 read n
 
@@ -56,24 +250,27 @@ done
 echo $((move + 1))
 ```
 
-#### C++ 
+#### C++ (2022.07.12)
 ```cpp
-int a;
-cin >> a;
-
-int move = 0;
-while (a > 1)
+int main()
 {
-    move++;
-    a -= 6 * move;
+    int a;
+    cin >> a;
 
-    // test
-    // cout << a << " " << move << endl;
+    int move = 0;
+    while (a > 1)
+    {
+        move++;
+        a -= 6 * move;
+
+        // test
+        // cout << a << " " << move << endl;
+    }
+
+    cout << move + 1 << endl;
+
+    return 0;
 }
-
-cout << move + 1 << endl;
-
-return 0;
 ```
 
 
@@ -88,7 +285,7 @@ return 0;
 > 14 5 15  
 > 2/4
 
-#### Bash
+#### Bash (2022.03.11)
 ```bash
 read x
 
@@ -118,39 +315,42 @@ fi
 echo ${numerator}/${denominator}
 ```
 
-#### C++ 
+#### C++ (2022.07.12)
 ```cpp
-int x;
-cin >> x;
-
-int zigzag = 0, sum = 0;
-while (x > sum)
+int main()
 {
-    zigzag++;
-    sum += zigzag;
+    int x;
+    cin >> x;
 
-    // test
-    cout << x << " " << zigzag << " " << sum << endl;
+    int zigzag = 0, sum = 0;
+    while (x > sum)
+    {
+        zigzag++;
+        sum += zigzag;
+
+        // test
+        cout << x << " " << zigzag << " " << sum << endl;
+    }
+
+    int numerator, denominator;
+    if (zigzag % 2 == 0)
+    {
+        denominator = sum - x + 1;
+        numerator = zigzag - denominator + 1;         
+    } else
+    {
+        numerator = sum - x + 1;
+        denominator = zigzag - numerator + 1;
+    }
+
+    cout << numerator << '/' << denominator << endl;
+
+    return 0;
 }
-
-int numerator, denominator;
-if (zigzag % 2 == 0)
-{
-    denominator = sum - x + 1;
-    numerator = zigzag - denominator + 1;         
-} else
-{
-    numerator = sum - x + 1;
-    denominator = zigzag - numerator + 1;
-}
-
-cout << numerator << '/' << denominator << endl;
-
-return 0;
 ```
 
 
-## [2869. PUŽ](#list)
+## [2869. PUŽ(달팽이는 올라가고 싶다)](#list)
 
 > 5 1 6
 
@@ -158,7 +358,7 @@ return 0;
 > 2 9 3  
 > 2
 
-#### Bash
+#### Bash (2022.03.11)
 ```bash
 read a b v
 
@@ -183,38 +383,41 @@ done
 echo $day
 ```
 
-#### C++ 
+#### C++ (2022.07.12)
 ```cpp
-int a, b, v;
-// a : climb upwards in a day
-// b : back down each night, always a > b
-// v : wooden pole's height
-cin >> a >> b >> v;
-
-// Find the minimum day
-int day = (v - b) / (a - b) - 1;
-int location = (a - b) * day;
-
-// Climb
-while (true)
+int main()
 {
-    day++;
-    location += a;
-    
-    // test
-    cout << day << " " << location << " " << location - v << endl;
+    int a, b, v;
+    // a : climb upwards in a day
+    // b : back down each night, always a > b
+    // v : wooden pole's height
+    cin >> a >> b >> v;
 
-    if (location >= v)
+    // Find the minimum day
+    int day = (v - b) / (a - b) - 1;
+    int location = (a - b) * day;
+
+    // Climb
+    while (true)
     {
-        break;
+        day++;
+        location += a;
+        
+        // test
+        cout << day << " " << location << " " << location - v << endl;
+
+        if (location >= v)
+        {
+            break;
+        }
+        location -= b;
     }
-    location -= b;
+
+    // Output
+    cout << day << endl;
+
+    return 0;
 }
-
-// Output
-cout << day << endl;
-
-return 0;
 ```
 
 
@@ -225,7 +428,7 @@ return 0;
 > 51615590737044764481  
 > 18446744073709551615
 
-#### Bash
+#### Bash (2022.03.11)
 ```bash
 read a b
 let "aLen = ${#a}"
@@ -302,82 +505,84 @@ echo
 ```
 > Time Litmit Exceeded
 
-#### C++ 
+#### C++ (2022.07.12)
 ```cpp
 #include <iostream>
 #include <string>
+
+using namespace std;
+#define endl '\n'
 ```
 ```cpp
-string a, b;
-char sum[10002];
-cin >> a >> b;
-
-int aSize = a.size(), bSize = b.size();
-int minSize = min(aSize, bSize);
-int maxSize = max(aSize, bSize);
-int buffer = 0;
-
-// test
-// cout << minSize << " " << maxSize << endl;   // 19 19 - OK
-```
-```cpp
-// Sum each digit : 0 ~ minSize - 1
-// sum contains numbers in reverse order
-for (int i = 0; i < minSize; i++)
+int main()
 {
-    buffer += (a[aSize - 1 - i] - '0') + (b[bSize - 1 - i] - '0');
-    if (buffer < 10)
+    string a, b;
+    char sum[10002];
+    cin >> a >> b;
+
+    int aSize = a.size(), bSize = b.size();
+    int minSize = min(aSize, bSize);
+    int maxSize = max(aSize, bSize);
+    int buffer = 0;
+
+    // test
+    // cout << minSize << " " << maxSize << endl;   // 19 19 - OK
+
+    // Sum each digit : 0 ~ minSize - 1
+    // sum contains numbers in reverse order
+    for (int i = 0; i < minSize; i++)
     {
-        sum[i] = (char) (buffer + '0');
-        buffer = 0;
-    } else
+        buffer += (a[aSize - 1 - i] - '0') + (b[bSize - 1 - i] - '0');
+        if (buffer < 10)
+        {
+            sum[i] = (char) (buffer + '0');
+            buffer = 0;
+        } else
+        {
+            sum[i] = (char) (buffer - 10 + '0');
+            buffer = 1;
+        }
+
+        // test
+        cout << i << " " << a[aSize - 1 - i] << " " << b[bSize - 1 - i] << " " << buffer << " " << sum[i] << endl; 
+    }
+
+    // Residual digit : minSize ~ maxSize - 1
+    for (int j = minSize; j < maxSize; j++)
     {
-        sum[i] = (char) (buffer - 10 + '0');
-        buffer = 1;
+        if (aSize > bSize) buffer += a[aSize - 1 - j] - '0';
+        else buffer += b[bSize - 1 - j] - '0';   
+
+        if (buffer < 10)
+        {
+            sum[j] = (char) (buffer + '0');
+            buffer = 0;
+        } else
+        {
+            sum[j] = (char) (buffer - 10 + '0');
+            buffer = 1;
+        }
+    }
+
+    // Residual digit : maxSize
+    if (buffer == 1)
+    {
+        sum[maxSize] = '1';
+        maxSize++;
     }
 
     // test
-    cout << i << " " << a[aSize - 1 - i] << " " << b[bSize - 1 - i] << " " << buffer << " " << sum[i] << endl; 
-}
-```
-```cpp
-// Residual digit : minSize ~ maxSize - 1
-for (int j = minSize; j < maxSize; j++)
-{
-    if (aSize > bSize) buffer += a[aSize - 1 - j] - '0';
-    else buffer += b[bSize - 1 - j] - '0';   
+    cout << sum << endl;
 
-    if (buffer < 10)
+    // Output
+    for (int l = 0; l < maxSize; l++)
     {
-        sum[j] = (char) (buffer + '0');
-        buffer = 0;
-    } else
-    {
-        sum[j] = (char) (buffer - 10 + '0');
-        buffer = 1;
+        cout << sum[maxSize - 1 - l];
     }
-}
-```
-```cpp
-// Residual digit : maxSize
-if (buffer == 1)
-{
-    sum[maxSize] = '1';
-    maxSize++;
-}
+    cout << endl;
 
-// test
-cout << sum << endl;
-```
-```cpp
-// Output
-for (int l = 0; l < maxSize; l++)
-{
-    cout << sum[maxSize - 1 - l];
+    return 0;
 }
-cout << endl;
-
-return 0;
 ```
 
 

@@ -24,7 +24,7 @@ https://www.acmicpc.net/step/8
 - [10250. ACM Hotel(ACM 호텔)](#10250-acm-hotelacm-호텔)
 - [2775. 부녀회장이 될테야](#2775-부녀회장이-될테야)
 - [2839. ŠEĆER(설탕 배달)](#2839-šećer설탕-배달)
-- [1011. Fly me to the Alpha Centauri](#1011-fly-me-to-the-alpha-centauri---excluded)
+- [1011. Fly me to the Alpha Centauri](#1011-fly-me-to-the-alpha-centauri)
 
 
 **※ Note**

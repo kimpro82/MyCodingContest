@@ -58,7 +58,8 @@ can't escape this endless valley of despair ……
 | [5. 문자열](/BaekJoon/Problems/Step/05#baekjoon-online-judge) | 22.02.16 | 21.07.10<br>23.06.19 | 22.06.20 | |
 | [~5. 함수~](/BaekJoon/Problems/Step/05_#baekjoon-online-judge) | | 21.06.18 | 22.04.17 | Text - 22.03.11 |
 | [6. 심화 1](/BaekJoon/Problems/Step/06#baekjoon-online-judge) | | 23.06.19 | | |
-| [8. 일반 수학 1](/BaekJoon/Problems/Step/08#baekjoon-online-judge) | 22.03.11 | 21.07.12<br>(under construction) | | |
+| [7. 2차원 배열](/BaekJoon/Problems/Step/07#baekjoon-online-judge) | | 23.06.27 | | |
+| [8. 일반 수학 1](/BaekJoon/Problems/Step/08#baekjoon-online-judge) | 22.03.11 | 21.07.12<br>23.06.28 | | |
 | [9. 약수, 배수와 소수](/BaekJoon/Problems/Step/09#baekjoon-online-judge) | | 21.07.20<br>(under construction) | | |
 | [12. 브루트 포스](/BaekJoon/Problems/Step/12#baekjoon-online-judge) | | 21.12.10 | | |
 | [13. 정렬](/BaekJoon/Problems/Step/13#baekjoon-online-judge) | | 21.12.16 | 22.07.11 | |

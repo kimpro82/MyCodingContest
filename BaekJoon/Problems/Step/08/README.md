@@ -1,4 +1,4 @@
-## BAEKJOON Online Judge
+## [BAEKJOON Online Judge](/README.md#baekjoon-online-judge)
 
 # 문제 > 단계별로 풀어보기 > 8. 일반 수학 1
 
@@ -586,7 +586,7 @@ int main()
 ```
 
 
-## [1712. 손익분기점](#list) (Depreciated)
+## [1712. 손익분기점](#list)
 
 > 1000 70 170
 
@@ -623,7 +623,7 @@ return 0;
 ```
 
 
-## [10250. ACM Hotel](#list) (Depreciated)
+## [10250. ACM Hotel](#list)
 
 > 2  
 > 6 12 10  
@@ -691,7 +691,7 @@ return 0;
 ```
 
 
-## [2775. 부녀회장이 될테야](#list) (Depreciated)
+## [2775. 부녀회장이 될테야](#list)
 
 > 2  
 > 1  
@@ -735,7 +735,7 @@ return 0;
 ```
 
 
-## [2839. ŠEĆER](#list) (Depreciated)
+## [2839. ŠEĆER](#list)
 
 > 18
 
@@ -804,7 +804,7 @@ return 0;
 ```
 
 
-## [1011. Fly me to the Alpha Centauri](#list) (Depreciated)
+## [1011. Fly me to the Alpha Centauri](#list)
 
 > 3  
 > 0 3  

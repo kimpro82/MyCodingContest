@@ -13,7 +13,7 @@ https://www.acmicpc.net/step/8
 - [2745. 진법 변환](#2745-진법-변환) *(new)*
 - [11005. 진법 변환 2](#11005-진법-변환-2) *(new)*
 - [2720. Quick Change(세탁소 사장 동혁)](#2720-quick-change세탁소-사장-동혁) *(new)*
-- [2903. PLANINA](#2903-planina) *(new)*
+- [2903. PLANINA(중앙 이동 알고리즘)](#2903-planina중앙-이동-알고리즘) *(new)*
 - [2292. 벌집](#2292-벌집)
 - [1193. 분수찾기](#1193-분수찾기)
 - [2869. PUŽ(달팽이는 올라가고 싶다)](#2869-puž달팽이는-올라가고-싶다)
@@ -21,9 +21,9 @@ https://www.acmicpc.net/step/8
 
 #### (Depreciated)
 - [1712. 손익분기점](#1712-손익분기점)
-- [10250. ACM Hotel](#10250-acm-hotel)
+- [10250. ACM Hotel(ACM 호텔)](#10250-acm-hotelacm-호텔)
 - [2775. 부녀회장이 될테야](#2775-부녀회장이-될테야)
-- [2839. ŠEĆER](#2839-šećer)
+- [2839. ŠEĆER(설탕 배달)](#2839-šećer설탕-배달)
 - [1011. Fly me to the Alpha Centauri](#1011-fly-me-to-the-alpha-centauri---excluded)
 
 
@@ -196,7 +196,7 @@ int main()
 ```
 
 
-## [2903. PLANINA](#list)
+## [2903. PLANINA(중앙 이동 알고리즘)](#list)
 
 ```txt
 5
@@ -592,7 +592,7 @@ int main()
 
 > 11
 
-#### Bash
+#### Bash (2022.03.11)
 ```bash
 read a b c
 
@@ -605,25 +605,28 @@ else
 fi
 ```
 
-#### C++ 
+#### C++ (2021.07.12)
 ```cpp
-int a, b, c;
-cin >> a >> b >> c;
+int main()
+{
+    int a, b, c;
+    cin >> a >> b >> c;
 
-int margin = c - b;
-if (c - b > 0)                      // Find if price(c) - variable cost(b) > 0
-{
-    cout << a / margin + 1 << endl;
-} else                              // Never can reach BEP
-{
-    cout << -1 << endl;
+    int margin = c - b;
+    if (c - b > 0)                      // Find if price(c) - variable cost(b) > 0
+    {
+        cout << a / margin + 1 << endl;
+    } else                              // Never can reach BEP
+    {
+        cout << -1 << endl;
+    }
+
+    return 0;
 }
-
-return 0;
 ```
 
 
-## [10250. ACM Hotel](#list)
+## [10250. ACM Hotel(ACM 호텔)](#list)
 
 > 2  
 > 6 12 10  
@@ -632,7 +635,7 @@ return 0;
 > 402  
 > 1203
 
-#### Bash
+#### Bash (2022.03.11)
 ```bash
 read t
 
@@ -655,39 +658,42 @@ do
 done
 ```
 
-#### C++ 
+#### C++ (2021.07.12)
 ```cpp
-int T, H, W, N;
-// T : the number of test cases
-// H : the number of floors, < 99
-// W : the number of rooms on each floor, < 99
-// N : the index of the arrival time of the guest, < H * W 
-cin >> T;
-
-// Test T times
-for (int t = 0; t < T; t++)
+int main()
 {
-    cin >> H >> W >> N;
+    int T, H, W, N;
+    // T : the number of test cases
+    // H : the number of floors, < 99
+    // W : the number of rooms on each floor, < 99
+    // N : the index of the arrival time of the guest, < H * W 
+    cin >> T;
 
-    // Operation
-    int room = (N - 1) / H + 1; // room is prior to floor
-    int floor = N % H;          // the first floor's room number is 1XX
-    if (floor == 0)
+    // Test T times
+    for (int t = 0; t < T; t++)
     {
-        floor = H;
+        cin >> H >> W >> N;
+
+        // Operation
+        int room = (N - 1) / H + 1; // room is prior to floor
+        int floor = N % H;          // the first floor's room number is 1XX
+        if (floor == 0)
+        {
+            floor = H;
+        }
+
+        // Output
+        if (room < 10)
+        {
+            cout << floor << 0 << room << endl;
+        } else
+        {
+            cout << floor << room << endl;
+        }
     }
 
-    // Output
-    if (room < 10)
-    {
-        cout << floor << 0 << room << endl;
-    } else
-    {
-        cout << floor << room << endl;
-    }
+    return 0;
 }
-
-return 0;
 ```
 
 
@@ -702,46 +708,49 @@ return 0;
 > 6  
 > 10
 
-#### Bash
+#### Bash (2022.03.11)
 Rumor has it that there's a tricky way to use **2d array** in Bash although isn't supplied regularly, but I feel quite annoyed today ……
 
-#### C++ 
+#### C++ (2021.07.12)
 ```cpp
-int T;
-cin >> T;
-
-// Test T times
-for (int t = 0; t < T; t++)
+int main()
 {
-    int K, N;
-    cin >> K >> N;
+    int T;
+    cin >> T;
 
-    int resident[15][15] = {};      // assumed 0-th floor and 0-th room
-    for (int k = 0; k <= K; k++)
+    // Test T times
+    for (int t = 0; t < T; t++)
     {
-        for (int n = 0; n <= N; n++)
+        int K, N;
+        cin >> K >> N;
+
+        int resident[15][15] = {};      // assumed 0-th floor and 0-th room
+        for (int k = 0; k <= K; k++)
         {
-            if (k == 0) resident[k][n] = n;
-            else if (n <= 1) resident[k][n] = n;
-            else resident[k][n] = resident[k-1][n] + resident[k][n-1];
+            for (int n = 0; n <= N; n++)
+            {
+                if (k == 0) resident[k][n] = n;
+                else if (n <= 1) resident[k][n] = n;
+                else resident[k][n] = resident[k-1][n] + resident[k][n-1];
+            }
         }
+
+        // Output
+        cout << resident[K][N] << endl;
     }
 
-    // Output
-    cout << resident[K][N] << endl;
+    return 0;
 }
-
-return 0;
 ```
 
 
-## [2839. ŠEĆER](#list)
+## [2839. ŠEĆER(설탕 배달)](#list)
 
 > 18
 
 > 4
 
-#### Bash
+#### Bash (2022.03.11)
 ```bash
 read n
 
@@ -771,36 +780,39 @@ else
 fi
 ```
 
-#### C++ 
+#### C++ (2021.07.12)
 ```cpp
-int N;
-cin >> N;       // 3 <= n <= 5000
-
-int bag3 = 0;
-bool rest = true;
-for (int i = 0; i <= N / 3; i++)
+int main()
 {
-    if ((N - i * 3) % 5 == 0)
+    int N;
+    cin >> N;       // 3 <= n <= 5000
+
+    int bag3 = 0;
+    bool rest = true;
+    for (int i = 0; i <= N / 3; i++)
     {
-        bag3 = i;
-        rest = false;
-        break;
+        if ((N - i * 3) % 5 == 0)
+        {
+            bag3 = i;
+            rest = false;
+            break;
+        }
     }
+
+    // Test
+    // cout << bag3 << " " << bag3 * 3 << " " << (N - bag3 * 3) << endl;
+
+    // Output
+    if (rest == false)
+    {
+        cout << bag3 + (N - bag3 * 3) / 5 << endl;
+    } else
+    {
+        cout << -1 << endl;
+    }
+
+    return 0;
 }
-
-// Test
-// cout << bag3 << " " << bag3 * 3 << " " << (N - bag3 * 3) << endl;
-
-// Output
-if (rest == false)
-{
-    cout << bag3 + (N - bag3 * 3) / 5 << endl;
-} else
-{
-    cout << -1 << endl;
-}
-
-return 0;
 ```
 
 
@@ -815,7 +827,7 @@ return 0;
 > 3  
 > 4
 
-#### C++ - Trial 1
+#### C++ - Trial 1 (2021.07.12)
 ```cpp
 /*
 (ex) n = 3
@@ -843,39 +855,45 @@ return 0;
 #include <iostream>
 #include <cmath>
 #include<bits/stdc++.h>
+
+using namespace std;
+#define endl '\n'
 ```
 ```cpp
-cin.tie(0);
-ios::sync_with_stdio(false);
-
-int T;
-cin >> T;
-
-// Test T times
-for (int t = 0; t < T; t++)
+int main()
 {
-    int x, y;
-    cin >> x >> y;
+    cin.tie(0);
+    ios::sync_with_stdio(false);
 
-    int distance = y - x, move = 0, turn = 0;
-    while (true)
+    int T;
+    cin >> T;
+
+    // Test T times
+    for (int t = 0; t < T; t++)
     {
-        turn++;
-        
-        if (turn % 2 == 1) move = pow((turn + 1)/2, 2);
-        else move = (pow(turn + 1, 2) - 1)/4;
+        int x, y;
+        cin >> x >> y;
 
-        // test
-        cout << turn << " " << move << " " << distance << " " << move - distance << endl;
+        int distance = y - x, move = 0, turn = 0;
+        while (true)
+        {
+            turn++;
+            
+            if (turn % 2 == 1) move = pow((turn + 1)/2, 2);
+            else move = (pow(turn + 1, 2) - 1)/4;
 
-        if (move >= distance) break;
+            // test
+            cout << turn << " " << move << " " << distance << " " << move - distance << endl;
+
+            if (move >= distance) break;
+        }
+
+        // Output
+        cout << turn << endl;
     }
 
-    // Output
-    cout << turn << endl;
+    return 0;
 }
-
-return 0;
 ```
 > 1 1 3 -2  
 > 2 2 3 -1  
@@ -885,46 +903,21 @@ return 0;
 
 > Time Litmit Exceeded?
 
-#### C++ - Trial 2
+#### C++ - Trial 2 (2021.07.12)
 ```cpp
 // n is even : distance = {(n + 1)/2}^2
 // → n = 2 * sqrt(distance) - 1
 // n is odd  : distance = {(n + 1)^2 - 1}/4
 ```
 ```cpp
-cin.tie(0);
-ios::sync_with_stdio(false);
-
-int T;
-cin >> T;
-
-// Test T times
-for (int t = 0; t < T; t++)
-{
-    int x, y;                            // int x, y : causes SOF!
-    cin >> x >> y;
-
-    int distance = y - x, move = 0;
-    int turn = 2 * sqrt(distance) - 2;
-    
-    while (true)
-    {
-        turn++;
-        
-        if (turn % 2 == 1) move = pow((turn + 1)/2, 2);
-        else move = (pow(turn + 1, 2) - 1)/4;
-
-        // test
-        cout << turn << " " << move << " " << distance << " " << move - distance << endl;
-
-        if (move >= distance) break;
-    }
-
-    // Output
-    cout << turn << endl;
-}
-
-return 0;
+#pragma GCC optimize ("Ofast")
+……
+```
+```cpp
+        ……
+        int distance = y - x, move = 0;
+        int turn = 2 * sqrt(distance) - 2;
+        ……
 ```
 > 2 2 3 -1  
 > 3 4 3 1  
@@ -937,15 +930,18 @@ return 0;
 
 > Time Litmit Exceeded?
 
-#### C++ - Trial 3
+#### C++ - Trial 3 ((2021.07.12)
 ```cpp
+……
 using ll = long long;
+……
 ```
 ```cpp
-    ll x, y;                            // int x, y : causes SOF!
-    cin >> x >> y;
+        ……
+        ll x, y;                            // int x, y : causes SOF!
+        ……
 
-    ll distance = y - x, move = 0;
-    int turn = 2 * sqrt(distance) - 2;
+        ll distance = y - x, move = 0;
+        ……
 ```
 > Accepted

@@ -1,589 +1,328 @@
 ## BAEKJOON Online Judge
 
-# # 문제 > 단계별로 풀어보기 > 12. 집합과 맵
+# 문제 > 단계별로 풀어보기 > 12. 브루트 포스
 
-https://www.acmicpc.net/step/49
+(2021.12.10)  
 
-(2022.08.03) - `Golang`
-
-
-## **List**
-
-- [10815. 숫자 카드](#10815숫자-카드)
-- [14425. 문자열 집합](#14425문자열-집합)
-- [1620. 나는야 포켓몬 마스터 이다솜](#1620나는야-포켓몬-마스터-이다솜)
-- [10816. 숫자 카드 2](#10816숫자-카드-2)
-- [1764. 듣보잡](#1764듣보잡)
-- [1269. 대칭 차집합](#1269대칭-차집합)
-- [11478. 서로 다른 부분 문자열의 개수](#11478서로-다른-부분-문자열의-개수)
+https://www.acmicpc.net/step/22
 
 
-**※ Note**  
+※ All the `C++` codes **skipped** the below lines. :
+```cpp
+#include <iostream>
 
-&nbsp;&nbsp; - All the codes of any language for the same problem have basically the same result.  
-&nbsp;&nbsp; - Typical headers like the below are basically skipped, but they are noted seperately when theere are any additional line.  
-&nbsp;&nbsp;&nbsp;&nbsp; · `Golang` : `package main` `import "fmt"`  
+using namespace std;
 
-
-## [10815. 숫자 카드](#list)
-
-> 5  
-> 6 3 2 10 -10  
-> 8  
-> 10 9 -5 2 3 4 5 -10
-
-> 1 0 0 1 1 0 0 1
-
-#### Golang - Trial 1
-(2022.07.13)
-```go
-package main
-import (
-    "fmt"
-    "bufio"                                                 // default size : 4096 byte
-    "os"
-    // "time"
-)
+#define endl '\n'
 ```
-```go
-func main() {
+&nbsp;&nbsp;&nbsp;When any additional header is used, the header block is also noted seperately.
 
-    // Make it faster
-    // var reader = bufio.NewReader(os.Stdin)
-    var reader = bufio.NewReaderSize(os.Stdin, 80000004)
-    // var writer = bufio.NewWriter(os.Stdout)
-    var writer = bufio.NewWriterSize(os.Stdout, 80000004)
-    defer writer.Flush()
 
-    var n int                                               // n <= 500,000
-    fmt.Scanln(&n)
+## 2798. JACK
 
-    // Input
-    var card [20000001]bool
-    for i := 0; i < n; i++ {
-        var temp int
-        fmt.Fscan(reader, &temp)
-        card[10000000+temp] = true
+#### C++
+(2021.11.01)
+```cpp
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+#define endl '\n'
+```
+```cpp
+int main()
+{
+    // Input 1 : N, M
+    int N, M;
+    cin >> N >> M;
+
+    // Input 2 : N cards
+    vector<int> cards;
+    int temp;
+    for (int n = 0; n < N; n++)
+    {
+        cin >> temp;
+        cards.push_back(temp);
     }
 
-    // Wait until the reader buffer has been empty
-    for reader.Buffered() > 1 {
-        // time.Sleep(time.Millisecond)
-        // fmt.Println(reader.Buffered())
-    }
+    // Find the max value that does not exceed 21
+    int sum, max = 0;
+    for (int i = 0; i < N - 2; i++)
+    {
+        if (cards[i] > M) continue;
 
-    var m int                                               // m <= 500,000
-    fmt.Scanln(&m)
+        for (int j = i + 1; j < N - 1; j++)
+        {
+            if (cards[i] + cards[j] > M) continue;
 
-    // Find if exists and output
-    var exist int
-    for i := 0; i < m; i++ {
-        var temp int
-        fmt.Fscan(reader, &temp)
-        if card[10000000+temp] == true {
-            exist = 1
-        } else {
-            exist = 0
-        }
+            for (int k = j + 1; k < N; k++)
+            {
+                sum = cards[i] + cards[j] + cards[k];
 
-        if i < m - 1 {
-            fmt.Fprint(writer, exist, " ")
-        } else {
-            fmt.Fprintln(writer, exist)
-        }
-    }
-}
-```
-> 시간 초과
+                // test
+                cout << cards[i] << ' ' << cards[j] << ' ' << cards[k] << ' ' << sum << ' ' << max << endl;
 
-#### Golang - Trial 2
-(2022.07.13)
-```go
-……
-import (
-    ……
-    "sort"
-)
-```
-```go
-func main() {
-
-    // Make it faster
-    var reader = bufio.NewReader(os.Stdin)
-    var writer = bufio.NewWriter(os.Stdout)
-    ……
-
-    ……
-
-    // Input and sort
-    var card []int
-    var temp int
-    for i := 0; i < n; i++ {
-        ……
-        card = append(card, temp)
-    }
-    sort.Ints(card)
-
-    ……
-
-    // Find if exists and output
-    var idx, ans int
-    for i := 0; i < m; i++ {
-        ……
-
-        // sort.SearchInts() : return the index to insert x if x is not present (it could be len(a))
-        idx = sort.SearchInts(card, temp)
-        if temp == card[idx] {
-            ans = 1
-        } else {
-            ans = 0
-        }
-        
-        if i < m - 1 {
-            fmt.Fprint(writer, ans, " ")
-        } else {
-            fmt.Fprintln(writer, ans)
-        }
-    }
-}
-```
-> 틀렸습니다
-
-#### Golang - Trial 3 (advanced from Trial 1)
-(2022.07.15)
-```go
-……
-
-func main() {
-
-    // Make it faster
-    var reader = bufio.NewReaderSize(os.Stdin, 90000000)
-    var writer = bufio.NewWriterSize(os.Stdout, 90000000)
-    ……
-
-    ……
-}
-```
-> 틀렸습니다
-
-
-## [14425. 문자열 집합](#list)
-
-> 5 11  
-> baekjoononlinejudge  
-> startlink  
-> ……  
-> icerink
-
-> 4
-
-#### Golang - Trial 1
-(2022.08.02)
-```go
-package main
-import (
-	"bufio"
-	"fmt"
-	"os"
-	"sort"
-)
-```
-```go
-func main() {
-
-    // Make it faster
-    var reader = bufio.NewReader(os.Stdin)
-    var writer = bufio.NewWriter(os.Stdout)
-    defer writer.Flush()
-
-    var n, m int                                            // n, m <= 10,000
-    fmt.Scanln(&n, &m)
-
-    // Input n strings
-    var ns []string
-    for i := 0; i < n; i++ {
-        var temp string
-        fmt.Fscanln(reader, &temp)
-        ns = append(ns, temp)
-    }
-
-    // Sort n strings
-    sort.Strings(ns)
-
-    // Input m strings and count intersaction with n strings
-    var ms string
-    var count int = 0
-    for i := 0; i < m; i++ {
-        fmt.Fscanln(reader, &ms)
-        if ns[sort.SearchStrings(ns, ms)] == ms {
-        // SearchStrings searches for x in a sorted slice of strings and returns the index as specified by Search.
-        // The return value is the index to insert x if x is not present (it could be len(a)).
-        // The slice must be sorted in ascending order.
-        // → inferred as a binary search
-            count++
-        }
-    }
-
-    // Output
-    fmt.Fprintln(writer, count)
-}
-```
-> 런타임 에러 (IndexOutOfRange)
-
-#### Golang - Trial 2
-(2022.08.02)
-```go
-……
-
-func main() {
-
-    ……
-
-    // Input m strings and count intersaction with n strings
-    ……
-    var nsIdx int
-    ……
-    for i := 0; i < m; i++ {
-        ……
-        nsIdx = sort.SearchStrings(ns, ms)
-        ……
-        if nsIdx < n {
-        // nsIdx == n means not present
-            if ns[nsIdx] == ms {
-                count++
+                if (sum > M) continue;
+                else if (sum > max) max = sum;
             }
         }
     }
 
-    ……
+    // Output
+    cout << max << endl;
+
+    return 0;
 }
 ```
-> 맞았습니다!!
+
+> 5 21
+> 5 6 7 8 9
+
+> 21
 
 
-## [1620. 나는야 포켓몬 마스터 이다솜](#list)
+## 2231. Digit Generator
 
-Crazy problem explanation ……
+#### C++
+(2021.11.01)
+```cpp
+int main()
+{
+    // Input
+    int N;
+    cin >> N;
 
-> 26 5  
-> Bulbasaur  
-> Ivysaur  
-> ……  
-> Kakuna
-
-> Pikachu  
-> 26  
-> Venusaur  
-> 16  
-> 14
-
-#### Golang - Trial 1
-(2022.08.02)
-```go
-package main
-
-import (
-    "bufio"
-    "fmt"
-    "os"
-    "sort"
-    // "reflect"
-    "strconv"
-)
-```
-```go
-type Pokemon struct {
-    name string
-    no   int
-}
-```
-```go
-func main() {
-
-    // Make it faster
-    var reader = bufio.NewReader(os.Stdin)
-    var writer = bufio.NewWriter(os.Stdout)
-    defer writer.Flush()
-
-    var n, m int                                            // n, m <= 100,000
-    fmt.Scanln(&n, &m)
-
-    // Input n strings with no.
-    var pokedexByNo []Pokemon
-    for i := 1; i <= n; i++ {
-        var temp Pokemon
-        fmt.Fscanln(reader, &temp.name)
-        temp.no = i
-        pokedexByNo = append(pokedexByNo, temp)
+    // Count N's digits
+    int n = N, digits = 1;
+    while (n > 10)
+    {
+        n /= 10;
+        digits++;
     }
 
-    // Sort by Name and make its slice
-    var pokedexByName []Pokemon
-    var pokedexByNameIdx []string
-    copy(pokedexByNo, pokedexByName)
-    sort.SliceStable(pokedexByName, func(i, j int) bool {
-        return pokedexByName[i].name < pokedexByName[j].name
-    })
-    for _, el := range pokedexByName {
-        pokedexByNameIdx = append(pokedexByNameIdx, el.name)
-    }
+    // Assume a minimum generator candidate
+    int min = max(0, N - 9 * digits);
 
-    // Input m questions and get answers
-    var temp string
-    var idx int
-    for i := 1; i <= m; i++ {
-        fmt.Fscanln(reader, &temp)
-        if temp[0] >= 'A' && temp[0] <= 'z' {
-            idx = sort.SearchStrings(pokedexByNameIdx, temp)
-            // fmt.Fprintln(writer, reflect.ValueOf(pokedexByName).FieldByIndex([]int {idx, 1}))
-            fmt.Fprintln(writer, idx)
-        } else {
-            idx, _ = strconv.Atoi(temp)
-            fmt.Fprintln(writer, pokedexByNo[idx-1].name)
-        }
-    }
-}
-```
-> Not solved entirely
+    // Find the minimum generator
+    int digitSum;
+    string candidate;
+    bool ok = false;
+    for (int i = min; i < N; i++)
+    {
+        digitSum = i;
+        candidate = to_string(i);
 
-#### Golang - Trial 2
-(2022.08.03)
-```go
-func main() {
+        for (int j = 0; j < candidate.size(); j++) digitSum += candidate[j] - '0';
 
-    ……
+        // test
+        // cout << N << ' ' << digits << ' ' << candidate << ' ' << digitSum << endl;
 
-    // Input n strings with no.
-    var pokedexByNo map[int]string = make(map[int]string)
-    var temp string
-    for i := 1; i <= n; i++ {
-        ……
-        pokedexByNo[i] = temp
-    }
-
-    // Make a map[string]int from map[int]string
-    var pokedexByName map[string]int = make(map[string]int)
-    for no, name := range pokedexByNo {
-        pokedexByName[name] = no
-    }
-
-    // Input m questions and get answers
-    ……
-    for i := 1; i <= m; i++ {
-        ……
-        if temp[0] >= 'A' && temp[0] <= 'z' {
-            fmt.Fprintln(writer, pokedexByName[temp])
-        } else {
-            ……
-            fmt.Fprintln(writer, pokedexByNo[int(idx)])
-        }
-    }
-}
-```
-> 맞았습니다!!
-
-
-## [10816. 숫자 카드 2](#list)
-
-> 10  
-> 6 3 2 10 10 10 -10 -10 7 3  
-> 8  
-> 10 9 -5 2 3 4 5 -10
-
-> 3 0 0 1 2 0 0 2
-
-#### Golang
-(2022.08.03)
-```go
-package main
-
-import (
-    "bufio"
-    "fmt"
-    "os"
-)
-```
-```go
-func main() {
-
-    // Make it faster
-    var reader = bufio.NewReader(os.Stdin)
-    var writer = bufio.NewWriter(os.Stdout)
-    defer writer.Flush()
-
-    var n int                                                 // n <= 500,000
-    fmt.Scanln(&n)
-
-    // Input n map[int]int
-    var nm map[int]int = make(map[int]int)
-    var temp int
-    for i := 0; i < n; i++ {
-        fmt.Fscan(reader, &temp)
-        nm[temp]++
-    }
-
-    var m int                                                 // m <= 500,000
-    fmt.Scanln(&m)
-
-    // Input m numbers and get answers
-    for i := 0; i < m - 1; i++ {
-        fmt.Fscan(reader, &temp)
-        fmt.Fprint(writer, nm[temp], " ")
-    }
-    fmt.Fscan(reader, &temp)
-    fmt.Fprint(writer, nm[temp])                              // crazy
-    fmt.Fprintln(writer)
-}
-```
-> 출력 초과
-
-## [1764. 듣보잡](#list)
-
-> 3 4  
-> ohhenrie  
-> charlie  
-> ……  
-> clinton
-
-> 2  
-> baesangwook  
-> ohhenrie
-
-#### Golang
-(2022.08.03)
-```go
-package main
-
-import (
-    "bufio"
-    "fmt"
-    "os"
-    "sort"
-)
-```
-```go
-func main() {
-
-    // Make it faster
-    var reader = bufio.NewReader(os.Stdin)
-    var writer = bufio.NewWriter(os.Stdout)
-    defer writer.Flush()
-
-    var n, m int                                             // n, m <= 500,000
-    fmt.Scanln(&n, &m)
-
-    // Input a map[string]int
-    var nameMap map[string]int = make(map[string]int)
-    var temp string
-    for i := 0; i < n + m; i++ {
-        fmt.Fscanln(reader, &temp)
-        nameMap[temp]++
-    }
-
-    // Make []string from nm with value 2 and sort it
-    var nameSorted []string
-    for k, v := range nameMap {
-        if v > 1 {
-            nameSorted = append(nameSorted, k)
-        }
-    }
-    sort.Strings(nameSorted)
-
-    // Input m questions and get answers
-    var length int = len(nameSorted)
-    fmt.Fprintln(writer, length)
-    for _, name := range nameSorted {
-        fmt.Fprintln(writer, name)
-    }
-}
-```
-> 맞았습니다!!
-
-
-## [1269. 대칭 차집합](#list)
-
-> 3 5  
-> 1 2 4  
-> 2 3 4 5 6
-
-> 4
-
-#### Golang
-(2022.08.03)
-```go
-package main
-
-import (
-    "bufio"
-    "fmt"
-    "os"
-)
-```
-```go
-func main() {
-
-    // Make it faster
-    var reader = bufio.NewReader(os.Stdin)
-    var writer = bufio.NewWriter(os.Stdout)
-    defer writer.Flush()
-
-    var n, m int                                             // n, m <= 200,000
-    fmt.Scanln(&n, &m)
-
-    // Input n + m integers into a map[int]int
-    var nm map[int]int = make(map[int]int)
-    var temp int
-    for i := 0; i < n + m; i++ {
-        fmt.Fscan(reader, &temp)
-        nm[temp]++
-    }
-
-    // Count the difference set
-    var count int = 0
-    for _, v := range nm {
-        if v == 1 {
-            count++
+        if (digitSum == N)
+        {
+            ok = true;
+            break;
         }
     }
 
     // Output
-    fmt.Fprintln(writer, count)
+    if (!ok) cout << 0 << endl;
+    else cout << candidate << endl;
+
+    return 0;
 }
 ```
-> 맞았습니다!!
+
+> 216
+
+> 198
 
 
-## [11478. 서로 다른 부분 문자열의 개수](#list)
+## 7568. 덩치
 
-> ababc
+#### C++
+(2021.12.10)
+```cpp
+#include <iostream>
+#include <vector>
 
-> 12
+using namespace std;
 
-#### Golang
-(2022.08.03)
-```go
-func main() {
+#define endl '\n'
+```
+```cpp
+int main()
+{
+    // Input
+    int N;
+    cin >> N;
 
-    // Input a string s
-    var s string                                            // len(s) <= 1,000
-    fmt.Scanln(&s)
-    var length int = len(s)
+    // Input x, y
+    int x, y;
+    vector<vector<int>> xy;
+    for (int i = 0; i < N; i++)
+    {
+        cin >> x >> y;
+        vector<int> temp;
+        temp.push_back(x);
+        temp.push_back(y);
+        xy.push_back(temp);
+    }
 
-    // Make a map of substrings
-    var subStr map[string]int = make(map[string]int)
-    var temp string
-    for i := 0; i < length; i++ {                           // i : starting index
-        for j := i + 1; j <= length ; j++ {                 // j : ending index, <= length
-            temp = s[i:j]
-            subStr[temp] = 1
+    // Determine everyone's ranking
+    vector<int> ranking;
+    for (int i = 0; i < N; i++)
+    {
+        int onesRank = 1;
+        for (int j = 0; j < N; j++) if (xy[i][0] < xy[j][0] && xy[i][1] < xy[j][1]) onesRank++;
+        ranking.push_back(onesRank);
+    }
 
-            // test
-            // fmt.Println(i, j, temp)
+    // Output
+    for (int i = 0; i < N - 1; i++) cout << ranking[i] << ' ';
+    cout << ranking[N - 1] << endl;
+
+    return 0;
+}
+```
+
+> 5  
+> 55 185  
+> 58 183  
+> 88 186  
+> 60 175  
+> 46 155
+
+> 2 2 1 2 5
+
+
+## 1018. 체스판 다시 칠하기
+
+#### C++
+(2021.12.10)
+```cpp
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+#define endl '\n'
+```
+```cpp
+int main()
+{
+    // Input N, M
+    int N, M;                                                                               // 8 <= N, M <= 50
+    cin >> N >> M;
+
+    // Input wb
+    vector<string> wb;
+    for (int i = 0; i < N; i++)
+    {
+        string temp;
+        cin >> temp;
+        wb.push_back(temp);
+    }
+
+    // Find the minimum number to paint the cell for (N - 8 + 1, M - 8 + 1)
+    int min = 8 * 8;
+    // Loop for (r, c) : the reference point at the top left corner
+    for (int r = 0; r < N - 8 + 1; r++)
+    {
+        for (int c = 0; c < M - 8 + 1; c++)
+        {
+            // Loop for 8 * 8 from each (r, c)
+            int change, changeW = 0, changeB = 0;                                           // changeW/B : the reference point can be W and B both
+            for (int i = 0; i < 8; i++)
+            {
+                for (int j = 0; j < 8; j++)
+                {
+                    if ((i + j) % 2 == 0)                                                   // no change if the same with (r, c)
+                    {
+                        if (wb[r + i][c + j] == 'W') changeB++;
+                        else changeW++;
+                    }
+                    else                                                                    // change if the same with (r, c)
+                    {
+                        if (wb[r + i][c + j] == 'B') changeB++;
+                        else changeW++;
+                    }
+                }
+            }
+
+            // determine if the number of changes is smaller than the previous min
+            if (changeW < changeB) change = changeW;
+            else change = changeB;
+            if (min > change) min = change;
         }
     }
 
     // Output
-    fmt.Println(len(subStr))
+    cout << min << endl;
+
+    return 0;
 }
 ```
-> 맞았습니다!!
+
+> 11 12  
+> BWWBWWBWWBWW  
+> BWWBWBBWWBWW  
+> WBWWBWBBWWBW  
+> BWWBWBBWWBWW  
+> WBWWBWBBWWBW  
+> BWWBWBBWWBWW  
+> WBWWBWBBWWBW  
+> BWWBWBWWWBWW  
+> WBWWBWBBWWBW  
+> BWWBWBBWWBWW  
+> WBWWBWBBWWBW
+
+> 15
+
+
+## 1436. 영화감독 숌
+
+#### C++
+(2021.12.10)
+```cpp
+int main()
+{
+    // Input N
+    int N ;         // 1 <= N <= 10000
+    cin >> N;
+
+    // Find the 666-number
+    int n = 666, count = 0;
+    while (true)
+    {
+        string stringN = to_string(n);
+        int len = stringN.length();
+
+        for (int i = 0; i < len - 3 + 1; i++)
+        {
+            if (stringN.substr(i, 3) == "666")
+            {
+                count++;
+
+                // test
+                // cout << n << ' ' << count << endl;
+
+                break;
+            }
+        }
+
+        if (count == N) break;
+
+        n++;
+    }
+
+    // Output
+    cout << n << endl;
+
+    return 0;
+}
+```
+
+> 187
+
+> 66666

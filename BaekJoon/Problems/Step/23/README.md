@@ -1,6 +1,6 @@
-## BAEKJOON Online Judge
+## [BAEKJOON Online Judge](/README.md#baekjoon-online-judge)
 
-# 문제 > 단계별로 풀어보기 > 16. 동적 계획법 1
+# 문제 > 단계별로 풀어보기 > 23. 동적 계획법 1
 
 https://www.acmicpc.net/step/16
 

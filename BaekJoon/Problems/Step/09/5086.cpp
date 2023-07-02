@@ -1,5 +1,5 @@
 // 5086. Factors And Multiples(배수와 약수)
-// 2023.07.03
+// 2023.07.02
 
 /* Sample input & output data
 8 16

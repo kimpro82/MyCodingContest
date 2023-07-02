@@ -9,7 +9,6 @@
 
 
 #include <iostream>
-#include <vector>
 
 // #define test
 #define endl '\n'
@@ -23,7 +22,6 @@ int main()
     // Input
     cin >> a >> b;
 
-    vector<int> v;
     int cnt = 0;
     for (int i = 1; i <= a; i++)
     {

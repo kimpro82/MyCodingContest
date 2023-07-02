@@ -14,7 +14,6 @@ neither
 
 
 #include <iostream>
-#include <vector>
 
 // #define test
 #define endl '\n'

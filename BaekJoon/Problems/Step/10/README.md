@@ -4,19 +4,19 @@
 
 https://www.acmicpc.net/step/50
 
-() - `C++`  
+(2023.07.02) - `C++`  
 
 
 ## **List**
 
-- []()
+- [27323. 長方形(Rectangle, 직사각형)](#27323-長方形rectangle-직사각형)
 - [1085. 직사각형에서 탈출](#1085-직사각형에서-탈출)
 - [3009. CETVRTA(네 번째 점)](#3009-cetvrta네-번째-점)
-- []()
-- []()
-- []()
-- []()
-- []()
+- [15894. 수학은 체육과목 입니다](#15894-수학은-체육과목-입니다)
+- [9063. 대지](#9063-대지)
+- [10101. Triangle Times(삼각형 외우기)](#10101-triangle-times삼각형-외우기)
+- [5073. Triangles(삼각형과 세 변)](#5073-triangles삼각형과-세-변)
+- [14215. 세 막대](#14215-세-막대)
 
 
 **※ Note**
@@ -25,6 +25,31 @@ https://www.acmicpc.net/step/50
 &nbsp;&nbsp; - Typical headers like the below are basically skipped, but they are noted seperately when there are any additional line.  
 &nbsp;&nbsp;&nbsp;&nbsp; · `C++` : `#include <iostream>` `#define endl '\n';` `using namespace std;`  
 
+
+
+## [27323. 長方形(Rectangle, 직사각형)](#list)
+
+```txt
+2
+3
+```
+```txt
+6
+```
+
+#### C++ (2023.07.02)
+```cpp
+int main()
+{
+    // Input
+    int a, b;
+    cin >> a >> b;
+
+    // Output
+    cout << a * b << endl;
+    return 0;
+}
+```
 
 
 ## [1085. 직사각형에서 탈출](#list)
@@ -144,3 +169,231 @@ int main()
 > x : 7 1  
 > y : 7 1  
 > 7 7
+
+
+## [15894. 수학은 체육과목 입니다](#list)
+
+```txt
+3
+```
+```txt
+12
+```
+
+#### C++ (2023.07.02)
+```cpp
+#include <iostream>
+
+#define endl '\n'
+
+using namespace std;
+using ll = long long;
+```
+```cpp
+int main()
+{
+    // Input
+    ll n;
+    cin >> n;
+
+    // Output
+    cout << n * 4 << endl;
+
+    return 0;
+}
+```
+
+
+## [9063. 대지](#list)
+
+```txt
+3
+20 24
+40 21
+10 12
+```
+```txt
+360
+```
+
+#### C++ (2023.07.02)
+```cpp
+#include <iostream>
+
+// #define test
+#define endl '\n'
+
+using namespace std;
+```
+```cpp
+int main()
+{
+    // Input
+    int n;
+    cin >> n ;;
+
+    int x, y;
+    int xMin = 10000, yMin = 10000, xMax = -10000, yMax = -10000;
+    for (int i = 0; i < n; i++)
+    {
+        cin >> x >> y;
+        if (x < xMin) xMin = x;
+        if (x > xMax) xMax = x;
+        if (y < yMin) yMin = y;
+        if (y > yMax) yMax = y;
+    }
+
+    // test
+    #ifdef test
+        printf("xMax:%d, xMin:%d, yMax:%d, yMin:%d\n", xMax, xMin, yMax, yMin);
+        printf("xMax-xMin:%d, yMAx-yMin:%d\n", xMax-xMin, yMax-yMin);
+    #endif
+
+    // Output
+    int area = (xMax - xMin) * (yMax - yMin);
+    cout << area << endl;
+
+    return 0;
+}
+```
+
+
+## [10101. Triangle Times(삼각형 외우기)](#list)
+
+```txt
+60
+70
+50
+```
+```txt
+Scalene
+```
+
+#### C++ (2023.07.02)
+```cpp
+int main()
+{
+    // Input
+    int a, b, c;
+    cin >> a >> b >> c;
+
+    // Operate
+    string ans;
+    if (a + b + c == 180)
+    {
+        if (a == 60 && b == 60) ans = "Equilateral";
+        else if (a == b || b == c || c == a) ans = "Isosceles";
+        else ans = "Scalene";
+    }
+    else ans = "Error";
+
+    // Output
+    cout << ans << endl;
+    return 0;
+}
+```
+
+
+## [5073. Triangles(삼각형과 세 변)](#list)
+
+```txt
+7 7 7
+6 5 4
+3 2 5
+6 2 6
+0 0 0
+```
+```txt
+Equilateral
+Scalene
+Invalid
+Isosceles
+```
+
+#### C++ (2023.07.02)
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+#define endl '\n'
+
+using namespace std;
+```
+```cpp
+int main()
+{
+    while (true)
+    {
+        // Input
+        vector<int> v;
+        int n;
+        for (int i = 0; i < 3; i++)
+        {
+            cin >> n;
+            v.push_back(n);
+        }
+        if (v[0] == 0 && v[1] == 0 && v[2] == 0) break;
+
+        // Operate
+        string ans;
+        sort(v.begin(), v.end());
+        if (v[0] + v[1] > v[2])
+        {
+            if (v[0] == v[1] && v[1] == v[2]) ans = "Equilateral";
+            else if (v[0] == v[1] || v[1] == v[2] || v[2] == v[0]) ans = "Isosceles";
+            else ans = "Scalene";
+        }
+        else ans = "Invalid";
+
+        // Output
+        cout << ans << endl;
+    }
+
+    return 0;
+}
+```
+
+
+## [14215. 세 막대](#list)
+
+```txt
+41 64 16
+```
+```txt
+113
+```
+
+#### C++ (2023.07.02)
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+#define endl '\n'
+
+using namespace std;
+```
+```cpp
+int main()
+{
+    // Input
+    vector<int> v;
+    int n;
+    for (int i = 0; i < 3; i++)
+    {
+        cin >> n;
+        v.push_back(n);
+    }
+
+    // Operate
+    sort(v.begin(), v.end());
+    if (v[0] + v[1] <= v[2]) v[2] = v[0] + v[1] - 1;
+
+    // Output
+    int sum = v[0] + v[1] + v[2];
+    cout << sum << endl;
+
+    return 0;
+}
+```

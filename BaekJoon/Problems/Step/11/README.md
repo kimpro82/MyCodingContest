@@ -22,7 +22,7 @@ https://www.acmicpc.net/step/53
 
 - All the codes of any language for the same problem have basically the same result.
 - Typical headers like the below are basically skipped, but they are noted seperately when there are any additional line.
-  · `C++` : `#include <iostream>` `#define endl '\n';` `using namespace std;`
+  - `C++` : `#include <iostream>` `#define endl '\n';` `using namespace std;`
 
 
 

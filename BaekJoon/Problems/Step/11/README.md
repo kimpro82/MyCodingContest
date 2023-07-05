@@ -18,11 +18,11 @@ https://www.acmicpc.net/step/53
 - [24313. 알고리즘 수업 - 점근적 표기 1](#24313-알고리즘-수업---점근적-표기-1)
 
 
-**※ Note**
+### **Note**
 
-&nbsp;&nbsp; - All the codes of any language for the same problem have basically the same result.  
-&nbsp;&nbsp; - Typical headers like the below are basically skipped, but they are noted seperately when there are any additional line.  
-&nbsp;&nbsp;&nbsp;&nbsp; · `C++` : `#include <iostream>` `#define endl '\n';` `using namespace std;`  
+- All the codes of any language for the same problem have basically the same result.
+- Typical headers like the below are basically skipped, but they are noted seperately when there are any additional line.
+  · `C++` : `#include <iostream>` `#define endl '\n';` `using namespace std;`
 
 
 

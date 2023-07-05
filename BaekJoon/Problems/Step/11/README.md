@@ -1,4 +1,4 @@
-## [BAEKJOON Online Judge](/README.md#baekjoon-online-judge)
+### [BAEKJOON Online Judge](/README.md#baekjoon-online-judge)
 
 # 문제 > 단계별로 풀어보기 > 11. 시간 복잡도
 
@@ -7,7 +7,7 @@ https://www.acmicpc.net/step/53
 (2023.07.04) - `C++`  
 
 
-## **List**
+### **List**
 
 - [24262. 알고리즘 수업 - 알고리즘의 수행 시간 1](#24262-알고리즘-수업---알고리즘의-수행-시간-1)
 - [24263. 알고리즘 수업 - 알고리즘의 수행 시간 2](#24263-알고리즘-수업---알고리즘의-수행-시간-2)

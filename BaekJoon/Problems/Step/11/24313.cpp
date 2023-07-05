@@ -13,7 +13,6 @@
 
 #include <iostream>
 
-#define test
 #define endl '\n'
 
 using namespace std;

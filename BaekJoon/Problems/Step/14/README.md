@@ -4,13 +4,15 @@
 
 https://www.acmicpc.net/step/49
 
-(2022.08.03) - `Golang`
+(2023.07.08) - `C++`  
+(2022.08.03) - `Golang`  
 
 
 ## **List**
 
 - [10815. 숫자 카드](#10815숫자-카드)
 - [14425. 문자열 집합](#14425문자열-집합)
+- [7785. Easy work(회사에 있는 사람)](#7785-easy-work회사에-있는-사람) *(new)*
 - [1620. 나는야 포켓몬 마스터 이다솜](#1620나는야-포켓몬-마스터-이다솜)
 - [10816. 숫자 카드 2](#10816숫자-카드-2)
 - [1764. 듣보잡](#1764듣보잡)
@@ -22,6 +24,7 @@ https://www.acmicpc.net/step/49
 
 &nbsp;&nbsp; - All the codes of any language for the same problem have basically the same result.  
 &nbsp;&nbsp; - Typical headers like the below are basically skipped, but they are noted seperately when theere are any additional line.  
+&nbsp;&nbsp;&nbsp;&nbsp; · `C++` : `#include <iostream>` `#define endl '\n';` `using namespace std;`  
 &nbsp;&nbsp;&nbsp;&nbsp; · `Golang` : `package main` `import "fmt"`  
 
 
@@ -34,8 +37,52 @@ https://www.acmicpc.net/step/49
 
 > 1 0 0 1 1 0 0 1
 
-#### Golang - Trial 1
-(2022.07.13)
+#### C++ (2023.07.07)
+```cpp
+#include <iostream>
+#include <set>
+#include <vector>
+
+#define endl '\n'
+
+using namespace std;
+```
+```cpp
+int main()
+{
+    // Input 1
+    int n;
+    set<int> x;
+    int temp;
+    cin >> n;
+    for (int i = 0; i < n; i++)
+    {
+        cin >> temp;
+        x.insert(temp);
+    }
+
+    // Input 2 & Operate
+    int m;
+    vector<int> v;
+    cin >> m;
+    for (int i = 0; i < m; i++)
+    {
+        cin >> temp;
+        if (x.find(temp) != x.end()) v.push_back(1);
+        else v.push_back(0);
+
+    }
+
+    // Output
+    for (int i = 0; i < m; i++) cout << v[i] << ' ';
+    cout << endl;
+ 
+    return 0;
+}
+```
+> 맞았습니다!!
+
+#### Golang - Trial 1 (2022.07.13)
 ```go
 package main
 import (
@@ -96,8 +143,7 @@ func main() {
 ```
 > 시간 초과
 
-#### Golang - Trial 2
-(2022.07.13)
+#### Golang - Trial 2 (2022.07.13)
 ```go
 ……
 import (
@@ -149,8 +195,7 @@ func main() {
 ```
 > 틀렸습니다
 
-#### Golang - Trial 3 (advanced from Trial 1)
-(2022.07.15)
+#### Golang - Trial 3 (advanced from Trial 1, 2022.07.15)
 ```go
 ……
 
@@ -166,6 +211,57 @@ func main() {
 ```
 > 틀렸습니다
 
+#### Golang - Trial 4 (2023.07.08)
+Why didn't I try using `map`?
+```go
+package main
+
+import (
+    "bufio"
+    "fmt"
+    "os"
+)
+```
+```go
+func main() {
+
+    // Make it faster
+    var reader = bufio.NewReader(os.Stdin)
+    var writer = bufio.NewWriter(os.Stdout)
+    defer writer.Flush()
+
+    // Input 1
+    var n int
+    fmt.Fscan(reader, &n)
+    var mp map[int]bool = make(map[int]bool)
+    var temp int
+    for i := 0; i < n; i++ {
+        fmt.Fscan(reader, &temp)
+        mp[temp] = true
+    }
+
+    // Input 2 & Operate
+    var m int
+    fmt.Fscan(reader, &m)
+    var v []int
+    for i := 0; i < m; i++ {
+        fmt.Fscan(reader, &temp)
+        if mp[temp] {
+            v = append(v, 1)
+        } else {
+            v = append(v, 0)
+        }
+    }
+
+    // Output
+    for i := 0; i < m; i++ {
+        fmt.Fprint(writer, v[i], " ")
+    }
+    fmt.Fprintln(writer)
+}
+```
+> 맞았습니다!!
+
 
 ## [14425. 문자열 집합](#list)
 
@@ -177,8 +273,47 @@ func main() {
 
 > 4
 
-#### Golang - Trial 1
-(2022.08.02)
+#### C++ (2023.07.07)
+```cpp
+#include <iostream>
+#include <set>
+#include <vector>
+
+#define endl '\n'
+
+using namespace std;
+```
+```cpp
+int main()
+{
+    // Input 1
+    int n, m;
+    cin >> n >> m;
+    set<string> x;
+    string temp;
+    for (int i = 0; i < n; i++)
+    {
+        cin >> temp;
+        x.insert(temp);
+    }
+
+    // Input 2 & Operate
+    int cnt = 0;
+    for (int i = 0; i < m; i++)
+    {
+        cin >> temp;
+        if (x.find(temp) != x.end()) cnt++;
+    }
+
+    // Output
+    cout << cnt << endl;
+ 
+    return 0;
+}
+```
+> 맞았습니다!!
+
+#### Golang - Trial 1 (2022.08.02)
 ```go
 package main
 import (
@@ -230,8 +365,7 @@ func main() {
 ```
 > 런타임 에러 (IndexOutOfRange)
 
-#### Golang - Trial 2
-(2022.08.02)
+#### Golang - Trial 2 (2022.08.02)
 ```go
 ……
 
@@ -261,6 +395,55 @@ func main() {
 > 맞았습니다!!
 
 
+## [7785. Easy work(회사에 있는 사람)](#list)
+
+```txt
+4
+Baha enter
+Askar enter
+Baha leave
+Artem enter
+```
+```txt
+Askar
+Artem
+```
+
+#### C++ (2023.07.08)
+```cpp
+#include <iostream>
+#include <map>
+#include <algorithm>
+
+#define endl '\n'
+
+using namespace std;
+```
+```cpp
+int main()
+{
+    // Input
+    int n;
+    cin >> n;
+    map<string, string, greater<string>> m;                                     // required heavy googling
+    string name, present;
+    for (int i = 0; i < n; i++)
+    {
+        cin >> name >> present;
+        m[name] = present;                                                      // more efficient
+        // if (m.find(name) == m.end()) m.insert(pair<string, string> (name, present));
+        // else m.find(name)->second = present;
+    }
+
+    // Output
+    for (auto it = m.begin(); it != m.end(); it++) if (it->second == "enter") cout << it->first << endl;
+  
+    return 0;
+}
+```
+> 맞았습니다!!
+
+
 ## [1620. 나는야 포켓몬 마스터 이다솜](#list)
 
 Crazy problem explanation ……
@@ -277,8 +460,66 @@ Crazy problem explanation ……
 > 16  
 > 14
 
-#### Golang - Trial 1
-(2022.08.02)
+#### C++ (2023.07.08)
+```cpp
+#include <iostream>
+#include <map>
+#include <algorithm>
+
+#define endl '\n'
+
+using namespace std;
+```
+```cpp
+int pokedex(string name, map<string, int>* pokedexByName)
+{
+    int num = (*pokedexByName).find(name)->second;
+
+    return num;
+}
+```
+```cpp
+string pokedex(int num, map<int, string>* pokedexByNo)
+{
+    string name = (*pokedexByNo).find(num)->second;;
+
+    return name;
+}
+```
+```cpp
+int main()
+{
+    // Fast I/O
+    cin.tie(0);
+	ios::sync_with_stdio(false);
+
+    // Input pokedexByNo
+    int n, m;
+    cin >> n >> m;
+    map<string, int> pokedexByName;
+    map<int, string> pokedexByNo;
+    string temp;
+    for (int i = 1; i <= n; i++)
+    {
+        cin >> temp;
+        pokedexByName[temp] = i;
+        pokedexByNo[i] = temp;
+    }
+
+    // Output
+    for (int i = 1; i <= m; i++)
+    {
+        cin >> temp;
+        if (temp[0] >= 'A' && temp[0] <= 'z') cout << pokedex(temp, &pokedexByName) << endl;
+        else cout << pokedex(stoi(temp), &pokedexByNo) << endl;
+    }
+
+    return 0;
+}
+```
+> 맞았습니다!!
+
+#### Golang - Trial 1 (2022.08.02)
 ```go
 package main
 
@@ -346,8 +587,7 @@ func main() {
 ```
 > Not solved entirely
 
-#### Golang - Trial 2
-(2022.08.03)
+#### Golang - Trial 2 (2022.08.03)
 ```go
 func main() {
 
@@ -392,8 +632,52 @@ func main() {
 
 > 3 0 0 1 2 0 0 2
 
-#### Golang
-(2022.08.03)
+#### C++ (2023.07.08)
+```cpp
+#include <iostream>
+#include <map>
+#include <algorithm>
+
+#define endl '\n'
+
+using namespace std;
+```
+```cpp
+int main()
+{
+    // Fast I/O
+    cin.tie(0);
+	ios::sync_with_stdio(false);
+
+    // Input n
+    int n;
+    cin >> n;
+    map<int, int> mp;
+    int temp;
+    for (int i = 0; i < n; i++)
+    {
+        cin >> temp;
+        if (mp.find(temp) == mp.end()) mp.insert(pair<int, int> (temp, 1));
+        else mp[temp]++;
+    }
+
+    // Input m & Output
+    int m;
+    cin >> m;
+    for (int i = 0; i < m; i++)
+    {
+        cin >> temp;
+        if (mp.find(temp) == mp.end()) cout << 0 << ' ';
+        else cout << mp[temp] << ' ';                                           // not mp[temp]->second
+    }
+    cout << endl;
+
+    return 0;
+}
+```
+> 맞았습니다!!
+
+#### Golang (2022.08.03)
 ```go
 package main
 
@@ -437,6 +721,7 @@ func main() {
 ```
 > 출력 초과
 
+
 ## [1764. 듣보잡](#list)
 
 > 3 4  
@@ -449,8 +734,57 @@ func main() {
 > baesangwook  
 > ohhenrie
 
-#### Golang
-(2022.08.03)
+#### C++ (2023.07.08)
+```cpp
+#include <iostream>
+#include <map>
+#include <algorithm>
+
+#define endl '\n'
+
+using namespace std;
+```
+```cpp
+int main()
+{
+    // Fast I/O
+    cin.tie(0);
+	ios::sync_with_stdio(false);
+
+    // Input n
+    int n, m;
+    cin >> n >> m;
+    map<string, int> mp;
+    string temp;
+    for (int i = 0; i < n; i++)
+    {
+        cin >> temp;
+        mp[temp] = 1;
+    }
+
+    // Input m
+    int cnt = 0;
+    for (int i = 0; i < m; i++)
+    {
+        cin >> temp;
+        if (mp.find(temp) == mp.end()) mp[temp] = 1;
+        else
+        {
+            mp[temp]++;
+            cnt++;
+        }
+    }
+
+    // Output
+    cout << cnt << endl;
+    for (auto it = mp.begin(); it != mp.end(); it++) if (it->second == 2) cout << it->first << endl;
+
+    return 0;
+}
+```
+> 맞았습니다!!
+
+#### Golang (2022.08.03)
 ```go
 package main
 
@@ -508,8 +842,47 @@ func main() {
 
 > 4
 
-#### Golang
-(2022.08.03)
+#### C++ (2023.07.08)
+```cpp
+#include <iostream>
+#include <map>
+#include <algorithm>
+
+#define endl '\n'
+
+using namespace std;
+```
+```cpp
+int main()
+{
+    // Fast I/O
+    cin.tie(0);
+	ios::sync_with_stdio(false);
+
+    // Input n & m
+    int n, m;
+    cin >> n >> m;
+    map<int, int> mp;
+    int temp;
+    for (int i = 0; i < n + m; i++)
+    {
+        cin >> temp;
+        if (mp.find(temp) == mp.end()) mp[temp] = 1;
+        else mp[temp]++;
+    }
+    // not guaranteed that there's no duplicated elements in a set
+
+    // Output
+    int cnt = 0;
+    for (auto it = mp.begin(); it != mp.end(); it++) if (it->second == 1) cnt++;
+    cout << cnt << endl;
+
+    return 0;
+}
+```
+> 맞았습니다!!
+
+#### Golang (2022.08.03)
 ```go
 package main
 
@@ -559,8 +932,61 @@ func main() {
 
 > 12
 
-#### Golang
-(2022.08.03)
+#### C++ (2023.07.08)
+```cpp
+#include <iostream>
+#include <set>
+#include <algorithm>
+
+// #define test
+#define endl '\n'
+
+using namespace std;
+```
+```cpp
+int main()
+{
+    // Input
+    string s;
+    cin >> s;
+    int len = s.size();
+    set<string> st;
+    for (int i = 0; i < len; i++)
+    {
+        for (int j = i; j < len; j++)
+        {
+            st.insert(s.substr(i, j-i+1));
+
+            #ifdef test
+                cout << s.substr(i, j-i+1) << ' ';
+            #endif
+        }
+    }
+    #ifdef test
+        cout << endl;
+    #endif
+
+    // Output
+    int cnt = 0;
+    for (auto it = st.begin(); it != st.end(); it++)
+    {
+        cnt++;
+
+        #ifdef test
+            cout << *it << ' ';
+        #endif
+    }
+    #ifdef test
+        cout << endl;
+    #endif
+    cout << cnt << endl;
+
+    return 0;
+}
+```
+> 맞았습니다!!
+
+#### Golang (2022.08.03)
 ```go
 func main() {
 

@@ -577,8 +577,7 @@ bool comp(pair<int, int> p1, pair<int, int> p2)             // only different pa
 }
 ```
 
-#### Golang
-(2022.07.11)
+#### Golang (2022.07.11)
 ```go
 func main() {
 

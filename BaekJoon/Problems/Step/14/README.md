@@ -677,7 +677,7 @@ int main()
 ```
 > 맞았습니다!!
 
-#### Golang (2022.08.03)
+#### Golang - Trial 1 (2022.08.03)
 ```go
 package main
 
@@ -720,6 +720,41 @@ func main() {
 }
 ```
 > 출력 초과
+
+#### Golang - Trial 2 (2023.07.08)
+
+```go
+func main() {
+
+    ……
+
+    // Input 1
+    var n int
+    fmt.Fscan(reader, &n)
+    var mp map[int]int = make(map[int]int)
+    var temp int
+    for i := 0; i < n; i++ {
+        fmt.Fscan(reader, &temp)
+        mp[temp]++                                          // default value : 0
+    }
+
+    // Input 2 & Operate
+    var m int
+    fmt.Fscan(reader, &m)
+    var v []int
+    for i := 0; i < m; i++ {
+        fmt.Fscan(reader, &temp)
+        v = append(v, mp[temp])
+    }
+
+    // Output
+    for i := 0; i < m; i++ {
+        fmt.Fprint(writer, v[i], " ")
+    }
+    fmt.Fprintln(writer)
+}
+```
+> 맞았습니다!!
 
 
 ## [1764. 듣보잡](#list)

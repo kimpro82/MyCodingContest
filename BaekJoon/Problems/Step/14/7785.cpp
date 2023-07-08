@@ -1,5 +1,5 @@
 // 7785. Easy work(회사에 있는 사람)
-// 2023.07.07
+// 2023.07.08
 
 /* Sample input & output data
 4

@@ -1,34 +1,41 @@
-## BAEKJOON Online Judge
+### [BAEKJOON Online Judge](/README.md#baekjoon-online-judge)
 
 # 문제 > 단계별로 풀어보기 > 12. 브루트 포스
 
-(2021.12.10)  
+(2021.12.10) - `C++`
 
 https://www.acmicpc.net/step/22
 
 
-※ All the `C++` codes **skipped** the below lines. :
+### **List**
+
+- [2798. JACK](#2798-jack블랙잭)
+- [2231. Digit Generator](#2231-digit-generator분해합)
+- [19532. 수학은 비대면강의입니다](#19532-수학은-비대면강의입니다) *(new)*
+- [1018. 체스판 다시 칠하기](#1018-체스판-다시-칠하기)
+- [1436. 영화감독 숌](#1436-영화감독-숌)
+- [2839. ŠEĆER(설탕 배달)](#2839-šećer설탕-배달)
+
+#### (Depreciated)
+- [7568. 덩치](#7568-덩치)
+
+### **Note**
+
+- All the codes of any language for the same problem have basically the same result.
+- Typical headers like the below are basically skipped, but they are noted seperately when there are any additional line.
+  - `C++` : `#include <iostream>` `#define endl '\n';` `using namespace std;`
+
+
+## [2798. JACK(블랙잭)](#list)
+
+> 5 21
+> 5 6 7 8 9
+
+> 21
+
+#### C++ (2021.10.31)
 ```cpp
-#include <iostream>
-
-using namespace std;
-
-#define endl '\n'
-```
-&nbsp;&nbsp;&nbsp;When any additional header is used, the header block is also noted seperately.
-
-
-## 2798. JACK
-
-#### C++
-(2021.11.01)
-```cpp
-#include <iostream>
 #include <vector>
-
-using namespace std;
-
-#define endl '\n'
 ```
 ```cpp
 int main()
@@ -76,16 +83,14 @@ int main()
 }
 ```
 
-> 5 21
-> 5 6 7 8 9
 
-> 21
+## [2231. Digit Generator(분해합)](#list)
 
+> 216
 
-## 2231. Digit Generator
+> 198
 
-#### C++
-(2021.11.01)
+#### C++ (2021.10.31)
 ```cpp
 int main()
 {
@@ -133,80 +138,64 @@ int main()
 }
 ```
 
-> 216
 
-> 198
+## [19532. 수학은 비대면강의입니다](#list)
 
+> 1 3 -1 4 1 7
 
-## 7568. 덩치
+> 2 -1
 
-#### C++
-(2021.12.10)
-```cpp
-#include <iostream>
-#include <vector>
-
-using namespace std;
-
-#define endl '\n'
-```
+#### C++ (2023.07.06)
 ```cpp
 int main()
 {
     // Input
-    int N;
-    cin >> N;
+    int a, b, c, d, e, f;
+    cin >> a >> b >> c >> d >> e >> f;
 
-    // Input x, y
+    // Operate : Brute Force
     int x, y;
-    vector<vector<int>> xy;
-    for (int i = 0; i < N; i++)
+    for (int i = -999; i <= 999; i++)
     {
-        cin >> x >> y;
-        vector<int> temp;
-        temp.push_back(x);
-        temp.push_back(y);
-        xy.push_back(temp);
-    }
-
-    // Determine everyone's ranking
-    vector<int> ranking;
-    for (int i = 0; i < N; i++)
-    {
-        int onesRank = 1;
-        for (int j = 0; j < N; j++) if (xy[i][0] < xy[j][0] && xy[i][1] < xy[j][1]) onesRank++;
-        ranking.push_back(onesRank);
+        for (int j = -999; j <= 999; j++)
+        {
+            if (a * i + b * j == c && d * i + e * j == f)
+            {
+                x = i;
+                y = j;
+                break;
+            }
+        }
     }
 
     // Output
-    for (int i = 0; i < N - 1; i++) cout << ranking[i] << ' ';
-    cout << ranking[N - 1] << endl;
+    cout << x << ' ' << y << endl;
 
     return 0;
 }
 ```
 
-> 5  
-> 55 185  
-> 58 183  
-> 88 186  
-> 60 175  
-> 46 155
 
-> 2 2 1 2 5
+## [1018. 체스판 다시 칠하기](#list)
 
+> 11 12  
+> BWWBWWBWWBWW  
+> BWWBWBBWWBWW  
+> WBWWBWBBWWBW  
+> BWWBWBBWWBWW  
+> WBWWBWBBWWBW  
+> BWWBWBBWWBWW  
+> WBWWBWBBWWBW  
+> BWWBWBWWWBWW  
+> WBWWBWBBWWBW  
+> BWWBWBBWWBWW  
+> WBWWBWBBWWBW
 
-## 1018. 체스판 다시 칠하기
+> 15
 
-#### C++
-(2021.12.10)
+#### C++ (2021.12.10)
 ```cpp
-#include <iostream>
 #include <vector>
-
-using namespace std;
-
-#define endl '\n'
 ```
 ```cpp
 int main()
@@ -264,26 +253,14 @@ int main()
 }
 ```
 
-> 11 12  
-> BWWBWWBWWBWW  
-> BWWBWBBWWBWW  
-> WBWWBWBBWWBW  
-> BWWBWBBWWBWW  
-> WBWWBWBBWWBW  
-> BWWBWBBWWBWW  
-> WBWWBWBBWWBW  
-> BWWBWBWWWBWW  
-> WBWWBWBBWWBW  
-> BWWBWBBWWBWW  
-> WBWWBWBBWWBW
 
-> 15
+## [1436. 영화감독 숌](#list)
 
+> 187
 
-## 1436. 영화감독 숌
+> 66666
 
-#### C++
-(2021.12.10)
+#### C++ (2021.12.10)
 ```cpp
 int main()
 {
@@ -323,6 +300,126 @@ int main()
 }
 ```
 
-> 187
 
-> 66666
+## [2839. ŠEĆER(설탕 배달)](#list)
+
+> 18
+
+> 4
+
+#### Bash (2022.03.11)
+```bash
+read n
+
+let "bag3 = 0"
+let "rest = 1"
+
+for ((i = 0; i <= $((n / 3)); i++))
+do
+    # if [[ $(($((n - i * 3)) % 5)) == 0 ]]; then       # worse readability
+    let "criteria = (n - i * 3) % 5"
+    if [ $criteria -eq 0 ]; then
+        let "bag3 = i"
+        let "rest = 0"
+        break
+    fi
+
+    # test
+    # echo ${bag3} $((bag3 * 3)) $((n - bag3 * 3))
+done
+
+
+
+if [ $rest -eq 0 ]; then
+    echo $((bag3 + (n - bag3 * 3) /  5))
+else
+    echo -1
+fi
+```
+
+#### C++ (2021.07.12)
+```cpp
+int main()
+{
+    int N;
+    cin >> N;       // 3 <= n <= 5000
+
+    int bag3 = 0;
+    bool rest = true;
+    for (int i = 0; i <= N / 3; i++)
+    {
+        if ((N - i * 3) % 5 == 0)
+        {
+            bag3 = i;
+            rest = false;
+            break;
+        }
+    }
+
+    // Test
+    // cout << bag3 << " " << bag3 * 3 << " " << (N - bag3 * 3) << endl;
+
+    // Output
+    if (rest == false)
+    {
+        cout << bag3 + (N - bag3 * 3) / 5 << endl;
+    } else
+    {
+        cout << -1 << endl;
+    }
+
+    return 0;
+}
+```
+
+
+## [7568. 덩치](#list)
+
+> 5  
+> 55 185  
+> 58 183  
+> 88 186  
+> 60 175  
+> 46 155
+
+> 2 2 1 2 5
+
+#### C++ (2021.12.10)
+```cpp
+#include <vector>
+```
+```cpp
+int main()
+{
+    // Input
+    int N;
+    cin >> N;
+
+    // Input x, y
+    int x, y;
+    vector<vector<int>> xy;
+    for (int i = 0; i < N; i++)
+    {
+        cin >> x >> y;
+        vector<int> temp;
+        temp.push_back(x);
+        temp.push_back(y);
+        xy.push_back(temp);
+    }
+
+    // Determine everyone's ranking
+    vector<int> ranking;
+    for (int i = 0; i < N; i++)
+    {
+        int onesRank = 1;
+        for (int j = 0; j < N; j++) if (xy[i][0] < xy[j][0] && xy[i][1] < xy[j][1]) onesRank++;
+        ranking.push_back(onesRank);
+    }
+
+    // Output
+    for (int i = 0; i < N - 1; i++) cout << ranking[i] << ' ';
+    cout << ranking[N - 1] << endl;
+
+    return 0;
+}
+```

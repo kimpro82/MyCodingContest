@@ -23,7 +23,6 @@ https://www.acmicpc.net/step/8
 - [1712. 손익분기점](#1712-손익분기점)
 - [10250. ACM Hotel(ACM 호텔)](#10250-acm-hotelacm-호텔)
 - [2775. 부녀회장이 될테야](#2775-부녀회장이-될테야)
-- [2839. ŠEĆER(설탕 배달)](#2839-šećer설탕-배달)
 - [1011. Fly me to the Alpha Centauri](#1011-fly-me-to-the-alpha-centauri)
 
 
@@ -736,78 +735,6 @@ int main()
 
         // Output
         cout << resident[K][N] << endl;
-    }
-
-    return 0;
-}
-```
-
-
-## [2839. ŠEĆER(설탕 배달)](#list)
-
-> 18
-
-> 4
-
-#### Bash (2022.03.11)
-```bash
-read n
-
-let "bag3 = 0"
-let "rest = 1"
-
-for ((i = 0; i <= $((n / 3)); i++))
-do
-    # if [[ $(($((n - i * 3)) % 5)) == 0 ]]; then       # worse readability
-    let "criteria = (n - i * 3) % 5"
-    if [ $criteria -eq 0 ]; then
-        let "bag3 = i"
-        let "rest = 0"
-        break
-    fi
-
-    # test
-    # echo ${bag3} $((bag3 * 3)) $((n - bag3 * 3))
-done
-
-
-
-if [ $rest -eq 0 ]; then
-    echo $((bag3 + (n - bag3 * 3) /  5))
-else
-    echo -1
-fi
-```
-
-#### C++ (2021.07.12)
-```cpp
-int main()
-{
-    int N;
-    cin >> N;       // 3 <= n <= 5000
-
-    int bag3 = 0;
-    bool rest = true;
-    for (int i = 0; i <= N / 3; i++)
-    {
-        if ((N - i * 3) % 5 == 0)
-        {
-            bag3 = i;
-            rest = false;
-            break;
-        }
-    }
-
-    // Test
-    // cout << bag3 << " " << bag3 * 3 << " " << (N - bag3 * 3) << endl;
-
-    // Output
-    if (rest == false)
-    {
-        cout << bag3 + (N - bag3 * 3) / 5 << endl;
-    } else
-    {
-        cout << -1 << endl;
     }
 
     return 0;

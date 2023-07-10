@@ -31,17 +31,17 @@ void getPn(set<int>* pn)
 {
     for (int i = 2; i < 1000000; i++)
     {
-        bool aIsPrime = true;
+        bool isPrime = true;
         for (int j = 2; j <= int(sqrt(i)); j++)
         {
             if (i % j == 0)
             {
-                aIsPrime = false;
+                isPrime = false;
                 break;
             }
         }
 
-        if (aIsPrime == true) (*pn).insert(i);
+        if (isPrime == true) (*pn).insert(i);
     }
 }
 
@@ -61,7 +61,6 @@ int main()
 
         // Count when `j` and `j - n` both exist
         int cnt = 0;
-        // Trial 1 - 
         for (int j = 2; j <= n / 2; j++)
         {
             if (pn.find(j) != pn.end() && pn.find(n - j) != pn.end()) cnt++;

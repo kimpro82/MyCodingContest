@@ -38,7 +38,7 @@ int main()
         if (i > 0 && v[i] - v[i-1] < dist) dist = v[i] - v[i-1];
     }
 
-    // Operate : Count trees newly planted
+    // Operate 2 : Count trees newly planted
     int ans = 0;
     int loc = v[0];
     while (loc < v[n-1])

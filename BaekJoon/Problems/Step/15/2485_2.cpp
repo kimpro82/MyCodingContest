@@ -3,12 +3,12 @@
 
 /* Sample input & output data
 4
-1
-3
-7
-13
+2
+6
+12
+18
 
-3
+5
 */
 
 

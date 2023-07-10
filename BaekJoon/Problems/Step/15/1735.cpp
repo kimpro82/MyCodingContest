@@ -64,3 +64,10 @@ int main()
 
     return 0;
 }
+
+
+/*
+    Trial 1 : 908 ms
+    Trial 2 : 516 ms
+    Trial 3 :   0 ms
+*/

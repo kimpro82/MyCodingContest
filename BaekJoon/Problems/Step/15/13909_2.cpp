@@ -17,7 +17,7 @@
 using namespace std;
 
 
-// // Use some similiar algorithm with the sieve of Eratosthenes - Not needed
+// // Use some similiar algorithm with the sieve of Eratosthenes → It causes MLE (2.1B Bit ≒ 262.5 MB)
 // void kindOfEratos(int* n, vector<bool>* v)
 // {
 //     for (int i = 1; i <= *n; i++)

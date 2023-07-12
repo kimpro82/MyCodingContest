@@ -43,7 +43,9 @@ https://www.acmicpc.net/step/18
 221
 ```
 
-#### C++ (2023.07.09)
+<details>
+  <summary>Answer : C++ (2023.07.09)</summary>
+
 ```cpp
 ……
 #include <cmath>
@@ -79,6 +81,7 @@ int main()
     return 0;
 }
 ```
+</details>
 > 맞았습니다!!
 
 
@@ -91,7 +94,9 @@ int main()
 24079
 ```
 
-#### C++ (2023.07.09)
+<details>
+  <summary>Answer : C++ (2023.07.09)</summary>
+
 ```cpp
 ……
 #include <cmath>
@@ -123,6 +128,7 @@ int main()
     return 0;
 }
 ```
+</details>
 > 맞았습니다!!
 
 
@@ -136,7 +142,9 @@ int main()
 31 35
 ```
 
-#### C++ - Trial 1 (2023.07.09)
+<details>
+  <summary>Answer : C++ - Trial 1 (2023.07.09)</summary>
+
 ```cpp
 ……
 #include <cmath>
@@ -177,9 +185,12 @@ int main()
     return 0;
 }
 ```
+</details>
 > 맞았습니다!! (908 ms)
 
-#### C++ - Trial 2 (2023.07.09)
+<details>
+  <summary>Answer : C++ - Trial 2 (2023.07.09)</summary>
+
 ```cpp
 int main()
 {
@@ -197,9 +208,13 @@ int main()
     ……
 }
 ```
+</details>
 > 맞았습니다!! (516 ms)
 
-#### C++ - Trial 3 (2023.07.09)
+
+<details>
+  <summary>Answer : C++ - Trial 3 (2023.07.09)</summary>
+
 ```cpp
 int gcdf(int a, int b)                                      // Trial 3 : Euclidean algorithm
 {
@@ -226,6 +241,7 @@ int main()
     ……
 }
 ```
+</details>
 > 맞았습니다!! (0 ms)
 
 
@@ -242,7 +258,9 @@ int main()
 5
 ```
 
-#### C++ - Trial 1 (2023.07.09)
+<details>
+  <summary>Answer : C++ - Trial 1 (2023.07.09)</summary>
+
 ```cpp
 ……
 #include <vector>
@@ -283,9 +301,12 @@ int main()
     return 0;
 }
 ```
+</details>
 > WA (not submitted)
 
-#### C++ - Trial 2 (2023.07.10)
+<details>
+  <summary>Answer : C++ - Trial 2 (2023.07.10)</summary>
+
 ```cpp
 // #define test
 ```
@@ -334,9 +355,12 @@ int main()
     ……
 }
 ```
+</details>
 > 시간 초과
 
-#### C++ - Trial 3 (2023.07.10)
+<details>
+  <summary>Answer : C++ - Trial 3 (2023.07.10)</summary>
+
 ```cpp
 ……
 #include <set>
@@ -382,6 +406,7 @@ int main()
     ……
 }
 ```
+</details>
 > 맞았습니다!!
 
 
@@ -399,7 +424,9 @@ int main()
 101
 ```
 
-#### C++ (2023.07.11)
+<details>
+  <summary>Answer : C++ (2023.07.11)</summary>
+
 ```cpp
 ……
 #include <cmath>
@@ -444,6 +471,7 @@ int main()
     return 0;
 }
 ```
+</details>
 > 맞았습니다!!
 
 
@@ -457,7 +485,9 @@ int main()
 > 11  
 > 13
 
-#### C++ (2021.07.19)
+<details>
+  <summary>Answer : C++ (2021.07.19)</summary>
+
 ```cpp
 int main()
 {
@@ -491,6 +521,7 @@ int main()
     return 0;
 }
 ```
+</details>
 > 맞았습니다!!
 
 
@@ -513,7 +544,9 @@ int main()
 > 1033  
 > 8392
 
-#### C++ (2021.07.19)
+<details>
+  <summary>Answer : C++ (2021.07.19)</summary>
+
 ```cpp
 int main()
 {
@@ -551,6 +584,7 @@ int main()
     return 0;
 }
 ```
+</details>
 > 맞았습니다!!
 
 
@@ -572,7 +606,9 @@ int main()
 6
 ```
 
-#### C++ - Trial 1 (2023.07.10)
+<details>
+  <summary>Answer : C++ - Trial 1 (2023.07.10)</summary>
+
 ```cpp
 ……
 #include <cmath>
@@ -640,9 +676,12 @@ int main()
     return 0;
 }
 ```
+</details>
 > 시간 초과
 
-#### C++ - Trial 2 (2023.07.10)
+<details>
+  <summary>Answer : C++ - Trial 2 (2023.07.10)</summary>
+
 ```cpp
 ……
 #include <set>
@@ -694,9 +733,12 @@ int main()
     return 0;
 }
 ```
+</details>
 > 시간 초과
 
-#### C++ - Trial 3 (2023.07.10)
+<details>
+  <summary>Answer : C++ - Trial 3 (2023.07.10)</summary>
+
 ```cpp
 ……
 #include <vector>
@@ -764,9 +806,12 @@ int main()
     ……
 }
 ```
+</details>
 > 시간 초과
 
-#### C++ - Trial 4 (2023.07.11)
+<details>
+  <summary>Answer : C++ - Trial 4 (2023.07.11)</summary>
+
 ```cpp
 // Use the sieve of Eratosthenes
 void eratos(int* vPtr, vector<int>* pn, const int* NUM)
@@ -800,9 +845,12 @@ int main()
     ……
 }
 ```
+</details>
 > 시간 초과
 
-#### C++ - Trial 5 (2023.07.11)
+<details>
+  <summary>Answer : C++ - Trial 5 (2023.07.11)</summary>
+
 ```cpp
 // Use the sieve of Eratosthenes
 void eratos(int* vPtr, const int* NUM)
@@ -848,6 +896,7 @@ int main()
     ……
 }
 ```
+</details>
 > 맞았습니다!!
 
 
@@ -860,7 +909,9 @@ int main()
 4
 ```
 
-#### C++ - Trial 1 (2023.07.11)
+<details>
+  <summary>Answer : C++ - Trial 1 (2023.07.11)</summary>
+
 ```cpp
 ……
 #include <vector>
@@ -909,9 +960,12 @@ int main()
     return 0;
 }
 ```
+</details>
 > 메모리 초과
 
-#### C++ - Trial 2 (2023.07.11)
+<details>
+  <summary>Answer : C++ - Trial 2 (2023.07.11)</summary>
+
 ```cpp
 ……
 // #include <vector>
@@ -964,4 +1018,5 @@ int main()
     ……
 }
 ```
+</details>
 > 맞았습니다!!

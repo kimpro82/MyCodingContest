@@ -185,6 +185,8 @@ int main()
 {
     ……
 
+    // Operate 3 : Convert it as an irreducible fraction
+    ……
     while (gcd > 1)
     {
         if ……
@@ -217,6 +219,8 @@ int main()
 {
     ……
 
+    // Operate 3 : Convert it as an irreducible fraction
+    ……
     int gcd = gcdf(num, den);                               // Trial 3
 
     ……
@@ -487,6 +491,7 @@ int main()
     return 0;
 }
 ```
+> 맞았습니다!!
 
 
 ## [4948. Chebyshev's Theorem(베트르랑 공준)](#list)
@@ -546,6 +551,7 @@ int main()
     return 0;
 }
 ```
+> 맞았습니다!!
 
 
 ## [17103. 골드바흐 파티션](#list)

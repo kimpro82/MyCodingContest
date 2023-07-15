@@ -67,6 +67,8 @@ can't escape this endless valley of despair ……
 | [13. 정렬](/BaekJoon/Problems/Step/13#baekjoon-online-judge) | | 21.12.16 | 22.07.11 | |
 | [14. 집합과 맵](/BaekJoon/Problems/Step/14#baekjoon-online-judge) | | 23.07.08 | 22.08.03 | |
 | [15. 약수, 배수와 소수 2](/BaekJoon/Problems/Step/15#baekjoon-online-judge) | | 23.07.11 | | |
+| [17. 조합론](/BaekJoon/Problems/Step/17#baekjoon-online-judge) | | 23.07.12 | | |
+| [18. 심화 2](/BaekJoon/Problems/Step/18#baekjoon-online-judge) | | 23.07.14 | | |
 | [21. 재귀](/BaekJoon/Problems/Step/21#baekjoon-online-judge) | | 21.09.15<br>(not completed) | | |
 | [23. 동적 계획법 1](/BaekJoon/Problems/Step/23#baekjoon-online-judge) | | 22.04.24<br>(not completed) | | |
 | [25. 그리디 알고리즘](/BaekJoon/Problems/Step/25#baekjoon-online-judge) | | 22.04.21 | | |

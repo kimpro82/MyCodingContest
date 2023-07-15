@@ -18,35 +18,6 @@ using namespace std;
 &nbsp;&nbsp;&nbsp;When any additional header is used, the header block is also noted seperately.
 
 
-## 10872. 팩토리얼
-
-#### C++
-(2021.07.27)
-```cpp
-int factorial(int n)
-{
-    if (n <= 1) return 1;
-
-    return n * factorial(n - 1);
-}
-```
-```cpp
-int main()
-{
-    int N;
-    cin >> N;
-
-    cout << factorial(N) << endl;
-
-    return 0;
-}
-```
-
-> 10
-
-> 3628800
-
-
 ## 10870. 피보나치 수 5
 
 #### C++

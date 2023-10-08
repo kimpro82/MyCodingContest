@@ -40,8 +40,6 @@ using namespace std;
 
 void dfs(vector<int>& div, int idx, int cnt, int n, int k, vector<int>& ans, vector<int>& temp, int p)
 {
-    if (temp.size() > 100) return;
-
     int prod = 1, sum = 0;
     for (int i = 0; i < temp.size(); i++)
     {
@@ -68,7 +66,7 @@ int main()
 {
     // Input data
     #ifdef fileio
-        string inputFileName = "B1_input_full.txt";
+        string inputFileName = "B2_input_full.txt";
         ifstream fin(inputFileName, ios_base::in);
         string line;
     #endif
@@ -103,9 +101,10 @@ int main()
             cout << endl;
         #endif
 
-        // Find the combinations of product == P[t] and sum == 41
+        // Find the 1st combination of product == P[t] and sum == 41
         vector<int> ans {}, temp {};
-        for (int k = 1; k <= div.size(); k++)
+        for (int k = 1; k <= 100; k++)                      // "most 100 positive integers"
+        // for (int k = 1; k <= div.size(); k++)            // Wrong Answer
         {
             dfs(div, 0, 0, n, k, ans, temp, p);
             if (!ans.empty()) break;
@@ -115,7 +114,7 @@ int main()
         // Output
         #ifdef fileio
             ofstream ofs;
-            string outputFileName = "B1_output_full.txt";
+            string outputFileName = "B2_output_full.txt";
             ofs.open(outputFileName, ios::app);
             // ios::app : All output operations are performed at the end of the file, appending the content to the current content of the file.
             ofs << "Case #" << t + 1 << ": ";

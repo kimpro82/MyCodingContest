@@ -98,7 +98,7 @@ not attempted
   {
       // Input data
       #ifdef fileio
-          string inputFileName = "B2_input_full.txt";
+          string inputFileName = "B1_input_sample.txt";
           ifstream fin(inputFileName, ios_base::in);
           string line;
       #endif
@@ -146,7 +146,7 @@ not attempted
           // Output
           #ifdef fileio
               ofstream ofs;
-              string outputFileName = "B2_output_full.txt";
+              string outputFileName = "B1_output_sample.txt";
               ofs.open(outputFileName, ios::app);
               // ios::app : All output operations are performed at the end of the file, appending the content to the current content of the file.
               ofs << "Case #" << t + 1 << ": ";

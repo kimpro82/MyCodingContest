@@ -8,8 +8,8 @@ https://www.facebook.com/codingcompetitions/hacker-cup/2023/round-1
 ## \<List>
 
 - [Problem A: Here Comes Santa Claus (10 pts)](#problem-a-here-comes-santa-claus-10-pts)
-- [Problem B1: Sum 41 (Chapter 1) (11 pts)](#problem-b1-sum-41-chapter-1-11-pts)
-- [Problem B2: Sum 41 (Chapter 2) (4 pts)](#problem-b2-sum-41-chapter-2-4-pts)
+- [**Problem B1: Sum 41 (Chapter 1) (11 pts)**](#problem-b1-sum-41-chapter-1-11-pts)
+- [**Problem B2: Sum 41 (Chapter 2) (4 pts)**](#problem-b2-sum-41-chapter-2-4-pts)
 - [Problem C1: Back in Black (Chapter 1) (11 pts)](#problem-c1-back-in-black-chapter-1-11-pts)
 - [Problem C2: Back in Black (Chapter 2) (8 pts)](#problem-c2-back-in-black-chapter-2-8-pts)
 - [Problem D: Today is Gonna be a Great Day (24 pts)](#problem-d-today-is-gonna-be-a-great-day-24-pts)

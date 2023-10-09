@@ -37,6 +37,8 @@ can't escape this endless valley of despair ……
 
 &nbsp;&nbsp;https://www.facebook.com/codingcompetitions/hacker-cup/
 
+- [2023 Round 1 (2023.10.08 02:00 ~ 10.08 05:00, 3 hrs) - C++](/Meta/HackerCup/2023%20Round%201/README.md)
+- 2023 Practice Round (2023.09.23 02:00 ~ 2023.09.26 02:00, 72 hrs) (Comming)
 - 2022 Round 1 (2022.09.11 02:00 ~ 09.12 02:00, 24 hrs) (Comming)
 - 2022 Qualification Round (2022.08.27 02:00 ~ 08.30 02:00, 72 hrs) (Comming)
 - [2021 Qualification Round (2021.08.28 02:00 ~ 09.01 02:00, 72 hrs) - C++](/Meta/HackerCup/2021%20Qualification%20Round#metafacebook-hacker-cup---2022-qualification-round)

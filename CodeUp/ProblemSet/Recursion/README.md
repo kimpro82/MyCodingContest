@@ -411,9 +411,8 @@ https://codeup.kr/problemsetsol.php?psid=21
   ```
 </details>
 <details>
-    <summary>Codes (C++) - Trial 2</summary>
+    <summary>Codes (C++) - Trial 2 : Use Memoization</summary>
 
-  Use *Memoization*
   #### C++
   ```cpp
   ……
@@ -446,9 +445,8 @@ https://codeup.kr/problemsetsol.php?psid=21
   ```
 </details>
 <details>
-    <summary>Codes (C++) - Trial 3</summary>
+    <summary>Codes (C++) - Trial 3 : Use Legacy Array (crazy)</summary>
 
-  Use legacy array (crazy)
   #### C++
   ```cpp
   ……
@@ -473,9 +471,8 @@ https://codeup.kr/problemsetsol.php?psid=21
   ```
 </details>
 <details>
-    <summary>Codes (C++) - Trial 4</summary>
+    <summary>Codes (C++) - Trial 4 : Use the Bottom-Up Method</summary>
 
-  Use the bottom-up method
   #### C++
   ```cpp
   ……
@@ -526,7 +523,7 @@ https://codeup.kr/problemsetsol.php?psid=21
 - Tial 3 : `시간 초과`
 - Tial 4 : `실행 중 에러(Runtime Error:Segmentation fault)`
 
-때려치워!
+  때려치워!
 
 
 ## [1920. (재귀함수) 2진수 변환](#list)
@@ -536,30 +533,88 @@ https://codeup.kr/problemsetsol.php?psid=21
 
   #### Input
   ```txt
-
+  7
   ```
   #### Output
   ```txt
-
+  111
   ```
 </details>
 <details>
-    <summary>Codes (C++)</summary>
+    <summary>Codes (C++) - Trial 1</summary>
 
   #### C++
   ```cpp
+  #include <iostream>
+  #include <vector>
 
+  #define endl '\n'
+
+  using namespace std;
   ```
   ```cpp
-
+  vector<int> v {};
   ```
   ```cpp
+  void Recursion(int n)
+  {
+      v.push_back(n % 2);
 
+      if (n < 2)
+          return;
+      else
+          Recursion(n / 2);
+  }
+  ```
+  ```cpp
+  int main()
+  {
+      int n;
+      cin >> n;
+
+      Recursion(n);
+      for (int i = v.size() - 1; i >= 0; i--)
+          cout << v[i];
+      cout << endl;
+
+      return 0;
+  }
+  ```
+</details>
+<details>
+    <summary>Codes (C++) - Trial 2 : Use String instead of Vector</summary>
+
+  #### C++
+  ```cpp
+  ……
+  ```
+  ```cpp
+  string str = "";
+  ```
+  ```cpp
+  void Recursion(int n)
+  {
+      str = to_string(n % 2) + str;
+
+      ……
+  }
+  ```
+  ```cpp
+  int main()
+  {
+      ……
+
+      ……
+      cout << str << endl;
+
+      ……
+  }
   ```
 </details>
 
 #### Submissions
-> 정확한 풀이
+- Tial 1 : `이 문제는 for사용할 수 없습니다!`
+- Tial 2 : `정확한 풀이`
 
 
 ## [1928. (재귀함수) 우박수 (3n+1) (basic)](#list)
@@ -569,11 +624,16 @@ https://codeup.kr/problemsetsol.php?psid=21
 
   #### Input
   ```txt
-
+  5
   ```
   #### Output
   ```txt
-
+  5
+  16
+  8
+  4
+  2
+  1
   ```
 </details>
 <details>
@@ -581,13 +641,32 @@ https://codeup.kr/problemsetsol.php?psid=21
 
   #### C++
   ```cpp
+  #include <iostream>
 
+  #define endl '\n'
+
+  using namespace std;
   ```
   ```cpp
+  void Recursion(int n)
+  {
+      cout << n << endl;
 
+      if (n == 1) return;
+      else if (n % 2 == 1) Recursion(3 * n + 1);
+      else Recursion(n / 2);
+  }
   ```
   ```cpp
+  int main()
+  {
+      int n;
+      cin >> n;
 
+      Recursion(n);
+
+      return 0;
+  }
   ```
 </details>
 
@@ -602,11 +681,16 @@ https://codeup.kr/problemsetsol.php?psid=21
 
   #### Input
   ```txt
-
+  5
   ```
   #### Output
   ```txt
-
+  1
+  2
+  4
+  8
+  16
+  5
   ```
 </details>
 <details>
@@ -614,13 +698,50 @@ https://codeup.kr/problemsetsol.php?psid=21
 
   #### C++
   ```cpp
+  #include <iostream>
+  #include <stack>
 
+  #define endl '\n'
+
+  using namespace std;
   ```
   ```cpp
-
+  stack<int> stk;
   ```
   ```cpp
+  void Recursion(int n)
+  {
+      stk.push(n);
 
+      if (n == 1) return;
+      else if (n % 2 == 1) Recursion(3 * n + 1);
+      else Recursion(n / 2);
+  }
+  ```
+  ```cpp
+  void stkPop()
+  {
+      if (!stk.empty())
+      {
+          cout << stk.top() << endl;
+          stk.pop();
+          stkPop();
+      }
+      else
+          return;
+  }
+  ```
+  ```cpp
+  int main()
+  {
+      int n;
+      cin >> n;
+
+      Recursion(n);
+      stkPop();
+
+      return 0;
+  }
   ```
 </details>
 
@@ -640,11 +761,13 @@ not attempted
 
   #### Input
   ```txt
-
+  3
   ```
   #### Output
   ```txt
-
+  *
+  **
+  ***
   ```
 </details>
 <details>
@@ -652,13 +775,41 @@ not attempted
 
   #### C++
   ```cpp
+  #include <iostream>
 
+  #define endl '\n'
+
+  using namespace std;
   ```
   ```cpp
+  void star(int m)
+  {
+      cout << '*';
 
+      if (m == 1) return;
+      else star(m - 1);
+  }
   ```
   ```cpp
+  void Recursion(int n, int m)
+  {
+      star(m);
+      cout << endl;
 
+      if (n == m) return;
+      else Recursion(n, m + 1);
+  }
+  ```
+  ```cpp
+  int main()
+  {
+      int n;
+      cin >> n;
+
+      Recursion(n, 1);
+
+      return 0;
+  }
   ```
 </details>
 

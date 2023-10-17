@@ -1,4 +1,4 @@
-### [CodeUp > ProblemSet](/README.md#metafacebook-hacker-cup)
+### [CodeUp > ProblemSet](/README.md#codeup)
 
 # Recursion
 
@@ -34,11 +34,20 @@ https://codeup.kr/problemsetsol.php?psid=21
 
   #### Input
   ```txt
-
+  10
   ```
   #### Output
   ```txt
-
+  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+  10
   ```
 </details>
 <details>
@@ -46,13 +55,33 @@ https://codeup.kr/problemsetsol.php?psid=21
 
   #### C++
   ```cpp
+  #include <iostream>
 
+  #define endl '\n'
+
+  using namespace std;
   ```
   ```cpp
+  void recursion(int n, int cnt)
+  {
+      cout << cnt << endl;
 
+      if (n == cnt)
+          return;
+      else
+          recursion(n, cnt + 1);
+  }
   ```
   ```cpp
+  int main()
+  {
+      int n, cnt = 1;
+      cin >> n;
 
+      recursion(n, cnt);
+
+      return 0;
+  }
   ```
   </details>
 

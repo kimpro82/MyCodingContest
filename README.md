@@ -81,7 +81,7 @@ can't escape this endless valley of despair ……
 
 &nbsp;&nbsp;https://codeup.kr/
 
-- [Problem Set > Recursion](./CodeUp/ProblemSet/Recursion/README.md#codeup--problemset)
+- [Problem Set > Recursion (2023.10.16)](./CodeUp/ProblemSet/Recursion/README.md#codeup--problemset)
 
 
 ## [Programmers](#list)

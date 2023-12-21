@@ -6,7 +6,8 @@
 (2021.07.11) - `R`  
 (2022.01.26) - `Bash`, `Text` (only possible)  
 (2022.03.12) - `Golang`  
-(2022.09.05) - `SystemVerilog`
+(2022.09.05) - `SystemVerilog`  
+(2023.12.21) - `Rust`
 
 https://www.acmicpc.net/step/1
 
@@ -35,13 +36,14 @@ https://www.acmicpc.net/step/1
 
 &nbsp;&nbsp; - All the codes of any language for the same problem have basically the same result.  
 &nbsp;&nbsp; - Typical headers like the below are basically skipped, but they are noted seperately when there are any additional line.  
-&nbsp;&nbsp;&nbsp;&nbsp; · `Bash` : `#!/bin/bash`  
-&nbsp;&nbsp;&nbsp;&nbsp; · `C++` : `#include <iostream>` `#define endl '\n';` `using namespace std;`  
-&nbsp;&nbsp;&nbsp;&nbsp; · `Golang` : `package main` `import "fmt"`  
-&nbsp;&nbsp;&nbsp;&nbsp; · `SystemVerilog` : `module` `endmodule`.  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * All the codes run on [JDoodle Online VERILOG Compiler IDE](https://www.jdoodle.com/execute-verilog-online/) as `Verilog` before submitted to [BOJ](https://www.acmicpc.net/) as `SystemVerilog`.  
-&nbsp;&nbsp; - `R` : Some answers occur runtime errors with unknowable reason in the BOJ grading machine.  
-&nbsp;&nbsp; - `Text` : Only possible problems that do not require input values are solved.  
+&nbsp;&nbsp;&nbsp;&nbsp; · *Bash* : `#!/bin/bash`  
+&nbsp;&nbsp;&nbsp;&nbsp; · *C++* : `#include <iostream>` `#define endl '\n';` `using namespace std;` `int main() {}`  
+&nbsp;&nbsp;&nbsp;&nbsp; · *Golang* : `package main` `import "fmt"` `func main() {}`  
+&nbsp;&nbsp;&nbsp;&nbsp; · *Rust* : `use std::io;` `fn main() {}`  
+&nbsp;&nbsp;&nbsp;&nbsp; · *SystemVerilog* : `module` `endmodule`.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * All the codes run on [JDoodle Online VERILOG Compiler IDE](https://www.jdoodle.com/execute-verilog-online/) as *Verilog* before submitted to [BOJ](https://www.acmicpc.net/) as *SystemVerilog*.  
+&nbsp;&nbsp; - *R* : Some answers occur runtime errors with unknowable reason in the BOJ grading machine.  
+&nbsp;&nbsp; - *Text* : Only possible problems that do not require input values are solved.  
 
 
 ## [2557. Hello World](#list)
@@ -73,6 +75,11 @@ print("Hello World!")
 ```R
 # print("Hello World!") # Runtime Error
 cat("Hello World!")
+```
+
+#### Rust (2023.12.21)
+```Rust
+println!("Hello World!");
 ```
 
 #### SystemVerilog
@@ -132,6 +139,21 @@ num <- scan("stdin")    # recieve num[1], num[2], …… as numeric
 cat(num[1] + num[2])
 ```
 
+#### Rust (2023.12.21)
+```Rust
+let mut input = String::new();
+io::stdin().read_line(&mut input).unwrap();
+
+let numbers: Vec<i32> = input
+    .split_whitespace()
+    .map(|s| s.parse::<i32>().unwrap())
+    .collect();
+
+let sum: i32 = numbers.iter().sum();
+
+println!("{}", sum);
+```
+
 #### SystemVerilog
 ```sv
 integer a, b, temp;
@@ -189,6 +211,22 @@ num <- scan("stdin")    # recieve num[1], num[2], …… as numeric
 cat(num[1] - num[2])
 ```
 
+#### Rust (2023.12.21)
+```Rust
+let mut input = String::new();
+io::stdin().read_line(&mut input).unwrap();
+
+let numbers: Vec<i32> = input
+    .split_whitespace()
+    .map(|s| s.parse::<i32>().unwrap())
+    .collect();
+
+let a = numbers[0];
+let b = numbers[1];
+
+println!("{}", a - b);
+```
+
 #### SystemVerilog
 ```sv
 integer a, b, temp;
@@ -244,6 +282,22 @@ print(a*b)
 ```R
 num <- scan("stdin")    # recieve num[1], num[2], …… as numeric
 cat(num[1] * num[2])
+```
+
+#### Rust (2023.12.21)
+```Rust
+let mut input = String::new();
+io::stdin().read_line(&mut input).unwrap();
+
+let numbers: Vec<i32> = input
+    .split_whitespace()
+    .map(|s| s.parse::<i32>().unwrap())
+    .collect();
+
+let a = numbers[0];
+let b = numbers[1];
+
+println!("{}", a * b);
 ```
 
 #### SystemVerilog
@@ -309,6 +363,22 @@ print(a/b)
 num <- scan("stdin")    # recieve num[1], num[2], …… as numeric
 options(digits = 10)
 cat(num[1] / num[2])
+```
+
+#### Rust (2023.12.21)
+```Rust
+let mut input = String::new();
+io::stdin().read_line(&mut input).unwrap();
+
+let numbers: Vec<i32> = input
+    .split_whitespace()
+    .map(|s| s.parse::<i32>().unwrap())
+    .collect();
+
+let a = numbers[0] as f64;
+let b = numbers[1] as f64;
+
+println!("{}", a / b);
 ```
 
 #### SystemVerilog
@@ -391,6 +461,26 @@ cat(floor(num[1] / num[2]), "\n")
 cat(num[1] %% num[2], "\n")
 ```
 
+#### Rust (2023.12.21)
+```Rust
+let mut input = String::new();
+io::stdin().read_line(&mut input).unwrap();
+
+let numbers: Vec<i32> = input
+    .split_whitespace()
+    .map(|s| s.parse::<i32>().unwrap())
+    .collect();
+
+let a = numbers[0];
+let b = numbers[1];
+
+println!("{}", a + b);
+println!("{}", a - b);
+println!("{}", a * b);
+println!("{}", a / b);
+println!("{}", a % b);
+```
+
 #### SystemVerilog
 ```sv
 integer a, b, temp;
@@ -428,6 +518,15 @@ var s string
 fmt.Scanln(&s)
 
 fmt.Println(s + "??!")
+```
+
+#### Rust (2023.12.21)
+```Rust
+let mut input = String::new();
+
+io::stdin().read_line(&mut input).unwrap();
+
+println!("{}??!", input.replace("\n", ""));
 ```
 
 #### SystemVerilog
@@ -470,6 +569,16 @@ fmt.Scanln(&by)
 
 const diff int = 2541 - 1998
 fmt.Println(by - diff)
+```
+
+#### Rust (2023.12.21)
+```Rust
+let mut input = String::new();
+io::stdin().read_line(&mut input).unwrap();
+
+let number: i32 = input.trim().parse().unwrap();
+
+println!("{}", number - (2541 - 1998));
 ```
 
 #### SystemVerilog
@@ -554,6 +663,26 @@ cat((a * b) %% c, "\n")
 cat(((a %% c) * (b %% c)) %% c, "\n")
 ```
 
+#### Rust (2023.12.21)
+```Rust
+let mut input = String::new();
+io::stdin().read_line(&mut input).unwrap();
+
+let numbers: Vec<i32> = input
+    .split_whitespace()
+    .map(|s| s.parse::<i32>().unwrap())
+    .collect();
+
+let a = numbers[0];
+let b = numbers[1];
+let c = numbers[2];
+
+println!("{}", (a + b) % c);
+println!("{}", ((a % c) + (b % c)) % c);
+println!("{}", (a * b) % c);
+println!("{}", ((a % c) * (b % c)) % c);
+```
+
 #### SystemVerilog
 ```sv
 integer a, b, c, temp;
@@ -589,6 +718,21 @@ cin >> a >> b >> c;
 cout << a + b + c << endl;
 
 return 0;
+```
+
+#### Rust (2023.12.21)
+```Rust
+let mut input = String::new();
+io::stdin().read_line(&mut input).unwrap();
+
+let numbers: Vec<i64> = input
+    .split_whitespace()
+    .map(|s| s.parse::<i64>().unwrap())
+    .collect();
+
+let sum: i64 = numbers.iter().sum();
+
+println!("{}", sum);
 ```
 
 
@@ -847,6 +991,27 @@ cat(sum, "\n")
 ```
 > Accepted
 
+#### Rust (2023.12.21)
+```Rust
+let mut input1 = String::new();
+let mut input2 = String::new();
+
+io::stdin().read_line(&mut input1).unwrap();
+io::stdin().read_line(&mut input2).unwrap();
+
+let a: i32 = input1.trim().parse().unwrap();
+let b = input2.to_string().chars().collect::<Vec<char>>();
+
+let prod1 = a * (b[2] as i32 - '0' as i32);
+let prod2 = a * (b[1] as i32 - '0' as i32);
+let prod3 = a * (b[0] as i32 - '0' as i32);
+
+println!("{}", prod1);
+println!("{}", prod2);
+println!("{}", prod3);
+println!("{}", prod1 + prod2 * 10 + prod3 * 100);
+```
+
 #### SystemVerilog
 ```sv
 integer a;
@@ -928,6 +1093,14 @@ cat("\\    /\\
  )  ( \')
 (  /  )
  \\(__)|")
+```
+
+#### Rust (2023.12.21)
+```Rust
+println!("\\    /\\");
+println!(" )  ( ')");
+println!("(  /  )");
+println!(" \\(__)|");
 ```
 
 #### SystemVerilog
@@ -1020,6 +1193,15 @@ cat("|\\_/|
 ( 0 )\"\"\"\\
 |\"^\"`    |
 ||_/=\\\\__|")
+```
+
+#### Rust (2023.12.21)
+```Rust
+println!("|\\_/|");
+println!("|q p|   /}}");    // not `\}`, `}}`
+println!("( 0 )\"\"\"\\");
+println!("|\"^\"`    |");
+println!("||_/=\\\\__|");
 ```
 
 #### SystemVerilog

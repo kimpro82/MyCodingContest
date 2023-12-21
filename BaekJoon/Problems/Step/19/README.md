@@ -1,6 +1,6 @@
 ## [BAEKJOON Online Judge](/README.md#baekjoon-online-judge)
 
-# 문제 > 단계별로 풀어보기 > 17. 조합론
+# 문제 > 단계별로 풀어보기 > 19. 조합론
 
 https://www.acmicpc.net/step/61
 

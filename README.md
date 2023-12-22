@@ -53,7 +53,7 @@ can't escape this endless valley of despair ……
 
 | 단계 | Bash | C++ | Golang | 기타 |
 |:--|:-:|:-:|:-:|:-:|
-| [1. 입출력과 사칙연산](/BaekJoon/Problems/Step/01#baekjoon-online-judge) | 22.01.26 | 21.05.13 | 22.03.12 | Python - 21.05.13<br>R - 21.07.11<br>Text - 22.01.26<br>SystemVerilog - 22.09.05 |
+| [1. 입출력과 사칙연산](/BaekJoon/Problems/Step/01#baekjoon-online-judge) | 22.01.26 | 21.05.13 | 22.03.12 | Python - 21.05.13<br>R - 21.07.11<br>Text - 22.01.26<br>SystemVerilog - 22.09.05<br>Rust - 23.12.21 |
 | [2. 조건문](/BaekJoon/Problems/Step/02#baekjoon-online-judge) | 22.01.29 | 21.05.24 | 22.03.14 | R - 21.07.14 |
 | [3.1. 반복문 1. for문](/BaekJoon/Problems/Step/03-1#baekjoon-online-judge) | 22.01.31 | 21.05.25 | 22.03.18 | |
 | [3.2. 반복문 2. while문](/BaekJoon/Problems/Step/03-2#baekjoon-online-judge) | 22.02.02 | 21.05.26 | 22.03.29 | |
@@ -70,8 +70,8 @@ can't escape this endless valley of despair ……
 | [13. 정렬](/BaekJoon/Problems/Step/13#baekjoon-online-judge) | | 21.12.16 | 22.07.11 | |
 | [14. 집합과 맵](/BaekJoon/Problems/Step/14#baekjoon-online-judge) | | 23.07.08 | 22.08.03 | |
 | [15. 약수, 배수와 소수 2](/BaekJoon/Problems/Step/15#baekjoon-online-judge) | | 23.07.11 | | |
-| [17. 조합론](/BaekJoon/Problems/Step/17#baekjoon-online-judge) | | 23.07.12 | | |
-| [18. 심화 2](/BaekJoon/Problems/Step/18#baekjoon-online-judge) | | 23.07.14 | | |
+| [19. 조합론](/BaekJoon/Problems/Step/19#baekjoon-online-judge) | | 23.07.12 | | |
+| [20. 심화 2](/BaekJoon/Problems/Step/20#baekjoon-online-judge) | | 23.07.14 | | |
 | [21. 재귀](/BaekJoon/Problems/Step/21#baekjoon-online-judge) | | 21.09.15<br>(not completed) | | |
 | [23. 동적 계획법 1](/BaekJoon/Problems/Step/23#baekjoon-online-judge) | | 22.04.24<br>(not completed) | | |
 | [25. 그리디 알고리즘](/BaekJoon/Problems/Step/25#baekjoon-online-judge) | | 22.04.21 | | |

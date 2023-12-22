@@ -1,6 +1,6 @@
 ## [BAEKJOON Online Judge](/README.md#baekjoon-online-judge)
 
-# 문제 > 단계별로 풀어보기 > 18. 심화2
+# 문제 > 단계별로 풀어보기 > 20. 심화2
 
 https://www.acmicpc.net/step/54
 

@@ -6,7 +6,8 @@
 (2021.07.11) - `R`  
 (2022.01.26) - `Bash`, `Text` (only possible)  
 (2022.03.12) - `Golang`  
-(2022.09.05) - `SystemVerilog`
+(2022.09.05) - `SystemVerilog`  
+(2023.12.21) - `Rust`
 
 https://www.acmicpc.net/step/1
 
@@ -35,47 +36,53 @@ https://www.acmicpc.net/step/1
 
 &nbsp;&nbsp; - All the codes of any language for the same problem have basically the same result.  
 &nbsp;&nbsp; - Typical headers like the below are basically skipped, but they are noted seperately when there are any additional line.  
-&nbsp;&nbsp;&nbsp;&nbsp; · `Bash` : `#!/bin/bash`  
-&nbsp;&nbsp;&nbsp;&nbsp; · `C++` : `#include <iostream>` `#define endl '\n';` `using namespace std;`  
-&nbsp;&nbsp;&nbsp;&nbsp; · `Golang` : `package main` `import "fmt"`  
-&nbsp;&nbsp;&nbsp;&nbsp; · `SystemVerilog` : `module` `endmodule`.  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * All the codes run on [JDoodle Online VERILOG Compiler IDE](https://www.jdoodle.com/execute-verilog-online/) as `Verilog` before submitted to [BOJ](https://www.acmicpc.net/) as `SystemVerilog`.  
-&nbsp;&nbsp; - `R` : Some answers occur runtime errors with unknowable reason in the BOJ grading machine.  
-&nbsp;&nbsp; - `Text` : Only possible problems that do not require input values are solved.  
+&nbsp;&nbsp;&nbsp;&nbsp; · *Bash* : `#!/bin/bash`  
+&nbsp;&nbsp;&nbsp;&nbsp; · *C++* : `#include <iostream>` `#define endl '\n';` `using namespace std;` `int main() {}`  
+&nbsp;&nbsp;&nbsp;&nbsp; · *Golang* : `package main` `import "fmt"` `func main() {}`  
+&nbsp;&nbsp;&nbsp;&nbsp; · *Rust* : `use std::io;` `fn main() {}`  
+&nbsp;&nbsp;&nbsp;&nbsp; · *SystemVerilog* : `module` `endmodule`.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * All the codes run on [JDoodle Online VERILOG Compiler IDE](https://www.jdoodle.com/execute-verilog-online/) as *Verilog* before submitted to [BOJ](https://www.acmicpc.net/) as *SystemVerilog*.  
+&nbsp;&nbsp; - *R* : Some answers occur runtime errors with unknowable reason in the BOJ grading machine.  
+&nbsp;&nbsp; - *Text* : Only possible problems that do not require input values are solved.  
 
 
 ## [2557. Hello World](#list)
 
 > Hello World!
 
-#### Bash
+#### Bash (2022.01.26)
 ```Bash
 echo "Hello World!"
 ```
 
-#### C++
+#### C++ (2021.05.13)
 ```cpp
 cout << "Hello World!" << endl;
 return 0;
 ```
 
-#### Golang
+#### Golang (2022.03.12)
 ```go
 fmt.Println("Hello World!")
 ```
 
-#### Python
+#### Python (2021.05.13)
 ```python
 print("Hello World!")
 ```
 
-#### R
+#### R (2021.07.11)
 ```R
 # print("Hello World!") # Runtime Error
 cat("Hello World!")
 ```
 
-#### SystemVerilog
+#### Rust (2023.12.21)
+```Rust
+println!("Hello World!");
+```
+
+#### SystemVerilog (2022.08.18)
 ```sv
 initial begin
     $display("Hello World!");
@@ -83,7 +90,7 @@ initial begin
 end
 ```
 
-#### Text
+#### Text (2022.01.26)
 ```txt
 Hello World!
 ```
@@ -95,7 +102,7 @@ Hello World!
 
 > 3
 
-#### Bash
+#### Bash (2022.01.26)
 ```Bash
 read a b
 echo $((a + b))
@@ -103,7 +110,7 @@ echo $((a + b))
 # read
 ```
 
-#### C++
+#### C++ (2021.05.13)
 ```cpp
 int a, b;
 cin >> a >> b;          // 1 2
@@ -112,7 +119,7 @@ cout << a + b << endl;
 return 0;
 ```
 
-#### Golang
+#### Golang (2022.03.12)
 ```go
 var a, b int
 fmt.Scanln(&a, &b)
@@ -120,19 +127,34 @@ fmt.Scanln(&a, &b)
 fmt.Println(a + b)
 ```
 
-#### Python
+#### Python (2019.09.30)
 ```python
 a, b = map(int, input().split())
 print(a+b)
 ```
 
-#### R
+#### R (2021.07.11)
 ```R
 num <- scan("stdin")    # recieve num[1], num[2], …… as numeric
 cat(num[1] + num[2])
 ```
 
-#### SystemVerilog
+#### Rust (2023.12.21)
+```Rust
+let mut input = String::new();
+io::stdin().read_line(&mut input).unwrap();
+
+let numbers: Vec<i32> = input
+    .split_whitespace()
+    .map(|s| s.parse::<i32>().unwrap())
+    .collect();
+
+let sum: i32 = numbers.iter().sum();
+
+println!("{}", sum);
+```
+
+#### SystemVerilog (2022.09.05)
 ```sv
 integer a, b, temp;
 
@@ -152,7 +174,7 @@ end
 
 > 1
 
-#### Bash
+#### Bash (2022.01.26)
 ```Bash
 read a b
 echo $((a - b))
@@ -160,7 +182,7 @@ echo $((a - b))
 # read
 ```
 
-#### C++
+#### C++ (2021.05.13)
 ```cpp
 int a, b;
 cin >> a >> b;          // 3 2
@@ -169,7 +191,7 @@ cout << a - b << endl;
 return 0;
 ```
 
-#### Golang
+#### Golang (2022.03.12)
 ```go
 var a, b int
 fmt.Scanln(&a, &b)
@@ -177,19 +199,35 @@ fmt.Scanln(&a, &b)
 fmt.Println(a - b)
 ```
 
-#### Python
+#### Python (2019.9.30)
 ```python
 a, b = map(int, input().split())
 print(a-b)
 ```
 
-#### R
+#### R (2021.07.11)
 ```R
 num <- scan("stdin")    # recieve num[1], num[2], …… as numeric
 cat(num[1] - num[2])
 ```
 
-#### SystemVerilog
+#### Rust (2023.12.21)
+```Rust
+let mut input = String::new();
+io::stdin().read_line(&mut input).unwrap();
+
+let numbers: Vec<i32> = input
+    .split_whitespace()
+    .map(|s| s.parse::<i32>().unwrap())
+    .collect();
+
+let a = numbers[0];
+let b = numbers[1];
+
+println!("{}", a - b);
+```
+
+#### SystemVerilog (2022.09.05)
 ```sv
 integer a, b, temp;
 
@@ -209,7 +247,7 @@ end
 
 > 12
 
-#### Bash
+#### Bash (2022.01.26)
 ```Bash
 read a b
 echo $((a * b))
@@ -217,7 +255,7 @@ echo $((a * b))
 # read
 ```
 
-#### C++
+#### C++ (2021.05.13)
 ```cpp
 int a, b;
 cin >> a >> b;          // 3 4
@@ -226,7 +264,7 @@ cout << a * b << endl;
 return 0;
 ```
 
-#### Golang
+#### Golang (2022.03.12)
 ```go
 var a, b int
 fmt.Scanln(&a, &b)
@@ -234,19 +272,35 @@ fmt.Scanln(&a, &b)
 fmt.Println(a * b)
 ```
 
-#### Python
+#### Python (2021.05.13)
 ```python
 a, b = map(int, input().split())
 print(a*b)
 ```
 
-#### R
+#### R (2021.07.11)
 ```R
 num <- scan("stdin")    # recieve num[1], num[2], …… as numeric
 cat(num[1] * num[2])
 ```
 
-#### SystemVerilog
+#### Rust (2023.12.21)
+```Rust
+let mut input = String::new();
+io::stdin().read_line(&mut input).unwrap();
+
+let numbers: Vec<i32> = input
+    .split_whitespace()
+    .map(|s| s.parse::<i32>().unwrap())
+    .collect();
+
+let a = numbers[0];
+let b = numbers[1];
+
+println!("{}", a * b);
+```
+
+#### SystemVerilog (2022.09.05)
 ```sv
 integer a, b, temp;
 
@@ -266,7 +320,7 @@ end
 
 > 0.3333333333
 
-#### Bash
+#### Bash (2022.01.26)
 ```Bash
 read a b
 
@@ -279,7 +333,7 @@ printf "%.9f\n" $((a * 10**9 / b))e-9
 # read
 ```
 
-#### C++
+#### C++ (2021.05.13)
 ```cpp
 int a, b;
 cin >> a >> b;                  // 1 3
@@ -289,7 +343,7 @@ cout << (double)a / b << endl;
 return 0;
 ```
 
-#### Golang
+#### Golang (2022.03.12)
 ```go
 var a, b float64
 fmt.Scanln(&a, &b)
@@ -298,20 +352,36 @@ fmt.Printf("%.10f\n", a / b)
 ```
 > always marks 10 decimal places
 
-#### Python
+#### Python (2019.10.02)
 ```python
 a, b = map(float, input().split())
 print(a/b)
 ```
 
-#### R
+#### R (2021.07.11)
 ```R
 num <- scan("stdin")    # recieve num[1], num[2], …… as numeric
 options(digits = 10)
 cat(num[1] / num[2])
 ```
 
-#### SystemVerilog
+#### Rust (2023.12.21)
+```Rust
+let mut input = String::new();
+io::stdin().read_line(&mut input).unwrap();
+
+let numbers: Vec<i32> = input
+    .split_whitespace()
+    .map(|s| s.parse::<i32>().unwrap())
+    .collect();
+
+let a = numbers[0] as f64;
+let b = numbers[1] as f64;
+
+println!("{}", a / b);
+```
+
+#### SystemVerilog (2022.09.05)
 ```sv
 real a, b, temp;
 
@@ -331,7 +401,7 @@ end
 
 > 10 4 21 2 1 (vertically)
 
-#### Bash
+#### Bash (2022.01.26)
 ```Bash
 read a b
 
@@ -344,7 +414,7 @@ echo $((a % b))
 # read
 ```
 
-#### C++
+#### C++ (2021.05.13)
 ```cpp
 int a, b;
 cin >> a >> b;          // 7 3
@@ -358,7 +428,7 @@ cout << a % b << endl;
 return 0;
 ```
 
-#### Golang
+#### Golang (2022.03.12)
 ```go
 var a, b int
 fmt.Scanln(&a, &b)
@@ -370,7 +440,7 @@ fmt.Println(a / b)
 fmt.Println(a % b)
 ```
 
-#### Python
+#### Python (2021.05.13)
 ```python
 a, b = map(int, input().split())
 
@@ -381,7 +451,7 @@ print(int(a/b))
 print(a%b)
 ```
 
-#### R
+#### R (2021.07.11)
 ```R
 num <- scan("stdin")                # recieve num[1], num[2], …… as numeric
 cat(num[1] + num[2], "\n")
@@ -391,7 +461,27 @@ cat(floor(num[1] / num[2]), "\n")
 cat(num[1] %% num[2], "\n")
 ```
 
-#### SystemVerilog
+#### Rust (2023.12.21)
+```Rust
+let mut input = String::new();
+io::stdin().read_line(&mut input).unwrap();
+
+let numbers: Vec<i32> = input
+    .split_whitespace()
+    .map(|s| s.parse::<i32>().unwrap())
+    .collect();
+
+let a = numbers[0];
+let b = numbers[1];
+
+println!("{}", a + b);
+println!("{}", a - b);
+println!("{}", a * b);
+println!("{}", a / b);
+println!("{}", a % b);
+```
+
+#### SystemVerilog (2022.09.05)
 ```sv
 integer a, b, temp;
 
@@ -414,7 +504,7 @@ end
 
 > joonas??!
 
-#### Bash
+#### Bash (2022.01.26)
 ```Bash
 read id
 echo "$id??!"   # How does Bash classify $id and ??! ?
@@ -422,7 +512,7 @@ echo "$id??!"   # How does Bash classify $id and ??! ?
 # read
 ```
 
-#### Golang
+#### Golang (2022.03.12)
 ```go
 var s string
 fmt.Scanln(&s)
@@ -430,7 +520,16 @@ fmt.Scanln(&s)
 fmt.Println(s + "??!")
 ```
 
-#### SystemVerilog
+#### Rust (2023.12.21)
+```Rust
+let mut input = String::new();
+
+io::stdin().read_line(&mut input).unwrap();
+
+println!("{}??!", input.replace("\n", ""));
+```
+
+#### SystemVerilog (2022.09.05)
 ```sv
 reg [50*8:0] s;
 integer temp;
@@ -451,7 +550,7 @@ end
 
 > 1998
 
-#### Bash
+#### Bash (2022.01.26)
 ```Bash
 read by
 
@@ -463,7 +562,7 @@ echo $((by - diff))
 # read
 ```
 
-#### Golang
+#### Golang (2022.03.12)
 ```go
 var by int
 fmt.Scanln(&by)
@@ -472,7 +571,17 @@ const diff int = 2541 - 1998
 fmt.Println(by - diff)
 ```
 
-#### SystemVerilog
+#### Rust (2023.12.21)
+```Rust
+let mut input = String::new();
+io::stdin().read_line(&mut input).unwrap();
+
+let number: i32 = input.trim().parse().unwrap();
+
+println!("{}", number - (2541 - 1998));
+```
+
+#### SystemVerilog (2022.09.05)
 ```sv
 integer by, diff = 2541 - 1998, temp;
 
@@ -493,7 +602,7 @@ end
 
 > 1 1 0 0 (vertically)
 
-#### Bash
+#### Bash (2022.01.26)
 ```Bash
 read A B C
 
@@ -505,7 +614,7 @@ echo $((((A % C) * (B % C)) % C))
 # read
 ```
 
-#### C++
+#### C++ (2021.05.13)
 ```cpp
 int A, B, C;
 cin >> A >> B >> C;             // 5 8 4
@@ -518,7 +627,7 @@ cout << ((A%C)*(B%C))%C << endl;
 return 0;
 ```
 
-#### Golang
+#### Golang (2022.03.12)
 ```go
 var A, B, C int
 fmt.Scanln(&A, &B, &C)
@@ -529,7 +638,7 @@ fmt.Println((A * B) % C)
 fmt.Println(((A % C) * (B % C)) % C)
 ```
 
-#### Python
+#### Python (2021.05.13)
 ```python
 A, B, C = map(int, input().split())
 
@@ -539,7 +648,7 @@ print((A*B)%C)
 print(((A%C)*(B%C))%C)
 ```
 
-#### R
+#### R (2021.07.11)
 ```R
 num <- scan("stdin")                # recieve num[1], num[2], …… as numeric
 # num <- c(5, 8, 4)                 # test
@@ -554,7 +663,27 @@ cat((a * b) %% c, "\n")
 cat(((a %% c) * (b %% c)) %% c, "\n")
 ```
 
-#### SystemVerilog
+#### Rust (2023.12.21)
+```Rust
+let mut input = String::new();
+io::stdin().read_line(&mut input).unwrap();
+
+let numbers: Vec<i32> = input
+    .split_whitespace()
+    .map(|s| s.parse::<i32>().unwrap())
+    .collect();
+
+let a = numbers[0];
+let b = numbers[1];
+let c = numbers[2];
+
+println!("{}", (a + b) % c);
+println!("{}", ((a % c) + (b % c)) % c);
+println!("{}", (a * b) % c);
+println!("{}", ((a % c) * (b % c)) % c);
+```
+
+#### SystemVerilog (2022.09.05)
 ```sv
 integer a, b, c, temp;
 
@@ -579,7 +708,7 @@ end
 
 > 7931
 
-#### C++
+#### C++ (2023.06.17)
 ```cpp
 using ll = long long;
 ```
@@ -589,6 +718,21 @@ cin >> a >> b >> c;
 cout << a + b + c << endl;
 
 return 0;
+```
+
+#### Rust (2023.12.21)
+```Rust
+let mut input = String::new();
+io::stdin().read_line(&mut input).unwrap();
+
+let numbers: Vec<i64> = input
+    .split_whitespace()
+    .map(|s| s.parse::<i64>().unwrap())
+    .collect();
+
+let sum: i64 = numbers.iter().sum();
+
+println!("{}", sum);
 ```
 
 
@@ -602,7 +746,7 @@ return 0;
 > 1416  
 > 181720
 
-#### Bash
+#### Bash (2022.01.26)
 ```Bash
 read a
 read b
@@ -771,7 +915,7 @@ cout << sum + 1 << endl; // can't find why lack of 1 - crazy!
 ```
 > ㅋㅋ
 
-#### Golang
+#### Golang (2022.03.12)
 ```go
 package main
 import (
@@ -799,7 +943,7 @@ fmt.Println(sum)
 ```
 > Accepted
 
-#### Python - trial 1
+#### Python - trial 1 (2021.05.13)
 ```python
 a = int(input())
 b = str(input())
@@ -811,7 +955,7 @@ print(a*int(b))             // crazy
 ```
 > Accepted
 
-#### Python - trial 2
+#### Python - trial 2 (2021.05.13)
 ```python
 a = int(input())
 b = str(input())
@@ -826,7 +970,7 @@ print(sum)
 ```
 > Accepted
 
-#### R
+#### R (2021.07.11)
 ```R
 num <- scan("stdin")                            # recieve num[1], num[2], …… as numeric
 # num <- c(472, 385)                            # test
@@ -847,7 +991,28 @@ cat(sum, "\n")
 ```
 > Accepted
 
-#### SystemVerilog
+#### Rust (2023.12.21)
+```Rust
+let mut input1 = String::new();
+let mut input2 = String::new();
+
+io::stdin().read_line(&mut input1).unwrap();
+io::stdin().read_line(&mut input2).unwrap();
+
+let a: i32 = input1.trim().parse().unwrap();
+let b = input2.to_string().chars().collect::<Vec<char>>();
+
+let prod1 = a * (b[2] as i32 - '0' as i32);
+let prod2 = a * (b[1] as i32 - '0' as i32);
+let prod3 = a * (b[0] as i32 - '0' as i32);
+
+println!("{}", prod1);
+println!("{}", prod2);
+println!("{}", prod3);
+println!("{}", prod1 + prod2 * 10 + prod3 * 100);
+```
+
+#### SystemVerilog (2022.09.06)
 ```sv
 integer a;
 reg [3*8:0] b;
@@ -884,7 +1049,7 @@ end
  \(__)|
 ```
 
-#### Bash
+#### Bash (2022.01.26)
 ```Bash
 echo "\\    /\\"
 echo " )  ( ')"
@@ -894,7 +1059,7 @@ echo " \\(__)|"
 # read
 ```
 
-#### C++
+#### C++ (2021.05.13)
 ```cpp
 cout << "\\    /\\" << endl;
 cout << " )  ( ')" << endl;
@@ -904,7 +1069,7 @@ cout << " \\(__)|" << endl;
 return 0;
 ```
 
-#### Golang
+#### Golang (2022.03.12)
 ```go
 var s string = `\    /\
 )  ( ')
@@ -914,7 +1079,7 @@ var s string = `\    /\
 fmt.Println(s)
 ```
 
-#### Python
+#### Python (2021.05.13)
 ```python
 print("\    /\\")
 print(" )  ( ')")
@@ -922,7 +1087,7 @@ print("(  /  )")
 print(" \\(__)|")
 ```
 
-#### R
+#### R (2021.07.11)
 ```R
 cat("\\    /\\
  )  ( \')
@@ -930,7 +1095,15 @@ cat("\\    /\\
  \\(__)|")
 ```
 
-#### SystemVerilog
+#### Rust (2023.12.21)
+```Rust
+println!("\\    /\\");
+println!(" )  ( ')");
+println!("(  /  )");
+println!(" \\(__)|");
+```
+
+#### SystemVerilog (2022.09.05)
 ```sv
 initial begin
     $display("\\    /\\");
@@ -941,7 +1114,7 @@ initial begin
 end
 ```
 
-#### Text
+#### Text (2022.01.26)
 ```txt
 \    /\
  )  ( ')
@@ -960,7 +1133,7 @@ end
 ||_/=\\__|
 ```
 
-#### Bash
+#### Bash (2022.01.26)
 ```Bash
 echo "|\_/|"
 echo "|q p|   /}"
@@ -971,7 +1144,7 @@ echo "||_/=\\\\__|"
 # read
 ```
 
-#### C++ - trial 1
+#### C++ - trial 1 (2021.05.13)
 ```cpp
 cout << R"(
 |\_/|
@@ -984,7 +1157,7 @@ cout << R"(
 return 0;
 ```
 
-#### C++ - trial 2
+#### C++ - trial 2 (2021.05.13)
 ```cpp
 cout << "|\\_/|" << endl;
 cout << "|q p|   /}" << endl;
@@ -995,7 +1168,7 @@ cout << "||_/=\\\\__|" << endl;
 return 0;
 ```
 
-#### Golang
+#### Golang (2022.03.12)
 ```go
 fmt.Println("|\\_/|")
 fmt.Println("|q p|   /}")
@@ -1004,7 +1177,7 @@ fmt.Println("|\"^\"`    |")
 fmt.Println("||_/=\\\\__|")
 ```
 
-#### Python
+#### Python (2021.05.13)
 ```python
 print("""|\\_/|
 |q p|   /}
@@ -1013,7 +1186,7 @@ print("""|\\_/|
 ||_/=\\\\__|""")
 ```
 
-#### R
+#### R (2021.07.11)
 ```R
 cat("|\\_/|
 |q p|   /}
@@ -1022,7 +1195,16 @@ cat("|\\_/|
 ||_/=\\\\__|")
 ```
 
-#### SystemVerilog
+#### Rust (2023.12.21)
+```Rust
+println!("|\\_/|");
+println!("|q p|   /}}");    // not `\}`, `}}`
+println!("( 0 )\"\"\"\\");
+println!("|\"^\"`    |");
+println!("||_/=\\\\__|");
+```
+
+#### SystemVerilog (2022.09.05)
 ```sv
 initial begin
     $display("|\\_/|");
@@ -1034,7 +1216,7 @@ initial begin
 end
 ```
 
-#### Text
+#### Text (2022.01.26)
 ```txt
 |\_/|
 |q p|   /}
@@ -1049,7 +1231,7 @@ end
 > 강한친구 대한육군  
 > 강한친구 대한육군
 
-#### Bash
+#### Bash (2022.01.26)
 ```Bash
 for i in {0..1}
 do
@@ -1057,7 +1239,7 @@ do
 done
 ```
 
-#### C++
+#### C++ (2021.05.13)
 ```cpp
 for (int i = 0; i < 2; i++)
 {
@@ -1067,14 +1249,14 @@ for (int i = 0; i < 2; i++)
 return 0;
 ```
 
-#### Golang - trial 1
+#### Golang - trial 1 (2022.03.12)
 ```go
 var s string = "강한친구 대한육군"
 fmt.Println(s)
 fmt.Println(s)
 ```
 
-#### Golang - trial 2
+#### Golang - trial 2 (2022.03.12)
 ```go
 var s string = "강한친구 대한육군"
 for i := 0; i < 2; i++ {
@@ -1082,13 +1264,13 @@ for i := 0; i < 2; i++ {
 }
 ```
 
-#### Python
+#### Python (2021.05.13)
 ```python
 for i in range(0, 2) :
     print("강한친구 대한육군")
 ```
 
-#### R
+#### R (2021.07.11)
 ```R
 for (i in c(0, 1))
 {
@@ -1096,7 +1278,7 @@ for (i in c(0, 1))
 }
 ```
 
-#### SystemVerilog
+#### SystemVerilog (2022.09.05)
 ```sv
 initial begin
     repeat (2) begin
@@ -1106,7 +1288,7 @@ initial begin
 end
 ```
 
-#### Text
+#### Text (2022.01.26)
 ```txt
 강한친구 대한육군
 강한친구 대한육군

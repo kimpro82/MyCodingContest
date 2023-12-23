@@ -1,6 +1,6 @@
-## BAEKJOON Online Judge
+## [BAEKJOON Online Judge](/README.md#baekjoon-online-judge)
 
-# 문제 > 단계별로 풀어보기 > 2. if문
+# 문제 > 단계별로 풀어보기 > 2. 조건문
 
 (2021.05.24) - `C++`  
 (2021.07.14) - `R`  

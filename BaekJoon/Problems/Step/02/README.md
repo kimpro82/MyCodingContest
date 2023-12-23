@@ -1,11 +1,12 @@
-## BAEKJOON Online Judge
+## [BAEKJOON Online Judge](/README.md#baekjoon-online-judge)
 
-# 문제 > 단계별로 풀어보기 > 2. if문
+# 문제 > 단계별로 풀어보기 > 2. 조건문
 
 (2021.05.24) - `C++`  
 (2021.07.14) - `R`  
 (2022.01.29) - `Bash`  
 (2022.03.14) - `Golang`  
+(2023.12.22) - `Rust`  
 
 https://www.acmicpc.net/step/4
 
@@ -22,11 +23,12 @@ https://www.acmicpc.net/step/4
 
 **※ Note**  
 &nbsp;&nbsp; - All the codes of any language for the same problem have basically the same result.  
-&nbsp;&nbsp; - `Bash` : skipped the first line; `#!/bin/bash`  
-&nbsp;&nbsp; - `C++`* : skipped `main()` function's brace(`{}`) and its outside including two header lines; `#include <iostream>` `using namespace std;`  
-&nbsp;&nbsp; - `Golang`* : skipped `main()` function's brace(`{}`) and its outside including two header lines; `package main` `import "fmt"`  
-&nbsp;&nbsp; - `R` : Some answers occur runtime errors with unknowable reason in the BOJ grading machine.  
-&nbsp;&nbsp; * When any additional header is used, the header block is also noted seperately.
+&nbsp;&nbsp; - Typical headers like the below are basically skipped, but they are noted seperately when there are any additional line.  
+&nbsp;&nbsp;&nbsp;&nbsp; · *Bash* : `#!/bin/bash`  
+&nbsp;&nbsp;&nbsp;&nbsp; · *C++* : `#include <iostream>` `#define endl '\n';` `using namespace std;` `int main() {}`  
+&nbsp;&nbsp;&nbsp;&nbsp; · *Golang* : `package main` `import "fmt"` `func main() {}`  
+&nbsp;&nbsp;&nbsp;&nbsp; · *Rust* : `use std::io;` `fn main() {}`  
+&nbsp;&nbsp; - *R* : Some answers occur runtime errors with unknowable reason in the BOJ grading machine.   
 
 
 ## [1330. 두 수 비교하기](#list)
@@ -37,7 +39,7 @@ https://www.acmicpc.net/step/4
 > \>  
 > \=\=
 
-#### Bash
+#### Bash (2022.01.29)
 ```bash
 read a b
 
@@ -49,7 +51,7 @@ fi                                      # fi : (maybe) finish if …… or simpl
 # read
 ```
 
-#### C++
+#### C++ (2021.05.24)
 ```cpp
 int a, b;
 cin >> a >> b;          // 1 2, 10 2, 5 5
@@ -68,7 +70,7 @@ if (a > b)
 return 0;
 ```
 
-#### Golang
+#### Golang (2022.03.14)
 ```go
 var a, b int
 fmt.Scanln(&a, &b)
@@ -82,7 +84,7 @@ if (a > b) {
 }
 ```
 
-#### R
+#### R (2021.07.14)
 ```R
 data <- scan("stdin")
 # data <- c(1,2)        # test
@@ -102,6 +104,26 @@ if (a > b)
 }
 ```
 
+#### Rust (2023.12.22)
+```rust
+let mut input = String::new();
+io::stdin().read_line(&mut input).unwrap();
+
+let numbers: Vec<i32> = input
+    .split_whitespace()
+    .map(|s| s.parse::<i32>().unwrap())
+    .collect();
+
+let a = numbers[0];
+let b = numbers[1];
+let ans: String =                                       // works?
+    if a > b { ">".to_string() }
+    else if a < b { "<".to_string() }
+    else { "==".to_string() };
+
+println!("{}", ans);
+```
+
 
 ## [9498. 시험 성적](#list)
 
@@ -109,7 +131,7 @@ if (a > b)
 
 > A B C D F
 
-#### Bash
+#### Bash (2022.01.29)
 ```bash
 # test
 # echo [ 3 -gt 2 ]                      # doesn't work
@@ -130,7 +152,7 @@ fi
 # read
 ```
 
-#### C++
+#### C++ (2021.05.24)
 ```cpp
 int a;
 cin >> a;                   // 99, 82, 79, 60, 37
@@ -155,7 +177,7 @@ if (a >= 90)
 return 0;
 ```
 
-#### Golang - trial 1
+#### Golang - trial 1 (2022.03.14)
 use `if ~ else if ~ else` statement
 ```go
 var input int
@@ -177,7 +199,7 @@ if (input >= 90) {
 fmt.Println(grade)
 ```
 
-#### Golang - trial 2
+#### Golang - trial 2 (2022.03.14)
 use `switch ~ case` statement
 ```go
 var input int
@@ -203,7 +225,7 @@ switch tenth {
 fmt.Println(grade)
 ```
 
-#### Golang - trial 3
+#### Golang - trial 3 (2022.03.14)
 use `array` trickily
 ```go
 var input int
@@ -213,7 +235,7 @@ grade := [11]string{"F", "F", "F", "F", "F", "F", "D", "C", "B", "A", "A"}
 fmt.Println(grade[input / 10])
 ```
 
-#### R
+#### R (2021.07.14)
 ```R
 a <- scan("stdin")
 # a <- 100          # test
@@ -236,6 +258,35 @@ if (a >= 90)
 }
 ```
 
+#### Rust - trial 1 (2023.12.22)
+```rust
+let mut input = String::new();
+io::stdin().read_line(&mut input).unwrap();
+
+let n: i32 = input.trim().parse().unwrap();
+let ans: char =
+    if n >= 90 { 'A' }
+    else if n >= 80 { 'B' }
+    else if n >= 70 { 'C' }
+    else if n >= 60 { 'D' }
+    else { 'F' };
+
+println!("{}", ans);                                    // "{}", not '{}'
+```
+
+#### Rust - trial 2 (2023.12.22)
+```rust
+let mut input = String::new();
+io::stdin().read_line(&mut input).unwrap();
+
+let n: i32 = input.trim().parse().unwrap();
+let v = vec!['F', 'F', 'F', 'F', 'F', 'F', 'D', 'C', 'B', 'A', 'A'];
+// [], not {}
+
+println!("{}", &v[(n/10) as usize]);
+// neither [n/10] nor [n/10 as usize]
+```
+
 
 ## [2753. 윤년](#list)
 
@@ -243,7 +294,7 @@ if (a >= 90)
 
 > 0 1 0
 
-#### Bash
+#### Bash (2022.01.29)
 ```bash
 read n
 
@@ -271,7 +322,7 @@ fi
 # read
 ```
 
-#### C++
+#### C++ (2021.05.24)
 ```cpp
 int a;
 cin >> a;                                           // 2021, 2000, 1900
@@ -287,7 +338,7 @@ if (a % 4 == 0 && (a % 100 != 0 || a % 400 == 0))
 return 0;
 ```
 
-#### Golang
+#### Golang (2022.03.14)
 ```go
 var n int
 fmt.Scanln(&n)
@@ -302,7 +353,7 @@ if (n % 4 == 0 && (n % 100 != 0 || n % 400 == 0)) {
 fmt.Println(answer)
 ```
 
-#### R
+#### R (2021.07.14)
 ```R
 n <- scan("stdin")
 # n <- 2000                                             # test
@@ -317,6 +368,19 @@ if (n %% 4 == 0 && (n %% 100 != 0 || n %% 400 == 0))    # not %
 ```
 > Runtime Error???
 
+#### Rust (2023.12.22)
+```rust
+let mut input = String::new();
+io::stdin().read_line(&mut input).unwrap();
+
+let n: i32 = input.trim().parse().unwrap();
+let ans: i32 =
+    if n % 4 == 0 && (n % 100 != 0 || n % 400 == 0) { 1 }
+    else { 0 };
+
+println!("{}", ans);
+```
+
 
 ## [14681. Quadrant Selection](#list)
 
@@ -325,7 +389,7 @@ if (n %% 4 == 0 && (n %% 100 != 0 || n %% 400 == 0))    # not %
 > 1  
 > 4
 
-#### Bash
+#### Bash (2022.01.29)
 ```bash
 read x
 read y
@@ -341,7 +405,7 @@ else
 fi
 ```
 
-#### C++
+#### C++ (2021.05.24)
 ```cpp
 int a, b;
 cin >> a >> b;           // 12 5, 9 -13
@@ -364,7 +428,7 @@ if (a > 0 && b > 0)
 return 0;
 ```
 
-#### Golang
+#### Golang (2022.03.14)
 ```go
 var x, y int
 fmt.Scanln(&x)
@@ -384,7 +448,7 @@ if (x > 0 && y > 0) {
 fmt.Println(dim)
 ```
 
-#### R
+#### R (2021.07.14)
 ```R
 data <- scan("stdin")
 # data <- c(12, 5)          # test
@@ -407,6 +471,32 @@ if (x > 0 && y > 0)
 }
 ```
 
+#### Rust (2023.12.22)
+```rust
+let mut input1 = String::new();
+let mut input2 = String::new();
+
+io::stdin().read_line(&mut input1).unwrap();
+io::stdin().read_line(&mut input2).unwrap();
+
+let a: i32 = input1.trim().parse().unwrap();
+let b: i32 = input2.trim().parse().unwrap();
+
+let ans =
+    if a > 0
+    {
+        if b > 0 { 1 }
+        else { 4 }
+    }
+    else
+    {
+        if b > 0 { 2 }
+        else { 3 }
+    };
+
+println!("{}", ans);
+```
+
 
 ## [2884. SPAVANAC](#list)
 
@@ -416,7 +506,7 @@ if (x > 0 && y > 0)
 > 23 45  
 > 22 55
 
-#### Bash
+#### Bash (2022.01.29)
 ```bash
 read h m
 
@@ -432,7 +522,7 @@ fi
 echo $h $(($m - 45))
 ```
 
-#### C++
+#### C++ (2021.05.24)
 ```cpp
 int a, b;
 cin >> a >> b;           // 10 10, 0 30, 23 40
@@ -452,7 +542,7 @@ cout << a << " " << b - 45 << endl;
 return 0;
 ```
 
-#### Golang
+#### Golang (2022.03.14)
 ```go
 var h, m int
 fmt.Scanln(&h, &m)
@@ -468,7 +558,7 @@ if (h < 0) {
 fmt.Println(h, m - 45)
 ```
 
-#### R
+#### R (2021.07.14)
 ```R
 data <- scan("stdin")
 # data <- c(10, 10)          # test
@@ -490,6 +580,33 @@ cat(a, b - 45, "\n")
 ```
 > Runtime Error???????
 
+#### Rust (2023.12.22)
+```rust
+let mut input = String::new();
+io::stdin().read_line(&mut input).unwrap();
+
+let numbers: Vec<i32> = input
+    .split_whitespace()
+    .map(|s| s.parse::<i32>().unwrap())
+    .collect();
+
+let mut a = numbers[0] + 24;
+let mut b = numbers[1];
+
+if b >= 45
+{
+    b -= 45;
+}
+else
+{
+    a -= 1;
+    b += 60 - 45;
+}
+a %= 24;
+
+println!("{} {}", a, b);
+```
+
 
 ## [2525. 오븐 시계](#list)
 
@@ -498,7 +615,7 @@ cat(a, b - 45, "\n")
 
 > 0 13
 
-#### Golang
+#### Golang (2022.03.14)
 ```go
 var a, b, c int
 fmt.Scanln(&a, &b)
@@ -515,6 +632,32 @@ a %= 24
 fmt.Println(a, b)
 ```
 
+#### Rust (2023.12.22)
+```rust
+let mut input1 = String::new();
+let mut input2 = String::new();
+
+io::stdin().read_line(&mut input1).unwrap();
+io::stdin().read_line(&mut input2).unwrap();
+
+let numbers: Vec<i32> = input1
+    .split_whitespace()
+    .map(|s| s.parse::<i32>().unwrap())
+    .collect();
+let numbers2: i32 = input2.trim().parse().unwrap();
+
+let mut a = numbers[0];
+let mut b = numbers[1];
+let c = numbers2;
+
+b += c;
+a += b / 60;
+b %= 60;
+a %= 24;
+
+println!("{} {}", a, b);
+```
+
 
 ## [2480. 주사위 세개](#list)
 
@@ -524,7 +667,7 @@ fmt.Println(a, b)
 > 12000  
 > 600
 
-#### Golang - trial 1
+#### Golang - trial 1 (2022.03.14)
 ```go
 package main
 import (
@@ -553,7 +696,7 @@ if (a == b && b == c) {
 fmt.Println(prize)
 ```
 
-#### Golang - trial 2
+#### Golang - trial 2 (2022.03.14)
 ```go
     ……
     // trial 2 : false
@@ -567,7 +710,7 @@ fmt.Println(prize)
     ……
 ```
 
-#### Golang - trial 3
+#### Golang - trial 3 (2022.03.14)
 ```go
     ……
     } else if (c == a) {
@@ -575,4 +718,34 @@ fmt.Println(prize)
         prize = 1000 + c * 100        // I missed it!
     } else {
     ……
+```
+
+#### Rust (2023.12.22)
+```rust
+let mut input = String::new();
+
+io::stdin().read_line(&mut input).unwrap();
+
+let numbers: Vec<i32> = input
+    .split_whitespace()
+    .map(|s| s.parse::<i32>().unwrap())
+    .collect();
+
+let a = numbers[0];
+let b = numbers[1];
+let c = numbers[2];
+
+let ans =
+    if a == b && b == c { 10000 + a * 1000 }
+    else if a == b { 1000 + a * 100 }
+    else if b == c { 1000 + b * 100 }
+    else if c == a { 1000 + c * 100 }
+    else
+    {
+        if a > b && a > c { a * 100 }
+        else if b > a && b > c { b * 100 }
+        else { c * 100 }
+    };
+
+println!("{}", ans);
 ```

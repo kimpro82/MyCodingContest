@@ -30,5 +30,5 @@ fn main()
             else { c * 100 }
         };
 
-        println!("{}", ans);
+    println!("{}", ans);
 }

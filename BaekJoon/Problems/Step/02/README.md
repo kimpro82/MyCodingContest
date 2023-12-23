@@ -39,7 +39,7 @@ https://www.acmicpc.net/step/4
 > \>  
 > \=\=
 
-#### Bash
+#### Bash (2022.01.29)
 ```bash
 read a b
 
@@ -51,7 +51,7 @@ fi                                      # fi : (maybe) finish if …… or simpl
 # read
 ```
 
-#### C++
+#### C++ (2021.05.24)
 ```cpp
 int a, b;
 cin >> a >> b;          // 1 2, 10 2, 5 5
@@ -70,7 +70,7 @@ if (a > b)
 return 0;
 ```
 
-#### Golang
+#### Golang (2022.03.14)
 ```go
 var a, b int
 fmt.Scanln(&a, &b)
@@ -84,7 +84,7 @@ if (a > b) {
 }
 ```
 
-#### R
+#### R (2021.07.14)
 ```R
 data <- scan("stdin")
 # data <- c(1,2)        # test
@@ -131,7 +131,7 @@ println!("{}", ans);
 
 > A B C D F
 
-#### Bash
+#### Bash (2022.01.29)
 ```bash
 # test
 # echo [ 3 -gt 2 ]                      # doesn't work
@@ -152,7 +152,7 @@ fi
 # read
 ```
 
-#### C++
+#### C++ (2021.05.24)
 ```cpp
 int a;
 cin >> a;                   // 99, 82, 79, 60, 37
@@ -177,7 +177,7 @@ if (a >= 90)
 return 0;
 ```
 
-#### Golang - trial 1
+#### Golang - trial 1 (2022.03.14)
 use `if ~ else if ~ else` statement
 ```go
 var input int
@@ -199,7 +199,7 @@ if (input >= 90) {
 fmt.Println(grade)
 ```
 
-#### Golang - trial 2
+#### Golang - trial 2 (2022.03.14)
 use `switch ~ case` statement
 ```go
 var input int
@@ -225,7 +225,7 @@ switch tenth {
 fmt.Println(grade)
 ```
 
-#### Golang - trial 3
+#### Golang - trial 3 (2022.03.14)
 use `array` trickily
 ```go
 var input int
@@ -235,7 +235,7 @@ grade := [11]string{"F", "F", "F", "F", "F", "F", "D", "C", "B", "A", "A"}
 fmt.Println(grade[input / 10])
 ```
 
-#### R
+#### R (2021.07.14)
 ```R
 a <- scan("stdin")
 # a <- 100          # test
@@ -294,7 +294,7 @@ println!("{}", &v[(n/10) as usize]);
 
 > 0 1 0
 
-#### Bash
+#### Bash (2022.01.29)
 ```bash
 read n
 
@@ -322,7 +322,7 @@ fi
 # read
 ```
 
-#### C++
+#### C++ (2021.05.24)
 ```cpp
 int a;
 cin >> a;                                           // 2021, 2000, 1900
@@ -338,7 +338,7 @@ if (a % 4 == 0 && (a % 100 != 0 || a % 400 == 0))
 return 0;
 ```
 
-#### Golang
+#### Golang (2022.03.14)
 ```go
 var n int
 fmt.Scanln(&n)
@@ -353,7 +353,7 @@ if (n % 4 == 0 && (n % 100 != 0 || n % 400 == 0)) {
 fmt.Println(answer)
 ```
 
-#### R
+#### R (2021.07.14)
 ```R
 n <- scan("stdin")
 # n <- 2000                                             # test
@@ -389,7 +389,7 @@ println!("{}", ans);
 > 1  
 > 4
 
-#### Bash
+#### Bash (2022.01.29)
 ```bash
 read x
 read y
@@ -405,7 +405,7 @@ else
 fi
 ```
 
-#### C++
+#### C++ (2021.05.24)
 ```cpp
 int a, b;
 cin >> a >> b;           // 12 5, 9 -13
@@ -428,7 +428,7 @@ if (a > 0 && b > 0)
 return 0;
 ```
 
-#### Golang
+#### Golang (2022.03.14)
 ```go
 var x, y int
 fmt.Scanln(&x)
@@ -448,7 +448,7 @@ if (x > 0 && y > 0) {
 fmt.Println(dim)
 ```
 
-#### R
+#### R (2021.07.14)
 ```R
 data <- scan("stdin")
 # data <- c(12, 5)          # test
@@ -506,7 +506,7 @@ println!("{}", ans);
 > 23 45  
 > 22 55
 
-#### Bash
+#### Bash (2022.01.29)
 ```bash
 read h m
 
@@ -522,7 +522,7 @@ fi
 echo $h $(($m - 45))
 ```
 
-#### C++
+#### C++ (2021.05.24)
 ```cpp
 int a, b;
 cin >> a >> b;           // 10 10, 0 30, 23 40
@@ -542,7 +542,7 @@ cout << a << " " << b - 45 << endl;
 return 0;
 ```
 
-#### Golang
+#### Golang (2022.03.14)
 ```go
 var h, m int
 fmt.Scanln(&h, &m)
@@ -558,7 +558,7 @@ if (h < 0) {
 fmt.Println(h, m - 45)
 ```
 
-#### R
+#### R (2021.07.14)
 ```R
 data <- scan("stdin")
 # data <- c(10, 10)          # test
@@ -615,7 +615,7 @@ println!("{} {}", a, b);
 
 > 0 13
 
-#### Golang
+#### Golang (2022.03.14)
 ```go
 var a, b, c int
 fmt.Scanln(&a, &b)
@@ -667,7 +667,7 @@ println!("{} {}", a, b);
 > 12000  
 > 600
 
-#### Golang - trial 1
+#### Golang - trial 1 (2022.03.14)
 ```go
 package main
 import (
@@ -696,7 +696,7 @@ if (a == b && b == c) {
 fmt.Println(prize)
 ```
 
-#### Golang - trial 2
+#### Golang - trial 2 (2022.03.14)
 ```go
     ……
     // trial 2 : false
@@ -710,7 +710,7 @@ fmt.Println(prize)
     ……
 ```
 
-#### Golang - trial 3
+#### Golang - trial 3 (2022.03.14)
 ```go
     ……
     } else if (c == a) {

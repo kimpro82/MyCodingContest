@@ -7,6 +7,7 @@ https://www.acmicpc.net/step/3
 (2021.05.25) - `C++`  
 (2022.01.31) - `Bash`  
 (2022.03.18) - `Golang`  
+(2023.12.22) - `Rust`  
 
 
 ### **List**

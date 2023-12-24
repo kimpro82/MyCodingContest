@@ -345,6 +345,10 @@ for i := 0; i < t; i++ {
 
 #### Rust (2023.12.24)
 ```rust
+use std::io::{self, Read};
+use std::fmt::Write;
+```
+```rust
 let mut input = String::new();
 
 io::stdin().read_to_string(&mut input).unwrap();
@@ -807,7 +811,7 @@ for i in 0..n
 
 > 1 2 3 4 5 (vertically)
 
-#### Bash
+#### Bash (2022.01.31)
 ```bash
 read n
 
@@ -820,7 +824,7 @@ done
 ```
 > 시간 초과
 
-#### C++
+#### C++ (2021.05.25)
 ```cpp
 // make cin/cout faster
 cin.tie(NULL);
@@ -837,7 +841,7 @@ for (int i = 1; i <= a; i++)
 return 0;
 ```
 
-#### Golang
+#### Golang (2022.03.18)
 ```go
 import (
     "fmt"
@@ -865,7 +869,7 @@ for i := 1; i <= n; i++ {
 
 > 5 4 3 2 1 (vertically)
 
-#### Bash
+#### Bash (2022.01.31)
 ```bash
 read n
 
@@ -878,7 +882,7 @@ done
 ```
 > 시간 초과
 
-#### C++
+#### C++ (2021.05.25)
 ```cpp
 // make cin/cout faster
 cin.tie(NULL);
@@ -895,7 +899,7 @@ for (int i = a; i >= 1; i--)
 return 0;
 ```
 
-#### Golang
+#### Golang (2022.03.18)
 ```go
 import (
     "fmt"

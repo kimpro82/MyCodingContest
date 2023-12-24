@@ -30,10 +30,11 @@ https://www.acmicpc.net/step/3
 **※ Note**  
 
 &nbsp;&nbsp; - All the codes of any language for the same problem have basically the same result.  
-&nbsp;&nbsp; - `Bash` : skipped the first line; `#!/bin/bash`  
-&nbsp;&nbsp; - `C++`* : skipped `main()` function's brace(`{}`) and its outside including two header lines; `#include <iostream>` `using namespace std;`  
-&nbsp;&nbsp; - `Golang`* : skipped `main()` function's brace(`{}`) and its outside including two header lines; `package main` `import "fmt"`  
-&nbsp;&nbsp; * When any additional header is used, the header block is also noted seperately.
+&nbsp;&nbsp; - Typical headers like the below are basically skipped, but they are noted seperately when there are any additional line.  
+&nbsp;&nbsp;&nbsp;&nbsp; · *Bash* : `#!/bin/bash`  
+&nbsp;&nbsp;&nbsp;&nbsp; · *C++* : `#include <iostream>` `#define endl '\n';` `using namespace std;` `int main() {}`  
+&nbsp;&nbsp;&nbsp;&nbsp; · *Golang* : `package main` `import "fmt"` `func main() {}`  
+&nbsp;&nbsp;&nbsp;&nbsp; · *Rust* : `use std::io;` `fn main() {}`  
 
 
 ## [2739. 구구단](#list)
@@ -78,6 +79,17 @@ fmt.Scanln(&n)
 for i := 1; i <= 9; i++ {
     fmt.Println(n, "*", i, "=", n * i)
 }
+```
+
+#### Rust (2023.12.23)
+```rust
+let mut input = String::new();
+io::stdin().read_line(&mut input).unwrap();
+
+let n: i32 = input.trim().parse().unwrap();
+
+for i in 1..10 { println!("{} * {} = {}", n, i, n * i); };
+// ; can be skipped
 ```
 
 
@@ -130,6 +142,29 @@ for i := 0; i < t; i++ {
     fmt.Scanln(&a, &b)
 
     fmt.Println(a + b)
+}
+```
+
+#### Rust (2023.12.23)
+```rust
+let mut input1 = String::new();
+io::stdin().read_line(&mut input1).unwrap();
+let t: i32 = input1.trim().parse().unwrap();
+
+for _i in 0..t
+// `_i`, not `i` when intentional
+{
+    let mut input2 = String::new();
+    io::stdin().read_line(&mut input2).unwrap();
+    let numbers: Vec<i32> = input2
+        .split_whitespace()
+        .map(|s| s.parse::<i32>().unwrap())
+        .collect();
+
+    let a = numbers[0];
+    let b = numbers[1];
+
+    println!("{}", a + b);
 }
 ```
 
@@ -194,6 +229,17 @@ fmt.Println(sum)
 ```
 > expected to be faster, but not so different from ~~the~~ trial 1  
 > (※ my wife claimed "trial 1" doesn't require "the")
+
+#### Rust (2023.12.23)
+```rust
+let mut input = String::new();
+io::stdin().read_line(&mut input).unwrap();
+
+let n: i32 = input.trim().parse().unwrap();
+
+println!("{}", n * (n + 1) / 2);
+```
+
 
 ## [15552. 빠른 A+B](#list)
 
@@ -296,6 +342,26 @@ for i := 0; i < t; i++ {
 }
 ```
 
+#### Rust (2023.12.23)
+```rust
+let mut input = String::new();
+
+io::stdin().read_to_string(&mut input).unwrap();
+let mut input = input
+    .split_ascii_whitespace()
+    .flat_map(str::parse::<i32>);
+
+let t = input.next().unwrap();
+let mut output = String::new();
+for _ in 0..t
+{
+    let a: i32 = input.next().unwrap();
+    let b: i32 = input.next().unwrap();
+
+    writeln!(output, "{}", a + b).unwrap();
+}
+print!("{}", output);
+```
 
 
 ## [25304. 영수증](#list)
@@ -334,6 +400,41 @@ else std::cout << "No" << '\n';
 return 0;
 ```
 
+#### Rust (2023.12.23)
+```rust
+let mut input1 = String::new();
+let mut input2 = String::new();
+
+io::stdin().read_line(&mut input1).unwrap();
+io::stdin().read_line(&mut input2).unwrap();
+
+let x: i32 = input1.trim().parse().unwrap();
+let n: i32 = input2.trim().parse().unwrap();
+
+let mut sum: i32 = 0;
+for _i in 0..n
+// `_i`, not `i` when intentional
+{
+    let mut input3 = String::new();
+    io::stdin().read_line(&mut input3).unwrap();
+    let numbers: Vec<i32> = input3
+        .split_whitespace()
+        .map(|s| s.parse::<i32>().unwrap())
+        .collect();
+
+    let a = numbers[0];
+    let b = numbers[1];
+
+    sum += a * b;
+}
+
+let ans: String =
+    if sum == x { "Yes".to_string() }
+    else { "No".to_string() };
+
+println!("{}", ans);
+```
+
 
 ## [25314. 코딩은 체육과목 입니다](#list)
 
@@ -354,6 +455,18 @@ for (int n = 0; n < N; n++) std::cout << str << ' ';
 std::cout << "int" << '\n';
 
 return 0;
+```
+
+#### Rust (2023.12.23)
+```rust
+let mut input = String::new();
+io::stdin().read_line(&mut input).unwrap();
+
+let mut n: i32 = input.trim().parse().unwrap();
+
+n /= 4;
+for _i in 0..n { print!("long ") };
+println!("int");
 ```
 
 
@@ -410,6 +523,28 @@ for i := 1; i <= t; i++ {
 }
 ```
 
+#### Rust (2023.12.23)
+```rust
+let mut input1 = String::new();
+io::stdin().read_line(&mut input1).unwrap();
+let t: i32 = input1.trim().parse().unwrap();
+
+for i in 1..t+1
+{
+    let mut input2 = String::new();
+    io::stdin().read_line(&mut input2).unwrap();
+    let numbers: Vec<i32> = input2
+        .split_whitespace()
+        .map(|s| s.parse::<i32>().unwrap())
+        .collect();
+
+    let a = numbers[0];
+    let b = numbers[1];
+
+    println!("Case #{}: {}", i, a + b);
+}
+```
+
 
 ## [11022. A+B - 8](#list)
 
@@ -461,6 +596,28 @@ for i := 1; i <= t; i++ {
     var a, b int
     fmt.Scanln(&a, &b)
     fmt.Printf("Case #%d: %d + %d = %d\n", i, a, b, a + b)
+}
+```
+
+#### Rust (2023.12.23)
+```rust
+let mut input1 = String::new();
+io::stdin().read_line(&mut input1).unwrap();
+let t: i32 = input1.trim().parse().unwrap();
+
+for i in 1..t+1
+{
+    let mut input2 = String::new();
+    io::stdin().read_line(&mut input2).unwrap();
+    let numbers: Vec<i32> = input2
+        .split_whitespace()
+        .map(|s| s.parse::<i32>().unwrap())
+        .collect();
+
+    let a = numbers[0];
+    let b = numbers[1];
+
+    println!("Case #{}: {} + {} = {}", i, a, b, a + b);
 }
 ```
 
@@ -540,6 +697,20 @@ for i := 1; i <= n; i++ {
 ```
 > rather slower??
 
+#### Rust (2023.12.23)
+```rust
+let mut input = String::new();
+io::stdin().read_line(&mut input).unwrap();
+
+let n: i32 = input.trim().parse().unwrap();
+
+for _i in 0..n
+{
+    for _j in 0.._i+1 { print!("*") };
+    println!();
+};
+```
+
 
 ## [2439. 별 찍기 - 2](#list)
 
@@ -607,6 +778,24 @@ fmt.Scanln(&n)
 
 for i := 1; i <= n; i++ {
     fmt.Println(strings.Repeat(" ", n - i) + strings.Repeat("*", i ))   // not , but +
+}
+```
+
+#### Rust (2023.12.23)
+```rust
+let mut input = String::new();
+io::stdin().read_line(&mut input).unwrap();
+
+let n: i32 = input.trim().parse().unwrap();
+
+for i in 0..n
+{
+    for j in 0..n
+    {
+        if j < n - i - 1 { print!(" ") }
+        else { print!("*") }
+    }
+    println!();
 }
 ```
 

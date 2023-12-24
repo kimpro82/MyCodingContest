@@ -46,7 +46,7 @@ https://www.acmicpc.net/step/3
 > ……  
 > 2 * 9 = 18
 
-#### Bash
+#### Bash (2022.01.31)
 ```bash
 read n
 
@@ -58,7 +58,7 @@ done
 # read
 ```
 
-#### C++
+#### C++ (2021.05.25)
 ```cpp
 int a;
 cin >> a;
@@ -71,7 +71,7 @@ for (int i = 1; i <= 9; i++)
 return 0;
 ```
 
-#### Golang
+#### Golang (2022.03.16)
 ```go
 var n int
 fmt.Scanln(&n)
@@ -104,7 +104,7 @@ for i in 1..10 { println!("{} * {} = {}", n, i, n * i); };
 
 > 2 5 7 17 7 (vertically)
 
-#### Bash
+#### Bash (2022.01.31)
 ```bash
 read t
 
@@ -118,7 +118,7 @@ done
 # read
 ```
 
-#### C++
+#### C++ (2021.05.25)
 ```cpp
 int t, a, b;
 cin >> t;
@@ -132,7 +132,7 @@ for (int i = 1; i <= t; i++)
 return 0;
 ```
 
-#### Golang
+#### Golang (2022.03.16)
 ```go
 var t int
 fmt.Scanln(&t)
@@ -175,7 +175,7 @@ for _i in 0..t
 
 > 55
 
-#### Bash
+#### Bash (2022.01.31)
 ```bash
 read n
 let "sum = 0"
@@ -190,7 +190,7 @@ echo $sum
 # read
 ```
 
-#### C++
+#### C++ (2021.05.25)
 ```cpp
 int a;
 cin >> a;
@@ -205,7 +205,7 @@ cout << sum << endl;
 return 0;
 ```
 
-#### Golang - trial 1
+#### Golang - trial 1 (2022.03.16)
 ```go
 var n int
 fmt.Scanln(&n)
@@ -218,7 +218,7 @@ for i := 1; i <= n; i++ {
 fmt.Println(sum)
 ```
 
-#### Golang - trial 2
+#### Golang - trial 2 (2022.03.16)
 ```go
 var n int
 fmt.Scanln(&n)
@@ -252,7 +252,7 @@ println!("{}", n * (n + 1) / 2);
 
 > 2 46 505 100 2000 (vertically)
 
-#### Bash - trial 1
+#### Bash - trial 1 (2022.01.31)
 ```bash
 read t
 
@@ -266,7 +266,7 @@ done
 ```
 > 시간 초과
 
-#### Bash - trial 2
+#### Bash - trial 2 (2022.01.31)
 ```bash
 # t test cases
 read t
@@ -288,7 +288,7 @@ awk '{ print }' ./file.txt
 ```
 > 런타임 에러
 
-#### C++
+#### C++ (2021.05.25)
 ```cpp
 // make cin/cout faster
 cin.tie(NULL);
@@ -306,7 +306,7 @@ for (int i = 1; i <= t; i++)
 return 0;
 ```
 
-#### Golang - trial 1
+#### Golang - trial 1 (2022.03.16)
 ```go
 var t int
 fmt.Scanln(&t)
@@ -319,7 +319,7 @@ for i := 0; i < t; i++ {
 ```
 > Timeout
 
-#### Golang - trial 2
+#### Golang - trial 2 (2022.03.18)
 ```go
 import (
     "fmt"
@@ -342,7 +342,7 @@ for i := 0; i < t; i++ {
 }
 ```
 
-#### Rust (2023.12.23)
+#### Rust (2023.12.24)
 ```rust
 let mut input = String::new();
 
@@ -377,7 +377,7 @@ print!("{}", output);
 
 > Yes
 
-#### C++
+#### C++ (2023.06.17)
 ```cpp
 using ll = long long;
 ```
@@ -444,7 +444,7 @@ println!("{}", ans);
 
 > long long long long long int
 
-#### C++
+#### C++ (2023.06.17)
 ```cpp
 int N;
 cin >> N;
@@ -484,7 +484,7 @@ println!("int");
 > ……  
 > Case #5: 7
 
-#### Bash
+#### Bash (2022.01.31)
 ```bash
 read t
 
@@ -497,7 +497,7 @@ done
 # read
 ```
 
-#### C++
+#### C++ (2021.05.25)
 ```cpp
 int t, a, b;
 cin >> t;
@@ -511,7 +511,7 @@ for (int i = 1; i <= t; i++)
 return 0;
 ```
 
-#### Golang
+#### Golang (2022.03.18)
 ```go
 var t int
 fmt.Scanln(&t)
@@ -560,7 +560,7 @@ for i in 1..t+1
 > ……  
 > Case #5: 5 + 2 = 7
 
-#### Bash
+#### Bash (2022.01.31)
 ```bash
 read t
 
@@ -573,7 +573,7 @@ done
 # read
 ```
 
-#### C++
+#### C++ (2021.05.25)
 ```cpp
 int t, a, b;
 cin >> t;
@@ -587,7 +587,7 @@ for (int i = 1; i <= t; i++)
 return 0;
 ```
 
-#### Golang
+#### Golang (2022.03.18)
 ```go
 var t int
 fmt.Scanln(&t)
@@ -632,7 +632,7 @@ for i in 1..t+1
 > \*\*\*\*  
 > \*\*\*\*\*
 
-#### Bash
+#### Bash (2022.01.31)
 ```bash
 read n
 
@@ -649,7 +649,7 @@ done
 # read
 ```
 
-#### C++
+#### C++ (2021.05.25)
 ```cpp
 int a;
 cin >> a;
@@ -667,7 +667,7 @@ for (int i = 1; i <= a; i++)
 return 0;
 ```
 
-#### Golang - trial 1
+#### Golang - trial 1 (2022.03.18)
 ```go
 import (
     "fmt"
@@ -684,7 +684,7 @@ for i := 1; i <= n; i++ {
 }
 ```
 
-#### Golang - trial 2
+#### Golang - trial 2 (2022.03.18)
 ```go
 var n int
 fmt.Scanln(&n)
@@ -722,7 +722,7 @@ for _i in 0..n
 > &nbsp;\*\*\*\*  
 > \*\*\*\*\*
 
-#### Bash
+#### Bash (2022.01.31)
 ```bash
 read n
 
@@ -743,7 +743,7 @@ done
 # read
 ```
 
-#### C++
+#### C++ (2021.05.25)
 ```cpp
 int a;
 cin >> a;
@@ -765,7 +765,7 @@ for (int i = 1; i <= a; i++)
 return 0;
 ```
 
-#### Golang
+#### Golang (2022.03.18)
 ```go
 import (
     "fmt"

@@ -242,6 +242,112 @@ println!("{}", n * (n + 1) / 2);
 ```
 
 
+## [25304. 영수증](#list)
+
+(2023.06.17)
+
+> 260000  
+> 4  
+> 20000 5  
+> 30000 2  
+> 10000 6  
+> 5000 8
+
+> Yes
+
+#### C++ (2023.06.17)
+```cpp
+using ll = long long;
+```
+```cpp
+ll X;
+int N;
+std::cin >> X >> N;
+
+ll sum = 0;
+int a, b;
+for (int n = 0; n < N; n++)
+{
+    std::cin >> a >> b;
+    sum += a * b;
+}
+
+if (X == sum) std::cout << "Yes" << '\n';
+else std::cout << "No" << '\n';
+
+return 0;
+```
+
+#### Rust (2023.12.23)
+```rust
+let mut input1 = String::new();
+let mut input2 = String::new();
+
+io::stdin().read_line(&mut input1).unwrap();
+io::stdin().read_line(&mut input2).unwrap();
+
+let x: i32 = input1.trim().parse().unwrap();
+let n: i32 = input2.trim().parse().unwrap();
+
+let mut sum: i32 = 0;
+for _i in 0..n
+// `_i`, not `i` when intentional
+{
+    let mut input3 = String::new();
+    io::stdin().read_line(&mut input3).unwrap();
+    let numbers: Vec<i32> = input3
+        .split_whitespace()
+        .map(|s| s.parse::<i32>().unwrap())
+        .collect();
+
+    let a = numbers[0];
+    let b = numbers[1];
+
+    sum += a * b;
+}
+
+let ans: String =
+    if sum == x { "Yes".to_string() }
+    else { "No".to_string() };
+
+println!("{}", ans);
+```
+
+
+## [25314. 코딩은 체육과목 입니다](#list)
+
+(2023.06.17)
+
+> 20
+
+> long long long long long int
+
+#### C++ (2023.06.17)
+```cpp
+int N;
+cin >> N;
+N /= 4;                                                 // always N/4 > 0 and N%4 = 0
+
+string str = "long";
+for (int n = 0; n < N; n++) std::cout << str << ' ';
+std::cout << "int" << '\n';
+
+return 0;
+```
+
+#### Rust (2023.12.23)
+```rust
+let mut input = String::new();
+io::stdin().read_line(&mut input).unwrap();
+
+let mut n: i32 = input.trim().parse().unwrap();
+
+n /= 4;
+for _i in 0..n { print!("long ") };
+println!("int");
+```
+
+
 ## [15552. 빠른 A+B](#list)
 
 > 5  
@@ -366,112 +472,6 @@ for _ in 0..t
     writeln!(output, "{}", a + b).unwrap();
 }
 print!("{}", output);
-```
-
-
-## [25304. 영수증](#list)
-
-(2023.06.17)
-
-> 260000  
-> 4  
-> 20000 5  
-> 30000 2  
-> 10000 6  
-> 5000 8
-
-> Yes
-
-#### C++ (2023.06.17)
-```cpp
-using ll = long long;
-```
-```cpp
-ll X;
-int N;
-std::cin >> X >> N;
-
-ll sum = 0;
-int a, b;
-for (int n = 0; n < N; n++)
-{
-    std::cin >> a >> b;
-    sum += a * b;
-}
-
-if (X == sum) std::cout << "Yes" << '\n';
-else std::cout << "No" << '\n';
-
-return 0;
-```
-
-#### Rust (2023.12.23)
-```rust
-let mut input1 = String::new();
-let mut input2 = String::new();
-
-io::stdin().read_line(&mut input1).unwrap();
-io::stdin().read_line(&mut input2).unwrap();
-
-let x: i32 = input1.trim().parse().unwrap();
-let n: i32 = input2.trim().parse().unwrap();
-
-let mut sum: i32 = 0;
-for _i in 0..n
-// `_i`, not `i` when intentional
-{
-    let mut input3 = String::new();
-    io::stdin().read_line(&mut input3).unwrap();
-    let numbers: Vec<i32> = input3
-        .split_whitespace()
-        .map(|s| s.parse::<i32>().unwrap())
-        .collect();
-
-    let a = numbers[0];
-    let b = numbers[1];
-
-    sum += a * b;
-}
-
-let ans: String =
-    if sum == x { "Yes".to_string() }
-    else { "No".to_string() };
-
-println!("{}", ans);
-```
-
-
-## [25314. 코딩은 체육과목 입니다](#list)
-
-(2023.06.17)
-
-> 20
-
-> long long long long long int
-
-#### C++ (2023.06.17)
-```cpp
-int N;
-cin >> N;
-N /= 4;                                                 // always N/4 > 0 and N%4 = 0
-
-string str = "long";
-for (int n = 0; n < N; n++) std::cout << str << ' ';
-std::cout << "int" << '\n';
-
-return 0;
-```
-
-#### Rust (2023.12.23)
-```rust
-let mut input = String::new();
-io::stdin().read_line(&mut input).unwrap();
-
-let mut n: i32 = input.trim().parse().unwrap();
-
-n /= 4;
-for _i in 0..n { print!("long ") };
-println!("int");
 ```
 
 

@@ -7,6 +7,7 @@ https://www.acmicpc.net/step/3
 (2021.05.25) - `C++`  
 (2022.01.31) - `Bash`  
 (2022.03.18) - `Golang`  
+(2023.12.23) - `Rust`  
 
 
 ### **List**
@@ -30,10 +31,11 @@ https://www.acmicpc.net/step/3
 **※ Note**  
 
 &nbsp;&nbsp; - All the codes of any language for the same problem have basically the same result.  
-&nbsp;&nbsp; - `Bash` : skipped the first line; `#!/bin/bash`  
-&nbsp;&nbsp; - `C++`* : skipped `main()` function's brace(`{}`) and its outside including two header lines; `#include <iostream>` `using namespace std;`  
-&nbsp;&nbsp; - `Golang`* : skipped `main()` function's brace(`{}`) and its outside including two header lines; `package main` `import "fmt"`  
-&nbsp;&nbsp; * When any additional header is used, the header block is also noted seperately.
+&nbsp;&nbsp; - Typical headers like the below are basically skipped, but they are noted seperately when there are any additional line.  
+&nbsp;&nbsp;&nbsp;&nbsp; · *Bash* : `#!/bin/bash`  
+&nbsp;&nbsp;&nbsp;&nbsp; · *C++* : `#include <iostream>` `#define endl '\n';` `using namespace std;` `int main() {}`  
+&nbsp;&nbsp;&nbsp;&nbsp; · *Golang* : `package main` `import "fmt"` `func main() {}`  
+&nbsp;&nbsp;&nbsp;&nbsp; · *Rust* : `use std::io;` `fn main() {}`  
 
 
 ## [2739. 구구단](#list)
@@ -45,7 +47,7 @@ https://www.acmicpc.net/step/3
 > ……  
 > 2 * 9 = 18
 
-#### Bash
+#### Bash (2022.01.31)
 ```bash
 read n
 
@@ -57,7 +59,7 @@ done
 # read
 ```
 
-#### C++
+#### C++ (2021.05.25)
 ```cpp
 int a;
 cin >> a;
@@ -70,7 +72,7 @@ for (int i = 1; i <= 9; i++)
 return 0;
 ```
 
-#### Golang
+#### Golang (2022.03.16)
 ```go
 var n int
 fmt.Scanln(&n)
@@ -78,6 +80,17 @@ fmt.Scanln(&n)
 for i := 1; i <= 9; i++ {
     fmt.Println(n, "*", i, "=", n * i)
 }
+```
+
+#### Rust (2023.12.23)
+```rust
+let mut input = String::new();
+io::stdin().read_line(&mut input).unwrap();
+
+let n: i32 = input.trim().parse().unwrap();
+
+for i in 1..10 { println!("{} * {} = {}", n, i, n * i); };
+// ; can be skipped
 ```
 
 
@@ -92,7 +105,7 @@ for i := 1; i <= 9; i++ {
 
 > 2 5 7 17 7 (vertically)
 
-#### Bash
+#### Bash (2022.01.31)
 ```bash
 read t
 
@@ -106,7 +119,7 @@ done
 # read
 ```
 
-#### C++
+#### C++ (2021.05.25)
 ```cpp
 int t, a, b;
 cin >> t;
@@ -120,7 +133,7 @@ for (int i = 1; i <= t; i++)
 return 0;
 ```
 
-#### Golang
+#### Golang (2022.03.16)
 ```go
 var t int
 fmt.Scanln(&t)
@@ -133,6 +146,29 @@ for i := 0; i < t; i++ {
 }
 ```
 
+#### Rust (2023.12.23)
+```rust
+let mut input1 = String::new();
+io::stdin().read_line(&mut input1).unwrap();
+let t: i32 = input1.trim().parse().unwrap();
+
+for _i in 0..t
+// `_i`, not `i` when intentional
+{
+    let mut input2 = String::new();
+    io::stdin().read_line(&mut input2).unwrap();
+    let numbers: Vec<i32> = input2
+        .split_whitespace()
+        .map(|s| s.parse::<i32>().unwrap())
+        .collect();
+
+    let a = numbers[0];
+    let b = numbers[1];
+
+    println!("{}", a + b);
+}
+```
+
 
 ## [8393. Sum](#list)
 
@@ -140,7 +176,7 @@ for i := 0; i < t; i++ {
 
 > 55
 
-#### Bash
+#### Bash (2022.01.31)
 ```bash
 read n
 let "sum = 0"
@@ -155,7 +191,7 @@ echo $sum
 # read
 ```
 
-#### C++
+#### C++ (2021.05.25)
 ```cpp
 int a;
 cin >> a;
@@ -170,7 +206,7 @@ cout << sum << endl;
 return 0;
 ```
 
-#### Golang - trial 1
+#### Golang - trial 1 (2022.03.16)
 ```go
 var n int
 fmt.Scanln(&n)
@@ -183,7 +219,7 @@ for i := 1; i <= n; i++ {
 fmt.Println(sum)
 ```
 
-#### Golang - trial 2
+#### Golang - trial 2 (2022.03.16)
 ```go
 var n int
 fmt.Scanln(&n)
@@ -195,107 +231,15 @@ fmt.Println(sum)
 > expected to be faster, but not so different from ~~the~~ trial 1  
 > (※ my wife claimed "trial 1" doesn't require "the")
 
-## [15552. 빠른 A+B](#list)
+#### Rust (2023.12.23)
+```rust
+let mut input = String::new();
+io::stdin().read_line(&mut input).unwrap();
 
-> 5  
-> 1 1  
-> 12 34  
-> 5 500  
-> 40 60  
-> 1000 1000
+let n: i32 = input.trim().parse().unwrap();
 
-> 2 46 505 100 2000 (vertically)
-
-#### Bash - trial 1
-```bash
-read t
-
-for ((i = 0; i < t; i++))
-do
-    read a b
-    echo $((a + b))
-done
-
-# read
+println!("{}", n * (n + 1) / 2);
 ```
-> 시간 초과
-
-#### Bash - trial 2
-```bash
-# t test cases
-read t
-
-# Initialize file.txt that has 0 bytes
-cat /dev/null > file.txt                # /dev/null : null device
-
-# Operation
-for ((i = 0; i < t; i++))
-do
-    read a b
-    echo $((a + b)) >> file.txt
-done
-
-# Standard output through a file
-awk '{ print }' ./file.txt
-
-# read
-```
-> 런타임 에러
-
-#### C++
-```cpp
-// make cin/cout faster
-cin.tie(NULL);
-ios_base::sync_with_stdio(false);
-
-int t, a, b;
-cin >> t;
-
-for (int i = 1; i <= t; i++)
-{
-    cin >> a >> b;
-    cout << a + b << '\n';          // \n is faster than endl
-}
-
-return 0;
-```
-
-#### Golang - trial 1
-```go
-var t int
-fmt.Scanln(&t)
-
-for i := 0; i < t; i++ {
-    var a, b int
-    fmt.Scanln(&a, &b)
-    fmt.Println(a + b)
-}
-```
-> Timeout
-
-#### Golang - trial 2
-```go
-import (
-    "fmt"
-    "bufio"
-    "os"
-)
-```
-```go
-var reader = bufio.NewReader(os.Stdin)
-var writer = bufio.NewWriter(os.Stdout)
-defer writer.Flush()
-
-var t int
-fmt.Scanln(&t)
-
-var a, b int
-for i := 0; i < t; i++ {
-    fmt.Fscan(reader, &a, &b)
-    fmt.Fprintln(writer, a + b)
-}
-```
-
 
 
 ## [25304. 영수증](#list)
@@ -311,7 +255,7 @@ for i := 0; i < t; i++ {
 
 > Yes
 
-#### C++
+#### C++ (2023.06.17)
 ```cpp
 using ll = long long;
 ```
@@ -334,6 +278,41 @@ else std::cout << "No" << '\n';
 return 0;
 ```
 
+#### Rust (2023.12.23)
+```rust
+let mut input1 = String::new();
+let mut input2 = String::new();
+
+io::stdin().read_line(&mut input1).unwrap();
+io::stdin().read_line(&mut input2).unwrap();
+
+let x: i32 = input1.trim().parse().unwrap();
+let n: i32 = input2.trim().parse().unwrap();
+
+let mut sum: i32 = 0;
+for _i in 0..n
+// `_i`, not `i` when intentional
+{
+    let mut input3 = String::new();
+    io::stdin().read_line(&mut input3).unwrap();
+    let numbers: Vec<i32> = input3
+        .split_whitespace()
+        .map(|s| s.parse::<i32>().unwrap())
+        .collect();
+
+    let a = numbers[0];
+    let b = numbers[1];
+
+    sum += a * b;
+}
+
+let ans: String =
+    if sum == x { "Yes".to_string() }
+    else { "No".to_string() };
+
+println!("{}", ans);
+```
+
 
 ## [25314. 코딩은 체육과목 입니다](#list)
 
@@ -343,7 +322,7 @@ return 0;
 
 > long long long long long int
 
-#### C++
+#### C++ (2023.06.17)
 ```cpp
 int N;
 cin >> N;
@@ -354,6 +333,145 @@ for (int n = 0; n < N; n++) std::cout << str << ' ';
 std::cout << "int" << '\n';
 
 return 0;
+```
+
+#### Rust (2023.12.23)
+```rust
+let mut input = String::new();
+io::stdin().read_line(&mut input).unwrap();
+
+let mut n: i32 = input.trim().parse().unwrap();
+
+n /= 4;
+for _i in 0..n { print!("long ") };
+println!("int");
+```
+
+
+## [15552. 빠른 A+B](#list)
+
+> 5  
+> 1 1  
+> 12 34  
+> 5 500  
+> 40 60  
+> 1000 1000
+
+> 2 46 505 100 2000 (vertically)
+
+#### Bash - trial 1 (2022.01.31)
+```bash
+read t
+
+for ((i = 0; i < t; i++))
+do
+    read a b
+    echo $((a + b))
+done
+
+# read
+```
+> 시간 초과
+
+#### Bash - trial 2 (2022.01.31)
+```bash
+# t test cases
+read t
+
+# Initialize file.txt that has 0 bytes
+cat /dev/null > file.txt                # /dev/null : null device
+
+# Operation
+for ((i = 0; i < t; i++))
+do
+    read a b
+    echo $((a + b)) >> file.txt
+done
+
+# Standard output through a file
+awk '{ print }' ./file.txt
+
+# read
+```
+> 런타임 에러
+
+#### C++ (2021.05.25)
+```cpp
+// make cin/cout faster
+cin.tie(NULL);
+ios_base::sync_with_stdio(false);
+
+int t, a, b;
+cin >> t;
+
+for (int i = 1; i <= t; i++)
+{
+    cin >> a >> b;
+    cout << a + b << '\n';          // \n is faster than endl
+}
+
+return 0;
+```
+
+#### Golang - trial 1 (2022.03.16)
+```go
+var t int
+fmt.Scanln(&t)
+
+for i := 0; i < t; i++ {
+    var a, b int
+    fmt.Scanln(&a, &b)
+    fmt.Println(a + b)
+}
+```
+> Timeout
+
+#### Golang - trial 2 (2022.03.18)
+```go
+import (
+    "fmt"
+    "bufio"
+    "os"
+)
+```
+```go
+var reader = bufio.NewReader(os.Stdin)
+var writer = bufio.NewWriter(os.Stdout)
+defer writer.Flush()
+
+var t int
+fmt.Scanln(&t)
+
+var a, b int
+for i := 0; i < t; i++ {
+    fmt.Fscan(reader, &a, &b)
+    fmt.Fprintln(writer, a + b)
+}
+```
+
+#### Rust (2023.12.24)
+```rust
+use std::io::{self, Read};
+use std::fmt::Write;
+```
+```rust
+let mut input = String::new();
+
+io::stdin().read_to_string(&mut input).unwrap();
+let mut input = input
+    .split_ascii_whitespace()
+    .flat_map(str::parse::<i32>);
+
+let t = input.next().unwrap();
+let mut output = String::new();
+for _ in 0..t
+{
+    let a: i32 = input.next().unwrap();
+    let b: i32 = input.next().unwrap();
+
+    writeln!(output, "{}", a + b).unwrap();
+}
+print!("{}", output);
 ```
 
 
@@ -371,7 +489,7 @@ return 0;
 > ……  
 > Case #5: 7
 
-#### Bash
+#### Bash (2022.01.31)
 ```bash
 read t
 
@@ -384,7 +502,7 @@ done
 # read
 ```
 
-#### C++
+#### C++ (2021.05.25)
 ```cpp
 int t, a, b;
 cin >> t;
@@ -398,7 +516,7 @@ for (int i = 1; i <= t; i++)
 return 0;
 ```
 
-#### Golang
+#### Golang (2022.03.18)
 ```go
 var t int
 fmt.Scanln(&t)
@@ -407,6 +525,28 @@ for i := 1; i <= t; i++ {
     var a, b int
     fmt.Scanln(&a, &b)
     fmt.Printf("Case #%d: %d\n", i, a + b)
+}
+```
+
+#### Rust (2023.12.23)
+```rust
+let mut input1 = String::new();
+io::stdin().read_line(&mut input1).unwrap();
+let t: i32 = input1.trim().parse().unwrap();
+
+for i in 1..t+1
+{
+    let mut input2 = String::new();
+    io::stdin().read_line(&mut input2).unwrap();
+    let numbers: Vec<i32> = input2
+        .split_whitespace()
+        .map(|s| s.parse::<i32>().unwrap())
+        .collect();
+
+    let a = numbers[0];
+    let b = numbers[1];
+
+    println!("Case #{}: {}", i, a + b);
 }
 ```
 
@@ -425,7 +565,7 @@ for i := 1; i <= t; i++ {
 > ……  
 > Case #5: 5 + 2 = 7
 
-#### Bash
+#### Bash (2022.01.31)
 ```bash
 read t
 
@@ -438,7 +578,7 @@ done
 # read
 ```
 
-#### C++
+#### C++ (2021.05.25)
 ```cpp
 int t, a, b;
 cin >> t;
@@ -452,7 +592,7 @@ for (int i = 1; i <= t; i++)
 return 0;
 ```
 
-#### Golang
+#### Golang (2022.03.18)
 ```go
 var t int
 fmt.Scanln(&t)
@@ -461,6 +601,28 @@ for i := 1; i <= t; i++ {
     var a, b int
     fmt.Scanln(&a, &b)
     fmt.Printf("Case #%d: %d + %d = %d\n", i, a, b, a + b)
+}
+```
+
+#### Rust (2023.12.23)
+```rust
+let mut input1 = String::new();
+io::stdin().read_line(&mut input1).unwrap();
+let t: i32 = input1.trim().parse().unwrap();
+
+for i in 1..t+1
+{
+    let mut input2 = String::new();
+    io::stdin().read_line(&mut input2).unwrap();
+    let numbers: Vec<i32> = input2
+        .split_whitespace()
+        .map(|s| s.parse::<i32>().unwrap())
+        .collect();
+
+    let a = numbers[0];
+    let b = numbers[1];
+
+    println!("Case #{}: {} + {} = {}", i, a, b, a + b);
 }
 ```
 
@@ -475,7 +637,7 @@ for i := 1; i <= t; i++ {
 > \*\*\*\*  
 > \*\*\*\*\*
 
-#### Bash
+#### Bash (2022.01.31)
 ```bash
 read n
 
@@ -492,7 +654,7 @@ done
 # read
 ```
 
-#### C++
+#### C++ (2021.05.25)
 ```cpp
 int a;
 cin >> a;
@@ -510,7 +672,7 @@ for (int i = 1; i <= a; i++)
 return 0;
 ```
 
-#### Golang - trial 1
+#### Golang - trial 1 (2022.03.18)
 ```go
 import (
     "fmt"
@@ -527,7 +689,7 @@ for i := 1; i <= n; i++ {
 }
 ```
 
-#### Golang - trial 2
+#### Golang - trial 2 (2022.03.18)
 ```go
 var n int
 fmt.Scanln(&n)
@@ -540,6 +702,20 @@ for i := 1; i <= n; i++ {
 ```
 > rather slower??
 
+#### Rust (2023.12.23)
+```rust
+let mut input = String::new();
+io::stdin().read_line(&mut input).unwrap();
+
+let n: i32 = input.trim().parse().unwrap();
+
+for _i in 0..n
+{
+    for _j in 0.._i+1 { print!("*") };
+    println!();
+};
+```
+
 
 ## [2439. 별 찍기 - 2](#list)
 
@@ -551,7 +727,7 @@ for i := 1; i <= n; i++ {
 > &nbsp;\*\*\*\*  
 > \*\*\*\*\*
 
-#### Bash
+#### Bash (2022.01.31)
 ```bash
 read n
 
@@ -572,7 +748,7 @@ done
 # read
 ```
 
-#### C++
+#### C++ (2021.05.25)
 ```cpp
 int a;
 cin >> a;
@@ -594,7 +770,7 @@ for (int i = 1; i <= a; i++)
 return 0;
 ```
 
-#### Golang
+#### Golang (2022.03.18)
 ```go
 import (
     "fmt"
@@ -610,6 +786,24 @@ for i := 1; i <= n; i++ {
 }
 ```
 
+#### Rust (2023.12.23)
+```rust
+let mut input = String::new();
+io::stdin().read_line(&mut input).unwrap();
+
+let n: i32 = input.trim().parse().unwrap();
+
+for i in 0..n
+{
+    for j in 0..n
+    {
+        if j < n - i - 1 { print!(" ") }
+        else { print!("*") }
+    }
+    println!();
+}
+```
+
 
 ## [2741. N 찍기](#list)
 
@@ -617,7 +811,7 @@ for i := 1; i <= n; i++ {
 
 > 1 2 3 4 5 (vertically)
 
-#### Bash
+#### Bash (2022.01.31)
 ```bash
 read n
 
@@ -630,7 +824,7 @@ done
 ```
 > 시간 초과
 
-#### C++
+#### C++ (2021.05.25)
 ```cpp
 // make cin/cout faster
 cin.tie(NULL);
@@ -647,7 +841,7 @@ for (int i = 1; i <= a; i++)
 return 0;
 ```
 
-#### Golang
+#### Golang (2022.03.18)
 ```go
 import (
     "fmt"
@@ -675,7 +869,7 @@ for i := 1; i <= n; i++ {
 
 > 5 4 3 2 1 (vertically)
 
-#### Bash
+#### Bash (2022.01.31)
 ```bash
 read n
 
@@ -688,7 +882,7 @@ done
 ```
 > 시간 초과
 
-#### C++
+#### C++ (2021.05.25)
 ```cpp
 // make cin/cout faster
 cin.tie(NULL);
@@ -705,7 +899,7 @@ for (int i = a; i >= 1; i--)
 return 0;
 ```
 
-#### Golang
+#### Golang (2022.03.18)
 ```go
 import (
     "fmt"

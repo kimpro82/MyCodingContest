@@ -55,8 +55,8 @@ can't escape this endless valley of despair ……
 |:--|:-:|:-:|:-:|:-:|
 | [1. 입출력과 사칙연산](/BaekJoon/Problems/Step/01#baekjoon-online-judge) | 22.01.26 | 21.05.13 | 22.03.12 | Python - 21.05.13<br>R - 21.07.11<br>Text - 22.01.26<br>SystemVerilog - 22.09.05<br>Rust - 23.12.21 |
 | [2. 조건문](/BaekJoon/Problems/Step/02#baekjoon-online-judge) | 22.01.29 | 21.05.24 | 22.03.14 | R - 21.07.14<br>Rust - 23.12.22 |
-| [3.1. 반복문 1. for문](/BaekJoon/Problems/Step/03-1#baekjoon-online-judge) | 22.01.31 | 21.05.25 | 22.03.18 | |
-| [3.2. 반복문 2. while문](/BaekJoon/Problems/Step/03-2#baekjoon-online-judge) | 22.02.02 | 21.05.26 | 22.03.29 | |
+| [3.1. 반복문 1. for문](/BaekJoon/Problems/Step/03-1#baekjoon-online-judge) | 22.01.31 | 21.05.25 | 22.03.18 | Rust - 23.12.23 |
+| [3.2. 반복문 2. while문](/BaekJoon/Problems/Step/03-2#baekjoon-online-judge) | 22.02.02 | 21.05.26 | 22.03.29 | Rust - 23.12.23 |
 | [4. 1차원 배열](/BaekJoon/Problems/Step/04#baekjoon-online-judge) | 22.02.03 | 21.06.14<br>23.06.19 | 22.04.13 | |
 | [5. 문자열](/BaekJoon/Problems/Step/05#baekjoon-online-judge) | 22.02.16 | 21.07.10<br>23.06.19 | 22.06.20 | |
 | [~5. 함수~](/BaekJoon/Problems/Step/05_#baekjoon-online-judge) | | 21.06.18 | 22.04.17 | |

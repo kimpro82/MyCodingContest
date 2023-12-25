@@ -6,7 +6,8 @@ https://www.acmicpc.net/step/3 ~https://www.acmicpc.net/step/2~
 
 (2021.05.26) - `C++`  
 (2022.02.02) - `Bash`  
-(2022.03.29) - `Golang`
+(2022.03.29) - `Golang`  
+(2023.12.23) - `Rust`  
 
 
 ### **List**
@@ -21,10 +22,11 @@ https://www.acmicpc.net/step/3 ~https://www.acmicpc.net/step/2~
 **※ Note**  
 
 &nbsp;&nbsp; - All the codes of any language for the same problem have basically the same result.  
-&nbsp;&nbsp; - `Bash` : skipped the first line; `#!/bin/bash`  
-&nbsp;&nbsp; - `C++`* : skipped `main()` function's brace(`{}`) and its outside including two header lines; `#include <iostream>` `using namespace std;`  
-&nbsp;&nbsp; - `Golang`* : skipped `main()` function's brace(`{}`) and its outside including two header lines; `package main` `import "fmt"`  
-&nbsp;&nbsp; * When any additional header is used, the header block is also noted seperately.
+&nbsp;&nbsp; - Typical headers like the below are basically skipped, but they are noted seperately when there are any additional line.  
+&nbsp;&nbsp;&nbsp;&nbsp; · *Bash* : `#!/bin/bash`  
+&nbsp;&nbsp;&nbsp;&nbsp; · *C++* : `#include <iostream>` `#define endl '\n';` `using namespace std;` `int main() {}`  
+&nbsp;&nbsp;&nbsp;&nbsp; · *Golang* : `package main` `import "fmt"` `func main() {}`  
+&nbsp;&nbsp;&nbsp;&nbsp; · *Rust* : `use std::io;` `fn main() {}`  
 
 
 ## [10952. A+B - 5](#list)
@@ -38,7 +40,7 @@ https://www.acmicpc.net/step/3 ~https://www.acmicpc.net/step/2~
 
 > 2 5 7 17 7 (vertically)
 
-#### Bash
+#### Bash (2022.02.02)
 ```bash
 while true
 do
@@ -53,7 +55,7 @@ do
 done
 ```
 
-#### C++
+#### C++ (2021.05.26)
 ```cpp
 int a, b;
 
@@ -72,7 +74,7 @@ while (true)
 return 0;
 ```
 
-#### Golang
+#### Golang (2022.03.21)
 ```golang
 var a, b int
 
@@ -87,6 +89,26 @@ for true {
 }
 ```
 
+#### Rust (2023.12.23)
+```rust
+loop
+{
+    let mut input = String::new();
+    io::stdin().read_line(&mut input).unwrap();
+    let numbers: Vec<i32> = input
+        .split_whitespace()
+        .map(|s| s.parse::<i32>().unwrap())
+        .collect();
+
+    if numbers.len() == 0 { break; }                    // EOF
+    else
+    {
+        let sum: i32 = numbers[0] + numbers[1];
+        println!("{}", sum);
+    };
+}
+```
+
 
 ## [10951. A+B - 4](#list)
 
@@ -98,7 +120,7 @@ for true {
 
 > 2 5 7 17 7 (vertically)
 
-#### Bash
+#### Bash (2022.02.02)
 ```bash
 while true
 do
@@ -113,7 +135,7 @@ do
 done
 ```
 
-#### C++
+#### C++ (2021.05.26)
 ```cpp
 int a, b;
 
@@ -133,7 +155,7 @@ while (true)
 return 0;
 ```
 
-#### Golang
+#### Golang (2022.03.29)
 ```golang
 import (
     "fmt"
@@ -156,6 +178,25 @@ for true {
 }
 ```
 
+#### Rust (2023.12.23)
+```rust
+loop
+{
+    let mut input = String::new();
+    io::stdin().read_line(&mut input).unwrap();
+    let numbers: Vec<i32> = input
+        .split_whitespace()
+        .map(|s| s.parse::<i32>().unwrap())
+        .collect();
+
+    let a = numbers[0];
+    let b = numbers[1];
+
+    if a == 0 && b == 0 { break; }
+    else { println!("{}", a + b) };
+}
+```
+
 
 ## [1110. 더하기 사이클](#list)
 
@@ -163,7 +204,7 @@ for true {
 
 > 4 3 60 1
 
-#### Bash
+#### Bash (2022.02.02)
 ```bash
 read n
 
@@ -195,7 +236,7 @@ done
 echo $t
 ```
 
-#### C++
+#### C++ (2021.05.26)
 ```cpp
 int n, a, b, ab, t = 0;         // 0 <= n <= 99, n = a * 10 + b, ab = a + b
 cin >> n ;                      // n  = 26
@@ -233,7 +274,7 @@ cout << t << '\n';
 return 0;
 ```
 
-#### Golang
+#### Golang (2022.03.29)
 ```golang
 var n, a, b int                    // n < 100
 fmt.Scanln(&n)    

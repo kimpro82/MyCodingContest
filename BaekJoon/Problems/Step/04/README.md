@@ -110,7 +110,7 @@ println!("{}", cnt);
 
 > 1 4 2 3
 
-#### Bash
+#### Bash (2022.01.31)
 ```bash
 read n x
 read list
@@ -146,7 +146,7 @@ cout << '\n';
 return 0;
 ```
 
-#### Golang
+#### Golang (2022.03.18)
 ```go
 var n, x int
 fmt.Scanln(&n, &x)
@@ -192,7 +192,7 @@ println!("{}", cnt);
 
 > 7 35
 
-#### Bash
+#### Bash (2022.02.04)
 ```bash
 # ulimit -q 64
 # -d : The maximum size of a process’s data segment (kbytes)
@@ -228,7 +228,7 @@ echo $min $max
 ```
 > 메모리 초과
 
-#### C++ - Trial 1
+#### C++ - Trial 1 (2021.06.09)
 ```cpp
 #include <iostream>
 #include <cmath>    // for using min() & max(), but I really hate it
@@ -253,7 +253,7 @@ cout << minValue << " " << maxValue << endl;
 return 0;
 ```
 
-#### C++ - Trial 2
+#### C++ - Trial 2 (2021.06.14)
 ```cpp
 // I really don't want to use for loop with math.max(), math.min().  
 // But, consequantially, it was a kind of the lesser evil.
@@ -286,7 +286,7 @@ cout << minValue << " " << maxValue << endl;    // inefficient, crazy
 return 0;
 ```
 
-#### Golang - Trial 1
+#### Golang - Trial 1 (2022.03.31)
 ```golang
 var n int
 fmt.Scanln(&n)
@@ -310,7 +310,7 @@ fmt.Println(min, max)
 ```
 > 시간 초과
 
-#### Golang - Trial 2
+#### Golang - Trial 2 (2022.03.31)
 ```golang
 import (
     "fmt"
@@ -344,7 +344,7 @@ for i := 0; i < n; i++ {
 fmt.Println(min, max)
 ```
 
-#### Golang - Trial 3
+#### Golang - Trial 3 (2022.03.31)
 ```golang
 import (
     "fmt"
@@ -428,7 +428,7 @@ let mut min: i32 = 1_000_000;
 > 85  
 > 8
 
-#### Bash
+#### Bash (2022.02.03)
 ```bash
 # Set max
 let "max = 0"
@@ -461,7 +461,7 @@ done
 echo -e "${max}\n${order}"
 ```
 
-#### C++
+#### C++ (2021.06.09)
 ```cpp
 const int length = 9;       // the length of arr[] is fixed as 9
 int arr[length];
@@ -484,7 +484,7 @@ cout << maxValue << "\n" << loc << endl;
 return 0;
 ```
 
-#### Golang
+#### Golang (2022.03.31)
 ```golang
 var n int
 var max int = 0
@@ -598,8 +598,6 @@ println!();
 
 
 ## [10813. 공 바꾸기](#list)
-
-
 
 > 5 4  
 > 1 2  
@@ -743,7 +741,7 @@ for i in 1..31 { if v[i] == 0 { println!("{}", i) } };
 
 > 6
 
-#### Bash
+#### Bash (2022.02.03)
 ```bash
 # Input data
 for i in {0..9}         # the size 10 is fixed
@@ -762,7 +760,7 @@ Comment
 echo ${#arr[@]}
 ```
 
-#### C++
+#### C++ (2021.06.09)
 ```cpp
 // modulo : 나머지
 // distinct number : 서로 다른 숫자 ≒ 중복되지 않는 숫자
@@ -787,7 +785,7 @@ cout << modulo.size() << endl;
 return 0;
 ```
 
-#### Golang
+#### Golang (2022.04.01)
 ```golang
 var n, mod int
 var modulo map[int]int
@@ -932,7 +930,7 @@ for el in v { print!("{} ", el) }; println!();
 
 > 75
 
-#### Bash
+#### Bash (2022.02.03)
 ```bash
 # Input data
 read n
@@ -961,7 +959,7 @@ let "average = sum / n"
 printf "%.2f\n" $((average))e-3                 # MAGIC!!
 ```
 
-#### C++
+#### C++ (2021.06.09)
 ```cpp
 int t;
 cin >> t;
@@ -984,7 +982,7 @@ cout << sum / t << endl;
 return 0;
 ```
 
-#### Golang
+#### Golang (2022.04.12)
 ```golang
 var n int
 fmt.Scanln(&n)
@@ -1054,7 +1052,7 @@ println!("{}", mean);
 
 > 3 1 0 2 0 0 0 2 0 0 (vertically)
 
-#### Bash
+#### Bash (2022.02.03)
 ```bash
 # Input data
 read a
@@ -1093,7 +1091,7 @@ do
 done
 ```
 
-#### C++
+#### C++ (2021.06.09)
 ```cpp
 int a, b, c;                        // 100 <= a, b, c < 1000
 cin >> a >> b >> c;
@@ -1115,7 +1113,7 @@ for (int j = 0; j < 10; j++)
 return 0;
 ```
 
-#### Golang
+#### Golang (2022.03.31)
 ```golang
 import (
     "fmt"
@@ -1154,7 +1152,7 @@ for j := 0; j < 10; j++ {
 > 10  
 > ……
 
-#### Bash
+#### Bash (2022.02.03)
 ```bash
 read t
 
@@ -1184,7 +1182,7 @@ do
 done
 ```
 
-#### C++
+#### C++ (2021.06.13)
 ```cpp
 int t;
 cin >> t;
@@ -1220,7 +1218,7 @@ for (int i = 0; i < t; i++)
 return 0;
 ```
 
-#### Golang
+#### Golang (2022.04.12)
 ```golang
 var n, score, combo, length int
 var ox string
@@ -1265,7 +1263,7 @@ for i := 0; i < n; i++ {
 55.556%
 ```
 
-#### Bash (2022.02.04)
+#### Bash (2022.02.03)
 ```bash
 read c
 

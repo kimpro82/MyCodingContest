@@ -19,5 +19,5 @@ fn main()
         v[temp] = 0;
     };
 
-        for i in 1..31 { if v[i] == 0 { println!("{}", i) } };
+    for i in 1..31 { if v[i] == 0 { println!("{}", i) } };
 }

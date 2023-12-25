@@ -32,15 +32,13 @@ https://www.acmicpc.net/step/6
 
 &nbsp;&nbsp; - All the codes of any language for the same problem have basically the same result.  
 &nbsp;&nbsp; - Typical headers like the below are basically skipped, but they are noted seperately when there are any additional line.  
-&nbsp;&nbsp;&nbsp;&nbsp; · `Bash` : `#!/bin/bash`  
-&nbsp;&nbsp;&nbsp;&nbsp; · `C++` : `#include <iostream>` `#define endl '\n';` `using namespace std;`  
-&nbsp;&nbsp;&nbsp;&nbsp; · `Golang` : `package main` `import "fmt"`  
-
+&nbsp;&nbsp;&nbsp;&nbsp; · *Bash* : `#!/bin/bash`  
+&nbsp;&nbsp;&nbsp;&nbsp; · *C++* : `#include <iostream>` `#define endl '\n';` `using namespace std;` `int main() {}`  
+&nbsp;&nbsp;&nbsp;&nbsp; · *Golang* : `package main` `import "fmt"` `func main() {}`  
+&nbsp;&nbsp;&nbsp;&nbsp; · *Rust* : `use std::io::{self, Read};` `fn main() {}`  
 
 
 ## [10807. 개수 세기](#list)
-
-(2023.06.18)
 
 > 11  
 > 1 4 1 2 4 2 4 2 3 4 4  
@@ -48,7 +46,7 @@ https://www.acmicpc.net/step/6
 
 > 3
 
-#### C++
+#### C++ (2023.06.18)
 ```cpp
 #include <iostream>
 #include <vector>
@@ -81,10 +79,31 @@ std::cout << count << endl;
 return 0;
 ```
 
+#### Rust (2023.12.25)
+```rust
+……
+use std::convert::TryInto;
+```
+```rust
+let mut input = String::new();
+
+io::stdin().read_to_string(&mut input).unwrap();
+let mut input = input
+    .split_ascii_whitespace()
+    .flat_map(str::parse::<i32>);
+
+let n: usize = input.next().unwrap().try_into().unwrap();
+let mut vector = Vec::<i32>::new();
+for _ in 0..n { vector.push(input.next().unwrap()) };
+let v = input.next().unwrap();
+
+let mut cnt: i32 = 0;
+for i in 0..n { if vector[i] == v { cnt += 1 } };       // `cnt++` doesn't work
+println!("{}", cnt);
+```
+
 
 ## [10871. X보다 작은 수](#list)
-
-(2021.05.25)
 
 > 10 5  
 > 1 10 4 9 2 3 8 5 7 6
@@ -108,7 +127,7 @@ echo ' '
 # read
 ```
 
-#### C++
+#### C++(2021.05.25)
 ```cpp
 int n, x;
 int arr[10000];                 // .exe file stops when int arr[n], although compilation succeeded
@@ -127,7 +146,6 @@ cout << '\n';
 return 0;
 ```
 
-
 #### Golang
 ```go
 var n, x int
@@ -141,6 +159,29 @@ for i := 0; i < n; i++ {
     }
 }
 // fmt.Println("\b")            // causes wrong?
+```
+
+#### Rust (2023.12.25)
+```rust
+……
+use std::convert::TryInto;
+```
+```rust
+let mut input = String::new();
+
+io::stdin().read_to_string(&mut input).unwrap();
+let mut input = input
+    .split_ascii_whitespace()
+    .flat_map(str::parse::<i32>);
+
+let n: usize = input.next().unwrap().try_into().unwrap();
+let mut vector = Vec::<i32>::new();
+for _ in 0..n { vector.push(input.next().unwrap()) };
+let v = input.next().unwrap();
+
+let mut cnt: i32 = 0;
+for i in 0..n { if vector[i] == v { cnt += 1 } };       // `cnt++` doesn't work
+println!("{}", cnt);
 ```
 
 
@@ -331,6 +372,46 @@ sort.Sort(sort.IntSlice(arr))
 fmt.Println(arr[0], arr[n - 1])
 ```
 
+#### Rust - Trial 1 (2023.12.25)
+```rust
+……
+use std::io::{self, Read};
+```
+```rust
+let mut input = String::new();
+
+io::stdin().read_to_string(&mut input).unwrap();
+let mut input = input.split_ascii_whitespace().flat_map(str::parse::<i32>);
+
+let n: usize = input.next().unwrap().try_into().unwrap();
+let mut max: i32 = -10^6;
+let mut min: i32 = 10^6;
+for _ in 0..n {
+    let temp: i32 = input.next().unwrap();
+    if temp > max { max = temp };
+    if temp < min { min = temp };
+
+    // test
+    // println!("num: {}, max: {}, min: {}", temp, max, min);
+}
+
+println!("{} {}", min, max);
+```
+> 틀렸습니다
+
+#### Rust - Trial 2 (2023.12.25)
+```rust
+……
+```
+```rust
+……
+// let mut max: i32 = -10^6;                            // ^ : Bitwise operation
+// let mut min: i32 = 10^6;
+let mut max: i32 = -1_000_000;
+let mut min: i32 = 1_000_000;
+……
+```
+
 
 ## [2562. 최댓값](#list)
 
@@ -421,10 +502,32 @@ for i := 0; i < 9; i++ {
 fmt.Println(max, maxIdx + 1)
 ```
 
+#### Rust (2023.12.25)
+```rust
+let mut input = String::new();
+
+io::stdin().read_to_string(&mut input).unwrap();
+let mut input = input
+    .split_ascii_whitespace()
+    .flat_map(str::parse::<i32>);
+
+let mut max: i32 = 0;
+let mut idx: i32 = 0;
+for i in 0..9
+{
+    let temp: i32 = input.next().unwrap();
+    if temp > max
+    {
+        max = temp;
+        idx = i + 1;
+    };
+};
+
+println!("{}\n{}", max, idx);
+```
+
 
 ## [10810. 공 넣기](#list)
-
-(2023.06.18)
 
 > 5 4  
 > 1 2 3  
@@ -434,7 +537,7 @@ fmt.Println(max, maxIdx + 1)
 
 > 1 2 1 1 0
 
-#### C++
+#### C++ (2023.06.18)
 ```cpp
 #include <iostream>
 #include <vector>
@@ -464,10 +567,39 @@ std::cout << endl;
 return 0;
 ```
 
+#### Rust (2023.12.25)
+```rust
+……
+use std::convert::TryInto;
+```
+```rust
+let mut input = String::new();
+
+io::stdin().read_to_string(&mut input).unwrap();
+let mut input = input
+    .split_ascii_whitespace()
+    .flat_map(str::parse::<i32>);
+
+let n: usize = input.next().unwrap().try_into().unwrap();
+let m: usize = input.next().unwrap().try_into().unwrap();
+let mut v = vec![0; n];
+for _ in 0..m
+{
+    let i: usize = input.next().unwrap().try_into().unwrap();
+    let j: usize = input.next().unwrap().try_into().unwrap();
+    let k: i32 = input.next().unwrap();
+
+    for l in i..(j+1) { v[l-1] = k };
+};
+
+for el in v { print!("{} ", el) };
+println!();
+```
+
 
 ## [10813. 공 바꾸기](#list)
 
-(2023.06.18)
+
 
 > 5 4  
 > 1 2  
@@ -477,7 +609,7 @@ return 0;
 
 > 3 1 4 2 5
 
-#### C++
+#### C++ (2023.06.18)
 ```cpp
 #include <iostream>
 #include <vector>
@@ -510,10 +642,37 @@ std::cout << endl;
 return 0;
 ```
 
+#### Rust (2023.12.25)
+```rust
+……
+use std::convert::TryInto;
+```
+```rust
+let mut input = String::new();
+
+io::stdin().read_to_string(&mut input).unwrap();
+let mut input = input
+    .split_ascii_whitespace()
+    .flat_map(str::parse::<i32>);
+
+let n: usize = input.next().unwrap().try_into().unwrap();
+let m: usize = input.next().unwrap().try_into().unwrap();
+let mut v = Vec::<i32>::with_capacity(n);
+for i in 0..n { v.push((i + 1).try_into().unwrap()) };
+for _ in 0..m
+{
+    let i: i32 = input.next().unwrap() - 1;
+    let j: i32 = input.next().unwrap() - 1;
+
+    v.swap(i as usize, j as usize);                     // wow!
+};
+
+for el in v { print!("{} ", el) };
+println!();
+```
+
 
 ## [5597. 未提出者は誰だ (과제 안 내신 분..?)](#list)
-
-(2023.06.18)
 
 > 3  
 > 1  
@@ -524,7 +683,7 @@ return 0;
 > 2  
 > 8
 
-#### C++
+#### C++ (2023.06.18)
 ```cpp
 #include <iostream>
 #include <vector>
@@ -547,6 +706,25 @@ for (int i = 0; i < 28; i++)
 for (int i = 1; i < 31; i++) if (arr[i] == 0) std::cout << i << endl;
 
 return 0;
+```
+
+#### Rust (2023.12.25)
+```rust
+let mut input = String::new();
+
+io::stdin().read_to_string(&mut input).unwrap();
+let mut input = input
+    .split_ascii_whitespace()
+    .flat_map(str::parse::<usize>);
+
+let mut v = vec![1; 31];
+for _ in 0..28
+{
+    let temp: usize = input.next().unwrap();
+    v[temp] = 0;
+};
+
+for i in 1..31 { if v[i] == 0 { println!("{}", i) } };
 ```
 
 
@@ -638,10 +816,27 @@ for i := 0; i < 10; i++ {
 fmt.Println(len(modulo))
 ```
 
+#### Rust (2023.12.25)
+```rust
+let mut input = String::new();
+
+io::stdin().read_to_string(&mut input).unwrap();
+let input: Vec<usize> = input
+    .split_whitespace()
+    .map(|s| s.parse::<usize>().unwrap())
+    .collect();
+
+let mut v = vec![0; 42];
+for el in input { v[el % 42] += 1 };
+
+let mut cnt = 0;
+for el in v { if el > 0 { cnt += 1 } };
+
+println!("{}", cnt);
+```
+
 
 ## [10811. 바구니 뒤집기](#list)
-
-(2023.06.18)
 
 > 5 4  
 > 1 2  
@@ -651,7 +846,7 @@ fmt.Println(len(modulo))
 
 > 3 4 1 2 5
 
-#### C++
+#### C++ (2023.06.18)
 ```cpp
 #include <iostream>
 #include <vector>
@@ -688,6 +883,45 @@ for (int a = 1; a < n + 1; a++) std::cout << arr[a] << ' ';
 std::cout << endl;
 
 return 0;
+```
+
+#### Rust (2023.12.25)
+```rust
+……
+use std::convert::TryInto;
+```
+```rust
+let mut input = String::new();
+
+io::stdin().read_to_string(&mut input).unwrap();
+let mut input = input
+    .split_ascii_whitespace()
+    .flat_map(str::parse::<i32>);
+
+let n: usize = input.next().unwrap().try_into().unwrap();
+let m: usize = input.next().unwrap().try_into().unwrap();
+let mut v = Vec::<i32>::with_capacity(n);
+for i in 0..n { v.push((i + 1).try_into().unwrap()) };
+for _ in 0..m
+{
+    let i: usize = input.next().unwrap().try_into().unwrap();
+    let j: usize = input.next().unwrap().try_into().unwrap();
+
+    let v2_len: usize = (j-i+1).try_into().unwrap();
+    let mut v2 = Vec::<i32>::with_capacity(v2_len);
+    for k in i..(j+1) { v2.push(v[k-1]) };
+
+    v2.reverse();
+
+    for k in i..(j+1) { v[k-1] = v2[k-i] };
+
+    // test
+    // println!("i:{} j:{}", i, j);
+    // for el in v2 { print!("{} ", el) }; println!();
+    // for el in &v { print!("{} ", el) }; println!();
+};
+
+for el in v { print!("{} ", el) }; println!();
 ```
 
 
@@ -778,6 +1012,37 @@ for i := 0; i < n; i++ {
 }
 
 fmt.Printf("%.3f\n", sum / float32(n))
+```
+
+#### Rust (2023.12.25)
+```rust
+……
+use std::convert::TryInto;
+```
+```rust
+let mut input = String::new();
+
+io::stdin().read_to_string(&mut input).unwrap();
+let mut input = input
+    .split_ascii_whitespace()
+    .flat_map(str::parse::<i32>);
+
+let n: usize = input.next().unwrap().try_into().unwrap();
+
+let mut v: Vec<i32> = Vec::<i32>::with_capacity(n);
+for _ in 0..n { v.push(input.next().unwrap())};
+
+let mut max: i32 = 0;
+for el in &v { if *el > max { max = *el } };
+
+let mut v2: Vec<f32> = Vec::<f32>::with_capacity(n);
+for el in &v { v2.push(*el as f32 / max as f32 * 100.0) };
+
+let mut sum: f32 = 0.0;
+for el in &v2 { sum += *el };
+let mean: f32 = sum / (n as f32);
+
+println!("{}", mean);
 ```
 
 

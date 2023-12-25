@@ -57,7 +57,7 @@ can't escape this endless valley of despair ……
 | [2. 조건문](/BaekJoon/Problems/Step/02#baekjoon-online-judge) | 22.01.29 | 21.05.24 | 22.03.14 | R - 21.07.14<br>Rust - 23.12.22 |
 | [3.1. 반복문 1. for문](/BaekJoon/Problems/Step/03-1#baekjoon-online-judge) | 22.01.31 | 21.05.25 | 22.03.18 | Rust - 23.12.23 |
 | [3.2. 반복문 2. while문](/BaekJoon/Problems/Step/03-2#baekjoon-online-judge) | 22.02.02 | 21.05.26 | 22.03.29 | Rust - 23.12.23 |
-| [4. 1차원 배열](/BaekJoon/Problems/Step/04#baekjoon-online-judge) | 22.02.03 | 21.06.14<br>23.06.19 | 22.04.13 | |
+| [4. 1차원 배열](/BaekJoon/Problems/Step/04#baekjoon-online-judge) | 22.02.03 | 21.06.14<br>23.06.19 | 22.04.13 | Rust - 23.12.25 |
 | [5. 문자열](/BaekJoon/Problems/Step/05#baekjoon-online-judge) | 22.02.16 | 21.07.10<br>23.06.19 | 22.06.20 | |
 | [~5. 함수~](/BaekJoon/Problems/Step/05_#baekjoon-online-judge) | | 21.06.18 | 22.04.17 | |
 | [6. 심화 1](/BaekJoon/Problems/Step/06#baekjoon-online-judge) | | 23.06.19 | | |

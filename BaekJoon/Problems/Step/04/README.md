@@ -4,7 +4,8 @@
 
 (2021.06.14, 2023.06.18) - `C++`  
 (2022.02.03) - `Bash`  
-(2022.04.12) - `Golang`
+(2022.04.12) - `Golang`  
+(2023.12.25) - `Rust`  
 
 https://www.acmicpc.net/step/6  
 
@@ -32,15 +33,13 @@ https://www.acmicpc.net/step/6
 
 &nbsp;&nbsp; - All the codes of any language for the same problem have basically the same result.  
 &nbsp;&nbsp; - Typical headers like the below are basically skipped, but they are noted seperately when there are any additional line.  
-&nbsp;&nbsp;&nbsp;&nbsp; · `Bash` : `#!/bin/bash`  
-&nbsp;&nbsp;&nbsp;&nbsp; · `C++` : `#include <iostream>` `#define endl '\n';` `using namespace std;`  
-&nbsp;&nbsp;&nbsp;&nbsp; · `Golang` : `package main` `import "fmt"`  
-
+&nbsp;&nbsp;&nbsp;&nbsp; · *Bash* : `#!/bin/bash`  
+&nbsp;&nbsp;&nbsp;&nbsp; · *C++* : `#include <iostream>` `#define endl '\n';` `using namespace std;` `int main() {}`  
+&nbsp;&nbsp;&nbsp;&nbsp; · *Golang* : `package main` `import "fmt"` `func main() {}`  
+&nbsp;&nbsp;&nbsp;&nbsp; · *Rust* : `use std::io::{self, Read};` `fn main() {}`  
 
 
 ## [10807. 개수 세기](#list)
-
-(2023.06.18)
 
 > 11  
 > 1 4 1 2 4 2 4 2 3 4 4  
@@ -48,7 +47,7 @@ https://www.acmicpc.net/step/6
 
 > 3
 
-#### C++
+#### C++ (2023.06.18)
 ```cpp
 #include <iostream>
 #include <vector>
@@ -81,17 +80,38 @@ std::cout << count << endl;
 return 0;
 ```
 
+#### Rust (2023.12.25)
+```rust
+……
+use std::convert::TryInto;
+```
+```rust
+let mut input = String::new();
+
+io::stdin().read_to_string(&mut input).unwrap();
+let mut input = input
+    .split_ascii_whitespace()
+    .flat_map(str::parse::<i32>);
+
+let n: usize = input.next().unwrap().try_into().unwrap();
+let mut vector = Vec::<i32>::new();
+for _ in 0..n { vector.push(input.next().unwrap()) };
+let v = input.next().unwrap();
+
+let mut cnt: i32 = 0;
+for i in 0..n { if vector[i] == v { cnt += 1 } };       // `cnt++` doesn't work
+println!("{}", cnt);
+```
+
 
 ## [10871. X보다 작은 수](#list)
-
-(2021.05.25)
 
 > 10 5  
 > 1 10 4 9 2 3 8 5 7 6
 
 > 1 4 2 3
 
-#### Bash
+#### Bash (2022.01.31)
 ```bash
 read n x
 read list
@@ -108,7 +128,7 @@ echo ' '
 # read
 ```
 
-#### C++
+#### C++(2021.05.25)
 ```cpp
 int n, x;
 int arr[10000];                 // .exe file stops when int arr[n], although compilation succeeded
@@ -127,8 +147,7 @@ cout << '\n';
 return 0;
 ```
 
-
-#### Golang
+#### Golang (2022.03.18)
 ```go
 var n, x int
 fmt.Scanln(&n, &x)
@@ -143,6 +162,29 @@ for i := 0; i < n; i++ {
 // fmt.Println("\b")            // causes wrong?
 ```
 
+#### Rust (2023.12.25)
+```rust
+……
+use std::convert::TryInto;
+```
+```rust
+let mut input = String::new();
+
+io::stdin().read_to_string(&mut input).unwrap();
+let mut input = input
+    .split_ascii_whitespace()
+    .flat_map(str::parse::<i32>);
+
+let n: usize = input.next().unwrap().try_into().unwrap();
+let mut vector = Vec::<i32>::new();
+for _ in 0..n { vector.push(input.next().unwrap()) };
+let v = input.next().unwrap();
+
+let mut cnt: i32 = 0;
+for i in 0..n { if vector[i] == v { cnt += 1 } };       // `cnt++` doesn't work
+println!("{}", cnt);
+```
+
 
 ## [10818. 최소, 최대](#list)
 
@@ -151,7 +193,7 @@ for i := 0; i < n; i++ {
 
 > 7 35
 
-#### Bash
+#### Bash (2022.02.04)
 ```bash
 # ulimit -q 64
 # -d : The maximum size of a process’s data segment (kbytes)
@@ -187,7 +229,7 @@ echo $min $max
 ```
 > 메모리 초과
 
-#### C++ - Trial 1
+#### C++ - Trial 1 (2021.06.09)
 ```cpp
 #include <iostream>
 #include <cmath>    // for using min() & max(), but I really hate it
@@ -212,7 +254,7 @@ cout << minValue << " " << maxValue << endl;
 return 0;
 ```
 
-#### C++ - Trial 2
+#### C++ - Trial 2 (2021.06.14)
 ```cpp
 // I really don't want to use for loop with math.max(), math.min().  
 // But, consequantially, it was a kind of the lesser evil.
@@ -245,7 +287,7 @@ cout << minValue << " " << maxValue << endl;    // inefficient, crazy
 return 0;
 ```
 
-#### Golang - Trial 1
+#### Golang - Trial 1 (2022.03.31)
 ```golang
 var n int
 fmt.Scanln(&n)
@@ -269,7 +311,7 @@ fmt.Println(min, max)
 ```
 > 시간 초과
 
-#### Golang - Trial 2
+#### Golang - Trial 2 (2022.03.31)
 ```golang
 import (
     "fmt"
@@ -303,7 +345,7 @@ for i := 0; i < n; i++ {
 fmt.Println(min, max)
 ```
 
-#### Golang - Trial 3
+#### Golang - Trial 3 (2022.03.31)
 ```golang
 import (
     "fmt"
@@ -331,6 +373,46 @@ sort.Sort(sort.IntSlice(arr))
 fmt.Println(arr[0], arr[n - 1])
 ```
 
+#### Rust - Trial 1 (2023.12.25)
+```rust
+……
+use std::io::{self, Read};
+```
+```rust
+let mut input = String::new();
+
+io::stdin().read_to_string(&mut input).unwrap();
+let mut input = input.split_ascii_whitespace().flat_map(str::parse::<i32>);
+
+let n: usize = input.next().unwrap().try_into().unwrap();
+let mut max: i32 = -10^6;
+let mut min: i32 = 10^6;
+for _ in 0..n {
+    let temp: i32 = input.next().unwrap();
+    if temp > max { max = temp };
+    if temp < min { min = temp };
+
+    // test
+    // println!("num: {}, max: {}, min: {}", temp, max, min);
+}
+
+println!("{} {}", min, max);
+```
+> 틀렸습니다
+
+#### Rust - Trial 2 (2023.12.25)
+```rust
+……
+```
+```rust
+……
+// let mut max: i32 = -10^6;                            // ^ : Bitwise operation
+// let mut min: i32 = 10^6;
+let mut max: i32 = -1_000_000;
+let mut min: i32 = 1_000_000;
+……
+```
+
 
 ## [2562. 최댓값](#list)
 
@@ -347,7 +429,7 @@ fmt.Println(arr[0], arr[n - 1])
 > 85  
 > 8
 
-#### Bash
+#### Bash (2022.02.03)
 ```bash
 # Set max
 let "max = 0"
@@ -380,7 +462,7 @@ done
 echo -e "${max}\n${order}"
 ```
 
-#### C++
+#### C++ (2021.06.09)
 ```cpp
 const int length = 9;       // the length of arr[] is fixed as 9
 int arr[length];
@@ -403,7 +485,7 @@ cout << maxValue << "\n" << loc << endl;
 return 0;
 ```
 
-#### Golang
+#### Golang (2022.03.31)
 ```golang
 var n int
 var max int = 0
@@ -421,10 +503,32 @@ for i := 0; i < 9; i++ {
 fmt.Println(max, maxIdx + 1)
 ```
 
+#### Rust (2023.12.25)
+```rust
+let mut input = String::new();
+
+io::stdin().read_to_string(&mut input).unwrap();
+let mut input = input
+    .split_ascii_whitespace()
+    .flat_map(str::parse::<i32>);
+
+let mut max: i32 = 0;
+let mut idx: i32 = 0;
+for i in 0..9
+{
+    let temp: i32 = input.next().unwrap();
+    if temp > max
+    {
+        max = temp;
+        idx = i + 1;
+    };
+};
+
+println!("{}\n{}", max, idx);
+```
+
 
 ## [10810. 공 넣기](#list)
-
-(2023.06.18)
 
 > 5 4  
 > 1 2 3  
@@ -434,7 +538,7 @@ fmt.Println(max, maxIdx + 1)
 
 > 1 2 1 1 0
 
-#### C++
+#### C++ (2023.06.18)
 ```cpp
 #include <iostream>
 #include <vector>
@@ -464,10 +568,37 @@ std::cout << endl;
 return 0;
 ```
 
+#### Rust (2023.12.25)
+```rust
+……
+use std::convert::TryInto;
+```
+```rust
+let mut input = String::new();
+
+io::stdin().read_to_string(&mut input).unwrap();
+let mut input = input
+    .split_ascii_whitespace()
+    .flat_map(str::parse::<i32>);
+
+let n: usize = input.next().unwrap().try_into().unwrap();
+let m: usize = input.next().unwrap().try_into().unwrap();
+let mut v = vec![0; n];
+for _ in 0..m
+{
+    let i: usize = input.next().unwrap().try_into().unwrap();
+    let j: usize = input.next().unwrap().try_into().unwrap();
+    let k: i32 = input.next().unwrap();
+
+    for l in i..(j+1) { v[l-1] = k };
+};
+
+for el in v { print!("{} ", el) };
+println!();
+```
+
 
 ## [10813. 공 바꾸기](#list)
-
-(2023.06.18)
 
 > 5 4  
 > 1 2  
@@ -477,7 +608,7 @@ return 0;
 
 > 3 1 4 2 5
 
-#### C++
+#### C++ (2023.06.18)
 ```cpp
 #include <iostream>
 #include <vector>
@@ -510,10 +641,37 @@ std::cout << endl;
 return 0;
 ```
 
+#### Rust (2023.12.25)
+```rust
+……
+use std::convert::TryInto;
+```
+```rust
+let mut input = String::new();
+
+io::stdin().read_to_string(&mut input).unwrap();
+let mut input = input
+    .split_ascii_whitespace()
+    .flat_map(str::parse::<i32>);
+
+let n: usize = input.next().unwrap().try_into().unwrap();
+let m: usize = input.next().unwrap().try_into().unwrap();
+let mut v = Vec::<i32>::with_capacity(n);
+for i in 0..n { v.push((i + 1).try_into().unwrap()) };
+for _ in 0..m
+{
+    let i: i32 = input.next().unwrap() - 1;
+    let j: i32 = input.next().unwrap() - 1;
+
+    v.swap(i as usize, j as usize);                     // wow!
+};
+
+for el in v { print!("{} ", el) };
+println!();
+```
+
 
 ## [5597. 未提出者は誰だ (과제 안 내신 분..?)](#list)
-
-(2023.06.18)
 
 > 3  
 > 1  
@@ -524,7 +682,7 @@ return 0;
 > 2  
 > 8
 
-#### C++
+#### C++ (2023.06.18)
 ```cpp
 #include <iostream>
 #include <vector>
@@ -549,6 +707,25 @@ for (int i = 1; i < 31; i++) if (arr[i] == 0) std::cout << i << endl;
 return 0;
 ```
 
+#### Rust (2023.12.25)
+```rust
+let mut input = String::new();
+
+io::stdin().read_to_string(&mut input).unwrap();
+let mut input = input
+    .split_ascii_whitespace()
+    .flat_map(str::parse::<usize>);
+
+let mut v = vec![1; 31];
+for _ in 0..28
+{
+    let temp: usize = input.next().unwrap();
+    v[temp] = 0;
+};
+
+for i in 1..31 { if v[i] == 0 { println!("{}", i) } };
+```
+
 
 ## [3052. MODULO](#list)
 
@@ -565,7 +742,7 @@ return 0;
 
 > 6
 
-#### Bash
+#### Bash (2022.02.03)
 ```bash
 # Input data
 for i in {0..9}         # the size 10 is fixed
@@ -584,7 +761,7 @@ Comment
 echo ${#arr[@]}
 ```
 
-#### C++
+#### C++ (2021.06.09)
 ```cpp
 // modulo : 나머지
 // distinct number : 서로 다른 숫자 ≒ 중복되지 않는 숫자
@@ -609,7 +786,7 @@ cout << modulo.size() << endl;
 return 0;
 ```
 
-#### Golang
+#### Golang (2022.04.01)
 ```golang
 var n, mod int
 var modulo map[int]int
@@ -638,10 +815,27 @@ for i := 0; i < 10; i++ {
 fmt.Println(len(modulo))
 ```
 
+#### Rust (2023.12.25)
+```rust
+let mut input = String::new();
+
+io::stdin().read_to_string(&mut input).unwrap();
+let input: Vec<usize> = input
+    .split_whitespace()
+    .map(|s| s.parse::<usize>().unwrap())
+    .collect();
+
+let mut v = vec![0; 42];
+for el in input { v[el % 42] += 1 };
+
+let mut cnt = 0;
+for el in v { if el > 0 { cnt += 1 } };
+
+println!("{}", cnt);
+```
+
 
 ## [10811. 바구니 뒤집기](#list)
-
-(2023.06.18)
 
 > 5 4  
 > 1 2  
@@ -651,7 +845,7 @@ fmt.Println(len(modulo))
 
 > 3 4 1 2 5
 
-#### C++
+#### C++ (2023.06.18)
 ```cpp
 #include <iostream>
 #include <vector>
@@ -690,6 +884,45 @@ std::cout << endl;
 return 0;
 ```
 
+#### Rust (2023.12.25)
+```rust
+……
+use std::convert::TryInto;
+```
+```rust
+let mut input = String::new();
+
+io::stdin().read_to_string(&mut input).unwrap();
+let mut input = input
+    .split_ascii_whitespace()
+    .flat_map(str::parse::<i32>);
+
+let n: usize = input.next().unwrap().try_into().unwrap();
+let m: usize = input.next().unwrap().try_into().unwrap();
+let mut v = Vec::<i32>::with_capacity(n);
+for i in 0..n { v.push((i + 1).try_into().unwrap()) };
+for _ in 0..m
+{
+    let i: usize = input.next().unwrap().try_into().unwrap();
+    let j: usize = input.next().unwrap().try_into().unwrap();
+
+    let v2_len: usize = (j-i+1).try_into().unwrap();
+    let mut v2 = Vec::<i32>::with_capacity(v2_len);
+    for k in i..(j+1) { v2.push(v[k-1]) };
+
+    v2.reverse();
+
+    for k in i..(j+1) { v[k-1] = v2[k-i] };
+
+    // test
+    // println!("i:{} j:{}", i, j);
+    // for el in v2 { print!("{} ", el) }; println!();
+    // for el in &v { print!("{} ", el) }; println!();
+};
+
+for el in v { print!("{} ", el) }; println!();
+```
+
 
 ## [1546. 평균](#list)
 
@@ -698,7 +931,7 @@ return 0;
 
 > 75
 
-#### Bash
+#### Bash (2022.02.03)
 ```bash
 # Input data
 read n
@@ -727,7 +960,7 @@ let "average = sum / n"
 printf "%.2f\n" $((average))e-3                 # MAGIC!!
 ```
 
-#### C++
+#### C++ (2021.06.09)
 ```cpp
 int t;
 cin >> t;
@@ -750,7 +983,7 @@ cout << sum / t << endl;
 return 0;
 ```
 
-#### Golang
+#### Golang (2022.04.12)
 ```golang
 var n int
 fmt.Scanln(&n)
@@ -780,6 +1013,37 @@ for i := 0; i < n; i++ {
 fmt.Printf("%.3f\n", sum / float32(n))
 ```
 
+#### Rust (2023.12.25)
+```rust
+……
+use std::convert::TryInto;
+```
+```rust
+let mut input = String::new();
+
+io::stdin().read_to_string(&mut input).unwrap();
+let mut input = input
+    .split_ascii_whitespace()
+    .flat_map(str::parse::<i32>);
+
+let n: usize = input.next().unwrap().try_into().unwrap();
+
+let mut v: Vec<i32> = Vec::<i32>::with_capacity(n);
+for _ in 0..n { v.push(input.next().unwrap())};
+
+let mut max: i32 = 0;
+for el in &v { if *el > max { max = *el } };
+
+let mut v2: Vec<f32> = Vec::<f32>::with_capacity(n);
+for el in &v { v2.push(*el as f32 / max as f32 * 100.0) };
+
+let mut sum: f32 = 0.0;
+for el in &v2 { sum += *el };
+let mean: f32 = sum / (n as f32);
+
+println!("{}", mean);
+```
+
 
 ## [2577. 숫자의 개수](#list)
 
@@ -789,7 +1053,7 @@ fmt.Printf("%.3f\n", sum / float32(n))
 
 > 3 1 0 2 0 0 0 2 0 0 (vertically)
 
-#### Bash
+#### Bash (2022.02.03)
 ```bash
 # Input data
 read a
@@ -828,7 +1092,7 @@ do
 done
 ```
 
-#### C++
+#### C++ (2021.06.09)
 ```cpp
 int a, b, c;                        // 100 <= a, b, c < 1000
 cin >> a >> b >> c;
@@ -850,7 +1114,7 @@ for (int j = 0; j < 10; j++)
 return 0;
 ```
 
-#### Golang
+#### Golang (2022.03.31)
 ```golang
 import (
     "fmt"
@@ -889,7 +1153,7 @@ for j := 0; j < 10; j++ {
 > 10  
 > ……
 
-#### Bash
+#### Bash (2022.02.03)
 ```bash
 read t
 
@@ -919,7 +1183,7 @@ do
 done
 ```
 
-#### C++
+#### C++ (2021.06.13)
 ```cpp
 int t;
 cin >> t;
@@ -955,7 +1219,7 @@ for (int i = 0; i < t; i++)
 return 0;
 ```
 
-#### Golang
+#### Golang (2022.04.12)
 ```golang
 var n, score, combo, length int
 var ox string
@@ -1000,7 +1264,7 @@ for i := 0; i < n; i++ {
 55.556%
 ```
 
-#### Bash (2022.02.04)
+#### Bash (2022.02.03)
 ```bash
 read c
 

@@ -1,4 +1,4 @@
-## [BAEKJOON Online Judge](../../../../README.md#baekjoon-online-judge)
+## [BAEKJOON Online Judge](/README.md#baekjoon-online-judge)
 
 # 문제 > 단계별로 풀어보기 > 5. 문자열
 
@@ -6,7 +6,8 @@ https://www.acmicpc.net/step/7
 
 (2021.07.10, 2023.06.18) - `C++`  
 (2022.02.16) - `Bash`  
-(2022.06.20) - `Golang`
+(2022.06.20) - `Golang`  
+(2024.02.15) - `Rust`
 
 
 ## **List**
@@ -25,13 +26,13 @@ https://www.acmicpc.net/step/7
 
 **※ Note**  
 
-&nbsp;&nbsp; - All the codes of any language for the same problem have basically the same result.  
+&nbsp;&nbsp; - All the code of any language for the same problem has basically the same result.  
 &nbsp;&nbsp; - Typical headers like the below are basically skipped, but they are noted seperately when there are any additional line.  
-&nbsp;&nbsp;&nbsp;&nbsp; · `Bash` : `#!/bin/bash`  
-&nbsp;&nbsp;&nbsp;&nbsp; · `C++` : `#include <iostream>` `#define endl '\n';` `using namespace std;`  
-&nbsp;&nbsp;&nbsp;&nbsp; · `Golang` : `package main` `import "fmt"`  
+&nbsp;&nbsp;&nbsp;&nbsp; · *Bash* : `#!/bin/bash`  
+&nbsp;&nbsp;&nbsp;&nbsp; · *C++* : `#include <iostream>` `#define endl '\n';` `using namespace std;`  
+&nbsp;&nbsp;&nbsp;&nbsp; · *Golang* : `package main` `import "fmt"`  
+&nbsp;&nbsp;&nbsp;&nbsp; · *Rust* : `use std::io;`  
 &nbsp;&nbsp; ※ `C++` : Very meaningful time to familiarize with `array` `vector` and `string`!  
-
 
 
 ## [27866. 문자와 문자열](#list)
@@ -57,6 +58,22 @@ int main()
 }
 ```
 
+#### Rust (2024.01.16)
+```rust
+fn main()
+{
+    let mut input1 = String::new();
+    let mut input2 = String::new();
+    io::stdin().read_line(&mut input1).unwrap();
+    io::stdin().read_line(&mut input2).unwrap();
+
+    let i:usize = input2.trim().parse().unwrap();
+    // trim `\n` caused by read_line()
+
+    if let Some(chr) = input1.chars().nth(i - 1) { println!("{}", chr) };
+}
+```
+
 
 ## [2743. 단어 길이 재기](#list)
 
@@ -76,6 +93,18 @@ int main()
     std::cout << s.size() << endl;
 
     return 0;
+}
+```
+
+#### Rust (2024.01.16)
+```rust
+fn main()
+{
+    let mut str = String::new();
+    io::stdin().read_line(&mut str).unwrap();
+
+    let len = str.trim().len();
+    println!("{}", len);
 }
 ```
 
@@ -111,6 +140,25 @@ int main()
 }
 ```
 
+#### Rust (2024.02.15)
+```rust
+fn main()
+{
+    let mut t = String::new();
+    io::stdin().read_line(&mut t).unwrap();
+
+    let t:usize = t.trim().parse().unwrap();
+    for _ in 0..t
+    {
+        let mut str = String::new();
+        io::stdin().read_line(&mut str).unwrap();
+        let len = str.trim().len();
+
+        println!("{}{}", str.chars().nth(0).unwrap(), str.chars().nth(len - 1).unwrap()); 
+    }  
+}
+```
+
 
 ## [11654. 아스키 코드](#list)
 
@@ -118,7 +166,7 @@ int main()
 
 > 65
 
-#### Bash
+#### Bash (2022.02.14)
 ```Bash
 read char                   # ex) a
 
@@ -130,7 +178,7 @@ printf "%d\n" "'$char'"     # 97; regard a as a string
 # printf "%d\n" "'$char"    # 97; the closing quotes(') may be omitted
 ```
 
-#### C++ 
+#### C++ (2021.07.09)
 ```cpp
 int main()
 {
@@ -143,13 +191,28 @@ int main()
 }
 ```
 
-#### Golang
+#### Golang (2022.04.18)
 ```golang
 func main() {
     var x string
     fmt.Scanln(&x)
 
     fmt.Println(x[0])
+}
+```
+
+#### Rust (2024.02.15)
+```rust
+fn main()
+{
+    let mut input = String::new();
+    io::stdin().read_line(&mut input).unwrap();
+
+    if let Some(char) = input.trim().chars().next()
+    {
+        let ascii_code = char as u8;
+        println!("{}", ascii_code);
+    }
 }
 ```
 
@@ -161,7 +224,7 @@ func main() {
 
 > 46 
 
-#### Bash
+#### Bash (2022.02.14)
 ```Bash
 read n
 read num
@@ -179,7 +242,7 @@ done
 echo $sum
 ```
 
-#### C++ 
+#### C++ (2021.07.09)
 ```cpp
 #include <iostream>
 #include <string>
@@ -205,7 +268,7 @@ int main()
 }
 ```
 
-#### Golang
+#### Golang (2022.04.18)
 ```golang
 func main() {
 
@@ -227,6 +290,27 @@ func main() {
 }
 ```
 
+#### Rust (2024.02.15)
+```rust
+fn main()
+{
+    let mut n = String::new();
+    let mut num = String::new();
+    io::stdin().read_line(&mut n).unwrap();
+    io::stdin().read_line(&mut num).unwrap();
+
+    let n:usize = n.trim().parse().unwrap();
+    let mut sum:u32 = 0;
+    for i in 0..n
+    {
+        let digit:u32 = num.chars().nth(i).unwrap().to_digit(10).unwrap();
+        sum += digit;
+    }
+
+    println!("{}", sum);
+}
+```
+
 
 ## [10809. 알파벳 찾기](#list)
 
@@ -234,7 +318,7 @@ func main() {
 
 > 1 0 -1 -1 2 -1 -1 -1 -1 4 3 -1 -1 7 5 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 
-#### Bash
+#### Bash (2022.02.15)
 ```Bash
 # Input string
 read s
@@ -264,7 +348,7 @@ done
 echo
 ```
 
-#### C++ 
+#### C++ (2021.07.09)
 ```cpp
 #include <iostream>
 #include <string>
@@ -300,7 +384,7 @@ int main()
 }
 ```
 
-#### Golang
+#### Golang (2022.04.18)
 ```golang
 func main() {
 
@@ -333,6 +417,27 @@ func main() {
 }
 ```
 
+#### Rust (2024.02.15)
+```rust
+fn main()
+{
+    let mut str = String::new();
+    io::stdin().read_line(&mut str).unwrap();
+
+    let mut v: Vec<i32> = vec![-1; 26];
+
+    let len:usize = str.trim().len();
+    for i in 0..len
+    {
+        let c:char = str.chars().nth(i).unwrap();
+        if v[c as usize - 'a' as usize] < 0 { v[c as usize - 'a' as usize] = i as i32}
+    }
+
+    for i in 0..26 { print!("{} ", v[i]); }
+    println!();
+}
+```
+
 
 ## [2675. Repeating Characters](#list)
 
@@ -343,7 +448,7 @@ func main() {
 > AAABBBCCC  
 > /////HHHHHTTTTTPPPPP
 
-#### Bash
+#### Bash (2022.02.15)
 ```Bash
 read t
 
@@ -365,7 +470,7 @@ do
 done
 ```
 
-#### C++ 
+#### C++ (2021.07.09)
 ```cpp
 #include <iostream>
 #include <string>
@@ -396,7 +501,7 @@ int main()
 }
 ```
 
-#### Golang
+#### Golang (2022.04.18)
 ```golang
 func main() {
 
@@ -417,6 +522,35 @@ func main() {
 }
 ```
 
+#### Rust (2024.02.15)
+```rust
+fn main()
+{
+    let mut p = String::new();
+    io::stdin().read_line(&mut p).unwrap();
+    let p:usize = p.trim().parse().unwrap();
+
+    for _ in 0..p
+    {
+        let mut input = String::new();
+        io::stdin().read_line(&mut input).unwrap();
+        let mut inputs = input.trim().split_whitespace();
+
+        let n:usize = inputs.next().unwrap().parse().unwrap();
+        let str:String = inputs.next().unwrap().to_string();
+        let len:usize = str.len();
+        for i in 0..len
+        {
+            for _ in 0..n
+            {
+                print!("{}", str.chars().nth(i).unwrap());
+            }
+        }
+        print!("\n");
+    }
+}
+```
+
 
 ## [1152. 단어의 개수](#list)
 
@@ -424,14 +558,14 @@ func main() {
 
 > 6 (Maybe, difficult to operate `cin.eof()` directly in **C++**)
 
-#### Bash
+#### Bash (2022.02.15)
 ```Bash
 read -a s
 
 echo ${#s[@]}
 ```
 
-#### C++ 
+#### C++ (2021.07.09)
 ```cpp
 #include <iostream>
 #include <string>
@@ -461,7 +595,7 @@ int main()
 }
 ```
 
-#### Golang
+#### Golang (2022.06.18)
 ```golang
 import (
     "fmt"
@@ -488,6 +622,19 @@ func main() {
 }
 ```
 
+#### Rust (2024.02.15)
+```rust
+fn main() {
+    let mut input = String::new();
+    io::stdin().read_line(&mut input).unwrap();
+
+    let words: Vec<&str> = input.trim().split_whitespace().collect();
+
+    let cnt = words.len();
+    println!("{}", cnt);
+}
+```
+
 
 ## [2908. FILIP](#list)
 
@@ -495,7 +642,7 @@ func main() {
 
 > 437
 
-#### Bash
+#### Bash (2022.02.15)
 ```Bash
 # Input
 read a b
@@ -515,7 +662,7 @@ else
 fi
 ```
 
-#### C++ 
+#### C++ (2021.07.09)
 ```cpp
 #include <iostream>
 #include <string>
@@ -549,7 +696,7 @@ int main()
 }
 ```
 
-#### Golang
+#### Golang (2022.06.19)
 ```golang
 import (
     "fmt"
@@ -582,6 +729,22 @@ func main() {
 }
 ```
 
+#### Rust (2024.02.15)
+```rust
+fn main()
+{
+    let mut input = String::new();
+    io::stdin().read_line(&mut input).unwrap();
+    let mut nums = input.trim().split_whitespace();
+
+    let num1: i32 = nums.next().unwrap().chars().rev().collect::<String>().parse().unwrap();
+    let num2: i32 = nums.next().unwrap().chars().rev().collect::<String>().parse().unwrap();
+
+    let max: i32 = if num1 > num2 { num1 } else { num2 };
+    println!("{}", max);
+}
+```
+
 
 ## [5622. BAKA](#list)
 
@@ -589,7 +752,7 @@ func main() {
 
 > 36
 
-#### Bash
+#### Bash (2022.02.15)
 ```Bash
 # Input
 read s
@@ -612,7 +775,7 @@ done
 echo $sum
 ```
 
-#### C++ 
+#### C++ (2021.07.09)
 ```cpp
 #include <iostream>
 #include <string>
@@ -652,7 +815,7 @@ int main()
 }
 ```
 
-#### Golang
+#### Golang (2022.06.19)
 ```golang
 func main() {
 
@@ -682,6 +845,35 @@ func main() {
 }
 ```
 
+#### Rust (2024.02.15)
+```rust
+fn main()
+{
+    let mut str = String::new();
+    io::stdin().read_line(&mut str).unwrap();
+
+    let len:usize = str.trim().len();
+    let mut sum:i32 = len as i32;
+    for i in 0..len
+    {
+        let c:char = str.chars().nth(i).unwrap();
+        match c                                             // All possible cases should be handled in `match` statement!
+        {
+            'A' | 'B' | 'C' => sum += 2,
+            'D' | 'E' | 'F' => sum += 3,
+            'G' | 'H' | 'I' => sum += 4,
+            'J' | 'K' | 'L' => sum += 5,
+            'M' | 'N' | 'O' => sum += 6,
+            'P' | 'Q' | 'R' | 'S' => sum += 7,
+            'T' | 'U' | 'V' => sum += 8,
+            _ => sum += 9
+        }
+    }
+
+    println!("{}", sum);
+}
+```
+
 
 ## [11718. 그대로 출력하기](#list)
 
@@ -706,5 +898,20 @@ int main()
         else std::cout << s << endl;            
     }
     return 0;
+}
+```
+
+#### Rust (2024.02.15)
+```rust
+fn main()
+{
+    loop
+    {
+        let mut str = String::new();
+        io::stdin().read_line(&mut str).unwrap();
+
+        if str.len() == 0 { break; }                        // EOF
+        else { print!("{}", str); };
+    }
 }
 ```

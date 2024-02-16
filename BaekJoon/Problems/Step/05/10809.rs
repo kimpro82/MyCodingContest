@@ -15,7 +15,7 @@ fn main()
     for i in 0..len
     {
         let c:char = str.chars().nth(i).unwrap();
-        if v[c as usize - 'a' as usize] < 0 { v[c as usize - 'a' as usize] = i as i32}
+        if v[c as usize - 'a' as usize] < 0 { v[c as usize - 'a' as usize] = i as i32 }
     }
 
     for i in 0..26 { print!("{} ", v[i]); }

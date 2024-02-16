@@ -845,7 +845,7 @@ func main() {
 }
 ```
 
-#### Rust (2024.02.15)
+#### Rust -Trial 1(2024.02.15)
 ```rust
 fn main()
 {
@@ -871,6 +871,35 @@ fn main()
     }
 
     println!("{}", sum);
+}
+```
+
+#### Rust -Trial 2(2024.02.16)
+```rust
+fn main()
+{
+    ……
+    let mut sum:i32 = 0 as i32;
+    for i in 0..len
+    {
+        let dial:char = str.chars().nth(i).unwrap();
+        let time:i32 = match dial
+        {
+            // All possible cases should be handled in `match` statement!
+            'A' | 'B' | 'C' => 2,
+            'D' | 'E' | 'F' => 3,
+            'G' | 'H' | 'I' => 4,
+            'J' | 'K' | 'L' => 5,
+            'M' | 'N' | 'O' => 6,
+            'P' | 'Q' | 'R' | 'S' => 7,
+            'T' | 'U' | 'V' => 8,
+            _ => 9
+        };
+
+        sum += time + 1;
+    }
+
+    ……
 }
 ```
 

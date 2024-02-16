@@ -1,3 +1,9 @@
+// 5622. BAKA - Trial 2
+// 2024.02.16
+
+
+use std::io;
+
 fn main()
 {
     let mut str = String::new();

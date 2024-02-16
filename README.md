@@ -51,30 +51,30 @@ can't escape this endless valley of despair ……
 
 - 문제 > 단계별로 풀어보기
 
-| 단계 | Bash | C++ | Golang | 기타 |
-|:--|:-:|:-:|:-:|:-:|
-| [1. 입출력과 사칙연산](/BaekJoon/Problems/Step/01#baekjoon-online-judge) | 22.01.26 | 21.05.13 | 22.03.12 | Python - 21.05.13<br>R - 21.07.11<br>Text - 22.01.26<br>SystemVerilog - 22.09.05<br>Rust - 23.12.21 |
-| [2. 조건문](/BaekJoon/Problems/Step/02#baekjoon-online-judge) | 22.01.29 | 21.05.24 | 22.03.14 | R - 21.07.14<br>Rust - 23.12.22 |
-| [3.1. 반복문 1. for문](/BaekJoon/Problems/Step/03-1#baekjoon-online-judge) | 22.01.31 | 21.05.25 | 22.03.18 | Rust - 23.12.23 |
-| [3.2. 반복문 2. while문](/BaekJoon/Problems/Step/03-2#baekjoon-online-judge) | 22.02.02 | 21.05.26 | 22.03.29 | Rust - 23.12.23 |
-| [4. 1차원 배열](/BaekJoon/Problems/Step/04#baekjoon-online-judge) | 22.02.03 | 21.06.14<br>23.06.19 | 22.04.13 | Rust - 23.12.25 |
-| [5. 문자열](/BaekJoon/Problems/Step/05#baekjoon-online-judge) | 22.02.16 | 21.07.10<br>23.06.19 | 22.06.20 | |
-| [~5. 함수~](/BaekJoon/Problems/Step/05_#baekjoon-online-judge) | | 21.06.18 | 22.04.17 | |
-| [6. 심화 1](/BaekJoon/Problems/Step/06#baekjoon-online-judge) | | 23.06.19 | | |
-| [7. 2차원 배열](/BaekJoon/Problems/Step/07#baekjoon-online-judge) | | 23.06.27 | | |
-| [8. 일반 수학 1](/BaekJoon/Problems/Step/08#baekjoon-online-judge) | 22.03.11 | 21.07.12<br>23.06.28 | | |
-| [9. 약수, 배수와 소수](/BaekJoon/Problems/Step/09#baekjoon-online-judge) | | 21.07.19<br>23.07.02 | | |
-| [10. 기하: 직사각형과 삼각형](/BaekJoon/Problems/Step/10#baekjoon-online-judge) | | 23.07.02 | | |
-| [11. 시간 복잡도](/BaekJoon/Problems/Step/11#baekjoon-online-judge) | | 23.07.04 | | |
-| [12. 브루트 포스](/BaekJoon/Problems/Step/12#baekjoon-online-judge) | | 21.12.10 | | |
-| [13. 정렬](/BaekJoon/Problems/Step/13#baekjoon-online-judge) | | 21.12.16 | 22.07.11 | |
-| [14. 집합과 맵](/BaekJoon/Problems/Step/14#baekjoon-online-judge) | | 23.07.08 | 22.08.03 | |
-| [15. 약수, 배수와 소수 2](/BaekJoon/Problems/Step/15#baekjoon-online-judge) | | 23.07.11 | | |
-| [19. 조합론](/BaekJoon/Problems/Step/19#baekjoon-online-judge) | | 23.07.12 | | |
-| [20. 심화 2](/BaekJoon/Problems/Step/20#baekjoon-online-judge) | | 23.07.14 | | |
-| [21. 재귀](/BaekJoon/Problems/Step/21#baekjoon-online-judge) | | 21.09.15<br>(not completed) | | |
-| [23. 동적 계획법 1](/BaekJoon/Problems/Step/23#baekjoon-online-judge) | | 22.04.24<br>(not completed) | | |
-| [25. 그리디 알고리즘](/BaekJoon/Problems/Step/25#baekjoon-online-judge) | | 22.04.21 | | |
+| 단계 | Bash | C++ | Golang | Rust | 기타 |
+|:--|:-:|:-:|:-:|:-:|:-:|
+| [1. 입출력과 사칙연산](/BaekJoon/Problems/Step/01#baekjoon-online-judge) | 22.01.26 | 21.05.13 | 22.03.12 | 23.12.21 | Python - 21.05.13<br>R - 21.07.11<br>Text - 22.01.26<br>SystemVerilog - 22.09.05 |
+| [2. 조건문](/BaekJoon/Problems/Step/02#baekjoon-online-judge) | 22.01.29 | 21.05.24 | 22.03.14 | 23.12.22 | R - 21.07.14 |
+| [3.1. 반복문 1. for문](/BaekJoon/Problems/Step/03-1#baekjoon-online-judge) | 22.01.31 | 21.05.25 | 22.03.18 | 23.12.23 | |
+| [3.2. 반복문 2. while문](/BaekJoon/Problems/Step/03-2#baekjoon-online-judge) | 22.02.02 | 21.05.26 | 22.03.29 | 23.12.23 | |
+| [4. 1차원 배열](/BaekJoon/Problems/Step/04#baekjoon-online-judge) | 22.02.03 | 21.06.14<br>23.06.18 | 22.04.12 | 23.12.25 | |
+| [5. 문자열](/BaekJoon/Problems/Step/05#baekjoon-online-judge) | 22.02.15 | 21.07.09<br>23.06.18 | 22.06.19 | 24.02.15 | |
+| [~5. 함수~](/BaekJoon/Problems/Step/05_#baekjoon-online-judge) | | 21.06.18 | 22.04.17 | | |
+| [6. 심화 1](/BaekJoon/Problems/Step/06#baekjoon-online-judge) | | 23.06.19 | | | |
+| [7. 2차원 배열](/BaekJoon/Problems/Step/07#baekjoon-online-judge) | | 23.06.27 | | | |
+| [8. 일반 수학 1](/BaekJoon/Problems/Step/08#baekjoon-online-judge) | 22.03.11 | 21.07.12<br>23.06.28 | | | |
+| [9. 약수, 배수와 소수](/BaekJoon/Problems/Step/09#baekjoon-online-judge) | | 21.07.19<br>23.07.02 | | | |
+| [10. 기하: 직사각형과 삼각형](/BaekJoon/Problems/Step/10#baekjoon-online-judge) | | 23.07.02 | | | |
+| [11. 시간 복잡도](/BaekJoon/Problems/Step/11#baekjoon-online-judge) | | 23.07.04 | | | |
+| [12. 브루트 포스](/BaekJoon/Problems/Step/12#baekjoon-online-judge) | | 21.12.10 | | | |
+| [13. 정렬](/BaekJoon/Problems/Step/13#baekjoon-online-judge) | | 21.12.16 | 22.07.11 | | |
+| [14. 집합과 맵](/BaekJoon/Problems/Step/14#baekjoon-online-judge) | | 23.07.08 | 22.08.03 | | |
+| [15. 약수, 배수와 소수 2](/BaekJoon/Problems/Step/15#baekjoon-online-judge) | | 23.07.11 | | | |
+| [19. 조합론](/BaekJoon/Problems/Step/19#baekjoon-online-judge) | | 23.07.12 | | | |
+| [20. 심화 2](/BaekJoon/Problems/Step/20#baekjoon-online-judge) | | 23.07.14 | | | |
+| [21. 재귀](/BaekJoon/Problems/Step/21#baekjoon-online-judge) | | 21.09.15<br>(not completed) | | | |
+| [23. 동적 계획법 1](/BaekJoon/Problems/Step/23#baekjoon-online-judge) | | 22.04.24<br>(not completed) | | | |
+| [25. 그리디 알고리즘](/BaekJoon/Problems/Step/25#baekjoon-online-judge) | | 22.04.21 | | | |
 
 
 ## [CodeUp](#list)

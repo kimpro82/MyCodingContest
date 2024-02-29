@@ -652,6 +652,7 @@ func main() {
 ```
 
 #### Rust (2023.02.29)
+Slicing a string(whether `String` or `&str`) in Rust is really terrible.
 ```rust
 fn main()
 {

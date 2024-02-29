@@ -1,13 +1,14 @@
-## [BAEKJOON Online Judge](../../../../README.md#baekjoon-online-judge)
+## [BAEKJOON Online Judge](/README.md#baekjoon-online-judge)
 
 # 문제 > 단계별로 풀어보기 > 6. 심화 1
 
 https://www.acmicpc.net/step/52
 
-(2023.06.19) - `C++`  
-(2022.09.06) - `SystemVerilog`  
-(2022.06.20) - `Golang`  
 (2022.02.16) - `Bash`  
+(2022.06.20) - `Golang`  
+(2022.09.06) - `SystemVerilog`  
+(2023.06.19) - `C++`  
+(2024.02.29) - `Rust`
 
 
 ### **List**
@@ -24,15 +25,15 @@ https://www.acmicpc.net/step/52
 
 **※ Note**  
 
-&nbsp;&nbsp; - All the codes of any language for the same problem have basically the same result.  
+&nbsp;&nbsp; - All the code of any language for the same problem has basically the same result.  
 &nbsp;&nbsp; - Typical headers like the below are basically skipped, but they are noted seperately when there are any additional line.  
-&nbsp;&nbsp;&nbsp;&nbsp; · `Bash` : `#!/bin/bash`  
-&nbsp;&nbsp;&nbsp;&nbsp; · `C++` : `#include <iostream>` `#define endl '\n';` `using namespace std;`  
-&nbsp;&nbsp;&nbsp;&nbsp; · `Golang` : `package main` `import "fmt"`  
-&nbsp;&nbsp;&nbsp;&nbsp; · `SystemVerilog` : `module` `endmodule`.  
+&nbsp;&nbsp;&nbsp;&nbsp; · *Bash* : `#!/bin/bash`  
+&nbsp;&nbsp;&nbsp;&nbsp; · *C++* : `#include <iostream>` `#define endl '\n';` `using namespace std;`  
+&nbsp;&nbsp;&nbsp;&nbsp; · *Golang* : `package main` `import "fmt"`  
+&nbsp;&nbsp;&nbsp;&nbsp; · *Rust* : `use std::io;`  
+&nbsp;&nbsp;&nbsp;&nbsp; · *SystemVerilog* : `module` `endmodule`.  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * All the codes run on [JDoodle Online VERILOG Compiler IDE](https://www.jdoodle.com/execute-verilog-online/) as `Verilog` before submitted to [BOJ](https://www.acmicpc.net/) as `SystemVerilog`.  
-&nbsp;&nbsp; - `R` : Some answers occur runtime errors with unknowable reason in the BOJ grading machine.  
-&nbsp;&nbsp; - `Text` : Only possible problems that do not require input values are solved.  
+&nbsp;&nbsp; - *Text* : Only possible problems that do not require input values are solved.  
 
 
 
@@ -45,6 +46,19 @@ r`-_   ,'  ,/
    `~\/
       |
       |
+```
+
+#### Rust (2023.02.26)
+```rust
+fn main()
+{
+    println!("         ,r'\"7");
+    println!("r`-_   ,'  ,/");
+    println!(" \\. \". L_r'");
+    println!("   `~\\/");
+    println!("      |");
+    println!("      |");
+}
 ```
 
 #### SystemVerilog (2022.09.05)
@@ -72,6 +86,24 @@ endmodule
 ```
 ```txt
 -1 0 0 1 0 7
+```
+
+#### Rust (2023.02.26)
+```rust
+fn main()
+{
+    let mut input = String::new();
+    io::stdin().read_line(&mut input).unwrap();
+
+    let pieces: Vec<i32> = input
+        .trim().split_whitespace()
+        .map(|s| s.parse::<i32>().unwrap())
+        .collect();
+    let standard: Vec<i32> = vec![1, 1, 2, 2, 2, 8];
+
+    for i in 0..6 { print!("{} ", standard[i] - pieces[i]); }
+    println!();
+}
 ```
 
 #### SystemVerilog (2022.09.06)
@@ -154,6 +186,39 @@ int main()
 }
 ```
 
+#### Rust (2023.02.26)
+```rust
+fn main()
+{
+    let mut input = String::new();
+    io::stdin().read_line(&mut input).unwrap();
+
+    let n: i32 = input.trim().parse().unwrap();
+    let rows: i32 = 2 * n - 1;
+
+    for i in 0..rows
+    {
+        for j in 0..rows
+        {
+            if i < n
+            {
+                if j >= rows - (n - i - 1) { continue }
+                else if j >= n - i - 1     { print!("*") }
+                else                       { print!(" ") }
+                
+            }
+            else
+            {
+                if j >= rows + (n - i - 1) { continue }
+                else if j > i - n          { print!("*") }
+                else                       { print!(" ") }
+            }
+        }
+        println!();
+    }
+}
+```
+
 
 ## [10988. 팰린드롬인지 확인하기](#list)
 
@@ -189,6 +254,29 @@ int main()
     std::cout << isPalindrome << endl;
 
     return 0;
+}
+```
+
+#### Rust (2023.02.27)
+```rust
+fn main()
+{
+    let mut str = String::new();
+    io::stdin().read_line(&mut str).unwrap();
+    let str = str.trim().to_string();
+    let len: usize = str.len();
+    let mut answer: i32 = 1;
+    
+    for i in 0..len/2
+    {
+        if str.chars().nth(i).unwrap() != str.chars().nth(len - i - 1).unwrap()
+        {
+            answer = 0;
+            break;
+        }
+    }
+
+    println!("{}", answer);
 }
 ```
 
@@ -393,6 +481,33 @@ func main() {
 }
 ```
 
+#### Rust (2023.02.27)
+```rust
+fn main()
+{
+    let mut str = String::new();
+    io::stdin().read_line(&mut str).unwrap();
+    str = str.trim().to_string().to_uppercase();
+    let word: Vec<char> = str.chars().collect();
+
+    let mut v: Vec<i32> = vec![0; 26];
+    let mut mode: (char, i32) = (' ', 0);
+
+    let len: usize = word.len();
+    for i in 0..len
+    {
+        let c: char = word[i];
+        let idx: usize = c as usize - 'A' as usize;
+        v[idx] += 1;
+
+        if v[idx] > mode.1 { mode = (c, v[idx]) }
+        else if v[idx] == mode.1 { mode = ('?', v[idx]) }
+    }
+
+    println!("{}", mode.0);
+}
+```
+
 
 ## [2941. LJESNJAK](#list)
 
@@ -533,6 +648,39 @@ func main() {
 
     // Output
     fmt.Println(count)
+}
+```
+
+#### Rust (2023.02.29)
+```rust
+fn main()
+{
+    // let test: bool = true;
+    let test: bool = false;
+
+    let mut str = String::new();
+    io::stdin().read_line(&mut str).unwrap();
+    let word = str.trim().as_bytes();
+    
+    let l2 = vec!["c=", "c-", "d-", "lj", "nj", "s=", "z="];
+    let l3 = vec!["dz="];
+    
+    let len: usize = word.len();
+    let mut count = len;
+    for i in 0..(len-1)
+    {
+        if i < len-2
+        {
+            let s3 = &word[i..i+3].iter().map(|&c| c as char).collect::<String>();
+            if l3[0] == s3 { count -= 2 - 1; }              // -1 : `z=` is also counted with `dz=`
+            if test { println!("{} : {} {}", i, s3, count); }
+        }
+        let s2 = &word[i..i+2].iter().map(|&c| c as char).collect::<String>();
+        for l in l2.iter() { if l == s2 { count -= 1; } }
+        if test { println!("{} : {} {}", i, s2, count); }
+    }
+
+    println!("{}", count);
 }
 ```
 
@@ -700,6 +848,43 @@ func main() {
 }
 ```
 
+#### Rust (2023.02.29)
+```rust
+fn main()
+{
+    let mut n = String::new();
+    io::stdin().read_line(&mut n).unwrap();
+    let n:usize = n.trim().parse().unwrap();
+
+    let mut count: i32 = 0;
+    for _ in 0..n
+    {
+        let mut str = String::new();
+        io::stdin().read_line(&mut str).unwrap();
+        let word = str.trim().as_bytes();
+
+        let mut v: Vec<i32> = vec![0; 26];
+        let mut grouped: bool = true;
+        
+        let len: usize = word.len();
+        for i in 0..len
+        {
+            let idx: usize = word[i] as usize - 'a' as usize;
+
+            if v[idx] == 0 || word[i] == word[i-1] { v[idx] = 1 }
+            else
+            {
+                grouped = false;
+                break;
+            }
+        }
+        if grouped { count += 1 }
+    }
+
+    println!("{}", count);
+}
+```
+
 
 ## [25206. 너의 평점은](#list)
 
@@ -773,5 +958,47 @@ int main()
     std::cout << ans << endl;
 
     return 0;
+}
+```
+
+#### Rust (2023.02.29)
+```rust
+fn main()
+{
+    let mut numerator: f32 = 0.0;
+    let mut denominator: f32 = 0.0;
+    let classes: i32 = 20;
+
+    for _ in 0..classes
+    {
+        let mut input = String::new();
+        io::stdin().read_line(&mut input).unwrap();
+        let mut input = input.trim().split_whitespace();
+
+        _ = input.next();
+        let weight: f32 = input.next().unwrap().parse::<f32>().unwrap();
+        let grade = input.next().unwrap().parse::<String>().unwrap();
+        let grade_num: f32 = match grade.as_str() 
+        {
+            "A+" => 4.5,
+            "A0" => 4.0,
+            "B+" => 3.5,
+            "B0" => 3.0,
+            "C+" => 2.5,
+            "C0" => 2.0,
+            "D+" => 1.5,
+            "D0" => 1.0,
+            "F" => 0.0,
+            _ => 0.0
+        };
+        if grade.as_str() != "P"
+        {
+            denominator += weight;
+            numerator += grade_num * weight;
+        }
+    }
+
+    let answer: f32 = numerator / denominator;
+    println!("{}", answer);
 }
 ```

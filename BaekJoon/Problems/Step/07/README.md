@@ -5,6 +5,7 @@
 https://www.acmicpc.net/step/2
 
 (2023.06.27) - `C++`  
+(2024.03.13) - `Rust`  
 
 
 ### **List**
@@ -17,9 +18,10 @@ https://www.acmicpc.net/step/2
 
 **※ Note**
 
-&nbsp;&nbsp; - All the codes of any language for the same problem have basically the same result.  
-&nbsp;&nbsp; - Typical headers like the below are basically skipped, but they are noted seperately when there are any additional line.  
-&nbsp;&nbsp;&nbsp;&nbsp; · `C++` : `#include <iostream>` `#define endl '\n';` `using namespace std;`  
+&nbsp;&nbsp; - All the code of any language for the same problem has basically the same result.  
+&nbsp;&nbsp; - Typical headers like the below are basically skipped, but they are noted seperately when there are any additional line.   
+&nbsp;&nbsp;&nbsp;&nbsp; · *C++* : `#include <iostream>` `#define endl '\n';` `using namespace std;`  
+&nbsp;&nbsp;&nbsp;&nbsp; · *Rust* : `use std::io;`  
 
 
 ## [2738. 행렬 덧셈](#list)
@@ -81,6 +83,49 @@ int main()
 }
 ```
 
+#### Rust (2023.03.12)
+```rust
+fn main()
+{
+    // Input n, m
+    let mut nm = String::new();
+    io::stdin().read_line(&mut nm).unwrap();
+    let mut iter = nm.split_whitespace();
+    let n: usize = iter.next().unwrap().parse().unwrap();
+    let m: usize = iter.next().unwrap().parse().unwrap();
+
+    // Input arr1, arr2
+    let mut arr1: Vec<Vec<i32>> = Vec::new();
+    let mut arr2: Vec<Vec<i32>> = Vec::new();
+    for i in 0..(n * 2)
+    {
+        let mut line = String::new();
+        io::stdin().read_line(&mut line).unwrap();
+        let row: Vec<i32> = line.split_whitespace()
+            .map(|s| s.parse().unwrap()).collect();
+
+        if i < n { arr1.push(row) }
+        else { arr2.push(row) };
+    }
+
+    // arr1 + arr2
+    let mut sum: Vec<Vec<i32>> = Vec::new();
+    for i in 0..n
+    {
+        let mut row: Vec<i32> = Vec::new();
+        for j in 0..m { row.push(arr1[i][j] + arr2[i][j]) };
+        sum.push(row);
+    }
+
+    // Output
+    for i in 0..n
+    {
+        for j in 0..m { print!("{} ", sum[i][j]) };
+        println!();
+    }
+}
+```
+
 
 ## [2566. 최댓값](#list)
 
@@ -134,6 +179,42 @@ int main()
 }
 ```
 
+#### Rust (2023.03.12)
+```rust
+fn main()
+{
+    // Declare n, m
+    let n: usize = 9;
+    let m: usize = 9;
+
+    // Find the max value and its location (max_i, max_j)
+    let mut max: i32 = -1;
+    let mut max_i: usize = 0;
+    let mut max_j: usize = 0;
+    for i in 0..n
+    {
+        let mut line = String::new();
+        io::stdin().read_line(&mut line).unwrap();
+        let row: Vec<i32> = line.split_whitespace()
+            .map(|s| s.parse().unwrap()).collect();
+
+        for j in 0..m
+        {
+            if row[j] > max
+            {
+                max = row[j];
+                max_i = i;
+                max_j = j;
+            }
+        }
+    }
+
+    // Output
+    println!("{}", max);
+    println!("{} {}", max_i + 1, max_j + 1);
+}
+```
+
 
 ## [10798. 세로읽기](#list)
 
@@ -182,6 +263,39 @@ int main()
 }
 ```
 
+#### Rust (2023.03.13)
+```rust
+fn main()
+{
+    // Declare n, m
+    let n: usize = 5;
+    let m: usize = 15;
+
+    // Input an array
+    let mut arr: Vec<Vec<char>> = Vec::new();
+    let mut lens: Vec<usize> = Vec::new();
+    for i in 0..n
+    {
+        let mut line = String::new();
+        io::stdin().read_line(&mut line).unwrap();
+        let row: Vec<char> = line.trim().chars().collect();
+
+        lens.push(row.len());
+        arr.push(row);
+    }
+
+    // Output
+    for i in 0..m
+    {
+        for j in 0..n
+        {
+            if i < lens[j] { print!("{}", arr[j][i]); }
+        }
+    }
+    println!();
+}
+```
+
 
 ## [2563. 색종이](#list)
 
@@ -227,5 +341,51 @@ int main()
     cout << sum << endl;
 
     return 0;
+}
+```
+
+#### Rust (2023.03.13)
+```rust
+fn main()
+{
+    // Declare r, c
+    let r: usize = 100;
+    let c: usize = 100;
+
+    // Input the number of rows
+    let mut n = String::new();
+    io::stdin().read_line(&mut n).unwrap();
+    let n: usize = n.trim().parse().unwrap();
+
+    let mut matrix: Vec<Vec<i32>> = vec![vec![0; c]; r];
+    for i in 0..n
+    {
+        let mut line = String::new();
+        io::stdin().read_line(&mut line).unwrap();
+        let mut iter = line.split_whitespace();                                 // should be declared as mutable
+        let n: usize = iter.next().unwrap().parse().unwrap();
+        let m: usize = iter.next().unwrap().parse().unwrap();
+
+        for j in n..n+10
+        {
+            for k in m..m+10
+            {
+                matrix[j][k] = 1;
+            }
+        }
+    }
+
+    // Count the number of 1s
+    let mut count: i32 = 0;
+    for i in 0..r
+    {
+        for j in 0..c
+        {
+            count += matrix[i][j];
+        }
+    }
+
+    // Output
+    println!("{}", count);
 }
 ```

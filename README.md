@@ -61,7 +61,7 @@ can't escape this endless valley of despair ……
 | [5. 문자열](/BaekJoon/Problems/Step/05#baekjoon-online-judge) | 22.02.15 | 21.07.09<br>23.06.18 | 22.06.19 | 24.02.15 | |
 | [~5. 함수~](/BaekJoon/Problems/Step/05_#baekjoon-online-judge) | | 21.06.18 | 22.04.17 | | |
 | [6. 심화 1](/BaekJoon/Problems/Step/06#baekjoon-online-judge) | | 23.06.19 | | 24.02.29 | |
-| [7. 2차원 배열](/BaekJoon/Problems/Step/07#baekjoon-online-judge) | | 23.06.27 | | | |
+| [7. 2차원 배열](/BaekJoon/Problems/Step/07#baekjoon-online-judge) | | 23.06.27 | | 24.03.13 | |
 | [8. 일반 수학 1](/BaekJoon/Problems/Step/08#baekjoon-online-judge) | 22.03.11 | 21.07.12<br>23.06.28 | | | |
 | [9. 약수, 배수와 소수](/BaekJoon/Problems/Step/09#baekjoon-online-judge) | | 21.07.19<br>23.07.02 | | | |
 | [10. 기하: 직사각형과 삼각형](/BaekJoon/Problems/Step/10#baekjoon-online-judge) | | 23.07.02 | | | |

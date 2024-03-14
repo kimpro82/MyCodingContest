@@ -41,7 +41,9 @@ https://www.acmicpc.net/step/2
 5 6 100
 ```
 
-#### C++ (2023.06.26)
+<details>
+  <summary>C++ (2023.06.26)</summary>
+
 ```cpp
 #include <iostream>
 #include <vector>
@@ -82,8 +84,10 @@ int main()
     return 0;
 }
 ```
+</details>
+<details>
+  <summary>Rust (2024.03.12)</summary>
 
-#### Rust (2023.03.12)
 ```rust
 fn main()
 {
@@ -125,6 +129,7 @@ fn main()
     }
 }
 ```
+</details>
 
 
 ## [2566. 최댓값](#list)
@@ -145,7 +150,10 @@ fn main()
 5 7
 ```
 
-#### C++ (2023.06.26)
+</details>
+<details>
+  <summary>C++ (2023.06.26)</summary>
+
 ```cpp
 int main()
 {
@@ -178,8 +186,10 @@ int main()
     return 0;
 }
 ```
+</details>
+<details>
+  <summary>Rust (2024.03.12)</summary>
 
-#### Rust (2023.03.12)
 ```rust
 fn main()
 {
@@ -214,6 +224,7 @@ fn main()
     println!("{} {}", max_i + 1, max_j + 1);
 }
 ```
+</details>
 
 
 ## [10798. 세로읽기](#list)
@@ -229,7 +240,9 @@ P5h3kx
 Aa0aPAf985Bz1EhCz2W3D1gkD6x
 ```
 
-#### C++ (2023.06.27)
+<details>
+  <summary>C++ (2023.06.27)</summary>
+
 ```cpp
 #include <iostream>
 #include <vector>
@@ -262,8 +275,10 @@ int main()
     return 0;
 }
 ```
+</details>
+<details>
+  <summary>Rust (2024.03.13)</summary>
 
-#### Rust (2023.03.13)
 ```rust
 fn main()
 {
@@ -295,6 +310,7 @@ fn main()
     println!();
 }
 ```
+</details>
 
 
 ## [2563. 색종이](#list)
@@ -309,7 +325,9 @@ fn main()
 260
 ```
 
-#### C++ (2023.06.27)
+<details>
+  <summary>C++ (2023.06.27)</summary>
+
 ```cpp
 #include <iostream>
 #include <vector>
@@ -343,8 +361,10 @@ int main()
     return 0;
 }
 ```
+</details>
+<details>
+  <summary>Rust (2024.03.13)</summary>
 
-#### Rust (2023.03.13)
 ```rust
 fn main()
 {
@@ -389,3 +409,4 @@ fn main()
     println!("{}", count);
 }
 ```
+</details>

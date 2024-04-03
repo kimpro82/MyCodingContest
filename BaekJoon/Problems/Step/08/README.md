@@ -5,33 +5,35 @@
 https://www.acmicpc.net/step/8
 
 (2021.07.12, 2023.06.28) - `C++`  
-(2022.03.11) - `Bash`
+(2022.03.11) - `Bash`  
+(2024.04.03) - `Rust`
 
 
 ## **List**
 
 - [2745. 진법 변환](#2745-진법-변환) *(new)*
 - [11005. 진법 변환 2](#11005-진법-변환-2) *(new)*
-- [2720. Quick Change(세탁소 사장 동혁)](#2720-quick-change세탁소-사장-동혁) *(new)*
-- [2903. PLANINA(중앙 이동 알고리즘)](#2903-planina중앙-이동-알고리즘) *(new)*
+- [2720. Quick Change (세탁소 사장 동혁)](#2720-quick-change-세탁소-사장-동혁) *(new)*
+- [2903. PLANINA (중앙 이동 알고리즘)](#2903-planina-중앙-이동-알고리즘) *(new)*
 - [2292. 벌집](#2292-벌집)
 - [1193. 분수찾기](#1193-분수찾기)
-- [2869. PUŽ(달팽이는 올라가고 싶다)](#2869-puž달팽이는-올라가고-싶다)
-- [10757. 큰 수 A+B](#10757-큰-수-ab)
+- [2869. PUŽ (달팽이는 올라가고 싶다)](#2869-puž-달팽이는-올라가고-싶다)
 
 #### (Depreciated)
-- [1712. 손익분기점](#1712-손익분기점)
-- [10250. ACM Hotel(ACM 호텔)](#10250-acm-hotelacm-호텔)
-- [2775. 부녀회장이 될테야](#2775-부녀회장이-될테야)
 - [1011. Fly me to the Alpha Centauri](#1011-fly-me-to-the-alpha-centauri)
+- [1712. 손익분기점](#1712-손익분기점)
+- [2775. 부녀회장이 될테야](#2775-부녀회장이-될테야)
+- [10250. ACM Hotel (ACM 호텔)](#10250-acm-hotel-acm-호텔)
+- [10757. 큰 수 A+B](#10757-큰-수-ab)
 
 
 **※ Note**
 
-&nbsp;&nbsp; - All the codes of any language for the same problem have basically the same result.  
-&nbsp;&nbsp; - Typical headers like the below are basically skipped, but they are noted seperately when there are any additional line.  
-&nbsp;&nbsp;&nbsp;&nbsp; · `Bash` : `#!/bin/bash`  
-&nbsp;&nbsp;&nbsp;&nbsp; · `C++` : `#include <iostream>` `#define endl '\n';` `using namespace std;`  
+&nbsp;&nbsp; - All the code of any language for the same problem has basically the same result.  
+&nbsp;&nbsp; - Typical headers like the below are basically skipped, but they are noted seperately when there are any additional line.    
+&nbsp;&nbsp;&nbsp;&nbsp; · *Bash* : `#!/bin/bash`  
+&nbsp;&nbsp;&nbsp;&nbsp; · *C++* : `#include <iostream>` `#define endl '\n';` `using namespace std;`  
+&nbsp;&nbsp;&nbsp;&nbsp; · *Rust* : `use std::io;`  
 
 
 ## [2745. 진법 변환](#list)
@@ -43,7 +45,9 @@ ZZZZZ 36
 60466175
 ```
 
-#### C++ (2023.06.27)
+<details>
+  <summary>C++ (2023.06.27)</summary>
+
 ```cpp
 #include <iostream>
 #include <cmath>
@@ -82,6 +86,39 @@ int main()
     return 0;
 }
 ```
+</details>
+<details>
+  <summary>Rust (2024.04.03)</summary>
+
+```rust
+fn main()
+{
+    // let test: bool = true;
+    let test: bool = false;
+
+    // Input n & b
+    let mut input = String::new();
+    io::stdin().read_line(&mut input).unwrap();
+    let mut iter = input.split_whitespace(); 
+    let n: Vec<char> = iter.next().unwrap().chars().collect();
+    let b: u32 = iter.next().unwrap().parse().unwrap();
+
+    // Convert n to decimal
+    let mut ans = 0;
+    let len = n.len();
+    for i in 0..len
+    {
+        let c = if n[len-i-1] >= 'A' { n[len-i-1] as u32 - 'A' as u32 + 10 }
+                else { n[len-i-1] as u32 - '0' as u32 };
+        ans += c * (b as u32).pow(i as u32);
+        if test { println!("{} : {} {} {}", i, n[len-i-1], c, ans); }
+    }
+
+    // Output
+    println!("{}", ans);
+}
+```
+</details>
 
 
 ## [11005. 진법 변환 2](#list)
@@ -93,7 +130,9 @@ int main()
 ZZZZZ
 ```
 
-#### C++ (2023.06.28)
+<details>
+  <summary>C++ (2023.06.28)</summary>
+
 ```cpp
 #include <iostream>
 #include <vector>
@@ -135,9 +174,43 @@ int main()
     return 0;
 }
 ```
+</details>
+<details>
+  <summary>Rust (2024.04.03)</summary>
+
+```rust
+fn main()
+{
+    // let test: bool = true;
+    let test: bool = false;
+
+    // Input n & b
+    let mut input = String::new();
+    io::stdin().read_line(&mut input).unwrap();
+    let mut iter = input.split_whitespace(); 
+    let mut n: u32 = iter.next().unwrap().parse().unwrap();
+    let b: u32 = iter.next().unwrap().parse().unwrap();
+
+    // Convert n to decimal
+    let mut ans: String = String::new();
+    while n > 0
+    {
+        let remainder: u32 = n % b;
+        let c: char = if remainder >= 10 { char::from_u32(remainder - 10 + 'A' as u32).unwrap() }
+                else { char::from_u32(remainder + '0' as u32).unwrap() };
+        ans = c.to_string() + &ans;
+        n /= b;
+        if test { println!("{} : {} {} {}", n, remainder, c, ans); }
+    }
+
+    // Output
+    println!("{}", ans);
+}
+```
+</details>
 
 
-## [2720. Quick Change(세탁소 사장 동혁)](#list)
+## [2720. Quick Change (세탁소 사장 동혁)](#list)
 
 ```txt
 3
@@ -151,7 +224,9 @@ int main()
 7 1 1 4
 ```
 
-#### C++ (2023.06.28)
+<details>
+  <summary>C++ (2023.06.28)</summary>
+
 ```cpp
 #include <iostream>
 #include <vector>
@@ -192,9 +267,46 @@ int main()
     return 0;
 }
 ```
+</details>
+<details>
+  <summary>Rust (2024.04.03)</summary>
+
+```rust
+fn main()
+{
+    // let test: bool = true;
+    let test: bool = false;
+
+    let mut t = String::new();
+    io::stdin().read_line(&mut t).unwrap();
+    let t: u32 = t.trim().to_string().parse().unwrap();
+
+    for _ in 0..t
+    {
+        // Input c
+        let mut c = String::new();
+        io::stdin().read_line(&mut c).unwrap();
+        let mut c: u32 = c.trim().to_string().parse().unwrap();
+
+        // Count coins
+        let mut count = vec![0; 4];
+        let coin = vec![25, 10, 5, 1];
+        for i in 0..4
+        {
+            count[i] = c / coin[i];
+            c %= coin[i];
+            if test { println!("{} : {} {} {}", i, c, coin[i], count[i]); }
+        }
+
+        // Output
+        println!("{} {} {} {}", count[0], count[1], count[2], count[3]);
+    }
+}
+```
+</details>
 
 
-## [2903. PLANINA(중앙 이동 알고리즘)](#list)
+## [2903. PLANINA (중앙 이동 알고리즘)](#list)
 
 ```txt
 5
@@ -203,7 +315,9 @@ int main()
 1089
 ```
 
-#### C++ (2023.06.28)
+<details>
+  <summary>C++ (2023.06.28)</summary>
+
 ```cpp
 int main()
 {
@@ -222,15 +336,44 @@ int main()
     return 0;
 }
 ```
+</details>
+<details>
+  <summary>Rust (2024.04.03)</summary>
+
+```rust
+// 0 >    4 =  2^2 = (2^0 + 1)^2
+// 1 >    9 =  3^2 = (2^1 + 1)^2
+// 2 >   25 =  5^2 = (2^2 + 1)^2
+// 5 > 1089 = 33^2 = (2^5 + 1)^2
+```
+```rust
+fn main()
+{
+    // Input n
+    let mut n = String::new();
+    io::stdin().read_line(&mut n).unwrap();
+    let n: u32 = n.trim().to_string().parse().unwrap();
+
+    // Output
+    let ans: u32 = ((2 as u32).pow(n) + 1).pow(2);
+    println!("{}", ans);
+}
+```
+</details>
 
 
 ## [2292. 벌집](#list)
 
-> 13
+```txt
+13
+```
+```txt
+3
+```
 
-> 3
+<details>
+  <summary>Bash (2022.03.11)</summary>
 
-#### Bash (2022.03.11)
 ```bash
 read n
 
@@ -247,8 +390,10 @@ done
 
 echo $((move + 1))
 ```
+</details>
+<details>
+  <summary>C++ (2022.07.12)</summary>
 
-#### C++ (2022.07.12)
 ```cpp
 int main()
 {
@@ -270,20 +415,62 @@ int main()
     return 0;
 }
 ```
+</details>
+<details>
+  <summary>Rust (2024.04.03)</summary>
+
+```rust
+// 1 > 1
+// 2 > 1 + 6 = 7
+// 3 > 1 + 6 + 12 = 19
+// 4 > 1 + 6 + 12 + 18 = 37
+```
+```rust
+fn main()
+{
+    // let test: bool = true;
+    let test: bool = false;
+
+    // Input n
+    let mut n = String::new();
+    io::stdin().read_line(&mut n).unwrap();
+    let n: u32 = n.trim().to_string().parse().unwrap();
+
+    // Calc.
+    let mut ans: u32 = 1;
+    let mut benchmark: u32 = 1;
+    while n > benchmark
+    {
+        ans += 1;
+        benchmark += 6 * (ans - 1);
+
+        if test { println!("{} : {} {}", ans, benchmark, n); }
+    }
+
+    // Output
+    println!("{}", ans);
+}
+```
+</details>
 
 
 ## [1193. 분수찾기](#list)
 
-> 14
+```txt
+14
+```
+```txt
+14 1 1  
+14 2 3  
+14 3 6  
+14 4 10  
+14 5 15  
+2/4
+```
 
-> 14 1 1  
-> 14 2 3  
-> 14 3 6  
-> 14 4 10  
-> 14 5 15  
-> 2/4
+<details>
+  <summary>Bash (2022.03.11)</summary>
 
-#### Bash (2022.03.11)
 ```bash
 read x
 
@@ -312,8 +499,10 @@ fi
 
 echo ${numerator}/${denominator}
 ```
+</details>
+<details>
+  <summary>C++ (2022.07.12)</summary>
 
-#### C++ (2022.07.12)
 ```cpp
 int main()
 {
@@ -346,17 +535,65 @@ int main()
     return 0;
 }
 ```
+</details>
+<details>
+  <summary>Rust (2024.04.03)</summary>
+
+```rust
+fn main()
+{
+    // let test: bool = true;
+    let test: bool = false;
+
+    // Input n
+    let mut n = String::new();
+    io::stdin().read_line(&mut n).unwrap();
+    let n: u32 = n.trim().to_string().parse().unwrap();
+
+    // Calc.
+    let mut diag: u32 = 0;
+    let mut benchmark: u32 = 0;
+    while n > benchmark
+    {
+        diag += 1;
+        benchmark += diag;
+
+        if test { println!("{} : {} {}", diag, benchmark, n); }
+    }
+    let ans1: u32;
+    let ans2: u32;
+    if diag % 2 != 0
+    {
+        ans1 = benchmark - n + 1;
+        ans2 = diag + 1 - ans1;
+    }
+    else
+    {
+        ans2 = benchmark - n + 1;
+        ans1 = diag + 1 - ans2;
+    }
+
+    // Output
+    println!("{}/{}", ans1, ans2);
+}
+```
+</details>
 
 
-## [2869. PUŽ(달팽이는 올라가고 싶다)](#list)
+## [2869. PUŽ (달팽이는 올라가고 싶다)](#list)
 
-> 5 1 6
+```txt
+5 1 6
+```
+```txt
+1 5 -1  
+2 9 3  
+2
+```
 
-> 1 5 -1  
-> 2 9 3  
-> 2
+<details>
+  <summary>Bash (2022.03.11)</summary>
 
-#### Bash (2022.03.11)
 ```bash
 read a b v
 
@@ -380,8 +617,10 @@ done
 
 echo $day
 ```
+</details>
+<details>
+  <summary>C++ (2022.07.12)</summary>
 
-#### C++ (2022.07.12)
 ```cpp
 int main()
 {
@@ -417,16 +656,397 @@ int main()
     return 0;
 }
 ```
+</details>
+<details>
+  <summary>Rust - Trial 1 (2024.04.03)</summary>
+
+```rust
+fn main()
+{
+    // let test: bool = true;
+    let test: bool = false;
+
+    // Input a, b & v
+    let mut input = String::new();
+    io::stdin().read_line(&mut input).unwrap();
+    let mut iter = input.split_whitespace(); 
+    let a: u32 = iter.next().unwrap().parse().unwrap();
+    let b: u32 = iter.next().unwrap().parse().unwrap();
+    let v: u32 = iter.next().unwrap().parse().unwrap();
+
+    // Calc.
+    let mut day: u32 = 0;
+    let mut climb: u32 = 0;
+    while climb < v
+    {
+        day += 1;
+        climb += a;
+        if climb >= v { break; }
+        climb -= b;
+
+        if test { println!("Day {} : {} meter(s)", day, climb); }
+    }
+
+    // Output
+    println!("{}", day);
+}
+```
+> 시간 초과
+</details>
+<details>
+  <summary>Rust - Trial 2 (2024.04.03)</summary>
+
+```rust
+fn main()
+{
+    ……
+
+    // Calc. without while loop
+    let mut day: u32 = (v - a) / (a - b) + 1;
+    if (v - a) % (a - b) != 0 { day += 1; }
+
+    ……
+}
+```
+</details>
+
+
+## [1011. Fly me to the Alpha Centauri](#list)
+
+```txt
+3
+0 3
+1 5
+45 50
+```
+```txt
+3
+3
+4
+```
+
+<details>
+  <summary>C++ - Trial 1 (2022.07.12)</summary>
+
+```cpp
+/*
+(ex) n = 3
+    1 + 2 + 1
+    = (1 + 2) * 2 - 2
+    = {(n + 1)/2 * [{(n + 1)/2 + 1}/2] * 2 - (n + 1)/2
+    * t = (n + 1)/2
+    = t * (t + 1) - t
+    = t^2
+    = {(n + 1)/2}^2
+
+(ex) n = 4
+    1 + 2 + 2 + 1
+    = (1 + 2) * 2
+    = {(n/2) * (n/2 + 1)}/2 * 2
+    = (n/2) * (n/2 + 1)
+    = (n^2 + 2n + 1 - 1)/4
+    = {(n + 1)^2 - 1}/4
+*/
+```
+```cpp
+#pragma GCC optimize ("O2")
+#pragma GCC target ("avx")
+
+#include <iostream>
+#include <cmath>
+#include<bits/stdc++.h>
+
+using namespace std;
+#define endl '\n'
+```
+```cpp
+int main()
+{
+    cin.tie(0);
+    ios::sync_with_stdio(false);
+
+    int T;
+    cin >> T;
+
+    // Test T times
+    for (int t = 0; t < T; t++)
+    {
+        int x, y;
+        cin >> x >> y;
+
+        int distance = y - x, move = 0, turn = 0;
+        while (true)
+        {
+            turn++;
+            
+            if (turn % 2 == 1) move = pow((turn + 1)/2, 2);
+            else move = (pow(turn + 1, 2) - 1)/4;
+
+            // test
+            cout << turn << " " << move << " " << distance << " " << move - distance << endl;
+
+            if (move >= distance) break;
+        }
+
+        // Output
+        cout << turn << endl;
+    }
+
+    return 0;
+}
+```
+> 1 1 3 -2  
+> 2 2 3 -1  
+> 3 4 3 1  
+> 3  
+> ……
+
+> Time Litmit Exceeded?
+</details>
+<details>
+  <summary>C++ - Trial 2 (2022.07.12)</summary>
+
+```cpp
+// n is even : distance = {(n + 1)/2}^2
+// → n = 2 * sqrt(distance) - 1
+// n is odd  : distance = {(n + 1)^2 - 1}/4
+```
+```cpp
+#pragma GCC optimize ("Ofast")
+……
+```
+```cpp
+        ……
+        int distance = y - x, move = 0;
+        int turn = 2 * sqrt(distance) - 2;
+        ……
+```
+> 2 2 3 -1  
+> 3 4 3 1  
+> 3  
+> 3 4 4 0  
+> 3  
+> 3 4 5 -1  
+> 4 6 5 1  
+> 4
+
+> Time Litmit Exceeded?
+</details>
+<details>
+  <summary>C++ - Trial 3 (2022.07.12)</summary>
+
+```cpp
+……
+using ll = long long;
+……
+```
+```cpp
+        ……
+        ll x, y;                            // int x, y : causes SOF!
+        ……
+
+        ll distance = y - x, move = 0;
+        ……
+```
+> Accepted
+</details>
+
+
+## [1712. 손익분기점](#list)
+
+```txt
+1000 70 170
+```
+```txt
+11
+```
+
+<details>
+  <summary>Bash (2022.03.11)</summary>
+
+```bash
+read a b c
+
+let "margin = c - b"
+
+if [ $margin -gt 0 ]; then
+    echo $((a / margin + 1))
+else
+    echo -1
+fi
+```
+</details>
+<details>
+  <summary>C++ (2022.07.12)</summary>
+
+```cpp
+int main()
+{
+    int a, b, c;
+    cin >> a >> b >> c;
+
+    int margin = c - b;
+    if (c - b > 0)                      // Find if price(c) - variable cost(b) > 0
+    {
+        cout << a / margin + 1 << endl;
+    } else                              // Never can reach BEP
+    {
+        cout << -1 << endl;
+    }
+
+    return 0;
+}
+```
+</details>
+
+
+## [2775. 부녀회장이 될테야](#list)
+
+```txt
+2  
+1  
+3  
+2  
+3
+```
+```txt
+6  
+10
+```
+
+<details>
+  <summary>Bash (2022.03.11)</summary>
+
+Rumor has it that there's a tricky way to use **2d array** in Bash although isn't supplied regularly, but I feel quite annoyed today ……
+</details>
+<details>
+  <summary>C++ (2022.07.12)</summary>
+
+```cpp
+int main()
+{
+    int T;
+    cin >> T;
+
+    // Test T times
+    for (int t = 0; t < T; t++)
+    {
+        int K, N;
+        cin >> K >> N;
+
+        int resident[15][15] = {};      // assumed 0-th floor and 0-th room
+        for (int k = 0; k <= K; k++)
+        {
+            for (int n = 0; n <= N; n++)
+            {
+                if (k == 0) resident[k][n] = n;
+                else if (n <= 1) resident[k][n] = n;
+                else resident[k][n] = resident[k-1][n] + resident[k][n-1];
+            }
+        }
+
+        // Output
+        cout << resident[K][N] << endl;
+    }
+
+    return 0;
+}
+```
+</details>
+
+
+## [10250. ACM Hotel (ACM 호텔)](#list)
+
+```txt
+2  
+6 12 10  
+30 50 72
+```
+```txt
+402  
+1203
+```
+
+<details>
+  <summary>Bash (2022.03.11)</summary>
+
+```bash
+read t
+
+for ((i = 0; i < t; i++))
+do
+    read h w n
+
+    let "room = (n - 1) / h + 1"
+    let "floor = n % h"
+
+    if [ $floor -eq 0 ]; then
+        let "floor = h"
+    fi
+
+    if [ $room -lt 10 ]; then
+        echo ${floor}0${room}
+    else
+        echo ${floor}${room}
+    fi
+done
+```
+</details>
+<details>
+  <summary>C++ (2022.07.12)</summary>
+
+```cpp
+int main()
+{
+    int T, H, W, N;
+    // T : the number of test cases
+    // H : the number of floors, < 99
+    // W : the number of rooms on each floor, < 99
+    // N : the index of the arrival time of the guest, < H * W 
+    cin >> T;
+
+    // Test T times
+    for (int t = 0; t < T; t++)
+    {
+        cin >> H >> W >> N;
+
+        // Operation
+        int room = (N - 1) / H + 1; // room is prior to floor
+        int floor = N % H;          // the first floor's room number is 1XX
+        if (floor == 0)
+        {
+            floor = H;
+        }
+
+        // Output
+        if (room < 10)
+        {
+            cout << floor << 0 << room << endl;
+        } else
+        {
+            cout << floor << room << endl;
+        }
+    }
+
+    return 0;
+}
+```
+</details>
 
 
 ## [10757. 큰 수 A+B](#list)
 
-> 9223372036854775807 9223372036854775808
+```txt
+9223372036854775807 9223372036854775808
+```
+```txt
+51615590737044764481  
+18446744073709551615
+```
 
-> 51615590737044764481  
-> 18446744073709551615
+<details>
+  <summary>Bash (2022.03.11)</summary>
 
-#### Bash (2022.03.11)
 ```bash
 read a b
 let "aLen = ${#a}"
@@ -502,8 +1122,10 @@ done
 echo
 ```
 > Time Litmit Exceeded
+</details>
+<details>
+  <summary>C++ (2022.07.12)</summary>
 
-#### C++ (2022.07.12)
 ```cpp
 #include <iostream>
 #include <string>
@@ -582,292 +1204,4 @@ int main()
     return 0;
 }
 ```
-
-
-## [1712. 손익분기점](#list)
-
-> 1000 70 170
-
-> 11
-
-#### Bash (2022.03.11)
-```bash
-read a b c
-
-let "margin = c - b"
-
-if [ $margin -gt 0 ]; then
-    echo $((a / margin + 1))
-else
-    echo -1
-fi
-```
-
-#### C++ (2021.07.12)
-```cpp
-int main()
-{
-    int a, b, c;
-    cin >> a >> b >> c;
-
-    int margin = c - b;
-    if (c - b > 0)                      // Find if price(c) - variable cost(b) > 0
-    {
-        cout << a / margin + 1 << endl;
-    } else                              // Never can reach BEP
-    {
-        cout << -1 << endl;
-    }
-
-    return 0;
-}
-```
-
-
-## [10250. ACM Hotel(ACM 호텔)](#list)
-
-> 2  
-> 6 12 10  
-> 30 50 72
-
-> 402  
-> 1203
-
-#### Bash (2022.03.11)
-```bash
-read t
-
-for ((i = 0; i < t; i++))
-do
-    read h w n
-
-    let "room = (n - 1) / h + 1"
-    let "floor = n % h"
-
-    if [ $floor -eq 0 ]; then
-        let "floor = h"
-    fi
-
-    if [ $room -lt 10 ]; then
-        echo ${floor}0${room}
-    else
-        echo ${floor}${room}
-    fi
-done
-```
-
-#### C++ (2021.07.12)
-```cpp
-int main()
-{
-    int T, H, W, N;
-    // T : the number of test cases
-    // H : the number of floors, < 99
-    // W : the number of rooms on each floor, < 99
-    // N : the index of the arrival time of the guest, < H * W 
-    cin >> T;
-
-    // Test T times
-    for (int t = 0; t < T; t++)
-    {
-        cin >> H >> W >> N;
-
-        // Operation
-        int room = (N - 1) / H + 1; // room is prior to floor
-        int floor = N % H;          // the first floor's room number is 1XX
-        if (floor == 0)
-        {
-            floor = H;
-        }
-
-        // Output
-        if (room < 10)
-        {
-            cout << floor << 0 << room << endl;
-        } else
-        {
-            cout << floor << room << endl;
-        }
-    }
-
-    return 0;
-}
-```
-
-
-## [2775. 부녀회장이 될테야](#list)
-
-> 2  
-> 1  
-> 3  
-> 2  
-> 3
-
-> 6  
-> 10
-
-#### Bash (2022.03.11)
-Rumor has it that there's a tricky way to use **2d array** in Bash although isn't supplied regularly, but I feel quite annoyed today ……
-
-#### C++ (2021.07.12)
-```cpp
-int main()
-{
-    int T;
-    cin >> T;
-
-    // Test T times
-    for (int t = 0; t < T; t++)
-    {
-        int K, N;
-        cin >> K >> N;
-
-        int resident[15][15] = {};      // assumed 0-th floor and 0-th room
-        for (int k = 0; k <= K; k++)
-        {
-            for (int n = 0; n <= N; n++)
-            {
-                if (k == 0) resident[k][n] = n;
-                else if (n <= 1) resident[k][n] = n;
-                else resident[k][n] = resident[k-1][n] + resident[k][n-1];
-            }
-        }
-
-        // Output
-        cout << resident[K][N] << endl;
-    }
-
-    return 0;
-}
-```
-
-
-## [1011. Fly me to the Alpha Centauri](#list)
-
-> 3  
-> 0 3  
-> 1 5  
-> 45 50
-
-> 3  
-> 3  
-> 4
-
-#### C++ - Trial 1 (2021.07.12)
-```cpp
-/*
-(ex) n = 3
-    1 + 2 + 1
-    = (1 + 2) * 2 - 2
-    = {(n + 1)/2 * [{(n + 1)/2 + 1}/2] * 2 - (n + 1)/2
-    * t = (n + 1)/2
-    = t * (t + 1) - t
-    = t^2
-    = {(n + 1)/2}^2
-
-(ex) n = 4
-    1 + 2 + 2 + 1
-    = (1 + 2) * 2
-    = {(n/2) * (n/2 + 1)}/2 * 2
-    = (n/2) * (n/2 + 1)
-    = (n^2 + 2n + 1 - 1)/4
-    = {(n + 1)^2 - 1}/4
-*/
-```
-```cpp
-#pragma GCC optimize ("O2")
-#pragma GCC target ("avx")
-
-#include <iostream>
-#include <cmath>
-#include<bits/stdc++.h>
-
-using namespace std;
-#define endl '\n'
-```
-```cpp
-int main()
-{
-    cin.tie(0);
-    ios::sync_with_stdio(false);
-
-    int T;
-    cin >> T;
-
-    // Test T times
-    for (int t = 0; t < T; t++)
-    {
-        int x, y;
-        cin >> x >> y;
-
-        int distance = y - x, move = 0, turn = 0;
-        while (true)
-        {
-            turn++;
-            
-            if (turn % 2 == 1) move = pow((turn + 1)/2, 2);
-            else move = (pow(turn + 1, 2) - 1)/4;
-
-            // test
-            cout << turn << " " << move << " " << distance << " " << move - distance << endl;
-
-            if (move >= distance) break;
-        }
-
-        // Output
-        cout << turn << endl;
-    }
-
-    return 0;
-}
-```
-> 1 1 3 -2  
-> 2 2 3 -1  
-> 3 4 3 1  
-> 3  
-> ……
-
-> Time Litmit Exceeded?
-
-#### C++ - Trial 2 (2021.07.12)
-```cpp
-// n is even : distance = {(n + 1)/2}^2
-// → n = 2 * sqrt(distance) - 1
-// n is odd  : distance = {(n + 1)^2 - 1}/4
-```
-```cpp
-#pragma GCC optimize ("Ofast")
-……
-```
-```cpp
-        ……
-        int distance = y - x, move = 0;
-        int turn = 2 * sqrt(distance) - 2;
-        ……
-```
-> 2 2 3 -1  
-> 3 4 3 1  
-> 3  
-> 3 4 4 0  
-> 3  
-> 3 4 5 -1  
-> 4 6 5 1  
-> 4
-
-> Time Litmit Exceeded?
-
-#### C++ - Trial 3 ((2021.07.12)
-```cpp
-……
-using ll = long long;
-……
-```
-```cpp
-        ……
-        ll x, y;                            // int x, y : causes SOF!
-        ……
-
-        ll distance = y - x, move = 0;
-        ……
-```
-> Accepted
+</details>

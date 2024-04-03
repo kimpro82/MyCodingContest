@@ -5,33 +5,35 @@
 https://www.acmicpc.net/step/8
 
 (2021.07.12, 2023.06.28) - `C++`  
-(2022.03.11) - `Bash`
+(2022.03.11) - `Bash`  
+(2024.04.03) - `Rust`
 
 
 ## **List**
 
 - [2745. 진법 변환](#2745-진법-변환) *(new)*
 - [11005. 진법 변환 2](#11005-진법-변환-2) *(new)*
-- [2720. Quick Change(세탁소 사장 동혁)](#2720-quick-change세탁소-사장-동혁) *(new)*
-- [2903. PLANINA(중앙 이동 알고리즘)](#2903-planina중앙-이동-알고리즘) *(new)*
+- [2720. Quick Change (세탁소 사장 동혁)](#2720-quick-change-세탁소-사장-동혁) *(new)*
+- [2903. PLANINA (중앙 이동 알고리즘)](#2903-planina-중앙-이동-알고리즘) *(new)*
 - [2292. 벌집](#2292-벌집)
 - [1193. 분수찾기](#1193-분수찾기)
-- [2869. PUŽ(달팽이는 올라가고 싶다)](#2869-puž달팽이는-올라가고-싶다)
-- [10757. 큰 수 A+B](#10757-큰-수-ab)
+- [2869. PUŽ (달팽이는 올라가고 싶다)](#2869-puž-달팽이는-올라가고-싶다)
 
 #### (Depreciated)
 - [1712. 손익분기점](#1712-손익분기점)
-- [10250. ACM Hotel(ACM 호텔)](#10250-acm-hotelacm-호텔)
+- [10250. ACM Hotel (ACM 호텔)](#10250-acm-hotel-acm-호텔)
 - [2775. 부녀회장이 될테야](#2775-부녀회장이-될테야)
 - [1011. Fly me to the Alpha Centauri](#1011-fly-me-to-the-alpha-centauri)
+- [10757. 큰 수 A+B](#10757-큰-수-ab)
 
 
 **※ Note**
 
-&nbsp;&nbsp; - All the codes of any language for the same problem have basically the same result.  
-&nbsp;&nbsp; - Typical headers like the below are basically skipped, but they are noted seperately when there are any additional line.  
-&nbsp;&nbsp;&nbsp;&nbsp; · `Bash` : `#!/bin/bash`  
-&nbsp;&nbsp;&nbsp;&nbsp; · `C++` : `#include <iostream>` `#define endl '\n';` `using namespace std;`  
+&nbsp;&nbsp; - All the code of any language for the same problem has basically the same result.  
+&nbsp;&nbsp; - Typical headers like the below are basically skipped, but they are noted seperately when there are any additional line.    
+&nbsp;&nbsp;&nbsp;&nbsp; · *Bash* : `#!/bin/bash`  
+&nbsp;&nbsp;&nbsp;&nbsp; · *C++* : `#include <iostream>` `#define endl '\n';` `using namespace std;`  
+&nbsp;&nbsp;&nbsp;&nbsp; · *Rust* : `use std::io;`  
 
 
 ## [2745. 진법 변환](#list)
@@ -43,7 +45,9 @@ ZZZZZ 36
 60466175
 ```
 
-#### C++ (2023.06.27)
+<details>
+  <summary>C++ (2023.06.27)</summary>
+
 ```cpp
 #include <iostream>
 #include <cmath>
@@ -82,6 +86,7 @@ int main()
     return 0;
 }
 ```
+</details>
 
 
 ## [11005. 진법 변환 2](#list)
@@ -93,7 +98,9 @@ int main()
 ZZZZZ
 ```
 
-#### C++ (2023.06.28)
+<details>
+  <summary>C++ (2023.06.28)</summary>
+
 ```cpp
 #include <iostream>
 #include <vector>
@@ -135,9 +142,10 @@ int main()
     return 0;
 }
 ```
+</details>
 
 
-## [2720. Quick Change(세탁소 사장 동혁)](#list)
+## [2720. Quick Change (세탁소 사장 동혁)](#list)
 
 ```txt
 3
@@ -151,7 +159,9 @@ int main()
 7 1 1 4
 ```
 
-#### C++ (2023.06.28)
+<details>
+  <summary>C++ (2023.06.28)</summary>
+
 ```cpp
 #include <iostream>
 #include <vector>
@@ -192,9 +202,10 @@ int main()
     return 0;
 }
 ```
+</details>
 
 
-## [2903. PLANINA(중앙 이동 알고리즘)](#list)
+## [2903. PLANINA (중앙 이동 알고리즘)](#list)
 
 ```txt
 5
@@ -203,7 +214,9 @@ int main()
 1089
 ```
 
-#### C++ (2023.06.28)
+<details>
+  <summary>C++ (2023.06.28)</summary>
+
 ```cpp
 int main()
 {
@@ -222,15 +235,21 @@ int main()
     return 0;
 }
 ```
+</details>
 
 
 ## [2292. 벌집](#list)
 
-> 13
+```txt
+13
+```
+```txt
+3
+```
 
-> 3
+<details>
+  <summary>Bash (2022.03.11)</summary>
 
-#### Bash (2022.03.11)
 ```bash
 read n
 
@@ -247,8 +266,10 @@ done
 
 echo $((move + 1))
 ```
+</details>
+<details>
+  <summary>C++ (2022.07.12)</summary>
 
-#### C++ (2022.07.12)
 ```cpp
 int main()
 {
@@ -270,20 +291,26 @@ int main()
     return 0;
 }
 ```
+</details>
 
 
 ## [1193. 분수찾기](#list)
 
-> 14
+```txt
+14
+```
+```txt
+14 1 1  
+14 2 3  
+14 3 6  
+14 4 10  
+14 5 15  
+2/4
+```
 
-> 14 1 1  
-> 14 2 3  
-> 14 3 6  
-> 14 4 10  
-> 14 5 15  
-> 2/4
+<details>
+  <summary>Bash (2022.03.11)</summary>
 
-#### Bash (2022.03.11)
 ```bash
 read x
 
@@ -312,8 +339,10 @@ fi
 
 echo ${numerator}/${denominator}
 ```
+</details>
+<details>
+  <summary>C++ (2022.07.12)</summary>
 
-#### C++ (2022.07.12)
 ```cpp
 int main()
 {
@@ -346,17 +375,23 @@ int main()
     return 0;
 }
 ```
+</details>
 
 
-## [2869. PUŽ(달팽이는 올라가고 싶다)](#list)
+## [2869. PUŽ (달팽이는 올라가고 싶다)](#list)
 
-> 5 1 6
+```txt
+5 1 6
+```
+```txt
+1 5 -1  
+2 9 3  
+2
+```
 
-> 1 5 -1  
-> 2 9 3  
-> 2
+<details>
+  <summary>Bash (2022.03.11)</summary>
 
-#### Bash (2022.03.11)
 ```bash
 read a b v
 
@@ -380,8 +415,10 @@ done
 
 echo $day
 ```
+</details>
+<details>
+  <summary>C++ (2022.07.12)</summary>
 
-#### C++ (2022.07.12)
 ```cpp
 int main()
 {
@@ -417,16 +454,22 @@ int main()
     return 0;
 }
 ```
+</details>
 
 
 ## [10757. 큰 수 A+B](#list)
 
-> 9223372036854775807 9223372036854775808
+```txt
+9223372036854775807 9223372036854775808
+```
+```txt
+51615590737044764481  
+18446744073709551615
+```
 
-> 51615590737044764481  
-> 18446744073709551615
+<details>
+  <summary>Bash (2022.03.11)</summary>
 
-#### Bash (2022.03.11)
 ```bash
 read a b
 let "aLen = ${#a}"
@@ -502,8 +545,10 @@ done
 echo
 ```
 > Time Litmit Exceeded
+</details>
+<details>
+  <summary>C++ (2022.07.12)</summary>
 
-#### C++ (2022.07.12)
 ```cpp
 #include <iostream>
 #include <string>
@@ -582,15 +627,21 @@ int main()
     return 0;
 }
 ```
+</details>
 
 
 ## [1712. 손익분기점](#list)
 
-> 1000 70 170
+```txt
+1000 70 170
+```
+```txt
+11
+```
 
-> 11
+<details>
+  <summary>Bash (2022.03.11)</summary>
 
-#### Bash (2022.03.11)
 ```bash
 read a b c
 
@@ -602,8 +653,10 @@ else
     echo -1
 fi
 ```
+</details>
+<details>
+  <summary>C++ (2022.07.12)</summary>
 
-#### C++ (2021.07.12)
 ```cpp
 int main()
 {
@@ -622,18 +675,23 @@ int main()
     return 0;
 }
 ```
+</details>
 
+## [10250. ACM Hotel (ACM 호텔)](#list)
 
-## [10250. ACM Hotel(ACM 호텔)](#list)
+```txt
+2  
+6 12 10  
+30 50 72
+```
+```txt
+402  
+1203
+```
 
-> 2  
-> 6 12 10  
-> 30 50 72
+<details>
+  <summary>Bash (2022.03.11)</summary>
 
-> 402  
-> 1203
-
-#### Bash (2022.03.11)
 ```bash
 read t
 
@@ -655,8 +713,10 @@ do
     fi
 done
 ```
+</details>
+<details>
+  <summary>C++ (2022.07.12)</summary>
 
-#### C++ (2021.07.12)
 ```cpp
 int main()
 {
@@ -693,23 +753,31 @@ int main()
     return 0;
 }
 ```
+</details>
 
 
 ## [2775. 부녀회장이 될테야](#list)
 
-> 2  
-> 1  
-> 3  
-> 2  
-> 3
+```txt
+2  
+1  
+3  
+2  
+3
+```
+```txt
+6  
+10
+```
 
-> 6  
-> 10
+<details>
+  <summary>Bash (2022.03.11)</summary>
 
-#### Bash (2022.03.11)
 Rumor has it that there's a tricky way to use **2d array** in Bash although isn't supplied regularly, but I feel quite annoyed today ……
+</details>
+<details>
+  <summary>C++ (2022.07.12)</summary>
 
-#### C++ (2021.07.12)
 ```cpp
 int main()
 {
@@ -740,20 +808,26 @@ int main()
     return 0;
 }
 ```
+</details>
 
 
 ## [1011. Fly me to the Alpha Centauri](#list)
 
-> 3  
-> 0 3  
-> 1 5  
-> 45 50
+```txt
+3
+0 3
+1 5
+45 50
+```
+```txt
+3
+3
+4
+```
 
-> 3  
-> 3  
-> 4
+<details>
+  <summary>C++ - Trial 1 (2022.07.12)</summary>
 
-#### C++ - Trial 1 (2021.07.12)
 ```cpp
 /*
 (ex) n = 3
@@ -828,8 +902,10 @@ int main()
 > ……
 
 > Time Litmit Exceeded?
+</details>
+<details>
+  <summary>C++ - Trial 2 (2022.07.12)</summary>
 
-#### C++ - Trial 2 (2021.07.12)
 ```cpp
 // n is even : distance = {(n + 1)/2}^2
 // → n = 2 * sqrt(distance) - 1
@@ -855,8 +931,10 @@ int main()
 > 4
 
 > Time Litmit Exceeded?
+</details>
+<details>
+  <summary>C++ - Trial 3 (2022.07.12)</summary>
 
-#### C++ - Trial 3 ((2021.07.12)
 ```cpp
 ……
 using ll = long long;
@@ -871,3 +949,4 @@ using ll = long long;
         ……
 ```
 > Accepted
+</details>

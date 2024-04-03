@@ -20,10 +20,10 @@ https://www.acmicpc.net/step/8
 - [2869. PUŽ (달팽이는 올라가고 싶다)](#2869-puž-달팽이는-올라가고-싶다)
 
 #### (Depreciated)
-- [1712. 손익분기점](#1712-손익분기점)
-- [10250. ACM Hotel (ACM 호텔)](#10250-acm-hotel-acm-호텔)
-- [2775. 부녀회장이 될테야](#2775-부녀회장이-될테야)
 - [1011. Fly me to the Alpha Centauri](#1011-fly-me-to-the-alpha-centauri)
+- [1712. 손익분기점](#1712-손익분기점)
+- [2775. 부녀회장이 될테야](#2775-부녀회장이-될테야)
+- [10250. ACM Hotel (ACM 호텔)](#10250-acm-hotel-acm-호텔)
 - [10757. 큰 수 A+B](#10757-큰-수-ab)
 
 
@@ -87,6 +87,13 @@ int main()
 }
 ```
 </details>
+<details>
+  <summary>Rust (2024.04.03)</summary>
+
+```rust
+
+```
+</details>
 
 
 ## [11005. 진법 변환 2](#list)
@@ -141,6 +148,13 @@ int main()
 
     return 0;
 }
+```
+</details>
+<details>
+  <summary>Rust (2024.04.03)</summary>
+
+```rust
+
 ```
 </details>
 
@@ -203,6 +217,13 @@ int main()
 }
 ```
 </details>
+<details>
+  <summary>Rust (2024.04.03)</summary>
+
+```rust
+
+```
+</details>
 
 
 ## [2903. PLANINA (중앙 이동 알고리즘)](#list)
@@ -234,6 +255,13 @@ int main()
 
     return 0;
 }
+```
+</details>
+<details>
+  <summary>Rust (2024.04.03)</summary>
+
+```rust
+
 ```
 </details>
 
@@ -290,6 +318,13 @@ int main()
 
     return 0;
 }
+```
+</details>
+<details>
+  <summary>Rust (2024.04.03)</summary>
+
+```rust
+
 ```
 </details>
 
@@ -376,6 +411,13 @@ int main()
 }
 ```
 </details>
+<details>
+  <summary>Rust (2024.04.03)</summary>
+
+```rust
+
+```
+</details>
 
 
 ## [2869. PUŽ (달팽이는 올라가고 싶다)](#list)
@@ -450,6 +492,336 @@ int main()
 
     // Output
     cout << day << endl;
+
+    return 0;
+}
+```
+</details>
+<details>
+  <summary>Rust (2024.04.03)</summary>
+
+```rust
+
+```
+</details>
+
+
+## [1011. Fly me to the Alpha Centauri](#list)
+
+```txt
+3
+0 3
+1 5
+45 50
+```
+```txt
+3
+3
+4
+```
+
+<details>
+  <summary>C++ - Trial 1 (2022.07.12)</summary>
+
+```cpp
+/*
+(ex) n = 3
+    1 + 2 + 1
+    = (1 + 2) * 2 - 2
+    = {(n + 1)/2 * [{(n + 1)/2 + 1}/2] * 2 - (n + 1)/2
+    * t = (n + 1)/2
+    = t * (t + 1) - t
+    = t^2
+    = {(n + 1)/2}^2
+
+(ex) n = 4
+    1 + 2 + 2 + 1
+    = (1 + 2) * 2
+    = {(n/2) * (n/2 + 1)}/2 * 2
+    = (n/2) * (n/2 + 1)
+    = (n^2 + 2n + 1 - 1)/4
+    = {(n + 1)^2 - 1}/4
+*/
+```
+```cpp
+#pragma GCC optimize ("O2")
+#pragma GCC target ("avx")
+
+#include <iostream>
+#include <cmath>
+#include<bits/stdc++.h>
+
+using namespace std;
+#define endl '\n'
+```
+```cpp
+int main()
+{
+    cin.tie(0);
+    ios::sync_with_stdio(false);
+
+    int T;
+    cin >> T;
+
+    // Test T times
+    for (int t = 0; t < T; t++)
+    {
+        int x, y;
+        cin >> x >> y;
+
+        int distance = y - x, move = 0, turn = 0;
+        while (true)
+        {
+            turn++;
+            
+            if (turn % 2 == 1) move = pow((turn + 1)/2, 2);
+            else move = (pow(turn + 1, 2) - 1)/4;
+
+            // test
+            cout << turn << " " << move << " " << distance << " " << move - distance << endl;
+
+            if (move >= distance) break;
+        }
+
+        // Output
+        cout << turn << endl;
+    }
+
+    return 0;
+}
+```
+> 1 1 3 -2  
+> 2 2 3 -1  
+> 3 4 3 1  
+> 3  
+> ……
+
+> Time Litmit Exceeded?
+</details>
+<details>
+  <summary>C++ - Trial 2 (2022.07.12)</summary>
+
+```cpp
+// n is even : distance = {(n + 1)/2}^2
+// → n = 2 * sqrt(distance) - 1
+// n is odd  : distance = {(n + 1)^2 - 1}/4
+```
+```cpp
+#pragma GCC optimize ("Ofast")
+……
+```
+```cpp
+        ……
+        int distance = y - x, move = 0;
+        int turn = 2 * sqrt(distance) - 2;
+        ……
+```
+> 2 2 3 -1  
+> 3 4 3 1  
+> 3  
+> 3 4 4 0  
+> 3  
+> 3 4 5 -1  
+> 4 6 5 1  
+> 4
+
+> Time Litmit Exceeded?
+</details>
+<details>
+  <summary>C++ - Trial 3 (2022.07.12)</summary>
+
+```cpp
+……
+using ll = long long;
+……
+```
+```cpp
+        ……
+        ll x, y;                            // int x, y : causes SOF!
+        ……
+
+        ll distance = y - x, move = 0;
+        ……
+```
+> Accepted
+</details>
+
+
+## [1712. 손익분기점](#list)
+
+```txt
+1000 70 170
+```
+```txt
+11
+```
+
+<details>
+  <summary>Bash (2022.03.11)</summary>
+
+```bash
+read a b c
+
+let "margin = c - b"
+
+if [ $margin -gt 0 ]; then
+    echo $((a / margin + 1))
+else
+    echo -1
+fi
+```
+</details>
+<details>
+  <summary>C++ (2022.07.12)</summary>
+
+```cpp
+int main()
+{
+    int a, b, c;
+    cin >> a >> b >> c;
+
+    int margin = c - b;
+    if (c - b > 0)                      // Find if price(c) - variable cost(b) > 0
+    {
+        cout << a / margin + 1 << endl;
+    } else                              // Never can reach BEP
+    {
+        cout << -1 << endl;
+    }
+
+    return 0;
+}
+```
+</details>
+
+
+## [2775. 부녀회장이 될테야](#list)
+
+```txt
+2  
+1  
+3  
+2  
+3
+```
+```txt
+6  
+10
+```
+
+<details>
+  <summary>Bash (2022.03.11)</summary>
+
+Rumor has it that there's a tricky way to use **2d array** in Bash although isn't supplied regularly, but I feel quite annoyed today ……
+</details>
+<details>
+  <summary>C++ (2022.07.12)</summary>
+
+```cpp
+int main()
+{
+    int T;
+    cin >> T;
+
+    // Test T times
+    for (int t = 0; t < T; t++)
+    {
+        int K, N;
+        cin >> K >> N;
+
+        int resident[15][15] = {};      // assumed 0-th floor and 0-th room
+        for (int k = 0; k <= K; k++)
+        {
+            for (int n = 0; n <= N; n++)
+            {
+                if (k == 0) resident[k][n] = n;
+                else if (n <= 1) resident[k][n] = n;
+                else resident[k][n] = resident[k-1][n] + resident[k][n-1];
+            }
+        }
+
+        // Output
+        cout << resident[K][N] << endl;
+    }
+
+    return 0;
+}
+```
+</details>
+
+
+## [10250. ACM Hotel (ACM 호텔)](#list)
+
+```txt
+2  
+6 12 10  
+30 50 72
+```
+```txt
+402  
+1203
+```
+
+<details>
+  <summary>Bash (2022.03.11)</summary>
+
+```bash
+read t
+
+for ((i = 0; i < t; i++))
+do
+    read h w n
+
+    let "room = (n - 1) / h + 1"
+    let "floor = n % h"
+
+    if [ $floor -eq 0 ]; then
+        let "floor = h"
+    fi
+
+    if [ $room -lt 10 ]; then
+        echo ${floor}0${room}
+    else
+        echo ${floor}${room}
+    fi
+done
+```
+</details>
+<details>
+  <summary>C++ (2022.07.12)</summary>
+
+```cpp
+int main()
+{
+    int T, H, W, N;
+    // T : the number of test cases
+    // H : the number of floors, < 99
+    // W : the number of rooms on each floor, < 99
+    // N : the index of the arrival time of the guest, < H * W 
+    cin >> T;
+
+    // Test T times
+    for (int t = 0; t < T; t++)
+    {
+        cin >> H >> W >> N;
+
+        // Operation
+        int room = (N - 1) / H + 1; // room is prior to floor
+        int floor = N % H;          // the first floor's room number is 1XX
+        if (floor == 0)
+        {
+            floor = H;
+        }
+
+        // Output
+        if (room < 10)
+        {
+            cout << floor << 0 << room << endl;
+        } else
+        {
+            cout << floor << room << endl;
+        }
+    }
 
     return 0;
 }
@@ -627,326 +999,4 @@ int main()
     return 0;
 }
 ```
-</details>
-
-
-## [1712. 손익분기점](#list)
-
-```txt
-1000 70 170
-```
-```txt
-11
-```
-
-<details>
-  <summary>Bash (2022.03.11)</summary>
-
-```bash
-read a b c
-
-let "margin = c - b"
-
-if [ $margin -gt 0 ]; then
-    echo $((a / margin + 1))
-else
-    echo -1
-fi
-```
-</details>
-<details>
-  <summary>C++ (2022.07.12)</summary>
-
-```cpp
-int main()
-{
-    int a, b, c;
-    cin >> a >> b >> c;
-
-    int margin = c - b;
-    if (c - b > 0)                      // Find if price(c) - variable cost(b) > 0
-    {
-        cout << a / margin + 1 << endl;
-    } else                              // Never can reach BEP
-    {
-        cout << -1 << endl;
-    }
-
-    return 0;
-}
-```
-</details>
-
-## [10250. ACM Hotel (ACM 호텔)](#list)
-
-```txt
-2  
-6 12 10  
-30 50 72
-```
-```txt
-402  
-1203
-```
-
-<details>
-  <summary>Bash (2022.03.11)</summary>
-
-```bash
-read t
-
-for ((i = 0; i < t; i++))
-do
-    read h w n
-
-    let "room = (n - 1) / h + 1"
-    let "floor = n % h"
-
-    if [ $floor -eq 0 ]; then
-        let "floor = h"
-    fi
-
-    if [ $room -lt 10 ]; then
-        echo ${floor}0${room}
-    else
-        echo ${floor}${room}
-    fi
-done
-```
-</details>
-<details>
-  <summary>C++ (2022.07.12)</summary>
-
-```cpp
-int main()
-{
-    int T, H, W, N;
-    // T : the number of test cases
-    // H : the number of floors, < 99
-    // W : the number of rooms on each floor, < 99
-    // N : the index of the arrival time of the guest, < H * W 
-    cin >> T;
-
-    // Test T times
-    for (int t = 0; t < T; t++)
-    {
-        cin >> H >> W >> N;
-
-        // Operation
-        int room = (N - 1) / H + 1; // room is prior to floor
-        int floor = N % H;          // the first floor's room number is 1XX
-        if (floor == 0)
-        {
-            floor = H;
-        }
-
-        // Output
-        if (room < 10)
-        {
-            cout << floor << 0 << room << endl;
-        } else
-        {
-            cout << floor << room << endl;
-        }
-    }
-
-    return 0;
-}
-```
-</details>
-
-
-## [2775. 부녀회장이 될테야](#list)
-
-```txt
-2  
-1  
-3  
-2  
-3
-```
-```txt
-6  
-10
-```
-
-<details>
-  <summary>Bash (2022.03.11)</summary>
-
-Rumor has it that there's a tricky way to use **2d array** in Bash although isn't supplied regularly, but I feel quite annoyed today ……
-</details>
-<details>
-  <summary>C++ (2022.07.12)</summary>
-
-```cpp
-int main()
-{
-    int T;
-    cin >> T;
-
-    // Test T times
-    for (int t = 0; t < T; t++)
-    {
-        int K, N;
-        cin >> K >> N;
-
-        int resident[15][15] = {};      // assumed 0-th floor and 0-th room
-        for (int k = 0; k <= K; k++)
-        {
-            for (int n = 0; n <= N; n++)
-            {
-                if (k == 0) resident[k][n] = n;
-                else if (n <= 1) resident[k][n] = n;
-                else resident[k][n] = resident[k-1][n] + resident[k][n-1];
-            }
-        }
-
-        // Output
-        cout << resident[K][N] << endl;
-    }
-
-    return 0;
-}
-```
-</details>
-
-
-## [1011. Fly me to the Alpha Centauri](#list)
-
-```txt
-3
-0 3
-1 5
-45 50
-```
-```txt
-3
-3
-4
-```
-
-<details>
-  <summary>C++ - Trial 1 (2022.07.12)</summary>
-
-```cpp
-/*
-(ex) n = 3
-    1 + 2 + 1
-    = (1 + 2) * 2 - 2
-    = {(n + 1)/2 * [{(n + 1)/2 + 1}/2] * 2 - (n + 1)/2
-    * t = (n + 1)/2
-    = t * (t + 1) - t
-    = t^2
-    = {(n + 1)/2}^2
-
-(ex) n = 4
-    1 + 2 + 2 + 1
-    = (1 + 2) * 2
-    = {(n/2) * (n/2 + 1)}/2 * 2
-    = (n/2) * (n/2 + 1)
-    = (n^2 + 2n + 1 - 1)/4
-    = {(n + 1)^2 - 1}/4
-*/
-```
-```cpp
-#pragma GCC optimize ("O2")
-#pragma GCC target ("avx")
-
-#include <iostream>
-#include <cmath>
-#include<bits/stdc++.h>
-
-using namespace std;
-#define endl '\n'
-```
-```cpp
-int main()
-{
-    cin.tie(0);
-    ios::sync_with_stdio(false);
-
-    int T;
-    cin >> T;
-
-    // Test T times
-    for (int t = 0; t < T; t++)
-    {
-        int x, y;
-        cin >> x >> y;
-
-        int distance = y - x, move = 0, turn = 0;
-        while (true)
-        {
-            turn++;
-            
-            if (turn % 2 == 1) move = pow((turn + 1)/2, 2);
-            else move = (pow(turn + 1, 2) - 1)/4;
-
-            // test
-            cout << turn << " " << move << " " << distance << " " << move - distance << endl;
-
-            if (move >= distance) break;
-        }
-
-        // Output
-        cout << turn << endl;
-    }
-
-    return 0;
-}
-```
-> 1 1 3 -2  
-> 2 2 3 -1  
-> 3 4 3 1  
-> 3  
-> ……
-
-> Time Litmit Exceeded?
-</details>
-<details>
-  <summary>C++ - Trial 2 (2022.07.12)</summary>
-
-```cpp
-// n is even : distance = {(n + 1)/2}^2
-// → n = 2 * sqrt(distance) - 1
-// n is odd  : distance = {(n + 1)^2 - 1}/4
-```
-```cpp
-#pragma GCC optimize ("Ofast")
-……
-```
-```cpp
-        ……
-        int distance = y - x, move = 0;
-        int turn = 2 * sqrt(distance) - 2;
-        ……
-```
-> 2 2 3 -1  
-> 3 4 3 1  
-> 3  
-> 3 4 4 0  
-> 3  
-> 3 4 5 -1  
-> 4 6 5 1  
-> 4
-
-> Time Litmit Exceeded?
-</details>
-<details>
-  <summary>C++ - Trial 3 (2022.07.12)</summary>
-
-```cpp
-……
-using ll = long long;
-……
-```
-```cpp
-        ……
-        ll x, y;                            // int x, y : causes SOF!
-        ……
-
-        ll distance = y - x, move = 0;
-        ……
-```
-> Accepted
 </details>

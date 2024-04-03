@@ -91,7 +91,32 @@ int main()
   <summary>Rust (2024.04.03)</summary>
 
 ```rust
+fn main()
+{
+    // let test: bool = true;
+    let test: bool = false;
 
+    // Input n & b
+    let mut input = String::new();
+    io::stdin().read_line(&mut input).unwrap();
+    let mut iter = input.split_whitespace(); 
+    let n: Vec<char> = iter.next().unwrap().chars().collect();
+    let b: u32 = iter.next().unwrap().parse().unwrap();
+
+    // Convert n to decimal
+    let mut ans = 0;
+    let len = n.len();
+    for i in 0..len
+    {
+        let c = if n[len-i-1] >= 'A' { n[len-i-1] as u32 - 'A' as u32 + 10 }
+                else { n[len-i-1] as u32 - '0' as u32 };
+        ans += c * (b as u32).pow(i as u32);
+        if test { println!("{} : {} {} {}", i, n[len-i-1], c, ans); }
+    }
+
+    // Output
+    println!("{}", ans);
+}
 ```
 </details>
 
@@ -154,7 +179,33 @@ int main()
   <summary>Rust (2024.04.03)</summary>
 
 ```rust
+fn main()
+{
+    // let test: bool = true;
+    let test: bool = false;
 
+    // Input n & b
+    let mut input = String::new();
+    io::stdin().read_line(&mut input).unwrap();
+    let mut iter = input.split_whitespace(); 
+    let mut n: u32 = iter.next().unwrap().parse().unwrap();
+    let b: u32 = iter.next().unwrap().parse().unwrap();
+
+    // Convert n to decimal
+    let mut ans: String = String::new();
+    while n > 0
+    {
+        let remainder: u32 = n % b;
+        let c: char = if remainder >= 10 { char::from_u32(remainder - 10 + 'A' as u32).unwrap() }
+                else { char::from_u32(remainder + '0' as u32).unwrap() };
+        ans = c.to_string() + &ans;
+        n /= b;
+        if test { println!("{} : {} {} {}", n, remainder, c, ans); }
+    }
+
+    // Output
+    println!("{}", ans);
+}
 ```
 </details>
 
@@ -221,7 +272,36 @@ int main()
   <summary>Rust (2024.04.03)</summary>
 
 ```rust
+fn main()
+{
+    // let test: bool = true;
+    let test: bool = false;
 
+    let mut t = String::new();
+    io::stdin().read_line(&mut t).unwrap();
+    let t: u32 = t.trim().to_string().parse().unwrap();
+
+    for _ in 0..t
+    {
+        // Input c
+        let mut c = String::new();
+        io::stdin().read_line(&mut c).unwrap();
+        let mut c: u32 = c.trim().to_string().parse().unwrap();
+
+        // Count coins
+        let mut count = vec![0; 4];
+        let coin = vec![25, 10, 5, 1];
+        for i in 0..4
+        {
+            count[i] = c / coin[i];
+            c %= coin[i];
+            if test { println!("{} : {} {} {}", i, c, coin[i], count[i]); }
+        }
+
+        // Output
+        println!("{} {} {} {}", count[0], count[1], count[2], count[3]);
+    }
+}
 ```
 </details>
 
@@ -261,7 +341,23 @@ int main()
   <summary>Rust (2024.04.03)</summary>
 
 ```rust
+// 0 >    4 =  2^2 = (2^0 + 1)^2
+// 1 >    9 =  3^2 = (2^1 + 1)^2
+// 2 >   25 =  5^2 = (2^2 + 1)^2
+// 5 > 1089 = 33^2 = (2^5 + 1)^2
+```
+```rust
+fn main()
+{
+    // Input n
+    let mut n = String::new();
+    io::stdin().read_line(&mut n).unwrap();
+    let n: u32 = n.trim().to_string().parse().unwrap();
 
+    // Output
+    let ans: u32 = ((2 as u32).pow(n) + 1).pow(2);
+    println!("{}", ans);
+}
 ```
 </details>
 
@@ -324,7 +420,36 @@ int main()
   <summary>Rust (2024.04.03)</summary>
 
 ```rust
+// 1 > 1
+// 2 > 1 + 6 = 7
+// 3 > 1 + 6 + 12 = 19
+// 4 > 1 + 6 + 12 + 18 = 37
+```
+```rust
+fn main()
+{
+    // let test: bool = true;
+    let test: bool = false;
 
+    // Input n
+    let mut n = String::new();
+    io::stdin().read_line(&mut n).unwrap();
+    let n: u32 = n.trim().to_string().parse().unwrap();
+
+    // Calc.
+    let mut ans: u32 = 1;
+    let mut benchmark: u32 = 1;
+    while n > benchmark
+    {
+        ans += 1;
+        benchmark += 6 * (ans - 1);
+
+        if test { println!("{} : {} {}", ans, benchmark, n); }
+    }
+
+    // Output
+    println!("{}", ans);
+}
 ```
 </details>
 
@@ -415,7 +540,42 @@ int main()
   <summary>Rust (2024.04.03)</summary>
 
 ```rust
+fn main()
+{
+    // let test: bool = true;
+    let test: bool = false;
 
+    // Input n
+    let mut n = String::new();
+    io::stdin().read_line(&mut n).unwrap();
+    let n: u32 = n.trim().to_string().parse().unwrap();
+
+    // Calc.
+    let mut diag: u32 = 0;
+    let mut benchmark: u32 = 0;
+    while n > benchmark
+    {
+        diag += 1;
+        benchmark += diag;
+
+        if test { println!("{} : {} {}", diag, benchmark, n); }
+    }
+    let ans1: u32;
+    let ans2: u32;
+    if diag % 2 != 0
+    {
+        ans1 = benchmark - n + 1;
+        ans2 = diag + 1 - ans1;
+    }
+    else
+    {
+        ans2 = benchmark - n + 1;
+        ans1 = diag + 1 - ans2;
+    }
+
+    // Output
+    println!("{}/{}", ans1, ans2);
+}
 ```
 </details>
 
@@ -501,7 +661,23 @@ int main()
   <summary>Rust (2024.04.03)</summary>
 
 ```rust
+fn main()
+{
+    // Input a, b & v
+    let mut input = String::new();
+    io::stdin().read_line(&mut input).unwrap();
+    let mut iter = input.split_whitespace(); 
+    let a: u32 = iter.next().unwrap().parse().unwrap();
+    let b: u32 = iter.next().unwrap().parse().unwrap();
+    let v: u32 = iter.next().unwrap().parse().unwrap();
 
+    // Calc. without while loop
+    let mut day: u32 = (v - a) / (a - b) + 1;
+    if (v - a) % (a - b) != 0 { day += 1; }
+
+    // Output
+    println!("{}", day);
+}
 ```
 </details>
 

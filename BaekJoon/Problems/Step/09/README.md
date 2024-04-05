@@ -26,10 +26,10 @@ https://www.acmicpc.net/step/10
 
 **※ Note**
 
-&nbsp;&nbsp; - All the codes of any language for the same problem have basically the same result.  
-&nbsp;&nbsp; - Typical headers like the below are basically skipped, but they are noted seperately when there are any additional line.  
-&nbsp;&nbsp;&nbsp;&nbsp; · `C++` : `#include <iostream>` `#define endl '\n';` `using namespace std;`  
-
+&nbsp;&nbsp; - All the code of any language for the same problem has basically the same result.  
+&nbsp;&nbsp; - Typical headers like the below are basically skipped, but they are noted seperately when there are any additional line. 
+&nbsp;&nbsp;&nbsp;&nbsp; · *C++* : `#include <iostream>` `#define endl '\n';` `using namespace std;`  
+&nbsp;&nbsp;&nbsp;&nbsp; · *Rust* : `use std::io;`  
 
 
 ## [5086. Factors And Multiples (배수와 약수)](#list)
@@ -46,7 +46,9 @@ multiple
 neither
 ```
 
-#### C++ (2023.07.02)
+<details>
+  <summary>C++ (2023.07.02)</summary>
+
 ```cpp
 int main()
 {
@@ -65,6 +67,7 @@ int main()
     return 0;
 }
 ```
+</details>
 
 
 ## [2501. 약수 구하기](#list)
@@ -76,7 +79,9 @@ int main()
 3
 ```
 
-#### C++ (2023.07.02)
+<details>
+  <summary>C++ (2023.07.02)</summary>
+
 ```cpp
 int main()
 {
@@ -110,6 +115,7 @@ int main()
     return 0;
 }
 ```
+</details>
 
 
 ## [9506. Federation Favorites (약수들의 합)](#list)
@@ -126,7 +132,9 @@ int main()
 28 = 1 + 2 + 4 + 7 + 14
 ```
 
-#### C++ (2023.07.02)
+<details>
+  <summary>C++ (2023.07.02)</summary>
+
 ```cpp
 #include <iostream>
 #include <vector>
@@ -173,6 +181,7 @@ int main()
     return 0;
 }
 ```
+</details>
 
 
 ## [1978. 소수 찾기](#list)
@@ -184,7 +193,9 @@ int main()
 1 3 5 7
 ```
 
-#### C++ (2021.07.19)
+<details>
+  <summary>C++ (2023.07.19)</summary>
+
 ```cpp
 #include <iostream>
 #include <vector>
@@ -233,6 +244,7 @@ int main()
     return 0;
 }
 ```
+</details>
 
 
 ## [2581. 소수](#list)
@@ -246,7 +258,9 @@ int main()
 61
 ```
 
-#### C++ (2021.07.19)
+<details>
+  <summary>C++ (2023.07.19)</summary>
+
 ```cpp
 int main()
 {
@@ -287,6 +301,7 @@ int main()
     return 0;
 }
 ```
+</details>
 
 
 ## [11653. 소인수분해](#list)
@@ -302,7 +317,9 @@ int main()
 3
 ```
 
-#### C++ (2021.07.19)
+<details>
+  <summary>C++ (2023.07.19)</summary>
+
 ```cpp
 int main()
 {
@@ -325,6 +342,7 @@ int main()
     return 0;
 }
 ```
+</details>
 
 
 ## [9020. Goldbach’s Conjecture (골드바흐의 추측)](#list)
@@ -341,7 +359,9 @@ int main()
 5 11
 ```
 
-#### C++ (2021.07.19)
+<details>
+  <summary>C++ (2023.07.19)</summary>
+
 ```cpp
 int main()
 {
@@ -399,6 +419,7 @@ int main()
     return 0;
 }
 ```
+</details>
 
 
 ## [4153. Egypt (직각삼각형)](#list)
@@ -415,7 +436,9 @@ wrong
 right
 ```
 
-#### C++ (2021.07.20)
+<details>
+  <summary>C++ (2023.07.20)</summary>
+
 ```cpp
 #include <iostream>
 // #include <array>     // not used, but use legacy array
@@ -452,6 +475,7 @@ int main()
     return 0;
 }
 ```
+</details>
 
 
 ## [3053. HERMAN (택시 기하학)](#list)
@@ -464,7 +488,9 @@ int main()
 882.000000
 ```
 
-#### C++ (2021.07.20)
+<details>
+  <summary>C++ (2023.07.20)</summary>
+
 ```cpp
 #define _USE_MATH_DEFINES   // for using the exact pi value(M_PI)
 
@@ -490,6 +516,7 @@ int main()
     return 0;
 }
 ```
+</details>
 
 
 ## [1002. 터렛](#list)
@@ -509,7 +536,9 @@ int main()
 0
 ```
 
-#### C++ (2021.07.20)
+<details>
+  <summary>C++ (2023.07.20)</summary>
+
 ```cpp
 #include <iostream>
 #include <cmath>        // pow()
@@ -547,3 +576,4 @@ int main()
     return 0;
 }
 ```
+</details>

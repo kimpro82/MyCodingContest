@@ -68,6 +68,31 @@ int main()
 }
 ```
 </details>
+<details>
+  <summary>Rust (2024.04.05)</summary>
+
+```rust
+fn main()
+{
+    loop
+    {
+        let mut input = String::new();
+        io::stdin().read_line(&mut input).unwrap();
+        let mut iter = input.split_whitespace();
+        let a: i32 = iter.next().unwrap().parse().unwrap();
+        let b: i32 = iter.next().unwrap().parse().unwrap();
+
+        if a == 0 && b == 0 { break; }
+        else
+        {
+            if a > b && a % b == 0 { println!("multiple") }
+            else if a < b && b % a == 0 { println!("factor") }
+            else { println!("neither") }
+        };
+    }
+}
+```
+</details>
 
 
 ## [2501. 약수 구하기](#list)
@@ -113,6 +138,39 @@ int main()
 
     cout << 0 << endl;
     return 0;
+}
+```
+</details>
+<details>
+  <summary>Rust (2024.04.05)</summary>
+
+```rust
+fn main()
+{
+    // Input n, k
+    let mut input = String::new();
+    io::stdin().read_line(&mut input).unwrap();
+    let mut iter = input.split_whitespace();
+    let n: i32 = iter.next().unwrap().parse().unwrap();
+    let k: i32 = iter.next().unwrap().parse().unwrap();
+
+    // Calc. and Output
+    let mut cnt: i32 = 0;
+    for i in 1..=n
+    {
+        if n % i == 0
+        {
+            cnt += 1;
+            if cnt == k
+            {
+                println!("{}", i);                          // i, not cnt
+                return;
+            }
+        }
+    }
+
+    // Output when k is not in [1, n]
+    println!("0");
 }
 ```
 </details>
@@ -182,6 +240,49 @@ int main()
 }
 ```
 </details>
+<details>
+  <summary>Rust (2024.04.05)</summary>
+
+```rust
+fn main()
+{
+    // let test: bool = true;
+    let test: bool = false;
+
+    loop
+    {
+        // Input n
+        let mut input = String::new();
+        io::stdin().read_line(&mut input).unwrap();
+        let n: i32 = input.trim().parse().unwrap();
+
+        if n == -1 { break; }
+        else
+        {
+            // Calc.
+            let mut sum: i32 = 1;
+            let mut str: String = format!("{} = 1", n);
+            for i in 2..=n/2
+            {
+                if n % i == 0
+                {
+                    sum += i;
+                    str += &format!(" + {}", i);
+                }
+                // Test
+                if test { println!("{} : {} {}", i, sum, n); }
+
+                if sum > n { break; }
+            }
+
+            // Output
+            if sum == n { println!("{}", str); }
+            else { println!("{} is NOT perfect.", n)}
+        }
+    }
+}
+```
+</details>
 
 
 ## [1978. 소수 찾기](#list)
@@ -245,6 +346,51 @@ int main()
 }
 ```
 </details>
+<details>
+  <summary>Rust (2024.04.05)</summary>
+
+```rust
+fn is_prime(num: i32, test: bool) -> bool
+{
+    if num == 1 { return false; }
+    else if num == 2 { return true; }                       // crazy
+    else
+    {
+        for i in 2..=(num as f32).sqrt().ceil() as i32
+        {
+            if test { println!("{} % {} = {}", num, i, num % i); }
+            if num % i == 0 { return false; }
+        }
+        return true;
+    }
+}
+```
+```rust
+fn main()
+{
+    // let test: bool = true;
+    let test: bool = false;
+
+    // Input n and n numbers
+    let mut n = String::new();                              // not use
+    let mut nums = String::new();
+    io::stdin().read_line(&mut n).unwrap();
+    io::stdin().read_line(&mut nums).unwrap();
+    let nums: Vec<i32> = nums.split_whitespace()
+        .map(|s| s.parse().unwrap()).collect();
+
+    // Count the number of prime numbers
+    let mut cnt: i32 = 0;
+    for i in 0..nums.len()
+    {
+        if is_prime(nums[i], test) { cnt += 1; }
+    }
+
+    // Output
+    println!("{}", cnt);
+}
+```
+</details>
 
 
 ## [2581. 소수](#list)
@@ -302,6 +448,49 @@ int main()
 }
 ```
 </details>
+<details>
+  <summary>Rust (2024.04.05)</summary>
+
+```rust
+fn is_prime(num: i32, test: bool) -> bool
+{
+    // The same with the above answer
+    ……
+}
+```
+```rust
+fn main()
+{
+    // let test: bool = true;
+    let test: bool = false;
+
+    // Input m, n
+    let mut m = String::new();
+    let mut n = String::new();
+    io::stdin().read_line(&mut m).unwrap();
+    io::stdin().read_line(&mut n).unwrap();
+    let m: i32 = m.trim().parse().unwrap();
+    let n: i32 = n.trim().parse().unwrap();
+
+    // Calc.
+    let mut sum: i32 = 0;
+    let mut min: i32 = 0;
+    for i in m..=n
+    {
+        if is_prime(i, test)
+        {
+            sum += i;
+            if min == 0 { min = i; }
+        }
+    }
+
+    // Output
+    if sum > 0 { println!("{}\n{}", sum, min); }
+    else       { println!("-1"); }
+}
+```
+
+</details>
 
 
 ## [11653. 소인수분해](#list)
@@ -340,6 +529,41 @@ int main()
     }
 
     return 0;
+}
+```
+</details>
+<details>
+  <summary>Rust (2024.04.05)</summary>
+
+```rust
+fn main()
+{
+    // let test: bool = true;
+    let test: bool = false;
+
+    // Input n
+    let mut n = String::new();
+    io::stdin().read_line(&mut n).unwrap();
+    let mut n: i32 = n.trim().parse().unwrap();
+
+    // Calc. and Output
+    let m: i32 = (n as f32).sqrt().ceil() as i32;
+    for mut i in 2..=n
+    {
+        if i > m { i = n; }                                 // for performance
+        loop
+        {
+            if n % i == 0
+            {
+                n /= i;
+                
+                if test { println!("{} : {}", i, n); }
+                else    { println!("{}", i); }
+            }
+            else { break; }
+        }
+        if n == 1 { return; }
+    }
 }
 ```
 </details>

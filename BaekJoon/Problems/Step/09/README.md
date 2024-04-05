@@ -1,25 +1,26 @@
 ## [BAEKJOON Online Judge](/README.md#baekjoon-online-judge)
 
-# 문제 > 단계별로 풀어보기 > 9. 일반 수학 2 : 약수, 배수와 소수
+# 문제 > 단계별로 풀어보기 > 약수, 배수와 소수
 
 https://www.acmicpc.net/step/10
 
 (2021.07.19, 2023.07.02) - `C++`  
+(2024.04.06) - `Rust`  
 
 
 ## **List**
 
-- [5086. Factors And Multiples(배수와 약수)](#5086-factors-and-multiples배수와-약수) *(new)*
+- [5086. Factors And Multiples (배수와 약수)](#5086-factors-and-multiples-배수와-약수) *(new)*
 - [2501. 약수 구하기](#2501-약수-구하기) *(new)*
-- [9506. Federation Favorites(약수들의 합)](#9506-federation-favorites약수들의-합) *(new)*
+- [9506. Federation Favorites (약수들의 합)](#9506-federation-favorites-약수들의-합) *(new)*
 - [1978. 소수 찾기](#1978-소수-찾기)
 - [2581. 소수](#2581-소수)
 - [11653. 소인수분해](#11653-소인수분해)
 
 #### (Depreciated)
-- [9020. Goldbach’s Conjecture(골드바흐의 추측)](#9020-goldbachs-conjecture골드바흐의-추측)
-- [4153. Egypt(직각삼각형)](#4153-egypt직각삼각형)
-- [3053. HERMAN(택시 기하학)](#3053-herman택시-기하학)
+- [9020. Goldbach’s Conjecture (골드바흐의 추측)](#9020-goldbachs-conjecture-골드바흐의-추측)
+- [4153. Egypt (직각삼각형)](#4153-egypt-직각삼각형)
+- [3053. HERMAN (택시 기하학)](#3053-herman-택시-기하학)
 - [1002. 터렛](#1002-터렛)
 
 
@@ -31,7 +32,7 @@ https://www.acmicpc.net/step/10
 
 
 
-## [5086. Factors And Multiples(배수와 약수)](#list)
+## [5086. Factors And Multiples (배수와 약수)](#list)
 
 ```txt
 8 16
@@ -111,7 +112,7 @@ int main()
 ```
 
 
-## [9506. Federation Favorites(약수들의 합)](#list)
+## [9506. Federation Favorites (약수들의 합)](#list)
 
 ```txt
 6
@@ -176,13 +177,12 @@ int main()
 
 ## [1978. 소수 찾기](#list)
 
-> 4  
-> 1 3 5 7
-
-> 1 3 1  
-> 2 5 2  
-> 3 7 3  
-> 3
+```txt
+4
+```
+```txt
+1 3 5 7
+```
 
 #### C++ (2021.07.19)
 ```cpp
@@ -237,15 +237,14 @@ int main()
 
 ## [2581. 소수](#list)
 
-> 60  
-> 100
-
-> 61 61 61  
-> 67 128 61  
-> ……  
-> 97 620 61  
-> 620  
-> 61
+```txt
+60
+100
+```
+```txt
+620
+61
+```
 
 #### C++ (2021.07.19)
 ```cpp
@@ -292,13 +291,16 @@ int main()
 
 ## [11653. 소인수분해](#list)
 
-> 72
-
-> 2  
-> 2  
-> 2  
-> 3  
-> 3
+```txt
+72
+```
+```txt
+2
+2
+2
+3
+3
+```
 
 #### C++ (2021.07.19)
 ```cpp
@@ -325,16 +327,19 @@ int main()
 ```
 
 
-## [9020. Goldbach’s Conjecture(골드바흐의 추측)](#list)
+## [9020. Goldbach’s Conjecture (골드바흐의 추측)](#list)
 
-> 3  
-> 8  
-> 10  
-> 16
-
-> 3 5  
-> 5 5  
-> 5 11
+```txt
+3
+8
+10
+16
+```
+```txt
+3 5
+5 5
+5 11
+```
 
 #### C++ (2021.07.19)
 ```cpp
@@ -396,16 +401,19 @@ int main()
 ```
 
 
-## [4153. Egypt(직각삼각형)](#list)
+## [4153. Egypt (직각삼각형)](#list)
 
-> 6 8 10  
-> 25 52 60  
-> 5 12 13  
-> 0 0 0
-
-> right  
-> wrong  
-> right
+```txt
+6 8 10
+25 52 60
+5 12 13
+0 0 0
+```
+```txt
+right
+wrong
+right
+```
 
 #### C++ (2021.07.20)
 ```cpp
@@ -446,12 +454,15 @@ int main()
 ```
 
 
-## [3053. HERMAN(택시 기하학)](#list)
+## [3053. HERMAN (택시 기하학)](#list)
 
-> 21
-
-> 1385.442360  
-> 882.000000
+```txt
+21
+```
+```txt
+1385.442360
+882.000000
+```
 
 #### C++ (2021.07.20)
 ```cpp
@@ -483,17 +494,20 @@ int main()
 
 ## [1002. 터렛](#list)
 
-> 3  
-> 0 0 13 40 0 37  
-> 0 0 3 0 7 4  
-> 1 1 1 1 1 5
-
-> 1600 2500 576  
-> 2  
-> 49 49 1  
-> 1  
-> 0 36 16  
-> 0
+```txt
+3
+0 0 13 40 0 37
+0 0 3 0 7 4
+1 1 1 1 1 5
+```
+```txt
+1600 2500 576
+2
+49 49 1
+1
+0 36 16
+0
+```
 
 #### C++ (2021.07.20)
 ```cpp

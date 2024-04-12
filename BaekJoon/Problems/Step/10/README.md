@@ -37,7 +37,9 @@ https://www.acmicpc.net/step/50
 6
 ```
 
-#### C++ (2023.07.02)
+<details>
+  <summary>C++ (2023.07.02)</summary>
+
 ```cpp
 int main()
 {
@@ -50,6 +52,7 @@ int main()
     return 0;
 }
 ```
+</details>
 
 
 ## [1085. 직사각형에서 탈출](#list)
@@ -62,7 +65,9 @@ int main()
 1
 ```
 
-#### C++ (2021.07.19)
+<details>
+  <summary>C++ (2021.07.19)</summary>
+
 ```cpp
 int main()
 {
@@ -77,6 +82,7 @@ int main()
     return 0;
 }
 ```
+</details>
 
 
 ## [3009. CETVRTA (네 번째 점)](#list)
@@ -90,7 +96,9 @@ int main()
 7 7
 ```
 
-#### C++ - Trial 1 (2021.07.20)
+<details>
+  <summary>C++ - Trial 1 (2021.07.20)</summary>
+
 ```cpp
 #include <iostream>
 #include <map>
@@ -121,6 +129,7 @@ int main()
     return 0;
 }
 ```
+</details>
 > 5 5  
 > 5 7  
 > 7 5
@@ -128,7 +137,9 @@ int main()
 > 5 1  
 > 7 1
 
-#### C++ - Trial 2 (2021.07.20)
+<details>
+  <summary>C++ - Trial 2 (2021.07.20)</summary>
+
 ```cpp
 #include <iostream>
 #include <array>
@@ -171,6 +182,7 @@ int main()
     return 0;
 }
 ```
+</details>
 > x : 5 2  
 > y : 5 2  
 > x : 7 1  
@@ -187,7 +199,9 @@ int main()
 12
 ```
 
-#### C++ (2023.07.02)
+<details>
+  <summary>C++ (2023.07.02)</summary>
+
 ```cpp
 #include <iostream>
 
@@ -209,6 +223,7 @@ int main()
     return 0;
 }
 ```
+</details>
 
 
 ## [9063. 대지](#list)
@@ -223,7 +238,9 @@ int main()
 360
 ```
 
-#### C++ (2023.07.02)
+<details>
+  <summary>C++ (2023.07.02)</summary>
+
 ```cpp
 #include <iostream>
 
@@ -263,6 +280,7 @@ int main()
     return 0;
 }
 ```
+</details>
 
 
 ## [10101. Triangle Times (삼각형 외우기)](#list)
@@ -276,7 +294,9 @@ int main()
 Scalene
 ```
 
-#### C++ (2023.07.02)
+<details>
+  <summary>C++ (2023.07.02)</summary>
+
 ```cpp
 int main()
 {
@@ -299,6 +319,7 @@ int main()
     return 0;
 }
 ```
+</details>
 
 
 ## [5073. Triangles (삼각형과 세 변)](#list)
@@ -317,7 +338,9 @@ Invalid
 Isosceles
 ```
 
-#### C++ (2023.07.02)
+<details>
+  <summary>C++ (2023.07.02)</summary>
+
 ```cpp
 #include <iostream>
 #include <vector>
@@ -360,6 +383,7 @@ int main()
     return 0;
 }
 ```
+</details>
 
 
 ## [14215. 세 막대](#list)
@@ -371,7 +395,9 @@ int main()
 113
 ```
 
-#### C++ (2023.07.02)
+<details>
+  <summary>C++ (2023.07.02)</summary>
+
 ```cpp
 #include <iostream>
 #include <vector>
@@ -404,3 +430,4 @@ int main()
     return 0;
 }
 ```
+</details>

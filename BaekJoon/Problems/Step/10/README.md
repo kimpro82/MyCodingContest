@@ -5,6 +5,7 @@
 https://www.acmicpc.net/step/50
 
 (2023.07.02) - `C++`  
+(2024.04.12) - `Rust`  
 
 
 ## **List**
@@ -21,9 +22,10 @@ https://www.acmicpc.net/step/50
 
 **※ Note**
 
-&nbsp;&nbsp; - All the codes of any language for the same problem have basically the same result.  
+&nbsp;&nbsp; - All the code of any language for the same problem has basically the same result.  
 &nbsp;&nbsp; - Typical headers like the below are basically skipped, but they are noted seperately when there are any additional line.  
-&nbsp;&nbsp;&nbsp;&nbsp; · `C++` : `#include <iostream>` `#define endl '\n';` `using namespace std;`  
+&nbsp;&nbsp;&nbsp;&nbsp; · *C++* : `#include <iostream>` `#define endl '\n';` `using namespace std;`  
+&nbsp;&nbsp;&nbsp;&nbsp; · *Rust* : `use std::io;`  
 
 
 
@@ -50,6 +52,25 @@ int main()
     // Output
     cout << a * b << endl;
     return 0;
+}
+```
+</details>
+<details>
+  <summary>Rust (2024.04.12)</summary>
+
+```rust
+fn main()
+{
+    // Input a, b
+    let mut a = String::new();
+    let mut b = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    io::stdin().read_line(&mut b).unwrap();
+    let a: i32 = a.trim().parse().unwrap();
+    let b: i32 = b.trim().parse().unwrap();
+
+    // Output
+    println!("{}", a * b);
 }
 ```
 </details>
@@ -80,6 +101,37 @@ int main()
     cout << minValue << endl;
 
     return 0;
+}
+```
+</details>
+<details>
+  <summary>Rust (2024.04.12)</summary>
+
+```rust
+……
+use std::cmp::min;
+```
+```rust
+fn main()
+{
+    // Input x, y, w, h
+    let mut input = String::new();
+    io::stdin().read_line(&mut input).unwrap();
+    let mut iter = input.split_whitespace();
+    let x: i32 = iter.next().unwrap().parse().unwrap();
+    let y: i32 = iter.next().unwrap().parse().unwrap();
+    let w: i32 = iter.next().unwrap().parse().unwrap();
+    let h: i32 = iter.next().unwrap().parse().unwrap();
+
+    // Calc.
+    let mut ans: i32 = 1_000;
+    ans = min(x, ans);
+    ans = min(y, ans);
+    ans = min(w - x, ans);
+    ans = min(h - y, ans);
+
+    // Output
+    println!("{}", ans);
 }
 ```
 </details>
@@ -191,6 +243,50 @@ int main()
 > y : 7 1  
 > 7 7
 
+<details>
+  <summary>Rust (2024.04.12)</summary>
+
+```rust
+……
+use std::collections::HashMap;
+```
+```rust
+fn main()
+{
+    // let test: bool = true;
+    let test: bool = false;
+
+    // Input
+    let mut x_map = HashMap::new();
+    let mut y_map = HashMap::new();
+    for _ in 0..3
+    {
+        let mut input = String::new();
+        io::stdin().read_line(&mut input).unwrap();
+        let mut iter = input.split_whitespace();
+        let x: i32 = iter.next().unwrap().parse().unwrap();
+        let y: i32 = iter.next().unwrap().parse().unwrap();
+
+        if test { println!("{} {}", x, y); }
+
+        if x_map.get(&x) == None { x_map.insert(x, 1); }
+        else { x_map.insert(x, 2); }                        // hope cnt + 1, not 2
+        if y_map.get(&y) == None { y_map.insert(y, 1); }
+        else { y_map.insert(y, 2); }
+    }
+
+    // Find the answer
+    let mut x_ans: i32 = 0;
+    let mut y_ans: i32 = 0;
+    for (k, v) in x_map.iter() { if *v == 1 { x_ans = *k; } }
+    for (k, v) in y_map.iter() { if *v == 1 { y_ans = *k; } }
+
+    // Output
+    println!("{} {}", x_ans, y_ans);
+}
+```
+</details>
+
 
 ## [15894. 수학은 체육과목 입니다](#list)
 
@@ -223,6 +319,22 @@ int main()
     cout << n * 4 << endl;
 
     return 0;
+}
+```
+</details>
+<details>
+  <summary>Rust (2024.04.12)</summary>
+
+```rust
+fn main()
+{
+    // Input n
+    let mut n = String::new();
+    io::stdin().read_line(&mut n).unwrap();
+    let n: i64 = n.trim().parse().unwrap();
+
+    // Output
+    println!("{}", n * 4);
 }
 ```
 </details>
@@ -283,6 +395,46 @@ int main()
 }
 ```
 </details>
+<details>
+  <summary>Rust (2024.04.12)</summary>
+
+```rust
+……
+use std::cmp;
+```
+```rust
+fn main()
+{
+
+    let mut n = String::new();
+    io::stdin().read_line(&mut n).unwrap();
+    let n: i32 = n.trim().parse().unwrap();
+
+    // Input x, y n times
+    let mut x_min = 10_000;
+    let mut x_max = -10_000;
+    let mut y_min = 10_000;
+    let mut y_max = -10_000;
+    for _ in 0..n
+    {
+        let mut input = String::new();
+        io::stdin().read_line(&mut input).unwrap();
+        let mut iter = input.split_whitespace();
+        let x: i64 = iter.next().unwrap().parse().unwrap();
+        let y: i64 = iter.next().unwrap().parse().unwrap();
+
+        x_min = cmp::min(x_min, x);
+        x_max = cmp::max(x_max, x);
+        y_min = cmp::min(y_min, y);
+        y_max = cmp::max(y_max, y);
+    }
+
+    // Output
+    let ans: i64 = (x_max - x_min) * (y_max - y_min);
+    println!("{}", ans);
+}
+```
+</details>
 
 
 ## [10101. Triangle Times (삼각형 외우기)](#list)
@@ -319,6 +471,40 @@ int main()
     // Output
     cout << ans << endl;
     return 0;
+}
+```
+</details>
+<details>
+  <summary>Rust (2024.04.12)</summary>
+
+```rust
+fn main()
+{
+    // Input a, b
+    let mut a = String::new();
+    let mut b = String::new();
+    let mut c = String::new();
+    io::stdin().read_line(&mut a).unwrap();
+    io::stdin().read_line(&mut b).unwrap();
+    io::stdin().read_line(&mut c).unwrap();
+    let a: i32 = a.trim().parse().unwrap();
+    let b: i32 = b.trim().parse().unwrap();
+    let c: i32 = c.trim().parse().unwrap();
+
+    // Judge
+    let ans: String =
+    {
+        if a + b + c == 180
+        {
+            if a == 60 && b == 60              { "Equilateral".to_string() }    // no semicolon (why?)
+            else if a == b || b == c || c == a { "Isosceles".to_string() }
+            else                               { "Scalene".to_string() }
+        }
+        else                                   { "Error".to_string() }
+    };
+
+    // Output
+    println!("{}", ans);
 }
 ```
 </details>
@@ -386,6 +572,38 @@ int main()
 }
 ```
 </details>
+<details>
+  <summary>Rust (2024.04.12)</summary>
+
+```rust
+fn main()
+{
+    loop
+    {
+        // Input a, b, c
+        let mut input = String::new();
+        io::stdin().read_line(&mut input).unwrap();
+        let mut iter = input.split_whitespace();
+        let a: i32 = iter.next().unwrap().parse().unwrap();
+        let b: i32 = iter.next().unwrap().parse().unwrap();
+        let c: i32 = iter.next().unwrap().parse().unwrap();
+
+        // Judge and Output
+        if a > 0
+        {
+            if a + b > c && b + c > a && c + a > b
+            {
+                if a == b && b == c && c == a      { println!("Equilateral"); }
+                else if a == b || b == c || c == a { println!("Isosceles"); }
+                else                               { println!("Scalene"); }
+            }
+            else                                   { println!("Invalid"); }
+        }
+        else                                       { break; }
+    }
+}
+```
+</details>
 
 
 ## [14215. 세 막대](#list)
@@ -430,6 +648,32 @@ int main()
     cout << sum << endl;
 
     return 0;
+}
+```
+</details>
+<details>
+  <summary>Rust (2024.04.12)</summary>
+
+```rust
+fn main()
+{
+    // let test: bool = true;
+    let test: bool = false;
+
+    // Input a, b, c
+    let mut nums = String::new();
+    io::stdin().read_line(&mut nums).unwrap();
+    let mut nums: Vec<i32> = nums.split_whitespace()
+                             .map(|s| s.parse().unwrap()).collect();
+
+    // Sort in ascending order
+    nums.sort();
+    if test { println!("Before : {:?}", nums); }
+
+    // Output
+    if nums[0] + nums[1] <= nums[2] { nums[2] = nums[0] + nums[1] - 1; }
+    if test { println!("After  : {:?}", nums); }
+    println!("{}", nums[0] + nums[1] + nums[2]);
 }
 ```
 </details>

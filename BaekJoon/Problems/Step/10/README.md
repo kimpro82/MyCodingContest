@@ -660,7 +660,7 @@ fn main()
     // let test: bool = true;
     let test: bool = false;
 
-    // Input a, b, c
+    // Input 3 integers
     let mut nums = String::new();
     io::stdin().read_line(&mut nums).unwrap();
     let mut nums: Vec<i32> = nums.split_whitespace()

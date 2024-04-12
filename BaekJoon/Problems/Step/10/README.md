@@ -9,13 +9,13 @@ https://www.acmicpc.net/step/50
 
 ## **List**
 
-- [27323. 長方形(Rectangle, 직사각형)](#27323-長方形rectangle-직사각형) *(new)*
+- [27323. 長方形 (Rectangle, 직사각형)](#27323-長方形-rectangle-직사각형) *(new)*
 - [1085. 직사각형에서 탈출](#1085-직사각형에서-탈출)
-- [3009. CETVRTA(네 번째 점)](#3009-cetvrta네-번째-점)
+- [3009. CETVRTA (네 번째 점)](#3009-cetvrta-네-번째-점)
 - [15894. 수학은 체육과목 입니다](#15894-수학은-체육과목-입니다) *(new)*
 - [9063. 대지](#9063-대지) *(new)*
-- [10101. Triangle Times(삼각형 외우기)](#10101-triangle-times삼각형-외우기) *(new)*
-- [5073. Triangles(삼각형과 세 변)](#5073-triangles삼각형과-세-변) *(new)*
+- [10101. Triangle Times (삼각형 외우기)](#10101-triangle-times-삼각형-외우기) *(new)*
+- [5073. Triangles (삼각형과 세 변)](#5073-triangles-삼각형과-세-변) *(new)*
 - [14215. 세 막대](#14215-세-막대) *(new)*
 
 
@@ -27,7 +27,7 @@ https://www.acmicpc.net/step/50
 
 
 
-## [27323. 長方形(Rectangle, 직사각형)](#list)
+## [27323. 長方形 (Rectangle, 직사각형)](#list)
 
 ```txt
 2
@@ -75,7 +75,7 @@ int main()
 ```
 
 
-## [3009. CETVRTA(네 번째 점)](#list)
+## [3009. CETVRTA (네 번째 점)](#list)
 
 > 5 5  
 > 5 7  
@@ -258,7 +258,7 @@ int main()
 ```
 
 
-## [10101. Triangle Times(삼각형 외우기)](#list)
+## [10101. Triangle Times (삼각형 외우기)](#list)
 
 ```txt
 60
@@ -294,7 +294,7 @@ int main()
 ```
 
 
-## [5073. Triangles(삼각형과 세 변)](#list)
+## [5073. Triangles (삼각형과 세 변)](#list)
 
 ```txt
 7 7 7

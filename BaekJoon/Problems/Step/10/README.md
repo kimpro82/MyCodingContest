@@ -480,7 +480,7 @@ int main()
 ```rust
 fn main()
 {
-    // Input a, b
+    // Input a, b, c
     let mut a = String::new();
     let mut b = String::new();
     let mut c = String::new();

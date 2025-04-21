@@ -19,7 +19,7 @@ ptr0 +++++                          # ptr0 = 5
   ptr2 +++++ ++ ..                  # ll
   ptr2 +++ .                        # o
 
-> .                                 # space
+> ptr3 .                            # space
 
 << ptr1 +++++ +++++ +++++ .         # W
 > ptr2 .                            # o

@@ -8,6 +8,7 @@
 (2022.03.12) - `Golang`  
 (2022.09.05) - `SystemVerilog`  
 (2023.12.21) - `Rust`
+(2025.12.27) - `Lua`
 
 https://www.acmicpc.net/step/1
 
@@ -64,6 +65,11 @@ return 0;
 #### Golang (2022.03.12)
 ```go
 fmt.Println("Hello World!")
+```
+
+#### Lua (2025.12.27)
+```lua
+print("Hello World!")
 ```
 
 #### Python (2021.05.13)
@@ -125,6 +131,13 @@ var a, b int
 fmt.Scanln(&a, &b)
 
 fmt.Println(a + b)
+```
+
+#### Lua (2025.12.27)
+```lua
+a, b = io.read("*n", "*n")
+ans = a + b
+print(ans)
 ```
 
 #### Python (2019.09.30)
@@ -199,6 +212,13 @@ fmt.Scanln(&a, &b)
 fmt.Println(a - b)
 ```
 
+#### Lua (2025.12.27)
+```lua
+a, b = io.read("*n", "*n")
+ans = a - b
+print(ans)
+```
+
 #### Python (2019.9.30)
 ```python
 a, b = map(int, input().split())
@@ -270,6 +290,13 @@ var a, b int
 fmt.Scanln(&a, &b)
 
 fmt.Println(a * b)
+```
+
+#### Lua (2025.12.27)
+```lua
+a, b = io.read("*n", "*n")
+ans = a * b
+print(ans)
 ```
 
 #### Python (2021.05.13)
@@ -351,6 +378,13 @@ fmt.Scanln(&a, &b)
 fmt.Printf("%.10f\n", a / b)
 ```
 > always marks 10 decimal places
+
+#### Lua (2025.12.27)
+```lua
+a, b = io.read("*n", "*n")
+ans = a / b
+print(ans)
+```
 
 #### Python (2019.10.02)
 ```python
@@ -440,6 +474,16 @@ fmt.Println(a / b)
 fmt.Println(a % b)
 ```
 
+#### Lua (2025.12.27)
+```lua
+a, b = io.read("*n", "*n")
+print(a + b)
+print(a - b)
+print(a * b)
+print(math.floor(a / b))
+print(a % b)
+```
+
 #### Python (2021.05.13)
 ```python
 a, b = map(int, input().split())
@@ -520,6 +564,13 @@ fmt.Scanln(&s)
 fmt.Println(s + "??!")
 ```
 
+#### Lua (2025.12.27)
+```lua
+s = io.read("*l")
+ans = s .. "??!"
+print(ans)
+```
+
 #### Rust (2023.12.21)
 ```Rust
 let mut input = String::new();
@@ -569,6 +620,14 @@ fmt.Scanln(&by)
 
 const diff int = 2541 - 1998
 fmt.Println(by - diff)
+```
+
+#### Lua (2025.12.27)
+```lua
+n = io.read("*n")
+ans = n - (2541 - 1998)
+
+print(ans)
 ```
 
 #### Rust (2023.12.21)
@@ -636,6 +695,21 @@ fmt.Println((A + B) % C)
 fmt.Println(((A % C) + (B % C)) % C)
 fmt.Println((A * B) % C)
 fmt.Println(((A % C) * (B % C)) % C)
+```
+
+#### Lua (2025.12.27)
+```lua
+a, b, c = io.read("*n", "*n", "*n")
+
+ans1 = (a + b) % c
+ans2 = ((a % c) + (b % c)) % c
+ans3 = (a * b) % c
+ans4 = ((a % c) * (b % c)) % c
+
+print(ans1)
+print(ans2)
+print(ans3)
+print(ans4)
 ```
 
 #### Python (2021.05.13)
@@ -720,6 +794,15 @@ cout << a + b + c << endl;
 return 0;
 ```
 
+#### Lua (2025.12.27)
+```lua
+a, b, c = io.read("*n", "*n", "*n")
+
+ans = a + b + c
+
+print(ans)
+```
+
 #### Rust (2023.12.21)
 ```Rust
 let mut input = String::new();
@@ -733,6 +816,19 @@ let numbers: Vec<i64> = input
 let sum: i64 = numbers.iter().sum();
 
 println!("{}", sum);
+```
+
+#### SystemVerilog (2025.12.27)
+```sv
+longint a, b, c, temp;  // longint: 64-bit signed integer
+
+initial begin
+    temp = $fscanf(32'h8000_0000, "%d %d %d", a, b, c);
+    // 32'h8000_0000 : descriptor that indicates STDIN
+    // $fscanf() (maybe) returns EOF
+    $display("%0d", a + b + c);
+    $finish;
+end
 ```
 
 
@@ -943,6 +1039,21 @@ fmt.Println(sum)
 ```
 > Accepted
 
+#### Lua (2025.12.27)
+```lua
+a, b = io.read("*n", "*n")
+
+ans1 = a * (b % 10)
+ans2 = a * (math.floor((b % 100) / 10))
+ans3 = a * math.floor(b / 100)
+ans4 = a * b
+
+print(ans1)
+print(ans2)
+print(ans3)
+print(ans4)
+```
+
 #### Python - trial 1 (2021.05.13)
 ```python
 a = int(input())
@@ -1079,6 +1190,18 @@ var s string = `\    /\
 fmt.Println(s)
 ```
 
+#### Lua (2025.12.27)
+```lua
+s = [[
+\    /\
+ )  ( ')
+(  /  )
+ \(__)|
+]]
+
+print(s)
+```
+
 #### Python (2021.05.13)
 ```python
 print("\    /\\")
@@ -1177,6 +1300,19 @@ fmt.Println("|\"^\"`    |")
 fmt.Println("||_/=\\\\__|")
 ```
 
+#### Lua (2025.12.27)
+```lua
+s = [[
+|\_/|
+|q p|   /}
+( 0 )"""\
+|"^"`    |
+||_/=\\__|
+]]
+
+print(s)
+```
+
 #### Python (2021.05.13)
 ```python
 print("""|\\_/|
@@ -1262,6 +1398,14 @@ var s string = "강한친구 대한육군"
 for i := 0; i < 2; i++ {
         fmt.Println(s)
 }
+```
+
+#### Lua (2025.12.27)
+```lua
+s = "강한친구 대한육군"
+
+print(s)
+print(s)
 ```
 
 #### Python (2021.05.13)

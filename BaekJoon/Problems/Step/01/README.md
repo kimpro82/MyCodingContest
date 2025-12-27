@@ -7,7 +7,7 @@
 (2022.01.26) - `Bash`, `Text` (only possible)  
 (2022.03.12) - `Golang`  
 (2022.09.05) - `SystemVerilog`  
-(2023.12.21) - `Rust`
+(2023.12.21) - `Rust`  
 (2025.12.27) - `Lua`
 
 https://www.acmicpc.net/step/1

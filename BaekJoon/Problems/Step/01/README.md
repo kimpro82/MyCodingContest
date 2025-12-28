@@ -28,7 +28,7 @@ https://www.acmicpc.net/step/1
 - [2588. 곱셈](#2588-곱셈)
 - [10171. Cats](#10171-cats)
 - [10172. Dogs](#10172-dogs)
-- [(depreciated) 10718. We love kriii](#depreciated-10718-we-love-kriii)
+- [(deprecated) 10718. We love kriii](#deprecated-10718-we-love-kriii)
 
 
 **※ Note**  
@@ -1410,7 +1410,7 @@ https://www.acmicpc.net/step/1
 </details>
 
 
-## [(depreciated) 10718. We love kriii](#list)
+## [(deprecated) 10718. We love kriii](#list)
 
 > 강한친구 대한육군  
 > 강한친구 대한육군

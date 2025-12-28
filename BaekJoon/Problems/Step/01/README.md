@@ -7,7 +7,8 @@
 (2022.01.26) - `Bash`, `Text` (only possible)  
 (2022.03.12) - `Golang`  
 (2022.09.05) - `SystemVerilog`  
-(2023.12.21) - `Rust`
+(2023.12.21) - `Rust`  
+(2025.12.27) - `Lua`
 
 https://www.acmicpc.net/step/1
 
@@ -27,9 +28,7 @@ https://www.acmicpc.net/step/1
 - [2588. 곱셈](#2588-곱셈)
 - [10171. Cats](#10171-cats)
 - [10172. Dogs](#10172-dogs)
-
-#### (Depreciated)
-- [10718. We love kriii](#10718-we-love-kriii)
+- [(deprecated) 10718. We love kriii](#deprecated-10718-we-love-kriii)
 
 
 **※ Note**  
@@ -50,50 +49,59 @@ https://www.acmicpc.net/step/1
 
 > Hello World!
 
-#### Bash (2022.01.26)
-```Bash
-echo "Hello World!"
-```
+<details>
+  <summary>Code</summary>
 
-#### C++ (2021.05.13)
-```cpp
-cout << "Hello World!" << endl;
-return 0;
-```
+  #### Bash (2022.01.26)
+  ```Bash
+  echo "Hello World!"
+  ```
 
-#### Golang (2022.03.12)
-```go
-fmt.Println("Hello World!")
-```
+  #### C++ (2021.05.13)
+  ```cpp
+  cout << "Hello World!" << endl;
+  return 0;
+  ```
 
-#### Python (2021.05.13)
-```python
-print("Hello World!")
-```
+  #### Golang (2022.03.12)
+  ```go
+  fmt.Println("Hello World!")
+  ```
 
-#### R (2021.07.11)
-```R
-# print("Hello World!") # Runtime Error
-cat("Hello World!")
-```
+  #### Lua (2025.12.27)
+  ```lua
+  print("Hello World!")
+  ```
 
-#### Rust (2023.12.21)
-```Rust
-println!("Hello World!");
-```
+  #### Python (2021.05.13)
+  ```python
+  print("Hello World!")
+  ```
 
-#### SystemVerilog (2022.08.18)
-```sv
-initial begin
-    $display("Hello World!");
-    $finish;
-end
-```
+  #### R (2021.07.11)
+  ```R
+  # print("Hello World!") # Runtime Error
+  cat("Hello World!")
+  ```
 
-#### Text (2022.01.26)
-```txt
-Hello World!
-```
+  #### Rust (2023.12.21)
+  ```Rust
+  println!("Hello World!");
+  ```
+
+  #### SystemVerilog (2022.08.18)
+  ```sv
+  initial begin
+      $display("Hello World!");
+      $finish;
+  end
+  ```
+
+  #### Text (2022.01.26)
+  ```txt
+  Hello World!
+  ```
+</details>
 
 
 ## [1000. A+B](#list)
@@ -102,70 +110,81 @@ Hello World!
 
 > 3
 
-#### Bash (2022.01.26)
-```Bash
-read a b
-echo $((a + b))
+<details>
+    <summary>Code</summary>
 
-# read
-```
+  #### Bash (2022.01.26)
+  ```Bash
+  read a b
+  echo $((a + b))
 
-#### C++ (2021.05.13)
-```cpp
-int a, b;
-cin >> a >> b;          // 1 2
-cout << a + b << endl;
+  # read
+  ```
 
-return 0;
-```
+  #### C++ (2021.05.13)
+  ```cpp
+  int a, b;
+  cin >> a >> b;          // 1 2
+  cout << a + b << endl;
 
-#### Golang (2022.03.12)
-```go
-var a, b int
-fmt.Scanln(&a, &b)
+  return 0;
+  ```
 
-fmt.Println(a + b)
-```
+  #### Golang (2022.03.12)
+  ```go
+  var a, b int
+  fmt.Scanln(&a, &b)
 
-#### Python (2019.09.30)
-```python
-a, b = map(int, input().split())
-print(a+b)
-```
+  fmt.Println(a + b)
+  ```
 
-#### R (2021.07.11)
-```R
-num <- scan("stdin")    # recieve num[1], num[2], …… as numeric
-cat(num[1] + num[2])
-```
+  #### Lua (2025.12.27)
+  ```lua
+  a, b = io.read("*n", "*n")
+  ans = a + b
+  print(ans)
+  ```
 
-#### Rust (2023.12.21)
-```Rust
-let mut input = String::new();
-io::stdin().read_line(&mut input).unwrap();
+  #### Python (2019.09.30)
+  ```python
+  a, b = map(int, input().split())
+  print(a+b)
+  ```
 
-let numbers: Vec<i32> = input
-    .split_whitespace()
-    .map(|s| s.parse::<i32>().unwrap())
-    .collect();
+  #### R (2021.07.11)
+  ```R
+  num <- scan("stdin")    # recieve num[1], num[2], …… as numeric
+  cat(num[1] + num[2])
+  ```
 
-let sum: i32 = numbers.iter().sum();
+  #### Rust (2023.12.21)
+  ```Rust
+  let mut input = String::new();
+  io::stdin().read_line(&mut input).unwrap();
 
-println!("{}", sum);
-```
+  let numbers: Vec<i32> = input
+      .split_whitespace()
+      .map(|s| s.parse::<i32>().unwrap())
+      .collect();
 
-#### SystemVerilog (2022.09.05)
-```sv
-integer a, b, temp;
+  let sum: i32 = numbers.iter().sum();
 
-initial begin
-    temp = $fscanf(32'h8000_0000, "%d %d", a, b);
-    // 32'h8000_0000 : descriptor that indicates STDIN
-    // $fscanf() (maybe) returns EOF
-    $display("%0d", a + b);
-    $finish;
-end
-```
+  println!("{}", sum);
+  ```
+
+  #### SystemVerilog (2022.09.05)
+  ```sv
+  integer a, b, temp;
+
+  initial begin
+      temp = $fscanf(32'h8000_0000, "%d %d", a, b);
+      // 32'h8000_0000 : descriptor that indicates STDIN
+      // $fscanf() (maybe) returns EOF
+      $display("%0d", a + b);
+      $finish;
+  end
+  ```
+</details>
 
 
 ## [1001. A-B](#list)
@@ -174,71 +193,82 @@ end
 
 > 1
 
-#### Bash (2022.01.26)
-```Bash
-read a b
-echo $((a - b))
+<details>
+    <summary>Code</summary>
 
-# read
-```
+  #### Bash (2022.01.26)
+  ```Bash
+  read a b
+  echo $((a - b))
 
-#### C++ (2021.05.13)
-```cpp
-int a, b;
-cin >> a >> b;          // 3 2
-cout << a - b << endl;
+  # read
+  ```
 
-return 0;
-```
+  #### C++ (2021.05.13)
+  ```cpp
+  int a, b;
+  cin >> a >> b;          // 3 2
+  cout << a - b << endl;
 
-#### Golang (2022.03.12)
-```go
-var a, b int
-fmt.Scanln(&a, &b)
+  return 0;
+  ```
 
-fmt.Println(a - b)
-```
+  #### Golang (2022.03.12)
+  ```go
+  var a, b int
+  fmt.Scanln(&a, &b)
 
-#### Python (2019.9.30)
-```python
-a, b = map(int, input().split())
-print(a-b)
-```
+  fmt.Println(a - b)
+  ```
 
-#### R (2021.07.11)
-```R
-num <- scan("stdin")    # recieve num[1], num[2], …… as numeric
-cat(num[1] - num[2])
-```
+  #### Lua (2025.12.27)
+  ```lua
+  a, b = io.read("*n", "*n")
+  ans = a - b
+  print(ans)
+  ```
 
-#### Rust (2023.12.21)
-```Rust
-let mut input = String::new();
-io::stdin().read_line(&mut input).unwrap();
+  #### Python (2019.9.30)
+  ```python
+  a, b = map(int, input().split())
+  print(a-b)
+  ```
 
-let numbers: Vec<i32> = input
-    .split_whitespace()
-    .map(|s| s.parse::<i32>().unwrap())
-    .collect();
+  #### R (2021.07.11)
+  ```R
+  num <- scan("stdin")    # recieve num[1], num[2], …… as numeric
+  cat(num[1] - num[2])
+  ```
 
-let a = numbers[0];
-let b = numbers[1];
+  #### Rust (2023.12.21)
+  ```Rust
+  let mut input = String::new();
+  io::stdin().read_line(&mut input).unwrap();
 
-println!("{}", a - b);
-```
+  let numbers: Vec<i32> = input
+      .split_whitespace()
+      .map(|s| s.parse::<i32>().unwrap())
+      .collect();
 
-#### SystemVerilog (2022.09.05)
-```sv
-integer a, b, temp;
+  let a = numbers[0];
+  let b = numbers[1];
 
-initial begin
-    temp = $fscanf(32'h8000_0000, "%d %d", a, b);
-    // 32'h8000_0000 : descriptor that indicates STDIN
-    // $fscanf() (maybe) returns EOF
-    $display("%0d", a - b);
-    $finish;
-end
-```
+  println!("{}", a - b);
+  ```
+
+  #### SystemVerilog (2022.09.05)
+  ```sv
+  integer a, b, temp;
+
+  initial begin
+      temp = $fscanf(32'h8000_0000, "%d %d", a, b);
+      // 32'h8000_0000 : descriptor that indicates STDIN
+      // $fscanf() (maybe) returns EOF
+      $display("%0d", a - b);
+      $finish;
+  end
+  ```
+</details>
 
 
 ## [10998. A*B](#list)
@@ -247,71 +277,82 @@ end
 
 > 12
 
-#### Bash (2022.01.26)
-```Bash
-read a b
-echo $((a * b))
+<details>
+    <summary>Code</summary>
 
-# read
-```
+  #### Bash (2022.01.26)
+  ```Bash
+  read a b
+  echo $((a * b))
 
-#### C++ (2021.05.13)
-```cpp
-int a, b;
-cin >> a >> b;          // 3 4
-cout << a * b << endl;
+  # read
+  ```
 
-return 0;
-```
+  #### C++ (2021.05.13)
+  ```cpp
+  int a, b;
+  cin >> a >> b;          // 3 4
+  cout << a * b << endl;
 
-#### Golang (2022.03.12)
-```go
-var a, b int
-fmt.Scanln(&a, &b)
+  return 0;
+  ```
 
-fmt.Println(a * b)
-```
+  #### Golang (2022.03.12)
+  ```go
+  var a, b int
+  fmt.Scanln(&a, &b)
 
-#### Python (2021.05.13)
-```python
-a, b = map(int, input().split())
-print(a*b)
-```
+  fmt.Println(a * b)
+  ```
 
-#### R (2021.07.11)
-```R
-num <- scan("stdin")    # recieve num[1], num[2], …… as numeric
-cat(num[1] * num[2])
-```
+  #### Lua (2025.12.27)
+  ```lua
+  a, b = io.read("*n", "*n")
+  ans = a * b
+  print(ans)
+  ```
 
-#### Rust (2023.12.21)
-```Rust
-let mut input = String::new();
-io::stdin().read_line(&mut input).unwrap();
+  #### Python (2021.05.13)
+  ```python
+  a, b = map(int, input().split())
+  print(a*b)
+  ```
 
-let numbers: Vec<i32> = input
-    .split_whitespace()
-    .map(|s| s.parse::<i32>().unwrap())
-    .collect();
+  #### R (2021.07.11)
+  ```R
+  num <- scan("stdin")    # recieve num[1], num[2], …… as numeric
+  cat(num[1] * num[2])
+  ```
 
-let a = numbers[0];
-let b = numbers[1];
+  #### Rust (2023.12.21)
+  ```Rust
+  let mut input = String::new();
+  io::stdin().read_line(&mut input).unwrap();
 
-println!("{}", a * b);
-```
+  let numbers: Vec<i32> = input
+      .split_whitespace()
+      .map(|s| s.parse::<i32>().unwrap())
+      .collect();
 
-#### SystemVerilog (2022.09.05)
-```sv
-integer a, b, temp;
+  let a = numbers[0];
+  let b = numbers[1];
 
-initial begin
-    temp = $fscanf(32'h8000_0000, "%d %d", a, b);
-    // 32'h8000_0000 : descriptor that indicates STDIN
-    // $fscanf() (maybe) returns EOF
-    $display("%0d", a * b);
-    $finish;
-end
-```
+  println!("{}", a * b);
+  ```
+
+  #### SystemVerilog (2022.09.05)
+  ```sv
+  integer a, b, temp;
+
+  initial begin
+      temp = $fscanf(32'h8000_0000, "%d %d", a, b);
+      // 32'h8000_0000 : descriptor that indicates STDIN
+      // $fscanf() (maybe) returns EOF
+      $display("%0d", a * b);
+      $finish;
+  end
+  ```
+</details>
 
 
 ## [1008. A/B](#list)
@@ -320,79 +361,90 @@ end
 
 > 0.3333333333
 
-#### Bash (2022.01.26)
-```Bash
-read a b
+<details>
+    <summary>Code</summary>
 
-# printf "%.9f\n", $a / $b                      # doesn't work
-# echo $a $b | awk '{printf "%.9f\n", $1 / $2}' # not adopted at BOJ
-# printf "%.9f\n" $(((a * 10**9 / b) / 10**9))  # 1 / 3 = 0.000000000
-# printf "%.9f\n" $((a * e+9 / b))e-9           # e-9 works but e+9 doesn't work
-printf "%.9f\n" $((a * 10**9 / b))e-9
+  #### Bash (2022.01.26)
+  ```Bash
+  read a b
 
-# read
-```
+  # printf "%.9f\n", $a / $b                      # doesn't work
+  # echo $a $b | awk '{printf "%.9f\n", $1 / $2}' # not adopted at BOJ
+  # printf "%.9f\n" $(((a * 10**9 / b) / 10**9))  # 1 / 3 = 0.000000000
+  # printf "%.9f\n" $((a * e+9 / b))e-9           # e-9 works but e+9 doesn't work
+  printf "%.9f\n" $((a * 10**9 / b))e-9
 
-#### C++ (2021.05.13)
-```cpp
-int a, b;
-cin >> a >> b;                  // 1 3
-cout.precision(10);             // for reducing error < 10^(-9)
-cout << (double)a / b << endl;
+  # read
+  ```
 
-return 0;
-```
+  #### C++ (2021.05.13)
+  ```cpp
+  int a, b;
+  cin >> a >> b;                  // 1 3
+  cout.precision(10);             // for reducing error < 10^(-9)
+  cout << (double)a / b << endl;
 
-#### Golang (2022.03.12)
-```go
-var a, b float64
-fmt.Scanln(&a, &b)
+  return 0;
+  ```
 
-fmt.Printf("%.10f\n", a / b)
-```
-> always marks 10 decimal places
+  #### Golang (2022.03.12)
+  ```go
+  var a, b float64
+  fmt.Scanln(&a, &b)
 
-#### Python (2019.10.02)
-```python
-a, b = map(float, input().split())
-print(a/b)
-```
+  fmt.Printf("%.10f\n", a / b)
+  ```
+  > always marks 10 decimal places
 
-#### R (2021.07.11)
-```R
-num <- scan("stdin")    # recieve num[1], num[2], …… as numeric
-options(digits = 10)
-cat(num[1] / num[2])
-```
+  #### Lua (2025.12.27)
+  ```lua
+  a, b = io.read("*n", "*n")
+  ans = a / b
+  print(ans)
+  ```
 
-#### Rust (2023.12.21)
-```Rust
-let mut input = String::new();
-io::stdin().read_line(&mut input).unwrap();
+  #### Python (2019.10.02)
+  ```python
+  a, b = map(float, input().split())
+  print(a/b)
+  ```
 
-let numbers: Vec<i32> = input
-    .split_whitespace()
-    .map(|s| s.parse::<i32>().unwrap())
-    .collect();
+  #### R (2021.07.11)
+  ```R
+  num <- scan("stdin")    # recieve num[1], num[2], …… as numeric
+  options(digits = 10)
+  cat(num[1] / num[2])
+  ```
 
-let a = numbers[0] as f64;
-let b = numbers[1] as f64;
+  #### Rust (2023.12.21)
+  ```Rust
+  let mut input = String::new();
+  io::stdin().read_line(&mut input).unwrap();
 
-println!("{}", a / b);
-```
+  let numbers: Vec<i32> = input
+      .split_whitespace()
+      .map(|s| s.parse::<i32>().unwrap())
+      .collect();
 
-#### SystemVerilog (2022.09.05)
-```sv
-real a, b, temp;
+  let a = numbers[0] as f64;
+  let b = numbers[1] as f64;
 
-initial begin
-    temp = $fscanf(32'h8000_0000, "%d %d", a, b);
-    // 32'h8000_0000 : descriptor that indicates STDIN
-    // $fscanf() (maybe) returns EOF
-    $display("%0.10f", a / b);
-    $finish;
-end
-```
+  println!("{}", a / b);
+  ```
+
+  #### SystemVerilog (2022.09.05)
+  ```sv
+  real a, b, temp;
+
+  initial begin
+      temp = $fscanf(32'h8000_0000, "%d %d", a, b);
+      // 32'h8000_0000 : descriptor that indicates STDIN
+      // $fscanf() (maybe) returns EOF
+      $display("%0.10f", a / b);
+      $finish;
+  end
+  ```
+</details>
 
 
 ## [10869. 사칙연산](#list)
@@ -401,101 +453,115 @@ end
 
 > 10 4 21 2 1 (vertically)
 
-#### Bash (2022.01.26)
-```Bash
-read a b
+<details>
+    <summary>Code</summary>
 
-echo $((a + b))
-echo $((a - b))
-echo $((a * b))
-echo $((a / b))
-echo $((a % b))
+  #### Bash (2022.01.26)
+  ```Bash
+  read a b
 
-# read
-```
+  echo $((a + b))
+  echo $((a - b))
+  echo $((a * b))
+  echo $((a / b))
+  echo $((a % b))
 
-#### C++ (2021.05.13)
-```cpp
-int a, b;
-cin >> a >> b;          // 7 3
+  # read
+  ```
 
-cout << a + b << endl;
-cout << a - b << endl;
-cout << a * b << endl;
-cout << a / b << endl;
-cout << a % b << endl;
+  #### C++ (2021.05.13)
+  ```cpp
+  int a, b;
+  cin >> a >> b;          // 7 3
 
-return 0;
-```
+  cout << a + b << endl;
+  cout << a - b << endl;
+  cout << a * b << endl;
+  cout << a / b << endl;
+  cout << a % b << endl;
 
-#### Golang (2022.03.12)
-```go
-var a, b int
-fmt.Scanln(&a, &b)
+  return 0;
+  ```
 
-fmt.Println(a + b)
-fmt.Println(a - b)
-fmt.Println(a * b)
-fmt.Println(a / b)
-fmt.Println(a % b)
-```
+  #### Golang (2022.03.12)
+  ```go
+  var a, b int
+  fmt.Scanln(&a, &b)
 
-#### Python (2021.05.13)
-```python
-a, b = map(int, input().split())
+  fmt.Println(a + b)
+  fmt.Println(a - b)
+  fmt.Println(a * b)
+  fmt.Println(a / b)
+  fmt.Println(a % b)
+  ```
 
-print(a+b)
-print(a-b)
-print(a*b)
-print(int(a/b))
-print(a%b)
-```
+  #### Lua (2025.12.27)
+  ```lua
+  a, b = io.read("*n", "*n")
+  print(a + b)
+  print(a - b)
+  print(a * b)
+  print(math.floor(a / b))
+  print(a % b)
+  ```
 
-#### R (2021.07.11)
-```R
-num <- scan("stdin")                # recieve num[1], num[2], …… as numeric
-cat(num[1] + num[2], "\n")
-cat(num[1] - num[2], "\n")
-cat(num[1] * num[2], "\n")
-cat(floor(num[1] / num[2]), "\n")
-cat(num[1] %% num[2], "\n")
-```
+  #### Python (2021.05.13)
+  ```python
+  a, b = map(int, input().split())
 
-#### Rust (2023.12.21)
-```Rust
-let mut input = String::new();
-io::stdin().read_line(&mut input).unwrap();
+  print(a+b)
+  print(a-b)
+  print(a*b)
+  print(int(a/b))
+  print(a%b)
+  ```
 
-let numbers: Vec<i32> = input
-    .split_whitespace()
-    .map(|s| s.parse::<i32>().unwrap())
-    .collect();
+  #### R (2021.07.11)
+  ```R
+  num <- scan("stdin")                # recieve num[1], num[2], …… as numeric
+  cat(num[1] + num[2], "\n")
+  cat(num[1] - num[2], "\n")
+  cat(num[1] * num[2], "\n")
+  cat(floor(num[1] / num[2]), "\n")
+  cat(num[1] %% num[2], "\n")
+  ```
 
-let a = numbers[0];
-let b = numbers[1];
+  #### Rust (2023.12.21)
+  ```Rust
+  let mut input = String::new();
+  io::stdin().read_line(&mut input).unwrap();
 
-println!("{}", a + b);
-println!("{}", a - b);
-println!("{}", a * b);
-println!("{}", a / b);
-println!("{}", a % b);
-```
+  let numbers: Vec<i32> = input
+      .split_whitespace()
+      .map(|s| s.parse::<i32>().unwrap())
+      .collect();
 
-#### SystemVerilog (2022.09.05)
-```sv
-integer a, b, temp;
+  let a = numbers[0];
+  let b = numbers[1];
 
-initial begin
-    temp = $fscanf(32'h8000_0000, "%d %d", a, b);
-    // 32'h8000_0000 : descriptor that indicates STDIN
-    // $fscanf() (maybe) returns EOF
-    $display("%0d", a + b);
-    $display("%0d", a - b);
-    $display("%0d", a * b);
-    $display("%0d", a / b);
-    $finish;
-end
-```
+  println!("{}", a + b);
+  println!("{}", a - b);
+  println!("{}", a * b);
+  println!("{}", a / b);
+  println!("{}", a % b);
+  ```
+
+  #### SystemVerilog (2022.09.05)
+  ```sv
+  integer a, b, temp;
+
+  initial begin
+      temp = $fscanf(32'h8000_0000, "%d %d", a, b);
+      // 32'h8000_0000 : descriptor that indicates STDIN
+      // $fscanf() (maybe) returns EOF
+      $display("%0d", a + b);
+      $display("%0d", a - b);
+      $display("%0d", a * b);
+      $display("%0d", a / b);
+      $finish;
+  end
+  ```
+</details>
 
 
 ## [10926. ??!](#list)
@@ -504,44 +570,55 @@ end
 
 > joonas??!
 
-#### Bash (2022.01.26)
-```Bash
-read id
-echo "$id??!"   # How does Bash classify $id and ??! ?
+<details>
+    <summary>Code</summary>
 
-# read
-```
+  #### Bash (2022.01.26)
+  ```Bash
+  read id
+  echo "$id??!"   # How does Bash classify $id and ??! ?
 
-#### Golang (2022.03.12)
-```go
-var s string
-fmt.Scanln(&s)
+  # read
+  ```
 
-fmt.Println(s + "??!")
-```
+  #### Golang (2022.03.12)
+  ```go
+  var s string
+  fmt.Scanln(&s)
 
-#### Rust (2023.12.21)
-```Rust
-let mut input = String::new();
+  fmt.Println(s + "??!")
+  ```
 
-io::stdin().read_line(&mut input).unwrap();
+  #### Lua (2025.12.27)
+  ```lua
+  s = io.read("*l")
+  ans = s .. "??!"
+  print(ans)
+  ```
 
-println!("{}??!", input.replace("\n", ""));
-```
+  #### Rust (2023.12.21)
+  ```Rust
+  let mut input = String::new();
 
-#### SystemVerilog (2022.09.05)
-```sv
-reg [50*8:0] s;
-integer temp;
+  io::stdin().read_line(&mut input).unwrap();
 
-initial begin
-    temp = $fscanf(32'h8000_0000, "%s", s);
-    // 32'h8000_0000 : descriptor that indicates STDIN
-    // $fscanf() (maybe) returns EOF
-    $display("%0s??!", s);
-    $finish;
-end
-```
+  println!("{}??!", input.replace("\n", ""));
+  ```
+
+  #### SystemVerilog (2022.09.05)
+  ```sv
+  reg [50*8:0] s;
+  integer temp;
+
+  initial begin
+      temp = $fscanf(32'h8000_0000, "%s", s);
+      // 32'h8000_0000 : descriptor that indicates STDIN
+      // $fscanf() (maybe) returns EOF
+      $display("%0s??!", s);
+      $finish;
+  end
+  ```
+</details>
 
 
 ## [18108. 1998년생인 내가 태국에서는 2541년생?!](#list)
@@ -550,50 +627,62 @@ end
 
 > 1998
 
-#### Bash (2022.01.26)
-```Bash
-read by
+<details>
+    <summary>Code</summary>
 
-# diff = 2541 - 1998    # doesn't work : should be no space
-let "diff = 2541 - 1998"
+  #### Bash (2022.01.26)
+  ```Bash
+  read by
 
-echo $((by - diff))
+  # diff = 2541 - 1998    # doesn't work : should be no space
+  let "diff = 2541 - 1998"
 
-# read
-```
+  echo $((by - diff))
 
-#### Golang (2022.03.12)
-```go
-var by int
-fmt.Scanln(&by)
+  # read
+  ```
 
-const diff int = 2541 - 1998
-fmt.Println(by - diff)
-```
+  #### Golang (2022.03.12)
+  ```go
+  var by int
+  fmt.Scanln(&by)
 
-#### Rust (2023.12.21)
-```Rust
-let mut input = String::new();
-io::stdin().read_line(&mut input).unwrap();
+  const diff int = 2541 - 1998
+  fmt.Println(by - diff)
+  ```
 
-let number: i32 = input.trim().parse().unwrap();
+  #### Lua (2025.12.27)
+  ```lua
+  n = io.read("*n")
+  ans = n - (2541 - 1998)
 
-println!("{}", number - (2541 - 1998));
-```
+  print(ans)
+  ```
 
-#### SystemVerilog (2022.09.05)
-```sv
-integer by, diff = 2541 - 1998, temp;
+  #### Rust (2023.12.21)
+  ```Rust
+  let mut input = String::new();
+  io::stdin().read_line(&mut input).unwrap();
 
-initial begin
+  let number: i32 = input.trim().parse().unwrap();
 
-    temp = $fscanf(32'h8000_0000, "%d", by);
-    // 32'h8000_0000 : descriptor that indicates STDIN
-    // $fscanf() (maybe) returns EOF
-    $display("%0d", by - diff);
-    $finish;
-end
-```
+  println!("{}", number - (2541 - 1998));
+  ```
+
+  #### SystemVerilog (2022.09.05)
+  ```sv
+  integer by, diff = 2541 - 1998, temp;
+
+  initial begin
+
+      temp = $fscanf(32'h8000_0000, "%d", by);
+      // 32'h8000_0000 : descriptor that indicates STDIN
+      // $fscanf() (maybe) returns EOF
+      $display("%0d", by - diff);
+      $finish;
+  end
+  ```
+</details>
 
 
 ## [10430. 나머지](#list)
@@ -602,138 +691,181 @@ end
 
 > 1 1 0 0 (vertically)
 
-#### Bash (2022.01.26)
-```Bash
-read A B C
+<details>
+    <summary>Code</summary>
 
-echo $(((A + B) % C))
-echo $((((A % C) + (B % C)) % C))
-echo $(((A * B) % C))
-echo $((((A % C) * (B % C)) % C))
+  #### Bash (2022.01.26)
+  ```Bash
+  read A B C
 
-# read
-```
+  echo $(((A + B) % C))
+  echo $((((A % C) + (B % C)) % C))
+  echo $(((A * B) % C))
+  echo $((((A % C) * (B % C)) % C))
 
-#### C++ (2021.05.13)
-```cpp
-int A, B, C;
-cin >> A >> B >> C;             // 5 8 4
+  # read
+  ```
 
-cout << (A+B)%C << endl;
-cout << ((A%C)+(B%C))%C << endl;
-cout << (A*B)%C << endl;
-cout << ((A%C)*(B%C))%C << endl;
+  #### C++ (2021.05.13)
+  ```cpp
+  int A, B, C;
+  cin >> A >> B >> C;             // 5 8 4
 
-return 0;
-```
+  cout << (A+B)%C << endl;
+  cout << ((A%C)+(B%C))%C << endl;
+  cout << (A*B)%C << endl;
+  cout << ((A%C)*(B%C))%C << endl;
 
-#### Golang (2022.03.12)
-```go
-var A, B, C int
-fmt.Scanln(&A, &B, &C)
+  return 0;
+  ```
 
-fmt.Println((A + B) % C)
-fmt.Println(((A % C) + (B % C)) % C)
-fmt.Println((A * B) % C)
-fmt.Println(((A % C) * (B % C)) % C)
-```
+  #### Golang (2022.03.12)
+  ```go
+  var A, B, C int
+  fmt.Scanln(&A, &B, &C)
 
-#### Python (2021.05.13)
-```python
-A, B, C = map(int, input().split())
+  fmt.Println((A + B) % C)
+  fmt.Println(((A % C) + (B % C)) % C)
+  fmt.Println((A * B) % C)
+  fmt.Println(((A % C) * (B % C)) % C)
+  ```
 
-print((A+B)%C)
-print(((A%C) + (B%C))%C)
-print((A*B)%C)
-print(((A%C)*(B%C))%C)
-```
+  #### Lua (2025.12.27)
+  ```lua
+  a, b, c = io.read("*n", "*n", "*n")
 
-#### R (2021.07.11)
-```R
-num <- scan("stdin")                # recieve num[1], num[2], …… as numeric
-# num <- c(5, 8, 4)                 # test
+  ans1 = (a + b) % c
+  ans2 = ((a % c) + (b % c)) % c
+  ans3 = (a * b) % c
+  ans4 = ((a % c) * (b % c)) % c
 
-a <- num[1]
-b <- num[2]
-c <- num[3]
+  print(ans1)
+  print(ans2)
+  print(ans3)
+  print(ans4)
+  ```
 
-cat((a + b) %% c, "\n")
-cat(((a %% c) + (b %% c)) %% c, "\n")
-cat((a * b) %% c, "\n")
-cat(((a %% c) * (b %% c)) %% c, "\n")
-```
+  #### Python (2021.05.13)
+  ```python
+  A, B, C = map(int, input().split())
 
-#### Rust (2023.12.21)
-```Rust
-let mut input = String::new();
-io::stdin().read_line(&mut input).unwrap();
+  print((A+B)%C)
+  print(((A%C) + (B%C))%C)
+  print((A*B)%C)
+  print(((A%C)*(B%C))%C)
+  ```
 
-let numbers: Vec<i32> = input
-    .split_whitespace()
-    .map(|s| s.parse::<i32>().unwrap())
-    .collect();
+  #### R (2021.07.11)
+  ```R
+  num <- scan("stdin")                # recieve num[1], num[2], …… as numeric
+  # num <- c(5, 8, 4)                 # test
 
-let a = numbers[0];
-let b = numbers[1];
-let c = numbers[2];
+  a <- num[1]
+  b <- num[2]
+  c <- num[3]
 
-println!("{}", (a + b) % c);
-println!("{}", ((a % c) + (b % c)) % c);
-println!("{}", (a * b) % c);
-println!("{}", ((a % c) * (b % c)) % c);
-```
+  cat((a + b) %% c, "\n")
+  cat(((a %% c) + (b %% c)) %% c, "\n")
+  cat((a * b) %% c, "\n")
+  cat(((a %% c) * (b %% c)) %% c, "\n")
+  ```
 
-#### SystemVerilog (2022.09.05)
-```sv
-integer a, b, c, temp;
+  #### Rust (2023.12.21)
+  ```Rust
+  let mut input = String::new();
+  io::stdin().read_line(&mut input).unwrap();
 
-initial begin
-    temp = $fscanf(32'h8000_0000, "%d %d %d", a, b, c);
-    // 32'h8000_0000 : descriptor that indicates STDIN
-    // $fscanf() (maybe) returns EOF
-    $display("%0d", (a + b) % c);
-    $display("%0d", ((a % c) + (b % c)) % c);
-    $display("%0d", (a * b) % c);
-    $display("%0d", ((a % c) * (b % c)) % c);
-    $finish;
-end
-```
+  let numbers: Vec<i32> = input
+      .split_whitespace()
+      .map(|s| s.parse::<i32>().unwrap())
+      .collect();
+
+  let a = numbers[0];
+  let b = numbers[1];
+  let c = numbers[2];
+
+  println!("{}", (a + b) % c);
+  println!("{}", ((a % c) + (b % c)) % c);
+  println!("{}", (a * b) % c);
+  println!("{}", ((a % c) * (b % c)) % c);
+  ```
+
+  #### SystemVerilog (2022.09.05)
+  ```sv
+  integer a, b, c, temp;
+
+  initial begin
+      temp = $fscanf(32'h8000_0000, "%d %d %d", a, b, c);
+      // 32'h8000_0000 : descriptor that indicates STDIN
+      // $fscanf() (maybe) returns EOF
+      $display("%0d", (a + b) % c);
+      $display("%0d", ((a % c) + (b % c)) % c);
+      $display("%0d", (a * b) % c);
+      $display("%0d", ((a % c) * (b % c)) % c);
+      $finish;
+  end
+  ```
+</details>
 
 
 ## [11382. 꼬마 정민](#list)
-
-(2023.06.17)
 
 > 77 77 7777
 
 > 7931
 
-#### C++ (2023.06.17)
-```cpp
-using ll = long long;
-```
-```cpp
-ll a, b, c;                                             // 1 ≤ A, B, C ≤ 10^12
-cin >> a >> b >> c;
-cout << a + b + c << endl;
+<details>
+    <summary>Code</summary>
 
-return 0;
-```
+  #### C++ (2023.06.17)
+  ```cpp
+  using ll = long long;
+  ```
+  ```cpp
+  ll a, b, c;                                             // 1 ≤ A, B, C ≤ 10^12
+  cin >> a >> b >> c;
+  cout << a + b + c << endl;
 
-#### Rust (2023.12.21)
-```Rust
-let mut input = String::new();
-io::stdin().read_line(&mut input).unwrap();
+  return 0;
+  ```
 
-let numbers: Vec<i64> = input
-    .split_whitespace()
-    .map(|s| s.parse::<i64>().unwrap())
-    .collect();
+  #### Lua (2025.12.27)
+  ```lua
+  a, b, c = io.read("*n", "*n", "*n")
 
-let sum: i64 = numbers.iter().sum();
+  ans = a + b + c
 
-println!("{}", sum);
-```
+  print(ans)
+  ```
+
+  #### Rust (2023.12.21)
+  ```Rust
+  let mut input = String::new();
+  io::stdin().read_line(&mut input).unwrap();
+
+  let numbers: Vec<i64> = input
+      .split_whitespace()
+      .map(|s| s.parse::<i64>().unwrap())
+      .collect();
+
+  let sum: i64 = numbers.iter().sum();
+
+  println!("{}", sum);
+  ```
+
+  #### SystemVerilog (2025.12.27)
+  ```sv
+  longint a, b, c, temp;  // longint: 64-bit signed integer
+
+  initial begin
+      temp = $fscanf(32'h8000_0000, "%d %d %d", a, b, c);
+      // 32'h8000_0000 : descriptor that indicates STDIN
+      // $fscanf() (maybe) returns EOF
+      $display("%0d", a + b + c);
+      $finish;
+  end
+  ```
+</details>
 
 
 ## [2588. 곱셈](#list)
@@ -746,381 +878,416 @@ println!("{}", sum);
 > 1416  
 > 181720
 
-#### Bash (2022.01.26)
-```Bash
-read a
-read b
-# guaranteed that 100 <= a, b  <= 999
+<details>
+    <summary>Code</summary>
 
-let "sum = 0"
-for i in {2..0..-1}
-do
-    let "prod = $a * ${b:i:1}"          # ${b : i : 1} doesn't work
-    echo $prod
-    let "sum += $prod * (10 ** (2 - $i))"
-done
+  #### Bash (2022.01.26)
+  ```Bash
+  read a
+  read b
+  # guaranteed that 100 <= a, b  <= 999
 
-echo $sum
+  let "sum = 0"
+  for i in {2..0..-1}
+  do
+      let "prod = $a * ${b:i:1}"          # ${b : i : 1} doesn't work
+      echo $prod
+      let "sum += $prod * (10 ** (2 - $i))"
+  done
 
-# read
-```
-> Accepted
+  echo $sum
 
-#### C++ - trial 1-1
-```cpp
-#include <iostream>
-```
-```cpp
-int a;
-char b[3];                      // trial 1-1 : a = 256 when declare char b[3]
-cin >> a;                       // 472
-cin >> b;                       // 385
-cout << a << " " << b << endl;  // test
-```
-> 256 385
+  # read
+  ```
+  > Accepted
 
-#### C++ - trial 1-2~3
-```cpp
-char b[4];                      // trial 1-2 
-string b;                       // trial 1-3 : change char[] to string
-```
-> 472 385
+  #### C++ - trial 1-1
+  ```cpp
+  #include <iostream>
+  ```
+  ```cpp
+  int a;
+  char b[3];                      // trial 1-1 : a = 256 when declare char b[3]
+  cin >> a;                       // 472
+  cin >> b;                       // 385
+  cout << a << " " << b << endl;  // test
+  ```
+  > 256 385
 
-#### C++ - trial 2
-```cpp
-int len = b.length();
+  #### C++ - trial 1-2~3
+  ```cpp
+  char b[4];                      // trial 1-2 
+  string b;                       // trial 1-3 : change char[] to string
+  ```
+  > 472 385
 
-int sum = 0;
-for (int i = 0; i < len; i++)
-{
-    // Test : get each cipher's integer number, not ascii code
-    cout << "b[" << len-i-1 << "] : " << b.at(len-i-1) << endl;              // b[2], b[1], b[0] / OK
-    cout << "convert to int 1 : " << (int) b.at(len-i-1) << endl;            // trial 2-1 : failure because output its ascii code
-    cout << "convert to int 2 : " << (int) (b.at(len-i-1) - '0') << endl;    // trial 2-2 : success
-}
-```
-> b[2] : 5  
-> convert to int 1 : 53  
-> convert to int 2 : 5  
-> b[1] : 8  
-> convert to int 1 : 56  
-> convert to int 2 : 8  
-> b[0] : 3  
-> convert to int 1 : 51  
-> convert to int 2 : 3
+  #### C++ - trial 2
+  ```cpp
+  int len = b.length();
 
-#### C++ - trial 3-1
-```cpp
-#include <iostream>
-#include <cmath>    // for using pow()
-```
-```cpp
-for (int i = 0; i < len; i++)
-{
-    short digit = (int) (b[3-i-1] - '0');
+  int sum = 0;
+  for (int i = 0; i < len; i++)
+  {
+      // Test : get each cipher's integer number, not ascii code
+      cout << "b[" << len-i-1 << "] : " << b.at(len-i-1) << endl;              // b[2], b[1], b[0] / OK
+      cout << "convert to int 1 : " << (int) b.at(len-i-1) << endl;            // trial 2-1 : failure because output its ascii code
+      cout << "convert to int 2 : " << (int) (b.at(len-i-1) - '0') << endl;    // trial 2-2 : success
+  }
+  ```
+  > b[2] : 5  
+  > convert to int 1 : 53  
+  > convert to int 2 : 5  
+  > b[1] : 8  
+  > convert to int 1 : 56  
+  > convert to int 2 : 8  
+  > b[0] : 3  
+  > convert to int 1 : 51  
+  > convert to int 2 : 3
 
-    // The ways to get 100 by pow(10, 3) (Remove // from only one line)
-    int cipher = pow(10, i);                                                 // trial 3-1 : vanilla double pow() - 99- 180304
-    cout << a << " " << (int) digit << " " << cipher << endl;                // test
+  #### C++ - trial 3-1
+  ```cpp
+  #include <iostream>
+  #include <cmath>    // for using pow()
+  ```
+  ```cpp
+  for (int i = 0; i < len; i++)
+  {
+      short digit = (int) (b[3-i-1] - '0');
 
-    // Operation for each cipher
-    int prod = a * (int) digit;                                              // get difference between ascii codes of (b[3-i-1]) and '0'
-    sum += prod * cipher;
+      // The ways to get 100 by pow(10, 3) (Remove // from only one line)
+      int cipher = pow(10, i);                                                 // trial 3-1 : vanilla double pow() - 99- 180304
+      cout << a << " " << (int) digit << " " << cipher << endl;                // test
 
-    // Output
-    cout << prod << " " << sum - prod << " " << sum << endl;    // test
-    // cout << prod << endl;
-}
-```
-> 472 5 1  
-> 2360 0 2360  
-> 472 8 10  
-> 3776 36344 40120  
-> 472 3 99  
-> 1416 178888 180304  
+      // Operation for each cipher
+      int prod = a * (int) digit;                                              // get difference between ascii codes of (b[3-i-1]) and '0'
+      sum += prod * cipher;
 
-#### C++ - trial 3-2~4
-```cpp
-int cipher = (int) pow(10, i);  // trial 3-2 : (int) double pow() - 99 - 180304
-int cipher = (int) powl(10, i); // trial 3-3 : (int) long double powl() - 99 - 180304
-int cipher = pow(10.0, i);      // trial 3-4 : use 10.0 - 99 - 180304
-```
-> The same result with trial 3-1
+      // Output
+      cout << prod << " " << sum - prod << " " << sum << endl;    // test
+      // cout << prod << endl;
+  }
+  ```
+  > 472 5 1  
+  > 2360 0 2360  
+  > 472 8 10  
+  > 3776 36344 40120  
+  > 472 3 99  
+  > 1416 178888 180304  
 
-#### C++ - trial 5
-```cpp
-int cipher = pow(10, i);        // trial 3-5 : the same with 1 but run by C++17(Clang) - Correct
-```
-> Accepted
+  #### C++ - trial 3-2~4
+  ```cpp
+  int cipher = (int) pow(10, i);  // trial 3-2 : (int) double pow() - 99 - 180304
+  int cipher = (int) powl(10, i); // trial 3-3 : (int) long double powl() - 99 - 180304
+  int cipher = pow(10.0, i);      // trial 3-4 : use 10.0 - 99 - 180304
+  ```
+  > The same result with trial 3-1
 
-#### C++ - trial 6 (final)
-(2021.05.24)
-```cpp
-int a;
-// char b[3];                       // trial 1-1 : a = 256 when declare char b[3]
-// char b[4];                       // trial 1-2 
-string b;                           // trial 1-3 : change char[] to string
-cin >> a;                           // 472
-cin >> b;                           // 385
-// cout << a << " " << b << endl;   // test
-int len = b.length();
+  #### C++ - trial 5
+  ```cpp
+  int cipher = pow(10, i);        // trial 3-5 : the same with 1 but run by C++17(Clang) - Correct
+  ```
+  > Accepted
 
-int sum = 0;
-for (int i = 0; i < len; i++)
-{
-    // Test : get each cipher's integer number, not ascii code
-    // cout << "b[" << len-i-1 << "] : " << b.at(len-i-1) << endl;              // b[2], b[1], b[0] / OK
-    // cout << "convert to int 1 : " << (int) b.at(len-i-1) << endl;            // trial 2-1 : failure because output its ascii code
-    // cout << "convert to int 2 : " << (int) (b.at(len-i-1) - '0') << endl;    // trial 2-2 : success
-    short digit = (int) (b[3-i-1] - '0');
+  #### C++ - trial 6 (final)
+  (2021.05.24)
+  ```cpp
+  int a;
+  // char b[3];                       // trial 1-1 : a = 256 when declare char b[3]
+  // char b[4];                       // trial 1-2 
+  string b;                           // trial 1-3 : change char[] to string
+  cin >> a;                           // 472
+  cin >> b;                           // 385
+  // cout << a << " " << b << endl;   // test
+  int len = b.length();
 
-    // The ways to get 100 by pow(10, 3) (Remove // from only one line)
-    // int cipher = pow(10, i);                                                 // trial 3-1 : vanilla double pow() - 99- 180304
-    // int cipher = (int) pow(10, i);                                           // trial 3-2 : (int) double pow() - 99 - 180304
-    // int cipher = (int) powl(10, i);                                          // trial 3-3 : (int) long double powl() - 99 - 180304
-    // int cipher = pow(10.0, i);                                               // trial 3-4 : use 10.0 - 99 - 180304
-    // int cipher = pow(10, i);                                                 // trial 3-5 : the same with 1 but run by C++17(Clang) - Correct
-    int cipher = round(pow(10, i));                                          // trial -6 : round(pow()) - Correct
-    // cout << a << " " << (int) digit << " " << cipher << endl;                // test
+  int sum = 0;
+  for (int i = 0; i < len; i++)
+  {
+      // Test : get each cipher's integer number, not ascii code
+      // cout << "b[" << len-i-1 << "] : " << b.at(len-i-1) << endl;              // b[2], b[1], b[0] / OK
+      // cout << "convert to int 1 : " << (int) b.at(len-i-1) << endl;            // trial 2-1 : failure because output its ascii code
+      // cout << "convert to int 2 : " << (int) (b.at(len-i-1) - '0') << endl;    // trial 2-2 : success
+      short digit = (int) (b[3-i-1] - '0');
 
-    // Operation for each cipher
-    int prod = a * (int) digit;                                                 // get difference between ascii codes of (b[3-i-1]) and '0'
-    sum += prod * cipher;
+      // The ways to get 100 by pow(10, 3) (Remove // from only one line)
+      // int cipher = pow(10, i);                                                 // trial 3-1 : vanilla double pow() - 99- 180304
+      // int cipher = (int) pow(10, i);                                           // trial 3-2 : (int) double pow() - 99 - 180304
+      // int cipher = (int) powl(10, i);                                          // trial 3-3 : (int) long double powl() - 99 - 180304
+      // int cipher = pow(10.0, i);                                               // trial 3-4 : use 10.0 - 99 - 180304
+      // int cipher = pow(10, i);                                                 // trial 3-5 : the same with 1 but run by C++17(Clang) - Correct
+      int cipher = round(pow(10, i));                                          // trial -6 : round(pow()) - Correct
+      // cout << a << " " << (int) digit << " " << cipher << endl;                // test
 
-    // Output
-    // cout << prod << " " << sum - prod << " " << sum << endl;    // test
-    cout << prod << endl;
-}
+      // Operation for each cipher
+      int prod = a * (int) digit;                                                 // get difference between ascii codes of (b[3-i-1]) and '0'
+      sum += prod * cipher;
 
-// Output
-// cout << sum + 1 << endl; // can't find why lack of 1 - crazy!
-cout << sum << endl;        // go honest
+      // Output
+      // cout << prod << " " << sum - prod << " " << sum << endl;    // test
+      cout << prod << endl;
+  }
 
-return 0;
-```
-> 472 5 1  
-> 2360 0 2360  
-> 472 8 10  
-> 3776 36344 40120  
-> 472 3 100  
-> 1416 180304 181720  
-> 181720
+  // Output
+  // cout << sum + 1 << endl; // can't find why lack of 1 - crazy!
+  cout << sum << endl;        // go honest
 
-> Accepted
+  return 0;
+  ```
+  > 472 5 1  
+  > 2360 0 2360  
+  > 472 8 10  
+  > 3776 36344 40120  
+  > 472 3 100  
+  > 1416 180304 181720  
+  > 181720
 
-#### C++ - Bonus
-```cpp
-// Output
-cout << sum + 1 << endl; // can't find why lack of 1 - crazy!
-```
-> ㅋㅋ
+  > Accepted
 
-#### Golang (2022.03.12)
-```go
-package main
-import (
-    "fmt"
-    "math"
-)
-```
-```go
-var a int
-var b string
-fmt.Scanln(&a)
-fmt.Scanln(&b)
+  #### C++ - Bonus
+  ```cpp
+  // Output
+  cout << sum + 1 << endl; // can't find why lack of 1 - crazy!
+  ```
+  > ㅋㅋ
 
-var sum int = 0
-var answer int
-for i := 0; i < 3; i++ {
-    // test : ok
-    // fmt.Println(b[3-i-1] - '0')
-    answer = a * int(b[3-i-1] - '0')
-    fmt.Println(answer)
-    sum += answer * int(math.Pow(10., float64(i)))
-}
+  #### Golang (2022.03.12)
+  ```go
+  package main
+  import (
+      "fmt"
+      "math"
+  )
+  ```
+  ```go
+  var a int
+  var b string
+  fmt.Scanln(&a)
+  fmt.Scanln(&b)
 
-fmt.Println(sum)
-```
-> Accepted
+  var sum int = 0
+  var answer int
+  for i := 0; i < 3; i++ {
+      // test : ok
+      // fmt.Println(b[3-i-1] - '0')
+      answer = a * int(b[3-i-1] - '0')
+      fmt.Println(answer)
+      sum += answer * int(math.Pow(10., float64(i)))
+  }
 
-#### Python - trial 1 (2021.05.13)
-```python
-a = int(input())
-b = str(input())
+  fmt.Println(sum)
+  ```
+  > Accepted
 
-for i in range(0,len(b)) :
-    print(a*int(b[-i-1]))
+  #### Lua (2025.12.27)
+  ```lua
+  a, b = io.read("*n", "*n")
 
-print(a*int(b))             // crazy
-```
-> Accepted
+  ans1 = a * (b % 10)
+  ans2 = a * (math.floor((b % 100) / 10))
+  ans3 = a * math.floor(b / 100)
+  ans4 = a * b
 
-#### Python - trial 2 (2021.05.13)
-```python
-a = int(input())
-b = str(input())
+  print(ans1)
+  print(ans2)
+  print(ans3)
+  print(ans4)
+  ```
 
-sum = 0
-for i in range(0,len(b)) :
-    answer = a * int(b[-i-1])
-    print(answer)
-    sum += answer * pow(10, i)
+  #### Python - trial 1 (2021.05.13)
+  ```python
+  a = int(input())
+  b = str(input())
 
-print(sum)
-```
-> Accepted
+  for i in range(0,len(b)) :
+      print(a*int(b[-i-1]))
 
-#### R (2021.07.11)
-```R
-num <- scan("stdin")                            # recieve num[1], num[2], …… as numeric
-# num <- c(472, 385)                            # test
+  print(a*int(b))             // crazy
+  ```
+  > Accepted
 
-a <- num[1]
-b <- num[2]
+  #### Python - trial 2 (2021.05.13)
+  ```python
+  a = int(input())
+  b = str(input())
 
-sum = 0
-for (i in 1:3)
-{
-    # cat(floor((b %% 10^i) / 10^(i-1)), "\n")  # test
-    ans = a * floor((b %% 10^i) / 10^(i-1))
-    cat(ans, "\n")
-    sum = sum + ans * 10^(i - 1) 
-}
+  sum = 0
+  for i in range(0,len(b)) :
+      answer = a * int(b[-i-1])
+      print(answer)
+      sum += answer * pow(10, i)
 
-cat(sum, "\n")
-```
-> Accepted
+  print(sum)
+  ```
+  > Accepted
 
-#### Rust (2023.12.21)
-```Rust
-let mut input1 = String::new();
-let mut input2 = String::new();
+  #### R (2021.07.11)
+  ```R
+  num <- scan("stdin")                            # recieve num[1], num[2], …… as numeric
+  # num <- c(472, 385)                            # test
 
-io::stdin().read_line(&mut input1).unwrap();
-io::stdin().read_line(&mut input2).unwrap();
+  a <- num[1]
+  b <- num[2]
 
-let a: i32 = input1.trim().parse().unwrap();
-let b = input2.to_string().chars().collect::<Vec<char>>();
+  sum = 0
+  for (i in 1:3)
+  {
+      # cat(floor((b %% 10^i) / 10^(i-1)), "\n")  # test
+      ans = a * floor((b %% 10^i) / 10^(i-1))
+      cat(ans, "\n")
+      sum = sum + ans * 10^(i - 1) 
+  }
 
-let prod1 = a * (b[2] as i32 - '0' as i32);
-let prod2 = a * (b[1] as i32 - '0' as i32);
-let prod3 = a * (b[0] as i32 - '0' as i32);
+  cat(sum, "\n")
+  ```
+  > Accepted
 
-println!("{}", prod1);
-println!("{}", prod2);
-println!("{}", prod3);
-println!("{}", prod1 + prod2 * 10 + prod3 * 100);
-```
+  #### Rust (2023.12.21)
+  ```Rust
+  let mut input1 = String::new();
+  let mut input2 = String::new();
 
-#### SystemVerilog (2022.09.06)
-```sv
-integer a;
-reg [3*8:0] b;
-integer i, prod, sum = 0, temp;
+  io::stdin().read_line(&mut input1).unwrap();
+  io::stdin().read_line(&mut input2).unwrap();
 
-initial begin
-    temp = $fscanf(32'h8000_0000, "%d", a);
-    temp = $fscanf(32'h8000_0000, "%s", b);
-    // 32'h8000_0000 : descriptor that indicates STDIN
-    // $fscanf() (maybe) returns EOF
+  let a: i32 = input1.trim().parse().unwrap();
+  let b = input2.to_string().chars().collect::<Vec<char>>();
 
-    for (i = 0; i < 3; i = i + 1) begin
-        prod = a * (b[i*8 +: 8] - 48);
-        sum = sum + prod * (10**i);
+  let prod1 = a * (b[2] as i32 - '0' as i32);
+  let prod2 = a * (b[1] as i32 - '0' as i32);
+  let prod3 = a * (b[0] as i32 - '0' as i32);
 
-        // test
-        // $display("%0d %0d %0d %0d %0d", i, a, b[i*8 +: 8] - 48, prod, sum);
+  println!("{}", prod1);
+  println!("{}", prod2);
+  println!("{}", prod3);
+  println!("{}", prod1 + prod2 * 10 + prod3 * 100);
+  ```
 
-        $display("%0d", prod);
-    end
-    $display("%0d", sum);
-    $finish;
-end
-```
-> Accepted
+  #### SystemVerilog (2022.09.06)
+  ```sv
+  integer a;
+  reg [3*8:0] b;
+  integer i, prod, sum = 0, temp;
+
+  initial begin
+      temp = $fscanf(32'h8000_0000, "%d", a);
+      temp = $fscanf(32'h8000_0000, "%s", b);
+      // 32'h8000_0000 : descriptor that indicates STDIN
+      // $fscanf() (maybe) returns EOF
+
+      for (i = 0; i < 3; i = i + 1) begin
+          prod = a * (b[i*8 +: 8] - 48);
+          sum = sum + prod * (10**i);
+
+          // test
+          // $display("%0d %0d %0d %0d %0d", i, a, b[i*8 +: 8] - 48, prod, sum);
+
+          $display("%0d", prod);
+      end
+      $display("%0d", sum);
+      $finish;
+  end
+  ```
+  > Accepted
+</details>
 
 
 ## [10171. Cats](#list)
 
 ```txt
 \    /\
- )  ( ')
-(  /  )
- \(__)|
-```
-
-#### Bash (2022.01.26)
-```Bash
-echo "\\    /\\"
-echo " )  ( ')"
-echo "(  /  )"
-echo " \\(__)|"
-
-# read
-```
-
-#### C++ (2021.05.13)
-```cpp
-cout << "\\    /\\" << endl;
-cout << " )  ( ')" << endl;
-cout << "(  /  ) " << endl;
-cout << " \\(__)|" << endl;
-
-return 0;
-```
-
-#### Golang (2022.03.12)
-```go
-var s string = `\    /\
 )  ( ')
 (  /  )
-\(__)|`
-
-fmt.Println(s)
+\(__)|
 ```
 
-#### Python (2021.05.13)
-```python
-print("\    /\\")
-print(" )  ( ')")
-print("(  /  )")
-print(" \\(__)|")
-```
+<details>
+    <summary>Code</summary>
 
-#### R (2021.07.11)
-```R
-cat("\\    /\\
- )  ( \')
-(  /  )
- \\(__)|")
-```
+  #### Bash (2022.01.26)
+  ```Bash
+  echo "\\    /\\"
+  echo " )  ( ')"
+  echo "(  /  )"
+  echo " \\(__)|"
 
-#### Rust (2023.12.21)
-```Rust
-println!("\\    /\\");
-println!(" )  ( ')");
-println!("(  /  )");
-println!(" \\(__)|");
-```
+  # read
+  ```
 
-#### SystemVerilog (2022.09.05)
-```sv
-initial begin
-    $display("\\    /\\");
-    $display(" )  ( ')");
-    $display("(  /  )");
-    $display(" \\(__)|");
-    $finish;
-end
-```
+  #### C++ (2021.05.13)
+  ```cpp
+  cout << "\\    /\\" << endl;
+  cout << " )  ( ')" << endl;
+  cout << "(  /  ) " << endl;
+  cout << " \\(__)|" << endl;
 
-#### Text (2022.01.26)
-```txt
-\    /\
- )  ( ')
-(  /  )
- \(__)|
-```
+  return 0;
+  ```
+
+  #### Golang (2022.03.12)
+  ```go
+  var s string = `\    /\
+  )  ( ')
+  (  /  )
+  \(__)|`
+
+  fmt.Println(s)
+  ```
+
+  #### Lua (2025.12.27)
+  ```lua
+  s = [[
+  \    /\
+  )  ( ')
+  (  /  )
+  \(__)|
+  ]]
+
+  print(s)
+  ```
+
+  #### Python (2021.05.13)
+  ```python
+  print("\    /\\")
+  print(" )  ( ')")
+  print("(  /  )")
+  print(" \\(__)|")
+  ```
+
+  #### R (2021.07.11)
+  ```R
+  cat("\\    /\\
+  )  ( \')
+  (  /  )
+  \\(__)|")
+  ```
+
+  #### Rust (2023.12.21)
+  ```Rust
+  println!("\\    /\\");
+  println!(" )  ( ')");
+  println!("(  /  )");
+  println!(" \\(__)|");
+  ```
+
+  #### SystemVerilog (2022.09.05)
+  ```sv
+  initial begin
+      $display("\\    /\\");
+      $display(" )  ( ')");
+      $display("(  /  )");
+      $display(" \\(__)|");
+      $finish;
+  end
+  ```
+
+  #### Text (2022.01.26)
+  ```txt
+  \    /\
+  )  ( ')
+  (  /  )
+  \(__)|
+  ```
+</details>
 
 
 ## [10172. Dogs](#list)
@@ -1133,163 +1300,192 @@ end
 ||_/=\\__|
 ```
 
-#### Bash (2022.01.26)
-```Bash
-echo "|\_/|"
-echo "|q p|   /}"
-echo "( 0 )\"\"\"\\"
-echo "|\"^\"\`    |"
-echo "||_/=\\\\__|"
+<details>
+    <summary>Code</summary>
 
-# read
-```
+  #### Bash (2022.01.26)
+  ```Bash
+  echo "|\_/|"
+  echo "|q p|   /}"
+  echo "( 0 )\"\"\"\\"
+  echo "|\"^\"\`    |"
+  echo "||_/=\\\\__|"
 
-#### C++ - trial 1 (2021.05.13)
-```cpp
-cout << R"(
-|\_/|
-|q p|   /}
-( 0 )"""\
-|"^"`    |
-||_/=\\__|
-)" << endl;
+  # read
+  ```
 
-return 0;
-```
+  #### C++ - trial 1 (2021.05.13)
+  ```cpp
+  cout << R"(
+  |\_/|
+  |q p|   /}
+  ( 0 )"""\
+  |"^"`    |
+  ||_/=\\__|
+  )" << endl;
 
-#### C++ - trial 2 (2021.05.13)
-```cpp
-cout << "|\\_/|" << endl;
-cout << "|q p|   /}" << endl;
-cout << "( 0 )\"\"\"\\" << endl;
-cout << "|\"^\"`    |" << endl;
-cout << "||_/=\\\\__|" << endl;
+  return 0;
+  ```
 
-return 0;
-```
+  #### C++ - trial 2 (2021.05.13)
+  ```cpp
+  cout << "|\\_/|" << endl;
+  cout << "|q p|   /}" << endl;
+  cout << "( 0 )\"\"\"\\" << endl;
+  cout << "|\"^\"`    |" << endl;
+  cout << "||_/=\\\\__|" << endl;
 
-#### Golang (2022.03.12)
-```go
-fmt.Println("|\\_/|")
-fmt.Println("|q p|   /}")
-fmt.Println("( 0 )\"\"\"\\")
-fmt.Println("|\"^\"`    |")
-fmt.Println("||_/=\\\\__|")
-```
+  return 0;
+  ```
 
-#### Python (2021.05.13)
-```python
-print("""|\\_/|
-|q p|   /}
-( 0 )\"\"\"\\
-|"^"`    |
-||_/=\\\\__|""")
-```
+  #### Golang (2022.03.12)
+  ```go
+  fmt.Println("|\\_/|")
+  fmt.Println("|q p|   /}")
+  fmt.Println("( 0 )\"\"\"\\")
+  fmt.Println("|\"^\"`    |")
+  fmt.Println("||_/=\\\\__|")
+  ```
 
-#### R (2021.07.11)
-```R
-cat("|\\_/|
-|q p|   /}
-( 0 )\"\"\"\\
-|\"^\"`    |
-||_/=\\\\__|")
-```
+  #### Lua (2025.12.27)
+  ```lua
+  s = [[
+  |\_/|
+  |q p|   /}
+  ( 0 )"""\
+  |"^"`    |
+  ||_/=\\__|
+  ]]
 
-#### Rust (2023.12.21)
-```Rust
-println!("|\\_/|");
-println!("|q p|   /}}");    // not `\}`, `}}`
-println!("( 0 )\"\"\"\\");
-println!("|\"^\"`    |");
-println!("||_/=\\\\__|");
-```
+  print(s)
+  ```
 
-#### SystemVerilog (2022.09.05)
-```sv
-initial begin
-    $display("|\\_/|");
-    $display("|q p|   /}");
-    $display("( 0 )\"\"\"\\");
-    $display("|\"^\"`    |");
-    $display("||_/=\\\\__|");
-    $finish;
-end
-```
+  #### Python (2021.05.13)
+  ```python
+  print("""|\\_/|
+  |q p|   /}
+  ( 0 )\"\"\"\\
+  |"^"`    |
+  ||_/=\\\\__|""")
+  ```
 
-#### Text (2022.01.26)
-```txt
-|\_/|
-|q p|   /}
-( 0 )"""\
-|"^"`    |
-||_/=\\__|
-```
+  #### R (2021.07.11)
+  ```R
+  cat("|\\_/|
+  |q p|   /}
+  ( 0 )\"\"\"\\
+  |\"^\"`    |
+  ||_/=\\\\__|")
+  ```
+
+  #### Rust (2023.12.21)
+  ```Rust
+  println!("|\\_/|");
+  println!("|q p|   /}}");    // not `\}`, `}}`
+  println!("( 0 )\"\"\"\\");
+  println!("|\"^\"`    |");
+  println!("||_/=\\\\__|");
+  ```
+
+  #### SystemVerilog (2022.09.05)
+  ```sv
+  initial begin
+      $display("|\\_/|");
+      $display("|q p|   /}");
+      $display("( 0 )\"\"\"\\");
+      $display("|\"^\"`    |");
+      $display("||_/=\\\\__|");
+      $finish;
+  end
+  ```
+
+  #### Text (2022.01.26)
+  ```txt
+  |\_/|
+  |q p|   /}
+  ( 0 )"""\
+  |"^"`    |
+  ||_/=\\__|
+  ```
+</details>
 
 
-## [10718. We love kriii](#list)
+## [(deprecated) 10718. We love kriii](#list)
 
 > 강한친구 대한육군  
 > 강한친구 대한육군
 
-#### Bash (2022.01.26)
-```Bash
-for i in {0..1}
-do
-    echo "강한친구 대한육군"
-done
-```
+<details>
+    <summary>Code</summary>
 
-#### C++ (2021.05.13)
-```cpp
-for (int i = 0; i < 2; i++)
-{
-    cout << "강한친구 대한육군" << endl;
-}
+  #### Bash (2022.01.26)
+  ```Bash
+  for i in {0..1}
+  do
+      echo "강한친구 대한육군"
+  done
+  ```
 
-return 0;
-```
+  #### C++ (2021.05.13)
+  ```cpp
+  for (int i = 0; i < 2; i++)
+  {
+      cout << "강한친구 대한육군" << endl;
+  }
 
-#### Golang - trial 1 (2022.03.12)
-```go
-var s string = "강한친구 대한육군"
-fmt.Println(s)
-fmt.Println(s)
-```
+  return 0;
+  ```
 
-#### Golang - trial 2 (2022.03.12)
-```go
-var s string = "강한친구 대한육군"
-for i := 0; i < 2; i++ {
-        fmt.Println(s)
-}
-```
+  #### Golang - trial 1 (2022.03.12)
+  ```go
+  var s string = "강한친구 대한육군"
+  fmt.Println(s)
+  fmt.Println(s)
+  ```
 
-#### Python (2021.05.13)
-```python
-for i in range(0, 2) :
-    print("강한친구 대한육군")
-```
+  #### Golang - trial 2 (2022.03.12)
+  ```go
+  var s string = "강한친구 대한육군"
+  for i := 0; i < 2; i++ {
+          fmt.Println(s)
+  }
+  ```
 
-#### R (2021.07.11)
-```R
-for (i in c(0, 1))
-{
-    cat("강한친구 대한육군\n")
-}
-```
+  #### Lua (2025.12.27)
+  ```lua
+  s = "강한친구 대한육군"
 
-#### SystemVerilog (2022.09.05)
-```sv
-initial begin
-    repeat (2) begin
-        $display("강한친구 대한육군");
-    end
-    $finish;
-end
-```
+  print(s)
+  print(s)
+  ```
 
-#### Text (2022.01.26)
-```txt
-강한친구 대한육군
-강한친구 대한육군
-```
+  #### Python (2021.05.13)
+  ```python
+  for i in range(0, 2) :
+      print("강한친구 대한육군")
+  ```
+
+  #### R (2021.07.11)
+  ```R
+  for (i in c(0, 1))
+  {
+      cat("강한친구 대한육군\n")
+  }
+  ```
+
+  #### SystemVerilog (2022.09.05)
+  ```sv
+  initial begin
+      repeat (2) begin
+          $display("강한친구 대한육군");
+      end
+      $finish;
+  end
+  ```
+
+  #### Text (2022.01.26)
+  ```txt
+  강한친구 대한육군
+  강한친구 대한육군
+  ```
+</details>
